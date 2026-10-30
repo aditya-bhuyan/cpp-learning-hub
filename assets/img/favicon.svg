@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Blue rounded square background -->
+  <rect width="32" height="32" rx="6" fill="#0057b8"/>
+  <!-- "C+" monogram in white -->
+  <text x="3" y="23" font-family="-apple-system,Segoe UI,system-ui,sans-serif" font-size="18" font-weight="800" fill="white">C+</text>
+  <!-- Small + in superscript position -->
+  <text x="22" y="15" font-family="-apple-system,Segoe UI,system-ui,sans-serif" font-size="11" font-weight="800" fill="white">+</text>
+</svg>

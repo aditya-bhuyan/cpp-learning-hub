@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Getting Started — Compile &amp; Run C++ | C++ Learning Hub</title>
+  <meta name="description" content="Learn how to install a C++ compiler and compile and run C++ programs from the command line on Windows, macOS, and Linux." />
+  <link rel="stylesheet" href="/assets/css/style.css" />
+  <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg" />
+  <link rel="shortcut icon" href="/assets/img/favicon.svg" />
+</head>
+<body>
+
+<header id="site-header">
+  <button id="hamburger" aria-label="Toggle navigation">&#9776;</button>
+  <div id="site-logo">
+    <img src="/assets/img/logo.svg" alt="C++ Learning Hub" style="height:32px;width:auto;vertical-align:middle;">
+  </div>
+  <button id="theme-toggle">☾ Dark</button>
+</header>
+
+<div id="layout">
+
+<!-- ── Sidebar ─────────────────────────────────── -->
+<aside id="sidebar"><nav>
+  <div class="nav-section-title">C++ Learning Hub</div>
+  <div class="nav-chapter" data-chapter="home">
+    <div class="nav-chapter-header"><span>🏠 Home</span></div>
+    <div class="nav-chapter-links">
+      <a href="/index.html">Overview</a>
+      <a href="/index.html#curriculum">Curriculum</a>
+      <a href="/getting-started.html" class="active">⚡ Getting Started</a>
+    </div>
+  </div>
+  <div class="nav-section-title">Chapters</div>
+  <div class="nav-chapter" data-chapter="ch01"><div class="nav-chapter-header"><span><span class="ch-num">01</span>Introduction to C++</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch01-introduction/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch01-introduction/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch01-introduction/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch01-introduction/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch01-introduction/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch02"><div class="nav-chapter-header"><span><span class="ch-num">02</span>Variables, Types &amp; Operators</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch02-variables-types-operators/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch02-variables-types-operators/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch02-variables-types-operators/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch02-variables-types-operators/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch02-variables-types-operators/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch03"><div class="nav-chapter-header"><span><span class="ch-num">03</span>Control Flow</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch03-control-flow/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch03-control-flow/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch03-control-flow/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch03-control-flow/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch03-control-flow/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch04"><div class="nav-chapter-header"><span><span class="ch-num">04</span>Functions</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch04-functions/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch04-functions/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch04-functions/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch04-functions/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch04-functions/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch05"><div class="nav-chapter-header"><span><span class="ch-num">05</span>Arrays &amp; Strings</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch05-arrays-strings/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch05-arrays-strings/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch05-arrays-strings/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch05-arrays-strings/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch05-arrays-strings/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch06"><div class="nav-chapter-header"><span><span class="ch-num">06</span>Pointers &amp; References</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch06-pointers-references/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch06-pointers-references/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch06-pointers-references/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch06-pointers-references/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch06-pointers-references/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch07"><div class="nav-chapter-header"><span><span class="ch-num">07</span>OOP — Basics</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch07-oop-basics/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch07-oop-basics/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch07-oop-basics/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch07-oop-basics/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch07-oop-basics/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch08"><div class="nav-chapter-header"><span><span class="ch-num">08</span>OOP — Inheritance &amp; Polymorphism</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch08-oop-inheritance/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch08-oop-inheritance/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch08-oop-inheritance/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch08-oop-inheritance/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch08-oop-inheritance/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch09"><div class="nav-chapter-header"><span><span class="ch-num">09</span>Templates</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch09-templates/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch09-templates/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch09-templates/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch09-templates/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch09-templates/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch10"><div class="nav-chapter-header"><span><span class="ch-num">10</span>STL — Containers</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch10-stl-containers/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch10-stl-containers/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch10-stl-containers/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch10-stl-containers/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch10-stl-containers/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch11"><div class="nav-chapter-header"><span><span class="ch-num">11</span>STL — Algorithms &amp; Iterators</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch11-stl-algorithms/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch11-stl-algorithms/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch11-stl-algorithms/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch11-stl-algorithms/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch11-stl-algorithms/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch12"><div class="nav-chapter-header"><span><span class="ch-num">12</span>Memory Management</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch12-memory-management/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch12-memory-management/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch12-memory-management/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch12-memory-management/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch12-memory-management/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch13"><div class="nav-chapter-header"><span><span class="ch-num">13</span>Exception Handling</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch13-exception-handling/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch13-exception-handling/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch13-exception-handling/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch13-exception-handling/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch13-exception-handling/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch14"><div class="nav-chapter-header"><span><span class="ch-num">14</span>File I/O</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch14-file-io/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch14-file-io/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch14-file-io/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch14-file-io/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch14-file-io/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch15"><div class="nav-chapter-header"><span><span class="ch-num">15</span>Modern C++ (C++11–C++20)</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch15-modern-cpp/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch15-modern-cpp/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch15-modern-cpp/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch15-modern-cpp/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch15-modern-cpp/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-section-title">Capstone</div>
+  <div class="nav-chapter" data-chapter="ch16"><div class="nav-chapter-header"><span><span class="ch-num">16</span>Capstone Project</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch16-capstone/index.html"><span class="link-icon">🎯</span>Brief</a><a href="/chapters/ch16-capstone/walkthrough.html"><span class="link-icon">🗺</span>Walkthrough</a><a href="/chapters/ch16-capstone/solution.html"><span class="link-icon">✅</span>Solution</a></div></div>
+  <div class="nav-section-title">About</div>
+  <div style="padding:.4rem 1.1rem 1rem;font-size:.78rem;color:var(--muted);line-height:1.5;">Maintained by<br><a href="https://linkedin.com/in/adityabhuyan" target="_blank" rel="noopener">Aditya Pratap Bhuyan</a><br><span style="font-size:.72rem;">GNU GPL v3 License</span></div>
+</nav></aside>
+
+<!-- ── Main ─────────────────────────────────────── -->
+<main id="main">
+  <div class="page-header">
+    <div class="breadcrumb"><a href="/index.html">Home</a> › Getting Started</div>
+    <h1>Getting Started — Compile &amp; Run C++</h1>
+    <p class="subtitle">
+      Everything you need to install a C++ compiler and run programs from the command line —
+      on <strong>Windows</strong>, <strong>macOS</strong>, and <strong>Linux</strong>.
+    </p>
+  </div>
+
+  <div class="content">
+
+    <div class="callout">
+      <strong>Before you start</strong>
+      All exercises and examples in this hub are plain <code>.cpp</code> source files.
+      You write code in any text editor, compile it with a compiler on the command line,
+      and run the resulting executable — no IDE required (though one is perfectly fine).
+    </div>
+
+    <!-- ── OS Tabs ──────────────────────────────────────── -->
+    <div style="display:flex;gap:.5rem;margin:1.5rem 0 0;flex-wrap:wrap;" id="os-tabs">
+      <button class="btn" id="tab-linux"  onclick="showOS('linux')">🐧 Linux</button>
+      <button class="btn btn-outline" id="tab-mac"    onclick="showOS('mac')">🍎 macOS</button>
+      <button class="btn btn-outline" id="tab-win"    onclick="showOS('win')">🪟 Windows</button>
+    </div>
+
+    <!-- ══════════════ LINUX ══════════════ -->
+    <div id="os-linux">
+
+      <h2>Linux — GCC / G++</h2>
+      <p>
+        Most Linux distributions ship with GCC (GNU Compiler Collection) or make it trivially
+        installable. <code>g++</code> is the C++ front-end of GCC.
+      </p>
+
+      <h3>Step 1 — Install GCC</h3>
+      <p>Open a terminal and run the command for your distribution:</p>
+<pre><code># Ubuntu / Debian / Linux Mint
+sudo apt update &amp;&amp; sudo apt install g++ build-essential
+
+# Fedora / RHEL / CentOS
+sudo dnf install g++ gcc-c++
+
+# Arch Linux / Manjaro
+sudo pacman -S gcc
+
+# openSUSE
+sudo zypper install gcc-c++</code></pre>
+
+      <h3>Step 2 — Verify the installation</h3>
+<pre><code>g++ --version
+# Expected output (version numbers will differ):
+# g++ (Ubuntu 13.2.0-23ubuntu4) 13.2.0</code></pre>
+
+      <h3>Step 3 — Write your first program</h3>
+      <p>Create a file called <code>hello.cpp</code> in any directory:</p>
+<pre><code>#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    cout &lt;&lt; "Hello, World!" &lt;&lt; endl;
+    return 0;
+}</code></pre>
+
+      <h3>Step 4 — Compile</h3>
+<pre><code>g++ -std=c++17 -Wall -o hello hello.cpp</code></pre>
+      <table>
+        <thead><tr><th>Flag</th><th>Meaning</th></tr></thead>
+        <tbody>
+          <tr><td><code>-std=c++17</code></td><td>Use the C++17 language standard (use <code>c++20</code> for modern features)</td></tr>
+          <tr><td><code>-Wall</code></td><td>Enable all common warnings — always use this</td></tr>
+          <tr><td><code>-Wextra</code></td><td>Enable extra warnings beyond -Wall (recommended)</td></tr>
+          <tr><td><code>-o hello</code></td><td>Name the output executable <code>hello</code></td></tr>
+          <tr><td><code>hello.cpp</code></td><td>The source file to compile</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Step 5 — Run</h3>
+<pre><code>./hello
+# Output:
+Hello, World!</code></pre>
+
+      <h3>Compile + Run in one line</h3>
+<pre><code>g++ -std=c++17 -Wall -o hello hello.cpp &amp;&amp; ./hello</code></pre>
+
+      <div class="callout tip">
+        <strong>Recommended: also use Clang on Linux</strong>
+        <code>sudo apt install clang</code> installs <code>clang++</code>, which often gives
+        clearer error messages than GCC. Use it exactly the same way: <code>clang++ -std=c++17 -Wall -o hello hello.cpp</code>
+      </div>
+
+    </div><!-- /os-linux -->
+
+    <!-- ══════════════ MACOS ══════════════ -->
+    <div id="os-mac" style="display:none;">
+
+      <h2>macOS — Clang (via Xcode Command Line Tools)</h2>
+      <p>
+        macOS ships with <strong>Clang</strong> (from the LLVM project) as its default C++ compiler.
+        The <code>g++</code> command on macOS is actually an alias for <code>clang++</code>.
+        You install it through Apple's free Xcode Command Line Tools — no full Xcode needed.
+      </p>
+
+      <h3>Step 1 — Install Clang</h3>
+      <p>Open <strong>Terminal</strong> (Spotlight → Terminal or Applications → Utilities → Terminal) and run:</p>
+<pre><code>xcode-select --install</code></pre>
+      <p>A dialog will appear asking to install the Command Line Developer Tools. Click <strong>Install</strong>.
+      This installs <code>clang++</code>, <code>g++</code> (alias), <code>make</code>, and <code>git</code>.</p>
+
+      <h3>Step 2 — Verify</h3>
+<pre><code>clang++ --version
+# Expected output:
+# Apple clang version 15.0.0 (clang-1500.3.9.4)
+
+g++ --version
+# g++ is aliased to clang++ on macOS — same result</code></pre>
+
+      <h3>Step 3 — Write your first program</h3>
+<pre><code>#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    cout &lt;&lt; "Hello, World!" &lt;&lt; endl;
+    return 0;
+}</code></pre>
+      <p>Save as <code>hello.cpp</code>.</p>
+
+      <h3>Step 4 — Compile</h3>
+<pre><code>clang++ -std=c++17 -Wall -o hello hello.cpp
+# or equivalently:
+g++ -std=c++17 -Wall -o hello hello.cpp</code></pre>
+
+      <h3>Step 5 — Run</h3>
+<pre><code>./hello
+# Output:
+Hello, World!</code></pre>
+
+      <h3>Optional: Install GCC via Homebrew</h3>
+      <p>
+        If you specifically need GCC (not just the Clang alias), install
+        <a href="https://brew.sh" target="_blank" rel="noopener">Homebrew</a> first, then:
+      </p>
+<pre><code># Install Homebrew (if not already installed)
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+# Install GCC
+brew install gcc
+
+# GCC installs as g++-14 (version number may vary)
+g++-14 --version
+g++-14 -std=c++17 -Wall -o hello hello.cpp &amp;&amp; ./hello</code></pre>
+
+      <div class="callout tip">
+        <strong>macOS tip — C++20 and modules</strong>
+        Apple Clang lags slightly behind upstream Clang on some C++20 and C++23 features.
+        If you need bleeding-edge standard support, use <code>brew install llvm</code> to get
+        the latest upstream LLVM: <code>/opt/homebrew/opt/llvm/bin/clang++ -std=c++20 ...</code>
+      </div>
+
+    </div><!-- /os-mac -->
+
+    <!-- ══════════════ WINDOWS ══════════════ -->
+    <div id="os-win" style="display:none;">
+
+      <h2>Windows — Three Options</h2>
+      <p>Windows does not ship with a C++ compiler. Choose one of these three paths:</p>
+
+      <!-- Option A -->
+      <h3>Option A — MSVC (Visual Studio Community) — Recommended for Windows</h3>
+      <p>Microsoft's own compiler. Best Windows compatibility, full debugger, free for individuals.</p>
+      <ol>
+        <li>
+          Download <a href="https://visualstudio.microsoft.com/vs/community/" target="_blank" rel="noopener">
+          Visual Studio Community</a> (free).
+        </li>
+        <li>During installation, select the workload: <strong>"Desktop development with C++"</strong>.</li>
+        <li>After installation, open the <strong>Developer Command Prompt for VS</strong>
+          (search in Start menu — it sets up the correct PATH automatically).</li>
+      </ol>
+<pre><code>REM Create hello.cpp with a text editor, then in Developer Command Prompt:
+cl /std:c++17 /W4 /EHsc hello.cpp /Fe:hello.exe
+hello.exe
+
+REM Expected output:
+Hello, World!</code></pre>
+      <table>
+        <thead><tr><th>Flag</th><th>Meaning</th></tr></thead>
+        <tbody>
+          <tr><td><code>/std:c++17</code></td><td>Use C++17 standard (use <code>/std:c++20</code> for C++20)</td></tr>
+          <tr><td><code>/W4</code></td><td>Warning level 4 (high)</td></tr>
+          <tr><td><code>/EHsc</code></td><td>Enable standard C++ exception handling</td></tr>
+          <tr><td><code>/Fe:hello.exe</code></td><td>Name the output executable</td></tr>
+        </tbody>
+      </table>
+
+      <!-- Option B -->
+      <h3>Option B — MinGW-w64 (GCC on Windows)</h3>
+      <p>Brings the same <code>g++</code> compiler you'd use on Linux, running natively on Windows.
+      Good choice if you want identical commands across platforms.</p>
+      <ol>
+        <li>Download the installer from <a href="https://winlibs.com" target="_blank" rel="noopener">winlibs.com</a>
+          (choose the latest GCC release, UCRT runtime, 64-bit).</li>
+        <li>Extract to a folder such as <code>C:\mingw64\</code>.</li>
+        <li>Add <code>C:\mingw64\bin</code> to your system <strong>PATH</strong>:
+          <ul>
+            <li>Start → Search "Environment Variables" → "Edit the system environment variables"</li>
+            <li>Click <strong>Environment Variables</strong> → select <strong>Path</strong> under System variables → <strong>Edit</strong> → <strong>New</strong> → enter <code>C:\mingw64\bin</code></li>
+          </ul>
+        </li>
+        <li>Open a new <strong>Command Prompt</strong> or <strong>PowerShell</strong> and verify:</li>
+      </ol>
+<pre><code>g++ --version
+# g++ (MinGW-W64...) 14.x.x</code></pre>
+      <p>Compile and run exactly like Linux:</p>
+<pre><code>g++ -std=c++17 -Wall -o hello hello.cpp
+hello.exe
+
+# PowerShell: use .\hello.exe
+.\hello.exe</code></pre>
+
+      <!-- Option C -->
+      <h3>Option C — WSL 2 (Windows Subsystem for Linux)</h3>
+      <p>
+        Run a real Linux environment inside Windows 10/11. Gives you the full Linux toolchain
+        without a virtual machine — often the best developer experience on modern Windows.
+      </p>
+      <ol>
+        <li>Open <strong>PowerShell as Administrator</strong> and run:</li>
+      </ol>
+<pre><code>wsl --install</code></pre>
+      <ol start="2">
+        <li>Restart your machine. Ubuntu opens automatically on first launch.</li>
+        <li>Inside the Ubuntu terminal, install GCC:</li>
+      </ol>
+<pre><code>sudo apt update &amp;&amp; sudo apt install g++ build-essential</code></pre>
+      <ol start="4">
+        <li>From this point, follow the <strong>Linux</strong> instructions exactly.</li>
+      </ol>
+
+      <div class="callout tip">
+        <strong>Recommended editor for Windows</strong>
+        <a href="https://code.visualstudio.com" target="_blank" rel="noopener">Visual Studio Code</a>
+        with the <strong>C/C++ extension</strong> (by Microsoft) gives syntax highlighting,
+        IntelliSense, and integrated terminal on all three platforms — and it's free.
+      </div>
+
+    </div><!-- /os-win -->
+
+    <hr>
+
+    <!-- ── Universal Workflow ──────────────────────── -->
+    <h2>Universal Compile &amp; Run Workflow</h2>
+    <p>
+      Regardless of OS, the daily workflow is the same three steps:
+    </p>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1rem;margin:1.25rem 0;">
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1rem;">
+        <div style="font-size:1.5rem;margin-bottom:.5rem;">1️⃣</div>
+        <strong>Write</strong>
+        <p style="font-size:.85rem;color:var(--muted);margin-top:.3rem;">
+          Open a text editor (VS Code, Vim, Notepad++). Create <code>program.cpp</code>.
+          Write valid C++ code with a <code>main()</code> function.
+        </p>
+      </div>
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1rem;">
+        <div style="font-size:1.5rem;margin-bottom:.5rem;">2️⃣</div>
+        <strong>Compile</strong>
+        <p style="font-size:.85rem;color:var(--muted);margin-top:.3rem;">
+          Run your compiler. Fix any errors (red output) or heed warnings (yellow).
+          A successful compile produces an executable file.
+        </p>
+      </div>
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1rem;">
+        <div style="font-size:1.5rem;margin-bottom:.5rem;">3️⃣</div>
+        <strong>Run</strong>
+        <p style="font-size:.85rem;color:var(--muted);margin-top:.3rem;">
+          Execute the program. Observe the output. Go back to step 1 to improve the code.
+        </p>
+      </div>
+    </div>
+
+    <!-- Summary table -->
+    <h3>Quick Reference — Compile Commands by Compiler</h3>
+    <table>
+      <thead>
+        <tr><th>Compiler</th><th>OS</th><th>Compile command</th><th>Run command</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>g++</code> (GCC)</td>
+          <td>Linux / WSL / MinGW</td>
+          <td><code>g++ -std=c++17 -Wall -o prog prog.cpp</code></td>
+          <td><code>./prog</code>&nbsp;&nbsp;<em>(Linux)</em><br><code>prog.exe</code>&nbsp;&nbsp;<em>(Windows)</em></td>
+        </tr>
+        <tr>
+          <td><code>clang++</code> (LLVM)</td>
+          <td>macOS / Linux</td>
+          <td><code>clang++ -std=c++17 -Wall -o prog prog.cpp</code></td>
+          <td><code>./prog</code></td>
+        </tr>
+        <tr>
+          <td><code>cl</code> (MSVC)</td>
+          <td>Windows</td>
+          <td><code>cl /std:c++17 /W4 /EHsc prog.cpp /Fe:prog.exe</code></td>
+          <td><code>prog.exe</code></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Reading Compiler Errors</h2>
+    <p>
+      Every error message follows the pattern: <code>filename:line:column: error: description</code>.
+      Always fix errors <strong>top to bottom</strong> — one early error can cause a cascade of
+      fake errors further down.
+    </p>
+<pre><code># Example: missing semicolon
+hello.cpp:5:5: error: expected ';' after return statement
+    return 0
+         ^
+         ;</code></pre>
+    <p>
+      The compiler is pointing you exactly at line 5, column 5. Add the semicolon after <code>return 0</code>
+      and recompile.
+    </p>
+
+    <h2>Recommended Compiler Flags for Learning</h2>
+<pre><code># Full recommended flags for learning (Linux / macOS / MinGW)
+g++ -std=c++17 -Wall -Wextra -Wpedantic -o program program.cpp
+
+# For C++20 features (ranges, concepts, coroutines)
+g++ -std=c++20 -Wall -Wextra -o program program.cpp
+
+# With AddressSanitizer (detects memory bugs at runtime)
+g++ -std=c++17 -Wall -g -fsanitize=address,undefined -o program program.cpp</code></pre>
+
+    <table>
+      <thead><tr><th>Flag</th><th>Purpose</th></tr></thead>
+      <tbody>
+        <tr><td><code>-Wall</code></td><td>Enable all common warnings (use always)</td></tr>
+        <tr><td><code>-Wextra</code></td><td>Extra warnings: unused params, sign compare, etc.</td></tr>
+        <tr><td><code>-Wpedantic</code></td><td>Warn about code that doesn't conform to the ISO standard</td></tr>
+        <tr><td><code>-g</code></td><td>Include debug symbols (needed for debuggers and sanitizers)</td></tr>
+        <tr><td><code>-O2</code></td><td>Enable level-2 optimizations (for performance testing)</td></tr>
+        <tr><td><code>-fsanitize=address</code></td><td>Detect buffer overflows and use-after-free at runtime</td></tr>
+        <tr><td><code>-fsanitize=undefined</code></td><td>Detect undefined behaviour at runtime</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Zero-Install Options (Online Compilers)</h2>
+    <p>
+      If you can't install a compiler right now, use a free online compiler to follow along with
+      every example and exercise:
+    </p>
+    <table>
+      <thead><tr><th>Service</th><th>Strengths</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><a href="https://godbolt.org" target="_blank" rel="noopener">Compiler Explorer (godbolt.org)</a></td>
+          <td>Shows generated assembly; multiple compilers; great for optimization experiments</td>
+        </tr>
+        <tr>
+          <td><a href="https://wandbox.org" target="_blank" rel="noopener">Wandbox</a></td>
+          <td>Many GCC and Clang versions; stdin support; shareable links</td>
+        </tr>
+        <tr>
+          <td><a href="https://cpp.sh" target="_blank" rel="noopener">cpp.sh</a></td>
+          <td>Minimal and fast; good for quick snippets</td>
+        </tr>
+        <tr>
+          <td><a href="https://replit.com" target="_blank" rel="noopener">Replit</a></td>
+          <td>Full online IDE; file system; persistent projects</td>
+        </tr>
+        <tr>
+          <td><a href="https://ideone.com" target="_blank" rel="noopener">Ideone</a></td>
+          <td>Simple; supports stdin; shareable</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="callout tip">
+      <strong>Recommendation for this hub</strong>
+      Use <strong>VS Code + GCC</strong> (or Clang on macOS). Open a terminal inside VS Code
+      (<code>Ctrl+`</code>), navigate to your file's directory, and use the compile commands
+      shown above. You'll develop a muscle memory for the workflow that will serve you well
+      throughout your entire programming career.
+    </div>
+
+    <div style="display:flex;justify-content:flex-end;margin-top:2rem;">
+      <a href="/chapters/ch01-introduction/index.html" class="btn" style="text-decoration:none;">
+        Start Chapter 01 →
+      </a>
+    </div>
+
+  </div><!-- /content -->
+</main>
+</div><!-- /layout -->
+
+<footer id="site-footer">
+  &copy; 2024 <a href="https://linkedin.com/in/adityabhuyan" target="_blank" rel="noopener">Aditya Pratap Bhuyan</a> &nbsp;|&nbsp;
+  <a href="https://github.com/aditya-bhuyan/cpp-learning-hub" target="_blank" rel="noopener">GitHub</a> &nbsp;|&nbsp;
+  GNU GPL v3 License
+</footer>
+
+<script src="/assets/js/nav.js"></script>
+<script>
+/* OS tab switcher — vanilla JS, no dependencies */
+function showOS(os) {
+  ['linux','mac','win'].forEach(function(id) {
+    document.getElementById('os-' + id).style.display = (id === os) ? 'block' : 'none';
+    var btn = document.getElementById('tab-' + id);
+    btn.className = (id === os) ? 'btn' : 'btn btn-outline';
+  });
+}
+/* Auto-detect OS from user agent for convenience */
+(function() {
+  var ua = navigator.userAgent.toLowerCase();
+  if (ua.indexOf('win') > -1)       showOS('win');
+  else if (ua.indexOf('mac') > -1)  showOS('mac');
+  else                              showOS('linux');
+})();
+</script>
+
+</body>
+</html>
