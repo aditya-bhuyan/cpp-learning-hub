@@ -4,7 +4,7 @@
 
 A structured, hands-on C++ learning resource covering fundamentals through modern C++20 — with chapter theory, coded examples, exercises, reference solutions, and chapter quizzes. Culminates in a full-stack capstone project.
 
-**Live site:** [cpp-learning-hub.netlify.app](https://cpp-learning-hub.netlify.app) *(deploy to set your URL)*  
+**Live site:** [cplusplus-learning-hub.netlify.app](https://cplusplus-learning-hub.netlify.app)  
 **Author:** [Aditya Pratap Bhuyan](https://linkedin.com/in/adityabhuyan)  
 **License:** GNU General Public License v3.0
 
