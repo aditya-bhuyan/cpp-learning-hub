@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ch 02 Examples — Variables, Types &amp; Operators | C++ Learning Hub</title>
+  <link rel="stylesheet" href="/assets/css/style.css" />
+</head>
+<body>
+<header id="site-header">
+  <button id="hamburger" aria-label="Toggle navigation">&#9776;</button>
+  <div id="site-logo">C++ Learning Hub <span class="badge">FREE</span></div>
+  <button id="theme-toggle">☾ Dark</button>
+</header>
+<div id="layout">
+<aside id="sidebar"><nav>
+  <div class="nav-section-title">C++ Learning Hub</div>
+  <div class="nav-chapter" data-chapter="home"><div class="nav-chapter-header"><span>🏠 Home</span></div><div class="nav-chapter-links"><a href="/index.html">Overview</a></div></div>
+  <div class="nav-section-title">Chapters</div>
+  <div class="nav-chapter" data-chapter="ch01"><div class="nav-chapter-header"><span><span class="ch-num">01</span>Introduction to C++</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch01-introduction/index.html"><span class="link-icon">📖</span>Learning</a></div></div>
+  <div class="nav-chapter" data-chapter="ch02"><div class="nav-chapter-header"><span><span class="ch-num">02</span>Variables, Types &amp; Operators</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="index.html"><span class="link-icon">📖</span>Learning</a><a href="examples.html" class="active"><span class="link-icon">💻</span>Examples</a><a href="exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch03"><div class="nav-chapter-header"><span><span class="ch-num">03</span>Control Flow</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch03-control-flow/index.html"><span class="link-icon">📖</span>Learning</a></div></div>
+  <div class="nav-chapter" data-chapter="ch04"><div class="nav-chapter-header"><span><span class="ch-num">04</span>Functions</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch04-functions/index.html"><span class="link-icon">📖</span>Learning</a></div></div>
+  <div class="nav-chapter" data-chapter="ch05"><div class="nav-chapter-header"><span><span class="ch-num">05</span>Arrays &amp; Strings</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch05-arrays-strings/index.html"><span class="link-icon">📖</span>Learning</a></div></div>
+  <div class="nav-chapter" data-chapter="ch06"><div class="nav-chapter-header"><span><span class="ch-num">06</span>Pointers &amp; References</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch06-pointers-references/index.html"><span class="link-icon">📖</span>Learning</a></div></div>
+  <div class="nav-chapter" data-chapter="ch07"><div class="nav-chapter-header"><span><span class="ch-num">07</span>OOP — Basics</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch07-oop-basics/index.html"><span class="link-icon">📖</span>Learning</a></div></div>
+  <div class="nav-chapter" data-chapter="ch08"><div class="nav-chapter-header"><span><span class="ch-num">08</span>OOP — Inheritance &amp; Polymorphism</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch08-oop-inheritance/index.html"><span class="link-icon">📖</span>Learning</a></div></div>
+  <div class="nav-chapter" data-chapter="ch09"><div class="nav-chapter-header"><span><span class="ch-num">09</span>Templates</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch09-templates/index.html"><span class="link-icon">📖</span>Learning</a></div></div>
+  <div class="nav-chapter" data-chapter="ch10"><div class="nav-chapter-header"><span><span class="ch-num">10</span>STL — Containers</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch10-stl-containers/index.html"><span class="link-icon">📖</span>Learning</a></div></div>
+  <div class="nav-chapter" data-chapter="ch11"><div class="nav-chapter-header"><span><span class="ch-num">11</span>STL — Algorithms</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch11-stl-algorithms/index.html"><span class="link-icon">📖</span>Learning</a></div></div>
+  <div class="nav-chapter" data-chapter="ch12"><div class="nav-chapter-header"><span><span class="ch-num">12</span>Memory Management</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch12-memory-management/index.html"><span class="link-icon">📖</span>Learning</a></div></div>
+  <div class="nav-chapter" data-chapter="ch13"><div class="nav-chapter-header"><span><span class="ch-num">13</span>Exception Handling</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch13-exception-handling/index.html"><span class="link-icon">📖</span>Learning</a></div></div>
+  <div class="nav-chapter" data-chapter="ch14"><div class="nav-chapter-header"><span><span class="ch-num">14</span>File I/O</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch14-file-io/index.html"><span class="link-icon">📖</span>Learning</a></div></div>
+  <div class="nav-chapter" data-chapter="ch15"><div class="nav-chapter-header"><span><span class="ch-num">15</span>Modern C++</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch15-modern-cpp/index.html"><span class="link-icon">📖</span>Learning</a></div></div>
+  <div class="nav-section-title">Capstone</div>
+  <div class="nav-chapter" data-chapter="ch16"><div class="nav-chapter-header"><span><span class="ch-num">16</span>Capstone Project</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch16-capstone/index.html"><span class="link-icon">🎯</span>Brief</a></div></div>
+  <div class="nav-section-title">About</div>
+  <div style="padding:.4rem 1.1rem 1rem;font-size:.78rem;color:var(--muted);line-height:1.5;">Maintained by<br><a href="https://linkedin.com/in/adityabhuyan" target="_blank" rel="noopener">Aditya Pratap Bhuyan</a><br><span style="font-size:.72rem;">GNU GPL v3 License</span></div>
+</nav></aside>
+
+<main id="main">
+  <div class="page-header">
+    <div class="breadcrumb"><a href="/index.html">Home</a> › <a href="index.html">Chapter 02</a> › Examples</div>
+    <h1>Chapter 02 — Coding Examples</h1>
+    <p class="subtitle">Four fully commented programs: type sizes, overflow, casting, and bit manipulation.</p>
+    <div class="chapter-tabs">
+      <a href="index.html">📖 Learning</a>
+      <a href="examples.html" class="active">💻 Examples</a>
+      <a href="exercises.html">✏️ Exercises</a>
+      <a href="solutions.html">✅ Solutions</a>
+      <a href="quiz.html">🧠 Quiz</a>
+    </div>
+  </div>
+
+  <div class="content">
+
+    <div class="callout">
+      <strong>How to run these examples</strong>
+      Save each listing to a file and compile with <code>g++ -std=c++17 -Wall -Wextra -o demo file.cpp &amp;&amp; ./demo</code>.
+      Outputs shown below were produced on a 64-bit system; sizes of <code>long</code> and <code>long double</code> may differ on yours.
+    </div>
+
+    <!-- Example 1 -->
+    <h2>Example 1 — sizeof Demo — Sizes of Every Type</h2>
+    <p>
+      This program prints the size in bytes of every fundamental type, plus fixed-width integers, pointers and arrays. Run it on your own machine and compare — the numbers for <code>long</code> and <code>long double</code> differ between platforms.
+    </p>
+<pre><code>// sizeof_demo.cpp
+// Compile: g++ -std=c++17 -Wall -Wextra -o sizeof_demo sizeof_demo.cpp
+// Run:     ./sizeof_demo
+
+#include &lt;iostream&gt;
+#include &lt;iomanip&gt;   // std::setw
+#include &lt;climits&gt;   // CHAR_BIT, INT_MAX, INT_MIN
+#include &lt;cstdint&gt;   // fixed-width integer types
+#include &lt;cstddef&gt;   // std::size_t
+
+int main() {
+    // Left-align the type names so the sizes line up in a neat column
+    std::cout &lt;&lt; std::left;
+
+    std::cout &lt;&lt; "=== Fundamental types (size in bytes) ===\n";
+    std::cout &lt;&lt; std::setw(24) &lt;&lt; "bool"               &lt;&lt; sizeof(bool)               &lt;&lt; '\n';
+    std::cout &lt;&lt; std::setw(24) &lt;&lt; "char"               &lt;&lt; sizeof(char)               &lt;&lt; '\n';
+    std::cout &lt;&lt; std::setw(24) &lt;&lt; "short"              &lt;&lt; sizeof(short)              &lt;&lt; '\n';
+    std::cout &lt;&lt; std::setw(24) &lt;&lt; "int"                &lt;&lt; sizeof(int)                &lt;&lt; '\n';
+    std::cout &lt;&lt; std::setw(24) &lt;&lt; "long"               &lt;&lt; sizeof(long)               &lt;&lt; '\n';
+    std::cout &lt;&lt; std::setw(24) &lt;&lt; "long long"          &lt;&lt; sizeof(long long)          &lt;&lt; '\n';
+    std::cout &lt;&lt; std::setw(24) &lt;&lt; "float"              &lt;&lt; sizeof(float)              &lt;&lt; '\n';
+    std::cout &lt;&lt; std::setw(24) &lt;&lt; "double"             &lt;&lt; sizeof(double)             &lt;&lt; '\n';
+    std::cout &lt;&lt; std::setw(24) &lt;&lt; "long double"        &lt;&lt; sizeof(long double)        &lt;&lt; '\n';
+
+    std::cout &lt;&lt; "\n=== Unsigned variants (same size as signed) ===\n";
+    std::cout &lt;&lt; std::setw(24) &lt;&lt; "unsigned char"      &lt;&lt; sizeof(unsigned char)      &lt;&lt; '\n';
+    std::cout &lt;&lt; std::setw(24) &lt;&lt; "unsigned short"     &lt;&lt; sizeof(unsigned short)     &lt;&lt; '\n';
+    std::cout &lt;&lt; std::setw(24) &lt;&lt; "unsigned int"       &lt;&lt; sizeof(unsigned int)       &lt;&lt; '\n';
+    std::cout &lt;&lt; std::setw(24) &lt;&lt; "unsigned long"      &lt;&lt; sizeof(unsigned long)      &lt;&lt; '\n';
+    std::cout &lt;&lt; std::setw(24) &lt;&lt; "unsigned long long" &lt;&lt; sizeof(unsigned long long) &lt;&lt; '\n';
+
+    std::cout &lt;&lt; "\n=== Fixed-width types from &lt;cstdint&gt; ===\n";
+    std::cout &lt;&lt; std::setw(24) &lt;&lt; "int8_t"             &lt;&lt; sizeof(int8_t)             &lt;&lt; '\n';
+    std::cout &lt;&lt; std::setw(24) &lt;&lt; "int16_t"            &lt;&lt; sizeof(int16_t)            &lt;&lt; '\n';
+    std::cout &lt;&lt; std::setw(24) &lt;&lt; "int32_t"            &lt;&lt; sizeof(int32_t)            &lt;&lt; '\n';
+    std::cout &lt;&lt; std::setw(24) &lt;&lt; "int64_t"            &lt;&lt; sizeof(int64_t)            &lt;&lt; '\n';
+
+    std::cout &lt;&lt; "\n=== Pointers and library types ===\n";
+    std::cout &lt;&lt; std::setw(24) &lt;&lt; "void*"              &lt;&lt; sizeof(void*)              &lt;&lt; '\n';
+    std::cout &lt;&lt; std::setw(24) &lt;&lt; "std::size_t"        &lt;&lt; sizeof(std::size_t)        &lt;&lt; '\n';
+
+    // sizeof also works on variables and expressions (the operand is NOT evaluated).
+    // Some compilers warn about counter++ below because it has no effect - that is the point of the demo.
+    int    counter = 0;
+    double values[10];
+    std::cout &lt;&lt; "\n=== sizeof on variables and arrays ===\n";
+    std::cout &lt;&lt; "sizeof(counter)        = " &lt;&lt; sizeof(counter) &lt;&lt; '\n';
+    std::cout &lt;&lt; "sizeof(values)         = " &lt;&lt; sizeof(values)  &lt;&lt; " (10 doubles)\n";
+    std::cout &lt;&lt; "elements in values     = " &lt;&lt; sizeof(values) / sizeof(values[0]) &lt;&lt; '\n';
+    std::cout &lt;&lt; "sizeof(counter++)      = " &lt;&lt; sizeof(counter++)
+              &lt;&lt; " (counter is still " &lt;&lt; counter &lt;&lt; ")\n";
+
+    // Bits = bytes * CHAR_BIT, and the range of a signed type follows from its width
+    std::cout &lt;&lt; "\n=== Bits and range of int ===\n";
+    std::cout &lt;&lt; "Bits in an int         = " &lt;&lt; sizeof(int) * CHAR_BIT &lt;&lt; '\n';
+    std::cout &lt;&lt; "INT_MIN                = " &lt;&lt; INT_MIN &lt;&lt; '\n';
+    std::cout &lt;&lt; "INT_MAX                = " &lt;&lt; INT_MAX &lt;&lt; '\n';
+
+    return 0;
+}</code></pre>
+    <p><strong>Output (64-bit macOS / Linux):</strong></p>
+<pre><code>=== Fundamental types (size in bytes) ===
+bool                    1
+char                    1
+short                   2
+int                     4
+long                    8
+long long               8
+float                   4
+double                  8
+long double             8
+
+=== Unsigned variants (same size as signed) ===
+unsigned char           1
+unsigned short          2
+unsigned int            4
+unsigned long           8
+unsigned long long      8
+
+=== Fixed-width types from &lt;cstdint&gt; ===
+int8_t                  1
+int16_t                 2
+int32_t                 4
+int64_t                 8
+
+=== Pointers and library types ===
+void*                   8
+std::size_t             8
+
+=== sizeof on variables and arrays ===
+sizeof(counter)        = 4
+sizeof(values)         = 80 (10 doubles)
+elements in values     = 10
+sizeof(counter++)      = 4 (counter is still 0)
+
+=== Bits and range of int ===
+Bits in an int         = 32
+INT_MIN                = -2147483648
+INT_MAX                = 2147483647</code></pre>
+    <p><strong>What to notice:</strong> unsigned types are the same size as their signed twins; <code>sizeof(values) / sizeof(values[0])</code> is the idiom for an array's element count; and <code>sizeof(counter++)</code> does <em>not</em> execute the increment — <code>sizeof</code> only inspects the type at compile time.</p>
+    <div class="callout warn">
+      <strong>Platform differences</strong>
+      On 64-bit Windows (MSVC) <code>sizeof(long)</code> is <strong>4</strong>, while on 64-bit Linux and macOS it is <strong>8</strong>. If you need exactly 64 bits everywhere, use <code>int64_t</code> or <code>long long</code>.
+    </div>
+
+    <!-- Example 2 -->
+    <h2>Example 2 — Integer Overflow and Unsigned Wraparound</h2>
+    <p>
+      What happens when a value is too big (or too small) for its type? Unsigned integers wrap around modulo 2<sup>n</sup>. Signed overflow is <strong>undefined behaviour</strong>, so this program detects the problem rather than triggering it. It finishes with two classic traps: the signed/unsigned comparison and the never-ending unsigned countdown loop.
+    </p>
+<pre><code>// overflow_demo.cpp
+// Compile: g++ -std=c++17 -Wall -Wextra -o overflow_demo overflow_demo.cpp
+// Run:     ./overflow_demo
+//
+// Shows what happens when a value no longer fits in its type. Unsigned overflow
+// is well-defined (wraps modulo 2^n). Signed overflow is UNDEFINED BEHAVIOUR, so
+// this program never performs it; it detects the problem and wraps via unsigned.
+
+#include &lt;iostream&gt;
+#include &lt;limits&gt;    // std::numeric_limits
+#include &lt;climits&gt;   // INT_MAX
+#include &lt;cstdint&gt;   // uint8_t
+
+int main() {
+    // ---- 1. Unsigned wraparound at the top of the range ----
+    unsigned int u = std::numeric_limits&lt;unsigned int&gt;::max();
+    std::cout &lt;&lt; "UINT_MAX            = " &lt;&lt; u &lt;&lt; '\n';
+    u = u + 1;                                   // well-defined: wraps to 0
+    std::cout &lt;&lt; "UINT_MAX + 1        = " &lt;&lt; u &lt;&lt; "   (wrapped to 0)\n";
+
+    // ---- 2. Unsigned wraparound at the bottom of the range ----
+    unsigned int zero = 0;
+    zero = zero - 1;                             // wraps to the largest value
+    std::cout &lt;&lt; "0u - 1              = " &lt;&lt; zero &lt;&lt; "   (wrapped to the maximum)\n";
+
+    // ---- 3. An 8-bit counter wrapping around ----
+    // uint8_t holds 0..255. Cast to int when printing: otherwise cout treats it as a char.
+    uint8_t counter = 250;
+    std::cout &lt;&lt; "uint8_t counter     : ";
+    for (int i = 0; i &lt; 8; ++i) {
+        std::cout &lt;&lt; static_cast&lt;int&gt;(counter) &lt;&lt; ' ';
+        ++counter;                               // 255 + 1 wraps to 0
+    }
+    std::cout &lt;&lt; '\n';
+
+    // ---- 4. Signed overflow: detect it instead of performing it ----
+    int big = INT_MAX;
+    if (big &gt; INT_MAX - 1) {
+        std::cout &lt;&lt; "INT_MAX + 1 would overflow an int - undefined behaviour, so we skip it\n";
+    }
+
+    // Do the arithmetic in unsigned and convert back to see the "two's complement" result.
+    // (Implementation-defined before C++20, guaranteed modular from C++20 onwards.)
+    int wrapped = static_cast&lt;int&gt;(static_cast&lt;unsigned int&gt;(big) + 1u);
+    std::cout &lt;&lt; "INT_MAX + 1 (wrapped) = " &lt;&lt; wrapped &lt;&lt; '\n';
+
+    // A safer alternative: promote to a wider type before the addition
+    long long safe = static_cast&lt;long long&gt;(big) + 1;
+    std::cout &lt;&lt; "INT_MAX + 1 (long long) = " &lt;&lt; safe &lt;&lt; '\n';
+
+    // ---- 5. Signed/unsigned comparison trap ----
+    int      negative = -1;
+    unsigned positive = 1;
+    // negative is converted to unsigned (4294967295) before comparing!
+    // Compile with -Wall -Wextra to see a -Wsign-compare warning here.
+    if (negative &lt; positive) {
+        std::cout &lt;&lt; "-1 &lt; 1u  is true\n";
+    } else {
+        std::cout &lt;&lt; "-1 &lt; 1u  is FALSE (the -1 became " &lt;&lt; static_cast&lt;unsigned&gt;(negative) &lt;&lt; ")\n";
+    }
+
+    // ---- 6. A classic loop bug with unsigned counters ----
+    // for (unsigned i = 3; i &gt;= 0; --i) never ends because i &gt;= 0 is always true.
+    // Correct pattern: test before decrementing.
+    std::cout &lt;&lt; "Counting down safely: ";
+    for (unsigned i = 3; i &gt; 0; --i) {
+        std::cout &lt;&lt; i &lt;&lt; ' ';
+    }
+    std::cout &lt;&lt; "0\n";
+
+    return 0;
+}</code></pre>
+    <p><strong>Output (64-bit macOS / Linux):</strong></p>
+<pre><code>UINT_MAX            = 4294967295
+UINT_MAX + 1        = 0   (wrapped to 0)
+0u - 1              = 4294967295   (wrapped to the maximum)
+uint8_t counter     : 250 251 252 253 254 255 0 1 
+INT_MAX + 1 would overflow an int - undefined behaviour, so we skip it
+INT_MAX + 1 (wrapped) = -2147483648
+INT_MAX + 1 (long long) = 2147483648
+-1 &lt; 1u  is FALSE (the -1 became 4294967295)
+Counting down safely: 3 2 1 0</code></pre>
+    <p><strong>What to notice:</strong> the 8-bit counter goes <code>255 → 0</code>; <code>-1 &lt; 1u</code> is false because <code>-1</code> is converted to 4,294,967,295; and with <code>-Wall -Wextra</code> the compiler warns about that comparison (<code>-Wsign-compare</code>) — a good reason to always compile with warnings on.</p>
+    <div class="callout tip">
+      <strong>Tip — detect overflow before it happens</strong>
+      Check <code>a &gt; INT_MAX - b</code> before computing <code>a + b</code>, widen to <code>long long</code>, or use <code>__builtin_add_overflow</code> (GCC/Clang).
+    </div>
+
+    <!-- Example 3 -->
+    <h2>Example 3 — Type Casting — Implicit Narrowing and static_cast</h2>
+    <p>
+      This program shows safe widening, lossy narrowing, the integer-division trap, and the explicit casts that document your intent. Compiling with <code>-Wconversion</code> makes the compiler flag each lossy implicit conversion — those warnings are deliberate here.
+    </p>
+<pre><code>// casting_demo.cpp
+// Compile: g++ -std=c++17 -Wall -Wextra -Wconversion -o casting_demo casting_demo.cpp
+// Run:     ./casting_demo
+//
+// -Wconversion makes the compiler warn about every implicit narrowing below.
+// Those warnings are intentional - this program exists to show the problem.
+
+#include &lt;iostream&gt;
+
+int main() {
+    // ---- 1. Implicit widening: always safe ----
+    int    small = 42;
+    double wide  = small;                  // int -&gt; double, no information lost
+    std::cout &lt;&lt; "Widening  int 42 -&gt; double: " &lt;&lt; wide &lt;&lt; '\n';
+
+    char letter = 'A';
+    int  code   = letter + 1;              // char is promoted to int: 65 + 1
+    std::cout &lt;&lt; "char 'A' + 1 as int      : " &lt;&lt; code &lt;&lt; '\n';
+
+    // ---- 2. Implicit narrowing: compiles, but data is lost ----
+    double pi = 3.99;
+    int truncated = pi;                    // WARNING: fraction discarded (not rounded!)
+    std::cout &lt;&lt; "Narrowing double 3.99 -&gt; int : " &lt;&lt; truncated &lt;&lt; '\n';
+
+    double negative = -3.99;
+    int negTrunc = negative;               // WARNING: truncates toward zero -&gt; -3
+    std::cout &lt;&lt; "Narrowing double -3.99 -&gt; int: " &lt;&lt; negTrunc &lt;&lt; '\n';
+
+    int  large = 321;
+    char tiny  = large;                    // WARNING: 321 does not fit in 8 bits (321 - 256 = 65)
+    std::cout &lt;&lt; "Narrowing int 321 -&gt; char    : " &lt;&lt; static_cast&lt;int&gt;(tiny)
+              &lt;&lt; " ('" &lt;&lt; tiny &lt;&lt; "')\n";
+
+    // Brace initialization turns these silent bugs into compile errors:
+    // int safeInit{pi};                   // error: narrowing conversion of 'pi' from 'double' to 'int'
+
+    // ---- 3. The integer division trap ----
+    int sum = 17, count = 4;
+    double wrongAvg = sum / count;                         // integer division FIRST -&gt; 4, then 4.0
+    double rightAvg = static_cast&lt;double&gt;(sum) / count;    // 17.0 / 4 -&gt; 4.25
+    std::cout &lt;&lt; "\nsum / count (wrong)          : " &lt;&lt; wrongAvg &lt;&lt; '\n';
+    std::cout &lt;&lt; "static_cast&lt;double&gt;(sum)/count: " &lt;&lt; rightAvg &lt;&lt; '\n';
+
+    // The cast applies to sum ALONE, before the division. This is NOT the same thing:
+    double alsoWrong = static_cast&lt;double&gt;(sum / count);   // division still done in ints
+    std::cout &lt;&lt; "static_cast&lt;double&gt;(sum/count): " &lt;&lt; alsoWrong &lt;&lt; '\n';
+
+    // ---- 4. static_cast for explicit, intentional conversions ----
+    double price = 19.99;
+    int    dollars = static_cast&lt;int&gt;(price);              // intent is clear: drop the cents
+    int    rounded = static_cast&lt;int&gt;(price + 0.5);        // simple rounding for positive values
+    std::cout &lt;&lt; "\nprice " &lt;&lt; price &lt;&lt; " -&gt; dollars " &lt;&lt; dollars
+              &lt;&lt; ", rounded " &lt;&lt; rounded &lt;&lt; '\n';
+
+    char next = static_cast&lt;char&gt;('a' + 1);                // int result converted back to char
+    std::cout &lt;&lt; "'a' + 1 as char           : " &lt;&lt; next &lt;&lt; '\n';
+
+    int ascii = static_cast&lt;int&gt;('Z');                     // see the numeric code of a char
+    std::cout &lt;&lt; "numeric code of 'Z'       : " &lt;&lt; ascii &lt;&lt; '\n';
+
+    // ---- 5. C-style and functional casts (work, but avoid them) ----
+    int cStyle = (int)pi;                                  // C-style: can hide dangerous conversions
+    int funcStyle = int(pi);                               // functional style
+    std::cout &lt;&lt; "\nC-style cast  (int)3.99 : " &lt;&lt; cStyle &lt;&lt; '\n';
+    std::cout &lt;&lt; "functional cast int(3.99): " &lt;&lt; funcStyle &lt;&lt; '\n';
+
+    // ---- 6. Mixed arithmetic: usual arithmetic conversions ----
+    int    apples = 7;
+    double weight = 0.5;
+    auto   total  = apples * weight;                       // int is converted to double
+    std::cout &lt;&lt; "7 * 0.5 -&gt; " &lt;&lt; total &lt;&lt; " (type double)\n";
+
+    return 0;
+}</code></pre>
+    <p><strong>Output (64-bit macOS / Linux):</strong></p>
+<pre><code>Widening  int 42 -&gt; double: 42
+char 'A' + 1 as int      : 66
+Narrowing double 3.99 -&gt; int : 3
+Narrowing double -3.99 -&gt; int: -3
+Narrowing int 321 -&gt; char    : 65 ('A')
+
+sum / count (wrong)          : 4
+static_cast&lt;double&gt;(sum)/count: 4.25
+static_cast&lt;double&gt;(sum/count): 4
+
+price 19.99 -&gt; dollars 19, rounded 20
+'a' + 1 as char           : b
+numeric code of 'Z'       : 90
+
+C-style cast  (int)3.99 : 3
+functional cast int(3.99): 3
+7 * 0.5 -&gt; 3.5 (type double)</code></pre>
+    <p><strong>What to notice:</strong> narrowing <code>3.99</code> gives <code>3</code> (truncation, not rounding); <code>321</code> in a <code>char</code> becomes <code>65</code> ('A') because only the low 8 bits survive; and <code>static_cast&lt;double&gt;(sum / count)</code> is <em>still wrong</em> because the division happens before the cast.</p>
+    <div class="callout warn">
+      <strong>Place the cast on an operand, not on the result</strong>
+      <code>static_cast&lt;double&gt;(a) / b</code> converts <code>a</code> first, so the division is floating-point. <code>static_cast&lt;double&gt;(a / b)</code> converts a result that has already lost its fraction.
+    </div>
+
+    <!-- Example 4 -->
+    <h2>Example 4 — Bitwise Operations — Odd Check, Set, Clear, Toggle</h2>
+    <p>
+      Small helper functions wrap the standard bit-twiddling idioms: test the lowest bit to find odd numbers, then use <code>|</code>, <code>&amp; ~</code>, and <code>^</code> with a mask <code>1u &lt;&lt; pos</code> to set, clear, and toggle a chosen bit. <code>std::bitset&lt;8&gt;</code> prints each value in binary so you can see exactly what changed.
+    </p>
+<pre><code>// bitwise_demo.cpp
+// Compile: g++ -std=c++17 -Wall -Wextra -o bitwise_demo bitwise_demo.cpp
+// Run:     ./bitwise_demo
+//
+// Bit positions are numbered from 0 at the RIGHT (least significant bit):
+//     bit:  7 6 5 4 3 2 1 0
+//     n=45: 0 0 1 0 1 1 0 1
+
+#include &lt;iostream&gt;
+#include &lt;iomanip&gt;   // std::setw
+#include &lt;bitset&gt;    // std::bitset - prints a number in binary
+
+// Prints a label, the value in 8-bit binary, and in decimal
+void show(const char* label, unsigned int value) {
+    std::cout &lt;&lt; std::left &lt;&lt; std::setw(26) &lt;&lt; label
+              &lt;&lt; std::bitset&lt;8&gt;(value) &lt;&lt; "  (" &lt;&lt; value &lt;&lt; ")\n";
+}
+
+// An integer is odd exactly when its lowest bit is 1
+bool isOdd(int n) {
+    return (n &amp; 1) != 0;
+}
+
+// Return a copy of value with bit 'pos' forced to 1:   OR with a mask
+unsigned int setBit(unsigned int value, int pos) {
+    return value | (1u &lt;&lt; pos);
+}
+
+// Return a copy of value with bit 'pos' forced to 0:   AND with an inverted mask
+unsigned int clearBit(unsigned int value, int pos) {
+    return value &amp; ~(1u &lt;&lt; pos);
+}
+
+// Return a copy of value with bit 'pos' flipped:       XOR with a mask
+unsigned int toggleBit(unsigned int value, int pos) {
+    return value ^ (1u &lt;&lt; pos);
+}
+
+// Is bit 'pos' set?
+bool testBit(unsigned int value, int pos) {
+    return ((value &gt;&gt; pos) &amp; 1u) != 0;
+}
+
+int main() {
+    // ---- Part 1: odd / even with n &amp; 1 ----
+    std::cout &lt;&lt; "--- Odd or even? ---\n";
+    int samples[] = {7, 10, 0, -3};
+    for (int n : samples) {
+        std::cout &lt;&lt; std::setw(3) &lt;&lt; n &lt;&lt; " is " &lt;&lt; (isOdd(n) ? "odd" : "even") &lt;&lt; '\n';
+    }
+
+    // ---- Part 2: set / clear / toggle / test a bit ----
+    std::cout &lt;&lt; "\n--- Bit manipulation ---\n";
+    unsigned int value = 45;                       // 00101101
+    show("original", value);
+
+    value = setBit(value, 1);                      // 00101101 | 00000010 = 00101111
+    show("setBit(1)", value);
+
+    value = clearBit(value, 0);                    // 00101111 &amp; 11111110 = 00101110
+    show("clearBit(0)", value);
+
+    value = toggleBit(value, 5);                   // bit 5 was 1 -&gt; becomes 0
+    show("toggleBit(5)", value);
+
+    value = toggleBit(value, 5);                   // toggling again restores it
+    show("toggleBit(5) again", value);
+
+    std::cout &lt;&lt; "testBit(3) = " &lt;&lt; std::boolalpha &lt;&lt; testBit(value, 3) &lt;&lt; '\n';
+    std::cout &lt;&lt; "testBit(4) = " &lt;&lt; testBit(value, 4) &lt;&lt; '\n';
+
+    // ---- Part 3: the six bitwise operators on 12 (1100) and 10 (1010) ----
+    std::cout &lt;&lt; "\n--- Operators on a=12, b=10 ---\n";
+    unsigned int a = 12, b = 10;
+    show("a",       a);
+    show("b",       b);
+    show("a &amp; b",   a &amp; b);
+    show("a | b",   a | b);
+    show("a ^ b",   a ^ b);
+    show("~a (8 bits)", ~a &amp; 0xFFu);               // mask to keep just the low 8 bits
+    show("a &lt;&lt; 2",  a &lt;&lt; 2);
+    show("a &gt;&gt; 2",  a &gt;&gt; 2);
+
+    return 0;
+}</code></pre>
+    <p><strong>Output (64-bit macOS / Linux):</strong></p>
+<pre><code>--- Odd or even? ---
+  7 is odd
+ 10 is even
+  0 is even
+ -3 is odd
+
+--- Bit manipulation ---
+original                  00101101  (45)
+setBit(1)                 00101111  (47)
+clearBit(0)               00101110  (46)
+toggleBit(5)              00001110  (14)
+toggleBit(5) again        00101110  (46)
+testBit(3) = true
+testBit(4) = false
+
+--- Operators on a=12, b=10 ---
+a                         00001100  (12)
+b                         00001010  (10)
+a &amp; b                     00001000  (8)
+a | b                     00001110  (14)
+a ^ b                     00000110  (6)
+~a (8 bits)               11110011  (243)
+a &lt;&lt; 2                    00110000  (48)
+a &gt;&gt; 2                    00000011  (3)</code></pre>
+    <p><strong>What to notice:</strong> <code>-3 &amp; 1</code> is <code>1</code> on two's-complement machines, so negative odd numbers are detected correctly (whereas <code>n % 2 == 1</code> would fail for <code>-3</code> because <code>-3 % 2</code> is <code>-1</code>). Toggling the same bit twice restores the original value.</p>
+    <div class="callout tip">
+      <strong>The mask pattern</strong>
+      Every single-bit operation builds a mask <code>1u &lt;&lt; pos</code> (a 1 in the target position, zeros elsewhere), then combines it with the value: <code>|</code> to force on, <code>&amp; ~mask</code> to force off, <code>^</code> to flip, <code>&amp;</code> to test.
+    </div>
+
+    <h2>Key Observations</h2>
+    <ul>
+      <li><code>sizeof</code> is a compile-time operator; it never evaluates its operand.</li>
+      <li>Unsigned arithmetic wraps; signed overflow is undefined — never rely on it.</li>
+      <li>Implicit narrowing compiles silently; enable <code>-Wconversion</code> or use <code>{}</code> initialization to catch it.</li>
+      <li>Masks built with <code>1u &lt;&lt; pos</code> give you set, clear, toggle, and test in one line each.</li>
+    </ul>
+
+    <div style="display:flex;justify-content:space-between;margin-top:2rem;">
+      <a href="index.html" class="btn btn-outline" style="text-decoration:none;">← Learning</a>
+      <a href="exercises.html" class="btn" style="text-decoration:none;">Next: Exercises →</a>
+    </div>
+
+  </div>
+</main>
+</div>
+<footer id="site-footer">
+  &copy; 2024 <a href="https://linkedin.com/in/adityabhuyan" target="_blank" rel="noopener">Aditya Pratap Bhuyan</a> &nbsp;|&nbsp;
+  <a href="https://github.com/aditya-bhuyan/cpp-learning-hub" target="_blank" rel="noopener">GitHub</a> &nbsp;|&nbsp;
+  GNU GPL v3 License
+</footer>
+<script src="/assets/js/nav.js"></script>
+</body>
+</html>

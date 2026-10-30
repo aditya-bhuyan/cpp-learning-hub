@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ch 13 Solutions — Exception Handling | C++ Learning Hub</title>
+  <link rel="stylesheet" href="/assets/css/style.css" />
+</head>
+<body>
+<header id="site-header">
+  <button id="hamburger" aria-label="Toggle navigation">&#9776;</button>
+  <div id="site-logo">C++ Learning Hub <span class="badge">FREE</span></div>
+  <button id="theme-toggle">☾ Dark</button>
+</header>
+<div id="layout">
+<aside id="sidebar"><nav>
+  <div class="nav-section-title">C++ Learning Hub</div>
+  <div class="nav-chapter" data-chapter="home"><div class="nav-chapter-header"><span>🏠 Home</span></div><div class="nav-chapter-links"><a href="/index.html">Overview</a></div></div>
+  <div class="nav-section-title">Chapters</div>
+  <div class="nav-chapter" data-chapter="ch01"><div class="nav-chapter-header"><span><span class="ch-num">01</span>Introduction to C++</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch01-introduction/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch01-introduction/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch01-introduction/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch01-introduction/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch01-introduction/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch02"><div class="nav-chapter-header"><span><span class="ch-num">02</span>Variables, Types &amp; Operators</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch02-variables-types-operators/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch02-variables-types-operators/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch02-variables-types-operators/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch02-variables-types-operators/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch02-variables-types-operators/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch03"><div class="nav-chapter-header"><span><span class="ch-num">03</span>Control Flow</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch03-control-flow/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch03-control-flow/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch03-control-flow/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch03-control-flow/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch03-control-flow/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch04"><div class="nav-chapter-header"><span><span class="ch-num">04</span>Functions</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch04-functions/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch04-functions/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch04-functions/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch04-functions/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch04-functions/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch05"><div class="nav-chapter-header"><span><span class="ch-num">05</span>Arrays &amp; Strings</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch05-arrays-strings/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch05-arrays-strings/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch05-arrays-strings/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch05-arrays-strings/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch05-arrays-strings/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch06"><div class="nav-chapter-header"><span><span class="ch-num">06</span>Pointers &amp; References</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch06-pointers-references/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch06-pointers-references/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch06-pointers-references/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch06-pointers-references/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch06-pointers-references/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch07"><div class="nav-chapter-header"><span><span class="ch-num">07</span>OOP — Basics</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch07-oop-basics/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch07-oop-basics/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch07-oop-basics/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch07-oop-basics/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch07-oop-basics/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch08"><div class="nav-chapter-header"><span><span class="ch-num">08</span>OOP — Inheritance &amp; Polymorphism</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch08-oop-inheritance/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch08-oop-inheritance/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch08-oop-inheritance/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch08-oop-inheritance/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch08-oop-inheritance/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch09"><div class="nav-chapter-header"><span><span class="ch-num">09</span>Templates</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch09-templates/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch09-templates/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch09-templates/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch09-templates/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch09-templates/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch10"><div class="nav-chapter-header"><span><span class="ch-num">10</span>STL — Containers</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch10-stl-containers/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch10-stl-containers/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch10-stl-containers/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch10-stl-containers/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch10-stl-containers/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch11"><div class="nav-chapter-header"><span><span class="ch-num">11</span>STL — Algorithms &amp; Iterators</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch11-stl-algorithms/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch11-stl-algorithms/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch11-stl-algorithms/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch11-stl-algorithms/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch11-stl-algorithms/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch12"><div class="nav-chapter-header"><span><span class="ch-num">12</span>Memory Management</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch12-memory-management/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch12-memory-management/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch12-memory-management/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch12-memory-management/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch12-memory-management/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch13"><div class="nav-chapter-header"><span><span class="ch-num">13</span>Exception Handling</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="index.html"><span class="link-icon">📖</span>Learning</a><a href="examples.html"><span class="link-icon">💻</span>Examples</a><a href="exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="solutions.html" class="active"><span class="link-icon">✅</span>Solutions</a><a href="quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch14"><div class="nav-chapter-header"><span><span class="ch-num">14</span>File I/O</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch14-file-io/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch14-file-io/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch14-file-io/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch14-file-io/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch14-file-io/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch15"><div class="nav-chapter-header"><span><span class="ch-num">15</span>Modern C++ (C++11–C++20)</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch15-modern-cpp/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch15-modern-cpp/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch15-modern-cpp/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch15-modern-cpp/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch15-modern-cpp/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-section-title">Capstone</div>
+  <div class="nav-chapter" data-chapter="ch16"><div class="nav-chapter-header"><span><span class="ch-num">16</span>Capstone Project</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch16-capstone/index.html"><span class="link-icon">🎯</span>Brief</a><a href="/chapters/ch16-capstone/walkthrough.html"><span class="link-icon">🗺</span>Walkthrough</a><a href="/chapters/ch16-capstone/solution.html"><span class="link-icon">✅</span>Solution</a></div></div>
+  <div class="nav-section-title">About</div>
+  <div style="padding:.4rem 1.1rem 1rem;font-size:.78rem;color:var(--muted);line-height:1.5;">Maintained by<br><a href="https://linkedin.com/in/adityabhuyan" target="_blank" rel="noopener">Aditya Pratap Bhuyan</a><br><span style="font-size:.72rem;">GNU GPL v3 License</span></div>
+</nav></aside>
+
+<main id="main">
+  <div class="page-header">
+    <div class="breadcrumb"><a href="/index.html">Home</a> › <a href="index.html">Chapter 13</a> › Solutions</div>
+    <h1>Chapter 13 — Solutions</h1>
+    <p class="subtitle">Reference solutions with explanations. Only read after attempting the exercises yourself.</p>
+    <div class="chapter-tabs">
+      <a href="index.html">📖 Learning</a>
+      <a href="examples.html">💻 Examples</a>
+      <a href="exercises.html">✏️ Exercises</a>
+      <a href="solutions.html" class="active">✅ Solutions</a>
+      <a href="quiz.html">🧠 Quiz</a>
+    </div>
+  </div>
+
+  <div class="content">
+
+    <div class="callout warn">
+      <strong>Spoiler Warning</strong>
+      These are reference solutions. There are often multiple valid approaches — if your output matches
+      but your code differs, that is perfectly fine.
+    </div>
+
+    <!-- Solution 1 -->
+    <div class="solution-card">
+      <div class="card-header">✅ Solution 1 — Safe Division Function</div>
+      <div class="card-body">
+        <p>
+          The key is wrapping each <code>safeDiv</code> call in its own <code>try/catch</code>
+          (or a single loop) so execution continues after the exception is caught.
+        </p>
+<pre><code>// solution_13_1_safediv.cpp
+#include &lt;iostream&gt;
+#include &lt;stdexcept&gt;
+using namespace std;
+
+// Returns a / b, or throws std::invalid_argument if b == 0
+int safeDiv(int a, int b) {
+    if (b == 0)
+        throw invalid_argument("safeDiv: divisor cannot be zero");
+    return a / b;
+}
+
+// Helper: attempt one division and report result or error
+void tryDiv(int a, int b) {
+    try {
+        cout &lt;&lt; a &lt;&lt; " / " &lt;&lt; b &lt;&lt; " = " &lt;&lt; safeDiv(a, b) &lt;&lt; "\n";
+    }
+    catch (const invalid_argument&amp; e) {
+        cerr &lt;&lt; "Error: " &lt;&lt; e.what() &lt;&lt; "\n";
+    }
+}
+
+int main() {
+    tryDiv(10, 2);    // 5
+    tryDiv(15, 3);    // 5
+    tryDiv(7,  0);    // throws — caught, execution continues
+    tryDiv(8,  4);    // 2
+    return 0;
+}</code></pre>
+        <p>
+          <strong>Key concepts:</strong> <code>std::invalid_argument</code>, multiple independent
+          try/catch blocks, execution continues after the catch.
+        </p>
+      </div>
+    </div>
+
+    <!-- Solution 2 -->
+    <div class="solution-card">
+      <div class="card-header">✅ Solution 2 — Parsing a Positive Integer</div>
+      <div class="card-body">
+        <p>
+          <code>std::stoi</code> already throws <code>std::invalid_argument</code> for non-numeric
+          strings and <code>std::out_of_range</code> for overflow. We let those propagate and add
+          one more check for non-positive results.
+        </p>
+<pre><code>// solution_13_2_parse.cpp
+#include &lt;iostream&gt;
+#include &lt;stdexcept&gt;
+#include &lt;string&gt;
+using namespace std;
+
+// May throw std::invalid_argument or std::out_of_range
+int parsePositiveInt(const string&amp; s) {
+    int value = stoi(s);   // throws invalid_argument / out_of_range on bad input
+    if (value &lt;= 0)
+        throw invalid_argument("Input must be a positive integer");
+    return value;
+}
+
+void test(const string&amp; input) {
+    cout &lt;&lt; input &lt;&lt; ": ";
+    try {
+        int v = parsePositiveInt(input);
+        cout &lt;&lt; "parsed OK = " &lt;&lt; v &lt;&lt; "\n";
+    }
+    catch (const invalid_argument&amp; e) {
+        cerr &lt;&lt; "invalid_argument: " &lt;&lt; e.what() &lt;&lt; "\n";
+    }
+    catch (const out_of_range&amp; e) {
+        cerr &lt;&lt; "out_of_range: " &lt;&lt; e.what() &lt;&lt; "\n";
+    }
+}
+
+int main() {
+    test("42");
+    test("-7");
+    test("0");
+    test("abc");
+    test("99999999999");
+    return 0;
+}</code></pre>
+        <p>
+          <strong>Key concepts:</strong> letting library exceptions propagate, adding domain-level
+          validation on top of library exceptions, ordering <code>catch</code> clauses from
+          most-specific to least-specific.
+        </p>
+      </div>
+    </div>
+
+    <!-- Solution 3 -->
+    <div class="solution-card">
+      <div class="card-header">✅ Solution 3 — InsufficientFundsException with BankAccount</div>
+      <div class="card-body">
+        <p>
+          Inheriting <code>std::runtime_error</code> gives us free string storage and a <code>what()</code>
+          implementation. We build the message in the constructor initialiser using <code>std::to_string</code>
+          and store the raw values for the accessors.
+        </p>
+<pre><code>// solution_13_3_bank.cpp
+#include &lt;iostream&gt;
+#include &lt;stdexcept&gt;
+#include &lt;string&gt;
+#include &lt;iomanip&gt;
+using namespace std;
+
+class InsufficientFundsException : public runtime_error {
+    double m_requested;
+    double m_balance;
+public:
+    InsufficientFundsException(double requested, double balance)
+        : runtime_error("Insufficient funds \xe2\x80\x94 requested "
+                        + to_string(requested)
+                        + ", available "
+                        + to_string(balance))
+        , m_requested(requested)
+        , m_balance(balance)
+    {}
+
+    double requestedAmount() const noexcept { return m_requested; }
+    double currentBalance()  const noexcept { return m_balance; }
+};
+
+class BankAccount {
+    double m_balance;
+public:
+    explicit BankAccount(double initial) : m_balance(initial) {}
+
+    void withdraw(double amount) {
+        if (amount &gt; m_balance)
+            throw InsufficientFundsException(amount, m_balance);
+        m_balance -= amount;
+        cout &lt;&lt; fixed &lt;&lt; setprecision(2)
+             &lt;&lt; "Withdrew " &lt;&lt; amount &lt;&lt; ". Balance: " &lt;&lt; m_balance &lt;&lt; "\n";
+    }
+
+    double balance() const noexcept { return m_balance; }
+};
+
+int main() {
+    BankAccount account(500.00);
+
+    // These two succeed
+    account.withdraw(200.00);
+    account.withdraw(150.00);
+
+    // This one fails — balance is now 150.00, request is 200.00
+    try {
+        account.withdraw(200.00);
+    }
+    catch (const InsufficientFundsException&amp; e) {
+        cerr &lt;&lt; fixed &lt;&lt; setprecision(2);
+        cerr &lt;&lt; "Exception: " &lt;&lt; e.what() &lt;&lt; "\n";
+        cerr &lt;&lt; "Shortfall: "
+             &lt;&lt; (e.requestedAmount() - e.currentBalance()) &lt;&lt; "\n";
+    }
+
+    return 0;
+}</code></pre>
+        <p>
+          <strong>Key concepts:</strong> custom exception with member data, inheriting
+          <code>std::runtime_error</code>, using <code>noexcept</code> on accessors.
+        </p>
+      </div>
+    </div>
+
+    <!-- Solution 4 -->
+    <div class="solution-card">
+      <div class="card-header">✅ Solution 4 — Exception Propagation Through a Call Chain</div>
+      <div class="card-body">
+        <p>
+          <code>funcB</code> has no <code>try/catch</code>, so the exception from <code>funcC</code>
+          passes through transparently. <code>funcA</code> catches it, logs it, then throws a
+          <em>new</em> exception with added context — a common exception translation pattern.
+        </p>
+<pre><code>// solution_13_4_chain.cpp
+#include &lt;iostream&gt;
+#include &lt;stdexcept&gt;
+using namespace std;
+
+void funcC() {
+    cout &lt;&lt; "Entering funcC\n";
+    throw runtime_error("Error in C");
+}
+
+void funcB() {
+    cout &lt;&lt; "Entering funcB\n";
+    funcC();   // no catch — exception propagates upward
+}
+
+void funcA() {
+    cout &lt;&lt; "Entering funcA\n";
+    try {
+        funcB();
+    }
+    catch (const runtime_error&amp; e) {
+        cout &lt;&lt; "funcA caught: " &lt;&lt; e.what() &lt;&lt; "\n";
+        // Translate: throw a new, higher-level exception
+        throw runtime_error(
+            string("funcA caught and translated: ") + e.what());
+    }
+}
+
+int main() {
+    try {
+        funcA();
+    }
+    catch (const runtime_error&amp; e) {
+        cout &lt;&lt; "main caught translated: " &lt;&lt; e.what() &lt;&lt; "\n";
+    }
+    catch (...) {
+        cout &lt;&lt; "Unknown exception reached main\n";
+    }
+    return 0;
+}</code></pre>
+        <p>
+          <strong>Key concepts:</strong> transparent propagation through un-catching frames,
+          exception translation (catch-and-rethrow-new), catch-all safety net.
+        </p>
+      </div>
+    </div>
+
+    <!-- Solution 5 -->
+    <div class="solution-card">
+      <div class="card-header">✅ Solution 5 — Strong Exception-Safe Transaction Manager</div>
+      <div class="card-body">
+        <p>
+          The strong guarantee is achieved with the <strong>copy-then-modify</strong> pattern:
+          make a copy of the data before starting, apply all operations to the copy, and only
+          replace the real data when everything has succeeded. If any operation throws, the
+          original data is untouched.
+        </p>
+<pre><code>// solution_13_5_transaction.cpp
+#include &lt;iostream&gt;
+#include &lt;stdexcept&gt;
+#include &lt;vector&gt;
+#include &lt;functional&gt;
+using namespace std;
+
+class TransactionManager {
+public:
+    vector&lt;int&gt; data;
+
+    // Strong guarantee: either all ops succeed or data is unchanged
+    void applyAll(const vector&lt;function&lt;void(vector&lt;int&gt;&amp;)&gt;&gt;&amp; ops) {
+        // 1. Make a working copy — this is the rollback snapshot
+        vector&lt;int&gt; workCopy = data;
+
+        // 2. Apply each operation to the working copy
+        //    If any throws, workCopy is partially modified but data is untouched
+        for (const auto&amp; op : ops)
+            op(workCopy);   // may throw
+
+        // 3. All operations succeeded — commit (noexcept swap)
+        data.swap(workCopy);
+    }
+};
+
+// Helper: print vector contents
+void printData(const string&amp; label, const vector&lt;int&gt;&amp; v) {
+    cout &lt;&lt; label &lt;&lt; ": [";
+    for (size_t i = 0; i &lt; v.size(); ++i) {
+        if (i) cout &lt;&lt; ", ";
+        cout &lt;&lt; v[i];
+    }
+    cout &lt;&lt; "]\n";
+}
+
+int main() {
+    TransactionManager tm;
+
+    // ── Transaction 1: op3 throws — data must be unchanged ───────────────────
+    printData("Before transaction", tm.data);
+
+    auto op1 = [](vector&lt;int&gt;&amp; v) { v.push_back(10); };
+    auto op2 = [](vector&lt;int&gt;&amp; v) { v.push_back(20); };
+    auto op3 = [](vector&lt;int&gt;&amp;)   { throw runtime_error("Op 3 failed"); };
+
+    try {
+        tm.applyAll({op1, op2, op3});
+    }
+    catch (const runtime_error&amp; e) {
+        cout &lt;&lt; "Transaction 1 failed: " &lt;&lt; e.what() &lt;&lt; "\n";
+    }
+    printData("After failed transaction", tm.data);   // must still be []
+
+    // ── Transaction 2: only successful ops ───────────────────────────────────
+    try {
+        tm.applyAll({op1, op2});
+        cout &lt;&lt; "Transaction 2 succeeded.\n";
+    }
+    catch (const runtime_error&amp; e) {
+        cout &lt;&lt; "Transaction 2 failed: " &lt;&lt; e.what() &lt;&lt; "\n";
+    }
+    printData("After successful transaction", tm.data);   // [10, 20]
+
+    return 0;
+}</code></pre>
+        <p>
+          <strong>Key concepts:</strong> strong exception safety guarantee, copy-then-modify idiom,
+          <code>std::vector::swap</code> (noexcept — safe for the commit step),
+          <code>std::function</code> as a callback type.
+        </p>
+        <p>
+          <strong>Why swap and not assign?</strong>
+          <code>swap</code> on two vectors is <code>noexcept</code> and O(1): it just exchanges
+          internal pointers. Assignment might throw if the allocator misbehaves. Using swap for the
+          commit step keeps the commit itself at the no-throw level.
+        </p>
+      </div>
+    </div>
+
+    <div style="display:flex;justify-content:space-between;margin-top:2rem;">
+      <a href="exercises.html" class="btn btn-outline" style="text-decoration:none;">← Exercises</a>
+      <a href="quiz.html" class="btn" style="text-decoration:none;">Take the Quiz →</a>
+    </div>
+
+  </div>
+</main>
+</div>
+<footer id="site-footer">
+  &copy; 2024 <a href="https://linkedin.com/in/adityabhuyan" target="_blank" rel="noopener">Aditya Pratap Bhuyan</a> &nbsp;|&nbsp;
+  <a href="https://github.com/aditya-bhuyan/cpp-learning-hub" target="_blank" rel="noopener">GitHub</a> &nbsp;|&nbsp;
+  GNU GPL v3 License
+</footer>
+<script src="/assets/js/nav.js"></script>
+</body>
+</html>

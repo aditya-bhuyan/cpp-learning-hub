@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ch 11 Solutions — STL Algorithms &amp; Iterators | C++ Learning Hub</title>
+  <link rel="stylesheet" href="/assets/css/style.css" />
+</head>
+<body>
+<header id="site-header">
+  <button id="hamburger" aria-label="Toggle navigation">&#9776;</button>
+  <div id="site-logo">C++ Learning Hub <span class="badge">FREE</span></div>
+  <button id="theme-toggle">☾ Dark</button>
+</header>
+<div id="layout">
+<aside id="sidebar"><nav>
+<aside id="sidebar"><nav>
+  <div class="nav-section-title">C++ Learning Hub</div>
+  <div class="nav-chapter" data-chapter="home"><div class="nav-chapter-header"><span>🏠 Home</span></div><div class="nav-chapter-links"><a href="/index.html">Overview</a></div></div>
+  <div class="nav-section-title">Chapters</div>
+  <div class="nav-chapter" data-chapter="ch01"><div class="nav-chapter-header"><span><span class="ch-num">01</span>Introduction to C++</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch01-introduction/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch01-introduction/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch01-introduction/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch01-introduction/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch01-introduction/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch02"><div class="nav-chapter-header"><span><span class="ch-num">02</span>Variables, Types &amp; Operators</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch02-variables-types-operators/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch02-variables-types-operators/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch02-variables-types-operators/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch02-variables-types-operators/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch02-variables-types-operators/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch03"><div class="nav-chapter-header"><span><span class="ch-num">03</span>Control Flow</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch03-control-flow/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch03-control-flow/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch03-control-flow/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch03-control-flow/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch03-control-flow/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch04"><div class="nav-chapter-header"><span><span class="ch-num">04</span>Functions</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch04-functions/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch04-functions/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch04-functions/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch04-functions/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch04-functions/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch05"><div class="nav-chapter-header"><span><span class="ch-num">05</span>Arrays &amp; Strings</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch05-arrays-strings/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch05-arrays-strings/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch05-arrays-strings/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch05-arrays-strings/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch05-arrays-strings/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch06"><div class="nav-chapter-header"><span><span class="ch-num">06</span>Pointers &amp; References</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch06-pointers-references/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch06-pointers-references/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch06-pointers-references/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch06-pointers-references/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch06-pointers-references/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch07"><div class="nav-chapter-header"><span><span class="ch-num">07</span>OOP — Basics</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch07-oop-basics/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch07-oop-basics/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch07-oop-basics/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch07-oop-basics/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch07-oop-basics/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch08"><div class="nav-chapter-header"><span><span class="ch-num">08</span>OOP — Inheritance &amp; Polymorphism</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch08-oop-inheritance/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch08-oop-inheritance/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch08-oop-inheritance/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch08-oop-inheritance/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch08-oop-inheritance/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch09"><div class="nav-chapter-header"><span><span class="ch-num">09</span>Templates</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch09-templates/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch09-templates/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch09-templates/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch09-templates/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch09-templates/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch10"><div class="nav-chapter-header"><span><span class="ch-num">10</span>STL — Containers</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch10-stl-containers/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch10-stl-containers/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch10-stl-containers/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch10-stl-containers/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch10-stl-containers/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter open" data-chapter="ch11"><div class="nav-chapter-header active"><span><span class="ch-num">11</span>STL — Algorithms &amp; Iterators</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch11-stl-algorithms/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch11-stl-algorithms/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch11-stl-algorithms/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch11-stl-algorithms/solutions.html" class="active"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch11-stl-algorithms/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch12"><div class="nav-chapter-header"><span><span class="ch-num">12</span>Memory Management</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch12-memory-management/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch12-memory-management/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch12-memory-management/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch12-memory-management/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch12-memory-management/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch13"><div class="nav-chapter-header"><span><span class="ch-num">13</span>Exception Handling</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch13-exception-handling/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch13-exception-handling/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch13-exception-handling/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch13-exception-handling/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch13-exception-handling/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch14"><div class="nav-chapter-header"><span><span class="ch-num">14</span>File I/O</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch14-file-io/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch14-file-io/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch14-file-io/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch14-file-io/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch14-file-io/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch15"><div class="nav-chapter-header"><span><span class="ch-num">15</span>Modern C++ (C++11–C++20)</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch15-modern-cpp/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch15-modern-cpp/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch15-modern-cpp/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch15-modern-cpp/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch15-modern-cpp/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-section-title">Capstone</div>
+  <div class="nav-chapter" data-chapter="ch16"><div class="nav-chapter-header"><span><span class="ch-num">16</span>Capstone Project</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch16-capstone/index.html"><span class="link-icon">🎯</span>Brief</a><a href="/chapters/ch16-capstone/walkthrough.html"><span class="link-icon">🗺</span>Walkthrough</a><a href="/chapters/ch16-capstone/solution.html"><span class="link-icon">✅</span>Solution</a></div></div>
+  <div class="nav-section-title">About</div>
+  <div style="padding:.4rem 1.1rem 1rem;font-size:.78rem;color:var(--muted);line-height:1.5;">Maintained by<br><a href="https://linkedin.com/in/adityabhuyan" target="_blank" rel="noopener">Aditya Pratap Bhuyan</a><br><span style="font-size:.72rem;">GNU GPL v3 License</span></div>
+</nav></aside>
+</nav></aside>
+
+<main id="main">
+  <div class="page-header">
+    <div class="breadcrumb"><a href="/index.html">Home</a> › <a href="index.html">Chapter 11</a> › Solutions</div>
+    <h1>Chapter 11 — Solutions</h1>
+    <p class="subtitle">Reference solutions with explanations. Only read after attempting the exercises yourself.</p>
+    <div class="chapter-tabs">
+      <a href="index.html">📖 Learning</a>
+      <a href="examples.html">💻 Examples</a>
+      <a href="exercises.html">✏️ Exercises</a>
+      <a href="solutions.html" class="active">✅ Solutions</a>
+      <a href="quiz.html">🧠 Quiz</a>
+    </div>
+  </div>
+
+  <div class="content">
+
+    <div class="callout warn">
+      <strong>Spoiler Warning</strong>
+      These are reference solutions. There are often multiple valid approaches — if your output matches
+      but your code differs, that is perfectly fine.
+    </div>
+
+    <!-- Solution 1 -->
+    <div class="solution-card">
+      <div class="card-header">✅ Solution 1 — Sort and Binary Search</div>
+      <div class="card-body">
+        <p>
+          <code>sort</code> establishes the precondition that <code>binary_search</code> needs. Searching an unsorted vector with <code>binary_search</code> is undefined in practice — it may report "not found" for values that are present. The bonus uses <code>lower_bound</code>, which returns an iterator, so we can also learn the <em>position</em>; we must check <code>it != v.end()</code> <em>and</em> <code>*it == 25</code>, because <code>lower_bound</code> returns the first element that is <em>not less than</em> the target, which may be a larger value.
+        </p>
+<pre><code>#include &lt;algorithm&gt;
+#include &lt;iostream&gt;
+#include &lt;vector&gt;
+using namespace std;
+
+int main() {
+    vector&lt;int&gt; v = {42, 7, 19, 3, 88, 25, 61};
+
+    sort(v.begin(), v.end());                       // binary_search needs sorted input
+
+    cout &lt;&lt; "Sorted: ";
+    for (int x : v) cout &lt;&lt; x &lt;&lt; ' ';
+    cout &lt;&lt; '\n';
+
+    for (int target : {25, 50}) {
+        if (binary_search(v.begin(), v.end(), target))
+            cout &lt;&lt; target &lt;&lt; " found\n";
+        else
+            cout &lt;&lt; target &lt;&lt; " not found\n";
+    }
+
+    // Bonus: lower_bound also tells us WHERE the value is
+    auto it = lower_bound(v.begin(), v.end(), 25);
+    if (it != v.end() &amp;&amp; *it == 25)
+        cout &lt;&lt; "25 is at index " &lt;&lt; (it - v.begin()) &lt;&lt; '\n';
+    return 0;
+}</code></pre>
+        <p><strong>Output:</strong></p>
+<pre><code>Sorted: 3 7 19 25 42 61 88 
+25 found
+50 not found
+25 is at index 3</code></pre>
+      </div>
+    </div>
+
+    <!-- Solution 2 -->
+    <div class="solution-card">
+      <div class="card-header">✅ Solution 2 — Count the Primes</div>
+      <div class="card-body">
+        <p>
+          <code>isPrime</code> rejects numbers below 2, then tests divisors <code>d</code> while <code>d * d &lt;= n</code>: if <code>n</code> has a factor larger than its square root, it must also have a smaller one, so checking up to the root is enough. Because <code>count_if</code> accepts any callable taking one <code>int</code> and returning <code>bool</code>, the function name <code>isPrime</code> can be passed directly. The result type of <code>count_if</code> is the iterator's <code>difference_type</code> (a signed integer), which prints normally.
+        </p>
+<pre><code>#include &lt;algorithm&gt;
+#include &lt;iostream&gt;
+#include &lt;vector&gt;
+using namespace std;
+
+bool isPrime(int n) {
+    if (n &lt; 2) return false;                        // 0, 1 and negatives are not prime
+    for (int d = 2; d * d &lt;= n; ++d)                // only test divisors up to sqrt(n)
+        if (n % d == 0) return false;
+    return true;
+}
+
+int main() {
+    vector&lt;int&gt; v = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15};
+
+    // A plain function name works as a predicate - no lambda needed
+    auto n = count_if(v.begin(), v.end(), isPrime);
+
+    cout &lt;&lt; "Primes in the vector: " &lt;&lt; n &lt;&lt; '\n';
+
+    cout &lt;&lt; "They are: ";
+    for (int x : v)
+        if (isPrime(x)) cout &lt;&lt; x &lt;&lt; ' ';
+    cout &lt;&lt; '\n';
+    return 0;
+}</code></pre>
+        <p><strong>Output:</strong></p>
+<pre><code>Primes in the vector: 6
+They are: 2 3 5 7 11 13 </code></pre>
+      </div>
+    </div>
+
+    <!-- Solution 3 -->
+    <div class="solution-card">
+      <div class="card-header">✅ Solution 3 — Square with transform</div>
+      <div class="card-body">
+        <p>
+          <code>transform</code> reads from <code>[nums.begin(), nums.end())</code>, applies the lambda, and writes the results through <code>back_inserter(squares)</code>, which calls <code>push_back</code> on the empty destination. The source is never modified, because the output iterator does not point into it. The second form shows the alternative: the destination is pre-sized, so a plain <code>begin()</code> iterator can be used. Passing <code>nums.begin()</code> as the output instead would square the vector <em>in place</em>.
+        </p>
+<pre><code>#include &lt;algorithm&gt;
+#include &lt;iostream&gt;
+#include &lt;iterator&gt;
+#include &lt;vector&gt;
+using namespace std;
+
+void print(const char* label, const vector&lt;int&gt;&amp; v) {
+    cout &lt;&lt; label;
+    for (int x : v) cout &lt;&lt; x &lt;&lt; ' ';
+    cout &lt;&lt; '\n';
+}
+
+int main() {
+    vector&lt;int&gt; nums = {1, 2, 3, 4, 5, 6};
+    vector&lt;int&gt; squares;
+
+    transform(nums.begin(), nums.end(), back_inserter(squares),
+              [](int x) { return x * x; });
+
+    print("Original: ", nums);       // unchanged
+    print("Squares : ", squares);
+
+    // Alternative: pre-size the destination and write with squares2.begin()
+    vector&lt;int&gt; squares2(nums.size());
+    transform(nums.begin(), nums.end(), squares2.begin(), [](int x) { return x * x; });
+    print("Squares2: ", squares2);
+    return 0;
+}</code></pre>
+        <p><strong>Output:</strong></p>
+<pre><code>Original: 1 2 3 4 5 6 
+Squares : 1 4 9 16 25 36 
+Squares2: 1 4 9 16 25 36 </code></pre>
+      </div>
+    </div>
+
+    <!-- Solution 4 -->
+    <div class="solution-card">
+      <div class="card-header">✅ Solution 4 — Find Duplicates</div>
+      <div class="card-body">
+        <p>
+          Sorting makes equal values adjacent: <code>1 1 2 4 4 4 7 7 9</code>. <code>adjacent_find</code> returns an iterator to the first element of the first equal pair (or <code>end()</code> if there is none). We record that value, then use <code>find_if</code> to jump to the first element <em>different</em> from it — this skips the whole run, so the value <code>4</code>, which appears three times, is reported only once. The next <code>adjacent_find</code> starts from there. The loop ends when no further equal pair exists. Sorting is O(n log n) and the scan is O(n).
+        </p>
+<pre><code>#include &lt;algorithm&gt;
+#include &lt;iostream&gt;
+#include &lt;vector&gt;
+using namespace std;
+
+int main() {
+    vector&lt;int&gt; v = {4, 1, 7, 4, 9, 1, 4, 2, 7};
+
+    sort(v.begin(), v.end());                       // equal values become adjacent
+
+    vector&lt;int&gt; duplicates;
+    auto it = adjacent_find(v.begin(), v.end());    // first position where *it == *(it+1)
+
+    while (it != v.end()) {
+        duplicates.push_back(*it);
+        int dupValue = *it;
+
+        // Skip over the whole run of this value so we report it only once
+        it = find_if(it, v.end(), [dupValue](int x) { return x != dupValue; });
+
+        // Look for the next adjacent pair starting from the new position
+        it = adjacent_find(it, v.end());
+    }
+
+    cout &lt;&lt; "Duplicated values: ";
+    for (int d : duplicates) cout &lt;&lt; d &lt;&lt; ' ';
+    cout &lt;&lt; '\n';
+    return 0;
+}</code></pre>
+        <p><strong>Output:</strong></p>
+<pre><code>Duplicated values: 1 4 7 </code></pre>
+        <div class="callout tip">
+          <strong>Alternative</strong>
+          A <code>std::map&lt;int, int&gt;</code> frequency table also finds duplicates in O(n log n) and tells you <em>how many</em> times each value occurs; the sort + adjacent_find approach uses no extra memory beyond the result.
+        </div>
+      </div>
+    </div>
+
+    <!-- Solution 5 -->
+    <div class="solution-card">
+      <div class="card-header">✅ Solution 5 — Student Report</div>
+      <div class="card-body">
+        <p>
+          <code>stable_partition</code> moves the passing students to the front and returns <code>split</code>, an iterator to the first failing student. That single iterator divides the vector into two sub-ranges, so each half can be sorted independently with <code>sort(begin, split, cmp)</code> and <code>sort(split, end, cmp)</code> — the passing students never mix with the failing ones. Finally <code>transform</code> converts each <code>Student</code> into a <code>string</code> (a different type!) via <code>back_inserter</code>. Subtracting iterators (<code>split - students.begin()</code>) gives the number of passing students, since vector iterators are random-access.
+        </p>
+<pre><code>#include &lt;algorithm&gt;
+#include &lt;iomanip&gt;
+#include &lt;iostream&gt;
+#include &lt;iterator&gt;
+#include &lt;string&gt;
+#include &lt;vector&gt;
+using namespace std;
+
+struct Student {
+    string name;
+    int    grade;       // 0-100
+};
+
+int main() {
+    vector&lt;Student&gt; students = {
+        {"Alice", 92}, {"Bob", 58}, {"Carol", 75}, {"Dave", 49},
+        {"Eve", 88},   {"Frank", 60}, {"Grace", 95}
+    };
+    int passMark = 60;      // captured by value in the lambdas below
+
+    // 1. partition: passing students first. stable_partition keeps their input order.
+    auto split = stable_partition(students.begin(), students.end(),
+        [passMark](const Student&amp; s) { return s.grade &gt;= passMark; });
+
+    // 2. sort each group by grade (descending). 'split' marks the boundary.
+    auto byGradeDesc = [](const Student&amp; a, const Student&amp; b) { return a.grade &gt; b.grade; };
+    sort(students.begin(), split, byGradeDesc);
+    sort(split, students.end(), byGradeDesc);
+
+    // 3. transform each student into a formatted report line
+    vector&lt;string&gt; lines;
+    transform(students.begin(), students.end(), back_inserter(lines),
+        [passMark](const Student&amp; s) {
+            string status = (s.grade &gt;= passMark) ? "PASS" : "FAIL";
+            string name = s.name;
+            name.resize(8, ' ');                    // pad to a fixed width
+            return name + to_string(s.grade) + "  " + status;
+        });
+
+    cout &lt;&lt; "Name    Grade Status\n";
+    for (const string&amp; l : lines) cout &lt;&lt; l &lt;&lt; '\n';
+    cout &lt;&lt; "\nPassed: " &lt;&lt; (split - students.begin())
+         &lt;&lt; ", Failed: " &lt;&lt; (students.end() - split) &lt;&lt; '\n';
+    return 0;
+}</code></pre>
+        <p><strong>Output:</strong></p>
+<pre><code>Name    Grade Status
+Grace   95  PASS
+Alice   92  PASS
+Eve     88  PASS
+Carol   75  PASS
+Frank   60  PASS
+Bob     58  FAIL
+Dave    49  FAIL
+
+Passed: 5, Failed: 2</code></pre>
+        <div class="callout">
+          <strong>Why capture passMark?</strong>
+          The lambdas run inside algorithms, outside the scope where <code>passMark</code> is defined as a local variable, so it must be captured explicitly with <code>[passMark]</code>. A lambda with an empty capture list <code>[]</code> cannot see local variables.
+        </div>
+      </div>
+    </div>
+
+    <div style="display:flex;justify-content:space-between;margin-top:2rem;gap:.75rem;">
+      <a href="exercises.html" class="btn btn-outline" style="text-decoration:none;">← Exercises</a>
+      <a href="quiz.html" class="btn" style="text-decoration:none;">Take the Quiz →</a>
+    </div>
+
+  </div>
+</main>
+</div>
+<footer id="site-footer">
+  &copy; 2024 <a href="https://linkedin.com/in/adityabhuyan" target="_blank" rel="noopener">Aditya Pratap Bhuyan</a> &nbsp;|&nbsp;
+  <a href="https://github.com/aditya-bhuyan/cpp-learning-hub" target="_blank" rel="noopener">GitHub</a> &nbsp;|&nbsp;
+  GNU GPL v3 License
+</footer>
+<script src="/assets/js/nav.js"></script>
+</body>
+</html>

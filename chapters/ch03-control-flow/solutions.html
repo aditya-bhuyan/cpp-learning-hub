@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ch 03 Solutions — Control Flow | C++ Learning Hub</title>
+  <link rel="stylesheet" href="/assets/css/style.css" />
+</head>
+<body>
+<header id="site-header">
+  <button id="hamburger" aria-label="Toggle navigation">&#9776;</button>
+  <div id="site-logo">C++ Learning Hub <span class="badge">FREE</span></div>
+  <button id="theme-toggle">☾ Dark</button>
+</header>
+<div id="layout">
+<aside id="sidebar"><nav>
+  <div class="nav-section-title">C++ Learning Hub</div>
+  <div class="nav-chapter" data-chapter="home"><div class="nav-chapter-header"><span>🏠 Home</span></div><div class="nav-chapter-links"><a href="/index.html">Overview</a></div></div>
+  <div class="nav-section-title">Chapters</div>
+  <div class="nav-chapter" data-chapter="ch01"><div class="nav-chapter-header"><span><span class="ch-num">01</span>Introduction to C++</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch01-introduction/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch01-introduction/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch01-introduction/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch01-introduction/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch01-introduction/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch02"><div class="nav-chapter-header"><span><span class="ch-num">02</span>Variables, Types &amp; Operators</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch02-variables-types-operators/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch02-variables-types-operators/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch02-variables-types-operators/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch02-variables-types-operators/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch02-variables-types-operators/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter open" data-chapter="ch03"><div class="nav-chapter-header active"><span><span class="ch-num">03</span>Control Flow</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch03-control-flow/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch03-control-flow/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch03-control-flow/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch03-control-flow/solutions.html" class="active"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch03-control-flow/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch04"><div class="nav-chapter-header"><span><span class="ch-num">04</span>Functions</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch04-functions/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch04-functions/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch04-functions/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch04-functions/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch04-functions/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch05"><div class="nav-chapter-header"><span><span class="ch-num">05</span>Arrays &amp; Strings</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch05-arrays-strings/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch05-arrays-strings/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch05-arrays-strings/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch05-arrays-strings/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch05-arrays-strings/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch06"><div class="nav-chapter-header"><span><span class="ch-num">06</span>Pointers &amp; References</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch06-pointers-references/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch06-pointers-references/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch06-pointers-references/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch06-pointers-references/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch06-pointers-references/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch07"><div class="nav-chapter-header"><span><span class="ch-num">07</span>OOP — Basics</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch07-oop-basics/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch07-oop-basics/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch07-oop-basics/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch07-oop-basics/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch07-oop-basics/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch08"><div class="nav-chapter-header"><span><span class="ch-num">08</span>OOP — Inheritance &amp; Polymorphism</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch08-oop-inheritance/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch08-oop-inheritance/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch08-oop-inheritance/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch08-oop-inheritance/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch08-oop-inheritance/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch09"><div class="nav-chapter-header"><span><span class="ch-num">09</span>Templates</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch09-templates/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch09-templates/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch09-templates/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch09-templates/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch09-templates/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch10"><div class="nav-chapter-header"><span><span class="ch-num">10</span>STL — Containers</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch10-stl-containers/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch10-stl-containers/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch10-stl-containers/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch10-stl-containers/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch10-stl-containers/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch11"><div class="nav-chapter-header"><span><span class="ch-num">11</span>STL — Algorithms &amp; Iterators</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch11-stl-algorithms/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch11-stl-algorithms/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch11-stl-algorithms/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch11-stl-algorithms/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch11-stl-algorithms/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch12"><div class="nav-chapter-header"><span><span class="ch-num">12</span>Memory Management</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch12-memory-management/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch12-memory-management/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch12-memory-management/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch12-memory-management/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch12-memory-management/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch13"><div class="nav-chapter-header"><span><span class="ch-num">13</span>Exception Handling</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch13-exception-handling/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch13-exception-handling/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch13-exception-handling/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch13-exception-handling/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch13-exception-handling/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch14"><div class="nav-chapter-header"><span><span class="ch-num">14</span>File I/O</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch14-file-io/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch14-file-io/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch14-file-io/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch14-file-io/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch14-file-io/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch15"><div class="nav-chapter-header"><span><span class="ch-num">15</span>Modern C++ (C++11–C++20)</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch15-modern-cpp/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch15-modern-cpp/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch15-modern-cpp/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch15-modern-cpp/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch15-modern-cpp/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-section-title">Capstone</div>
+  <div class="nav-chapter" data-chapter="ch16"><div class="nav-chapter-header"><span><span class="ch-num">16</span>Capstone Project</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch16-capstone/index.html"><span class="link-icon">🎯</span>Brief</a><a href="/chapters/ch16-capstone/walkthrough.html"><span class="link-icon">🗺</span>Walkthrough</a><a href="/chapters/ch16-capstone/solution.html"><span class="link-icon">✅</span>Solution</a></div></div>
+  <div class="nav-section-title">About</div>
+  <div style="padding:.4rem 1.1rem 1rem;font-size:.78rem;color:var(--muted);line-height:1.5;">Maintained by<br><a href="https://linkedin.com/in/adityabhuyan" target="_blank" rel="noopener">Aditya Pratap Bhuyan</a><br><span style="font-size:.72rem;">GNU GPL v3 License</span></div>
+</nav></aside>
+
+<main id="main">
+  <div class="page-header">
+    <div class="breadcrumb"><a href="/index.html">Home</a> › <a href="index.html">Chapter 03</a> › Solutions</div>
+    <h1>Chapter 03 — Solutions</h1>
+    <p class="subtitle">Reference solutions with explanations. Only read after attempting the exercises yourself.</p>
+    <div class="chapter-tabs">
+      <a href="index.html">📖 Learning</a>
+      <a href="examples.html">💻 Examples</a>
+      <a href="exercises.html">✏️ Exercises</a>
+      <a href="solutions.html" class="active">✅ Solutions</a>
+      <a href="quiz.html">🧠 Quiz</a>
+    </div>
+  </div>
+
+  <div class="content">
+
+    <div class="callout warn">
+      <strong>Spoiler Warning</strong>
+      These are reference solutions. There are often multiple valid approaches — if your output matches
+      but your code differs, that is perfectly fine.
+    </div>
+
+    <!-- Solution 1 -->
+    <div class="solution-card">
+      <div class="card-header">✅ Solution 1 — Even Numbers from 1 to 50</div>
+      <div class="card-body">
+        <p>
+          The first version tests every number with the modulo operator. The second skips the test entirely by
+          starting at 2 and stepping by 2, so it does half the iterations.
+        </p>
+<pre><code>// solution_03_even.cpp
+#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    // Version A: test each number
+    for (int i = 1; i &lt;= 50; i++) {
+        if (i % 2 == 0) {            // remainder 0 means even
+            cout &lt;&lt; i &lt;&lt; " ";
+        }
+    }
+    cout &lt;&lt; "\n";
+
+    // Version B: step by 2 from the first even number
+    for (int i = 2; i &lt;= 50; i += 2) {
+        cout &lt;&lt; i &lt;&lt; " ";
+    }
+    cout &lt;&lt; "\n";
+
+    return 0;
+}</code></pre>
+        <p><strong>Key concepts used:</strong> <code>for</code> loop, modulo operator, custom update expression (<code>i += 2</code>).</p>
+      </div>
+    </div>
+
+    <!-- Solution 2 -->
+    <div class="solution-card">
+      <div class="card-header">✅ Solution 2 — Fibonacci Sequence</div>
+      <div class="card-body">
+        <p>
+          We only ever need the last two terms. Each pass prints <code>prev</code>, computes the next term, and shifts the pair forward.
+          <code>long long</code> avoids overflow for larger <code>n</code> (up to about 90 terms).
+        </p>
+<pre><code>// solution_03_fibonacci.cpp
+#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int n;
+    cout &lt;&lt; "Enter number of terms: ";
+    cin  &gt;&gt; n;
+
+    if (n &lt;= 0) {
+        cout &lt;&lt; "Please enter a positive number.\n";
+        return 0;
+    }
+
+    long long prev = 0;      // term k
+    long long curr = 1;      // term k+1
+
+    for (int i = 1; i &lt;= n; i++) {
+        cout &lt;&lt; prev &lt;&lt; " ";          // print the current term
+        long long next = prev + curr;   // the term after curr
+        prev = curr;                    // shift the window forward
+        curr = next;
+    }
+    cout &lt;&lt; "\n";
+
+    return 0;
+}</code></pre>
+        <p><strong>Trace for n = 5:</strong> prints 0 (prev=0, curr=1) → 1 (1, 1) → 1 (1, 2) → 2 (2, 3) → 3 (3, 5).</p>
+        <p><strong>Key concepts used:</strong> <code>for</code> loop with a known count, temporary variable to shift values, input validation with <code>if</code>.</p>
+      </div>
+    </div>
+
+    <!-- Solution 3 -->
+    <div class="solution-card">
+      <div class="card-header">✅ Solution 3 — Reverse the Digits of a 4-Digit Number</div>
+      <div class="card-body">
+        <p>
+          Each iteration peels the last digit off <code>n</code> (<code>n % 10</code>), appends it to <code>reversed</code>
+          (multiply by 10 and add), then removes it from <code>n</code> (<code>n / 10</code>). The loop ends when no digits remain.
+        </p>
+<pre><code>// solution_03_reverse.cpp
+#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int n;
+    cout &lt;&lt; "Enter a 4-digit number: ";
+    cin  &gt;&gt; n;
+
+    if (n &lt; 1000 || n &gt; 9999) {
+        cout &lt;&lt; "That is not a 4-digit number.\n";
+        return 0;
+    }
+
+    int reversed = 0;
+
+    while (n &gt; 0) {
+        int digit = n % 10;               // last digit
+        reversed = reversed * 10 + digit; // append it on the right
+        n /= 10;                          // discard the last digit
+    }
+
+    cout &lt;&lt; "Reversed: " &lt;&lt; reversed &lt;&lt; "\n";
+    return 0;
+}</code></pre>
+        <p><strong>Trace for 1234:</strong></p>
+        <table>
+          <thead><tr><th>Pass</th><th>n (start)</th><th>digit</th><th>reversed</th><th>n (end)</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td>1234</td><td>4</td><td>4</td><td>123</td></tr>
+            <tr><td>2</td><td>123</td><td>3</td><td>43</td><td>12</td></tr>
+            <tr><td>3</td><td>12</td><td>2</td><td>432</td><td>1</td></tr>
+            <tr><td>4</td><td>1</td><td>1</td><td>4321</td><td>0</td></tr>
+          </tbody>
+        </table>
+        <div class="callout tip">
+          <strong>Note on trailing zeros</strong>
+          For input <code>1200</code> the result is the integer <code>21</code>, because integers do not store leading zeros.
+          To print <code>0021</code> you would print the digits individually instead of building a number.
+        </div>
+        <p><strong>Key concepts used:</strong> <code>while</code> loop, <code>%</code> and <code>/</code> for digit extraction.</p>
+      </div>
+    </div>
+
+    <!-- Solution 4 -->
+    <div class="solution-card">
+      <div class="card-header">✅ Solution 4 — Multiplication Table (1–10)</div>
+      <div class="card-body">
+        <p>
+          The outer loop selects the row, the inner loop walks the columns. <code>setw(4)</code> pads every value to a
+          width of four characters so the columns line up even when products reach three digits.
+        </p>
+<pre><code>// solution_03_table.cpp
+#include &lt;iostream&gt;
+#include &lt;iomanip&gt;     // std::setw
+using namespace std;
+
+int main() {
+    for (int row = 1; row &lt;= 10; row++) {        // outer: rows
+        for (int col = 1; col &lt;= 10; col++) {    // inner: columns
+            cout &lt;&lt; setw(4) &lt;&lt; row * col;
+        }
+        cout &lt;&lt; "\n";                            // end of the row
+    }
+    return 0;
+}</code></pre>
+        <p>The inner body executes 10 × 10 = 100 times. The <code>cout &lt;&lt; "\n"</code> belongs to the outer loop, so it runs once per row.</p>
+        <p><strong>Key concepts used:</strong> nested <code>for</code> loops, <code>std::setw</code> for formatting.</p>
+      </div>
+    </div>
+
+    <!-- Solution 5 -->
+    <div class="solution-card">
+      <div class="card-header">✅ Solution 5 — Primes up to 100 (Sieve of Eratosthenes)</div>
+      <div class="card-body">
+        <p>
+          Instead of testing each number for divisors, the sieve eliminates composites. Every multiple of a prime <code>p</code>
+          is composite, so it is crossed out. Whatever is never crossed out is prime.
+        </p>
+<pre><code>// solution_03_sieve.cpp
+#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    const int LIMIT = 100;
+    bool isPrime[LIMIT + 1];          // indices 0..100
+
+    // Step 1: assume everything is prime...
+    for (int i = 0; i &lt;= LIMIT; i++) {
+        isPrime[i] = true;
+    }
+    isPrime[0] = false;               // ...except 0 and 1
+    isPrime[1] = false;
+
+    // Step 2: cross out multiples of each remaining prime p.
+    // Only p up to sqrt(100) = 10 is needed: p * p &lt;= LIMIT
+    for (int p = 2; p * p &lt;= LIMIT; p++) {
+        if (isPrime[p]) {
+            // Smaller multiples of p (2p, 3p, ...) were already crossed out
+            // by smaller primes, so start at p * p.
+            for (int m = p * p; m &lt;= LIMIT; m += p) {
+                isPrime[m] = false;
+            }
+        }
+    }
+
+    // Step 3: print whatever survived
+    for (int i = 2; i &lt;= LIMIT; i++) {
+        if (isPrime[i]) {
+            cout &lt;&lt; i &lt;&lt; " ";
+        }
+    }
+    cout &lt;&lt; "\n";
+
+    return 0;
+}</code></pre>
+        <p><strong>Output:</strong></p>
+<pre><code>2 3 5 7 11 13 17 19 23 29 31 37 41 43 47 53 59 61 67 71 73 79 83 89 97</code></pre>
+        <div class="callout">
+          <strong>Why it is fast</strong>
+          Trial division checks each number against many divisors. The sieve touches each composite only a few times, giving roughly
+          O(n log log n) work overall — which is why it is the standard method for generating many primes.
+        </div>
+        <p><strong>Key concepts used:</strong> nested loops with a custom step, <code>bool</code> arrays, loop-bound reasoning (<code>p * p &lt;= LIMIT</code>).</p>
+      </div>
+    </div>
+
+    <div style="display:flex;justify-content:space-between;margin-top:2rem;">
+      <a href="exercises.html" class="btn btn-outline" style="text-decoration:none;">← Exercises</a>
+      <a href="quiz.html" class="btn" style="text-decoration:none;">Next: Quiz →</a>
+    </div>
+
+  </div>
+</main>
+</div>
+<footer id="site-footer">
+  &copy; 2024 <a href="https://linkedin.com/in/adityabhuyan" target="_blank" rel="noopener">Aditya Pratap Bhuyan</a> &nbsp;|&nbsp;
+  <a href="https://github.com/aditya-bhuyan/cpp-learning-hub" target="_blank" rel="noopener">GitHub</a> &nbsp;|&nbsp;
+  GNU GPL v3 License
+</footer>
+<script src="/assets/js/nav.js"></script>
+</body>
+</html>

@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ch 04 — Functions | C++ Learning Hub</title>
+  <link rel="stylesheet" href="/assets/css/style.css" />
+</head>
+<body>
+<header id="site-header">
+  <button id="hamburger" aria-label="Toggle navigation">&#9776;</button>
+  <div id="site-logo">C++ Learning Hub <span class="badge">FREE</span></div>
+  <button id="theme-toggle">☾ Dark</button>
+</header>
+<div id="layout">
+<aside id="sidebar"><nav>
+  <div class="nav-section-title">C++ Learning Hub</div>
+  <div class="nav-chapter" data-chapter="home"><div class="nav-chapter-header"><span>🏠 Home</span></div><div class="nav-chapter-links"><a href="/index.html">Overview</a></div></div>
+  <div class="nav-section-title">Chapters</div>
+  <div class="nav-chapter" data-chapter="ch01"><div class="nav-chapter-header"><span><span class="ch-num">01</span>Introduction to C++</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch01-introduction/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch01-introduction/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch01-introduction/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch01-introduction/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch01-introduction/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch02"><div class="nav-chapter-header"><span><span class="ch-num">02</span>Variables, Types &amp; Operators</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch02-variables-types-operators/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch02-variables-types-operators/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch02-variables-types-operators/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch02-variables-types-operators/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch02-variables-types-operators/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch03"><div class="nav-chapter-header"><span><span class="ch-num">03</span>Control Flow</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch03-control-flow/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch03-control-flow/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch03-control-flow/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch03-control-flow/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch03-control-flow/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch04"><div class="nav-chapter-header"><span><span class="ch-num">04</span>Functions</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch04-functions/index.html" class="active"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch04-functions/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch04-functions/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch04-functions/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch04-functions/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch05"><div class="nav-chapter-header"><span><span class="ch-num">05</span>Arrays &amp; Strings</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch05-arrays-strings/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch05-arrays-strings/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch05-arrays-strings/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch05-arrays-strings/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch05-arrays-strings/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch06"><div class="nav-chapter-header"><span><span class="ch-num">06</span>Pointers &amp; References</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch06-pointers-references/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch06-pointers-references/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch06-pointers-references/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch06-pointers-references/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch06-pointers-references/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch07"><div class="nav-chapter-header"><span><span class="ch-num">07</span>OOP — Basics</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch07-oop-basics/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch07-oop-basics/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch07-oop-basics/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch07-oop-basics/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch07-oop-basics/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch08"><div class="nav-chapter-header"><span><span class="ch-num">08</span>OOP — Inheritance &amp; Polymorphism</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch08-oop-inheritance/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch08-oop-inheritance/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch08-oop-inheritance/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch08-oop-inheritance/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch08-oop-inheritance/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch09"><div class="nav-chapter-header"><span><span class="ch-num">09</span>Templates</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch09-templates/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch09-templates/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch09-templates/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch09-templates/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch09-templates/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch10"><div class="nav-chapter-header"><span><span class="ch-num">10</span>STL — Containers</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch10-stl-containers/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch10-stl-containers/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch10-stl-containers/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch10-stl-containers/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch10-stl-containers/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch11"><div class="nav-chapter-header"><span><span class="ch-num">11</span>STL — Algorithms &amp; Iterators</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch11-stl-algorithms/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch11-stl-algorithms/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch11-stl-algorithms/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch11-stl-algorithms/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch11-stl-algorithms/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch12"><div class="nav-chapter-header"><span><span class="ch-num">12</span>Memory Management</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch12-memory-management/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch12-memory-management/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch12-memory-management/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch12-memory-management/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch12-memory-management/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch13"><div class="nav-chapter-header"><span><span class="ch-num">13</span>Exception Handling</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch13-exception-handling/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch13-exception-handling/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch13-exception-handling/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch13-exception-handling/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch13-exception-handling/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch14"><div class="nav-chapter-header"><span><span class="ch-num">14</span>File I/O</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch14-file-io/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch14-file-io/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch14-file-io/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch14-file-io/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch14-file-io/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch15"><div class="nav-chapter-header"><span><span class="ch-num">15</span>Modern C++ (C++11–C++20)</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch15-modern-cpp/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch15-modern-cpp/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch15-modern-cpp/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch15-modern-cpp/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch15-modern-cpp/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-section-title">Capstone</div>
+  <div class="nav-chapter" data-chapter="ch16"><div class="nav-chapter-header"><span><span class="ch-num">16</span>Capstone Project</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch16-capstone/index.html"><span class="link-icon">🎯</span>Brief</a><a href="/chapters/ch16-capstone/walkthrough.html"><span class="link-icon">🗺</span>Walkthrough</a><a href="/chapters/ch16-capstone/solution.html"><span class="link-icon">✅</span>Solution</a></div></div>
+  <div class="nav-section-title">About</div>
+  <div style="padding:.4rem 1.1rem 1rem;font-size:.78rem;color:var(--muted);line-height:1.5;">Maintained by<br><a href="https://linkedin.com/in/adityabhuyan" target="_blank" rel="noopener">Aditya Pratap Bhuyan</a><br><span style="font-size:.72rem;">GNU GPL v3 License</span></div>
+</nav></aside>
+
+<main id="main">
+  <div class="page-header">
+    <div class="breadcrumb"><a href="/index.html">Home</a> › Chapter 04</div>
+    <h1>Chapter 04 — Functions</h1>
+    <p class="subtitle">Build reusable, modular code: declarations, definitions, parameters, overloading, recursion, and scope.</p>
+    <div class="chapter-tabs">
+      <a href="index.html" class="active">📖 Learning</a>
+      <a href="examples.html">💻 Examples</a>
+      <a href="exercises.html">✏️ Exercises</a>
+      <a href="solutions.html">✅ Solutions</a>
+      <a href="quiz.html">🧠 Quiz</a>
+    </div>
+  </div>
+
+  <div class="content">
+
+    <h2>4.1 Why Functions?</h2>
+    <p>
+      A <strong>function</strong> is a named, self-contained block of code that performs a specific task.
+      Well-designed functions are the backbone of maintainable software. They deliver three fundamental
+      engineering benefits:
+    </p>
+    <ul>
+      <li>
+        <strong>Code reuse</strong> — Write logic once, invoke it anywhere. If the logic changes, you
+        update it in one place. Without functions you would copy-paste the same loop or formula across
+        your program and risk introducing subtle inconsistencies.
+      </li>
+      <li>
+        <strong>Modularity</strong> — Large programs are decomposed into small, independently testable
+        units. Each function has a clear contract: given these inputs, produce this output. The caller
+        does not need to know <em>how</em> it works, only <em>what</em> it does.
+      </li>
+      <li>
+        <strong>Abstraction</strong> — Functions hide complexity behind a simple name. Calling
+        <code>sqrt(x)</code> is far clearer than embedding the Newton–Raphson iteration inline. Good
+        naming makes code read almost like prose.
+      </li>
+    </ul>
+
+    <h2>4.2 Declaration, Definition, and Call</h2>
+    <p>
+      A function has three distinct syntactic roles you must understand separately:
+    </p>
+    <table>
+      <thead><tr><th>Role</th><th>What it provides</th><th>Also called</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Declaration</strong></td><td>Return type, name, and parameter types — the function's <em>signature</em>. No body.</td><td>Prototype, forward declaration</td></tr>
+        <tr><td><strong>Definition</strong></td><td>Everything in the declaration <em>plus</em> the function body (the <code>{ }</code> block).</td><td>Implementation</td></tr>
+        <tr><td><strong>Call</strong></td><td>An expression that invokes the function and passes arguments.</td><td>Invocation</td></tr>
+      </tbody>
+    </table>
+
+<pre><code>// ── Declaration (prototype) ──────────────────────────────
+// Tells the compiler: "a function named add exists, it takes two ints, returns int"
+int add(int a, int b);   // semicolon — no body
+
+// ── Definition ───────────────────────────────────────────
+// Provides the body.  May serve double-duty as the declaration if placed before any call.
+int add(int a, int b) {
+    return a + b;        // function body
+}
+
+// ── Call ─────────────────────────────────────────────────
+int result = add(3, 7);  // result == 10</code></pre>
+
+    <div class="callout tip">
+      <strong>Why forward-declare?</strong>
+      If you define <code>funcA</code> after <code>funcB</code>, but <code>funcB</code> calls
+      <code>funcA</code>, the compiler has not yet seen <code>funcA</code> when it processes
+      <code>funcB</code>. A declaration placed at the top of the file (or in a header) resolves
+      this ordering problem.
+    </div>
+
+    <h2>4.3 Return Types</h2>
+    <p>
+      The return type is written before the function name and specifies what type of value the function
+      produces. A function that produces no value uses <code>void</code>.
+    </p>
+    <table>
+      <thead><tr><th>Return type</th><th>Meaning</th><th>Example</th></tr></thead>
+      <tbody>
+        <tr><td><code>void</code></td><td>No return value</td><td><code>void printBanner();</code></td></tr>
+        <tr><td><code>int</code></td><td>Whole number</td><td><code>int countWords(string s);</code></td></tr>
+        <tr><td><code>double</code></td><td>Floating-point number</td><td><code>double circleArea(double r);</code></td></tr>
+        <tr><td><code>bool</code></td><td>true / false</td><td><code>bool isPrime(int n);</code></td></tr>
+        <tr><td><code>string</code></td><td>Text</td><td><code>string toUpperCase(string s);</code></td></tr>
+        <tr><td><code>char</code></td><td>Single character</td><td><code>char firstLetter(string s);</code></td></tr>
+      </tbody>
+    </table>
+
+<pre><code>#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+void    greet(string name)  { cout &lt;&lt; "Hello, " &lt;&lt; name &lt;&lt; "!\n"; }
+int     square(int x)       { return x * x; }
+double  half(double x)      { return x / 2.0; }
+bool    isEven(int x)       { return (x % 2 == 0); }
+
+int main() {
+    greet("Alice");                    // Hello, Alice!
+    cout &lt;&lt; square(7) &lt;&lt; "\n";        // 49
+    cout &lt;&lt; half(9.0) &lt;&lt; "\n";        // 4.5
+    cout &lt;&lt; isEven(4) &lt;&lt; "\n";        // 1  (true)
+}</code></pre>
+
+    <h2>4.4 Parameters: Pass by Value, Reference, and Const Reference</h2>
+
+    <h3>4.4.1 Pass by Value (Copy)</h3>
+    <p>
+      The default parameter-passing mode. The function receives a <em>copy</em> of the argument; the
+      original variable is unchanged no matter what the function does.
+    </p>
+<pre><code>void doubleIt(int x) {
+    x *= 2;           // modifies the local COPY of x
+}
+
+int main() {
+    int n = 5;
+    doubleIt(n);
+    cout &lt;&lt; n &lt;&lt; "\n"; // still 5 — original untouched
+}</code></pre>
+
+    <h3>4.4.2 Pass by Reference (&amp;)</h3>
+    <p>
+      The parameter is an <strong>alias</strong> for the caller's variable. Changes inside the function
+      <em>are visible</em> to the caller. Use this when you intentionally want to modify the argument
+      (e.g., a swap function) or when passing a large object to avoid the cost of copying.
+    </p>
+<pre><code>void doubleIt(int&amp; x) {   // &amp; makes x an alias
+    x *= 2;               // modifies the ORIGINAL variable
+}
+
+int main() {
+    int n = 5;
+    doubleIt(n);
+    cout &lt;&lt; n &lt;&lt; "\n"; // 10
+}</code></pre>
+
+    <h3>4.4.3 Pass by Const Reference</h3>
+    <p>
+      Combines efficiency (no copy) with safety (cannot be modified). The idiomatic way to pass
+      large objects like <code>string</code>, <code>vector</code>, or custom classes when the
+      function only needs to <em>read</em> them.
+    </p>
+<pre><code>// Efficient and safe — no copy of the (potentially large) string is made
+void printLength(const string&amp; s) {
+    // s = "modified";  ← compile error: s is read-only
+    cout &lt;&lt; "Length: " &lt;&lt; s.size() &lt;&lt; "\n";
+}
+
+int main() {
+    string city = "San Francisco";
+    printLength(city); // Length: 13
+}</code></pre>
+
+    <div class="callout">
+      <strong>Rule of thumb:</strong>
+      Pass built-in types (<code>int</code>, <code>double</code>, <code>bool</code>, <code>char</code>)
+      by value. Pass objects and containers either by <code>const&amp;</code> (read-only) or
+      by <code>&amp;</code> (if you need to modify them).
+    </div>
+
+    <h2>4.5 Default Parameter Values</h2>
+    <p>
+      Parameters can have <strong>default values</strong>, making them optional at the call site.
+      Default values must appear on the <strong>rightmost</strong> parameters — you cannot have a
+      default parameter followed by a non-default one.
+    </p>
+<pre><code>// Default parameters must be on the RIGHT
+void greet(string name, string prefix = "Hello") {
+    cout &lt;&lt; prefix &lt;&lt; ", " &lt;&lt; name &lt;&lt; "!\n";
+}
+
+int main() {
+    greet("Alice");           // Hello, Alice!      (prefix uses default)
+    greet("Bob", "Hey");      // Hey, Bob!           (prefix overridden)
+    greet("Carol", "Hi");     // Hi, Carol!
+}</code></pre>
+
+    <div class="callout tip">
+      <strong>Default values in declarations vs definitions</strong>
+      Put default values in the <em>declaration</em> (or the first time the compiler sees the
+      function). Do not repeat them in the definition — that is a compile error.
+    </div>
+
+    <h2>4.6 Function Overloading</h2>
+    <p>
+      C++ allows multiple functions to share the same name as long as their <strong>parameter lists
+      differ</strong> (different number of parameters, different types, or both). The compiler
+      selects the correct version based on the argument types at the call site — this is called
+      <strong>overload resolution</strong>.
+    </p>
+<pre><code>#include &lt;iostream&gt;
+#include &lt;cmath&gt;     // M_PI
+using namespace std;
+
+const double PI = 3.14159265358979;
+
+// Three overloads of area()
+double area(double radius) {                         // circle
+    return PI * radius * radius;
+}
+double area(double width, double height) {           // rectangle
+    return width * height;
+}
+double area(double base, double height, bool) {      // triangle
+    return 0.5 * base * height;
+}
+
+int main() {
+    cout &lt;&lt; area(5.0)          &lt;&lt; "\n";  // 78.5398 (circle)
+    cout &lt;&lt; area(4.0, 6.0)     &lt;&lt; "\n";  // 24       (rectangle)
+    cout &lt;&lt; area(3.0, 8.0, true) &lt;&lt; "\n"; // 12       (triangle)
+}</code></pre>
+
+    <div class="callout">
+      <strong>Note:</strong> The return type alone is <em>not</em> enough to distinguish overloads.
+      Two functions with identical parameter lists but different return types will produce a
+      compile error.
+    </div>
+
+    <h2>4.7 Recursion</h2>
+    <p>
+      A <strong>recursive</strong> function calls itself. Every recursive solution requires:
+    </p>
+    <ol>
+      <li><strong>Base case</strong> — A condition under which the function returns a result directly, without recursing. This stops the chain of calls.</li>
+      <li><strong>Recursive case</strong> — The function calls itself with a <em>simpler</em> or <em>smaller</em> version of the problem, progressing toward the base case.</li>
+    </ol>
+
+<pre><code>// Recursive factorial: n! = n × (n-1)!
+// Base case: 0! = 1
+long long factorial(int n) {
+    if (n &lt;= 0) return 1;       // base case
+    return n * factorial(n - 1); // recursive case
+}
+
+int main() {
+    cout &lt;&lt; factorial(5) &lt;&lt; "\n"; // 120
+    cout &lt;&lt; factorial(10) &lt;&lt; "\n"; // 3628800
+}</code></pre>
+
+    <p><strong>Call-stack visualisation for <code>factorial(4)</code>:</strong></p>
+<pre><code>factorial(4)
+  └─ 4 * factorial(3)
+           └─ 3 * factorial(2)
+                    └─ 2 * factorial(1)
+                             └─ 1 * factorial(0)
+                                      └─ returns 1    ← base case
+                             returns 1 * 1 = 1
+                    returns 2 * 1 = 2
+           returns 3 * 2 = 6
+  returns 4 * 6 = 24</code></pre>
+
+    <div class="callout warn">
+      <strong>Stack Overflow from Infinite Recursion</strong>
+      Every function call consumes stack memory. A recursive function with no base case — or a
+      base case that is never reached — will keep calling itself until the program's call stack
+      is exhausted. The OS then terminates the program with a <em>stack overflow</em> (segmentation
+      fault on Linux, stack overflow exception on Windows). Always verify your base case is
+      reachable from all possible inputs.
+    </div>
+
+    <h2>4.8 Scope: Local vs Global Variables</h2>
+    <p>
+      <strong>Scope</strong> determines where a variable is visible and accessible.
+    </p>
+    <ul>
+      <li><strong>Local variable</strong> — Declared inside a function or block. Exists only while that block executes. Created on the stack when the block is entered; destroyed when the block exits.</li>
+      <li><strong>Global variable</strong> — Declared outside all functions, at file scope. Exists for the entire lifetime of the program. Accessible from any function in the same translation unit.</li>
+    </ul>
+<pre><code>#include &lt;iostream&gt;
+using namespace std;
+
+int globalCount = 0;   // global — lives for the entire program
+
+void increment() {
+    int localStep = 1; // local — recreated on every call
+    globalCount += localStep;
+    cout &lt;&lt; "localStep address: " &lt;&lt; &amp;localStep &lt;&lt; "\n"; // changes each call
+}
+
+int main() {
+    increment(); // globalCount == 1
+    increment(); // globalCount == 2
+    cout &lt;&lt; globalCount &lt;&lt; "\n"; // 2
+}</code></pre>
+
+    <h3>Variable Shadowing</h3>
+    <p>
+      When a local variable shares its name with a global (or an outer-scope variable), the local
+      one <strong>shadows</strong> the outer one inside that block.
+    </p>
+<pre><code>#include &lt;iostream&gt;
+using namespace std;
+
+int x = 100;   // global x
+
+void show() {
+    int x = 42; // local x — shadows the global x inside show()
+    cout &lt;&lt; x &lt;&lt; "\n";   // 42 (local)
+    cout &lt;&lt; ::x &lt;&lt; "\n"; // 100 (global, accessed via scope-resolution operator)
+}
+
+int main() {
+    show();
+    cout &lt;&lt; x &lt;&lt; "\n"; // 100 (global, local x no longer exists)
+}</code></pre>
+
+    <h2>4.9 Inline Functions</h2>
+    <p>
+      The <code>inline</code> keyword is a <em>hint</em> to the compiler to replace each call to the
+      function with the function's body directly at the call site, avoiding the overhead of a function
+      call (stack frame setup, jump, return). Modern compilers often inline small functions automatically
+      regardless of the keyword, and may ignore <code>inline</code> for large functions.
+    </p>
+<pre><code>inline int max(int a, int b) {
+    return (a &gt; b) ? a : b;
+}
+
+int main() {
+    // The compiler may expand this to: int m = (3 &gt; 7) ? 3 : 7;
+    int m = max(3, 7);
+    cout &lt;&lt; m &lt;&lt; "\n"; // 7
+}</code></pre>
+
+    <div class="callout tip">
+      <strong>When to use <code>inline</code>?</strong>
+      Short, frequently-called utility functions (e.g., <code>min</code>, <code>max</code>, simple
+      getters in a class). Do not mark large or recursive functions as <code>inline</code>.
+    </div>
+
+    <h2>4.10 Functions as Arguments — Function Pointers</h2>
+    <p>
+      In C++, a function's address can be stored in a <strong>function pointer</strong> and passed to
+      another function. This enables callbacks and higher-order programming patterns. The syntax is
+      verbose but important as a foundation for understanding C++ lambdas and <code>std::function</code>
+      (covered in Chapter 15).
+    </p>
+<pre><code>#include &lt;iostream&gt;
+using namespace std;
+
+// A simple comparator function
+bool ascending(int a, int b)  { return a &lt; b; }
+bool descending(int a, int b) { return a &gt; b; }
+
+// Takes a function pointer as the third parameter
+void printOrdered(int x, int y, bool (*cmp)(int, int)) {
+    if (cmp(x, y))
+        cout &lt;&lt; x &lt;&lt; " comes before " &lt;&lt; y &lt;&lt; "\n";
+    else
+        cout &lt;&lt; y &lt;&lt; " comes before " &lt;&lt; x &lt;&lt; "\n";
+}
+
+int main() {
+    printOrdered(3, 9, ascending);  // 3 comes before 9
+    printOrdered(3, 9, descending); // 9 comes before 3
+}</code></pre>
+
+    <h2>4.11 Key Takeaways</h2>
+    <ul>
+      <li>Functions promote <strong>reuse, modularity, and abstraction</strong>.</li>
+      <li>A <strong>declaration</strong> gives the compiler the signature; a <strong>definition</strong> gives the body.</li>
+      <li>Pass by <strong>value</strong> copies the argument; pass by <strong>reference</strong> aliases it; pass by <strong>const reference</strong> aliases it read-only.</li>
+      <li>Default parameters must be on the <strong>rightmost</strong> side of the parameter list.</li>
+      <li>Function <strong>overloading</strong> allows same-named functions with different parameter lists.</li>
+      <li>Recursive functions need a <strong>base case</strong>; without one they cause a <strong>stack overflow</strong>.</li>
+      <li>Local variables live in the function's <strong>stack frame</strong>; global variables live for the program's lifetime.</li>
+      <li>The <code>inline</code> keyword is a compiler <strong>hint</strong> to avoid call overhead for small functions.</li>
+      <li>Function pointers let you pass <strong>behaviour as an argument</strong>.</li>
+    </ul>
+
+    <div style="display:flex;justify-content:space-between;margin-top:2rem;gap:.75rem;">
+      <a href="/chapters/ch03-control-flow/index.html" class="btn btn-outline" style="text-decoration:none;">← Chapter 03</a>
+      <a href="examples.html" class="btn" style="text-decoration:none;">Next: Examples →</a>
+    </div>
+
+  </div>
+</main>
+</div>
+<footer id="site-footer">
+  &copy; 2024 <a href="https://linkedin.com/in/adityabhuyan" target="_blank" rel="noopener">Aditya Pratap Bhuyan</a> &nbsp;|&nbsp;
+  <a href="https://github.com/aditya-bhuyan/cpp-learning-hub" target="_blank" rel="noopener">GitHub</a> &nbsp;|&nbsp;
+  GNU GPL v3 License
+</footer>
+<script src="/assets/js/nav.js"></script>
+</body>
+</html>

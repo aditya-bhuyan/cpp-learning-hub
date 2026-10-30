@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ch 14 Solutions — File I/O | C++ Learning Hub</title>
+  <link rel="stylesheet" href="/assets/css/style.css" />
+</head>
+<body>
+<header id="site-header">
+  <button id="hamburger" aria-label="Toggle navigation">&#9776;</button>
+  <div id="site-logo">C++ Learning Hub <span class="badge">FREE</span></div>
+  <button id="theme-toggle">☾ Dark</button>
+</header>
+<div id="layout">
+<aside id="sidebar"><nav>
+  <div class="nav-section-title">C++ Learning Hub</div>
+  <div class="nav-chapter" data-chapter="home"><div class="nav-chapter-header"><span>🏠 Home</span></div><div class="nav-chapter-links"><a href="/index.html">Overview</a></div></div>
+  <div class="nav-section-title">Chapters</div>
+  <div class="nav-chapter" data-chapter="ch01"><div class="nav-chapter-header"><span><span class="ch-num">01</span>Introduction to C++</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch01-introduction/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch01-introduction/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch01-introduction/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch01-introduction/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch01-introduction/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch02"><div class="nav-chapter-header"><span><span class="ch-num">02</span>Variables, Types &amp; Operators</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch02-variables-types-operators/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch02-variables-types-operators/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch02-variables-types-operators/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch02-variables-types-operators/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch02-variables-types-operators/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch03"><div class="nav-chapter-header"><span><span class="ch-num">03</span>Control Flow</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch03-control-flow/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch03-control-flow/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch03-control-flow/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch03-control-flow/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch03-control-flow/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch04"><div class="nav-chapter-header"><span><span class="ch-num">04</span>Functions</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch04-functions/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch04-functions/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch04-functions/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch04-functions/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch04-functions/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch05"><div class="nav-chapter-header"><span><span class="ch-num">05</span>Arrays &amp; Strings</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch05-arrays-strings/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch05-arrays-strings/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch05-arrays-strings/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch05-arrays-strings/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch05-arrays-strings/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch06"><div class="nav-chapter-header"><span><span class="ch-num">06</span>Pointers &amp; References</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch06-pointers-references/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch06-pointers-references/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch06-pointers-references/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch06-pointers-references/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch06-pointers-references/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch07"><div class="nav-chapter-header"><span><span class="ch-num">07</span>OOP — Basics</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch07-oop-basics/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch07-oop-basics/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch07-oop-basics/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch07-oop-basics/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch07-oop-basics/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch08"><div class="nav-chapter-header"><span><span class="ch-num">08</span>OOP — Inheritance &amp; Polymorphism</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch08-oop-inheritance/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch08-oop-inheritance/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch08-oop-inheritance/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch08-oop-inheritance/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch08-oop-inheritance/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch09"><div class="nav-chapter-header"><span><span class="ch-num">09</span>Templates</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch09-templates/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch09-templates/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch09-templates/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch09-templates/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch09-templates/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch10"><div class="nav-chapter-header"><span><span class="ch-num">10</span>STL — Containers</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch10-stl-containers/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch10-stl-containers/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch10-stl-containers/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch10-stl-containers/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch10-stl-containers/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch11"><div class="nav-chapter-header"><span><span class="ch-num">11</span>STL — Algorithms &amp; Iterators</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch11-stl-algorithms/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch11-stl-algorithms/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch11-stl-algorithms/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch11-stl-algorithms/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch11-stl-algorithms/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch12"><div class="nav-chapter-header"><span><span class="ch-num">12</span>Memory Management</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch12-memory-management/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch12-memory-management/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch12-memory-management/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch12-memory-management/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch12-memory-management/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch13"><div class="nav-chapter-header"><span><span class="ch-num">13</span>Exception Handling</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch13-exception-handling/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch13-exception-handling/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch13-exception-handling/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch13-exception-handling/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch13-exception-handling/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter open" data-chapter="ch14"><div class="nav-chapter-header active"><span><span class="ch-num">14</span>File I/O</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch14-file-io/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch14-file-io/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch14-file-io/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch14-file-io/solutions.html" class="active"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch14-file-io/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch15"><div class="nav-chapter-header"><span><span class="ch-num">15</span>Modern C++ (C++11–C++20)</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch15-modern-cpp/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch15-modern-cpp/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch15-modern-cpp/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch15-modern-cpp/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch15-modern-cpp/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-section-title">Capstone</div>
+  <div class="nav-chapter" data-chapter="ch16"><div class="nav-chapter-header"><span><span class="ch-num">16</span>Capstone Project</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch16-capstone/index.html"><span class="link-icon">🎯</span>Brief</a><a href="/chapters/ch16-capstone/walkthrough.html"><span class="link-icon">🗺</span>Walkthrough</a><a href="/chapters/ch16-capstone/solution.html"><span class="link-icon">✅</span>Solution</a></div></div>
+  <div class="nav-section-title">About</div>
+  <div style="padding:.4rem 1.1rem 1rem;font-size:.78rem;color:var(--muted);line-height:1.5;">Maintained by<br><a href="https://linkedin.com/in/adityabhuyan" target="_blank" rel="noopener">Aditya Pratap Bhuyan</a><br><span style="font-size:.72rem;">GNU GPL v3 License</span></div>
+</nav></aside>
+
+<main id="main">
+  <div class="page-header">
+    <div class="breadcrumb"><a href="/index.html">Home</a> › <a href="index.html">Chapter 14</a> › Solutions</div>
+    <h1>Chapter 14 — Solutions</h1>
+    <p class="subtitle">Reference solutions with explanations. Only read after attempting the exercises yourself.</p>
+    <div class="chapter-tabs">
+      <a href="index.html">📖 Learning</a>
+      <a href="examples.html">💻 Examples</a>
+      <a href="exercises.html">✏️ Exercises</a>
+      <a href="solutions.html" class="active">✅ Solutions</a>
+      <a href="quiz.html">🧠 Quiz</a>
+    </div>
+  </div>
+
+  <div class="content">
+
+    <div class="callout warn">
+      <strong>Spoiler Warning</strong>
+      These are reference solutions. There are often multiple valid ways to solve each exercise. If your program produces correct output and handles errors cleanly, your approach is valid.
+    </div>
+
+    <!-- Solution 1 -->
+    <div class="solution-card">
+      <div class="card-header">✅ Solution 1 — Sum &amp; Average of Numbers from File</div>
+      <div class="card-body">
+        <p>
+          This solution demonstrates formatted write and extraction. We write 10 sample integers to <code>numbers.txt</code>,
+          close the write stream, then loop with <code>while (in &gt;&gt; num)</code> to sum and count the values safely.
+        </p>
+<pre><code>// solution_14_ex1.cpp
+#include &lt;iostream&gt;
+#include &lt;fstream&gt;
+#include &lt;vector&gt;
+#include &lt;iomanip&gt;
+
+int main() {
+    const std::string filename = "numbers.txt";
+
+    // 1. Write 10 numbers to file
+    {
+        std::ofstream out(filename);
+        if (!out) {
+            std::cerr &lt;&lt; "Error creating " &lt;&lt; filename &lt;&lt; "\n";
+            return 1;
+        }
+
+        std::vector&lt;int&gt; initialData = {15, 28, 42, 7, 91, 33, 64, 50, 82, 18};
+        for (int n : initialData) {
+            out &lt;&lt; n &lt;&lt; " ";
+        }
+        std::cout &lt;&lt; "Wrote 10 integers to " &lt;&lt; filename &lt;&lt; "\n";
+    }
+
+    // 2. Read numbers back and compute sum &amp; average
+    std::ifstream in(filename);
+    if (!in) {
+        std::cerr &lt;&lt; "Error opening " &lt;&lt; filename &lt;&lt; " for reading\n";
+        return 1;
+    }
+
+    int num;
+    long long sum = 0;
+    int count = 0;
+    std::vector&lt;int&gt; readNumbers;
+
+    while (in &gt;&gt; num) {
+        readNumbers.push_back(num);
+        sum += num;
+        count++;
+    }
+
+    std::cout &lt;&lt; "Read " &lt;&lt; count &lt;&lt; " numbers: ";
+    for (int n : readNumbers) {
+        std::cout &lt;&lt; n &lt;&lt; " ";
+    }
+    std::cout &lt;&lt; "\n";
+
+    std::cout &lt;&lt; "Sum     = " &lt;&lt; sum &lt;&lt; "\n";
+    if (count &gt; 0) {
+        double avg = static_cast&lt;double&gt;(sum) / count;
+        std::cout &lt;&lt; "Average = " &lt;&lt; std::fixed &lt;&lt; std::setprecision(2) &lt;&lt; avg &lt;&lt; "\n";
+    }
+
+    return 0;
+}</code></pre>
+        <p><strong>Key concepts used:</strong> <code>std::ofstream</code>, <code>std::ifstream</code>, formatted token extraction (<code>&gt;&gt;</code>), scope-based auto-close, <code>&lt;iomanip&gt;</code>.</p>
+      </div>
+    </div>
+
+    <!-- Solution 2 -->
+    <div class="solution-card">
+      <div class="card-header">✅ Solution 2 — File Copy Utility</div>
+      <div class="card-body">
+        <p>
+          The fastest and cleanest idiom in C++ for copying an entire file without manual loops is inserting the source file's
+          stream buffer into the destination stream: <code>dest &lt;&lt; src.rdbuf()</code>. Using <code>std::ios::binary</code>
+          guarantees bit-for-bit fidelity across all operating systems.
+        </p>
+<pre><code>// solution_14_ex2.cpp
+#include &lt;iostream&gt;
+#include &lt;fstream&gt;
+#include &lt;string&gt;
+
+bool copyFile(const std::string&amp; sourcePath, const std::string&amp; destPath) {
+    // Open source in binary read mode
+    std::ifstream src(sourcePath, std::ios::binary);
+    if (!src) {
+        std::cerr &lt;&lt; "Error: Unable to open source file: " &lt;&lt; sourcePath &lt;&lt; "\n";
+        return false;
+    }
+
+    // Open destination in binary write mode
+    std::ofstream dest(destPath, std::ios::binary);
+    if (!dest) {
+        std::cerr &lt;&lt; "Error: Unable to create destination file: " &lt;&lt; destPath &lt;&lt; "\n";
+        return false;
+    }
+
+    // Copy stream buffer directly
+    dest &lt;&lt; src.rdbuf();
+
+    if (!dest) {
+        std::cerr &lt;&lt; "Error occurred during file write operation.\n";
+        return false;
+    }
+
+    return true;
+}
+
+int main() {
+    const std::string srcFile  = "origin.txt";
+    const std::string destFile = "backup.txt";
+
+    // Create a dummy source file
+    {
+        std::ofstream out(srcFile);
+        out &lt;&lt; "C++ File I/O Mastery\n";
+        out &lt;&lt; "Binary streams allow copying any file byte-for-byte.\n";
+        out &lt;&lt; "Timestamp: 2024-05-18\n";
+    }
+
+    std::cout &lt;&lt; "Source file: " &lt;&lt; srcFile &lt;&lt; " (Created with test data)\n";
+    std::cout &lt;&lt; "Copying " &lt;&lt; srcFile &lt;&lt; " -> " &lt;&lt; destFile &lt;&lt; "...\n";
+
+    if (copyFile(srcFile, destFile)) {
+        // Query size of copied file
+        std::ifstream check(destFile, std::ios::binary | std::ios::ate);
+        auto bytes = check.tellg();
+        std::cout &lt;&lt; "Success: Copied " &lt;&lt; bytes &lt;&lt; " bytes to " &lt;&lt; destFile &lt;&lt; "\n";
+    }
+
+    return 0;
+}</code></pre>
+        <p><strong>Key concepts used:</strong> <code>rdbuf()</code> stream buffer piping, binary mode flags, <code>tellg()</code> with <code>ios::ate</code> for file size query.</p>
+      </div>
+    </div>
+
+    <!-- Solution 3 -->
+    <div class="solution-card">
+      <div class="card-header">✅ Solution 3 — INI/Config File Parser (std::map)</div>
+      <div class="card-body">
+        <p>
+          This solution trims whitespace from both keys and values, skips comment characters (<code>#</code> and <code>;</code>),
+          and stores valid configuration pairs in a <code>std::map&lt;std::string, std::string&gt;</code>.
+        </p>
+<pre><code>// solution_14_ex3.cpp
+#include &lt;iostream&gt;
+#include &lt;fstream&gt;
+#include &lt;sstream&gt;
+#include &lt;string&gt;
+#include &lt;map&gt;
+#include &lt;algorithm&gt;
+#include &lt;cctype&gt;
+
+// Helper: Trim leading &amp; trailing whitespace
+std::string trim(const std::string&amp; str) {
+    const auto start = str.find_first_not_of(" \t\r\n");
+    if (start == std::string::npos) return "";
+    const auto end = str.find_last_not_of(" \t\r\n");
+    return str.substr(start, end - start + 1);
+}
+
+std::map&lt;std::string, std::string&gt; loadConfig(const std::string&amp; filename) {
+    std::map&lt;std::string, std::string&gt; config;
+    std::ifstream file(filename);
+
+    if (!file.is_open()) {
+        std::cerr &lt;&lt; "Warning: Cannot open config file " &lt;&lt; filename &lt;&lt; "\n";
+        return config;
+    }
+
+    std::string line;
+    while (std::getline(file, line)) {
+        std::string trimmed = trim(line);
+
+        // Ignore empty lines and comments
+        if (trimmed.empty() || trimmed[0] == '#' || trimmed[0] == ';') {
+            continue;
+        }
+
+        // Split on first '='
+        auto equalPos = trimmed.find('=');
+        if (equalPos != std::string::npos) {
+            std::string key   = trim(trimmed.substr(0, equalPos));
+            std::string value = trim(trimmed.substr(equalPos + 1));
+            if (!key.empty()) {
+                config[key] = value;
+            }
+        }
+    }
+
+    return config;
+}
+
+int main() {
+    const std::string cfgFile = "server.ini";
+
+    // Generate sample INI file
+    {
+        std::ofstream out(cfgFile);
+        out &lt;&lt; "# Server Configuration Settings\n";
+        out &lt;&lt; "server_name = AlphaCluster\n";
+        out &lt;&lt; "database_host = localhost\n";
+        out &lt;&lt; "database_port = 5432\n\n";
+        out &lt;&lt; "; Connection limits\n";
+        out &lt;&lt; "max_connections = 100\n";
+        out &lt;&lt; "timeout_seconds = 30\n";
+    }
+
+    auto config = loadConfig(cfgFile);
+
+    std::cout &lt;&lt; "--- Loaded Config (" &lt;&lt; config.size() &lt;&lt; " settings) ---\n";
+    for (const auto&amp; [k, v] : config) {
+        std::cout &lt;&lt; k &lt;&lt; " = " &lt;&lt; v &lt;&lt; "\n";
+    }
+
+    std::cout &lt;&lt; "\nLookup 'database_host': " &lt;&lt; (config.count("database_host") ? config["database_host"] : "[Not configured]") &lt;&lt; "\n";
+    std::cout &lt;&lt; "Lookup 'max_connections': " &lt;&lt; (config.count("max_connections") ? config["max_connections"] : "[Not configured]") &lt;&lt; "\n";
+    std::cout &lt;&lt; "Lookup 'ssl_enabled': " &lt;&lt; (config.count("ssl_enabled") ? config["ssl_enabled"] : "[Not configured]") &lt;&lt; "\n";
+
+    return 0;
+}</code></pre>
+        <p><strong>Key concepts used:</strong> <code>std::getline()</code>, string slicing (<code>substr</code> and <code>find</code>), string whitespace trimming, <code>std::map</code> key lookup.</p>
+      </div>
+    </div>
+
+    <!-- Solution 4 -->
+    <div class="solution-card">
+      <div class="card-header">✅ Solution 4 — Grade Book Report Generator</div>
+      <div class="card-body">
+        <p>
+          This solution reads records from <code>grades.txt</code>, processes each student's score,
+          computes summary analytics (class average, highest, lowest, passing count), and generates a structured
+          formatted table written simultaneously to both disk (<code>report.txt</code>) and the console.
+        </p>
+<pre><code>// solution_14_ex4.cpp
+#include &lt;iostream&gt;
+#include &lt;fstream&gt;
+#include &lt;vector&gt;
+#include &lt;string&gt;
+#include &lt;iomanip&gt;
+#include &lt;algorithm&gt;
+
+struct StudentGrade {
+    std::string name;
+    double score;
+    std::string status;
+};
+
+int main() {
+    const std::string inputFile  = "grades.txt";
+    const std::string outputFile = "report.txt";
+
+    // 1. Create sample grades.txt
+    {
+        std::ofstream out(inputFile);
+        out &lt;&lt; "Alice 88.50\n";
+        out &lt;&lt; "Bob 54.00\n";
+        out &lt;&lt; "Charlie 92.00\n";
+        out &lt;&lt; "Diana 76.50\n";
+        out &lt;&lt; "Evan 48.00\n";
+    }
+
+    // 2. Read student grades
+    std::ifstream in(inputFile);
+    if (!in) {
+        std::cerr &lt;&lt; "Error opening " &lt;&lt; inputFile &lt;&lt; "\n";
+        return 1;
+    }
+
+    std::vector&lt;StudentGrade&gt; students;
+    std::string name;
+    double score;
+
+    while (in &gt;&gt; name &gt;&gt; score) {
+        std::string status = (score &gt;= 60.0) ? "PASS" : "FAIL";
+        students.push_back({name, score, status});
+    }
+
+    if (students.empty()) {
+        std::cerr &lt;&lt; "No student records found in " &lt;&lt; inputFile &lt;&lt; "\n";
+        return 1;
+    }
+
+    // 3. Compute statistics
+    double totalScore = 0.0;
+    const StudentGrade* highest = &amp;students[0];
+    const StudentGrade* lowest  = &amp;students[0];
+    int passCount = 0;
+
+    for (const auto&amp; s : students) {
+        totalScore += s.score;
+        if (s.score &gt; highest-&gt;score) highest = &amp;s;
+        if (s.score &lt; lowest-&gt;score)  lowest  = &amp;s;
+        if (s.status == "PASS") passCount++;
+    }
+
+    double average = totalScore / students.size();
+    double passRate = (static_cast&lt;double&gt;(passCount) / students.size()) * 100.0;
+
+    // 4. Generate report function to write to any ostream
+    auto writeReport = [&amp;](std::ostream&amp; os) {
+        os &lt;&lt; "========================================\n";
+        os &lt;&lt; "           GRADE BOOK REPORT\n";
+        os &lt;&lt; "========================================\n";
+        os &lt;&lt; std::left &lt;&lt; std::setw(20) &lt;&lt; "Student Name"
+           &lt;&lt; std::setw(9)  &lt;&lt; "Score"
+           &lt;&lt; "Status\n";
+        os &lt;&lt; "----------------------------------------\n";
+
+        for (const auto&amp; s : students) {
+            os &lt;&lt; std::left &lt;&lt; std::setw(20) &lt;&lt; s.name
+               &lt;&lt; std::fixed &lt;&lt; std::setprecision(2)
+               &lt;&lt; std::setw(9)  &lt;&lt; s.score
+               &lt;&lt; s.status &lt;&lt; "\n";
+        }
+
+        os &lt;&lt; "----------------------------------------\n";
+        os &lt;&lt; std::left &lt;&lt; std::setw(17) &lt;&lt; "Total Students :" &lt;&lt; students.size() &lt;&lt; "\n";
+        os &lt;&lt; std::left &lt;&lt; std::setw(17) &lt;&lt; "Class Average  :" &lt;&lt; std::fixed &lt;&lt; std::setprecision(2) &lt;&lt; average &lt;&lt; "\n";
+        os &lt;&lt; std::left &lt;&lt; std::setw(17) &lt;&lt; "Highest Score  :" &lt;&lt; highest-&gt;score &lt;&lt; " (" &lt;&lt; highest-&gt;name &lt;&lt; ")\n";
+        os &lt;&lt; std::left &lt;&lt; std::setw(17) &lt;&lt; "Lowest Score   :" &lt;&lt; lowest-&gt;score &lt;&lt; " (" &lt;&lt; lowest-&gt;name &lt;&lt; ")\n";
+        os &lt;&lt; std::left &lt;&lt; std::setw(17) &lt;&lt; "Passing Rate   :" &lt;&lt; std::fixed &lt;&lt; std::setprecision(1)
+           &lt;&lt; passRate &lt;&lt; "% (" &lt;&lt; passCount &lt;&lt; "/" &lt;&lt; students.size() &lt;&lt; ")\n";
+        os &lt;&lt; "========================================\n";
+    };
+
+    // Write to file
+    std::ofstream out(outputFile);
+    writeReport(out);
+
+    // Also display in console
+    writeReport(std::cout);
+    std::cout &lt;&lt; "\nReport successfully saved to " &lt;&lt; outputFile &lt;&lt; "\n";
+
+    return 0;
+}</code></pre>
+        <p><strong>Key concepts used:</strong> Dual-stream reporting via <code>std::ostream&amp;</code> lambda, formatted alignment with <code>&lt;iomanip&gt;</code>, stream extraction pairs.</p>
+      </div>
+    </div>
+
+    <!-- Solution 5 -->
+    <div class="solution-card">
+      <div class="card-header">✅ Solution 5 — Binary Index &amp; Random Access with seekg</div>
+      <div class="card-body">
+        <p>
+          This solution demonstrates <strong>O(1) random-access file seeks</strong>. By calculating the byte offset
+          <code>index * sizeof(Product)</code>, we can jump directly to any record using <code>seekg()</code> without scanning
+          preceding records, and perform in-place updates using <code>seekp()</code> on a bidirectional <code>std::fstream</code>.
+        </p>
+<pre><code>// solution_14_ex5.cpp
+#include &lt;iostream&gt;
+#include &lt;fstream&gt;
+#include &lt;cstring&gt;
+#include &lt;iomanip&gt;
+
+struct Product {
+    int id;
+    char name[32];
+    double price;
+    int stock;
+};
+
+Product makeProduct(int id, const char* name, double price, int stock) {
+    Product p{};
+    p.id = id;
+    std::strncpy(p.name, name, sizeof(p.name) - 1);
+    p.price = price;
+    p.stock = stock;
+    return p;
+}
+
+void printProduct(const Product&amp; p) {
+    std::cout &lt;&lt; "Loaded Product: ID " &lt;&lt; p.id
+              &lt;&lt; " | Name: " &lt;&lt; p.name
+              &lt;&lt; " | Price: $" &lt;&lt; std::fixed &lt;&lt; std::setprecision(2) &lt;&lt; p.price
+              &lt;&lt; " | Stock: " &lt;&lt; p.stock &lt;&lt; "\n";
+}
+
+int main() {
+    const std::string filename = "inventory.dat";
+
+    // 1. Write 5 Product structs to binary file
+    {
+        Product inventory[5] = {
+            makeProduct(101, "USB-C Hub", 29.99, 50),
+            makeProduct(202, "Wireless Mouse", 19.99, 80),
+            makeProduct(303, "Mechanical Keyboard", 89.99, 15),
+            makeProduct(404, "4K Monitor 27in", 299.99, 12),
+            makeProduct(505, "Noise-Cancelling Headphones", 149.99, 25)
+        };
+
+        std::ofstream out(filename, std::ios::binary);
+        if (!out) {
+            std::cerr &lt;&lt; "Failed to open " &lt;&lt; filename &lt;&lt; " for writing.\n";
+            return 1;
+        }
+
+        out.write(reinterpret_cast&lt;const char*&gt;(inventory), sizeof(inventory));
+        std::cout &lt;&lt; "Wrote 5 products to binary file " &lt;&lt; filename
+                  &lt;&lt; " (" &lt;&lt; sizeof(inventory) &lt;&lt; " total bytes).\n";
+    }
+
+    // 2. Query total record count using tellg &amp; seekg
+    {
+        std::ifstream in(filename, std::ios::binary | std::ios::ate);
+        if (!in) {
+            std::cerr &lt;&lt; "Cannot open " &lt;&lt; filename &lt;&lt; "\n";
+            return 1;
+        }
+
+        std::streampos totalBytes = in.tellg();
+        size_t recordCount = static_cast&lt;size_t&gt;(totalBytes) / sizeof(Product);
+        std::cout &lt;&lt; "Total records detected: " &lt;&lt; recordCount &lt;&lt; "\n\n";
+    }
+
+    // 3. Random access: jump directly to 3rd product (index 2)
+    {
+        std::ifstream in(filename, std::ios::binary);
+        std::streampos offset = 2 * sizeof(Product);
+        std::cout &lt;&lt; "[Random Access] Directly reading Record #3 (offset: " &lt;&lt; offset &lt;&lt; " bytes)...\n";
+
+        in.seekg(offset, std::ios::beg);
+        Product target{};
+        in.read(reinterpret_cast&lt;char*&gt;(&amp;target), sizeof(Product));
+        printProduct(target);
+    }
+
+    // 4. In-place update: open read/write, seekp to record 2, modify stock
+    {
+        std::fstream rwFile(filename, std::ios::in | std::ios::out | std::ios::binary);
+        if (!rwFile) {
+            std::cerr &lt;&lt; "Failed to open read/write stream.\n";
+            return 1;
+        }
+
+        std::streampos offset = 2 * sizeof(Product);
+        rwFile.seekg(offset, std::ios::beg);
+        Product item{};
+        rwFile.read(reinterpret_cast&lt;char*&gt;(&amp;item), sizeof(Product));
+
+        std::cout &lt;&lt; "\n[In-Place Update] Updating Record #3 stock to 45...\n";
+        item.stock = 45;
+
+        // Position write pointer and overwrite the record
+        rwFile.seekp(offset, std::ios::beg);
+        rwFile.write(reinterpret_cast&lt;const char*&gt;(&amp;item), sizeof(Product));
+        rwFile.flush();
+
+        // Verify update by re-reading
+        rwFile.seekg(offset, std::ios::beg);
+        Product updatedItem{};
+        rwFile.read(reinterpret_cast&lt;char*&gt;(&amp;updatedItem), sizeof(Product));
+        std::cout &lt;&lt; "Verified Record #3 after update:\n";
+        printProduct(updatedItem);
+    }
+
+    return 0;
+}</code></pre>
+        <p><strong>Key concepts used:</strong> <code>std::fstream</code> read/write mode (<code>ios::in | ios::out | ios::binary</code>), <code>seekg()</code> and <code>seekp()</code> byte offsets, <code>reinterpret_cast&lt;char*&gt;</code>, random access struct serialization.</p>
+      </div>
+    </div>
+
+    <div style="display:flex;justify-content:space-between;margin-top:2rem;">
+      <a href="exercises.html" class="btn btn-outline" style="text-decoration:none;">← Exercises</a>
+      <a href="quiz.html" class="btn" style="text-decoration:none;">Take the Quiz →</a>
+    </div>
+
+  </div>
+</main>
+</div>
+<footer id="site-footer">
+  &copy; 2024 <a href="https://linkedin.com/in/adityabhuyan" target="_blank" rel="noopener">Aditya Pratap Bhuyan</a> &nbsp;|&nbsp;
+  <a href="https://github.com/aditya-bhuyan/cpp-learning-hub" target="_blank" rel="noopener">GitHub</a> &nbsp;|&nbsp;
+  GNU GPL v3 License
+</footer>
+<script src="/assets/js/nav.js"></script>
+</body>
+</html>

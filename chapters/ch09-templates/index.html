@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ch 09 — Templates | C++ Learning Hub</title>
+  <link rel="stylesheet" href="/assets/css/style.css" />
+</head>
+<body>
+<header id="site-header">
+  <button id="hamburger" aria-label="Toggle navigation">&#9776;</button>
+  <div id="site-logo">C++ Learning Hub <span class="badge">FREE</span></div>
+  <button id="theme-toggle">☾ Dark</button>
+</header>
+<div id="layout">
+<aside id="sidebar"><nav>
+  <div class="nav-section-title">C++ Learning Hub</div>
+  <div class="nav-chapter" data-chapter="home"><div class="nav-chapter-header"><span>🏠 Home</span></div><div class="nav-chapter-links"><a href="/index.html">Overview</a></div></div>
+  <div class="nav-section-title">Chapters</div>
+  <div class="nav-chapter" data-chapter="ch01"><div class="nav-chapter-header"><span><span class="ch-num">01</span>Introduction to C++</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch01-introduction/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch01-introduction/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch01-introduction/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch01-introduction/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch01-introduction/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch02"><div class="nav-chapter-header"><span><span class="ch-num">02</span>Variables, Types &amp; Operators</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch02-variables-types-operators/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch02-variables-types-operators/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch02-variables-types-operators/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch02-variables-types-operators/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch02-variables-types-operators/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch03"><div class="nav-chapter-header"><span><span class="ch-num">03</span>Control Flow</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch03-control-flow/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch03-control-flow/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch03-control-flow/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch03-control-flow/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch03-control-flow/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch04"><div class="nav-chapter-header"><span><span class="ch-num">04</span>Functions</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch04-functions/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch04-functions/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch04-functions/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch04-functions/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch04-functions/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch05"><div class="nav-chapter-header"><span><span class="ch-num">05</span>Arrays &amp; Strings</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch05-arrays-strings/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch05-arrays-strings/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch05-arrays-strings/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch05-arrays-strings/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch05-arrays-strings/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch06"><div class="nav-chapter-header"><span><span class="ch-num">06</span>Pointers &amp; References</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch06-pointers-references/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch06-pointers-references/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch06-pointers-references/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch06-pointers-references/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch06-pointers-references/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch07"><div class="nav-chapter-header"><span><span class="ch-num">07</span>OOP — Basics</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch07-oop-basics/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch07-oop-basics/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch07-oop-basics/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch07-oop-basics/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch07-oop-basics/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch08"><div class="nav-chapter-header"><span><span class="ch-num">08</span>OOP — Inheritance &amp; Polymorphism</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch08-oop-inheritance/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch08-oop-inheritance/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch08-oop-inheritance/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch08-oop-inheritance/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch08-oop-inheritance/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter open" data-chapter="ch09"><div class="nav-chapter-header"><span><span class="ch-num">09</span>Templates</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="index.html" class="active"><span class="link-icon">📖</span>Learning</a><a href="examples.html"><span class="link-icon">💻</span>Examples</a><a href="exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch10"><div class="nav-chapter-header"><span><span class="ch-num">10</span>STL — Containers</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch10-stl-containers/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch10-stl-containers/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch10-stl-containers/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch10-stl-containers/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch10-stl-containers/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch11"><div class="nav-chapter-header"><span><span class="ch-num">11</span>STL — Algorithms &amp; Iterators</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch11-stl-algorithms/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch11-stl-algorithms/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch11-stl-algorithms/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch11-stl-algorithms/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch11-stl-algorithms/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch12"><div class="nav-chapter-header"><span><span class="ch-num">12</span>Memory Management</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch12-memory-management/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch12-memory-management/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch12-memory-management/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch12-memory-management/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch12-memory-management/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch13"><div class="nav-chapter-header"><span><span class="ch-num">13</span>Exception Handling</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch13-exception-handling/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch13-exception-handling/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch13-exception-handling/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch13-exception-handling/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch13-exception-handling/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch14"><div class="nav-chapter-header"><span><span class="ch-num">14</span>File I/O</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch14-file-io/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch14-file-io/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch14-file-io/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch14-file-io/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch14-file-io/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch15"><div class="nav-chapter-header"><span><span class="ch-num">15</span>Modern C++ (C++11–C++20)</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch15-modern-cpp/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch15-modern-cpp/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch15-modern-cpp/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch15-modern-cpp/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch15-modern-cpp/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-section-title">Capstone</div>
+  <div class="nav-chapter" data-chapter="ch16"><div class="nav-chapter-header"><span><span class="ch-num">16</span>Capstone Project</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch16-capstone/index.html"><span class="link-icon">🎯</span>Brief</a><a href="/chapters/ch16-capstone/walkthrough.html"><span class="link-icon">🗺</span>Walkthrough</a><a href="/chapters/ch16-capstone/solution.html"><span class="link-icon">✅</span>Solution</a></div></div>
+  <div class="nav-section-title">About</div>
+  <div style="padding:.4rem 1.1rem 1rem;font-size:.78rem;color:var(--muted);line-height:1.5;">Maintained by<br><a href="https://linkedin.com/in/adityabhuyan" target="_blank" rel="noopener">Aditya Pratap Bhuyan</a><br><span style="font-size:.72rem;">GNU GPL v3 License</span></div>
+</nav></aside>
+
+<main id="main">
+  <div class="page-header">
+    <div class="breadcrumb"><a href="/index.html">Home</a> › Chapter 09</div>
+    <h1>Chapter 09 — Templates</h1>
+    <p class="subtitle">Generic programming in C++: write type-independent code once, let the compiler generate it for every type you need.</p>
+    <div class="chapter-tabs">
+      <a href="index.html" class="active">📖 Learning</a>
+      <a href="examples.html">💻 Examples</a>
+      <a href="exercises.html">✏️ Exercises</a>
+      <a href="solutions.html">✅ Solutions</a>
+      <a href="quiz.html">🧠 Quiz</a>
+    </div>
+  </div>
+
+  <div class="content">
+
+    <h2>9.1 What Are Templates? Generic Programming</h2>
+    <p>
+      Imagine writing a <code>max()</code> function for <code>int</code>, then another for <code>double</code>,
+      then another for <code>std::string</code>. The logic is identical — only the type changes.
+      <strong>Templates</strong> solve this with <em>generic programming</em>: you write the algorithm once
+      using a placeholder type, and the compiler generates a concrete version for every type you actually use.
+    </p>
+    <p>
+      Templates are a <strong>compile-time</strong> mechanism. There is no runtime overhead — the compiler
+      stamps out specialised code during compilation, giving you the same performance as a hand-written
+      type-specific function.
+    </p>
+
+    <h2>9.2 Function Templates</h2>
+    <p>
+      A function template is declared with a <strong>template parameter list</strong> before the function signature.
+      Both <code>typename</code> and <code>class</code> are interchangeable as the keyword for a type parameter:
+    </p>
+<pre><code>// Both forms are identical — "typename" is generally preferred
+template&lt;typename T&gt;
+T maximum(T a, T b) {
+    return (a &gt; b) ? a : b;
+}
+
+// Usage — compiler deduces T = int
+int    biggerInt    = maximum(3, 7);        // T deduced as int
+double biggerDouble = maximum(2.5, 1.8);   // T deduced as double
+char   biggerChar   = maximum('z', 'a');   // T deduced as char</code></pre>
+
+    <div class="callout tip">
+      <strong>typename vs class</strong>
+      Inside a template parameter list, <code>typename T</code> and <code>class T</code> are completely
+      equivalent. The convention is to use <code>typename</code> for generic types (clearer intent) and
+      <code>class</code> only when you explicitly mean a class type.
+    </div>
+
+    <h2>9.3 Template Type Deduction vs Explicit Specialisation</h2>
+    <p>
+      The compiler can usually <strong>deduce</strong> the template argument from the function arguments.
+      When it cannot (or when you want to override the deduced type), you provide it explicitly:
+    </p>
+<pre><code>template&lt;typename T&gt;
+T castTo(double val) {
+    return static_cast&lt;T&gt;(val);
+}
+
+// Cannot deduce T from arguments — must be explicit
+int    i = castTo&lt;int&gt;(3.99);     // T = int  → i = 3
+float  f = castTo&lt;float&gt;(3.99);  // T = float → f = 3.99f</code></pre>
+
+    <h2>9.4 Multiple Template Parameters</h2>
+    <p>A template can have more than one type parameter, each independently deduced or specified:</p>
+<pre><code>template&lt;typename T, typename U&gt;
+void printPair(T first, U second) {
+    std::cout &lt;&lt; "(" &lt;&lt; first &lt;&lt; ", " &lt;&lt; second &lt;&lt; ")\n";
+}
+
+printPair(42, 3.14);          // T=int, U=double
+printPair("hello", true);     // T=const char*, U=bool</code></pre>
+
+    <h2>9.5 Class Templates</h2>
+    <p>
+      A <strong>class template</strong> lets you define a generic data structure. The classic example is a
+      <code>Stack&lt;T&gt;</code> that works for any element type:
+    </p>
+<pre><code>template&lt;typename T&gt;
+class Stack {
+private:
+    std::vector&lt;T&gt; data;   // internal storage
+public:
+    void push(const T&amp; value) { data.push_back(value); }
+    void pop()                { data.pop_back(); }
+    T&amp;   top()                { return data.back(); }
+    bool isEmpty()  const     { return data.empty(); }
+    int  size()     const     { return static_cast&lt;int&gt;(data.size()); }
+};
+
+// Instantiation — must provide the type argument explicitly
+Stack&lt;int&gt;         intStack;
+Stack&lt;std::string&gt; strStack;
+intStack.push(10);
+strStack.push("hello");</code></pre>
+
+    <h2>9.6 Template Member Functions Defined Outside the Class</h2>
+    <p>
+      When you define a template member function outside the class body, you must repeat the template
+      parameter list <em>on every definition</em>:
+    </p>
+<pre><code>template&lt;typename T&gt;
+class Pair {
+public:
+    T first, second;
+    Pair(T a, T b);   // declaration
+    void swap();      // declaration
+};
+
+// Definition outside — prefix with template&lt;typename T&gt;
+template&lt;typename T&gt;
+Pair&lt;T&gt;::Pair(T a, T b) : first(a), second(b) {}
+
+template&lt;typename T&gt;
+void Pair&lt;T&gt;::swap() {
+    T temp = first;
+    first  = second;
+    second = temp;
+}</code></pre>
+
+    <h2>9.7 Template Specialisation</h2>
+    <p>
+      Sometimes a general template does not work correctly — or efficiently — for a specific type.
+      <strong>Full specialisation</strong> lets you provide an entirely different implementation for one type:
+    </p>
+<pre><code>// General template
+template&lt;typename T&gt;
+T maximum(T a, T b) {
+    return (a &gt; b) ? a : b;
+}
+
+// Full specialisation for const char* — compare strings, not pointers
+template&lt;&gt;
+const char* maximum&lt;const char*&gt;(const char* a, const char* b) {
+    return (std::strcmp(a, b) &gt; 0) ? a : b;
+}</code></pre>
+    <div class="callout">
+      <strong>Note:</strong> <code>template&lt;&gt;</code> (empty parameter list) signals a full specialisation.
+      The type is supplied after the function name: <code>maximum&lt;const char*&gt;</code>.
+    </div>
+
+    <h2>9.8 Non-Type Template Parameters</h2>
+    <p>
+      Template parameters are not limited to types — they can also be <strong>compile-time constant values</strong>
+      such as integers. This is used for fixed-size data structures:
+    </p>
+<pre><code>template&lt;typename T, int N&gt;
+class Array {
+private:
+    T data[N];     // N must be a compile-time constant
+public:
+    int  size()        const { return N; }
+    T&amp;   operator[](int i)   { return data[i]; }
+    const T&amp; operator[](int i) const { return data[i]; }
+};
+
+Array&lt;double, 5&gt; vec;   // stack-allocated, 5 doubles, zero overhead
+vec[0] = 3.14;</code></pre>
+
+    <h2>9.9 Default Template Arguments</h2>
+    <p>Like function default arguments, template parameters can have defaults:</p>
+<pre><code>template&lt;typename T, int N = 10&gt;
+class Buffer {
+    T data[N];
+public:
+    int capacity() const { return N; }
+};
+
+Buffer&lt;int&gt;     buf1;   // N defaults to 10
+Buffer&lt;int, 32&gt; buf2;   // N explicitly 32</code></pre>
+
+    <h2>9.10 Templates and Header Files</h2>
+    <p>
+      The compiler needs the <strong>full template definition</strong> — not just a declaration — at
+      every point of instantiation. This is why template implementations must live in <code>.h</code>
+      (or <code>.hpp</code>) files, not in separate <code>.cpp</code> files.
+    </p>
+    <table>
+      <thead><tr><th>Regular function / class</th><th>Template function / class</th></tr></thead>
+      <tbody>
+        <tr><td>Declaration in <code>.h</code>, definition in <code>.cpp</code> ✔</td><td>Both declaration <em>and</em> definition in <code>.h</code> ✔</td></tr>
+        <tr><td>Compiled once per translation unit</td><td>Instantiated on demand by the compiler</td></tr>
+      </tbody>
+    </table>
+    <div class="callout tip">
+      <strong>Why?</strong> The compiler generates code for <code>Stack&lt;int&gt;</code> only when it sees
+      <code>Stack&lt;int&gt;</code> used — at that point it needs the full definition to stamp out the
+      concrete class. If the definition is in a <code>.cpp</code> file it compiled earlier, the compiler
+      has already forgotten it.
+    </div>
+
+    <h2>9.11 Variadic Templates (C++11)</h2>
+    <p>
+      C++11 introduced <strong>variadic templates</strong>, which accept a variable number of type arguments
+      using the <code>...</code> (parameter pack) syntax. They power utilities like <code>std::tuple</code>
+      and <code>std::make_unique</code>:
+    </p>
+<pre><code>// Base case — called when pack is empty
+void print() { std::cout &lt;&lt; '\n'; }
+
+// Recursive variadic template
+template&lt;typename T, typename... Rest&gt;
+void print(T first, Rest... rest) {
+    std::cout &lt;&lt; first &lt;&lt; ' ';
+    print(rest...);   // peel off one argument, recurse
+}
+
+print(1, 3.14, "hello", true);   // prints: 1 3.14 hello 1</code></pre>
+    <p>
+      The <code>sizeof...(Args)</code> operator tells you how many arguments are in a pack at compile time.
+      With C++17 <em>fold expressions</em>, many variadic patterns no longer need recursion.
+    </p>
+
+    <h2>9.12 SFINAE (Brief Overview)</h2>
+    <p>
+      <strong>SFINAE</strong> stands for <em>"Substitution Failure Is Not An Error"</em>. When the compiler
+      tries to substitute template arguments and the resulting type would be ill-formed, it silently discards
+      that overload candidate instead of producing an error. This lets you write templates that are only
+      available for certain types:
+    </p>
+<pre><code>#include &lt;type_traits&gt;
+
+// Only enabled when T is an arithmetic type (int, float, double…)
+template&lt;typename T&gt;
+typename std::enable_if&lt;std::is_arithmetic&lt;T&gt;::value, T&gt;::type
+square(T x) { return x * x; }
+
+// square("hi") → SFINAE: substitution fails quietly, compiler looks elsewhere</code></pre>
+    <p>
+      Modern C++ (C++20) replaces most SFINAE patterns with the cleaner <strong>Concepts</strong> syntax.
+    </p>
+
+    <h2>9.13 Comparison: Templates vs Overloading vs Inheritance</h2>
+    <table>
+      <thead>
+        <tr><th>Mechanism</th><th>Resolved at</th><th>Best used when</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Templates</strong></td>
+          <td>Compile time</td>
+          <td>Algorithm or container is type-independent and you want zero-overhead genericity</td>
+        </tr>
+        <tr>
+          <td><strong>Function overloading</strong></td>
+          <td>Compile time</td>
+          <td>Small number of known types with meaningfully different implementations</td>
+        </tr>
+        <tr>
+          <td><strong>Inheritance / virtual</strong></td>
+          <td>Runtime</td>
+          <td>Behaviour must vary between objects of different types <em>at runtime</em> (runtime polymorphism)</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>
+      Templates incur <strong>no runtime cost</strong> but can increase binary size (code bloat) because the
+      compiler emits a separate copy of the function for each distinct type. Virtual dispatch has a small
+      constant runtime overhead (vtable lookup) but produces smaller code.
+    </p>
+
+    <h2>9.14 Key Takeaways</h2>
+    <ul>
+      <li><code>template&lt;typename T&gt;</code> declares <code>T</code> as a placeholder type resolved at compile time.</li>
+      <li>Function templates support <strong>type deduction</strong>; class templates require explicit type arguments.</li>
+      <li>Use <strong>full specialisation</strong> (<code>template&lt;&gt;</code>) when a specific type needs different behaviour.</li>
+      <li>Non-type parameters (<code>template&lt;int N&gt;</code>) enable compile-time-fixed data structures.</li>
+      <li>Template implementations must be in <strong>header files</strong> — the compiler needs the full definition at instantiation.</li>
+      <li>Variadic templates (<code>typename... Args</code>) enable functions and classes with any number of type parameters.</li>
+      <li>SFINAE / Concepts allow <strong>constrained</strong> templates that only apply to certain types.</li>
+    </ul>
+
+    <div style="display:flex;justify-content:flex-end;margin-top:2rem;gap:.75rem;">
+      <a href="examples.html" class="btn" style="text-decoration:none;">Next: Examples →</a>
+    </div>
+
+  </div>
+</main>
+</div>
+<footer id="site-footer">
+  &copy; 2024 <a href="https://linkedin.com/in/adityabhuyan" target="_blank" rel="noopener">Aditya Pratap Bhuyan</a> &nbsp;|&nbsp;
+  <a href="https://github.com/aditya-bhuyan/cpp-learning-hub" target="_blank" rel="noopener">GitHub</a> &nbsp;|&nbsp;
+  GNU GPL v3 License
+</footer>
+<script src="/assets/js/nav.js"></script>
+</body>
+</html>

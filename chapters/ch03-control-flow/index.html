@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ch 03 — Control Flow | C++ Learning Hub</title>
+  <link rel="stylesheet" href="/assets/css/style.css" />
+</head>
+<body>
+<header id="site-header">
+  <button id="hamburger" aria-label="Toggle navigation">&#9776;</button>
+  <div id="site-logo">C++ Learning Hub <span class="badge">FREE</span></div>
+  <button id="theme-toggle">☾ Dark</button>
+</header>
+<div id="layout">
+<aside id="sidebar"><nav>
+  <div class="nav-section-title">C++ Learning Hub</div>
+  <div class="nav-chapter" data-chapter="home"><div class="nav-chapter-header"><span>🏠 Home</span></div><div class="nav-chapter-links"><a href="/index.html">Overview</a></div></div>
+  <div class="nav-section-title">Chapters</div>
+  <div class="nav-chapter" data-chapter="ch01"><div class="nav-chapter-header"><span><span class="ch-num">01</span>Introduction to C++</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch01-introduction/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch01-introduction/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch01-introduction/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch01-introduction/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch01-introduction/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch02"><div class="nav-chapter-header"><span><span class="ch-num">02</span>Variables, Types &amp; Operators</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch02-variables-types-operators/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch02-variables-types-operators/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch02-variables-types-operators/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch02-variables-types-operators/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch02-variables-types-operators/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter open" data-chapter="ch03"><div class="nav-chapter-header active"><span><span class="ch-num">03</span>Control Flow</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch03-control-flow/index.html" class="active"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch03-control-flow/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch03-control-flow/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch03-control-flow/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch03-control-flow/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch04"><div class="nav-chapter-header"><span><span class="ch-num">04</span>Functions</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch04-functions/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch04-functions/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch04-functions/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch04-functions/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch04-functions/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch05"><div class="nav-chapter-header"><span><span class="ch-num">05</span>Arrays &amp; Strings</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch05-arrays-strings/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch05-arrays-strings/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch05-arrays-strings/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch05-arrays-strings/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch05-arrays-strings/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch06"><div class="nav-chapter-header"><span><span class="ch-num">06</span>Pointers &amp; References</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch06-pointers-references/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch06-pointers-references/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch06-pointers-references/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch06-pointers-references/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch06-pointers-references/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch07"><div class="nav-chapter-header"><span><span class="ch-num">07</span>OOP — Basics</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch07-oop-basics/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch07-oop-basics/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch07-oop-basics/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch07-oop-basics/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch07-oop-basics/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch08"><div class="nav-chapter-header"><span><span class="ch-num">08</span>OOP — Inheritance &amp; Polymorphism</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch08-oop-inheritance/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch08-oop-inheritance/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch08-oop-inheritance/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch08-oop-inheritance/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch08-oop-inheritance/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch09"><div class="nav-chapter-header"><span><span class="ch-num">09</span>Templates</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch09-templates/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch09-templates/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch09-templates/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch09-templates/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch09-templates/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch10"><div class="nav-chapter-header"><span><span class="ch-num">10</span>STL — Containers</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch10-stl-containers/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch10-stl-containers/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch10-stl-containers/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch10-stl-containers/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch10-stl-containers/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch11"><div class="nav-chapter-header"><span><span class="ch-num">11</span>STL — Algorithms &amp; Iterators</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch11-stl-algorithms/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch11-stl-algorithms/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch11-stl-algorithms/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch11-stl-algorithms/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch11-stl-algorithms/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch12"><div class="nav-chapter-header"><span><span class="ch-num">12</span>Memory Management</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch12-memory-management/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch12-memory-management/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch12-memory-management/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch12-memory-management/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch12-memory-management/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch13"><div class="nav-chapter-header"><span><span class="ch-num">13</span>Exception Handling</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch13-exception-handling/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch13-exception-handling/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch13-exception-handling/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch13-exception-handling/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch13-exception-handling/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch14"><div class="nav-chapter-header"><span><span class="ch-num">14</span>File I/O</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch14-file-io/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch14-file-io/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch14-file-io/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch14-file-io/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch14-file-io/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch15"><div class="nav-chapter-header"><span><span class="ch-num">15</span>Modern C++ (C++11–C++20)</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch15-modern-cpp/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch15-modern-cpp/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch15-modern-cpp/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch15-modern-cpp/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch15-modern-cpp/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-section-title">Capstone</div>
+  <div class="nav-chapter" data-chapter="ch16"><div class="nav-chapter-header"><span><span class="ch-num">16</span>Capstone Project</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch16-capstone/index.html"><span class="link-icon">🎯</span>Brief</a><a href="/chapters/ch16-capstone/walkthrough.html"><span class="link-icon">🗺</span>Walkthrough</a><a href="/chapters/ch16-capstone/solution.html"><span class="link-icon">✅</span>Solution</a></div></div>
+  <div class="nav-section-title">About</div>
+  <div style="padding:.4rem 1.1rem 1rem;font-size:.78rem;color:var(--muted);line-height:1.5;">Maintained by<br><a href="https://linkedin.com/in/adityabhuyan" target="_blank" rel="noopener">Aditya Pratap Bhuyan</a><br><span style="font-size:.72rem;">GNU GPL v3 License</span></div>
+</nav></aside>
+
+<main id="main">
+  <div class="page-header">
+    <div class="breadcrumb"><a href="/index.html">Home</a> › Chapter 03</div>
+    <h1>Chapter 03 — Control Flow</h1>
+    <p class="subtitle">Make decisions and repeat work: conditionals, switch, every kind of loop, and the jump statements that steer them.</p>
+    <div class="chapter-tabs">
+      <a href="index.html" class="active">📖 Learning</a>
+      <a href="examples.html">💻 Examples</a>
+      <a href="exercises.html">✏️ Exercises</a>
+      <a href="solutions.html">✅ Solutions</a>
+      <a href="quiz.html">🧠 Quiz</a>
+    </div>
+  </div>
+
+  <div class="content">
+
+    <h2>3.1 What is Control Flow?</h2>
+    <p>
+      By default a C++ program executes statements one after another, from the top of <code>main()</code> to the bottom.
+      <strong>Control-flow statements</strong> change that default order. They let a program
+      <em>choose</em> between alternatives (selection) and <em>repeat</em> a block of code (iteration).
+      Together with sequential execution, these two ideas are enough to express any algorithm.
+    </p>
+    <table>
+      <thead><tr><th>Category</th><th>Statements</th><th>Purpose</th></tr></thead>
+      <tbody>
+        <tr><td>Selection</td><td><code>if</code>, <code>if/else</code>, <code>?:</code>, <code>switch</code></td><td>Choose which code runs</td></tr>
+        <tr><td>Iteration</td><td><code>for</code>, range-<code>for</code>, <code>while</code>, <code>do-while</code></td><td>Run code repeatedly</td></tr>
+        <tr><td>Jump</td><td><code>break</code>, <code>continue</code>, <code>goto</code>, <code>return</code></td><td>Transfer control elsewhere</td></tr>
+      </tbody>
+    </table>
+
+    <h2>3.2 The <code>if</code> Statement</h2>
+    <p>
+      An <code>if</code> statement evaluates a condition. If it is <code>true</code> (any non-zero value converts to
+      <code>true</code>), the controlled statement runs; otherwise it is skipped.
+    </p>
+<pre><code>// Syntax:
+// if (condition) {
+//     statements;
+// }
+
+#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int temperature = 35;
+
+    // The block runs only when the condition evaluates to true
+    if (temperature &gt; 30) {
+        cout &lt;&lt; "It's a hot day!\n";
+    }
+
+    cout &lt;&lt; "This line always runs.\n";
+    return 0;
+}</code></pre>
+
+    <div class="callout warn">
+      <strong>Warning — = versus ==</strong>
+      <code>if (x = 5)</code> <em>assigns</em> 5 to <code>x</code> and then tests the result (always true).
+      You almost certainly meant <code>if (x == 5)</code>. Compile with <code>-Wall</code> so the compiler warns you.
+    </div>
+
+    <div class="callout tip">
+      <strong>Tip — always use braces</strong>
+      A braceless <code>if</code> controls only the <em>next single statement</em>. Adding a second line later
+      without adding braces is a classic bug. Using <code>{ }</code> every time costs nothing and prevents it.
+    </div>
+
+    <h2>3.3 <code>if / else</code></h2>
+    <p>Add an <code>else</code> branch to run code when the condition is <code>false</code>. Exactly one of the two branches executes.</p>
+<pre><code>int age = 16;
+
+if (age &gt;= 18) {
+    cout &lt;&lt; "You may vote.\n";
+} else {
+    cout &lt;&lt; "You are too young to vote.\n";
+}</code></pre>
+
+    <h2>3.4 <code>if / else if / else</code> Chains</h2>
+    <p>
+      When there are more than two alternatives, chain conditions with <code>else if</code>. The conditions are tested
+      <strong>top to bottom</strong>; the first one that is true wins and the rest are skipped. The final
+      <code>else</code> is an optional catch-all.
+    </p>
+<pre><code>int score = 82;
+char grade;
+
+if (score &gt;= 90) {
+    grade = 'A';
+} else if (score &gt;= 80) {      // only reached when score &lt; 90
+    grade = 'B';
+} else if (score &gt;= 70) {      // only reached when score &lt; 80
+    grade = 'C';
+} else if (score &gt;= 60) {
+    grade = 'D';
+} else {                        // everything else
+    grade = 'F';
+}
+
+cout &lt;&lt; "Grade: " &lt;&lt; grade &lt;&lt; "\n";   // Grade: B</code></pre>
+
+    <div class="callout">
+      <strong>Order matters</strong>
+      Because the first true condition wins, test the most specific or restrictive conditions first.
+      Putting <code>score &gt;= 60</code> first would make every passing score a "D".
+    </div>
+
+    <h2>3.5 Nested <code>if</code> Statements</h2>
+    <p>An <code>if</code> can appear inside another <code>if</code> (or <code>else</code>) to test a second condition only when the first holds.</p>
+<pre><code>int age = 25;
+bool hasLicense = true;
+
+if (age &gt;= 18) {
+    if (hasLicense) {
+        cout &lt;&lt; "You may drive.\n";
+    } else {
+        cout &lt;&lt; "Get a licence first.\n";
+    }
+} else {
+    cout &lt;&lt; "You are too young to drive.\n";
+}</code></pre>
+
+    <h3>When to avoid deep nesting</h3>
+    <p>
+      Every extra nesting level makes code harder to read and reason about (the "arrow anti-pattern").
+      Prefer <strong>logical operators</strong> or <strong>early exits</strong> (guard clauses) to flatten the structure.
+    </p>
+<pre><code>// Flattened with &amp;&amp;
+if (age &gt;= 18 &amp;&amp; hasLicense) {
+    cout &lt;&lt; "You may drive.\n";
+}
+
+// Guard-clause style inside a function: reject bad input first,
+// then keep the "happy path" un-indented.
+int safeDivide(int a, int b) {
+    if (b == 0) {
+        cout &lt;&lt; "Error: division by zero\n";
+        return 0;               // early exit
+    }
+    return a / b;               // main logic stays at the top level
+}</code></pre>
+    <div class="callout tip">
+      <strong>Rule of thumb</strong>
+      If you find yourself indenting more than three levels, stop and ask whether combined conditions,
+      early <code>return</code>/<code>continue</code>, or a helper function would make the code flatter.
+    </div>
+
+    <h2>3.6 The Ternary (Conditional) Operator</h2>
+    <p>
+      The ternary operator is C++'s only three-operand operator. It is a compact, <em>expression</em> form of
+      <code>if/else</code> that produces a value:
+    </p>
+<pre><code>// Syntax:   condition ? true_expr : false_expr
+
+int a = 12, b = 20;
+
+// Equivalent if/else version:
+int larger;
+if (a &gt; b) { larger = a; } else { larger = b; }
+
+// Ternary version — one line, and it can initialise a const:
+const int maxVal = (a &gt; b) ? a : b;
+
+cout &lt;&lt; "Max is " &lt;&lt; maxVal &lt;&lt; "\n";                     // Max is 20
+cout &lt;&lt; (a % 2 == 0 ? "a is even" : "a is odd") &lt;&lt; "\n"; // a is even</code></pre>
+    <div class="callout warn">
+      <strong>Warning — keep it readable</strong>
+      Nesting ternaries (<code>a ? b : c ? d : e</code>) quickly becomes unreadable. Use the ternary for simple
+      two-way choices and switch to <code>if/else</code> for anything more involved. Both result expressions
+      should also have compatible types.
+    </div>
+
+    <h2>3.7 The <code>switch</code> Statement</h2>
+    <p>
+      <code>switch</code> selects one of many code paths by comparing an <strong>integral or enumeration</strong>
+      expression (<code>int</code>, <code>char</code>, <code>enum</code>, …) against constant <code>case</code> labels.
+      It cannot switch on <code>double</code> or <code>std::string</code>.
+    </p>
+<pre><code>int day = 3;
+
+switch (day) {
+    case 1:
+        cout &lt;&lt; "Monday\n";
+        break;                  // leave the switch
+    case 2:
+        cout &lt;&lt; "Tuesday\n";
+        break;
+    case 3:
+        cout &lt;&lt; "Wednesday\n"; // &lt;-- matches; prints this
+        break;
+    default:                    // runs if no case matches
+        cout &lt;&lt; "Some other day\n";
+        break;
+}</code></pre>
+    <ul>
+      <li><code>case</code> labels must be <strong>compile-time constants</strong> and unique.</li>
+      <li><code>break</code> exits the switch. Without it execution continues into the next case (fall-through).</li>
+      <li><code>default</code> is optional and handles every value not matched by a <code>case</code>. It may appear anywhere, but placing it last is conventional.</li>
+    </ul>
+
+    <h3>Fall-through behaviour</h3>
+    <p>
+      If a <code>case</code> has no <code>break</code>, control "falls through" and executes the statements of the following
+      case, regardless of that case's label. Occasionally this is useful for grouping labels:
+    </p>
+<pre><code>char ch = 'e';
+
+switch (ch) {
+    case 'a':
+    case 'e':
+    case 'i':
+    case 'o':
+    case 'u':                   // all five vowels share one body
+        cout &lt;&lt; ch &lt;&lt; " is a vowel\n";
+        break;
+    default:
+        cout &lt;&lt; ch &lt;&lt; " is a consonant\n";
+}
+
+// ACCIDENTAL fall-through (a bug):
+int n = 1;
+switch (n) {
+    case 1: cout &lt;&lt; "one\n";    // missing break!
+    case 2: cout &lt;&lt; "two\n";    // also runs
+    case 3: cout &lt;&lt; "three\n"; break;
+}
+// Output: one / two / three</code></pre>
+    <div class="callout warn">
+      <strong>Warning — forgotten break</strong>
+      Accidental fall-through is one of the most common <code>switch</code> bugs. If you fall through on purpose, mark it with the
+      C++17 attribute <code>[[fallthrough]];</code> so readers and compilers know it is intentional. Also, declaring a variable
+      inside a <code>case</code> usually requires wrapping that case body in its own <code>{ }</code> block.
+    </div>
+
+    <h2>3.8 The <code>for</code> Loop</h2>
+    <p>The <code>for</code> loop is ideal when you know in advance how many times to iterate. It packs three parts into its header:</p>
+<pre><code>// for (initialization; condition; update) {
+//     body;
+// }
+
+for (int i = 1; i &lt;= 5; i++) {
+    cout &lt;&lt; i &lt;&lt; " ";
+}
+// Output: 1 2 3 4 5</code></pre>
+    <table>
+      <thead><tr><th>Part</th><th>Example</th><th>When it runs</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Initialization</strong></td><td><code>int i = 1</code></td><td>Once, before the first iteration. A variable declared here is scoped to the loop.</td></tr>
+        <tr><td><strong>Condition</strong></td><td><code>i &lt;= 5</code></td><td>Before every iteration. If false, the loop ends.</td></tr>
+        <tr><td><strong>Update</strong></td><td><code>i++</code></td><td>After every iteration of the body, before the condition is re-tested.</td></tr>
+      </tbody>
+    </table>
+    <p>Execution order: <em>init → (condition → body → update)</em> repeated until the condition is false. Any part may be omitted; <code>for (;;)</code> is an infinite loop.</p>
+<pre><code>// Counting down
+for (int i = 10; i &gt; 0; i--) cout &lt;&lt; i &lt;&lt; " ";
+
+// Stepping by 2
+for (int i = 0; i &lt;= 20; i += 2) cout &lt;&lt; i &lt;&lt; " ";
+
+// Multiple variables with the comma operator
+for (int lo = 0, hi = 9; lo &lt; hi; lo++, hi--) {
+    cout &lt;&lt; lo &lt;&lt; "-" &lt;&lt; hi &lt;&lt; "\n";
+}</code></pre>
+    <div class="callout warn">
+      <strong>Warning — off-by-one errors</strong>
+      <code>i &lt; 5</code> runs 5 times starting from 0 (0–4); <code>i &lt;= 5</code> runs 6 times. Decide whether your
+      bound is inclusive or exclusive and check the first and last iterations by hand.
+    </div>
+
+    <h2>3.9 Range-Based <code>for</code> Loop (C++11)</h2>
+    <p>
+      The range-based <code>for</code> iterates over every element of an array or container without an index,
+      eliminating a whole class of bounds mistakes.
+    </p>
+<pre><code>#include &lt;iostream&gt;
+#include &lt;vector&gt;
+using namespace std;
+
+int main() {
+    vector&lt;int&gt; nums = {10, 20, 30, 40};
+
+    // Copy of each element (modifying x does NOT change the vector)
+    for (auto x : nums) cout &lt;&lt; x &lt;&lt; " ";
+    cout &lt;&lt; "\n";
+
+    // Reference — modifies the elements in place
+    for (auto&amp; x : nums) x *= 2;
+
+    // const reference — read-only, no copy (best for large objects)
+    for (const auto&amp; x : nums) cout &lt;&lt; x &lt;&lt; " ";   // 20 40 60 80
+    cout &lt;&lt; "\n";
+
+    // Works on built-in arrays and initializer lists too
+    int arr[] = {1, 2, 3};
+    for (int v : arr) cout &lt;&lt; v &lt;&lt; " ";
+    return 0;
+}</code></pre>
+    <div class="callout tip">
+      <strong>Tip — choose the right form</strong>
+      Use <code>auto x</code> for cheap types like <code>int</code>, <code>const auto&amp; x</code> for read-only access to
+      larger types such as <code>std::string</code>, and <code>auto&amp; x</code> when you need to modify elements.
+    </div>
+
+    <h2>3.10 The <code>while</code> Loop (Pre-condition)</h2>
+    <p>
+      A <code>while</code> loop tests its condition <strong>before</strong> each iteration. If the condition is false the first
+      time, the body never runs. Use it when the number of iterations is not known in advance.
+    </p>
+<pre><code>// Syntax: while (condition) { body; }
+
+int n = 12345;
+int digits = 0;
+
+while (n != 0) {        // tested BEFORE each pass
+    n /= 10;            // drop the last digit
+    digits++;
+}
+cout &lt;&lt; "Digits: " &lt;&lt; digits &lt;&lt; "\n";   // Digits: 5
+
+int count = 10;
+while (count &lt; 5) {     // false immediately — body never executes
+    cout &lt;&lt; "never printed\n";
+}</code></pre>
+    <div class="callout warn">
+      <strong>Warning — infinite loops</strong>
+      Make sure something inside the body eventually makes the condition false (changing a variable, reading new input,
+      or using <code>break</code>). Forgetting <code>n /= 10;</code> above would loop forever.
+    </div>
+
+    <h2>3.11 The <code>do-while</code> Loop (Post-condition)</h2>
+    <p>
+      A <code>do-while</code> loop tests its condition <strong>after</strong> the body, so the body executes
+      <strong>at least once</strong>, even if the condition is false from the start. Note the required semicolon at the end.
+    </p>
+<pre><code>// Syntax:
+// do {
+//     body;
+// } while (condition);      &lt;-- semicolon is mandatory
+
+int choice;
+do {
+    cout &lt;&lt; "Enter a number from 1 to 5: ";
+    cin  &gt;&gt; choice;
+} while (choice &lt; 1 || choice &gt; 5);   // repeat while input is invalid
+
+// Body runs exactly once although the condition is false immediately:
+int x = 100;
+do {
+    cout &lt;&lt; "x = " &lt;&lt; x &lt;&lt; "\n";     // prints once
+} while (x &lt; 5);</code></pre>
+    <table>
+      <thead><tr><th>Feature</th><th><code>while</code></th><th><code>do-while</code></th></tr></thead>
+      <tbody>
+        <tr><td>Condition checked</td><td>Before the body</td><td>After the body</td></tr>
+        <tr><td>Minimum executions</td><td>0</td><td>1</td></tr>
+        <tr><td>Typical use</td><td>Unknown count, may be zero</td><td>Menus, input validation</td></tr>
+      </tbody>
+    </table>
+
+    <h2>3.12 <code>break</code> — Exit a Loop Early</h2>
+    <p>
+      <code>break</code> immediately terminates the <strong>innermost</strong> enclosing loop (or <code>switch</code>).
+      Execution continues with the first statement after that loop.
+    </p>
+<pre><code>// Find the first multiple of 7 above 50
+for (int i = 51; i &lt; 1000; i++) {
+    if (i % 7 == 0) {
+        cout &lt;&lt; "Found: " &lt;&lt; i &lt;&lt; "\n";   // Found: 56
+        break;                              // stop searching
+    }
+}
+
+// Typical use: an intentionally infinite loop with an exit condition
+while (true) {
+    int v;
+    cin &gt;&gt; v;
+    if (v == 0) break;       // sentinel value ends the loop
+    cout &lt;&lt; "Got " &lt;&lt; v &lt;&lt; "\n";
+}</code></pre>
+
+    <h2>3.13 <code>continue</code> — Skip the Current Iteration</h2>
+    <p>
+      <code>continue</code> skips the <em>rest of the current iteration</em> and jumps straight to the next one. In a <code>for</code>
+      loop, the update expression still runs; in <code>while</code>/<code>do-while</code>, control goes to the condition test.
+    </p>
+<pre><code>// Print only odd numbers from 1 to 10
+for (int i = 1; i &lt;= 10; i++) {
+    if (i % 2 == 0) {
+        continue;           // skip even numbers
+    }
+    cout &lt;&lt; i &lt;&lt; " ";       // 1 3 5 7 9
+}</code></pre>
+    <div class="callout warn">
+      <strong>Warning — continue in while loops</strong>
+      In a <code>while</code> loop, make sure the variable that changes the condition is updated <em>before</em> the
+      <code>continue</code>; otherwise you skip the update and create an infinite loop.
+    </div>
+
+    <h2>3.14 <code>goto</code> — Why It Exists and Why to Avoid It</h2>
+    <p>
+      <code>goto label;</code> performs an unconditional jump to a labelled statement in the same function.
+      It exists for historical reasons (C and early languages had few structured constructs) and because it is occasionally
+      handy for escaping several nested loops or for centralised clean-up in C-style code.
+    </p>
+<pre><code>// Escaping two nested loops at once
+for (int i = 0; i &lt; 5; i++) {
+    for (int j = 0; j &lt; 5; j++) {
+        if (i * j == 6) {
+            cout &lt;&lt; "Found at i=" &lt;&lt; i &lt;&lt; ", j=" &lt;&lt; j &lt;&lt; "\n";
+            goto done;              // jump out of BOTH loops
+        }
+    }
+}
+done:                               // label
+cout &lt;&lt; "Search finished.\n";</code></pre>
+    <p>Why you should generally avoid it:</p>
+    <ul>
+      <li>It produces "spaghetti code" where the execution path is hard to follow and verify.</li>
+      <li>It cannot jump over initialisations of variables into their scope, and it bypasses destructors' normal flow in subtle ways, limiting its safety in C++.</li>
+      <li>Structured alternatives are clearer: <code>break</code> with a flag variable, <code>return</code> from a helper function, or RAII for clean-up.</li>
+    </ul>
+    <div class="callout tip">
+      <strong>Better alternative</strong>
+      Move the nested loops into a function and use <code>return</code> to leave them all at once. It is just as short
+      and far easier to maintain than <code>goto</code>.
+    </div>
+
+    <h2>3.15 Nested Loops and Loop Patterns</h2>
+    <p>
+      A loop inside another loop is a <strong>nested loop</strong>. For each iteration of the outer loop, the inner loop runs
+      to completion. If the outer loop runs <em>m</em> times and the inner <em>n</em> times, the inner body runs <em>m × n</em> times.
+      Nested loops are the natural tool for rows and columns.
+    </p>
+
+    <h3>Right-angled triangle</h3>
+<pre><code>int rows = 5;
+for (int i = 1; i &lt;= rows; i++) {          // outer loop: one pass per row
+    for (int j = 1; j &lt;= i; j++) {         // inner loop: i stars in row i
+        cout &lt;&lt; "* ";
+    }
+    cout &lt;&lt; "\n";                         // end the row
+}
+/* Output:
+*
+* *
+* * *
+* * * *
+* * * * *
+*/</code></pre>
+
+    <h3>Multiplication table</h3>
+<pre><code>#include &lt;iomanip&gt;   // std::setw
+
+for (int i = 1; i &lt;= 5; i++) {
+    for (int j = 1; j &lt;= 5; j++) {
+        cout &lt;&lt; setw(4) &lt;&lt; i * j;     // right-align each value in 4 columns
+    }
+    cout &lt;&lt; "\n";
+}
+/* Output:
+   1   2   3   4   5
+   2   4   6   8  10
+   3   6   9  12  15
+   4   8  12  16  20
+   5  10  15  20  25
+*/</code></pre>
+
+    <h3>Inverted triangle</h3>
+<pre><code>for (int i = 5; i &gt;= 1; i--) {
+    for (int j = 1; j &lt;= i; j++) {
+        cout &lt;&lt; "# ";
+    }
+    cout &lt;&lt; "\n";
+}</code></pre>
+    <div class="callout">
+      <strong>Pattern-printing recipe</strong>
+      1) Decide how many rows (outer loop). 2) For each row, work out how many spaces and how many symbols are needed
+      as a function of the row number. 3) Use one inner loop per kind of output, then print a newline after each row.
+      Note that <code>break</code> and <code>continue</code> affect only the innermost loop.
+    </div>
+
+    <h2>3.16 Choosing the Right Construct</h2>
+    <table>
+      <thead><tr><th>Situation</th><th>Best choice</th></tr></thead>
+      <tbody>
+        <tr><td>Two alternatives</td><td><code>if / else</code> (or ternary for a simple value)</td></tr>
+        <tr><td>Many alternatives on one integral value</td><td><code>switch</code></td></tr>
+        <tr><td>Ranges or complex boolean conditions</td><td><code>if / else if</code> chain</td></tr>
+        <tr><td>Known number of iterations</td><td><code>for</code></td></tr>
+        <tr><td>Visit every element of a container</td><td>range-based <code>for</code></td></tr>
+        <tr><td>Unknown number of iterations, may be zero</td><td><code>while</code></td></tr>
+        <tr><td>Must run at least once (menus, validation)</td><td><code>do-while</code></td></tr>
+      </tbody>
+    </table>
+
+    <h2>3.17 Key Takeaways</h2>
+    <ul>
+      <li><code>if / else if / else</code> tests conditions top to bottom; the first true branch runs.</li>
+      <li>Avoid deep nesting with <code>&amp;&amp;</code>, <code>||</code>, and early exits.</li>
+      <li>The ternary <code>cond ? a : b</code> is an expression that yields a value; keep it simple.</li>
+      <li><code>switch</code> needs <code>break</code> to prevent fall-through; always consider a <code>default</code>.</li>
+      <li><code>for</code> = initialization; condition; update. Use it when the count is known.</li>
+      <li>Range-based <code>for</code> (C++11) is the safest way to walk a container.</li>
+      <li><code>while</code> checks first (0+ runs); <code>do-while</code> checks last (1+ runs).</li>
+      <li><code>break</code> leaves the loop; <code>continue</code> skips to the next iteration; avoid <code>goto</code>.</li>
+      <li>Nested loops multiply iteration counts and are the basis of patterns and tables.</li>
+    </ul>
+
+    <div style="display:flex;justify-content:space-between;margin-top:2rem;gap:.75rem;">
+      <a href="/chapters/ch02-variables-types-operators/index.html" class="btn btn-outline" style="text-decoration:none;">← Chapter 02</a>
+      <a href="examples.html" class="btn" style="text-decoration:none;">Next: Examples →</a>
+    </div>
+
+  </div>
+</main>
+</div>
+<footer id="site-footer">
+  &copy; 2024 <a href="https://linkedin.com/in/adityabhuyan" target="_blank" rel="noopener">Aditya Pratap Bhuyan</a> &nbsp;|&nbsp;
+  <a href="https://github.com/aditya-bhuyan/cpp-learning-hub" target="_blank" rel="noopener">GitHub</a> &nbsp;|&nbsp;
+  GNU GPL v3 License
+</footer>
+<script src="/assets/js/nav.js"></script>
+</body>
+</html>

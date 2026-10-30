@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ch 12 — Memory Management | C++ Learning Hub</title>
+  <link rel="stylesheet" href="/assets/css/style.css" />
+</head>
+<body>
+<header id="site-header">
+  <button id="hamburger" aria-label="Toggle navigation">&#9776;</button>
+  <div id="site-logo">C++ Learning Hub <span class="badge">FREE</span></div>
+  <button id="theme-toggle">☾ Dark</button>
+</header>
+<div id="layout">
+<aside id="sidebar"><nav>
+  <div class="nav-section-title">C++ Learning Hub</div>
+  <div class="nav-chapter" data-chapter="home"><div class="nav-chapter-header"><span>🏠 Home</span></div><div class="nav-chapter-links"><a href="/index.html">Overview</a></div></div>
+  <div class="nav-section-title">Chapters</div>
+  <div class="nav-chapter" data-chapter="ch01"><div class="nav-chapter-header"><span><span class="ch-num">01</span>Introduction to C++</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch01-introduction/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch01-introduction/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch01-introduction/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch01-introduction/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch01-introduction/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch02"><div class="nav-chapter-header"><span><span class="ch-num">02</span>Variables, Types &amp; Operators</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch02-variables-types-operators/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch02-variables-types-operators/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch02-variables-types-operators/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch02-variables-types-operators/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch02-variables-types-operators/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch03"><div class="nav-chapter-header"><span><span class="ch-num">03</span>Control Flow</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch03-control-flow/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch03-control-flow/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch03-control-flow/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch03-control-flow/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch03-control-flow/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch04"><div class="nav-chapter-header"><span><span class="ch-num">04</span>Functions</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch04-functions/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch04-functions/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch04-functions/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch04-functions/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch04-functions/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch05"><div class="nav-chapter-header"><span><span class="ch-num">05</span>Arrays &amp; Strings</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch05-arrays-strings/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch05-arrays-strings/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch05-arrays-strings/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch05-arrays-strings/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch05-arrays-strings/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch06"><div class="nav-chapter-header"><span><span class="ch-num">06</span>Pointers &amp; References</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch06-pointers-references/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch06-pointers-references/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch06-pointers-references/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch06-pointers-references/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch06-pointers-references/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch07"><div class="nav-chapter-header"><span><span class="ch-num">07</span>OOP — Basics</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch07-oop-basics/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch07-oop-basics/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch07-oop-basics/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch07-oop-basics/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch07-oop-basics/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch08"><div class="nav-chapter-header"><span><span class="ch-num">08</span>OOP — Inheritance &amp; Polymorphism</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch08-oop-inheritance/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch08-oop-inheritance/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch08-oop-inheritance/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch08-oop-inheritance/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch08-oop-inheritance/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch09"><div class="nav-chapter-header"><span><span class="ch-num">09</span>Templates</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch09-templates/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch09-templates/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch09-templates/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch09-templates/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch09-templates/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch10"><div class="nav-chapter-header"><span><span class="ch-num">10</span>STL — Containers</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch10-stl-containers/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch10-stl-containers/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch10-stl-containers/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch10-stl-containers/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch10-stl-containers/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch11"><div class="nav-chapter-header"><span><span class="ch-num">11</span>STL — Algorithms &amp; Iterators</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch11-stl-algorithms/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch11-stl-algorithms/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch11-stl-algorithms/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch11-stl-algorithms/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch11-stl-algorithms/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter open" data-chapter="ch12"><div class="nav-chapter-header active"><span><span class="ch-num">12</span>Memory Management</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch12-memory-management/index.html" class="active"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch12-memory-management/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch12-memory-management/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch12-memory-management/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch12-memory-management/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch13"><div class="nav-chapter-header"><span><span class="ch-num">13</span>Exception Handling</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch13-exception-handling/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch13-exception-handling/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch13-exception-handling/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch13-exception-handling/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch13-exception-handling/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch14"><div class="nav-chapter-header"><span><span class="ch-num">14</span>File I/O</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch14-file-io/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch14-file-io/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch14-file-io/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch14-file-io/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch14-file-io/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch15"><div class="nav-chapter-header"><span><span class="ch-num">15</span>Modern C++ (C++11–C++20)</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch15-modern-cpp/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch15-modern-cpp/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch15-modern-cpp/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch15-modern-cpp/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch15-modern-cpp/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-section-title">Capstone</div>
+  <div class="nav-chapter" data-chapter="ch16"><div class="nav-chapter-header"><span><span class="ch-num">16</span>Capstone Project</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch16-capstone/index.html"><span class="link-icon">🎯</span>Brief</a><a href="/chapters/ch16-capstone/walkthrough.html"><span class="link-icon">🗺</span>Walkthrough</a><a href="/chapters/ch16-capstone/solution.html"><span class="link-icon">✅</span>Solution</a></div></div>
+  <div class="nav-section-title">About</div>
+  <div style="padding:.4rem 1.1rem 1rem;font-size:.78rem;color:var(--muted);line-height:1.5;">Maintained by<br><a href="https://linkedin.com/in/adityabhuyan" target="_blank" rel="noopener">Aditya Pratap Bhuyan</a><br><span style="font-size:.72rem;">GNU GPL v3 License</span></div>
+</nav></aside>
+
+<main id="main">
+  <div class="page-header">
+    <div class="breadcrumb"><a href="/index.html">Home</a> › Chapter 12</div>
+    <h1>Chapter 12 — Memory Management</h1>
+    <p class="subtitle">Deep dive into stack vs heap, manual allocation, RAII, and modern smart pointers.</p>
+    <div class="chapter-tabs">
+      <a href="index.html" class="active">📖 Learning</a>
+      <a href="examples.html">💻 Examples</a>
+      <a href="exercises.html">✏️ Exercises</a>
+      <a href="solutions.html">✅ Solutions</a>
+      <a href="quiz.html">🧠 Quiz</a>
+    </div>
+  </div>
+
+  <div class="content">
+
+    <h2>12.1 Stack vs Heap Memory</h2>
+    <p>
+      In C++, programs execute inside a virtual address space partitioned into distinct memory segments.
+      The two primary regions where runtime variables live are the <strong>Stack</strong> and the <strong>Heap</strong>
+      (also called the free store). Understanding their operational differences is fundamental to writing safe,
+      high-performance software.
+    </p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Attribute</th>
+          <th>Stack Memory</th>
+          <th>Heap Memory (Free Store)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Management</strong></td>
+          <td>Automatic (compiler-managed via stack pointer)</td>
+          <td>Manual (programmer or smart pointer managed)</td>
+        </tr>
+        <tr>
+          <td><strong>Lifetime</strong></td>
+          <td>Tied to scope (enclosing block <code>{ ... }</code>)</td>
+          <td>Dynamic (until explicitly freed with <code>delete</code>)</td>
+        </tr>
+        <tr>
+          <td><strong>Allocation Speed</strong></td>
+          <td>Extremely fast (single CPU instruction adjusting SP)</td>
+          <td>Slower (runtime allocator searches free lists/bins)</td>
+        </tr>
+        <tr>
+          <td><strong>Size Limit</strong></td>
+          <td>Small &amp; fixed (typically 1–8 MB per thread)</td>
+          <td>Large (bounded only by system RAM and virtual swap)</td>
+        </tr>
+        <tr>
+          <td><strong>Fragmentation</strong></td>
+          <td>None (strictly LIFO order)</td>
+          <td>Possible over time due to random allocation/freeing</td>
+        </tr>
+        <tr>
+          <td><strong>Failure Mode</strong></td>
+          <td>Stack Overflow (e.g. infinite recursion)</td>
+          <td><code>std::bad_alloc</code> exception (out of memory)</td>
+        </tr>
+      </tbody>
+    </table>
+
+<pre><code>void stackExample() {
+    int x = 42;             // Stack allocated
+    double buffer[100];     // Stack allocated (800 bytes)
+}                           // x and buffer automatically popped and destroyed here
+
+void heapExample() {
+    int* p = new int(42);   // Heap allocated: 'p' (stack pointer) points to heap memory
+    // ...
+    delete p;               // Must be explicitly freed, otherwise leaked!
+}</code></pre>
+
+    <div class="callout tip">
+      <strong>Default Rule of Thumb</strong>
+      Always prefer stack allocation whenever the object's lifetime matches the local scope and its size is known and moderate. Allocate on the heap only when you need dynamic lifetime (outliving the scope that created it), runtime-variable sizing, polymorphism via base pointers, or very large data buffers.
+    </div>
+
+    <h2>12.2 Manual Allocation: <code>new</code> and <code>delete</code></h2>
+    <p>
+      C++ provides the <code>new</code> and <code>delete</code> operators for allocating and releasing individual objects on the heap.
+      Unlike C's <code>malloc()</code> and <code>free()</code>, which only allocate raw uninitialized bytes, C++ operators understand object lifecycles:
+    </p>
+    <ul>
+      <li><code>new Type(args)</code>: Allocates memory for <code>sizeof(Type)</code> <strong>and invokes the constructor</strong> with the given arguments. Returns a typed pointer <code>Type*</code>.</li>
+      <li><code>delete ptr</code>: <strong>Invokes the destructor</strong> of the object pointed to by <code>ptr</code>, then returns the allocated memory back to the heap allocator.</li>
+    </ul>
+
+<pre><code>#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+class Player {
+    string name_;
+    int score_;
+public:
+    Player(const string&amp; name, int score) : name_(name), score_(score) {
+        cout &lt;&lt; "Constructor: Player " &lt;&lt; name_ &lt;&lt; " created\n";
+    }
+    ~Player() {
+        cout &lt;&lt; "Destructor: Player " &lt;&lt; name_ &lt;&lt; " destroyed\n";
+    }
+    void print() const { cout &lt;&lt; name_ &lt;&lt; " has " &lt;&lt; score_ &lt;&lt; " points\n"; }
+};
+
+int main() {
+    // Allocate single object on heap
+    Player* p = new Player("Alice", 100);   // Calls Player::Player
+    p-&gt;print();
+
+    // Free allocated memory
+    delete p;                               // Calls Player::~Player, then frees memory
+    p = nullptr;                            // Good practice: clear dangling pointer
+
+    return 0;
+}</code></pre>
+
+    <div class="callout error">
+      <strong>Never Mix C and C++ Allocation Functions</strong>
+      Never use <code>free()</code> on a pointer obtained with <code>new</code> (the destructor will not run!), and never use <code>delete</code> on a pointer obtained with <code>malloc()</code>. Always pair <code>new</code> with <code>delete</code>, and <code>malloc</code> with <code>free</code>.
+    </div>
+
+    <h2>12.3 Dynamically Allocated Arrays: <code>new[]</code> and <code>delete[]</code></h2>
+    <p>
+      When allocating contiguous arrays of dynamic size, C++ uses array forms: <code>new[]</code> and <code>delete[]</code>.
+    </p>
+    <ul>
+      <li><code>new Type[count]</code>: Allocates memory for <code>count</code> objects and default-constructs each one in order.</li>
+      <li><code>delete[] ptr</code>: Invokes the destructor for each element in reverse order and deallocates the array block.</li>
+    </ul>
+
+<pre><code>int size = 5;
+int* arr = new int[size]{ 10, 20, 30, 40, 50 };   // C++11 list initialization
+
+for (int i = 0; i &lt; size; ++i) {
+    cout &lt;&lt; arr[i] &lt;&lt; " ";
+}
+cout &lt;&lt; "\n";
+
+delete[] arr;    // MUST use delete[], NOT delete!
+arr = nullptr;</code></pre>
+
+    <div class="callout warn">
+      <strong>The Mismatched <code>delete</code> Trap</strong>
+      When you call <code>new[]</code>, the compiler stores extra metadata (often called the <em>array cookie</em>) containing the number of elements so that <code>delete[]</code> knows how many destructors to call. If you call scalar <code>delete arr;</code> instead of <code>delete[] arr;</code>, the program exhibits <strong>undefined behavior</strong> — destructors are skipped and heap memory metadata is corrupted.
+    </div>
+
+    <h2>12.4 Memory Leaks and Detection</h2>
+    <p>
+      A <strong>memory leak</strong> occurs when heap-allocated memory is no longer referenced by any pointer in the program but has not been returned to the system with <code>delete</code>.
+      In long-running software (servers, game engines, UI applications), leaking even small amounts per second will steadily consume system RAM, degrade performance, and ultimately crash the operating system or application.
+    </p>
+
+<pre><code>void leakedFunction() {
+    int* leak = new int(100);
+    if (someCondition()) {
+        return;     // BUG: 'leak' goes out of scope, heap int(100) is orphaned forever!
+    }
+    delete leak;
+}</code></pre>
+
+    <h3>Detection Tools</h3>
+    <ol>
+      <li>
+        <strong>AddressSanitizer (ASan):</strong> Built into modern GCC and Clang. Compiles lightweight instrumentation into your binary with near-zero friction:
+        <br><code>g++ -std=c++17 -fsanitize=address -g -O1 -o program program.cpp</code>
+        <br>When run, ASan instantly flags memory leaks, heap buffer overflows, and use-after-free bugs with exact file and line numbers.
+      </li>
+      <li>
+        <strong>Valgrind (Memcheck):</strong> Powerful dynamic binary instrumentation tool for Linux/macOS:
+        <br><code>valgrind --leak-check=full --show-leak-kinds=all ./program</code>
+      </li>
+    </ol>
+
+    <h2>12.5 Dangling Pointers and Double Delete</h2>
+    <p>
+      Manual pointer arithmetic and lifecycle management introduce two severe memory safety hazards:
+    </p>
+    <ul>
+      <li>
+        <strong>Dangling Pointer:</strong> A pointer that points to a memory address that has already been deallocated. Dereferencing or modifying a dangling pointer is <em>Use-After-Free (UAF)</em> undefined behavior.
+      </li>
+      <li>
+        <strong>Double Delete:</strong> Calling <code>delete</code> twice on the same heap address. This corrupts internal allocator tables and crashes the application or introduces security vulnerabilities.
+      </li>
+    </ul>
+
+<pre><code>int* p1 = new int(50);
+delete p1;          // Memory returned to OS/allocator; p1 now dangles!
+
+// *p1 = 100;       // UNDEFINED BEHAVIOR: writing to deallocated memory (Use-After-Free)
+// delete p1;       // UNDEFINED BEHAVIOR: double delete!
+
+p1 = nullptr;       // Safe practice: null out freed pointers
+delete p1;          // SAFE: 'delete nullptr' is a well-defined no-op in C++!</code></pre>
+
+    <div class="callout tip">
+      <strong>Deleting <code>nullptr</code> is Always Safe</strong>
+      According to the C++ standard, <code>delete nullptr</code> and <code>delete[] nullptr</code> are guaranteed to be safe and do nothing. You never need to write <code>if (p != nullptr) delete p;</code>.
+    </div>
+
+    <h2>12.6 The RAII Principle: Resource Acquisition Is Initialization</h2>
+    <p>
+      <strong>RAII</strong> (<em>Resource Acquisition Is Initialization</em>) is the foundational design pattern of modern C++.
+      It states: <strong>bind the lifecycle of any resource (heap memory, file descriptors, network sockets, mutex locks) to the lifetime of a stack-allocated object.</strong>
+    </p>
+    <ol>
+      <li><strong>Acquire resource in constructor:</strong> When the wrapper object is created on the stack, it claims ownership of the resource.</li>
+      <li><strong>Release resource in destructor:</strong> When the wrapper object exits scope (whether normally, by <code>return</code>, <code>break</code>, or via an <strong>exception</strong>), its destructor is automatically and deterministically invoked by the runtime.</li>
+    </ol>
+
+<pre><code>// Simple RAII wrapper around dynamic integer
+class ScopedInt {
+    int* ptr_;
+public:
+    explicit ScopedInt(int value) : ptr_(new int(value)) { }
+    ~ScopedInt() {
+        delete ptr_;    // Automatically executed upon leaving scope
+    }
+
+    // Disable copying to avoid double-free
+    ScopedInt(const ScopedInt&amp;) = delete;
+    ScopedInt&amp; operator=(const ScopedInt&amp;) = delete;
+
+    int get() const { return *ptr_; }
+    void set(int v) { *ptr_ = v; }
+};
+
+void testRAII() {
+    ScopedInt a(42);
+    cout &lt;&lt; a.get() &lt;&lt; "\n";
+    // No delete needed! Destructor runs automatically when testRAII finishes or throws.
+}</code></pre>
+
+    <h2>12.7 Smart Pointers Overview</h2>
+    <p>
+      Instead of writing custom RAII wrappers for every dynamic object, C++11 introduced standardized smart pointer class templates in the <code>&lt;memory&gt;</code> header.
+      Smart pointers act like regular pointers (overloading <code>*</code> and <code>-&gt;</code>), but manage ownership semantics automatically with <strong>zero runtime overhead</strong> in the case of <code>std::unique_ptr</code>.
+    </p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Smart Pointer</th>
+          <th>Ownership Model</th>
+          <th>Copyable?</th>
+          <th>Movable?</th>
+          <th>Primary Use Case</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>std::unique_ptr&lt;T&gt;</code></td>
+          <td>Exclusive (single owner)</td>
+          <td>No</td>
+          <td>Yes</td>
+          <td>Default choice for heap objects, polymorphics, factories</td>
+        </tr>
+        <tr>
+          <td><code>std::shared_ptr&lt;T&gt;</code></td>
+          <td>Shared (reference counted)</td>
+          <td>Yes</td>
+          <td>Yes</td>
+          <td>Shared ownership across multiple subsystems/threads</td>
+        </tr>
+        <tr>
+          <td><code>std::weak_ptr&lt;T&gt;</code></td>
+          <td>Non-owning observer</td>
+          <td>Yes</td>
+          <td>Yes</td>
+          <td>Breaks cycles in shared_ptr, caches, observer pattern</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>12.8 <code>std::unique_ptr</code>: Exclusive Ownership</h2>
+    <p>
+      <code>std::unique_ptr&lt;T&gt;</code> owns and manages another object through a pointer and disposes of that object when the <code>unique_ptr</code> goes out of scope.
+      It enforces <strong>exclusive ownership</strong>: no two <code>unique_ptr</code> instances can manage the same object simultaneously.
+    </p>
+    <ul>
+      <li><strong>Copying is disabled:</strong> Copy constructor and copy assignment are <code>= delete</code>.</li>
+      <li><strong>Move semantics enabled:</strong> Ownership can be transferred explicitly using <code>std::move()</code>.</li>
+      <li><strong>Creation:</strong> Always use <code>std::make_unique&lt;T&gt;()</code> (C++14) rather than raw <code>new</code>.</li>
+    </ul>
+
+<pre><code>#include &lt;iostream&gt;
+#include &lt;memory&gt;
+#include &lt;string&gt;
+using namespace std;
+
+struct Task {
+    string title;
+    Task(string t) : title(t) { cout &lt;&lt; "Task '" &lt;&lt; title &lt;&lt; "' created\n"; }
+    ~Task() { cout &lt;&lt; "Task '" &lt;&lt; title &lt;&lt; "' destroyed\n"; }
+    void run() const { cout &lt;&lt; "Running " &lt;&lt; title &lt;&lt; "\n"; }
+};
+
+int main() {
+    // 1. Creation with std::make_unique (Exception safe, clean syntax)
+    auto p1 = make_unique&lt;Task&gt;("Compile Code");
+    p1-&gt;run();
+
+    // 2. auto p2 = p1;         // COMPILE ERROR: unique_ptr cannot be copied!
+
+    // 3. Transfer ownership with std::move
+    unique_ptr&lt;Task&gt; p2 = move(p1);
+    // Now p1 is nullptr, p2 owns the Task
+
+    if (!p1) {
+        cout &lt;&lt; "p1 is now empty (nullptr)\n";
+    }
+    p2-&gt;run();
+
+    // 4. Member methods
+    Task* raw = p2.get();       // Non-owning inspection of raw pointer
+    raw-&gt;run();
+
+    p2.reset(new Task("New Task")); // Destroys previous Task, acquires new one
+    p2.reset();                     // Explicitly destroys task and resets to nullptr
+
+    return 0;
+}</code></pre>
+
+    <h3><code>std::unique_ptr</code> with Arrays</h3>
+    <p>
+      <code>std::unique_ptr&lt;T[]&gt;</code> provides a specialization for dynamically allocated arrays that automatically calls <code>delete[]</code> on destruction and provides <code>operator[]</code>:
+    </p>
+<pre><code>auto buf = make_unique&lt;int[]&gt;(100);   // Allocates array of 100 ints
+buf[0] = 10;
+buf[99] = 20;
+// Automatically freed via delete[] when 'buf' leaves scope!</code></pre>
+
+    <h2>12.9 <code>std::shared_ptr</code>: Shared Ownership &amp; Reference Counting</h2>
+    <p>
+      <code>std::shared_ptr&lt;T&gt;</code> retains shared ownership of an object through a pointer. Multiple <code>shared_ptr</code> objects may own the same resource.
+      The resource is maintained by an internal <strong>control block</strong> containing:
+    </p>
+    <ul>
+      <li>A <strong>strong reference counter:</strong> Incremented whenever a <code>shared_ptr</code> is copied; decremented whenever a <code>shared_ptr</code> is destroyed or reassigned.</li>
+      <li>A <strong>weak reference counter:</strong> Tracks how many <code>std::weak_ptr</code> instances observe the control block.</li>
+      <li>The custom deleter and allocator (if specified).</li>
+    </ul>
+    <p>
+      When the strong reference count reaches <strong>0</strong>, the managed object is destroyed. When both strong and weak counts reach 0, the control block itself is deallocated.
+    </p>
+
+<pre><code>#include &lt;iostream&gt;
+#include &lt;memory&gt;
+using namespace std;
+
+struct Node {
+    int id;
+    Node(int i) : id(i) { cout &lt;&lt; "Node " &lt;&lt; id &lt;&lt; " created\n"; }
+    ~Node() { cout &lt;&lt; "Node " &lt;&lt; id &lt;&lt; " destroyed\n"; }
+};
+
+int main() {
+    // make_shared allocates the object and control block in ONE contiguous heap chunk
+    shared_ptr&lt;Node&gt; sp1 = make_shared&lt;Node&gt;(101);
+    cout &lt;&lt; "use_count: " &lt;&lt; sp1.use_count() &lt;&lt; "\n";  // 1
+
+    {
+        shared_ptr&lt;Node&gt; sp2 = sp1;  // Copying increases reference count
+        cout &lt;&lt; "use_count inside block: " &lt;&lt; sp1.use_count() &lt;&lt; "\n";  // 2
+        cout &lt;&lt; "sp2 id: " &lt;&lt; sp2-&gt;id &lt;&lt; "\n";
+    } // sp2 destroyed; reference count decremented to 1
+
+    cout &lt;&lt; "use_count after block: " &lt;&lt; sp1.use_count() &lt;&lt; "\n";   // 1
+    sp1.reset(); // Reference count drops to 0 -> Node 101 destroyed immediately
+    cout &lt;&lt; "sp1 reset complete\n";
+
+    return 0;
+}</code></pre>
+
+    <div class="callout tip">
+      <strong>Why <code>std::make_shared</code> is Faster</strong>
+      Calling <code>shared_ptr&lt;T&gt;(new T)</code> performs two separate heap allocations: one for <code>T</code> and one for the internal control block. <code>std::make_shared&lt;T&gt;()</code> performs a single unified allocation for both, improving cache locality and performance.
+    </div>
+
+    <h2>12.10 <code>std::weak_ptr</code>: Non-Owning Observer</h2>
+    <p>
+      <code>std::weak_ptr&lt;T&gt;</code> is a smart pointer that holds a non-owning ("weak") reference to an object managed by <code>std::shared_ptr</code>.
+      It must be converted to <code>std::shared_ptr</code> to access the referenced object.
+    </p>
+    <ul>
+      <li>Does <strong>not</strong> contribute to the strong reference count (does not prevent object destruction).</li>
+      <li><code>expired()</code>: Returns <code>true</code> if the managed object has already been destroyed.</li>
+      <li><code>lock()</code>: Safely converts the weak reference into a temporary <code>std::shared_ptr</code>. Returns <code>nullptr</code> if the object no longer exists.</li>
+    </ul>
+
+<pre><code>shared_ptr&lt;int&gt; sp = make_shared&lt;int&gt;(42);
+weak_ptr&lt;int&gt; wp = sp;   // wp observes sp, use_count stays 1
+
+cout &lt;&lt; "use_count: " &lt;&lt; sp.use_count() &lt;&lt; "\n";   // 1
+cout &lt;&lt; "expired? " &lt;&lt; boolalpha &lt;&lt; wp.expired() &lt;&lt; "\n"; // false
+
+// To access the value, convert to shared_ptr via lock():
+if (auto locked = wp.lock()) {
+    cout &lt;&lt; "Locked value: " &lt;&lt; *locked &lt;&lt; "\n";
+}
+
+sp.reset(); // Object destroyed!
+
+if (auto locked = wp.lock()) {
+    // Will not execute
+} else {
+    cout &lt;&lt; "Object has been destroyed, lock returned nullptr\n";
+}</code></pre>
+
+    <h2>12.11 The Circular Reference Problem and Weak Pointers</h2>
+    <p>
+      When two objects hold <code>std::shared_ptr</code> references to each other, a <strong>cyclic dependency (circular reference)</strong> is formed.
+      Even when all external pointers go out of scope, each object's <code>use_count</code> remains at 1 because the other object holds a reference.
+      Consequently, neither destructor is ever executed, causing a <strong>silent memory leak</strong>.
+    </p>
+
+<pre><code>// THE BUG: Circular reference
+struct B; // Forward declaration
+
+struct A {
+    shared_ptr&lt;B&gt; b_ptr;
+    ~A() { cout &lt;&lt; "~A destroyed\n"; }
+};
+
+struct B {
+    shared_ptr&lt;A&gt; a_ptr;   // Cycle!
+    ~B() { cout &lt;&lt; "~B destroyed\n"; }
+};
+
+void createCycle() {
+    auto a = make_shared&lt;A&gt;();
+    auto b = make_shared&lt;B&gt;();
+    a-&gt;b_ptr = b;
+    b-&gt;a_ptr = a;
+} // 'a' and 'b' exit scope, but use_count for both is 1 -> NEITHER DESTRUCTOR RUNS!</code></pre>
+
+    <h3>The Fix: Break the Cycle with <code>std::weak_ptr</code></h3>
+    <p>Change one of the links (e.g. child-to-parent or back-pointer) to <code>std::weak_ptr</code>:</p>
+<pre><code>struct BFixed {
+    weak_ptr&lt;A&gt; a_ptr;    // Weak link breaks the ownership cycle!
+    ~BFixed() { cout &lt;&lt; "~BFixed destroyed\n"; }
+};</code></pre>
+
+    <h2>12.12 Custom Deleters</h2>
+    <p>
+      By default, smart pointers invoke <code>delete</code> on their managed pointer. However, you can provide a <strong>custom deleter</strong> to clean up legacy C APIs (e.g. <code>fclose</code> for <code>FILE*</code>, <code>free()</code> for C allocations, or custom OS handles).
+    </p>
+
+    <h3>Custom Deleter in <code>std::unique_ptr</code></h3>
+    <p>For <code>unique_ptr</code>, the deleter type is part of the template signature:</p>
+<pre><code>#include &lt;cstdio&gt;
+#include &lt;memory&gt;
+
+struct FileCloser {
+    void operator()(FILE* fp) const {
+        if (fp) {
+            cout &lt;&lt; "Closing file via custom deleter\n";
+            fclose(fp);
+        }
+    }
+};
+
+void fileExample() {
+    // unique_ptr&lt;Type, DeleterType&gt;
+    unique_ptr&lt;FILE, FileCloser&gt; file(fopen("test.txt", "w"));
+    if (file) {
+        fputs("Hello RAII\n", file.get());
+    }
+    // fclose(file.get()) called automatically upon leaving scope!
+}</code></pre>
+
+    <h3>Custom Deleter in <code>std::shared_ptr</code></h3>
+    <p>For <code>shared_ptr</code>, the deleter is passed as a constructor argument (type erasure), keeping <code>shared_ptr&lt;FILE&gt;</code> signature clean:</p>
+<pre><code>void sharedFileExample() {
+    // Pass lambda or function pointer as constructor argument
+    shared_ptr&lt;FILE&gt; file(fopen("log.txt", "w"), [](FILE* fp) {
+        if (fp) {
+            cout &lt;&lt; "Closing log file\n";
+            fclose(fp);
+        }
+    });
+}</code></pre>
+
+    <h2>12.13 <code>std::unique_ptr</code> as a Factory Return Type</h2>
+    <p>
+      In modern polymorphic designs, factory functions should return <code>std::unique_ptr&lt;Base&gt;</code>.
+      This provides the caller with the maximum flexibility:
+    </p>
+    <ul>
+      <li>The caller receives exclusive, zero-overhead ownership.</li>
+      <li>If the caller needs shared ownership, <code>std::unique_ptr</code> implicitly converts to <code>std::shared_ptr</code> via <code>std::move</code>.</li>
+    </ul>
+
+<pre><code>class Shape {
+public:
+    virtual void draw() const = 0;
+    virtual ~Shape() = default;   // Always virtual destructor for base!
+};
+
+class Circle : public Shape {
+public:
+    void draw() const override { cout &lt;&lt; "Drawing Circle\n"; }
+};
+
+class Square : public Shape {
+public:
+    void draw() const override { cout &lt;&lt; "Drawing Square\n"; }
+};
+
+// Factory function
+unique_ptr&lt;Shape&gt; createShape(const string&amp; type) {
+    if (type == "circle") return make_unique&lt;Circle&gt;();
+    if (type == "square") return make_unique&lt;Square&gt;();
+    return nullptr;
+}
+
+int main() {
+    auto shape1 = createShape("circle");
+    shape1-&gt;draw();
+
+    // Smoothly convert to shared_ptr if needed
+    shared_ptr&lt;Shape&gt; sharedShape = createShape("square");
+    sharedShape-&gt;draw();
+
+    return 0;
+}</code></pre>
+
+    <h2>12.14 When to Use Raw Pointers vs Smart Pointers</h2>
+    <p>
+      The C++ Core Guidelines established clear conventions for pointer usage in modern C++:
+    </p>
+    <table>
+      <thead>
+        <tr>
+          <th>Pointer / Reference Type</th>
+          <th>Intent &amp; Ownership</th>
+          <th>Guidelines</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>std::unique_ptr&lt;T&gt;</code></td>
+          <td>Sole owner of dynamic object</td>
+          <td>Default choice for managing heap lifetime. Pass by value to sink/transfer ownership.</td>
+        </tr>
+        <tr>
+          <td><code>std::shared_ptr&lt;T&gt;</code></td>
+          <td>Shared owner of dynamic object</td>
+          <td>Use only when multiple independent owners genuinely share lifetime.</td>
+        </tr>
+        <tr>
+          <td><code>std::weak_ptr&lt;T&gt;</code></td>
+          <td>Non-owning observer of shared resource</td>
+          <td>Use for caches, observer pattern, and breaking cycles.</td>
+        </tr>
+        <tr>
+          <td><code>T&amp;</code> (Reference)</td>
+          <td>Non-owning observer (guaranteed non-null)</td>
+          <td>Preferred parameter type for functions that need to inspect or mutate an object without taking ownership.</td>
+        </tr>
+        <tr>
+          <td><code>T*</code> (Raw Pointer)</td>
+          <td>Non-owning observer (optional / nullable)</td>
+          <td>Use for parameter passing when <code>nullptr</code> is a valid argument. <strong>Never use raw pointers to express ownership or call <code>delete</code>!</strong></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>12.15 Memory Alignment and Placement New</h2>
+    <p>
+      For high-performance systems and embedded programming, C++ allows direct control over memory layout:
+    </p>
+    <ul>
+      <li><code>alignof(Type)</code>: Queries the alignment requirement (in bytes) of a type.</li>
+      <li><code>alignas(N)</code>: Forces custom byte alignment for structs or variables.</li>
+      <li>
+        <strong>Placement New:</strong> Constructs an object in a pre-allocated memory buffer without performing heap allocation.
+        Requires <code>#include &lt;new&gt;</code>. Because placement new did not allocate heap memory, you <strong>must not call <code>delete</code></strong>; instead, manually invoke the destructor: <code>ptr-&gt;~Type()</code>.
+      </li>
+    </ul>
+
+<pre><code>#include &lt;iostream&gt;
+#include &lt;new&gt;   // Required for placement new
+using namespace std;
+
+struct Item {
+    int id;
+    Item(int i) : id(i) { cout &lt;&lt; "Item " &lt;&lt; id &lt;&lt; " constructed in buffer\n"; }
+    ~Item() { cout &lt;&lt; "Item " &lt;&lt; id &lt;&lt; " explicitly destroyed\n"; }
+};
+
+int main() {
+    // Pre-allocated stack memory buffer
+    alignas(Item) char buffer[sizeof(Item)];
+
+    // Placement new: construct Item inside 'buffer'
+    Item* itemPtr = new (buffer) Item(99);
+
+    cout &lt;&lt; "Item id: " &lt;&lt; itemPtr-&gt;id &lt;&lt; "\n";
+
+    // Clean up: Manually invoke destructor!
+    itemPtr-&gt;~Item();
+
+    return 0;
+}</code></pre>
+
+    <h2>12.16 Key Takeaways</h2>
+    <ul>
+      <li>The <strong>Stack</strong> is fast, automatic, and scope-bound; the <strong>Heap</strong> is dynamic, manual, and sized for large allocations.</li>
+      <li>Every <code>new</code> must be paired with <code>delete</code>, and every <code>new[]</code> must be paired with <code>delete[]</code>. Mixing them causes undefined behavior.</li>
+      <li><strong>RAII</strong> ties resource management to object lifetimes via stack destructors, guaranteeing cleanup even during exceptions.</li>
+      <li>Use <code>std::unique_ptr</code> for exclusive ownership (zero overhead, move-only). Create with <code>std::make_unique</code>.</li>
+      <li>Use <code>std::shared_ptr</code> for shared ownership (reference counted). Create with <code>std::make_shared</code>.</li>
+      <li>Use <code>std::weak_ptr</code> to break circular references and safely observe <code>shared_ptr</code> instances without extending their lifetime.</li>
+      <li>Raw pointers and references are for non-owning observation; smart pointers are for ownership and lifetime management.</li>
+    </ul>
+
+    <div style="display:flex;justify-content:space-between;margin-top:2rem;gap:.75rem;">
+      <a href="/chapters/ch11-stl-algorithms/index.html" class="btn btn-outline" style="text-decoration:none;">← Chapter 11</a>
+      <a href="examples.html" class="btn" style="text-decoration:none;">Next: Examples →</a>
+    </div>
+
+  </div>
+</main>
+</div>
+<footer id="site-footer">
+  &copy; 2024 <a href="https://linkedin.com/in/adityabhuyan" target="_blank" rel="noopener">Aditya Pratap Bhuyan</a> &nbsp;|&nbsp;
+  <a href="https://github.com/aditya-bhuyan/cpp-learning-hub" target="_blank" rel="noopener">GitHub</a> &nbsp;|&nbsp;
+  GNU GPL v3 License
+</footer>
+<script src="/assets/js/nav.js"></script>
+</body>
+</html>

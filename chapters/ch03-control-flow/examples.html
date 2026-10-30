@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ch 03 Examples — Control Flow | C++ Learning Hub</title>
+  <link rel="stylesheet" href="/assets/css/style.css" />
+</head>
+<body>
+<header id="site-header">
+  <button id="hamburger" aria-label="Toggle navigation">&#9776;</button>
+  <div id="site-logo">C++ Learning Hub <span class="badge">FREE</span></div>
+  <button id="theme-toggle">☾ Dark</button>
+</header>
+<div id="layout">
+<aside id="sidebar"><nav>
+  <div class="nav-section-title">C++ Learning Hub</div>
+  <div class="nav-chapter" data-chapter="home"><div class="nav-chapter-header"><span>🏠 Home</span></div><div class="nav-chapter-links"><a href="/index.html">Overview</a></div></div>
+  <div class="nav-section-title">Chapters</div>
+  <div class="nav-chapter" data-chapter="ch01"><div class="nav-chapter-header"><span><span class="ch-num">01</span>Introduction to C++</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch01-introduction/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch01-introduction/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch01-introduction/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch01-introduction/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch01-introduction/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch02"><div class="nav-chapter-header"><span><span class="ch-num">02</span>Variables, Types &amp; Operators</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch02-variables-types-operators/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch02-variables-types-operators/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch02-variables-types-operators/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch02-variables-types-operators/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch02-variables-types-operators/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter open" data-chapter="ch03"><div class="nav-chapter-header active"><span><span class="ch-num">03</span>Control Flow</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch03-control-flow/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch03-control-flow/examples.html" class="active"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch03-control-flow/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch03-control-flow/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch03-control-flow/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch04"><div class="nav-chapter-header"><span><span class="ch-num">04</span>Functions</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch04-functions/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch04-functions/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch04-functions/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch04-functions/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch04-functions/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch05"><div class="nav-chapter-header"><span><span class="ch-num">05</span>Arrays &amp; Strings</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch05-arrays-strings/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch05-arrays-strings/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch05-arrays-strings/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch05-arrays-strings/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch05-arrays-strings/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch06"><div class="nav-chapter-header"><span><span class="ch-num">06</span>Pointers &amp; References</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch06-pointers-references/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch06-pointers-references/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch06-pointers-references/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch06-pointers-references/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch06-pointers-references/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch07"><div class="nav-chapter-header"><span><span class="ch-num">07</span>OOP — Basics</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch07-oop-basics/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch07-oop-basics/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch07-oop-basics/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch07-oop-basics/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch07-oop-basics/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch08"><div class="nav-chapter-header"><span><span class="ch-num">08</span>OOP — Inheritance &amp; Polymorphism</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch08-oop-inheritance/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch08-oop-inheritance/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch08-oop-inheritance/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch08-oop-inheritance/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch08-oop-inheritance/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch09"><div class="nav-chapter-header"><span><span class="ch-num">09</span>Templates</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch09-templates/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch09-templates/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch09-templates/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch09-templates/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch09-templates/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch10"><div class="nav-chapter-header"><span><span class="ch-num">10</span>STL — Containers</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch10-stl-containers/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch10-stl-containers/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch10-stl-containers/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch10-stl-containers/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch10-stl-containers/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch11"><div class="nav-chapter-header"><span><span class="ch-num">11</span>STL — Algorithms &amp; Iterators</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch11-stl-algorithms/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch11-stl-algorithms/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch11-stl-algorithms/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch11-stl-algorithms/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch11-stl-algorithms/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch12"><div class="nav-chapter-header"><span><span class="ch-num">12</span>Memory Management</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch12-memory-management/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch12-memory-management/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch12-memory-management/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch12-memory-management/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch12-memory-management/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch13"><div class="nav-chapter-header"><span><span class="ch-num">13</span>Exception Handling</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch13-exception-handling/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch13-exception-handling/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch13-exception-handling/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch13-exception-handling/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch13-exception-handling/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch14"><div class="nav-chapter-header"><span><span class="ch-num">14</span>File I/O</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch14-file-io/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch14-file-io/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch14-file-io/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch14-file-io/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch14-file-io/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch15"><div class="nav-chapter-header"><span><span class="ch-num">15</span>Modern C++ (C++11–C++20)</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch15-modern-cpp/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch15-modern-cpp/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch15-modern-cpp/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch15-modern-cpp/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch15-modern-cpp/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-section-title">Capstone</div>
+  <div class="nav-chapter" data-chapter="ch16"><div class="nav-chapter-header"><span><span class="ch-num">16</span>Capstone Project</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch16-capstone/index.html"><span class="link-icon">🎯</span>Brief</a><a href="/chapters/ch16-capstone/walkthrough.html"><span class="link-icon">🗺</span>Walkthrough</a><a href="/chapters/ch16-capstone/solution.html"><span class="link-icon">✅</span>Solution</a></div></div>
+  <div class="nav-section-title">About</div>
+  <div style="padding:.4rem 1.1rem 1rem;font-size:.78rem;color:var(--muted);line-height:1.5;">Maintained by<br><a href="https://linkedin.com/in/adityabhuyan" target="_blank" rel="noopener">Aditya Pratap Bhuyan</a><br><span style="font-size:.72rem;">GNU GPL v3 License</span></div>
+</nav></aside>
+
+<main id="main">
+  <div class="page-header">
+    <div class="breadcrumb"><a href="/index.html">Home</a> › <a href="index.html">Chapter 03</a> › Examples</div>
+    <h1>Chapter 03 — Coding Examples</h1>
+    <p class="subtitle">Four fully commented programs that put conditionals, loops, and switch to work.</p>
+    <div class="chapter-tabs">
+      <a href="index.html">📖 Learning</a>
+      <a href="examples.html" class="active">💻 Examples</a>
+      <a href="exercises.html">✏️ Exercises</a>
+      <a href="solutions.html">✅ Solutions</a>
+      <a href="quiz.html">🧠 Quiz</a>
+    </div>
+  </div>
+
+  <div class="content">
+
+    <!-- Example 1 -->
+    <h2>Example 1 — FizzBuzz (1–100)</h2>
+    <p>
+      A classic interview warm-up. For each number from 1 to 100: print <code>FizzBuzz</code> if it is divisible by both 3 and 5,
+      <code>Fizz</code> if divisible by 3, <code>Buzz</code> if divisible by 5, otherwise the number itself.
+      It demonstrates an <code>if / else if / else</code> chain where <strong>order matters</strong>.
+    </p>
+<pre><code>// fizzbuzz.cpp
+// Compile: g++ -std=c++17 -Wall -o fizzbuzz fizzbuzz.cpp
+// Run:     ./fizzbuzz
+
+#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    // The for loop visits every number from 1 to 100 inclusive
+    for (int i = 1; i &lt;= 100; i++) {
+
+        // The combined test MUST come first. A multiple of 15 is also a
+        // multiple of 3 and 5, so testing those first would hide FizzBuzz.
+        if (i % 15 == 0) {
+            cout &lt;&lt; "FizzBuzz";
+        } else if (i % 3 == 0) {
+            cout &lt;&lt; "Fizz";
+        } else if (i % 5 == 0) {
+            cout &lt;&lt; "Buzz";
+        } else {
+            cout &lt;&lt; i;             // none of the rules matched
+        }
+
+        cout &lt;&lt; "\n";               // one result per line
+    }
+
+    return 0;
+}</code></pre>
+    <p><strong>Expected output (first 15 lines):</strong></p>
+<pre><code>1
+2
+Fizz
+4
+Buzz
+Fizz
+7
+8
+Fizz
+Buzz
+11
+Fizz
+13
+14
+FizzBuzz</code></pre>
+    <div class="callout tip">
+      <strong>Why i % 15?</strong>
+      A number divisible by both 3 and 5 is divisible by their least common multiple, 15. Writing
+      <code>i % 3 == 0 &amp;&amp; i % 5 == 0</code> is equivalent and may read more clearly to a beginner.
+    </div>
+
+    <!-- Example 2 -->
+    <h2>Example 2 — Number Pyramid with Nested Loops</h2>
+    <p>
+      Prints a centred pyramid whose rows count up to the row number and back down again
+      (<code>1</code>, <code>121</code>, <code>12321</code>, …). Each row uses three inner loops: one for leading spaces,
+      one for the ascending digits, and one for the descending digits.
+    </p>
+<pre><code>// pyramid.cpp
+// Compile: g++ -std=c++17 -Wall -o pyramid pyramid.cpp
+
+#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int rows;
+    cout &lt;&lt; "Enter number of rows (1-9): ";
+    cin  &gt;&gt; rows;
+
+    // Outer loop: i is the current row, 1..rows
+    for (int i = 1; i &lt;= rows; i++) {
+
+        // 1) Leading spaces push the row towards the centre.
+        //    Row 1 needs (rows-1) spaces, the last row needs 0.
+        for (int s = 1; s &lt;= rows - i; s++) {
+            cout &lt;&lt; ' ';
+        }
+
+        // 2) Ascending digits: 1, 2, ... i
+        for (int j = 1; j &lt;= i; j++) {
+            cout &lt;&lt; j;
+        }
+
+        // 3) Descending digits: i-1, i-2, ... 1
+        for (int j = i - 1; j &gt;= 1; j--) {
+            cout &lt;&lt; j;
+        }
+
+        cout &lt;&lt; '\n';               // finish the row
+    }
+
+    return 0;
+}</code></pre>
+    <p><strong>Sample session:</strong></p>
+<pre><code>Enter number of rows (1-9): 5
+    1
+   121
+  12321
+ 1234321
+123454321</code></pre>
+    <div class="callout">
+      <strong>How the pattern is derived</strong>
+      Row <em>i</em> has <em>rows − i</em> spaces and <em>2i − 1</em> digits. Working out these two formulas on paper before
+      coding is the key to every pattern-printing problem.
+    </div>
+
+    <!-- Example 3 -->
+    <h2>Example 3 — Prime Number Checker (while + break)</h2>
+    <p>
+      A number greater than 1 is <strong>prime</strong> if its only divisors are 1 and itself. We test candidate divisors
+      from 2 upward with a <code>while</code> loop and use <code>break</code> to stop at the first divisor found.
+      We only need to test divisors up to the square root of <em>n</em>, because divisors come in pairs.
+    </p>
+<pre><code>// prime_checker.cpp
+// Compile: g++ -std=c++17 -Wall -o prime_checker prime_checker.cpp
+
+#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int n;
+    cout &lt;&lt; "Enter an integer: ";
+    cin  &gt;&gt; n;
+
+    bool isPrime = true;          // assume prime until proven otherwise
+
+    if (n &lt; 2) {
+        isPrime = false;          // 0, 1 and negatives are not prime
+    } else {
+        int d = 2;                // first candidate divisor
+
+        // d * d &lt;= n is the same as d &lt;= sqrt(n) without needing &lt;cmath&gt;
+        while (d * d &lt;= n) {
+            if (n % d == 0) {     // found a divisor
+                isPrime = false;
+                break;            // no need to look any further
+            }
+            d++;                  // try the next candidate
+        }
+    }
+
+    if (isPrime) {
+        cout &lt;&lt; n &lt;&lt; " is a prime number.\n";
+    } else {
+        cout &lt;&lt; n &lt;&lt; " is not a prime number.\n";
+    }
+
+    return 0;
+}</code></pre>
+    <p><strong>Sample sessions:</strong></p>
+<pre><code>Enter an integer: 29
+29 is a prime number.
+
+Enter an integer: 91
+91 is not a prime number.</code></pre>
+    <div class="callout tip">
+      <strong>Why break matters</strong>
+      For <code>n = 1000000</code> the loop stops at <code>d = 2</code> instead of checking about a thousand divisors.
+      Leaving a loop as soon as the answer is known is a common and valuable optimisation.
+    </div>
+
+    <!-- Example 4 -->
+    <h2>Example 4 — Menu-Driven Calculator (switch + do-while)</h2>
+    <p>
+      A menu must be shown <em>at least once</em>, which is exactly what <code>do-while</code> guarantees. Inside the loop a
+      <code>switch</code> dispatches on the user's choice. The program ends when the user picks option 5.
+    </p>
+<pre><code>// calculator.cpp
+// Compile: g++ -std=c++17 -Wall -o calculator calculator.cpp
+
+#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int choice;
+
+    do {
+        // ---- Show the menu (runs at least once) ----
+        cout &lt;&lt; "\n===== Calculator Menu =====\n";
+        cout &lt;&lt; "1. Add\n";
+        cout &lt;&lt; "2. Subtract\n";
+        cout &lt;&lt; "3. Multiply\n";
+        cout &lt;&lt; "4. Divide\n";
+        cout &lt;&lt; "5. Exit\n";
+        cout &lt;&lt; "Choose an option: ";
+        cin  &gt;&gt; choice;
+
+        // Options 1-4 need two operands; read them only when needed
+        double a = 0, b = 0;
+        if (choice &gt;= 1 &amp;&amp; choice &lt;= 4) {
+            cout &lt;&lt; "Enter two numbers: ";
+            cin  &gt;&gt; a &gt;&gt; b;
+        }
+
+        // ---- Dispatch on the choice ----
+        switch (choice) {
+            case 1:
+                cout &lt;&lt; a &lt;&lt; " + " &lt;&lt; b &lt;&lt; " = " &lt;&lt; (a + b) &lt;&lt; "\n";
+                break;                    // without break we would fall into case 2
+            case 2:
+                cout &lt;&lt; a &lt;&lt; " - " &lt;&lt; b &lt;&lt; " = " &lt;&lt; (a - b) &lt;&lt; "\n";
+                break;
+            case 3:
+                cout &lt;&lt; a &lt;&lt; " * " &lt;&lt; b &lt;&lt; " = " &lt;&lt; (a * b) &lt;&lt; "\n";
+                break;
+            case 4:
+                if (b == 0) {             // guard against division by zero
+                    cout &lt;&lt; "Error: cannot divide by zero.\n";
+                } else {
+                    cout &lt;&lt; a &lt;&lt; " / " &lt;&lt; b &lt;&lt; " = " &lt;&lt; (a / b) &lt;&lt; "\n";
+                }
+                break;
+            case 5:
+                cout &lt;&lt; "Goodbye!\n";
+                break;
+            default:                      // any other number
+                cout &lt;&lt; "Invalid option. Please choose 1-5.\n";
+                break;
+        }
+
+    } while (choice != 5);                // loop until the user chooses Exit
+
+    return 0;
+}</code></pre>
+    <p><strong>Sample session:</strong></p>
+<pre><code>===== Calculator Menu =====
+1. Add
+2. Subtract
+3. Multiply
+4. Divide
+5. Exit
+Choose an option: 4
+Enter two numbers: 10 4
+10 / 4 = 2.5
+
+===== Calculator Menu =====
+...
+Choose an option: 7
+Invalid option. Please choose 1-5.
+
+===== Calculator Menu =====
+...
+Choose an option: 5
+Goodbye!</code></pre>
+    <div class="callout warn">
+      <strong>Warning — non-numeric input</strong>
+      If the user types a letter where a number is expected, <code>cin</code> enters a failed state and this program would loop
+      forever. Robust input handling (<code>cin.fail()</code>, <code>cin.clear()</code>, <code>cin.ignore()</code>) is covered in later chapters.
+    </div>
+
+    <div style="display:flex;justify-content:space-between;margin-top:2rem;">
+      <a href="index.html" class="btn btn-outline" style="text-decoration:none;">← Learning</a>
+      <a href="exercises.html" class="btn" style="text-decoration:none;">Next: Exercises →</a>
+    </div>
+
+  </div>
+</main>
+</div>
+<footer id="site-footer">
+  &copy; 2024 <a href="https://linkedin.com/in/adityabhuyan" target="_blank" rel="noopener">Aditya Pratap Bhuyan</a> &nbsp;|&nbsp;
+  <a href="https://github.com/aditya-bhuyan/cpp-learning-hub" target="_blank" rel="noopener">GitHub</a> &nbsp;|&nbsp;
+  GNU GPL v3 License
+</footer>
+<script src="/assets/js/nav.js"></script>
+</body>
+</html>

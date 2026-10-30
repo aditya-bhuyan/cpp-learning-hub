@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ch 16 — Capstone: Bank Account Management System | C++ Learning Hub</title>
+  <link rel="stylesheet" href="/assets/css/style.css" />
+</head>
+<body>
+<header id="site-header">
+  <button id="hamburger" aria-label="Toggle navigation">&#9776;</button>
+  <div id="site-logo">C++ Learning Hub <span class="badge">FREE</span></div>
+  <button id="theme-toggle">☾ Dark</button>
+</header>
+<div id="layout">
+<aside id="sidebar"><nav>
+  <div class="nav-section-title">C++ Learning Hub</div>
+  <div class="nav-chapter" data-chapter="home"><div class="nav-chapter-header"><span>🏠 Home</span></div><div class="nav-chapter-links"><a href="/index.html">Overview</a></div></div>
+  <div class="nav-section-title">Chapters</div>
+  <div class="nav-chapter" data-chapter="ch01"><div class="nav-chapter-header"><span><span class="ch-num">01</span>Introduction to C++</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch01-introduction/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch01-introduction/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch01-introduction/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch01-introduction/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch01-introduction/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch02"><div class="nav-chapter-header"><span><span class="ch-num">02</span>Variables, Types &amp; Operators</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch02-variables-types-operators/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch02-variables-types-operators/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch02-variables-types-operators/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch02-variables-types-operators/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch02-variables-types-operators/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch03"><div class="nav-chapter-header"><span><span class="ch-num">03</span>Control Flow</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch03-control-flow/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch03-control-flow/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch03-control-flow/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch03-control-flow/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch03-control-flow/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch04"><div class="nav-chapter-header"><span><span class="ch-num">04</span>Functions</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch04-functions/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch04-functions/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch04-functions/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch04-functions/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch04-functions/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch05"><div class="nav-chapter-header"><span><span class="ch-num">05</span>Arrays &amp; Strings</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch05-arrays-strings/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch05-arrays-strings/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch05-arrays-strings/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch05-arrays-strings/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch05-arrays-strings/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch06"><div class="nav-chapter-header"><span><span class="ch-num">06</span>Pointers &amp; References</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch06-pointers-references/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch06-pointers-references/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch06-pointers-references/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch06-pointers-references/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch06-pointers-references/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch07"><div class="nav-chapter-header"><span><span class="ch-num">07</span>OOP — Basics</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch07-oop-basics/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch07-oop-basics/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch07-oop-basics/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch07-oop-basics/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch07-oop-basics/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch08"><div class="nav-chapter-header"><span><span class="ch-num">08</span>OOP — Inheritance &amp; Polymorphism</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch08-oop-inheritance/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch08-oop-inheritance/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch08-oop-inheritance/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch08-oop-inheritance/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch08-oop-inheritance/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch09"><div class="nav-chapter-header"><span><span class="ch-num">09</span>Templates</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch09-templates/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch09-templates/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch09-templates/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch09-templates/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch09-templates/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch10"><div class="nav-chapter-header"><span><span class="ch-num">10</span>STL — Containers</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch10-stl-containers/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch10-stl-containers/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch10-stl-containers/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch10-stl-containers/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch10-stl-containers/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch11"><div class="nav-chapter-header"><span><span class="ch-num">11</span>STL — Algorithms &amp; Iterators</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch11-stl-algorithms/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch11-stl-algorithms/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch11-stl-algorithms/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch11-stl-algorithms/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch11-stl-algorithms/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch12"><div class="nav-chapter-header"><span><span class="ch-num">12</span>Memory Management</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch12-memory-management/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch12-memory-management/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch12-memory-management/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch12-memory-management/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch12-memory-management/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch13"><div class="nav-chapter-header"><span><span class="ch-num">13</span>Exception Handling</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch13-exception-handling/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch13-exception-handling/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch13-exception-handling/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch13-exception-handling/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch13-exception-handling/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch14"><div class="nav-chapter-header"><span><span class="ch-num">14</span>File I/O</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch14-file-io/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch14-file-io/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch14-file-io/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch14-file-io/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch14-file-io/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch15"><div class="nav-chapter-header"><span><span class="ch-num">15</span>Modern C++ (C++11–C++20)</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch15-modern-cpp/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch15-modern-cpp/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch15-modern-cpp/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch15-modern-cpp/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch15-modern-cpp/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-section-title">Capstone</div>
+  <div class="nav-chapter open" data-chapter="ch16"><div class="nav-chapter-header active"><span><span class="ch-num">16</span>Capstone Project</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch16-capstone/index.html" class="active"><span class="link-icon">🎯</span>Brief</a><a href="/chapters/ch16-capstone/walkthrough.html"><span class="link-icon">🗺</span>Walkthrough</a><a href="/chapters/ch16-capstone/solution.html"><span class="link-icon">✅</span>Solution</a></div></div>
+  <div class="nav-section-title">About</div>
+  <div style="padding:.4rem 1.1rem 1rem;font-size:.78rem;color:var(--muted);line-height:1.5;">Maintained by<br><a href="https://linkedin.com/in/adityabhuyan" target="_blank" rel="noopener">Aditya Pratap Bhuyan</a><br><span style="font-size:.72rem;">GNU GPL v3 License</span></div>
+</nav></aside>
+
+<main id="main">
+  <div class="page-header">
+    <div class="breadcrumb"><a href="/index.html">Home</a> › Chapter 16</div>
+    <h1>Chapter 16 — Capstone Project</h1>
+    <p class="subtitle">Bank Account Management System — a real-world project that brings together everything from Chapters 1–15.</p>
+    <div class="chapter-tabs">
+      <a href="index.html" class="active">🎯 Brief</a>
+      <a href="walkthrough.html">🗺 Walkthrough</a>
+      <a href="solution.html">✅ Solution</a>
+    </div>
+  </div>
+
+  <div class="content">
+
+    <h2>16.1 Project Overview</h2>
+    <p>
+      Welcome to the capstone. Over fifteen chapters you have learned syntax, control flow, functions, pointers,
+      classes, inheritance, templates, the STL, smart pointers, exceptions, file I/O, and modern C++. Now you will
+      combine <strong>all of it</strong> in a single, realistic program: a console-based
+      <strong>Bank Account Management System</strong>.
+    </p>
+    <p>
+      The system lets a bank clerk create customers and accounts, move money between accounts, review statements,
+      and save everything to disk so the data survives between runs. It is small enough to finish in a weekend and
+      rich enough to exercise every major C++ feature in this course.
+    </p>
+
+    <h3>Goals</h3>
+    <ul>
+      <li>Model a real domain with a clean class hierarchy and polymorphism.</li>
+      <li>Choose the right STL containers and own objects safely with smart pointers.</li>
+      <li>Report errors with a purpose-built exception hierarchy instead of return codes.</li>
+      <li>Persist and restore program state with file streams.</li>
+      <li>Write the finishing touches in idiomatic modern C++ (C++17/20).</li>
+    </ul>
+
+    <div class="callout">
+      <strong>Build command</strong>
+      <code>g++ -std=c++20 -Wall -o bank bank.cpp &amp;&amp; ./bank</code><br>
+      <span style="font-size:.85rem;">Your finished program should compile with no warnings under <code>-Wall</code>.</span>
+    </div>
+
+    <h2>16.2 Functional Requirements</h2>
+    <p>The program must provide the following behaviour. Each ID is referenced by the use cases and the grading rubric.</p>
+    <table>
+      <thead><tr><th>ID</th><th>Requirement</th></tr></thead>
+      <tbody>
+        <tr><td>FR-1</td><td>Create a <strong>savings</strong> account (with an annual interest rate) or a <strong>checking</strong> account (with an overdraft limit) for a named customer, optionally with an opening deposit.</td></tr>
+        <tr><td>FR-2</td><td>Each account gets a unique, automatically generated ID (e.g. <code>ACC1001</code>). A customer may own several accounts.</td></tr>
+        <tr><td>FR-3</td><td>Deposit a positive amount into any account.</td></tr>
+        <tr><td>FR-4</td><td>Withdraw a positive amount. Savings accounts may never go below zero; checking accounts may go negative but never beyond their overdraft limit.</td></tr>
+        <tr><td>FR-5</td><td>Transfer money between two different accounts. A transfer is all-or-nothing: if the withdrawal fails, the deposit must not happen.</td></tr>
+        <tr><td>FR-6</td><td>Record every deposit, withdrawal, and transfer as a <code>Transaction</code> (type, signed amount, balance after, note).</td></tr>
+        <tr><td>FR-7</td><td>Display an account statement: account details, every transaction, and the current balance.</td></tr>
+        <tr><td>FR-8</td><td>Save all customers, accounts, and transactions to a text file, and load them back (also automatically on startup if the file exists).</td></tr>
+        <tr><td>FR-9</td><td>Present a menu-driven console UI: Create Account, Deposit, Withdraw, Transfer, View Statement, Save, Load, Exit.</td></tr>
+        <tr><td>FR-10</td><td>Never crash on bad input: unknown accounts, negative amounts, insufficient funds, non-numeric input, and missing/corrupt files must produce a clear message and return to the menu.</td></tr>
+      </tbody>
+    </table>
+
+    <h2>16.3 Technical Requirements</h2>
+    <p>The technical requirements map every chapter of the course onto a concrete part of the project.</p>
+    <table>
+      <thead><tr><th>Area</th><th>Requirement</th><th>Chapters</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Classes / OOP</strong></td><td>Classes <code>Account</code> (abstract base), <code>SavingsAccount</code>, <code>CheckingAccount</code>, <code>Customer</code>, <code>Bank</code>, and a <code>Transaction</code> struct. Use encapsulation (private data, public interface), virtual functions, a virtual destructor, and <code>override</code>.</td><td><a href="/chapters/ch07-oop-basics/index.html">7</a>, <a href="/chapters/ch08-oop-inheritance/index.html">8</a></td></tr>
+        <tr><td><strong>Templates</strong></td><td>At least one function or class template — for example a generic <code>printAll()</code> that prints any container with a caller-supplied formatter.</td><td><a href="/chapters/ch09-templates/index.html">9</a></td></tr>
+        <tr><td><strong>STL containers &amp; algorithms</strong></td><td>Store accounts in a <code>std::map</code> keyed by ID and each account's transactions in a <code>std::vector</code>. Use at least one algorithm (<code>find_if</code>, <code>sort</code>, <code>accumulate</code>…).</td><td><a href="/chapters/ch10-stl-containers/index.html">10</a>, <a href="/chapters/ch11-stl-algorithms/index.html">11</a></td></tr>
+        <tr><td><strong>Smart pointers</strong></td><td>Hold accounts as <code>std::unique_ptr</code> or <code>std::shared_ptr</code> (never raw <code>new</code>/<code>delete</code>). Create them with <code>make_unique</code> / <code>make_shared</code>.</td><td><a href="/chapters/ch12-memory-management/index.html">12</a></td></tr>
+        <tr><td><strong>Exceptions</strong></td><td>A custom <code>BankException</code> hierarchy (derived from <code>std::runtime_error</code>) with at least <code>InsufficientFundsException</code>, <code>InvalidAmountException</code>, and <code>AccountNotFoundException</code>. Catch by <code>const&amp;</code>.</td><td><a href="/chapters/ch13-exception-handling/index.html">13</a></td></tr>
+        <tr><td><strong>File I/O</strong></td><td>Persist accounts and transactions with <code>ofstream</code>; restore them with <code>ifstream</code> on startup or on demand. Detect open/parse failures.</td><td><a href="/chapters/ch14-file-io/index.html">14</a></td></tr>
+        <tr><td><strong>Modern C++</strong></td><td>Use lambdas, <code>auto</code>, range-based <code>for</code> (with structured bindings), and <code>std::optional</code> for "maybe a value" results.</td><td><a href="/chapters/ch15-modern-cpp/index.html">15</a></td></tr>
+        <tr><td><strong>Fundamentals</strong></td><td>Variables, control flow, functions, strings, and references throughout; pass large objects by <code>const&amp;</code>.</td><td>1–6</td></tr>
+      </tbody>
+    </table>
+
+    <h2>16.4 Class Design</h2>
+    <p>The diagram below shows ownership (◆) and inheritance (▷). A <code>Bank</code> owns the customers and holds the master map of accounts; accounts are shared between the bank's map and the owning customer's map, which is why <code>shared_ptr</code> is a good fit.</p>
+<pre><code>                    +-----------------------------+
+                    |            Bank             |
+                    +-----------------------------+
+                    | map&lt;int, Customer&gt;          |
+                    | map&lt;string, shared_ptr&lt;Acc&gt;&gt;|
+                    +--------+----------+---------+
+                        ◆ 1..*|          |◆ 0..*
+                  +-----------v--+   +---v------------------------+
+                  |   Customer   |   |   Account  (abstract)      |
+                  +--------------+   +----------------------------+
+                  | id, name     |   | id, ownerId, balance       |
+                  | map&lt;string,  |--&gt;| vector&lt;Transaction&gt;        |
+                  |  shared_ptr&gt; |   +----------------------------+
+                  +--------------+          ▲              ▲
+                                            |              |
+                                +-----------+--+    +------+-----------+
+                                |SavingsAccount|    |CheckingAccount   |
+                                +--------------+    +------------------+
+                                | ratePercent  |    | overdraftLimit   |
+                                +--------------+    +------------------+
+
+            BankException (runtime_error)
+              ├── InsufficientFundsException
+              ├── InvalidAmountException
+              ├── AccountNotFoundException
+              └── FileException</code></pre>
+    <h3>Transaction (struct)</h3>
+    <p>A plain record of one money movement. Stored by value in each account's <code>vector</code>.</p>
+    <table>
+      <thead><tr><th>Member</th><th>Kind</th><th>Responsibility</th></tr></thead>
+      <tbody>
+        <tr><td><code>int id</code></td><td>data</td><td>Sequence number within the account (1, 2, 3 …)</td></tr>
+        <tr><td><code>TransactionType type</code></td><td>data</td><td><code>enum class</code>: DEPOSIT, WITHDRAWAL, TRANSFER</td></tr>
+        <tr><td><code>double amount</code></td><td>data</td><td>Signed amount: positive = money in, negative = money out</td></tr>
+        <tr><td><code>double balanceAfter</code></td><td>data</td><td>Account balance immediately after the transaction</td></tr>
+        <tr><td><code>string note</code></td><td>data</td><td>Free-text description, e.g. "Transfer to ACC1002"</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Account (abstract base class)</h3>
+    <p>Common state and behaviour for all accounts. Has pure virtual functions, so it cannot be instantiated.</p>
+    <table>
+      <thead><tr><th>Member</th><th>Kind</th><th>Responsibility</th></tr></thead>
+      <tbody>
+        <tr><td><code>string id_, int ownerId_, double balance_</code></td><td>private data</td><td>Identity, owning customer, current balance</td></tr>
+        <tr><td><code>vector&lt;Transaction&gt; history_</code></td><td>private data</td><td>Every transaction in order</td></tr>
+        <tr><td><code>virtual ~Account() = default</code></td><td>destructor</td><td>Virtual so derived objects are destroyed correctly through base pointers</td></tr>
+        <tr><td><code>deposit(amount, type, note)</code></td><td>method</td><td>Validates amount &gt; 0, increases balance, records a transaction</td></tr>
+        <tr><td><code>withdraw(amount, type, note)</code></td><td>method</td><td>Validates amount, checks <code>availableFunds()</code>, decreases balance, records a transaction</td></tr>
+        <tr><td><code>virtual double availableFunds() const</code></td><td>virtual</td><td>Default: the balance. Checking overrides it to add the overdraft limit</td></tr>
+        <tr><td><code>virtual string typeName() const = 0</code></td><td>pure virtual</td><td>"Savings" or "Checking"</td></tr>
+        <tr><td><code>virtual char typeCode() const = 0</code></td><td>pure virtual</td><td>'S' or 'C' — used by the file format</td></tr>
+        <tr><td><code>virtual double extraValue() const = 0</code></td><td>pure virtual</td><td>Interest rate or overdraft limit — used by the file format</td></tr>
+        <tr><td><code>virtual string extraInfo() const = 0</code></td><td>pure virtual</td><td>Human-readable description for statements</td></tr>
+        <tr><td><code>id(), ownerId(), balance(), history()</code></td><td>getters</td><td>Read-only access</td></tr>
+      </tbody>
+    </table>
+
+    <h3>SavingsAccount : Account</h3>
+    <p>Earns interest and may never be overdrawn.</p>
+    <table>
+      <thead><tr><th>Member</th><th>Kind</th><th>Responsibility</th></tr></thead>
+      <tbody>
+        <tr><td><code>double ratePercent_</code></td><td>private data</td><td>Annual interest rate in percent</td></tr>
+        <tr><td><code>typeName / typeCode / extraValue / extraInfo</code></td><td>overrides</td><td>Return "Savings", 'S', the rate, and a description including projected monthly interest</td></tr>
+      </tbody>
+    </table>
+
+    <h3>CheckingAccount : Account</h3>
+    <p>Allows a limited overdraft.</p>
+    <table>
+      <thead><tr><th>Member</th><th>Kind</th><th>Responsibility</th></tr></thead>
+      <tbody>
+        <tr><td><code>double overdraftLimit_</code></td><td>private data</td><td>How far below zero the balance may go</td></tr>
+        <tr><td><code>availableFunds() const override</code></td><td>override</td><td>Returns <code>balance() + overdraftLimit_</code></td></tr>
+        <tr><td><code>typeName / typeCode / extraValue / extraInfo</code></td><td>overrides</td><td>Return "Checking", 'C', the limit, and a description</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Customer</h3>
+    <p>A person who owns one or more accounts.</p>
+    <table>
+      <thead><tr><th>Member</th><th>Kind</th><th>Responsibility</th></tr></thead>
+      <tbody>
+        <tr><td><code>int id_, string name_</code></td><td>private data</td><td>Identity</td></tr>
+        <tr><td><code>map&lt;string, shared_ptr&lt;Account&gt;&gt; accounts_</code></td><td>private data</td><td>This customer's accounts, keyed by account ID</td></tr>
+        <tr><td><code>addAccount(shared_ptr&lt;Account&gt;)</code></td><td>method</td><td>Adds an account to the map</td></tr>
+        <tr><td><code>totalBalance() const</code></td><td>method</td><td>Sum of all balances (range-for with structured bindings)</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Bank</h3>
+    <p>The top-level manager. The UI talks only to <code>Bank</code>.</p>
+    <table>
+      <thead><tr><th>Member</th><th>Kind</th><th>Responsibility</th></tr></thead>
+      <tbody>
+        <tr><td><code>map&lt;int, Customer&gt; customers_</code></td><td>private data</td><td>All customers</td></tr>
+        <tr><td><code>map&lt;string, shared_ptr&lt;Account&gt;&gt; accounts_</code></td><td>private data</td><td>Master index of all accounts</td></tr>
+        <tr><td><code>int nextCustomerId_, nextAccountNo_</code></td><td>private data</td><td>ID generators (saved to file)</td></tr>
+        <tr><td><code>openAccount(owner, type, param, opening)</code></td><td>method</td><td>Finds or creates the customer, builds the right account type, registers it</td></tr>
+        <tr><td><code>getAccount(id) const</code></td><td>method</td><td>Returns the account or throws <code>AccountNotFoundException</code></td></tr>
+        <tr><td><code>transfer(fromId, toId, amount)</code></td><td>method</td><td>Withdraw from one account, deposit into another</td></tr>
+        <tr><td><code>listAccounts(), printStatement(id)</code></td><td>methods</td><td>Console reports</td></tr>
+        <tr><td><code>save(path) / load(path)</code></td><td>methods</td><td>Text-file persistence</td></tr>
+        <tr><td><code>optional&lt;int&gt; findCustomer(name) const</code></td><td>private</td><td>Returns the customer ID if the name exists</td></tr>
+      </tbody>
+    </table>
+
+    <h2>16.5 Use Cases</h2>
+    <h3>UC-1  Create a New Account</h3>
+    <table>
+      <tbody>
+        <tr><td><strong>Actor</strong></td><td>Bank clerk</td></tr>
+        <tr><td><strong>Trigger</strong></td><td>Menu option 1</td></tr>
+        <tr><td><strong>Main flow</strong></td><td>1. Enter customer name. 2. Choose account type (S/C). 3. Enter interest rate (savings) or overdraft limit (checking). 4. Enter opening deposit (0 for none). 5. System creates the account, assigns an ID, and shows the account list.</td></tr>
+        <tr><td><strong>Errors</strong></td><td>Empty name, unknown type, negative rate/limit, or negative opening deposit → <code>BankException</code> subclass; no account is created.</td></tr>
+        <tr><td><strong>Requirements</strong></td><td>FR-1, FR-2, FR-6, FR-9</td></tr>
+      </tbody>
+    </table>
+
+    <h3>UC-2  Deposit Money</h3>
+    <table>
+      <tbody>
+        <tr><td><strong>Trigger</strong></td><td>Menu option 2</td></tr>
+        <tr><td><strong>Main flow</strong></td><td>1. Enter account ID. 2. Enter amount. 3. System increases the balance, records a DEPOSIT, and prints the new balance.</td></tr>
+        <tr><td><strong>Errors</strong></td><td>Unknown account → <code>AccountNotFoundException</code>. Amount ≤ 0 or non-numeric → <code>InvalidAmountException</code> / <code>BankException</code>.</td></tr>
+        <tr><td><strong>Requirements</strong></td><td>FR-3, FR-6, FR-10</td></tr>
+      </tbody>
+    </table>
+
+    <h3>UC-3  Withdraw Money (with Overdraft Protection)</h3>
+    <table>
+      <tbody>
+        <tr><td><strong>Trigger</strong></td><td>Menu option 3</td></tr>
+        <tr><td><strong>Main flow</strong></td><td>1. Enter account ID. 2. Enter amount. 3. System compares the amount with <code>availableFunds()</code>. 4. If enough, balance decreases and a WITHDRAWAL is recorded.</td></tr>
+        <tr><td><strong>Overdraft rule</strong></td><td>Savings: available = balance. Checking: available = balance + overdraft limit. A request above the available amount is refused.</td></tr>
+        <tr><td><strong>Errors</strong></td><td>Request exceeds available funds → <code>InsufficientFundsException</code> (balance unchanged). Invalid amount or unknown account as in UC-2.</td></tr>
+        <tr><td><strong>Requirements</strong></td><td>FR-4, FR-6, FR-10</td></tr>
+      </tbody>
+    </table>
+
+    <h3>UC-4  Transfer Between Accounts</h3>
+    <table>
+      <tbody>
+        <tr><td><strong>Trigger</strong></td><td>Menu option 4</td></tr>
+        <tr><td><strong>Main flow</strong></td><td>1. Enter source ID, destination ID, and amount. 2. System looks up <em>both</em> accounts first. 3. Withdraws from source (TRANSFER). 4. Deposits into destination (TRANSFER).</td></tr>
+        <tr><td><strong>Errors</strong></td><td>Same source and destination, unknown account, or insufficient funds. Because lookups and the withdrawal happen before the deposit, a failure leaves both balances untouched.</td></tr>
+        <tr><td><strong>Requirements</strong></td><td>FR-5, FR-6, FR-10</td></tr>
+      </tbody>
+    </table>
+
+    <h3>UC-5  View Account Statement</h3>
+    <table>
+      <tbody>
+        <tr><td><strong>Trigger</strong></td><td>Menu option 5</td></tr>
+        <tr><td><strong>Main flow</strong></td><td>1. System lists all accounts. 2. Enter an account ID. 3. System prints type, owner, interest rate/overdraft limit, every transaction, the current balance, and the available funds.</td></tr>
+        <tr><td><strong>Errors</strong></td><td>Unknown account ID.</td></tr>
+        <tr><td><strong>Requirements</strong></td><td>FR-7, FR-10</td></tr>
+      </tbody>
+    </table>
+
+    <h3>UC-6  Save / Load Data</h3>
+    <table>
+      <tbody>
+        <tr><td><strong>Trigger</strong></td><td>Menu options 6 (save) and 7 (load); automatic load at startup</td></tr>
+        <tr><td><strong>Main flow</strong></td><td><strong>Save:</strong> write customers, accounts, and transactions to <code>bank_data.txt</code>. <strong>Load:</strong> parse the file into a temporary <code>Bank</code>; only if everything parses, replace the current state.</td></tr>
+        <tr><td><strong>Errors</strong></td><td>File cannot be opened, unknown record type, or malformed number → <code>FileException</code> naming the offending line. The in-memory data is left intact.</td></tr>
+        <tr><td><strong>Requirements</strong></td><td>FR-8, FR-10</td></tr>
+      </tbody>
+    </table>
+
+    <h2>16.6 Grading Rubric</h2>
+    <p>Use this table for self-assessment. Each level builds on the one below it.</p>
+    <table>
+      <thead><tr><th>Level</th><th>What your submission must do</th><th>Evidence</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Basic</strong><br>(Compiles &amp; runs)</td><td>Compiles with <code>g++ -std=c++20 -Wall</code> with no errors or warnings. Shows the menu, can create an account, deposit, and withdraw, and exits cleanly.</td><td>Program runs end-to-end on a sample session</td></tr>
+        <tr><td><strong>Intermediate</strong><br>(All features)</td><td>Everything in Basic, plus: savings and checking accounts with polymorphic overdraft behaviour, transfers, statements with transaction history, <code>Customer</code> and <code>Bank</code> classes, <code>map</code> + <code>vector</code> containers. All functional requirements FR-1…FR-9 work.</td><td>Class hierarchy with virtual functions; statements show correct balances</td></tr>
+        <tr><td><strong>Advanced</strong><br>(Smart pointers + file I/O + exceptions)</td><td>Everything in Intermediate, plus: accounts owned by smart pointers (no raw <code>new</code>/<code>delete</code>), a custom <code>BankException</code> hierarchy used for every error path (FR-10), and save/load that round-trips all data.</td><td>Save → restart → statement shows identical history; invalid input never crashes</td></tr>
+        <tr><td><strong>Expert</strong><br>(Modern C++ + templates)</td><td>Everything in Advanced, plus: a template function or class, lambdas passed to algorithms or formatters, <code>auto</code> and structured bindings, <code>std::optional</code> for lookups, atomic (all-or-nothing) loading, and clear separation into headers and sources (optional).</td><td>Code review: idiomatic C++17/20, const-correctness, no duplicated logic</td></tr>
+      </tbody>
+    </table>
+
+    <h2>16.7 Getting Started</h2>
+    <p>Do not try to write everything at once. Build in small, compilable increments and test after each one:</p>
+    <ol>
+      <li><strong>Sketch on paper.</strong> Re-read the class tables above and draw the relationships yourself.</li>
+      <li><strong>Start with data.</strong> Write <code>Transaction</code> and its <code>enum class</code>. Print one from <code>main()</code>.</li>
+      <li><strong>Build <code>Account</code> alone.</strong> Make <code>deposit()</code> and <code>withdraw()</code> work, then test with a throwaway <code>main()</code>.</li>
+      <li><strong>Derive the two account types.</strong> Verify the overdraft rule through a base-class pointer — that is the payoff of polymorphism.</li>
+      <li><strong>Add <code>Customer</code> and <code>Bank</code>.</strong> Hard-code a few accounts and print a statement.</li>
+      <li><strong>Introduce exceptions</strong> and replace every <code>return false</code>/error print with a <code>throw</code>.</li>
+      <li><strong>Add persistence.</strong> Save first, inspect the file by eye, then write load.</li>
+      <li><strong>Wrap it in the menu.</strong> Only now read from <code>cin</code>.</li>
+      <li><strong>Polish</strong> with templates, lambdas, <code>optional</code>, and structured bindings. Compile with <code>-Wall -Wextra</code>.</li>
+    </ol>
+
+    <div class="callout tip">
+      <strong>Tip — Use the Walkthrough</strong>
+      The <a href="walkthrough.html">Walkthrough</a> follows exactly this order, with the code for each step. Try each step on your own first, then compare. The finished program is on the <a href="solution.html">Solution</a> page — resist peeking until you have a working version of your own.
+    </div>
+
+    <div class="callout warn">
+      <strong>Money and <code>double</code></strong>
+      This project uses <code>double</code> for simplicity. Real banking software stores integer cents (or a decimal type) because binary floating point cannot represent values such as 0.10 exactly. Stretch goal: change <code>balance_</code> to <code>long long</code> cents.
+    </div>
+
+    <h2>16.8 Stretch Goals</h2>
+    <ul>
+      <li>Apply monthly interest to all savings accounts using <code>std::for_each</code> and a lambda.</li>
+      <li>Add a "top N richest customers" report with <code>std::ranges::sort</code> and a projection.</li>
+      <li>Replace the text file format with a more robust one (quoting, versioning, checksum).</li>
+      <li>Split the program into <code>.h</code>/<code>.cpp</code> files and build with a <code>Makefile</code> or CMake.</li>
+      <li>Write unit tests for <code>Account::withdraw</code> covering every boundary of the overdraft rule.</li>
+    </ul>
+
+    <div style="display:flex;justify-content:space-between;margin-top:2rem;gap:.75rem;">
+      <a href="/chapters/ch15-modern-cpp/quiz.html" class="btn btn-outline" style="text-decoration:none;">← Chapter 15</a>
+      <a href="walkthrough.html" class="btn" style="text-decoration:none;">Next: Walkthrough →</a>
+    </div>
+
+  </div>
+</main>
+</div>
+<footer id="site-footer">
+  &copy; 2024 <a href="https://linkedin.com/in/adityabhuyan" target="_blank" rel="noopener">Aditya Pratap Bhuyan</a> &nbsp;|&nbsp;
+  <a href="https://github.com/aditya-bhuyan/cpp-learning-hub" target="_blank" rel="noopener">GitHub</a> &nbsp;|&nbsp;
+  GNU GPL v3 License
+</footer>
+<script src="/assets/js/nav.js"></script>
+</body>

@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ch 10 Examples — STL Containers | C++ Learning Hub</title>
+  <link rel="stylesheet" href="/assets/css/style.css" />
+</head>
+<body>
+<header id="site-header">
+  <button id="hamburger" aria-label="Toggle navigation">&#9776;</button>
+  <div id="site-logo">C++ Learning Hub <span class="badge">FREE</span></div>
+  <button id="theme-toggle">☾ Dark</button>
+</header>
+<div id="layout">
+<aside id="sidebar"><nav>
+  <div class="nav-section-title">C++ Learning Hub</div>
+  <div class="nav-chapter" data-chapter="home"><div class="nav-chapter-header"><span>🏠 Home</span></div><div class="nav-chapter-links"><a href="/index.html">Overview</a></div></div>
+  <div class="nav-section-title">Chapters</div>
+  <div class="nav-chapter" data-chapter="ch01"><div class="nav-chapter-header"><span><span class="ch-num">01</span>Introduction to C++</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch01-introduction/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch01-introduction/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch01-introduction/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch01-introduction/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch01-introduction/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch02"><div class="nav-chapter-header"><span><span class="ch-num">02</span>Variables, Types &amp; Operators</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch02-variables-types-operators/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch02-variables-types-operators/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch02-variables-types-operators/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch02-variables-types-operators/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch02-variables-types-operators/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch03"><div class="nav-chapter-header"><span><span class="ch-num">03</span>Control Flow</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch03-control-flow/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch03-control-flow/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch03-control-flow/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch03-control-flow/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch03-control-flow/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch04"><div class="nav-chapter-header"><span><span class="ch-num">04</span>Functions</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch04-functions/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch04-functions/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch04-functions/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch04-functions/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch04-functions/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch05"><div class="nav-chapter-header"><span><span class="ch-num">05</span>Arrays &amp; Strings</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch05-arrays-strings/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch05-arrays-strings/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch05-arrays-strings/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch05-arrays-strings/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch05-arrays-strings/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch06"><div class="nav-chapter-header"><span><span class="ch-num">06</span>Pointers &amp; References</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch06-pointers-references/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch06-pointers-references/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch06-pointers-references/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch06-pointers-references/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch06-pointers-references/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch07"><div class="nav-chapter-header"><span><span class="ch-num">07</span>OOP — Basics</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch07-oop-basics/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch07-oop-basics/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch07-oop-basics/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch07-oop-basics/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch07-oop-basics/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch08"><div class="nav-chapter-header"><span><span class="ch-num">08</span>OOP — Inheritance &amp; Polymorphism</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch08-oop-inheritance/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch08-oop-inheritance/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch08-oop-inheritance/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch08-oop-inheritance/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch08-oop-inheritance/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch09"><div class="nav-chapter-header"><span><span class="ch-num">09</span>Templates</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch09-templates/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch09-templates/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch09-templates/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch09-templates/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch09-templates/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter open" data-chapter="ch10"><div class="nav-chapter-header active"><span><span class="ch-num">10</span>STL — Containers</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch10-stl-containers/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch10-stl-containers/examples.html" class="active"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch10-stl-containers/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch10-stl-containers/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch10-stl-containers/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch11"><div class="nav-chapter-header"><span><span class="ch-num">11</span>STL — Algorithms &amp; Iterators</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch11-stl-algorithms/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch11-stl-algorithms/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch11-stl-algorithms/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch11-stl-algorithms/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch11-stl-algorithms/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch12"><div class="nav-chapter-header"><span><span class="ch-num">12</span>Memory Management</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch12-memory-management/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch12-memory-management/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch12-memory-management/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch12-memory-management/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch12-memory-management/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch13"><div class="nav-chapter-header"><span><span class="ch-num">13</span>Exception Handling</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch13-exception-handling/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch13-exception-handling/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch13-exception-handling/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch13-exception-handling/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch13-exception-handling/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch14"><div class="nav-chapter-header"><span><span class="ch-num">14</span>File I/O</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch14-file-io/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch14-file-io/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch14-file-io/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch14-file-io/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch14-file-io/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch15"><div class="nav-chapter-header"><span><span class="ch-num">15</span>Modern C++ (C++11–C++20)</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch15-modern-cpp/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch15-modern-cpp/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch15-modern-cpp/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch15-modern-cpp/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch15-modern-cpp/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-section-title">Capstone</div>
+  <div class="nav-chapter" data-chapter="ch16"><div class="nav-chapter-header"><span><span class="ch-num">16</span>Capstone Project</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch16-capstone/index.html"><span class="link-icon">🎯</span>Brief</a><a href="/chapters/ch16-capstone/walkthrough.html"><span class="link-icon">🗺</span>Walkthrough</a><a href="/chapters/ch16-capstone/solution.html"><span class="link-icon">✅</span>Solution</a></div></div>
+  <div class="nav-section-title">About</div>
+  <div style="padding:.4rem 1.1rem 1rem;font-size:.78rem;color:var(--muted);line-height:1.5;">Maintained by<br><a href="https://linkedin.com/in/adityabhuyan" target="_blank" rel="noopener">Aditya Pratap Bhuyan</a><br><span style="font-size:.72rem;">GNU GPL v3 License</span></div>
+</nav></aside>
+
+<main id="main">
+  <div class="page-header">
+    <div class="breadcrumb"><a href="/index.html">Home</a> › <a href="index.html">Chapter 10</a> › Examples</div>
+    <h1>Chapter 10 — Coding Examples</h1>
+    <p class="subtitle">Four fully commented programs using vector, map, stack, and priority_queue.</p>
+    <div class="chapter-tabs">
+      <a href="index.html">📖 Learning</a>
+      <a href="examples.html" class="active">💻 Examples</a>
+      <a href="exercises.html">✏️ Exercises</a>
+      <a href="solutions.html">✅ Solutions</a>
+      <a href="quiz.html">🧠 Quiz</a>
+    </div>
+  </div>
+
+  <div class="content">
+
+    <!-- Example 1 -->
+    <h2>Example 1 — To-Do List with std::vector</h2>
+    <p>
+      A to-do list is a natural fit for <code>std::vector&lt;std::string&gt;</code>: tasks are added at the end, removed by index, searched with <code>std::find</code>, and iterated in several ways.
+    </p>
+<pre><code>// todo_list.cpp
+// Compile: g++ -std=c++17 -Wall -o todo todo_list.cpp
+// Run:     ./todo
+
+#include &lt;algorithm&gt;   // std::find
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+#include &lt;vector&gt;
+using namespace std;
+
+// Print every task with its index. 'const&amp;' avoids copying the vector.
+void printList(const vector&lt;string&gt;&amp; todos) {
+    if (todos.empty()) {
+        cout &lt;&lt; "  (no tasks)\n";
+        return;
+    }
+    for (size_t i = 0; i &lt; todos.size(); ++i) {
+        cout &lt;&lt; "  " &lt;&lt; i &lt;&lt; ". " &lt;&lt; todos[i] &lt;&lt; '\n';
+    }
+}
+
+// Remove the task at 'index'. Returns false if the index is invalid.
+bool removeAt(vector&lt;string&gt;&amp; todos, size_t index) {
+    if (index &gt;= todos.size()) return false;        // bounds check
+    todos.erase(todos.begin() + index);             // erase takes an iterator
+    return true;
+}
+
+int main() {
+    vector&lt;string&gt; todos;                           // starts empty
+
+    // --- ADD: push_back appends to the end (amortized O(1)) ---
+    todos.push_back("Buy groceries");
+    todos.push_back("Write report");
+    todos.push_back("Call dentist");
+    todos.push_back("Learn STL");
+
+    cout &lt;&lt; "After adding 4 tasks (size = " &lt;&lt; todos.size() &lt;&lt; "):\n";
+    printList(todos);
+
+    // --- REMOVE BY INDEX: erase shifts later elements left (O(n)) ---
+    cout &lt;&lt; "\nRemoving task #1...\n";
+    removeAt(todos, 1);
+    printList(todos);
+
+    cout &lt;&lt; "\nRemoving task #10...\n";
+    if (!removeAt(todos, 10)) {
+        cout &lt;&lt; "  Invalid index - nothing removed.\n";
+    }
+
+    // --- FIND: std::find returns an iterator, or end() if not found ---
+    string target = "Call dentist";
+    auto it = find(todos.begin(), todos.end(), target);
+    if (it != todos.end()) {
+        // Subtracting begin() from an iterator yields its index
+        cout &lt;&lt; "\nFound \"" &lt;&lt; target &lt;&lt; "\" at index " &lt;&lt; (it - todos.begin()) &lt;&lt; '\n';
+    }
+
+    it = find(todos.begin(), todos.end(), "Go skydiving");
+    if (it == todos.end()) {
+        cout &lt;&lt; "\"Go skydiving\" is not on the list.\n";
+    }
+
+    // --- ITERATE: range-based for, and an explicit iterator loop ---
+    cout &lt;&lt; "\nAll tasks (range-for):\n";
+    for (const string&amp; task : todos) {
+        cout &lt;&lt; "  - " &lt;&lt; task &lt;&lt; '\n';
+    }
+
+    cout &lt;&lt; "\nAll tasks in reverse (reverse iterators):\n";
+    for (auto rit = todos.rbegin(); rit != todos.rend(); ++rit) {
+        cout &lt;&lt; "  - " &lt;&lt; *rit &lt;&lt; '\n';
+    }
+
+    // --- CLEAR ---
+    todos.clear();
+    cout &lt;&lt; "\nAfter clear(): empty? " &lt;&lt; boolalpha &lt;&lt; todos.empty() &lt;&lt; '\n';
+
+    return 0;
+}</code></pre>
+    <p><strong>Expected output:</strong></p>
+<pre><code>After adding 4 tasks (size = 4):
+  0. Buy groceries
+  1. Write report
+  2. Call dentist
+  3. Learn STL
+
+Removing task #1...
+  0. Buy groceries
+  1. Call dentist
+  2. Learn STL
+
+Removing task #10...
+  Invalid index - nothing removed.
+
+Found "Call dentist" at index 1
+"Go skydiving" is not on the list.
+
+All tasks (range-for):
+  - Buy groceries
+  - Call dentist
+  - Learn STL
+
+All tasks in reverse (reverse iterators):
+  - Learn STL
+  - Call dentist
+  - Buy groceries
+
+After clear(): empty? true</code></pre>
+    <div class="callout tip">
+      <strong>Erase while looping?</strong>
+      <code>erase</code> invalidates iterators at or after the erased position. When removing inside a loop, use the iterator returned by <code>erase</code>
+      (<code>it = v.erase(it);</code>) or the erase-remove idiom from Chapter 11.
+    </div>
+
+    <!-- Example 2 -->
+    <h2>Example 2 — Word Frequency Counter with std::map</h2>
+    <p>
+      Counting occurrences is the canonical use of <code>std::map</code>. Because <code>operator[]</code> default-constructs a missing <code>int</code> to <code>0</code>, a single <code>++freq[word]</code> handles both the first sighting and every later one. The map also gives us the words in alphabetical order for free.
+    </p>
+<pre><code>// word_frequency.cpp
+// Compile: g++ -std=c++17 -Wall -o wordfreq word_frequency.cpp
+// Run:     ./wordfreq
+
+#include &lt;cctype&gt;      // std::isalnum, std::tolower
+#include &lt;iostream&gt;
+#include &lt;map&gt;
+#include &lt;sstream&gt;     // std::istringstream
+#include &lt;string&gt;
+using namespace std;
+
+// Lower-case the word and strip punctuation so "The," and "the" count as one word.
+string normalize(const string&amp; word) {
+    string result;
+    for (char c : word) {
+        unsigned char uc = static_cast&lt;unsigned char&gt;(c);
+        if (isalnum(uc)) {
+            result += static_cast&lt;char&gt;(tolower(uc));
+        }
+    }
+    return result;
+}
+
+int main() {
+    string sentence =
+        "The quick brown fox jumps over the lazy dog. "
+        "The dog barks, and the fox runs away!";
+
+    // map&lt;word, count&gt;: keys are unique and kept in sorted (alphabetical) order
+    map&lt;string, int&gt; freq;
+
+    // istringstream lets us read a string word-by-word, just like cin
+    istringstream stream(sentence);
+    string word;
+    while (stream &gt;&gt; word) {
+        word = normalize(word);
+        if (!word.empty()) {
+            // operator[] inserts the key with value 0 if it is missing,
+            // then ++ increments it. This is the classic counting idiom.
+            ++freq[word];
+        }
+    }
+
+    // Iterating a map visits entries in sorted key order.
+    // 'auto&amp; [w, c]' is a C++17 structured binding of pair&lt;const string,int&gt;.
+    cout &lt;&lt; "Word frequencies (alphabetical):\n";
+    for (const auto&amp; [w, c] : freq) {
+        cout &lt;&lt; "  " &lt;&lt; w &lt;&lt; ": " &lt;&lt; c &lt;&lt; '\n';
+    }
+
+    // Find the most frequent word with a simple linear scan
+    string bestWord;
+    int bestCount = 0;
+    for (const auto&amp; [w, c] : freq) {
+        if (c &gt; bestCount) {
+            bestCount = c;
+            bestWord = w;
+        }
+    }
+    cout &lt;&lt; "\nMost common word: \"" &lt;&lt; bestWord &lt;&lt; "\" (" &lt;&lt; bestCount &lt;&lt; " times)\n";
+    cout &lt;&lt; "Distinct words  : " &lt;&lt; freq.size() &lt;&lt; '\n';
+
+    // count() tells us whether a key exists (0 or 1 for map)
+    cout &lt;&lt; "Does \"fox\" appear? " &lt;&lt; (freq.count("fox") ? "yes" : "no") &lt;&lt; '\n';
+    cout &lt;&lt; "Does \"cat\" appear? " &lt;&lt; (freq.count("cat") ? "yes" : "no") &lt;&lt; '\n';
+
+    return 0;
+}</code></pre>
+    <p><strong>Expected output:</strong></p>
+<pre><code>Word frequencies (alphabetical):
+  and: 1
+  away: 1
+  barks: 1
+  brown: 1
+  dog: 2
+  fox: 2
+  jumps: 1
+  lazy: 1
+  over: 1
+  quick: 1
+  runs: 1
+  the: 4
+
+Most common word: "the" (4 times)
+Distinct words  : 12
+Does "fox" appear? yes
+Does "cat" appear? no</code></pre>
+    <div class="callout">
+      <strong>Variation</strong>
+      Swap <code>std::map</code> for <code>std::unordered_map</code> if you do not need alphabetical output — counting becomes O(1) average per word.
+    </div>
+
+    <!-- Example 3 -->
+    <h2>Example 3 — Balanced Brackets with std::stack</h2>
+    <p>
+      A stack's LIFO behaviour mirrors how brackets nest: the most recently opened bracket must be the first one closed. Push every opener; on every closer, pop and verify that it matches. The expression is balanced only if the stack is empty at the end.
+    </p>
+<pre><code>// bracket_matching.cpp
+// Compile: g++ -std=c++17 -Wall -o brackets bracket_matching.cpp
+// Run:     ./brackets
+
+#include &lt;iostream&gt;
+#include &lt;stack&gt;
+#include &lt;string&gt;
+using namespace std;
+
+// Does 'closing' correctly close 'opening'?
+bool matches(char opening, char closing) {
+    return (opening == '(' &amp;&amp; closing == ')') ||
+           (opening == '[' &amp;&amp; closing == ']') ||
+           (opening == '{' &amp;&amp; closing == '}');
+}
+
+// Returns true if every bracket in 'expr' is properly opened and closed.
+bool isBalanced(const string&amp; expr) {
+    stack&lt;char&gt; st;   // holds the opening brackets we have seen but not yet closed
+
+    for (char c : expr) {
+        if (c == '(' || c == '[' || c == '{') {
+            st.push(c);                       // remember the opener
+        } else if (c == ')' || c == ']' || c == '}') {
+            if (st.empty()) return false;     // closer with nothing to close
+            char opener = st.top();           // most recent unclosed opener (LIFO)
+            st.pop();
+            if (!matches(opener, c)) return false;   // wrong type of bracket
+        }
+        // All other characters are ignored
+    }
+
+    // Balanced only if no opener is left waiting for its closer
+    return st.empty();
+}
+
+int main() {
+    const string tests[] = {
+        "(a + b) * c",
+        "{[()]}",
+        "((a + b) * (c - d)",
+        "{[(])}",
+        "())",
+        ""
+    };
+
+    for (const string&amp; t : tests) {
+        cout &lt;&lt; "\"" &lt;&lt; t &lt;&lt; "\"  -&gt;  "
+             &lt;&lt; (isBalanced(t) ? "balanced" : "NOT balanced") &lt;&lt; '\n';
+    }
+    return 0;
+}</code></pre>
+    <p><strong>Expected output:</strong></p>
+<pre><code>"(a + b) * c"  -&gt;  balanced
+"{[()]}"  -&gt;  balanced
+"((a + b) * (c - d)"  -&gt;  NOT balanced
+"{[(])}"  -&gt;  NOT balanced
+"())"  -&gt;  NOT balanced
+""  -&gt;  balanced</code></pre>
+    <div class="callout warn">
+      <strong>Always check empty() before top()/pop()</strong>
+      Calling <code>top()</code> or <code>pop()</code> on an empty stack is undefined behaviour. The <code>st.empty()</code> guard in the closer branch handles inputs like <code>"())"</code>.
+    </div>
+
+    <!-- Example 4 -->
+    <h2>Example 4 — Task Scheduler with std::priority_queue</h2>
+    <p>
+      A <code>priority_queue</code> always exposes its highest-priority element via <code>top()</code>. Here a custom comparator orders tasks by priority and, for ties, by submission order so equal-priority tasks run first-come, first-served.
+    </p>
+<pre><code>// task_scheduler.cpp
+// Compile: g++ -std=c++17 -Wall -o scheduler task_scheduler.cpp
+// Run:     ./scheduler
+
+#include &lt;iostream&gt;
+#include &lt;queue&gt;       // std::priority_queue
+#include &lt;string&gt;
+#include &lt;vector&gt;
+using namespace std;
+
+struct Task {
+    int    priority;   // larger number = more urgent
+    int    order;      // submission order, used to break ties
+    string name;
+};
+
+// Comparator for priority_queue. It must answer: "does a come AFTER b?"
+// (i.e. is a lower priority than b?). The element for which this is
+// false against all others ends up on top.
+struct TaskCompare {
+    bool operator()(const Task&amp; a, const Task&amp; b) const {
+        if (a.priority != b.priority)
+            return a.priority &lt; b.priority;   // lower priority sinks
+        return a.order &gt; b.order;             // same priority: earlier submission first
+    }
+};
+
+int main() {
+    // priority_queue&lt;element type, underlying container, comparator&gt;
+    priority_queue&lt;Task, vector&lt;Task&gt;, TaskCompare&gt; scheduler;
+
+    int counter = 0;
+    // push is O(log n): the heap re-arranges itself
+    scheduler.push({2, counter++, "Send weekly email"});
+    scheduler.push({5, counter++, "Fix production bug"});
+    scheduler.push({1, counter++, "Tidy up backlog"});
+    scheduler.push({5, counter++, "Deploy hotfix"});
+    scheduler.push({3, counter++, "Review pull request"});
+
+    cout &lt;&lt; "Tasks queued: " &lt;&lt; scheduler.size() &lt;&lt; "\n\n";
+    cout &lt;&lt; "Running tasks in priority order:\n";
+
+    while (!scheduler.empty()) {
+        const Task&amp; next = scheduler.top();   // peek at the highest-priority task: O(1)
+        cout &lt;&lt; "  [priority " &lt;&lt; next.priority &lt;&lt; "] " &lt;&lt; next.name &lt;&lt; '\n';
+        scheduler.pop();                      // remove it: O(log n)
+    }
+
+    cout &lt;&lt; "\nAll tasks complete.\n";
+    return 0;
+}</code></pre>
+    <p><strong>Expected output:</strong></p>
+<pre><code>Tasks queued: 5
+
+Running tasks in priority order:
+  [priority 5] Fix production bug
+  [priority 5] Deploy hotfix
+  [priority 3] Review pull request
+  [priority 2] Send weekly email
+  [priority 1] Tidy up backlog
+
+All tasks complete.</code></pre>
+    <div class="callout tip">
+      <strong>Comparator direction</strong>
+      <code>priority_queue</code> uses "less-than" semantics: the comparator returns <code>true</code> when its first argument should come <em>after</em> the second.
+      That is why the default is a max-heap with <code>std::less</code>, and a min-heap needs <code>std::greater</code>.
+    </div>
+
+    <div style="display:flex;justify-content:space-between;margin-top:2rem;">
+      <a href="index.html" class="btn btn-outline" style="text-decoration:none;">← Learning</a>
+      <a href="exercises.html" class="btn" style="text-decoration:none;">Next: Exercises →</a>
+    </div>
+
+  </div>
+</main>
+</div>
+<footer id="site-footer">
+  &copy; 2024 <a href="https://linkedin.com/in/adityabhuyan" target="_blank" rel="noopener">Aditya Pratap Bhuyan</a> &nbsp;|&nbsp;
+  <a href="https://github.com/aditya-bhuyan/cpp-learning-hub" target="_blank" rel="noopener">GitHub</a> &nbsp;|&nbsp;
+  GNU GPL v3 License
+</footer>
+<script src="/assets/js/nav.js"></script>
+</body>
+</html>

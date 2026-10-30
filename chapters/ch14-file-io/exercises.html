@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ch 14 Exercises — File I/O | C++ Learning Hub</title>
+  <link rel="stylesheet" href="/assets/css/style.css" />
+</head>
+<body>
+<header id="site-header">
+  <button id="hamburger" aria-label="Toggle navigation">&#9776;</button>
+  <div id="site-logo">C++ Learning Hub <span class="badge">FREE</span></div>
+  <button id="theme-toggle">☾ Dark</button>
+</header>
+<div id="layout">
+<aside id="sidebar"><nav>
+  <div class="nav-section-title">C++ Learning Hub</div>
+  <div class="nav-chapter" data-chapter="home"><div class="nav-chapter-header"><span>🏠 Home</span></div><div class="nav-chapter-links"><a href="/index.html">Overview</a></div></div>
+  <div class="nav-section-title">Chapters</div>
+  <div class="nav-chapter" data-chapter="ch01"><div class="nav-chapter-header"><span><span class="ch-num">01</span>Introduction to C++</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch01-introduction/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch01-introduction/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch01-introduction/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch01-introduction/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch01-introduction/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch02"><div class="nav-chapter-header"><span><span class="ch-num">02</span>Variables, Types &amp; Operators</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch02-variables-types-operators/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch02-variables-types-operators/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch02-variables-types-operators/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch02-variables-types-operators/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch02-variables-types-operators/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch03"><div class="nav-chapter-header"><span><span class="ch-num">03</span>Control Flow</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch03-control-flow/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch03-control-flow/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch03-control-flow/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch03-control-flow/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch03-control-flow/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch04"><div class="nav-chapter-header"><span><span class="ch-num">04</span>Functions</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch04-functions/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch04-functions/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch04-functions/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch04-functions/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch04-functions/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch05"><div class="nav-chapter-header"><span><span class="ch-num">05</span>Arrays &amp; Strings</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch05-arrays-strings/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch05-arrays-strings/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch05-arrays-strings/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch05-arrays-strings/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch05-arrays-strings/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch06"><div class="nav-chapter-header"><span><span class="ch-num">06</span>Pointers &amp; References</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch06-pointers-references/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch06-pointers-references/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch06-pointers-references/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch06-pointers-references/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch06-pointers-references/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch07"><div class="nav-chapter-header"><span><span class="ch-num">07</span>OOP — Basics</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch07-oop-basics/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch07-oop-basics/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch07-oop-basics/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch07-oop-basics/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch07-oop-basics/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch08"><div class="nav-chapter-header"><span><span class="ch-num">08</span>OOP — Inheritance &amp; Polymorphism</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch08-oop-inheritance/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch08-oop-inheritance/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch08-oop-inheritance/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch08-oop-inheritance/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch08-oop-inheritance/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch09"><div class="nav-chapter-header"><span><span class="ch-num">09</span>Templates</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch09-templates/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch09-templates/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch09-templates/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch09-templates/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch09-templates/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch10"><div class="nav-chapter-header"><span><span class="ch-num">10</span>STL — Containers</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch10-stl-containers/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch10-stl-containers/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch10-stl-containers/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch10-stl-containers/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch10-stl-containers/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch11"><div class="nav-chapter-header"><span><span class="ch-num">11</span>STL — Algorithms &amp; Iterators</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch11-stl-algorithms/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch11-stl-algorithms/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch11-stl-algorithms/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch11-stl-algorithms/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch11-stl-algorithms/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch12"><div class="nav-chapter-header"><span><span class="ch-num">12</span>Memory Management</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch12-memory-management/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch12-memory-management/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch12-memory-management/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch12-memory-management/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch12-memory-management/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch13"><div class="nav-chapter-header"><span><span class="ch-num">13</span>Exception Handling</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch13-exception-handling/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch13-exception-handling/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch13-exception-handling/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch13-exception-handling/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch13-exception-handling/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter open" data-chapter="ch14"><div class="nav-chapter-header active"><span><span class="ch-num">14</span>File I/O</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch14-file-io/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch14-file-io/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch14-file-io/exercises.html" class="active"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch14-file-io/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch14-file-io/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch15"><div class="nav-chapter-header"><span><span class="ch-num">15</span>Modern C++ (C++11–C++20)</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch15-modern-cpp/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch15-modern-cpp/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch15-modern-cpp/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch15-modern-cpp/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch15-modern-cpp/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-section-title">Capstone</div>
+  <div class="nav-chapter" data-chapter="ch16"><div class="nav-chapter-header"><span><span class="ch-num">16</span>Capstone Project</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch16-capstone/index.html"><span class="link-icon">🎯</span>Brief</a><a href="/chapters/ch16-capstone/walkthrough.html"><span class="link-icon">🗺</span>Walkthrough</a><a href="/chapters/ch16-capstone/solution.html"><span class="link-icon">✅</span>Solution</a></div></div>
+  <div class="nav-section-title">About</div>
+  <div style="padding:.4rem 1.1rem 1rem;font-size:.78rem;color:var(--muted);line-height:1.5;">Maintained by<br><a href="https://linkedin.com/in/adityabhuyan" target="_blank" rel="noopener">Aditya Pratap Bhuyan</a><br><span style="font-size:.72rem;">GNU GPL v3 License</span></div>
+</nav></aside>
+
+<main id="main">
+  <div class="page-header">
+    <div class="breadcrumb"><a href="/index.html">Home</a> › <a href="index.html">Chapter 14</a> › Exercises</div>
+    <h1>Chapter 14 — Exercises</h1>
+    <p class="subtitle">Apply what you've learned. Attempt each problem before viewing the solutions.</p>
+    <div class="chapter-tabs">
+      <a href="index.html">📖 Learning</a>
+      <a href="examples.html">💻 Examples</a>
+      <a href="exercises.html" class="active">✏️ Exercises</a>
+      <a href="solutions.html">✅ Solutions</a>
+      <a href="quiz.html">🧠 Quiz</a>
+    </div>
+  </div>
+
+  <div class="content">
+
+    <div class="callout">
+      <strong>Instructions</strong>
+      Write each program in a text editor or IDE, compile with <code>g++ -std=c++17 -Wall</code>, and test it against the sample input.
+      Only open <a href="solutions.html">Solutions</a> after you have made a genuine attempt.
+    </div>
+
+    <!-- Exercise 1 -->
+    <div class="exercise-card">
+      <div class="card-header">
+        Exercise 1 — Sum &amp; Average of Numbers from File
+        <span class="tag tag-easy">Easy</span>
+      </div>
+      <div class="card-body">
+        <p>
+          Write a program that:
+        </p>
+        <ol>
+          <li>Creates an output file named <code>numbers.txt</code> and writes 10 integers into it (e.g. separated by spaces or newlines).</li>
+          <li>Closes the output stream.</li>
+          <li>Opens <code>numbers.txt</code> with an <code>ifstream</code> and reads the integers in a loop using <code>while (in &gt;&gt; num)</code>.</li>
+          <li>Calculates and displays the count of numbers read, the total <strong>sum</strong>, and the <strong>average</strong> (as a <code>double</code> with 2 decimal places).</li>
+        </ol>
+        <p><strong>Hint:</strong> Cast the sum or count to <code>double</code> before division to avoid integer truncation.</p>
+        <p><strong>Expected output (sample):</strong></p>
+<pre><code>Wrote 10 integers to numbers.txt
+Read 10 numbers: 15 28 42 7 91 33 64 50 82 18
+Sum     = 430
+Average = 43.00</code></pre>
+      </div>
+    </div>
+
+    <!-- Exercise 2 -->
+    <div class="exercise-card">
+      <div class="card-header">
+        Exercise 2 — File Copy Utility
+        <span class="tag tag-easy">Easy</span>
+      </div>
+      <div class="card-body">
+        <p>
+          Write a robust command-line file copy function:
+          <code>bool copyFile(const std::string&amp; sourcePath, const std::string&amp; destPath)</code>.
+        </p>
+        <ul>
+          <li>Open the source file in binary mode (<code>std::ios::binary</code>) to handle all file types (text, images, PDFs).</li>
+          <li>Check if the source file opened successfully. If not, print an error message and return <code>false</code>.</li>
+          <li>Open the destination file in binary write mode (<code>std::ios::binary</code>). If opening fails, return <code>false</code>.</li>
+          <li>Copy content efficiently using a buffer (or stream buffer insertion <code>dest &lt;&lt; src.rdbuf()</code> / block read/write).</li>
+          <li>Return <code>true</code> upon successful copy and display the total number of bytes transferred.</li>
+        </ul>
+        <p><strong>Expected output (sample):</strong></p>
+<pre><code>Source file: origin.txt (Created with test data)
+Copying origin.txt -> backup.txt...
+Success: Copied 128 bytes to backup.txt</code></pre>
+      </div>
+    </div>
+
+    <!-- Exercise 3 -->
+    <div class="exercise-card">
+      <div class="card-header">
+        Exercise 3 — INI/Config File Parser (std::map)
+        <span class="tag tag-medium">Medium</span>
+      </div>
+      <div class="card-body">
+        <p>
+          Implement a configuration file loader:
+          <code>std::map&lt;std::string, std::string&gt; loadConfig(const std::string&amp; filename)</code>.
+        </p>
+        <p>The parser must:</p>
+        <ol>
+          <li>Read a text file line-by-line using <code>std::getline()</code>.</li>
+          <li>Ignore empty lines or lines containing only whitespace.</li>
+          <li>Ignore comment lines (lines starting with <code>#</code> or <code>;</code>).</li>
+          <li>For valid lines formatted as <code>KEY=VALUE</code>, split the key and value around the first <code>=</code> character, trim leading/trailing whitespace from both, and store them into the map.</li>
+        </ol>
+        <p>Demonstrate your parser by loading a sample config file and querying specific keys.</p>
+        <p><strong>Expected output (sample):</strong></p>
+<pre><code>--- Loaded Config (5 settings) ---
+database_host = localhost
+database_port = 5432
+max_connections = 100
+server_name = AlphaCluster
+timeout_seconds = 30
+
+Lookup 'database_host': localhost
+Lookup 'max_connections': 100
+Lookup 'ssl_enabled': [Not configured]</code></pre>
+      </div>
+    </div>
+
+    <!-- Exercise 4 -->
+    <div class="exercise-card">
+      <div class="card-header">
+        Exercise 4 — Grade Book Report Generator
+        <span class="tag tag-medium">Medium</span>
+      </div>
+      <div class="card-body">
+        <p>
+          Write a program that processes student test scores from an input file and generates an executive summary report in an output file.
+        </p>
+        <ul>
+          <li>Create an input file <code>grades.txt</code> where each line contains: <code>StudentName Score</code> (e.g., <code>Alice 88</code>, <code>Bob 54</code>).</li>
+          <li>Read all student records from <code>grades.txt</code> into a vector of structs.</li>
+          <li>Determine pass/fail status for each student (passing threshold: score ≥ 60.0).</li>
+          <li>Compute the class average, highest score, and lowest score.</li>
+          <li>Write a formatted summary report to <code>report.txt</code> with aligned columns, status indicators, and summary metrics. Also echo the report to the console.</li>
+        </ul>
+        <p><strong>Expected output (sample in report.txt):</strong></p>
+<pre><code>========================================
+           GRADE BOOK REPORT
+========================================
+Student Name        Score    Status
+----------------------------------------
+Alice               88.50    PASS
+Bob                 54.00    FAIL
+Charlie             92.00    PASS
+Diana               76.50    PASS
+Evan                48.00    FAIL
+----------------------------------------
+Total Students : 5
+Class Average  : 71.80
+Highest Score  : 92.00 (Charlie)
+Lowest Score   : 48.00 (Evan)
+Passing Rate   : 60.0% (3/5)
+========================================</code></pre>
+      </div>
+    </div>
+
+    <!-- Exercise 5 -->
+    <div class="exercise-card">
+      <div class="card-header">
+        Exercise 5 — Binary Index &amp; Random Access with seekg
+        <span class="tag tag-hard">Hard</span>
+      </div>
+      <div class="card-body">
+        <p>
+          Build a random-access binary database for a store inventory:
+        </p>
+        <ol>
+          <li>Define a POD struct <code>Product</code> with fields: <code>int id</code>, <code>char name[32]</code>, <code>double price</code>, and <code>int stock</code>.</li>
+          <li>Write an array of 5 distinct products to a binary file <code>inventory.dat</code> using <code>out.write()</code>.</li>
+          <li>Close the write stream.</li>
+          <li>Open <code>inventory.dat</code> with an <code>ifstream</code> in <code>ios::binary</code> mode.</li>
+          <li>Compute the total number of records in the file using <code>tellg()</code> and <code>seekg(0, ios::end)</code>.</li>
+          <li>Implement direct <strong>random access</strong>: jump directly to the <strong>3rd product</strong> (zero-based index <code>2</code>) using:
+            <br><code>in.seekg(2 * sizeof(Product), std::ios::beg)</code>
+            <br>Read only that single struct into memory and display its details without iterating through records 0 and 1.</li>
+          <li>Update in-place: open with <code>fstream</code> in <code>ios::in | ios::out | ios::binary</code>, seek to the 3rd product's position with <code>seekp()</code>, modify its stock count, write it back, and read it again to verify the in-place update.</li>
+        </ol>
+        <p><strong>Expected output:</strong></p>
+<pre><code>Wrote 5 products to binary file inventory.dat (240 total bytes).
+Total records detected: 5
+
+[Random Access] Directly reading Record #3 (offset: 96 bytes)...
+Loaded Product: ID 303 | Name: Mechanical Keyboard | Price: $89.99 | Stock: 15
+
+[In-Place Update] Updating Record #3 stock to 45...
+Verified Record #3 after update:
+Loaded Product: ID 303 | Name: Mechanical Keyboard | Price: $89.99 | Stock: 45</code></pre>
+      </div>
+    </div>
+
+    <div style="display:flex;justify-content:space-between;margin-top:2rem;">
+      <a href="examples.html" class="btn btn-outline" style="text-decoration:none;">← Examples</a>
+      <a href="solutions.html" class="btn" style="text-decoration:none;">View Solutions →</a>
+    </div>
+
+  </div>
+</main>
+</div>
+<footer id="site-footer">
+  &copy; 2024 <a href="https://linkedin.com/in/adityabhuyan" target="_blank" rel="noopener">Aditya Pratap Bhuyan</a> &nbsp;|&nbsp;
+  <a href="https://github.com/aditya-bhuyan/cpp-learning-hub" target="_blank" rel="noopener">GitHub</a> &nbsp;|&nbsp;
+  GNU GPL v3 License
+</footer>
+<script src="/assets/js/nav.js"></script>
+</body>
+</html>

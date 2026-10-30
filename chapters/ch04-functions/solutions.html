@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ch 04 Solutions — Functions | C++ Learning Hub</title>
+  <link rel="stylesheet" href="/assets/css/style.css" />
+</head>
+<body>
+<header id="site-header">
+  <button id="hamburger" aria-label="Toggle navigation">&#9776;</button>
+  <div id="site-logo">C++ Learning Hub <span class="badge">FREE</span></div>
+  <button id="theme-toggle">☾ Dark</button>
+</header>
+<div id="layout">
+<aside id="sidebar"><nav>
+  <div class="nav-section-title">C++ Learning Hub</div>
+  <div class="nav-chapter" data-chapter="home"><div class="nav-chapter-header"><span>🏠 Home</span></div><div class="nav-chapter-links"><a href="/index.html">Overview</a></div></div>
+  <div class="nav-section-title">Chapters</div>
+  <div class="nav-chapter" data-chapter="ch01"><div class="nav-chapter-header"><span><span class="ch-num">01</span>Introduction to C++</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch01-introduction/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch01-introduction/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch01-introduction/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch01-introduction/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch01-introduction/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch02"><div class="nav-chapter-header"><span><span class="ch-num">02</span>Variables, Types &amp; Operators</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch02-variables-types-operators/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch02-variables-types-operators/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch02-variables-types-operators/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch02-variables-types-operators/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch02-variables-types-operators/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch03"><div class="nav-chapter-header"><span><span class="ch-num">03</span>Control Flow</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch03-control-flow/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch03-control-flow/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch03-control-flow/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch03-control-flow/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch03-control-flow/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch04"><div class="nav-chapter-header"><span><span class="ch-num">04</span>Functions</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch04-functions/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch04-functions/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch04-functions/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch04-functions/solutions.html" class="active"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch04-functions/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch05"><div class="nav-chapter-header"><span><span class="ch-num">05</span>Arrays &amp; Strings</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch05-arrays-strings/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch05-arrays-strings/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch05-arrays-strings/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch05-arrays-strings/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch05-arrays-strings/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch06"><div class="nav-chapter-header"><span><span class="ch-num">06</span>Pointers &amp; References</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch06-pointers-references/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch06-pointers-references/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch06-pointers-references/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch06-pointers-references/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch06-pointers-references/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch07"><div class="nav-chapter-header"><span><span class="ch-num">07</span>OOP — Basics</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch07-oop-basics/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch07-oop-basics/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch07-oop-basics/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch07-oop-basics/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch07-oop-basics/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch08"><div class="nav-chapter-header"><span><span class="ch-num">08</span>OOP — Inheritance &amp; Polymorphism</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch08-oop-inheritance/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch08-oop-inheritance/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch08-oop-inheritance/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch08-oop-inheritance/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch08-oop-inheritance/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch09"><div class="nav-chapter-header"><span><span class="ch-num">09</span>Templates</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch09-templates/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch09-templates/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch09-templates/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch09-templates/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch09-templates/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch10"><div class="nav-chapter-header"><span><span class="ch-num">10</span>STL — Containers</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch10-stl-containers/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch10-stl-containers/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch10-stl-containers/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch10-stl-containers/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch10-stl-containers/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch11"><div class="nav-chapter-header"><span><span class="ch-num">11</span>STL — Algorithms &amp; Iterators</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch11-stl-algorithms/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch11-stl-algorithms/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch11-stl-algorithms/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch11-stl-algorithms/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch11-stl-algorithms/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch12"><div class="nav-chapter-header"><span><span class="ch-num">12</span>Memory Management</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch12-memory-management/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch12-memory-management/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch12-memory-management/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch12-memory-management/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch12-memory-management/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch13"><div class="nav-chapter-header"><span><span class="ch-num">13</span>Exception Handling</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch13-exception-handling/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch13-exception-handling/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch13-exception-handling/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch13-exception-handling/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch13-exception-handling/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch14"><div class="nav-chapter-header"><span><span class="ch-num">14</span>File I/O</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch14-file-io/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch14-file-io/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch14-file-io/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch14-file-io/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch14-file-io/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch15"><div class="nav-chapter-header"><span><span class="ch-num">15</span>Modern C++ (C++11–C++20)</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch15-modern-cpp/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch15-modern-cpp/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch15-modern-cpp/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch15-modern-cpp/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch15-modern-cpp/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-section-title">Capstone</div>
+  <div class="nav-chapter" data-chapter="ch16"><div class="nav-chapter-header"><span><span class="ch-num">16</span>Capstone Project</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch16-capstone/index.html"><span class="link-icon">🎯</span>Brief</a><a href="/chapters/ch16-capstone/walkthrough.html"><span class="link-icon">🗺</span>Walkthrough</a><a href="/chapters/ch16-capstone/solution.html"><span class="link-icon">✅</span>Solution</a></div></div>
+  <div class="nav-section-title">About</div>
+  <div style="padding:.4rem 1.1rem 1rem;font-size:.78rem;color:var(--muted);line-height:1.5;">Maintained by<br><a href="https://linkedin.com/in/adityabhuyan" target="_blank" rel="noopener">Aditya Pratap Bhuyan</a><br><span style="font-size:.72rem;">GNU GPL v3 License</span></div>
+</nav></aside>
+
+<main id="main">
+  <div class="page-header">
+    <div class="breadcrumb"><a href="/index.html">Home</a> › <a href="index.html">Chapter 04</a> › Solutions</div>
+    <h1>Chapter 04 — Solutions</h1>
+    <p class="subtitle">Reference solutions with explanations. Only read after attempting the exercises yourself.</p>
+    <div class="chapter-tabs">
+      <a href="index.html">📖 Learning</a>
+      <a href="examples.html">💻 Examples</a>
+      <a href="exercises.html">✏️ Exercises</a>
+      <a href="solutions.html" class="active">✅ Solutions</a>
+      <a href="quiz.html">🧠 Quiz</a>
+    </div>
+  </div>
+
+  <div class="content">
+
+    <div class="callout warn">
+      <strong>Spoiler Warning</strong>
+      These are reference solutions. There are often multiple valid approaches — if your output
+      matches but your code differs, that is perfectly fine.
+    </div>
+
+    <!-- Solution 1 -->
+    <div class="solution-card">
+      <div class="card-header">✅ Solution 1 — isPrime</div>
+      <div class="card-body">
+        <p>
+          The key optimisation is testing divisors only up to <code>sqrt(n)</code>. If <code>n</code>
+          has a factor larger than its square root, it must also have a corresponding factor
+          <em>smaller</em> than its square root — so we would have already found it.
+        </p>
+<pre><code>// solution_04_isprime.cpp
+// Compile: g++ -std=c++17 -Wall -o solution_04_isprime solution_04_isprime.cpp
+
+#include &lt;iostream&gt;
+#include &lt;cmath&gt;    // sqrt
+using namespace std;
+
+// Returns true if n is prime, false otherwise.
+bool isPrime(int n) {
+    if (n &lt; 2)  return false;   // 0, 1, negatives: not prime
+    if (n == 2) return true;    // 2 is the only even prime
+    if (n % 2 == 0) return false; // all other evens are not prime
+
+    // Check odd divisors from 3 up to sqrt(n)
+    int limit = static_cast&lt;int&gt;(sqrt(static_cast&lt;double&gt;(n)));
+    for (int i = 3; i &lt;= limit; i += 2) {
+        if (n % i == 0) return false;
+    }
+    return true;
+}
+
+int main() {
+    cout &lt;&lt; "Primes up to 50: ";
+    for (int i = 1; i &lt;= 50; ++i) {
+        if (isPrime(i)) cout &lt;&lt; i &lt;&lt; " ";
+    }
+    cout &lt;&lt; "\n";
+    return 0;
+}</code></pre>
+        <p><strong>Key concepts used:</strong> early-return guard clauses, <code>sqrt</code>, loop stepping by 2 to skip evens.</p>
+      </div>
+    </div>
+
+    <!-- Solution 2 -->
+    <div class="solution-card">
+      <div class="card-header">✅ Solution 2 — Overloaded power()</div>
+      <div class="card-body">
+        <p>
+          Both overloads implement a simple repeated-multiplication loop. The compiler selects
+          the <code>int</code> version when both arguments are integers, and the <code>double</code>
+          version when the base is a floating-point literal.
+        </p>
+<pre><code>// solution_04_power.cpp
+// Compile: g++ -std=c++17 -Wall -o solution_04_power solution_04_power.cpp
+
+#include &lt;iostream&gt;
+#include &lt;iomanip&gt;
+using namespace std;
+
+// Overload 1: integer base and exponent
+int power(int base, int exponent) {
+    int result = 1;
+    for (int i = 0; i &lt; exponent; ++i)
+        result *= base;
+    return result;
+}
+
+// Overload 2: double base, integer exponent
+double power(double base, int exponent) {
+    double result = 1.0;
+    for (int i = 0; i &lt; exponent; ++i)
+        result *= base;
+    return result;
+}
+
+int main() {
+    cout &lt;&lt; fixed &lt;&lt; setprecision(4);
+    cout &lt;&lt; "power(2, 10)    = " &lt;&lt; power(2, 10)    &lt;&lt; "\n";   // int overload
+    cout &lt;&lt; "power(3, 5)     = " &lt;&lt; power(3, 5)     &lt;&lt; "\n";   // int overload
+    cout &lt;&lt; "power(2.5, 3)   = " &lt;&lt; power(2.5, 3)   &lt;&lt; "\n";   // double overload
+    cout &lt;&lt; "power(1.5, 4)   = " &lt;&lt; power(1.5, 4)   &lt;&lt; "\n";   // double overload
+    cout &lt;&lt; "power(5, 0)     = " &lt;&lt; power(5, 0)     &lt;&lt; "\n";   // any number^0 = 1
+    return 0;
+}</code></pre>
+        <p><strong>Key concepts used:</strong> function overloading, loop-based exponentiation, type deduction at call site.</p>
+      </div>
+    </div>
+
+    <!-- Solution 3 -->
+    <div class="solution-card">
+      <div class="card-header">✅ Solution 3 — Recursive GCD (Euclidean Algorithm)</div>
+      <div class="card-body">
+        <p>
+          The Euclidean algorithm is a classic example of elegant recursion. At each step it
+          replaces the larger number with <code>a % b</code>, which decreases in size monotonically,
+          guaranteeing termination. The base case <code>b == 0</code> is always reached.
+        </p>
+<pre><code>// solution_04_gcd.cpp
+// Compile: g++ -std=c++17 -Wall -o solution_04_gcd solution_04_gcd.cpp
+
+#include &lt;iostream&gt;
+using namespace std;
+
+// Recursive GCD with step tracing
+int gcd(int a, int b) {
+    cout &lt;&lt; "  gcd(" &lt;&lt; a &lt;&lt; ", " &lt;&lt; b &lt;&lt; ")\n";
+    if (b == 0) return a;       // base case
+    return gcd(b, a % b);       // recursive case: Euclidean reduction
+}
+
+int main() {
+    int a, b;
+    cout &lt;&lt; "Enter two integers: ";
+    cin &gt;&gt; a &gt;&gt; b;
+
+    // Ensure positive inputs for simplicity
+    if (a &lt; 0) a = -a;
+    if (b &lt; 0) b = -b;
+
+    int result = gcd(a, b);
+    cout &lt;&lt; "GCD = " &lt;&lt; result &lt;&lt; "\n";
+    return 0;
+}</code></pre>
+        <p><strong>Key concepts used:</strong> recursion, modulo operator, base case termination proof.</p>
+      </div>
+    </div>
+
+    <!-- Solution 4 -->
+    <div class="solution-card">
+      <div class="card-header">✅ Solution 4 — Palindrome Checker</div>
+      <div class="card-body">
+        <p>
+          The two-pointer technique compares characters from opposite ends, advancing inward.
+          Case is normalised with <code>tolower</code> so "Madam" and "madam" are both recognised
+          as palindromes. Passing by <code>const string&amp;</code> avoids an unnecessary copy of
+          the string.
+        </p>
+<pre><code>// solution_04_palindrome.cpp
+// Compile: g++ -std=c++17 -Wall -o solution_04_palindrome solution_04_palindrome.cpp
+
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+#include &lt;cctype&gt;   // tolower
+using namespace std;
+
+// Returns true if s is a palindrome (case-insensitive).
+// const string& — no copy; the function cannot modify the original.
+bool isPalindrome(const string&amp; s) {
+    int left  = 0;
+    int right = static_cast&lt;int&gt;(s.size()) - 1;
+
+    while (left &lt; right) {
+        // Compare characters after normalising case
+        if (tolower(s[left]) != tolower(s[right]))
+            return false;
+        ++left;
+        --right;
+    }
+    return true;  // all pairs matched
+}
+
+int main() {
+    // Test cases
+    string words[] = {"racecar", "Madam", "hello", "Level", "OpenAI"};
+    for (const string&amp; w : words) {
+        cout &lt;&lt; "\"" &lt;&lt; w &lt;&lt; "\""
+             &lt;&lt; (isPalindrome(w) ? " -> palindrome" : " -> not a palindrome")
+             &lt;&lt; "\n";
+    }
+    return 0;
+}</code></pre>
+        <p><strong>Key concepts used:</strong> <code>const string&amp;</code> parameter, two-pointer technique, <code>tolower</code>, range-based for loop.</p>
+      </div>
+    </div>
+
+    <!-- Solution 5 -->
+    <div class="solution-card">
+      <div class="card-header">✅ Solution 5 — Recursive String Permutations</div>
+      <div class="card-body">
+        <p>
+          The algorithm fixes each character in the leftmost unfixed position in turn (by swapping
+          it there), then recurses on the remaining suffix. After the recursive call it swaps back
+          (<em>backtracking</em>) to restore the string for the next iteration. For a string of
+          length <em>n</em> this generates exactly <em>n!</em> permutations.
+        </p>
+<pre><code>// solution_04_permute.cpp
+// Compile: g++ -std=c++17 -Wall -o solution_04_permute solution_04_permute.cpp
+
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+// Generates all permutations of s[left..right] by backtracking.
+// s     — working copy of the string (passed by value for independence)
+// left  — the index we are currently filling
+// right — the last index (= s.size() - 1)
+// count — reference counter so we can report the total
+void permute(string s, int left, int right, int&amp; count) {
+    if (left == right) {          // base case: one complete permutation
+        cout &lt;&lt; s &lt;&lt; "\n";
+        ++count;
+        return;
+    }
+    // Try placing each character s[i] at position left
+    for (int i = left; i &lt;= right; ++i) {
+        swap(s[left], s[i]);               // place s[i] at position left
+        permute(s, left + 1, right, count); // recurse on the rest
+        swap(s[left], s[i]);               // backtrack: restore original order
+    }
+}
+
+int main() {
+    string word = "ABC";
+    int count = 0;
+
+    cout &lt;&lt; "All permutations of \"" &lt;&lt; word &lt;&lt; "\":\n";
+    permute(word, 0, static_cast&lt;int&gt;(word.size()) - 1, count);
+    cout &lt;&lt; "\nTotal: " &lt;&lt; count &lt;&lt; " permutations\n";
+
+    return 0;
+}</code></pre>
+        <p><strong>Key concepts used:</strong> recursion, backtracking, <code>std::swap</code>, pass-by-value string for independent branches, pass-by-reference counter.</p>
+        <div class="callout tip">
+          <strong>Why pass <code>s</code> by value?</strong>
+          Each recursive branch needs its own independent copy of the string so that swaps in one
+          branch do not affect siblings. Passing by value gives each call its own copy automatically.
+          The backtrack swap after the recursive call is a belt-and-suspenders redundancy here, but
+          it is the canonical pattern you will see in most textbooks.
+        </div>
+      </div>
+    </div>
+
+    <div style="display:flex;justify-content:space-between;margin-top:2rem;">
+      <a href="exercises.html" class="btn btn-outline" style="text-decoration:none;">← Exercises</a>
+      <a href="quiz.html" class="btn" style="text-decoration:none;">Take the Quiz →</a>
+    </div>
+
+  </div>
+</main>
+</div>
+<footer id="site-footer">
+  &copy; 2024 <a href="https://linkedin.com/in/adityabhuyan" target="_blank" rel="noopener">Aditya Pratap Bhuyan</a> &nbsp;|&nbsp;
+  <a href="https://github.com/aditya-bhuyan/cpp-learning-hub" target="_blank" rel="noopener">GitHub</a> &nbsp;|&nbsp;
+  GNU GPL v3 License
+</footer>
+<script src="/assets/js/nav.js"></script>
+</body>
+</html>

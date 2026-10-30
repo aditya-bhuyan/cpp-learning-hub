@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ch 10 Solutions — STL Containers | C++ Learning Hub</title>
+  <link rel="stylesheet" href="/assets/css/style.css" />
+</head>
+<body>
+<header id="site-header">
+  <button id="hamburger" aria-label="Toggle navigation">&#9776;</button>
+  <div id="site-logo">C++ Learning Hub <span class="badge">FREE</span></div>
+  <button id="theme-toggle">☾ Dark</button>
+</header>
+<div id="layout">
+<aside id="sidebar"><nav>
+  <div class="nav-section-title">C++ Learning Hub</div>
+  <div class="nav-chapter" data-chapter="home"><div class="nav-chapter-header"><span>🏠 Home</span></div><div class="nav-chapter-links"><a href="/index.html">Overview</a></div></div>
+  <div class="nav-section-title">Chapters</div>
+  <div class="nav-chapter" data-chapter="ch01"><div class="nav-chapter-header"><span><span class="ch-num">01</span>Introduction to C++</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch01-introduction/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch01-introduction/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch01-introduction/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch01-introduction/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch01-introduction/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch02"><div class="nav-chapter-header"><span><span class="ch-num">02</span>Variables, Types &amp; Operators</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch02-variables-types-operators/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch02-variables-types-operators/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch02-variables-types-operators/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch02-variables-types-operators/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch02-variables-types-operators/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch03"><div class="nav-chapter-header"><span><span class="ch-num">03</span>Control Flow</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch03-control-flow/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch03-control-flow/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch03-control-flow/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch03-control-flow/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch03-control-flow/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch04"><div class="nav-chapter-header"><span><span class="ch-num">04</span>Functions</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch04-functions/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch04-functions/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch04-functions/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch04-functions/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch04-functions/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch05"><div class="nav-chapter-header"><span><span class="ch-num">05</span>Arrays &amp; Strings</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch05-arrays-strings/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch05-arrays-strings/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch05-arrays-strings/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch05-arrays-strings/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch05-arrays-strings/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch06"><div class="nav-chapter-header"><span><span class="ch-num">06</span>Pointers &amp; References</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch06-pointers-references/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch06-pointers-references/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch06-pointers-references/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch06-pointers-references/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch06-pointers-references/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch07"><div class="nav-chapter-header"><span><span class="ch-num">07</span>OOP — Basics</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch07-oop-basics/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch07-oop-basics/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch07-oop-basics/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch07-oop-basics/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch07-oop-basics/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch08"><div class="nav-chapter-header"><span><span class="ch-num">08</span>OOP — Inheritance &amp; Polymorphism</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch08-oop-inheritance/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch08-oop-inheritance/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch08-oop-inheritance/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch08-oop-inheritance/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch08-oop-inheritance/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch09"><div class="nav-chapter-header"><span><span class="ch-num">09</span>Templates</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch09-templates/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch09-templates/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch09-templates/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch09-templates/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch09-templates/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter open" data-chapter="ch10"><div class="nav-chapter-header active"><span><span class="ch-num">10</span>STL — Containers</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch10-stl-containers/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch10-stl-containers/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch10-stl-containers/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch10-stl-containers/solutions.html" class="active"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch10-stl-containers/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch11"><div class="nav-chapter-header"><span><span class="ch-num">11</span>STL — Algorithms &amp; Iterators</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch11-stl-algorithms/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch11-stl-algorithms/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch11-stl-algorithms/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch11-stl-algorithms/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch11-stl-algorithms/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch12"><div class="nav-chapter-header"><span><span class="ch-num">12</span>Memory Management</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch12-memory-management/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch12-memory-management/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch12-memory-management/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch12-memory-management/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch12-memory-management/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch13"><div class="nav-chapter-header"><span><span class="ch-num">13</span>Exception Handling</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch13-exception-handling/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch13-exception-handling/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch13-exception-handling/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch13-exception-handling/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch13-exception-handling/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch14"><div class="nav-chapter-header"><span><span class="ch-num">14</span>File I/O</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch14-file-io/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch14-file-io/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch14-file-io/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch14-file-io/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch14-file-io/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch15"><div class="nav-chapter-header"><span><span class="ch-num">15</span>Modern C++ (C++11–C++20)</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch15-modern-cpp/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch15-modern-cpp/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch15-modern-cpp/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch15-modern-cpp/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch15-modern-cpp/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-section-title">Capstone</div>
+  <div class="nav-chapter" data-chapter="ch16"><div class="nav-chapter-header"><span><span class="ch-num">16</span>Capstone Project</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch16-capstone/index.html"><span class="link-icon">🎯</span>Brief</a><a href="/chapters/ch16-capstone/walkthrough.html"><span class="link-icon">🗺</span>Walkthrough</a><a href="/chapters/ch16-capstone/solution.html"><span class="link-icon">✅</span>Solution</a></div></div>
+  <div class="nav-section-title">About</div>
+  <div style="padding:.4rem 1.1rem 1rem;font-size:.78rem;color:var(--muted);line-height:1.5;">Maintained by<br><a href="https://linkedin.com/in/adityabhuyan" target="_blank" rel="noopener">Aditya Pratap Bhuyan</a><br><span style="font-size:.72rem;">GNU GPL v3 License</span></div>
+</nav></aside>
+
+<main id="main">
+  <div class="page-header">
+    <div class="breadcrumb"><a href="/index.html">Home</a> › <a href="index.html">Chapter 10</a> › Solutions</div>
+    <h1>Chapter 10 — Solutions</h1>
+    <p class="subtitle">Reference solutions with explanations. Only read after attempting the exercises yourself.</p>
+    <div class="chapter-tabs">
+      <a href="index.html">📖 Learning</a>
+      <a href="examples.html">💻 Examples</a>
+      <a href="exercises.html">✏️ Exercises</a>
+      <a href="solutions.html" class="active">✅ Solutions</a>
+      <a href="quiz.html">🧠 Quiz</a>
+    </div>
+  </div>
+
+  <div class="content">
+
+    <div class="callout warn">
+      <strong>Spoiler Warning</strong>
+      These are reference solutions. There are often multiple valid approaches — if your output matches
+      but your code differs, that is perfectly fine.
+    </div>
+
+    <!-- Solution 1 -->
+    <div class="solution-card">
+      <div class="card-header">✅ Solution 1 — Vector Statistics</div>
+      <div class="card-body">
+        <p>
+          Values are pushed into a vector, then a single pass tracks the sum, minimum, and maximum. The average must cast the sum to <code>double</code> <em>before</em> dividing; <code>sum / nums.size()</code> would do integer arithmetic (and mix signed with unsigned) and truncate the result.
+        </p>
+<pre><code>// solution_10_vector_stats.cpp
+#include &lt;iostream&gt;
+#include &lt;vector&gt;
+#include &lt;iomanip&gt;
+using namespace std;
+
+int main() {
+    vector&lt;int&gt; nums;
+    cout &lt;&lt; "Enter 10 integers: ";
+    for (int i = 0; i &lt; 10; ++i) {
+        int x;
+        cin &gt;&gt; x;
+        nums.push_back(x);
+    }
+
+    // Seed min and max with the first element, not with 0
+    int sum = 0;
+    int minVal = nums.front();
+    int maxVal = nums.front();
+
+    for (int n : nums) {
+        sum += n;
+        if (n &lt; minVal) minVal = n;
+        if (n &gt; maxVal) maxVal = n;
+    }
+
+    // Cast to double BEFORE dividing, otherwise integer division truncates
+    double average = static_cast&lt;double&gt;(sum) / nums.size();
+
+    cout &lt;&lt; fixed &lt;&lt; setprecision(2);
+    cout &lt;&lt; "Sum     : " &lt;&lt; sum &lt;&lt; '\n';
+    cout &lt;&lt; "Average : " &lt;&lt; average &lt;&lt; '\n';
+    cout &lt;&lt; "Min     : " &lt;&lt; minVal &lt;&lt; '\n';
+    cout &lt;&lt; "Max     : " &lt;&lt; maxVal &lt;&lt; '\n';
+    return 0;
+}</code></pre>
+        <p><strong>Output:</strong></p>
+<pre><code>Enter 10 integers: Sum     : 155
+Average : 15.50
+Min     : 1
+Max     : 42</code></pre>
+        <p><strong>Key concepts used:</strong> <code>vector::push_back</code>, <code>front()</code>, range-based for, <code>static_cast&lt;double&gt;</code>. (Chapter 11 shows the same result with <code>std::accumulate</code> and <code>std::minmax_element</code>.)</p>
+      </div>
+    </div>
+
+    <!-- Solution 2 -->
+    <div class="solution-card">
+      <div class="card-header">✅ Solution 2 — Remove Duplicates with std::set</div>
+      <div class="card-body">
+        <p>
+          A <code>set</code> rejects duplicate insertions, so constructing one from the vector's range leaves only distinct values. Because a set is ordered, they come out <strong>sorted</strong> — the original order is not preserved. <code>assign</code> then copies the set back into the vector. Cost: O(n log n).
+        </p>
+<pre><code>// solution_10_remove_duplicates.cpp
+#include &lt;iostream&gt;
+#include &lt;set&gt;
+#include &lt;vector&gt;
+using namespace std;
+
+int main() {
+    vector&lt;int&gt; data = {5, 3, 8, 3, 1, 5, 9, 1, 8, 2};
+
+    cout &lt;&lt; "Original: ";
+    for (int x : data) cout &lt;&lt; x &lt;&lt; ' ';
+    cout &lt;&lt; '\n';
+
+    // Constructing a set from a range inserts each element;
+    // duplicates are silently ignored and the result is sorted.
+    set&lt;int&gt; unique(data.begin(), data.end());
+
+    // Copy back into a vector (assign replaces the old contents)
+    data.assign(unique.begin(), unique.end());
+
+    cout &lt;&lt; "Unique  : ";
+    for (int x : data) cout &lt;&lt; x &lt;&lt; ' ';
+    cout &lt;&lt; '\n';
+    return 0;
+}</code></pre>
+        <p><strong>Output:</strong></p>
+<pre><code>Original: 5 3 8 3 1 5 9 1 8 2 
+Unique  : 1 2 3 5 8 9 </code></pre>
+        <p><strong>Key concepts used:</strong> <code>std::set</code> range constructor, uniqueness, sorted iteration, <code>vector::assign</code>. (To keep the original order you would use an <code>unordered_set</code> of seen values while building a new vector.)</p>
+      </div>
+    </div>
+
+    <!-- Solution 3 -->
+    <div class="solution-card">
+      <div class="card-header">✅ Solution 3 — Phone Book with std::map</div>
+      <div class="card-body">
+        <p>
+          <code>insert_or_assign</code> (C++17) gives add-or-update semantics. Lookup uses <code>find()</code> so that a missing name is <em>not</em> inserted — <code>operator[]</code> would silently create an empty entry. <code>erase(key)</code> returns how many elements it removed, which tells us whether the name existed.
+        </p>
+<pre><code>// solution_10_phonebook.cpp
+#include &lt;iostream&gt;
+#include &lt;map&gt;
+#include &lt;string&gt;
+using namespace std;
+
+class PhoneBook {
+    map&lt;string, string&gt; entries_;   // name -&gt; phone number
+
+public:
+    // insert_or_assign adds a new entry or updates an existing one
+    void add(const string&amp; name, const string&amp; phone) {
+        entries_.insert_or_assign(name, phone);
+        cout &lt;&lt; "Saved " &lt;&lt; name &lt;&lt; ".\n";
+    }
+
+    // Use find() rather than operator[] so that a failed lookup
+    // does NOT create an empty entry.
+    void lookup(const string&amp; name) const {
+        auto it = entries_.find(name);
+        if (it != entries_.end()) {
+            cout &lt;&lt; name &lt;&lt; ": " &lt;&lt; it-&gt;second &lt;&lt; '\n';
+        } else {
+            cout &lt;&lt; name &lt;&lt; " not found.\n";
+        }
+    }
+
+    // erase(key) returns the number of elements removed (0 or 1)
+    void remove(const string&amp; name) {
+        if (entries_.erase(name) &gt; 0) {
+            cout &lt;&lt; "Deleted " &lt;&lt; name &lt;&lt; ".\n";
+        } else {
+            cout &lt;&lt; name &lt;&lt; " not found.\n";
+        }
+    }
+
+    // Map iteration is alphabetical by key
+    void listAll() const {
+        cout &lt;&lt; "--- Phone book (" &lt;&lt; entries_.size() &lt;&lt; " entries) ---\n";
+        for (const auto&amp; [name, phone] : entries_) {
+            cout &lt;&lt; "  " &lt;&lt; name &lt;&lt; " -&gt; " &lt;&lt; phone &lt;&lt; '\n';
+        }
+    }
+};
+
+int main() {
+    PhoneBook pb;
+    pb.add("Alice", "555-0101");
+    pb.add("Charlie", "555-0303");
+    pb.add("Bob", "555-0202");
+    pb.listAll();
+
+    pb.lookup("Bob");
+    pb.lookup("Zed");
+
+    pb.add("Bob", "555-9999");    // update
+    pb.lookup("Bob");
+
+    pb.remove("Alice");
+    pb.remove("Alice");           // already gone
+    pb.listAll();
+    return 0;
+}</code></pre>
+        <p><strong>Output:</strong></p>
+<pre><code>Saved Alice.
+Saved Charlie.
+Saved Bob.
+--- Phone book (3 entries) ---
+  Alice -&gt; 555-0101
+  Bob -&gt; 555-0202
+  Charlie -&gt; 555-0303
+Bob: 555-0202
+Zed not found.
+Saved Bob.
+Bob: 555-9999
+Deleted Alice.
+Alice not found.
+--- Phone book (2 entries) ---
+  Bob -&gt; 555-9999
+  Charlie -&gt; 555-0303</code></pre>
+        <p><strong>Key concepts used:</strong> <code>std::map</code>, <code>insert_or_assign</code>, <code>find</code>, <code>erase(key)</code>, structured bindings, <code>const</code> member functions, sorted iteration.</p>
+      </div>
+    </div>
+
+    <!-- Solution 4 -->
+    <div class="solution-card">
+      <div class="card-header">✅ Solution 4 — Print Queue Simulation</div>
+      <div class="card-body">
+        <p>
+          <code>push</code> adds jobs at the back; <code>front</code> reads the oldest job; <code>pop</code> removes it. Because <code>pop()</code> returns <code>void</code> and destroys the element, we do all our reading from <code>front()</code> <em>before</em> calling it. Jobs leave in exactly the order they arrived.
+        </p>
+<pre><code>// solution_10_print_queue.cpp
+#include &lt;iostream&gt;
+#include &lt;queue&gt;
+#include &lt;string&gt;
+using namespace std;
+
+struct PrintJob {
+    int    id;
+    string document;
+    int    pages;
+};
+
+int main() {
+    queue&lt;PrintJob&gt; printQueue;
+
+    // push() adds to the BACK of the queue
+    printQueue.push({1, "report.pdf", 12});
+    printQueue.push({2, "invoice.docx", 2});
+    printQueue.push({3, "photo.png", 1});
+    printQueue.push({4, "thesis.pdf", 150});
+
+    cout &lt;&lt; "Jobs waiting: " &lt;&lt; printQueue.size() &lt;&lt; "\n\n";
+
+    int totalPages = 0;
+    // front() looks at the oldest job; pop() removes it. FIFO order.
+    while (!printQueue.empty()) {
+        const PrintJob&amp; job = printQueue.front();
+        cout &lt;&lt; "Printing job #" &lt;&lt; job.id &lt;&lt; ": " &lt;&lt; job.document
+             &lt;&lt; " (" &lt;&lt; job.pages &lt;&lt; " pages)\n";
+        totalPages += job.pages;
+        printQueue.pop();       // pop() returns void and invalidates 'job'
+    }
+
+    cout &lt;&lt; "\nQueue empty. Total pages printed: " &lt;&lt; totalPages &lt;&lt; '\n';
+    return 0;
+}</code></pre>
+        <p><strong>Output:</strong></p>
+<pre><code>Jobs waiting: 4
+
+Printing job #1: report.pdf (12 pages)
+Printing job #2: invoice.docx (2 pages)
+Printing job #3: photo.png (1 pages)
+Printing job #4: thesis.pdf (150 pages)
+
+Queue empty. Total pages printed: 165</code></pre>
+        <p><strong>Key concepts used:</strong> <code>std::queue</code>, FIFO ordering, <code>push/front/pop/empty/size</code>, aggregate initialisation of a struct.</p>
+      </div>
+    </div>
+
+    <!-- Solution 5 -->
+    <div class="solution-card">
+      <div class="card-header">✅ Solution 5 — Graph BFS with an Adjacency List</div>
+      <div class="card-body">
+        <p>
+          <code>addEdge</code> uses <code>g[from].push_back(to)</code> and also touches <code>g[to]</code> so sink nodes (like E) appear in the map. BFS keeps a queue of nodes to visit: pop one, record it, then enqueue every unvisited neighbour. <code>visited.insert(x).second</code> is <code>true</code> only when <code>x</code> was newly added, which combines the check and the mark in one call. Visiting on enqueue guarantees each node enters the queue at most once. Running time is O(V + E) for traversal (times log V for the map/set lookups). The <code>bfs</code> function takes the graph as <code>const</code>, so it uses <code>at()</code> because <code>operator[]</code> is unavailable on a const map.
+        </p>
+<pre><code>// solution_10_graph_bfs.cpp
+#include &lt;iostream&gt;
+#include &lt;map&gt;
+#include &lt;queue&gt;
+#include &lt;set&gt;
+#include &lt;string&gt;
+#include &lt;vector&gt;
+using namespace std;
+
+using Graph = map&lt;string, vector&lt;string&gt;&gt;;   // node -&gt; list of out-neighbours
+
+void addEdge(Graph&amp; g, const string&amp; from, const string&amp; to) {
+    g[from].push_back(to);
+    g[to];    // make sure 'to' exists as a node even if it has no outgoing edges
+}
+
+vector&lt;string&gt; bfs(const Graph&amp; g, const string&amp; start) {
+    vector&lt;string&gt; order;
+    if (g.find(start) == g.end()) return order;   // unknown start node
+
+    set&lt;string&gt;   visited;
+    queue&lt;string&gt; q;
+
+    visited.insert(start);   // mark when ENQUEUED to avoid duplicates in the queue
+    q.push(start);
+
+    while (!q.empty()) {
+        string node = q.front();
+        q.pop();
+        order.push_back(node);
+
+        // .at() on a const map: operator[] is not available on const maps
+        for (const string&amp; next : g.at(node)) {
+            if (visited.insert(next).second) {   // .second is true if newly inserted
+                q.push(next);
+            }
+        }
+    }
+    return order;
+}
+
+int main() {
+    Graph g;
+    addEdge(g, "A", "B");
+    addEdge(g, "A", "C");
+    addEdge(g, "B", "D");
+    addEdge(g, "C", "D");
+    addEdge(g, "D", "E");
+    addEdge(g, "F", "A");    // F is not reachable from A
+
+    cout &lt;&lt; "Adjacency list:\n";
+    for (const auto&amp; [node, neighbours] : g) {
+        cout &lt;&lt; "  " &lt;&lt; node &lt;&lt; " -&gt;";
+        for (const string&amp; n : neighbours) cout &lt;&lt; ' ' &lt;&lt; n;
+        cout &lt;&lt; '\n';
+    }
+
+    cout &lt;&lt; "\nBFS from A: ";
+    for (const string&amp; n : bfs(g, "A")) cout &lt;&lt; n &lt;&lt; ' ';
+    cout &lt;&lt; '\n';
+    return 0;
+}</code></pre>
+        <p><strong>Output:</strong></p>
+<pre><code>Adjacency list:
+  A -&gt; B C
+  B -&gt; D
+  C -&gt; D
+  D -&gt; E
+  E -&gt;
+  F -&gt; A
+
+BFS from A: A B C D E </code></pre>
+        <p><strong>Key concepts used:</strong> <code>map&lt;string, vector&lt;string&gt;&gt;</code>, <code>queue</code>, <code>set::insert</code> return value, <code>using</code> type alias, <code>const</code> correctness.</p>
+      </div>
+    </div>
+
+    <div style="display:flex;justify-content:space-between;margin-top:2rem;">
+      <a href="exercises.html" class="btn btn-outline" style="text-decoration:none;">← Exercises</a>
+      <a href="quiz.html" class="btn" style="text-decoration:none;">Take the Quiz →</a>
+    </div>
+
+  </div>
+</main>
+</div>
+<footer id="site-footer">
+  &copy; 2024 <a href="https://linkedin.com/in/adityabhuyan" target="_blank" rel="noopener">Aditya Pratap Bhuyan</a> &nbsp;|&nbsp;
+  <a href="https://github.com/aditya-bhuyan/cpp-learning-hub" target="_blank" rel="noopener">GitHub</a> &nbsp;|&nbsp;
+  GNU GPL v3 License
+</footer>
+<script src="/assets/js/nav.js"></script>
+</body>
+</html>

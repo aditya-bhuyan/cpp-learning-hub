@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ch 15 Examples — Modern C++ (C++11–C++20) | C++ Learning Hub</title>
+  <link rel="stylesheet" href="/assets/css/style.css" />
+</head>
+<body>
+<header id="site-header">
+  <button id="hamburger" aria-label="Toggle navigation">&#9776;</button>
+  <div id="site-logo">C++ Learning Hub <span class="badge">FREE</span></div>
+  <button id="theme-toggle">☾ Dark</button>
+</header>
+<div id="layout">
+<aside id="sidebar"><nav>
+  <div class="nav-section-title">C++ Learning Hub</div>
+  <div class="nav-chapter" data-chapter="home"><div class="nav-chapter-header"><span>🏠 Home</span></div><div class="nav-chapter-links"><a href="/index.html">Overview</a></div></div>
+  <div class="nav-section-title">Chapters</div>
+  <div class="nav-chapter" data-chapter="ch01"><div class="nav-chapter-header"><span><span class="ch-num">01</span>Introduction to C++</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch01-introduction/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch01-introduction/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch01-introduction/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch01-introduction/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch01-introduction/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch02"><div class="nav-chapter-header"><span><span class="ch-num">02</span>Variables, Types &amp; Operators</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch02-variables-types-operators/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch02-variables-types-operators/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch02-variables-types-operators/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch02-variables-types-operators/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch02-variables-types-operators/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch03"><div class="nav-chapter-header"><span><span class="ch-num">03</span>Control Flow</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch03-control-flow/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch03-control-flow/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch03-control-flow/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch03-control-flow/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch03-control-flow/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch04"><div class="nav-chapter-header"><span><span class="ch-num">04</span>Functions</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch04-functions/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch04-functions/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch04-functions/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch04-functions/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch04-functions/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch05"><div class="nav-chapter-header"><span><span class="ch-num">05</span>Arrays &amp; Strings</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch05-arrays-strings/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch05-arrays-strings/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch05-arrays-strings/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch05-arrays-strings/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch05-arrays-strings/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch06"><div class="nav-chapter-header"><span><span class="ch-num">06</span>Pointers &amp; References</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch06-pointers-references/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch06-pointers-references/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch06-pointers-references/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch06-pointers-references/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch06-pointers-references/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch07"><div class="nav-chapter-header"><span><span class="ch-num">07</span>OOP — Basics</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch07-oop-basics/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch07-oop-basics/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch07-oop-basics/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch07-oop-basics/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch07-oop-basics/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch08"><div class="nav-chapter-header"><span><span class="ch-num">08</span>OOP — Inheritance &amp; Polymorphism</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch08-oop-inheritance/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch08-oop-inheritance/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch08-oop-inheritance/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch08-oop-inheritance/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch08-oop-inheritance/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch09"><div class="nav-chapter-header"><span><span class="ch-num">09</span>Templates</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch09-templates/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch09-templates/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch09-templates/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch09-templates/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch09-templates/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch10"><div class="nav-chapter-header"><span><span class="ch-num">10</span>STL — Containers</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch10-stl-containers/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch10-stl-containers/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch10-stl-containers/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch10-stl-containers/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch10-stl-containers/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch11"><div class="nav-chapter-header"><span><span class="ch-num">11</span>STL — Algorithms &amp; Iterators</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch11-stl-algorithms/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch11-stl-algorithms/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch11-stl-algorithms/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch11-stl-algorithms/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch11-stl-algorithms/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch12"><div class="nav-chapter-header"><span><span class="ch-num">12</span>Memory Management</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch12-memory-management/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch12-memory-management/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch12-memory-management/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch12-memory-management/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch12-memory-management/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch13"><div class="nav-chapter-header"><span><span class="ch-num">13</span>Exception Handling</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch13-exception-handling/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch13-exception-handling/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch13-exception-handling/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch13-exception-handling/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch13-exception-handling/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch14"><div class="nav-chapter-header"><span><span class="ch-num">14</span>File I/O</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch14-file-io/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch14-file-io/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch14-file-io/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch14-file-io/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch14-file-io/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch15"><div class="nav-chapter-header"><span><span class="ch-num">15</span>Modern C++ (C++11–C++20)</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="index.html"><span class="link-icon">📖</span>Learning</a><a href="examples.html" class="active"><span class="link-icon">💻</span>Examples</a><a href="exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-section-title">Capstone</div>
+  <div class="nav-chapter" data-chapter="ch16"><div class="nav-chapter-header"><span><span class="ch-num">16</span>Capstone Project</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch16-capstone/index.html"><span class="link-icon">🎯</span>Brief</a><a href="/chapters/ch16-capstone/walkthrough.html"><span class="link-icon">🗺</span>Walkthrough</a><a href="/chapters/ch16-capstone/solution.html"><span class="link-icon">✅</span>Solution</a></div></div>
+  <div class="nav-section-title">About</div>
+  <div style="padding:.4rem 1.1rem 1rem;font-size:.78rem;color:var(--muted);line-height:1.5;">Maintained by<br><a href="https://linkedin.com/in/adityabhuyan" target="_blank" rel="noopener">Aditya Pratap Bhuyan</a><br><span style="font-size:.72rem;">GNU GPL v3 License</span></div>
+</nav></aside>
+
+<main id="main">
+  <div class="page-header">
+    <div class="breadcrumb"><a href="/index.html">Home</a> › <a href="index.html">Chapter 15</a> › Examples</div>
+    <h1>Chapter 15 — Coding Examples</h1>
+    <p class="subtitle">Four fully commented programs spanning lambda expressions, move semantics, C++17 features, and C++20 ranges.</p>
+    <div class="chapter-tabs">
+      <a href="index.html">📖 Learning</a>
+      <a href="examples.html" class="active">💻 Examples</a>
+      <a href="exercises.html">✏️ Exercises</a>
+      <a href="solutions.html">✅ Solutions</a>
+      <a href="quiz.html">🧠 Quiz</a>
+    </div>
+  </div>
+
+  <div class="content">
+
+    <!-- ============================================================
+         Example 1 — Lambda Expressions
+    ============================================================ -->
+    <h2>Example 1 — Lambda Expressions</h2>
+    <p>
+      Demonstrates all four capture modes, a generic lambda (C++14), using a lambda as an STL
+      comparator, and an immediately invoked function expression (IIFE) pattern.
+    </p>
+<pre><code>// ex15_1_lambdas.cpp
+// Compile: g++ -std=c++14 -Wall -o ex15_1 ex15_1_lambdas.cpp
+
+#include &lt;iostream&gt;
+#include &lt;vector&gt;
+#include &lt;algorithm&gt;
+#include &lt;numeric&gt;
+using namespace std;
+
+int main() {
+    // ---- Capture by value [=] ----
+    int base = 100;
+    auto byValue = [=](int x) {
+        // base is captured as a copy — changes to base after capture are NOT visible
+        return x + base;
+    };
+
+    base = 999;                         // changes the local variable...
+    cout &lt;&lt; byValue(5) &lt;&lt; "\n";        // ...but lambda still sees 100 → prints 105
+
+    // ---- Capture by reference [&amp;] ----
+    int sum = 0;
+    vector&lt;int&gt; nums = {1, 2, 3, 4, 5};
+    for_each(nums.begin(), nums.end(),
+             [&amp;sum](int x) { sum += x; });   // modifies sum through a reference capture
+    cout &lt;&lt; "sum = " &lt;&lt; sum &lt;&lt; "\n";         // 15
+
+    // ---- Capture specific variable by reference, rest by value [=, &amp;sum] ----
+    int factor = 2;
+    int product = 1;
+    for_each(nums.begin(), nums.end(),
+             [=, &amp;product](int x) { product *= x * factor; });
+    // product updated via reference; factor read as a copy
+    cout &lt;&lt; "product = " &lt;&lt; product &lt;&lt; "\n";  // 1*2 * 2*4 * 2*6 * 2*8 * 2*10 = 3840
+
+    // ---- Lambda as STL comparator — sort descending ----
+    vector&lt;int&gt; data = {5, 2, 8, 1, 9, 3};
+    sort(data.begin(), data.end(),
+         [](int a, int b) { return a &gt; b; });   // capture nothing []
+    cout &lt;&lt; "Sorted descending: ";
+    for (int x : data) cout &lt;&lt; x &lt;&lt; " ";
+    cout &lt;&lt; "\n";  // 9 8 5 3 2 1
+
+    // ---- Generic lambda (C++14) — auto parameters ----
+    auto multiply = [](auto a, auto b) { return a * b; };
+    cout &lt;&lt; multiply(3, 4)       &lt;&lt; "\n";  // 12   (int)
+    cout &lt;&lt; multiply(2.5, 1.5)   &lt;&lt; "\n";  // 3.75 (double)
+    cout &lt;&lt; multiply(3, 1.5)     &lt;&lt; "\n";  // 4.5  (int * double)
+
+    // ---- IIFE — Immediately Invoked Function Expression ----
+    // Useful for complex initialisation that needs multiple statements
+    const int config = [&amp;]() {
+        int val = 10;
+        if (sum &gt; 10) val *= 2;
+        return val;
+    }();  // &lt;-- invoked immediately with ()
+    cout &lt;&lt; "config = " &lt;&lt; config &lt;&lt; "\n";  // 20 (since sum==15 &gt; 10)
+
+    return 0;
+}</code></pre>
+    <p><strong>Expected output:</strong></p>
+<pre><code>105
+sum = 15
+product = 3840
+Sorted descending: 9 8 5 3 2 1
+12
+3.75
+4.5
+config = 20</code></pre>
+    <div class="callout tip">
+      <strong>When to use which capture:</strong>
+      Prefer <code>[&amp;]</code> for short-lived lambdas that don't outlive the enclosing scope.
+      Prefer <code>[=]</code> or named captures when the lambda may be stored or passed across threads.
+    </div>
+
+    <!-- ============================================================
+         Example 2 — Move Semantics
+    ============================================================ -->
+    <h2>Example 2 — Move Semantics</h2>
+    <p>
+      Implements a resource-managing <code>Buffer</code> class that owns a heap array.
+      Demonstrates the difference between a copy (deep clone) and a move (pointer transfer),
+      and shows how <code>std::move</code> unlocks move construction and move assignment.
+    </p>
+<pre><code>// ex15_2_move.cpp
+// Compile: g++ -std=c++11 -Wall -o ex15_2 ex15_2_move.cpp
+
+#include &lt;iostream&gt;
+#include &lt;cstring&gt;   // std::memcpy
+#include &lt;utility&gt;   // std::move, std::exchange
+using namespace std;
+
+class Buffer {
+    int*   data_;
+    size_t size_;
+public:
+    // --- Ordinary constructor ---
+    explicit Buffer(size_t n) : data_{new int[n]{}}, size_{n} {
+        cout &lt;&lt; "  Construct Buffer(" &lt;&lt; n &lt;&lt; ")\n";
+    }
+
+    // --- Destructor ---
+    ~Buffer() {
+        delete[] data_;
+        cout &lt;&lt; "  ~Buffer (size=" &lt;&lt; size_ &lt;&lt; ")\n";
+    }
+
+    // --- Copy constructor — deep copy: allocate new memory and copy contents ---
+    Buffer(const Buffer&amp; other) : data_{new int[other.size_]}, size_{other.size_} {
+        cout &lt;&lt; "  Copy Buffer (deep copy, size=" &lt;&lt; size_ &lt;&lt; ")\n";
+        memcpy(data_, other.data_, size_ * sizeof(int));
+    }
+
+    // --- Copy assignment ---
+    Buffer&amp; operator=(const Buffer&amp; other) {
+        if (this != &amp;other) {
+            delete[] data_;
+            size_ = other.size_;
+            data_ = new int[size_];
+            memcpy(data_, other.data_, size_ * sizeof(int));
+            cout &lt;&lt; "  Copy-assign Buffer (deep copy, size=" &lt;&lt; size_ &lt;&lt; ")\n";
+        }
+        return *this;
+    }
+
+    // --- Move constructor — steal the pointer, leave source empty ---
+    Buffer(Buffer&amp;&amp; other) noexcept
+        : data_{exchange(other.data_, nullptr)},  // steal pointer, leave other with nullptr
+          size_{exchange(other.size_, 0)}
+    {
+        cout &lt;&lt; "  Move Buffer (no allocation, size=" &lt;&lt; size_ &lt;&lt; ")\n";
+    }
+
+    // --- Move assignment ---
+    Buffer&amp; operator=(Buffer&amp;&amp; other) noexcept {
+        if (this != &amp;other) {
+            delete[] data_;                       // free current resource
+            data_ = exchange(other.data_, nullptr);
+            size_ = exchange(other.size_, 0);
+            cout &lt;&lt; "  Move-assign Buffer (size=" &lt;&lt; size_ &lt;&lt; ")\n";
+        }
+        return *this;
+    }
+
+    size_t size()   const { return size_; }
+    bool   empty()  const { return data_ == nullptr; }
+};
+
+int main() {
+    cout &lt;&lt; "--- Creating a ----\n";
+    Buffer a(1'000'000);   // 4 MB heap allocation
+
+    cout &lt;&lt; "--- Copying a to b (expensive) ----\n";
+    Buffer b = a;           // copy constructor: allocates another 4 MB + memcpy
+
+    cout &lt;&lt; "--- Moving a to c (cheap) ----\n";
+    Buffer c = move(a);     // move constructor: O(1), just pointer swap
+
+    cout &lt;&lt; "a.empty() = " &lt;&lt; boolalpha &lt;&lt; a.empty() &lt;&lt; "\n";  // true
+    cout &lt;&lt; "b.size()  = " &lt;&lt; b.size()  &lt;&lt; "\n";               // 1000000
+    cout &lt;&lt; "c.size()  = " &lt;&lt; c.size()  &lt;&lt; "\n";               // 1000000
+
+    cout &lt;&lt; "--- Move-assigning c to b ----\n";
+    b = move(c);            // move assignment: frees b's old memory, steals c's pointer
+
+    cout &lt;&lt; "--- End of main — destructors run ----\n";
+    return 0;
+}</code></pre>
+    <p><strong>Expected output:</strong></p>
+<pre><code>--- Creating a ----
+  Construct Buffer(1000000)
+--- Copying a to b (expensive) ----
+  Copy Buffer (deep copy, size=1000000)
+--- Moving a to c (cheap) ----
+  Move Buffer (no allocation, size=1000000)
+a.empty() = true
+b.size()  = 1000000
+c.size()  = 1000000
+--- Move-assigning c to b ----
+  Move-assign Buffer (size=1000000)
+--- End of main — destructors run ----
+  ~Buffer (size=1000000)
+  ~Buffer (size=0)
+  ~Buffer (size=0)</code></pre>
+
+    <!-- ============================================================
+         Example 3 — C++17 Features
+    ============================================================ -->
+    <h2>Example 3 — Modern C++17 Features</h2>
+    <p>
+      A single program showcasing structured bindings, <code>std::optional</code>,
+      <code>if constexpr</code> inside a template, and <code>std::string_view</code>.
+    </p>
+<pre><code>// ex15_3_cpp17.cpp
+// Compile: g++ -std=c++17 -Wall -o ex15_3 ex15_3_cpp17.cpp
+
+#include &lt;iostream&gt;
+#include &lt;map&gt;
+#include &lt;optional&gt;
+#include &lt;string_view&gt;
+#include &lt;type_traits&gt;
+using namespace std;
+
+// ---- std::optional: return a value that may be absent ----
+optional&lt;double&gt; safeSqrt(double x) {
+    if (x &lt; 0) return nullopt;   // no value
+    return __builtin_sqrt(x);
+}
+
+// ---- if constexpr: compile-time branch selection inside a template ----
+template&lt;typename T&gt;
+string describe(T val) {
+    if constexpr (is_integral_v&lt;T&gt;)
+        return "integer(" + to_string(val) + ")";
+    else if constexpr (is_floating_point_v&lt;T&gt;)
+        return "float(" + to_string(val) + ")";
+    else
+        return "other";
+    // The discarded branch is not instantiated — no compile error even if
+    // to_string() wouldn't work for the other type.
+}
+
+// ---- string_view: read-only, zero-copy parameter ----
+void printGreeting(string_view name, string_view greeting = "Hello") {
+    // No heap allocation — name and greeting are views into existing memory
+    cout &lt;&lt; greeting &lt;&lt; ", " &lt;&lt; name &lt;&lt; "!\n";
+}
+
+int main() {
+    // ---- Structured bindings with std::map ----
+    map&lt;string, int&gt; population = {
+        {"Tokyo",   13'960'000},
+        {"Delhi",   30'290'000},
+        {"London",   9'541'000}
+    };
+
+    cout &lt;&lt; "City populations:\n";
+    for (const auto&amp; [city, pop] : population) {
+        // city and pop are structured-binding names, not pairs
+        cout &lt;&lt; "  " &lt;&lt; city &lt;&lt; ": " &lt;&lt; pop &lt;&lt; "\n";
+    }
+
+    // ---- Structured binding from a function returning pair ----
+    auto [lo, hi] = minmax({4, 7, 1, 9, 3});
+    cout &lt;&lt; "min=" &lt;&lt; lo &lt;&lt; " max=" &lt;&lt; hi &lt;&lt; "\n";
+
+    // ---- std::optional ----
+    for (double x : {9.0, -4.0, 0.0}) {
+        if (auto result = safeSqrt(x)) {
+            cout &lt;&lt; "sqrt(" &lt;&lt; x &lt;&lt; ") = " &lt;&lt; *result &lt;&lt; "\n";
+        } else {
+            cout &lt;&lt; "sqrt(" &lt;&lt; x &lt;&lt; ") = undefined (negative input)\n";
+        }
+    }
+
+    // ---- if constexpr ----
+    cout &lt;&lt; describe(42)    &lt;&lt; "\n";   // integer(42)
+    cout &lt;&lt; describe(3.14)  &lt;&lt; "\n";   // float(3.140000)
+
+    // ---- std::string_view ----
+    string name = "Aditya";
+    printGreeting(name);            // wraps std::string — no copy
+    printGreeting("World");         // wraps string literal — no allocation
+    printGreeting("C++", "Welcome to");
+
+    return 0;
+}</code></pre>
+    <p><strong>Expected output:</strong></p>
+<pre><code>City populations:
+  Delhi: 30290000
+  London: 9541000
+  Tokyo: 13960000
+min=1 max=9
+sqrt(9) = 3
+sqrt(-4) = undefined (negative input)
+sqrt(0) = 0
+integer(42)
+float(3.140000)
+Hello, Aditya!
+Hello, World!
+Welcome to, C++!</code></pre>
+
+    <!-- ============================================================
+         Example 4 — C++20 Ranges
+    ============================================================ -->
+    <h2>Example 4 — C++20 Ranges</h2>
+    <p>
+      Shows composable view pipelines with <code>std::views::filter</code>,
+      <code>std::views::transform</code>, <code>std::views::take</code>, and
+      <code>std::ranges::sort</code>. Views are <em>lazy</em> — no intermediate containers are created.
+    </p>
+<pre><code>// ex15_4_ranges.cpp
+// Compile: g++ -std=c++20 -Wall -o ex15_4 ex15_4_ranges.cpp
+
+#include &lt;iostream&gt;
+#include &lt;vector&gt;
+#include &lt;ranges&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+
+int main() {
+    vector&lt;int&gt; numbers = {5, 3, 8, 1, 7, 2, 9, 4, 6, 10};
+
+    // ---- std::ranges::sort: no iterator pairs needed ----
+    ranges::sort(numbers);
+    cout &lt;&lt; "Sorted: ";
+    for (int x : numbers) cout &lt;&lt; x &lt;&lt; " ";
+    cout &lt;&lt; "\n";   // 1 2 3 4 5 6 7 8 9 10
+
+    // ---- Composable view pipeline ----
+    // Step 1: filter — keep only even numbers
+    // Step 2: transform — square each one
+    // Step 3: take — only the first 4 results
+    // No intermediate vectors; all views are lazy and read on demand.
+    auto pipeline = numbers
+        | views::filter([](int x){ return x % 2 == 0; })   // 2 4 6 8 10
+        | views::transform([](int x){ return x * x; })     // 4 16 36 64 100
+        | views::take(4);                                   // 4 16 36 64
+
+    cout &lt;&lt; "Even squares (first 4): ";
+    for (int x : pipeline) cout &lt;&lt; x &lt;&lt; " ";
+    cout &lt;&lt; "\n";
+
+    // ---- Reverse view — no copy ----
+    cout &lt;&lt; "Reversed: ";
+    for (int x : numbers | views::reverse) cout &lt;&lt; x &lt;&lt; " ";
+    cout &lt;&lt; "\n";
+
+    // ---- Drop + take: a sliding window ----
+    cout &lt;&lt; "Elements [3..6]: ";
+    for (int x : numbers | views::drop(2) | views::take(4)) cout &lt;&lt; x &lt;&lt; " ";
+    cout &lt;&lt; "\n";
+
+    // ---- iota view: generate an infinite range of ints, take 5 ----
+    cout &lt;&lt; "First 5 natural numbers squared: ";
+    for (int x : views::iota(1) | views::transform([](int n){ return n*n; }) | views::take(5))
+        cout &lt;&lt; x &lt;&lt; " ";
+    cout &lt;&lt; "\n";
+
+    return 0;
+}</code></pre>
+    <p><strong>Expected output:</strong></p>
+<pre><code>Sorted: 1 2 3 4 5 6 7 8 9 10
+Even squares (first 4): 4 16 36 64
+Reversed: 10 9 8 7 6 5 4 3 2 1
+Elements [3..6]: 3 4 5 6
+First 5 natural numbers squared: 1 4 9 16 25</code></pre>
+    <div class="callout tip">
+      <strong>Laziness matters.</strong>
+      A <code>views::filter | views::transform</code> pipeline does not compute anything until you
+      iterate over it. No temporary <code>vector</code> is allocated between stages.
+    </div>
+
+    <div style="display:flex;justify-content:space-between;margin-top:2rem;">
+      <a href="index.html" class="btn btn-outline" style="text-decoration:none;">← Learning</a>
+      <a href="exercises.html" class="btn" style="text-decoration:none;">Next: Exercises →</a>
+    </div>
+
+  </div>
+</main>
+</div>
+<footer id="site-footer">
+  &copy; 2024 <a href="https://linkedin.com/in/adityabhuyan" target="_blank" rel="noopener">Aditya Pratap Bhuyan</a> &nbsp;|&nbsp;
+  <a href="https://github.com/aditya-bhuyan/cpp-learning-hub" target="_blank" rel="noopener">GitHub</a> &nbsp;|&nbsp;
+  GNU GPL v3 License
+</footer>
+<script src="/assets/js/nav.js"></script>
+</body>
+</html>

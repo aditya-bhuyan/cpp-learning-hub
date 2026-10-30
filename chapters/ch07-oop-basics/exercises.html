@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ch 07 Exercises — OOP Basics | C++ Learning Hub</title>
+  <link rel="stylesheet" href="/assets/css/style.css" />
+</head>
+<body>
+<header id="site-header">
+  <button id="hamburger" aria-label="Toggle navigation">&#9776;</button>
+  <div id="site-logo">C++ Learning Hub <span class="badge">FREE</span></div>
+  <button id="theme-toggle">☾ Dark</button>
+</header>
+<div id="layout">
+<aside id="sidebar"><nav>
+  <div class="nav-section-title">C++ Learning Hub</div>
+  <div class="nav-chapter" data-chapter="home"><div class="nav-chapter-header"><span>🏠 Home</span></div><div class="nav-chapter-links"><a href="/index.html">Overview</a></div></div>
+  <div class="nav-section-title">Chapters</div>
+  <div class="nav-chapter" data-chapter="ch01"><div class="nav-chapter-header"><span><span class="ch-num">01</span>Introduction to C++</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch01-introduction/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch01-introduction/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch01-introduction/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch01-introduction/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch01-introduction/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch02"><div class="nav-chapter-header"><span><span class="ch-num">02</span>Variables, Types &amp; Operators</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch02-variables-types-operators/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch02-variables-types-operators/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch02-variables-types-operators/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch02-variables-types-operators/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch02-variables-types-operators/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch03"><div class="nav-chapter-header"><span><span class="ch-num">03</span>Control Flow</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch03-control-flow/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch03-control-flow/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch03-control-flow/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch03-control-flow/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch03-control-flow/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch04"><div class="nav-chapter-header"><span><span class="ch-num">04</span>Functions</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch04-functions/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch04-functions/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch04-functions/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch04-functions/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch04-functions/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch05"><div class="nav-chapter-header"><span><span class="ch-num">05</span>Arrays &amp; Strings</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch05-arrays-strings/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch05-arrays-strings/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch05-arrays-strings/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch05-arrays-strings/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch05-arrays-strings/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch06"><div class="nav-chapter-header"><span><span class="ch-num">06</span>Pointers &amp; References</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch06-pointers-references/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch06-pointers-references/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch06-pointers-references/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch06-pointers-references/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch06-pointers-references/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter open" data-chapter="ch07"><div class="nav-chapter-header"><span><span class="ch-num">07</span>OOP — Basics</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch07-oop-basics/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch07-oop-basics/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch07-oop-basics/exercises.html" class="active"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch07-oop-basics/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch07-oop-basics/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch08"><div class="nav-chapter-header"><span><span class="ch-num">08</span>OOP — Inheritance &amp; Polymorphism</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch08-oop-inheritance/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch08-oop-inheritance/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch08-oop-inheritance/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch08-oop-inheritance/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch08-oop-inheritance/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch09"><div class="nav-chapter-header"><span><span class="ch-num">09</span>Templates</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch09-templates/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch09-templates/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch09-templates/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch09-templates/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch09-templates/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch10"><div class="nav-chapter-header"><span><span class="ch-num">10</span>STL — Containers</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch10-stl-containers/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch10-stl-containers/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch10-stl-containers/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch10-stl-containers/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch10-stl-containers/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch11"><div class="nav-chapter-header"><span><span class="ch-num">11</span>STL — Algorithms &amp; Iterators</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch11-stl-algorithms/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch11-stl-algorithms/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch11-stl-algorithms/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch11-stl-algorithms/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch11-stl-algorithms/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch12"><div class="nav-chapter-header"><span><span class="ch-num">12</span>Memory Management</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch12-memory-management/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch12-memory-management/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch12-memory-management/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch12-memory-management/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch12-memory-management/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch13"><div class="nav-chapter-header"><span><span class="ch-num">13</span>Exception Handling</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch13-exception-handling/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch13-exception-handling/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch13-exception-handling/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch13-exception-handling/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch13-exception-handling/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch14"><div class="nav-chapter-header"><span><span class="ch-num">14</span>File I/O</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch14-file-io/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch14-file-io/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch14-file-io/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch14-file-io/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch14-file-io/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch15"><div class="nav-chapter-header"><span><span class="ch-num">15</span>Modern C++ (C++11–C++20)</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch15-modern-cpp/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch15-modern-cpp/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch15-modern-cpp/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch15-modern-cpp/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch15-modern-cpp/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-section-title">Capstone</div>
+  <div class="nav-chapter" data-chapter="ch16"><div class="nav-chapter-header"><span><span class="ch-num">16</span>Capstone Project</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch16-capstone/index.html"><span class="link-icon">🎯</span>Brief</a><a href="/chapters/ch16-capstone/walkthrough.html"><span class="link-icon">🗺</span>Walkthrough</a><a href="/chapters/ch16-capstone/solution.html"><span class="link-icon">✅</span>Solution</a></div></div>
+  <div class="nav-section-title">About</div>
+  <div style="padding:.4rem 1.1rem 1rem;font-size:.78rem;color:var(--muted);line-height:1.5;">Maintained by<br><a href="https://linkedin.com/in/adityabhuyan" target="_blank" rel="noopener">Aditya Pratap Bhuyan</a><br><span style="font-size:.72rem;">GNU GPL v3 License</span></div>
+</nav></aside>
+
+<main id="main">
+  <div class="page-header">
+    <div class="breadcrumb"><a href="/index.html">Home</a> › <a href="index.html">Chapter 07</a> › Exercises</div>
+    <h1>Chapter 07 — Exercises</h1>
+    <p class="subtitle">Apply what you've learned. Attempt each problem before viewing the solutions.</p>
+    <div class="chapter-tabs">
+      <a href="index.html">📖 Learning</a>
+      <a href="examples.html">💻 Examples</a>
+      <a href="exercises.html" class="active">✏️ Exercises</a>
+      <a href="solutions.html">✅ Solutions</a>
+      <a href="quiz.html">🧠 Quiz</a>
+    </div>
+  </div>
+
+  <div class="content">
+
+    <div class="callout">
+      <strong>Instructions</strong>
+      Work through each exercise in a text editor or IDE. Compile with <code>g++ -std=c++17 -Wall</code> and run your program.
+      Only open <a href="solutions.html">Solutions</a> after you have made a genuine attempt.
+    </div>
+
+    <!-- Exercise 1 -->
+    <div class="exercise-card">
+      <div class="card-header">
+        Exercise 1 — Circle Class
+        <span class="tag tag-easy">Easy</span>
+      </div>
+      <div class="card-body">
+        <p>Create a class <code>Circle</code> with a private <code>radius</code>. Provide a constructor, <code>area()</code>,
+        <code>circumference()</code> and a <code>display()</code> method. All three query methods must be <code>const</code>.</p>
+        <p><strong>Hints:</strong></p>
+        <ul>
+          <li>Use <code>3.14159265358979</code> for &pi; (or <code>static constexpr double PI</code> inside the class).</li>
+          <li>Use <code>fixed</code> and <code>setprecision(2)</code> from <code>&lt;iomanip&gt;</code> for tidy output.</li>
+        </ul>
+        <p><strong>Expected output:</strong></p>
+<pre><code>Circle radius 5.00
+  area          = 78.54
+  circumference = 31.42
+Circle radius 1.00
+  area          = 3.14
+  circumference = 6.28</code></pre>
+      </div>
+    </div>
+
+    <!-- Exercise 2 -->
+    <div class="exercise-card">
+      <div class="card-header">
+        Exercise 2 — Temperature Class
+        <span class="tag tag-easy">Easy</span>
+      </div>
+      <div class="card-body">
+        <p>Create a class <code>Temperature</code> that stores a temperature in <strong>Celsius</strong> (private). Provide
+        <code>toCelsius()</code>, <code>toFahrenheit()</code> and <code>toKelvin()</code> as <code>const</code> member functions.</p>
+        <p><strong>Formulas:</strong> F = C &times; 9/5 + 32 &nbsp;&nbsp; K = C + 273.15</p>
+        <p><strong>Hint:</strong> beware of integer division — <code>9 / 5</code> is <code>1</code>. Write <code>9.0 / 5.0</code>.</p>
+        <p><strong>Expected output (for 100, 0 and -40 degrees C):</strong></p>
+<pre><code>100.00 C = 212.00 F = 373.15 K
+0.00 C = 32.00 F = 273.15 K
+-40.00 C = -40.00 F = 233.15 K</code></pre>
+      </div>
+    </div>
+
+    <!-- Exercise 3 -->
+    <div class="exercise-card">
+      <div class="card-header">
+        Exercise 3 — Book Class
+        <span class="tag tag-medium">Medium</span>
+      </div>
+      <div class="card-body">
+        <p>Create a class <code>Book</code> with private members <code>title</code>, <code>author</code>, <code>year</code> and <code>ISBN</code>.
+        Provide a constructor that uses an <strong>initialization list</strong>, a <code>display()</code> method and a method
+        <code>bool isSameAuthor(Book other) const</code> that returns whether two books have the same author.</p>
+        <p><strong>Hints:</strong></p>
+        <ul>
+          <li>A member function may access the private members of <em>another object of the same class</em> (<code>other.author</code>).</li>
+          <li>Taking <code>Book other</code> by value makes a copy (and calls the copy constructor). Afterwards, think about why
+              <code>const Book&amp;</code> would be better.</li>
+        </ul>
+        <p><strong>Expected output:</strong></p>
+<pre><code>"The C++ Programming Language" by Bjarne Stroustrup (2013), ISBN 978-0321563842
+"A Tour of C++" by Bjarne Stroustrup (2018), ISBN 978-0134997834
+"Clean Code" by Robert C. Martin (2008), ISBN 978-0132350884
+b1 and b2 same author? true
+b1 and b3 same author? false</code></pre>
+      </div>
+    </div>
+
+    <!-- Exercise 4 -->
+    <div class="exercise-card">
+      <div class="card-header">
+        Exercise 4 — Employee Class with a Static Counter
+        <span class="tag tag-medium">Medium</span>
+      </div>
+      <div class="card-body">
+        <p>Create a class <code>Employee</code> with private <code>name</code>, <code>id</code> and <code>salary</code>. Provide
+        <code>raise(double percent)</code>, which increases the salary by that percentage, and <code>display()</code> (const).</p>
+        <p>Add a <strong>static</strong> data member that counts the total number of employees currently alive, and a static function
+        <code>getTotal()</code> to read it. Increment it in the constructors and decrement it in the destructor.</p>
+        <p><strong>Hints:</strong></p>
+        <ul>
+          <li>Define the static member outside the class: <code>int Employee::totalEmployees = 0;</code></li>
+          <li>The copy constructor creates an object too — if you do not count it, the total will drift.</li>
+          <li>A 10% raise on 50000 gives <code>50000 + 50000 * 10 / 100</code>.</li>
+        </ul>
+        <p><strong>Expected output:</strong></p>
+<pre><code>Employees: 0
+Employees: 2
+Employee #101 Alice, salary $50000.00
+Employee #101 Alice, salary $55000.00
+Employee #102 Bob, salary $44310.00
+Employees (inside block): 3
+Employees (after block):  2</code></pre>
+      </div>
+    </div>
+
+    <!-- Exercise 5 -->
+    <div class="exercise-card">
+      <div class="card-header">
+        Exercise 5 — Matrix2x2 Class
+        <span class="tag tag-hard">Hard</span>
+      </div>
+      <div class="card-body">
+        <p>Create a class <code>Matrix2x2</code> that stores a 2&times;2 matrix of <code>double</code> in a private 2D array. Provide:</p>
+        <ul>
+          <li>a default constructor (zero matrix) and a constructor taking the four elements;</li>
+          <li><code>Matrix2x2 add(const Matrix2x2&amp; other) const</code> — element-wise sum;</li>
+          <li><code>Matrix2x2 multiply(const Matrix2x2&amp; other) const</code> — standard matrix product;</li>
+          <li><code>void display() const</code>.</li>
+        </ul>
+        <p><strong>Hints:</strong></p>
+        <ul>
+          <li>Both operations return a <em>new</em> matrix and leave the operands unchanged — that is why they are <code>const</code>.</li>
+          <li><code>result[i][j] = &Sigma;<sub>k</sub> this[i][k] &times; other[k][j]</code> — matrix multiplication is <strong>not</strong> commutative.</li>
+          <li>Chaining like <code>A.add(B).display()</code> works because <code>add</code> returns an object.</li>
+        </ul>
+        <p><strong>Expected output</strong> for A = [1 2; 3 4], B = [5 6; 7 8]:</p>
+<pre><code>A + B:
+| 6  8 |
+| 10  12 |
+A * B:
+| 19  22 |
+| 43  50 |
+B * A:
+| 23  34 |
+| 31  46 |</code></pre>
+      </div>
+    </div>
+
+    <div style="display:flex;justify-content:space-between;margin-top:2rem;">
+      <a href="examples.html" class="btn btn-outline" style="text-decoration:none;">← Examples</a>
+      <a href="solutions.html" class="btn" style="text-decoration:none;">View Solutions →</a>
+    </div>
+
+  </div>
+</main>
+</div>
+<footer id="site-footer">
+  &copy; 2024 <a href="https://linkedin.com/in/adityabhuyan" target="_blank" rel="noopener">Aditya Pratap Bhuyan</a> &nbsp;|&nbsp;
+  <a href="https://github.com/aditya-bhuyan/cpp-learning-hub" target="_blank" rel="noopener">GitHub</a> &nbsp;|&nbsp;
+  GNU GPL v3 License
+</footer>
+<script src="/assets/js/nav.js"></script>
+</body>
+</html>

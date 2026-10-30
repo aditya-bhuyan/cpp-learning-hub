@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ch 06 Examples — Pointers &amp; References | C++ Learning Hub</title>
+  <link rel="stylesheet" href="/assets/css/style.css" />
+</head>
+<body>
+<header id="site-header">
+  <button id="hamburger" aria-label="Toggle navigation">&#9776;</button>
+  <div id="site-logo">C++ Learning Hub <span class="badge">FREE</span></div>
+  <button id="theme-toggle">☾ Dark</button>
+</header>
+<div id="layout">
+<aside id="sidebar"><nav>
+  <div class="nav-section-title">C++ Learning Hub</div>
+  <div class="nav-chapter" data-chapter="home"><div class="nav-chapter-header"><span>🏠 Home</span></div><div class="nav-chapter-links"><a href="/index.html">Overview</a></div></div>
+  <div class="nav-section-title">Chapters</div>
+  <div class="nav-chapter" data-chapter="ch01"><div class="nav-chapter-header"><span><span class="ch-num">01</span>Introduction to C++</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch01-introduction/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch01-introduction/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch01-introduction/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch01-introduction/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch01-introduction/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch02"><div class="nav-chapter-header"><span><span class="ch-num">02</span>Variables, Types &amp; Operators</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch02-variables-types-operators/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch02-variables-types-operators/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch02-variables-types-operators/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch02-variables-types-operators/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch02-variables-types-operators/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch03"><div class="nav-chapter-header"><span><span class="ch-num">03</span>Control Flow</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch03-control-flow/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch03-control-flow/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch03-control-flow/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch03-control-flow/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch03-control-flow/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch04"><div class="nav-chapter-header"><span><span class="ch-num">04</span>Functions</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch04-functions/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch04-functions/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch04-functions/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch04-functions/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch04-functions/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch05"><div class="nav-chapter-header"><span><span class="ch-num">05</span>Arrays &amp; Strings</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch05-arrays-strings/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch05-arrays-strings/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch05-arrays-strings/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch05-arrays-strings/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch05-arrays-strings/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter open" data-chapter="ch06"><div class="nav-chapter-header"><span><span class="ch-num">06</span>Pointers &amp; References</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch06-pointers-references/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch06-pointers-references/examples.html" class="active"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch06-pointers-references/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch06-pointers-references/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch06-pointers-references/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch07"><div class="nav-chapter-header"><span><span class="ch-num">07</span>OOP — Basics</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch07-oop-basics/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch07-oop-basics/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch07-oop-basics/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch07-oop-basics/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch07-oop-basics/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch08"><div class="nav-chapter-header"><span><span class="ch-num">08</span>OOP — Inheritance &amp; Polymorphism</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch08-oop-inheritance/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch08-oop-inheritance/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch08-oop-inheritance/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch08-oop-inheritance/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch08-oop-inheritance/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch09"><div class="nav-chapter-header"><span><span class="ch-num">09</span>Templates</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch09-templates/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch09-templates/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch09-templates/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch09-templates/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch09-templates/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch10"><div class="nav-chapter-header"><span><span class="ch-num">10</span>STL — Containers</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch10-stl-containers/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch10-stl-containers/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch10-stl-containers/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch10-stl-containers/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch10-stl-containers/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch11"><div class="nav-chapter-header"><span><span class="ch-num">11</span>STL — Algorithms &amp; Iterators</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch11-stl-algorithms/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch11-stl-algorithms/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch11-stl-algorithms/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch11-stl-algorithms/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch11-stl-algorithms/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch12"><div class="nav-chapter-header"><span><span class="ch-num">12</span>Memory Management</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch12-memory-management/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch12-memory-management/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch12-memory-management/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch12-memory-management/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch12-memory-management/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch13"><div class="nav-chapter-header"><span><span class="ch-num">13</span>Exception Handling</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch13-exception-handling/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch13-exception-handling/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch13-exception-handling/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch13-exception-handling/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch13-exception-handling/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch14"><div class="nav-chapter-header"><span><span class="ch-num">14</span>File I/O</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch14-file-io/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch14-file-io/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch14-file-io/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch14-file-io/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch14-file-io/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch15"><div class="nav-chapter-header"><span><span class="ch-num">15</span>Modern C++ (C++11–C++20)</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch15-modern-cpp/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch15-modern-cpp/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch15-modern-cpp/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch15-modern-cpp/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch15-modern-cpp/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-section-title">Capstone</div>
+  <div class="nav-chapter" data-chapter="ch16"><div class="nav-chapter-header"><span><span class="ch-num">16</span>Capstone Project</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch16-capstone/index.html"><span class="link-icon">🎯</span>Brief</a><a href="/chapters/ch16-capstone/walkthrough.html"><span class="link-icon">🗺</span>Walkthrough</a><a href="/chapters/ch16-capstone/solution.html"><span class="link-icon">✅</span>Solution</a></div></div>
+  <div class="nav-section-title">About</div>
+  <div style="padding:.4rem 1.1rem 1rem;font-size:.78rem;color:var(--muted);line-height:1.5;">Maintained by<br><a href="https://linkedin.com/in/adityabhuyan" target="_blank" rel="noopener">Aditya Pratap Bhuyan</a><br><span style="font-size:.72rem;">GNU GPL v3 License</span></div>
+</nav></aside>
+
+<main id="main">
+  <div class="page-header">
+    <div class="breadcrumb"><a href="/index.html">Home</a> › <a href="index.html">Chapter 06</a> › Examples</div>
+    <h1>Chapter 06 — Coding Examples</h1>
+    <p class="subtitle">Four fully explained programs covering pointer basics, arithmetic, double pointers, and const correctness.</p>
+    <div class="chapter-tabs">
+      <a href="index.html">📖 Learning</a>
+      <a href="examples.html" class="active">💻 Examples</a>
+      <a href="exercises.html">✏️ Exercises</a>
+      <a href="solutions.html">✅ Solutions</a>
+      <a href="quiz.html">🧠 Quiz</a>
+    </div>
+  </div>
+
+  <div class="content">
+
+    <!-- Example 1 -->
+    <h2>Example 1 — Pointer Basics: Address, Dereference, nullptr Check</h2>
+    <p>
+      This program introduces the three fundamental pointer operations: taking an address with
+      <code>&amp;</code>, dereferencing with <code>*</code>, and safely guarding against a null pointer
+      before use.
+    </p>
+<pre><code>// pointer_basics.cpp
+// Compile: g++ -std=c++17 -Wall -o pointer_basics pointer_basics.cpp
+
+#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int x = 42;
+
+    // Declare a pointer to int and store the address of x
+    int* p = &amp;x;
+
+    cout &lt;&lt; "--- Basic pointer operations ---\n";
+    cout &lt;&lt; "Value of x       : " &lt;&lt; x   &lt;&lt; "\n";
+    cout &lt;&lt; "Address of x (&amp;x): " &lt;&lt; &amp;x  &lt;&lt; "\n";
+    cout &lt;&lt; "p (holds address): " &lt;&lt; p   &lt;&lt; "\n";
+    cout &lt;&lt; "*p (dereference) : " &lt;&lt; *p  &lt;&lt; "\n";
+
+    // Modify x through the pointer
+    *p = 99;
+    cout &lt;&lt; "After *p = 99, x = " &lt;&lt; x &lt;&lt; "\n";
+
+    // nullptr safety check
+    int* q = nullptr;
+    if (q != nullptr) {
+        cout &lt;&lt; "q points to: " &lt;&lt; *q &lt;&lt; "\n";
+    } else {
+        cout &lt;&lt; "q is nullptr — safe, no dereference attempted\n";
+    }
+
+    // Assigning a valid address to q
+    q = &amp;x;
+    cout &lt;&lt; "q now points to x = " &lt;&lt; *q &lt;&lt; "\n";
+
+    return 0;
+}</code></pre>
+    <p><strong>Expected output:</strong></p>
+<pre><code>--- Basic pointer operations ---
+Value of x       : 42
+Address of x (&amp;x): 0x7ffd... (address varies)
+p (holds address): 0x7ffd... (same address)
+*p (dereference) : 42
+After *p = 99, x = 99
+q is nullptr — safe, no dereference attempted
+q now points to x = 99</code></pre>
+    <div class="callout tip">
+      <strong>Key insight:</strong> <code>p</code> and <code>&amp;x</code> print the same address because
+      <code>p = &amp;x</code>. The dereference <code>*p</code> then follows that address to fetch the value.
+    </div>
+
+    <!-- Example 2 -->
+    <h2>Example 2 — Pointer Arithmetic on an Array</h2>
+    <p>
+      This example traverses an integer array using only pointer arithmetic — no subscript operator <code>[]</code>.
+      It demonstrates how adding an integer to a pointer advances it by one element's worth of bytes.
+    </p>
+<pre><code>// pointer_arithmetic.cpp
+// Compile: g++ -std=c++17 -Wall -o pointer_arithmetic pointer_arithmetic.cpp
+
+#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int scores[] = {85, 92, 78, 95, 88};
+    int n = 5;
+
+    // p starts at the first element (scores == &amp;scores[0])
+    int* p = scores;
+
+    cout &lt;&lt; "Traversing array with pointer arithmetic:\n";
+    for (int i = 0; i &lt; n; ++i) {
+        // *(p + i) is identical to scores[i]
+        cout &lt;&lt; "scores[" &lt;&lt; i &lt;&lt; "] = " &lt;&lt; *(p + i) &lt;&lt; "\n";
+    }
+
+    // Demonstrate equivalence: arr[i] == *(arr + i)
+    cout &lt;&lt; "\nEquivalence check (index 3):\n";
+    cout &lt;&lt; "scores[3]    = " &lt;&lt; scores[3]    &lt;&lt; "\n";
+    cout &lt;&lt; "*(p + 3)     = " &lt;&lt; *(p + 3)     &lt;&lt; "\n";
+    cout &lt;&lt; "*(scores + 3)= " &lt;&lt; *(scores + 3) &lt;&lt; "\n";
+
+    // Pointer difference
+    int* first = scores;
+    int* last  = scores + (n - 1);
+    cout &lt;&lt; "\nPointer difference (last - first) = "
+         &lt;&lt; (last - first) &lt;&lt; " elements\n";
+
+    // Advance pointer in a loop with pre-increment
+    cout &lt;&lt; "\nUsing ++p loop:\n";
+    for (int* ptr = scores; ptr != scores + n; ++ptr) {
+        cout &lt;&lt; *ptr &lt;&lt; " ";
+    }
+    cout &lt;&lt; "\n";
+
+    return 0;
+}</code></pre>
+    <p><strong>Expected output:</strong></p>
+<pre><code>Traversing array with pointer arithmetic:
+scores[0] = 85
+scores[1] = 92
+scores[2] = 78
+scores[3] = 95
+scores[4] = 88
+
+Equivalence check (index 3):
+scores[3]    = 95
+*(p + 3)     = 95
+*(scores + 3)= 95
+
+Pointer difference (last - first) = 4 elements
+
+Using ++p loop:
+85 92 78 95 88</code></pre>
+
+    <!-- Example 3 -->
+    <h2>Example 3 — Double Pointer: Swapping Two Integers via <code>int**</code></h2>
+    <p>
+      A pointer-to-pointer (<code>int**</code>) can be used to modify a pointer variable from inside a function.
+      Here we implement a swap that exchanges the <em>pointers themselves</em>, not just the values they point to.
+    </p>
+<pre><code>// double_pointer_swap.cpp
+// Compile: g++ -std=c++17 -Wall -o double_pointer_swap double_pointer_swap.cpp
+
+#include &lt;iostream&gt;
+using namespace std;
+
+// Swap the values at two addresses using int** (pointer-to-pointer)
+// This version modifies the pointed-to values via a double pointer
+void swapValues(int** pp1, int** pp2) {
+    int temp = **pp1;
+    **pp1 = **pp2;
+    **pp2 = temp;
+}
+
+// Simpler: swap the pointers themselves (so each points to the other's variable)
+void swapPointers(int** pp1, int** pp2) {
+    int* temp = *pp1;
+    *pp1 = *pp2;
+    *pp2 = temp;
+}
+
+int main() {
+    int a = 10, b = 20;
+    int* pa = &amp;a;
+    int* pb = &amp;b;
+
+    cout &lt;&lt; "Before swapValues: a=" &lt;&lt; a &lt;&lt; ", b=" &lt;&lt; b &lt;&lt; "\n";
+    swapValues(&amp;pa, &amp;pb);
+    cout &lt;&lt; "After  swapValues: a=" &lt;&lt; a &lt;&lt; ", b=" &lt;&lt; b &lt;&lt; "\n\n";
+
+    int x = 100, y = 200;
+    int* px = &amp;x;
+    int* py = &amp;y;
+
+    cout &lt;&lt; "Before swapPointers: *px=" &lt;&lt; *px &lt;&lt; ", *py=" &lt;&lt; *py &lt;&lt; "\n";
+    swapPointers(&amp;px, &amp;py);
+    // Now px points to y, py points to x
+    cout &lt;&lt; "After  swapPointers: *px=" &lt;&lt; *px &lt;&lt; " (was y), "
+         &lt;&lt; "*py=" &lt;&lt; *py &lt;&lt; " (was x)\n";
+    cout &lt;&lt; "x=" &lt;&lt; x &lt;&lt; ", y=" &lt;&lt; y &lt;&lt; " (values unchanged)\n";
+
+    return 0;
+}</code></pre>
+    <p><strong>Expected output:</strong></p>
+<pre><code>Before swapValues: a=10, b=20
+After  swapValues: a=20, b=10
+
+Before swapPointers: *px=100, *py=200
+After  swapPointers: *px=200 (was y), *py=100 (was x)
+x=100, y=200 (values unchanged)</code></pre>
+    <div class="callout tip">
+      <strong>Note:</strong> <code>swapValues</code> exchanges the integers in memory.
+      <code>swapPointers</code> makes each pointer look at the other variable — the integers themselves
+      are untouched. Understanding this distinction is essential when building linked-list or tree operations.
+    </div>
+
+    <!-- Example 4 -->
+    <h2>Example 4 — const Correctness: All Four Pointer-const Combinations</h2>
+    <p>
+      This program demonstrates all four combinations of <code>const</code> and pointer declarations,
+      verifying which operations are permitted in each case.
+    </p>
+<pre><code>// const_pointers.cpp
+// Compile: g++ -std=c++17 -Wall -o const_pointers const_pointers.cpp
+
+#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int a = 10;
+    int b = 20;
+
+    // 1. Plain pointer — can change both the pointer and the value
+    int* p1 = &amp;a;
+    *p1 = 15;        // OK: modify value
+    p1  = &amp;b;        // OK: reseat pointer
+    cout &lt;&lt; "1. int* p1       : *p1=" &lt;&lt; *p1 &lt;&lt; " (b=" &lt;&lt; b &lt;&lt; ")\n";
+
+    // 2. Pointer-to-const — CANNOT change the value, CAN reseat
+    const int* p2 = &amp;a;
+    // *p2 = 99;     // ERROR: read-only location
+    p2 = &amp;b;         // OK: reseat the pointer
+    cout &lt;&lt; "2. const int* p2 : *p2=" &lt;&lt; *p2 &lt;&lt; " (now points to b)\n";
+
+    // 3. Const-pointer — CAN change the value, CANNOT reseat
+    int* const p3 = &amp;a;
+    *p3 = 42;        // OK: modify value through fixed pointer
+    // p3 = &amp;b;      // ERROR: assignment of read-only variable 'p3'
+    cout &lt;&lt; "3. int* const p3 : *p3=" &lt;&lt; *p3 &lt;&lt; " (a=" &lt;&lt; a &lt;&lt; ")\n";
+
+    // 4. Const-pointer-to-const — CANNOT change either
+    const int* const p4 = &amp;b;
+    // *p4 = 99;     // ERROR
+    // p4  = &amp;a;     // ERROR
+    cout &lt;&lt; "4. const int* const p4 : *p4=" &lt;&lt; *p4 &lt;&lt; " (fully immutable)\n";
+
+    // Summary table output
+    cout &lt;&lt; "\n--- Summary ---\n";
+    cout &lt;&lt; "int*              : modifiable value, modifiable pointer\n";
+    cout &lt;&lt; "const int*        : read-only value,  modifiable pointer\n";
+    cout &lt;&lt; "int* const        : modifiable value, read-only pointer\n";
+    cout &lt;&lt; "const int* const  : read-only value,  read-only pointer\n";
+
+    return 0;
+}</code></pre>
+    <p><strong>Expected output:</strong></p>
+<pre><code>1. int* p1       : *p1=20 (b=20)
+2. const int* p2 : *p2=20 (now points to b)
+3. int* const p3 : *p3=42 (a=42)
+4. const int* const p4 : *p4=20 (fully immutable)
+
+--- Summary ---
+int*              : modifiable value, modifiable pointer
+const int*        : read-only value,  modifiable pointer
+int* const        : modifiable value, read-only pointer
+const int* const  : read-only value,  read-only pointer</code></pre>
+
+    <div style="display:flex;justify-content:space-between;margin-top:2rem;">
+      <a href="index.html" class="btn btn-outline" style="text-decoration:none;">← Learning</a>
+      <a href="exercises.html" class="btn" style="text-decoration:none;">Next: Exercises →</a>
+    </div>
+
+  </div>
+</main>
+</div>
+<footer id="site-footer">
+  &copy; 2024 <a href="https://linkedin.com/in/adityabhuyan" target="_blank" rel="noopener">Aditya Pratap Bhuyan</a> &nbsp;|&nbsp;
+  <a href="https://github.com/aditya-bhuyan/cpp-learning-hub" target="_blank" rel="noopener">GitHub</a> &nbsp;|&nbsp;
+  GNU GPL v3 License
+</footer>
+<script src="/assets/js/nav.js"></script>
+</body>
+</html>

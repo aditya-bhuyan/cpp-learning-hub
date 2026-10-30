@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ch 01 — Introduction to C++ | C++ Learning Hub</title>
+  <link rel="stylesheet" href="/assets/css/style.css" />
+</head>
+<body>
+<header id="site-header">
+  <button id="hamburger" aria-label="Toggle navigation">&#9776;</button>
+  <div id="site-logo">C++ Learning Hub <span class="badge">FREE</span></div>
+  <button id="theme-toggle">☾ Dark</button>
+</header>
+<div id="layout">
+<aside id="sidebar"><nav>
+  <div class="nav-section-title">C++ Learning Hub</div>
+  <div class="nav-chapter" data-chapter="home"><div class="nav-chapter-header"><span>🏠 Home</span></div><div class="nav-chapter-links"><a href="/index.html">Overview</a></div></div>
+  <div class="nav-section-title">Chapters</div>
+  <div class="nav-chapter" data-chapter="ch01"><div class="nav-chapter-header"><span><span class="ch-num">01</span>Introduction to C++</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch01-introduction/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch01-introduction/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch01-introduction/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch01-introduction/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch01-introduction/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch02"><div class="nav-chapter-header"><span><span class="ch-num">02</span>Variables, Types &amp; Operators</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch02-variables-types-operators/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch02-variables-types-operators/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch02-variables-types-operators/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch02-variables-types-operators/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch02-variables-types-operators/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch03"><div class="nav-chapter-header"><span><span class="ch-num">03</span>Control Flow</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch03-control-flow/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch03-control-flow/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch03-control-flow/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch03-control-flow/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch03-control-flow/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch04"><div class="nav-chapter-header"><span><span class="ch-num">04</span>Functions</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch04-functions/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch04-functions/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch04-functions/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch04-functions/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch04-functions/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch05"><div class="nav-chapter-header"><span><span class="ch-num">05</span>Arrays &amp; Strings</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch05-arrays-strings/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch05-arrays-strings/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch05-arrays-strings/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch05-arrays-strings/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch05-arrays-strings/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch06"><div class="nav-chapter-header"><span><span class="ch-num">06</span>Pointers &amp; References</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch06-pointers-references/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch06-pointers-references/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch06-pointers-references/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch06-pointers-references/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch06-pointers-references/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch07"><div class="nav-chapter-header"><span><span class="ch-num">07</span>OOP — Basics</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch07-oop-basics/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch07-oop-basics/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch07-oop-basics/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch07-oop-basics/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch07-oop-basics/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch08"><div class="nav-chapter-header"><span><span class="ch-num">08</span>OOP — Inheritance &amp; Polymorphism</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch08-oop-inheritance/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch08-oop-inheritance/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch08-oop-inheritance/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch08-oop-inheritance/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch08-oop-inheritance/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch09"><div class="nav-chapter-header"><span><span class="ch-num">09</span>Templates</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch09-templates/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch09-templates/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch09-templates/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch09-templates/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch09-templates/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch10"><div class="nav-chapter-header"><span><span class="ch-num">10</span>STL — Containers</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch10-stl-containers/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch10-stl-containers/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch10-stl-containers/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch10-stl-containers/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch10-stl-containers/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch11"><div class="nav-chapter-header"><span><span class="ch-num">11</span>STL — Algorithms &amp; Iterators</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch11-stl-algorithms/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch11-stl-algorithms/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch11-stl-algorithms/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch11-stl-algorithms/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch11-stl-algorithms/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch12"><div class="nav-chapter-header"><span><span class="ch-num">12</span>Memory Management</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch12-memory-management/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch12-memory-management/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch12-memory-management/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch12-memory-management/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch12-memory-management/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch13"><div class="nav-chapter-header"><span><span class="ch-num">13</span>Exception Handling</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch13-exception-handling/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch13-exception-handling/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch13-exception-handling/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch13-exception-handling/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch13-exception-handling/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch14"><div class="nav-chapter-header"><span><span class="ch-num">14</span>File I/O</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch14-file-io/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch14-file-io/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch14-file-io/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch14-file-io/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch14-file-io/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch15"><div class="nav-chapter-header"><span><span class="ch-num">15</span>Modern C++ (C++11–C++20)</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch15-modern-cpp/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch15-modern-cpp/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch15-modern-cpp/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch15-modern-cpp/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch15-modern-cpp/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-section-title">Capstone</div>
+  <div class="nav-chapter" data-chapter="ch16"><div class="nav-chapter-header"><span><span class="ch-num">16</span>Capstone Project</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch16-capstone/index.html"><span class="link-icon">🎯</span>Brief</a><a href="/chapters/ch16-capstone/walkthrough.html"><span class="link-icon">🗺</span>Walkthrough</a><a href="/chapters/ch16-capstone/solution.html"><span class="link-icon">✅</span>Solution</a></div></div>
+  <div class="nav-section-title">About</div>
+  <div style="padding:.4rem 1.1rem 1rem;font-size:.78rem;color:var(--muted);line-height:1.5;">Maintained by<br><a href="https://linkedin.com/in/adityabhuyan" target="_blank" rel="noopener">Aditya Pratap Bhuyan</a><br><span style="font-size:.72rem;">GNU GPL v3 License</span></div>
+</nav></aside>
+
+<main id="main">
+  <div class="page-header">
+    <div class="breadcrumb"><a href="/index.html">Home</a> › Chapter 01</div>
+    <h1>Chapter 01 — Introduction to C++</h1>
+    <p class="subtitle">From the origins of C++ to writing, compiling, and running your first program.</p>
+    <div class="chapter-tabs">
+      <a href="index.html" class="active">📖 Learning</a>
+      <a href="examples.html">💻 Examples</a>
+      <a href="exercises.html">✏️ Exercises</a>
+      <a href="solutions.html">✅ Solutions</a>
+      <a href="quiz.html">🧠 Quiz</a>
+    </div>
+  </div>
+
+  <div class="content">
+
+    <h2>1.1 What is C++?</h2>
+    <p>
+      C++ is a general-purpose, statically typed, compiled programming language created by <strong>Bjarne Stroustrup</strong>
+      at Bell Labs in 1979. Originally called <em>"C with Classes"</em>, it was renamed C++ in 1983 (the <code>++</code>
+      operator being a nod to incrementing — i.e., an improvement over C).
+    </p>
+    <p>
+      C++ sits at an unusual position in the language ecosystem: it provides <strong>low-level memory control</strong>
+      (like C) while also supporting <strong>high-level abstractions</strong> such as classes, templates, and the
+      Standard Template Library (STL). This dual nature makes it the language of choice for operating systems,
+      game engines, embedded firmware, real-time trading systems, and high-performance applications.
+    </p>
+
+    <h2>1.2 A Brief History</h2>
+    <table>
+      <thead><tr><th>Year</th><th>Milestone</th></tr></thead>
+      <tbody>
+        <tr><td>1979</td><td>Bjarne Stroustrup begins work on "C with Classes" at Bell Labs</td></tr>
+        <tr><td>1983</td><td>Renamed to C++; virtual functions and operator overloading added</td></tr>
+        <tr><td>1985</td><td>First commercial release; Stroustrup publishes <em>The C++ Programming Language</em></td></tr>
+        <tr><td>1998</td><td>ISO C++98 — the first international standard</td></tr>
+        <tr><td>2003</td><td>C++03 — bug-fix revision of C++98</td></tr>
+        <tr><td>2011</td><td>C++11 — major overhaul: auto, lambdas, move semantics, smart pointers</td></tr>
+        <tr><td>2014</td><td>C++14 — refinements and library additions</td></tr>
+        <tr><td>2017</td><td>C++17 — structured bindings, <code>std::optional</code>, filesystem library</td></tr>
+        <tr><td>2020</td><td>C++20 — concepts, ranges, coroutines, modules</td></tr>
+        <tr><td>2023</td><td>C++23 — std::print, std::expected, further ranges improvements</td></tr>
+      </tbody>
+    </table>
+
+    <h2>1.3 Why Learn C++?</h2>
+    <ul>
+      <li><strong>Performance:</strong> Compiled to native machine code — no runtime overhead from a virtual machine or interpreter.</li>
+      <li><strong>Control:</strong> Manual memory management gives fine-grained control over resources (essential in embedded and systems programming).</li>
+      <li><strong>Ubiquity:</strong> Powers browsers (Chrome V8), game engines (Unreal Engine), databases (MySQL), and the Linux kernel.</li>
+      <li><strong>Career value:</strong> Consistently ranks among the top 5 most demanded programming languages.</li>
+      <li><strong>Teaches fundamentals:</strong> Understanding pointers, stack vs heap, and compilation makes you a better programmer in any language.</li>
+    </ul>
+
+    <h2>1.4 The C++ Build Process</h2>
+    <p>
+      Unlike interpreted languages (Python, JavaScript), C++ source code must be <strong>compiled</strong> before it runs.
+      The process has four stages:
+    </p>
+    <ol>
+      <li><strong>Preprocessing</strong> — The preprocessor handles <code>#include</code>, <code>#define</code>, and other directives, producing a single translation unit.</li>
+      <li><strong>Compilation</strong> — The compiler (e.g., <code>g++</code>, <code>clang++</code>, MSVC) translates each translation unit into assembly code and then object code (<code>.o</code> / <code>.obj</code>).</li>
+      <li><strong>Linking</strong> — The linker combines all object files and resolves references to library symbols, producing a final executable.</li>
+      <li><strong>Loading &amp; Execution</strong> — The OS loads the executable into memory and transfers control to <code>main()</code>.</li>
+    </ol>
+
+    <div class="callout">
+      <strong>Compilation command (GCC/Clang)</strong>
+      <code>g++ -std=c++17 -Wall -o hello hello.cpp</code><br>
+      <span style="font-size:.85rem;">
+        <code>-std=c++17</code> sets the language standard &nbsp;|&nbsp;
+        <code>-Wall</code> enables all warnings &nbsp;|&nbsp;
+        <code>-o hello</code> names the output executable
+      </span>
+    </div>
+
+    <h2>1.5 Program Structure — Anatomy of a C++ Program</h2>
+    <p>Every C++ program must have exactly one <code>main()</code> function — this is the entry point where execution begins.</p>
+
+<pre><code>// Preprocessor directive — includes the I/O stream library
+#include &lt;iostream&gt;
+
+// The std namespace contains cout, cin, endl, etc.
+using namespace std;
+
+// main() returns an int (0 = success, non-zero = error)
+int main() {
+    // cout is the standard output stream; &lt;&lt; is the stream insertion operator
+    cout &lt;&lt; "Hello, World!" &lt;&lt; endl;
+
+    return 0;   // Signal successful program termination
+}</code></pre>
+
+    <h2>1.6 Input and Output Streams</h2>
+    <p>
+      C++ uses a <strong>stream-based I/O model</strong> defined in the <code>&lt;iostream&gt;</code> header.
+      Streams abstract away the underlying device (console, file, network socket) behind a uniform interface.
+    </p>
+    <table>
+      <thead><tr><th>Object</th><th>Purpose</th><th>Direction</th></tr></thead>
+      <tbody>
+        <tr><td><code>std::cout</code></td><td>Standard output (console)</td><td>Output (write)</td></tr>
+        <tr><td><code>std::cin</code></td><td>Standard input (keyboard)</td><td>Input (read)</td></tr>
+        <tr><td><code>std::cerr</code></td><td>Standard error (unbuffered)</td><td>Output (write)</td></tr>
+        <tr><td><code>std::clog</code></td><td>Standard log (buffered)</td><td>Output (write)</td></tr>
+      </tbody>
+    </table>
+
+<pre><code>#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+int main() {
+    string name;
+    int age;
+
+    cout &lt;&lt; "Enter your name: ";
+    cin  &gt;&gt; name;          // &gt;&gt; is the stream extraction operator
+
+    cout &lt;&lt; "Enter your age: ";
+    cin  &gt;&gt; age;
+
+    cout &lt;&lt; "Hello, " &lt;&lt; name &lt;&lt; "! You are " &lt;&lt; age &lt;&lt; " years old.\n";
+    return 0;
+}</code></pre>
+
+    <div class="callout tip">
+      <strong>Tip — std::endl vs \n</strong>
+      <code>endl</code> flushes the output buffer in addition to inserting a newline. For performance-sensitive
+      output (e.g., writing millions of lines), prefer <code>'\n'</code>. Use <code>endl</code> only when you
+      explicitly need a flush (e.g., before reading user input or writing to a log).
+    </div>
+
+    <h2>1.7 Comments</h2>
+    <p>Comments are ignored by the compiler. They document intent and improve readability.</p>
+<pre><code>// Single-line comment — everything after // is ignored
+
+/* Multi-line comment —
+   useful for longer explanations
+   or temporarily disabling code */
+
+/**
+ * Doxygen-style comment — used to auto-generate documentation
+ * @param x  the input value
+ * @return   the square of x
+ */
+int square(int x) { return x * x; }</code></pre>
+
+    <h2>1.8 Setting Up Your Development Environment</h2>
+    <h3>Option A — GCC on Linux / macOS</h3>
+    <ul>
+      <li>Linux: <code>sudo apt install g++ build-essential</code></li>
+      <li>macOS: <code>xcode-select --install</code> (installs Clang + g++ alias)</li>
+      <li>Compile: <code>g++ -std=c++17 -Wall -o program program.cpp &amp;&amp; ./program</code></li>
+    </ul>
+    <h3>Option B — MSVC on Windows</h3>
+    <ul>
+      <li>Install <strong>Visual Studio Community</strong> (free) and select the "Desktop development with C++" workload.</li>
+      <li>Or install <strong>MinGW-w64</strong> for GCC on Windows.</li>
+    </ul>
+    <h3>Option C — Online Compilers (zero setup)</h3>
+    <ul>
+      <li><a href="https://godbolt.org" target="_blank" rel="noopener">Compiler Explorer (godbolt.org)</a> — shows assembly output</li>
+      <li><a href="https://wandbox.org" target="_blank" rel="noopener">Wandbox</a> — multiple compiler versions</li>
+      <li><a href="https://replit.com" target="_blank" rel="noopener">Replit</a> — full online IDE</li>
+    </ul>
+
+    <h2>1.9 Key Takeaways</h2>
+    <ul>
+      <li>C++ is a compiled, statically typed, multi-paradigm language.</li>
+      <li>The build pipeline: <em>Preprocessing → Compilation → Linking → Execution</em>.</li>
+      <li>Every program begins at <code>int main()</code>.</li>
+      <li><code>cout</code> writes to the console; <code>cin</code> reads from the keyboard.</li>
+      <li>Use <code>-std=c++17</code> (or later) when compiling to access modern features.</li>
+    </ul>
+
+    <div style="display:flex;justify-content:flex-end;margin-top:2rem;gap:.75rem;">
+      <a href="examples.html" class="btn" style="text-decoration:none;">Next: Examples →</a>
+    </div>
+
+  </div>
+</main>
+</div>
+<footer id="site-footer">
+  &copy; 2024 <a href="https://linkedin.com/in/adityabhuyan" target="_blank" rel="noopener">Aditya Pratap Bhuyan</a> &nbsp;|&nbsp;
+  <a href="https://github.com/aditya-bhuyan/cpp-learning-hub" target="_blank" rel="noopener">GitHub</a> &nbsp;|&nbsp;
+  GNU GPL v3 License
+</footer>
+<script src="/assets/js/nav.js"></script>
+</body>
+</html>

@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ch 05 Examples — Arrays &amp; Strings | C++ Learning Hub</title>
+  <link rel="stylesheet" href="/assets/css/style.css" />
+</head>
+<body>
+<header id="site-header">
+  <button id="hamburger" aria-label="Toggle navigation">&#9776;</button>
+  <div id="site-logo">C++ Learning Hub <span class="badge">FREE</span></div>
+  <button id="theme-toggle">☾ Dark</button>
+</header>
+<div id="layout">
+<aside id="sidebar"><nav>
+  <div class="nav-section-title">C++ Learning Hub</div>
+  <div class="nav-chapter" data-chapter="home"><div class="nav-chapter-header"><span>🏠 Home</span></div><div class="nav-chapter-links"><a href="/index.html">Overview</a></div></div>
+  <div class="nav-section-title">Chapters</div>
+  <div class="nav-chapter" data-chapter="ch01"><div class="nav-chapter-header"><span><span class="ch-num">01</span>Introduction to C++</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch01-introduction/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch01-introduction/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch01-introduction/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch01-introduction/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch01-introduction/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch02"><div class="nav-chapter-header"><span><span class="ch-num">02</span>Variables, Types &amp; Operators</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch02-variables-types-operators/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch02-variables-types-operators/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch02-variables-types-operators/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch02-variables-types-operators/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch02-variables-types-operators/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch03"><div class="nav-chapter-header"><span><span class="ch-num">03</span>Control Flow</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch03-control-flow/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch03-control-flow/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch03-control-flow/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch03-control-flow/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch03-control-flow/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch04"><div class="nav-chapter-header"><span><span class="ch-num">04</span>Functions</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch04-functions/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch04-functions/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch04-functions/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch04-functions/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch04-functions/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter open" data-chapter="ch05"><div class="nav-chapter-header"><span><span class="ch-num">05</span>Arrays &amp; Strings</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch05-arrays-strings/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch05-arrays-strings/examples.html" class="active"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch05-arrays-strings/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch05-arrays-strings/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch05-arrays-strings/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch06"><div class="nav-chapter-header"><span><span class="ch-num">06</span>Pointers &amp; References</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch06-pointers-references/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch06-pointers-references/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch06-pointers-references/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch06-pointers-references/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch06-pointers-references/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch07"><div class="nav-chapter-header"><span><span class="ch-num">07</span>OOP — Basics</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch07-oop-basics/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch07-oop-basics/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch07-oop-basics/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch07-oop-basics/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch07-oop-basics/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch08"><div class="nav-chapter-header"><span><span class="ch-num">08</span>OOP — Inheritance &amp; Polymorphism</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch08-oop-inheritance/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch08-oop-inheritance/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch08-oop-inheritance/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch08-oop-inheritance/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch08-oop-inheritance/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch09"><div class="nav-chapter-header"><span><span class="ch-num">09</span>Templates</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch09-templates/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch09-templates/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch09-templates/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch09-templates/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch09-templates/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch10"><div class="nav-chapter-header"><span><span class="ch-num">10</span>STL — Containers</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch10-stl-containers/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch10-stl-containers/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch10-stl-containers/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch10-stl-containers/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch10-stl-containers/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch11"><div class="nav-chapter-header"><span><span class="ch-num">11</span>STL — Algorithms &amp; Iterators</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch11-stl-algorithms/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch11-stl-algorithms/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch11-stl-algorithms/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch11-stl-algorithms/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch11-stl-algorithms/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch12"><div class="nav-chapter-header"><span><span class="ch-num">12</span>Memory Management</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch12-memory-management/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch12-memory-management/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch12-memory-management/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch12-memory-management/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch12-memory-management/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch13"><div class="nav-chapter-header"><span><span class="ch-num">13</span>Exception Handling</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch13-exception-handling/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch13-exception-handling/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch13-exception-handling/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch13-exception-handling/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch13-exception-handling/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch14"><div class="nav-chapter-header"><span><span class="ch-num">14</span>File I/O</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch14-file-io/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch14-file-io/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch14-file-io/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch14-file-io/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch14-file-io/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch15"><div class="nav-chapter-header"><span><span class="ch-num">15</span>Modern C++ (C++11–C++20)</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch15-modern-cpp/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch15-modern-cpp/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch15-modern-cpp/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch15-modern-cpp/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch15-modern-cpp/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-section-title">Capstone</div>
+  <div class="nav-chapter" data-chapter="ch16"><div class="nav-chapter-header"><span><span class="ch-num">16</span>Capstone Project</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch16-capstone/index.html"><span class="link-icon">🎯</span>Brief</a><a href="/chapters/ch16-capstone/walkthrough.html"><span class="link-icon">🗺</span>Walkthrough</a><a href="/chapters/ch16-capstone/solution.html"><span class="link-icon">✅</span>Solution</a></div></div>
+  <div class="nav-section-title">About</div>
+  <div style="padding:.4rem 1.1rem 1rem;font-size:.78rem;color:var(--muted);line-height:1.5;">Maintained by<br><a href="https://linkedin.com/in/adityabhuyan" target="_blank" rel="noopener">Aditya Pratap Bhuyan</a><br><span style="font-size:.72rem;">GNU GPL v3 License</span></div>
+</nav></aside>
+
+<main id="main">
+  <div class="page-header">
+    <div class="breadcrumb"><a href="/index.html">Home</a> › <a href="index.html">Chapter 05</a> › Examples</div>
+    <h1>Chapter 05 — Coding Examples</h1>
+    <p class="subtitle">Four fully commented, compilable programs: sorting, matrices, tokenizing and counting.</p>
+    <div class="chapter-tabs">
+      <a href="index.html">📖 Learning</a>
+      <a href="examples.html" class="active">💻 Examples</a>
+      <a href="exercises.html">✏️ Exercises</a>
+      <a href="solutions.html">✅ Solutions</a>
+      <a href="quiz.html">🧠 Quiz</a>
+    </div>
+  </div>
+
+  <div class="content">
+
+
+    <!-- Example 1 -->
+    <h2>Example 1 — Bubble Sort with a Step Trace</h2>
+    <p>
+      Bubble sort repeatedly walks through the array comparing <strong>adjacent</strong> pairs and swapping them
+      when they are out of order. After each pass the largest remaining value has "bubbled" to the end. This version
+      prints every comparison so you can follow the algorithm. It also stops early if a pass makes no swaps.
+    </p>
+<pre><code>// bubble_sort.cpp
+// Compile: g++ -std=c++17 -Wall -o bubble_sort bubble_sort.cpp
+// Run:     ./bubble_sort
+
+#include &lt;iostream&gt;
+#include &lt;utility&gt;      // std::swap
+using namespace std;
+
+// Print the array contents on one line, e.g. "[ 5 1 4 2 8 ]"
+void printArray(const int arr[], int n) {
+    cout &lt;&lt; "[ ";
+    for (int i = 0; i &lt; n; ++i) cout &lt;&lt; arr[i] &lt;&lt; " ";
+    cout &lt;&lt; "]";
+}
+
+// Sort arr[0..n-1] in ascending order, printing a trace of every comparison.
+void bubbleSort(int arr[], int n) {
+    // After pass p, the p largest values are in their final place at the end,
+    // so each pass can stop one position earlier than the last.
+    for (int pass = 0; pass &lt; n - 1; ++pass) {
+        bool swapped = false;                    // did this pass change anything?
+        cout &lt;&lt; "\n--- Pass " &lt;&lt; pass + 1 &lt;&lt; " ---\n";
+
+        for (int j = 0; j &lt; n - 1 - pass; ++j) {
+            cout &lt;&lt; "Compare arr[" &lt;&lt; j &lt;&lt; "]=" &lt;&lt; arr[j]
+                 &lt;&lt; " and arr[" &lt;&lt; j + 1 &lt;&lt; "]=" &lt;&lt; arr[j + 1];
+
+            if (arr[j] &gt; arr[j + 1]) {           // out of order -&gt; swap neighbours
+                swap(arr[j], arr[j + 1]);
+                swapped = true;
+                cout &lt;&lt; "  -&gt; swap   ";
+            } else {
+                cout &lt;&lt; "  -&gt; no swap";
+            }
+            cout &lt;&lt; "  ";
+            printArray(arr, n);
+            cout &lt;&lt; "\n";
+        }
+
+        // If a whole pass made no swaps, the array is already sorted: stop early.
+        if (!swapped) {
+            cout &lt;&lt; "No swaps in this pass - array is sorted, stopping early.\n";
+            break;
+        }
+    }
+}
+
+int main() {
+    int data[] = {5, 1, 4, 2, 8};
+    int n = sizeof(data) / sizeof(data[0]);      // 5 elements
+
+    cout &lt;&lt; "Before sorting: ";
+    printArray(data, n);
+    cout &lt;&lt; "\n";
+
+    bubbleSort(data, n);
+
+    cout &lt;&lt; "\nAfter sorting:  ";
+    printArray(data, n);
+    cout &lt;&lt; "\n";
+    return 0;
+}</code></pre>
+    <p><strong>Output:</strong></p>
+<pre><code>Before sorting: [ 5 1 4 2 8 ]
+
+--- Pass 1 ---
+Compare arr[0]=5 and arr[1]=1  -&gt; swap     [ 1 5 4 2 8 ]
+Compare arr[1]=5 and arr[2]=4  -&gt; swap     [ 1 4 5 2 8 ]
+Compare arr[2]=5 and arr[3]=2  -&gt; swap     [ 1 4 2 5 8 ]
+Compare arr[3]=5 and arr[4]=8  -&gt; no swap  [ 1 4 2 5 8 ]
+
+--- Pass 2 ---
+Compare arr[0]=1 and arr[1]=4  -&gt; no swap  [ 1 4 2 5 8 ]
+Compare arr[1]=4 and arr[2]=2  -&gt; swap     [ 1 2 4 5 8 ]
+Compare arr[2]=4 and arr[3]=5  -&gt; no swap  [ 1 2 4 5 8 ]
+
+--- Pass 3 ---
+Compare arr[0]=1 and arr[1]=2  -&gt; no swap  [ 1 2 4 5 8 ]
+Compare arr[1]=2 and arr[2]=4  -&gt; no swap  [ 1 2 4 5 8 ]
+No swaps in this pass - array is sorted, stopping early.
+
+After sorting:  [ 1 2 4 5 8 ]</code></pre>
+    <div class="callout">
+      <strong>Reading the trace</strong>
+      In pass 1 the value <code>5</code> is carried all the way right until it meets <code>8</code>, which is larger.
+      After pass 1, <code>8</code> is in its final place; after pass 2, <code>5</code> is too. Pass 3 finds nothing to swap,
+      so the <code>swapped</code> flag lets us stop. Worst-case time is O(n²); best case (already sorted) is O(n).
+    </div>
+
+    <!-- Example 2 -->
+    <h2>Example 2 — 3×3 Matrix Multiplication</h2>
+    <p>
+      Multiplying two N×N matrices uses three nested loops. Each cell <code>C[i][j]</code> is the dot product of
+      row <code>i</code> of <code>A</code> and column <code>j</code> of <code>B</code>. Note how the 2D array is
+      passed to <code>printMatrix</code>: every dimension except the first must be written in the parameter.
+    </p>
+<pre><code>// matrix_multiply.cpp
+// Compile: g++ -std=c++17 -Wall -o matrix_multiply matrix_multiply.cpp
+// Run:     ./matrix_multiply
+
+#include &lt;iostream&gt;
+#include &lt;iomanip&gt;      // std::setw
+using namespace std;
+
+const int N = 3;        // matrices are N x N
+
+// For 2D array parameters, every dimension except the first must be given.
+void printMatrix(const char* label, const int m[][N]) {
+    cout &lt;&lt; label &lt;&lt; ":\n";
+    for (int r = 0; r &lt; N; ++r) {
+        for (int c = 0; c &lt; N; ++c) {
+            cout &lt;&lt; setw(5) &lt;&lt; m[r][c];
+        }
+        cout &lt;&lt; "\n";
+    }
+    cout &lt;&lt; "\n";
+}
+
+int main() {
+    int A[N][N] = {
+        {1, 2, 3},
+        {4, 5, 6},
+        {7, 8, 9}
+    };
+    int B[N][N] = {
+        {9, 8, 7},
+        {6, 5, 4},
+        {3, 2, 1}
+    };
+    int C[N][N] = {};       // result matrix, all zeros
+
+    // C[i][j] = sum over k of A[i][k] * B[k][j]
+    //   i : row of A (and of C)
+    //   j : column of B (and of C)
+    //   k : walks along row i of A and down column j of B
+    for (int i = 0; i &lt; N; ++i) {
+        for (int j = 0; j &lt; N; ++j) {
+            for (int k = 0; k &lt; N; ++k) {
+                C[i][j] += A[i][k] * B[k][j];
+            }
+        }
+    }
+
+    printMatrix("Matrix A", A);
+    printMatrix("Matrix B", B);
+    printMatrix("A x B", C);
+
+    // Show how one cell was computed: C[0][0] = 1*9 + 2*6 + 3*3
+    cout &lt;&lt; "C[0][0] = " &lt;&lt; A[0][0] &lt;&lt; "*" &lt;&lt; B[0][0]
+         &lt;&lt; " + " &lt;&lt; A[0][1] &lt;&lt; "*" &lt;&lt; B[1][0]
+         &lt;&lt; " + " &lt;&lt; A[0][2] &lt;&lt; "*" &lt;&lt; B[2][0]
+         &lt;&lt; " = " &lt;&lt; C[0][0] &lt;&lt; "\n";
+    return 0;
+}</code></pre>
+    <p><strong>Output:</strong></p>
+<pre><code>Matrix A:
+    1    2    3
+    4    5    6
+    7    8    9
+
+Matrix B:
+    9    8    7
+    6    5    4
+    3    2    1
+
+A x B:
+   30   24   18
+   84   69   54
+  138  114   90
+
+C[0][0] = 1*9 + 2*6 + 3*3 = 30</code></pre>
+
+    <!-- Example 3 -->
+    <h2>Example 3 — String Tokenizer</h2>
+    <p>
+      Splits a sentence into words using only <code>find()</code> and <code>substr()</code>. The function skips repeated
+      spaces, so <code>"the&nbsp;&nbsp;quick"</code> still gives two words. Results are returned in a
+      <code>std::vector&lt;std::string&gt;</code> (a resizable array — see Chapter 10).
+    </p>
+<pre><code>// tokenizer.cpp
+// Compile: g++ -std=c++17 -Wall -o tokenizer tokenizer.cpp
+// Run:     ./tokenizer
+
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+#include &lt;vector&gt;
+using namespace std;
+
+// Split `text` into words separated by `delimiter`.
+// Consecutive delimiters (and leading/trailing ones) produce no empty words.
+vector&lt;string&gt; tokenize(const string&amp; text, char delimiter = ' ') {
+    vector&lt;string&gt; words;
+    size_t start = 0;                            // where the current word begins
+
+    while (start &lt; text.size()) {
+        // Skip over any delimiters at the current position
+        if (text[start] == delimiter) {
+            ++start;
+            continue;
+        }
+        // Find the end of this word: the next delimiter, or end of string
+        size_t end = text.find(delimiter, start);
+        if (end == string::npos) {
+            end = text.size();
+        }
+        // substr(position, length)
+        words.push_back(text.substr(start, end - start));
+        start = end;                             // continue after the word
+    }
+    return words;
+}
+
+int main() {
+    string sentence;
+    cout &lt;&lt; "Enter a sentence: ";
+    getline(cin, sentence);                      // getline keeps the spaces
+
+    vector&lt;string&gt; words = tokenize(sentence);
+
+    cout &lt;&lt; "\nFound " &lt;&lt; words.size() &lt;&lt; " word(s):\n";
+    for (size_t i = 0; i &lt; words.size(); ++i) {
+        cout &lt;&lt; "  [" &lt;&lt; i &lt;&lt; "] \"" &lt;&lt; words[i] &lt;&lt; "\"\n";
+    }
+    return 0;
+}</code></pre>
+    <p><strong>Sample session:</strong></p>
+<pre><code>Enter a sentence: the  quick brown   fox 
+
+Found 4 word(s):
+  [0] "the"
+  [1] "quick"
+  [2] "brown"
+  [3] "fox"</code></pre>
+    <div class="callout tip">
+      <strong>The standard-library alternative</strong>
+      <code>std::istringstream</code> with <code>&gt;&gt;</code> splits on any whitespace in two lines:
+      <code>istringstream in(text); string w; while (in &gt;&gt; w) words.push_back(w);</code>
+      Writing the tokenizer by hand teaches you <code>find</code>, <code>substr</code> and <code>npos</code>.
+    </div>
+
+    <!-- Example 4 -->
+    <h2>Example 4 — Character Frequency Counter</h2>
+    <p>
+      A classic use of an array as a <strong>lookup table</strong>: <code>counts[26]</code> has one slot per letter, and the
+      expression <code>ch - 'a'</code> converts a letter into its slot number (<code>'a'</code> → 0 … <code>'z'</code> → 25).
+      Uppercase letters are lowered first so <code>H</code> and <code>h</code> share a counter.
+    </p>
+<pre><code>// char_frequency.cpp
+// Compile: g++ -std=c++17 -Wall -o char_frequency char_frequency.cpp
+// Run:     ./char_frequency
+
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+#include &lt;cctype&gt;       // tolower, isalpha
+using namespace std;
+
+int main() {
+    string text;
+    cout &lt;&lt; "Enter some text: ";
+    getline(cin, text);
+
+    // One counter per letter of the alphabet: counts[0] is 'a', counts[25] is 'z'.
+    // "= {}" sets all 26 counters to zero.
+    int counts[26] = {};
+    int totalLetters = 0;
+
+    for (char ch : text) {
+        // Cast to unsigned char before calling &lt;cctype&gt; functions (avoids UB for negative chars)
+        unsigned char uc = static_cast&lt;unsigned char&gt;(ch);
+        if (isalpha(uc)) {
+            char lower = static_cast&lt;char&gt;(tolower(uc));
+            counts[lower - 'a']++;               // 'a'-'a' = 0, 'b'-'a' = 1, ...
+            ++totalLetters;
+        }
+    }
+
+    cout &lt;&lt; "\nLetter frequencies (" &lt;&lt; totalLetters &lt;&lt; " letters):\n";
+    for (int i = 0; i &lt; 26; ++i) {
+        if (counts[i] &gt; 0) {                     // only print letters that appear
+            char letter = static_cast&lt;char&gt;('a' + i);
+            cout &lt;&lt; "  " &lt;&lt; letter &lt;&lt; " : " &lt;&lt; string(counts[i], '#')
+                 &lt;&lt; " (" &lt;&lt; counts[i] &lt;&lt; ")\n";
+        }
+    }
+    return 0;
+}</code></pre>
+    <p><strong>Sample session:</strong></p>
+<pre><code>Enter some text: Hello World
+
+Letter frequencies (10 letters):
+  d : # (1)
+  e : # (1)
+  h : # (1)
+  l : ### (3)
+  o : ## (2)
+  r : # (1)
+  w : # (1)</code></pre>
+    <div class="callout warn">
+      <strong>Indexing safety</strong>
+      <code>counts[lower - 'a']</code> is only safe because the <code>isalpha</code> check guarantees an ASCII letter.
+      Without that guard, a space or digit would give a negative or too-large index — undefined behavior.
+    </div>
+
+    <div style="display:flex;justify-content:space-between;margin-top:2rem;">
+      <a href="index.html" class="btn btn-outline" style="text-decoration:none;">← Learning</a>
+      <a href="exercises.html" class="btn" style="text-decoration:none;">Next: Exercises →</a>
+    </div>
+
+  </div>
+</main>
+</div>
+<footer id="site-footer">
+  &copy; 2024 <a href="https://linkedin.com/in/adityabhuyan" target="_blank" rel="noopener">Aditya Pratap Bhuyan</a> &nbsp;|&nbsp;
+  <a href="https://github.com/aditya-bhuyan/cpp-learning-hub" target="_blank" rel="noopener">GitHub</a> &nbsp;|&nbsp;
+  GNU GPL v3 License
+</footer>
+<script src="/assets/js/nav.js"></script>
+</body>
+</html>

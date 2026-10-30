@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ch 08 — OOP: Inheritance &amp; Polymorphism | C++ Learning Hub</title>
+  <link rel="stylesheet" href="/assets/css/style.css" />
+</head>
+<body>
+<header id="site-header">
+  <button id="hamburger" aria-label="Toggle navigation">&#9776;</button>
+  <div id="site-logo">C++ Learning Hub <span class="badge">FREE</span></div>
+  <button id="theme-toggle">☾ Dark</button>
+</header>
+<div id="layout">
+<aside id="sidebar"><nav>
+  <div class="nav-section-title">C++ Learning Hub</div>
+  <div class="nav-chapter" data-chapter="home"><div class="nav-chapter-header"><span>🏠 Home</span></div><div class="nav-chapter-links"><a href="/index.html">Overview</a></div></div>
+  <div class="nav-section-title">Chapters</div>
+  <div class="nav-chapter" data-chapter="ch01"><div class="nav-chapter-header"><span><span class="ch-num">01</span>Introduction to C++</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch01-introduction/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch01-introduction/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch01-introduction/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch01-introduction/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch01-introduction/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch02"><div class="nav-chapter-header"><span><span class="ch-num">02</span>Variables, Types &amp; Operators</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch02-variables-types-operators/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch02-variables-types-operators/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch02-variables-types-operators/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch02-variables-types-operators/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch02-variables-types-operators/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch03"><div class="nav-chapter-header"><span><span class="ch-num">03</span>Control Flow</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch03-control-flow/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch03-control-flow/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch03-control-flow/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch03-control-flow/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch03-control-flow/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch04"><div class="nav-chapter-header"><span><span class="ch-num">04</span>Functions</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch04-functions/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch04-functions/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch04-functions/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch04-functions/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch04-functions/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch05"><div class="nav-chapter-header"><span><span class="ch-num">05</span>Arrays &amp; Strings</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch05-arrays-strings/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch05-arrays-strings/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch05-arrays-strings/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch05-arrays-strings/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch05-arrays-strings/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch06"><div class="nav-chapter-header"><span><span class="ch-num">06</span>Pointers &amp; References</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch06-pointers-references/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch06-pointers-references/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch06-pointers-references/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch06-pointers-references/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch06-pointers-references/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch07"><div class="nav-chapter-header"><span><span class="ch-num">07</span>OOP — Basics</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch07-oop-basics/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch07-oop-basics/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch07-oop-basics/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch07-oop-basics/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch07-oop-basics/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter open" data-chapter="ch08"><div class="nav-chapter-header"><span><span class="ch-num">08</span>OOP — Inheritance &amp; Polymorphism</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch08-oop-inheritance/index.html" class="active"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch08-oop-inheritance/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch08-oop-inheritance/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch08-oop-inheritance/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch08-oop-inheritance/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch09"><div class="nav-chapter-header"><span><span class="ch-num">09</span>Templates</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch09-templates/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch09-templates/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch09-templates/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch09-templates/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch09-templates/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch10"><div class="nav-chapter-header"><span><span class="ch-num">10</span>STL — Containers</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch10-stl-containers/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch10-stl-containers/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch10-stl-containers/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch10-stl-containers/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch10-stl-containers/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch11"><div class="nav-chapter-header"><span><span class="ch-num">11</span>STL — Algorithms &amp; Iterators</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch11-stl-algorithms/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch11-stl-algorithms/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch11-stl-algorithms/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch11-stl-algorithms/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch11-stl-algorithms/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch12"><div class="nav-chapter-header"><span><span class="ch-num">12</span>Memory Management</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch12-memory-management/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch12-memory-management/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch12-memory-management/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch12-memory-management/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch12-memory-management/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch13"><div class="nav-chapter-header"><span><span class="ch-num">13</span>Exception Handling</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch13-exception-handling/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch13-exception-handling/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch13-exception-handling/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch13-exception-handling/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch13-exception-handling/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch14"><div class="nav-chapter-header"><span><span class="ch-num">14</span>File I/O</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch14-file-io/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch14-file-io/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch14-file-io/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch14-file-io/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch14-file-io/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch15"><div class="nav-chapter-header"><span><span class="ch-num">15</span>Modern C++ (C++11–C++20)</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch15-modern-cpp/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch15-modern-cpp/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch15-modern-cpp/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch15-modern-cpp/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch15-modern-cpp/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-section-title">Capstone</div>
+  <div class="nav-chapter" data-chapter="ch16"><div class="nav-chapter-header"><span><span class="ch-num">16</span>Capstone Project</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch16-capstone/index.html"><span class="link-icon">🎯</span>Brief</a><a href="/chapters/ch16-capstone/walkthrough.html"><span class="link-icon">🗺</span>Walkthrough</a><a href="/chapters/ch16-capstone/solution.html"><span class="link-icon">✅</span>Solution</a></div></div>
+  <div class="nav-section-title">About</div>
+  <div style="padding:.4rem 1.1rem 1rem;font-size:.78rem;color:var(--muted);line-height:1.5;">Maintained by<br><a href="https://linkedin.com/in/adityabhuyan" target="_blank" rel="noopener">Aditya Pratap Bhuyan</a><br><span style="font-size:.72rem;">GNU GPL v3 License</span></div>
+</nav></aside>
+
+<main id="main">
+  <div class="page-header">
+    <div class="breadcrumb"><a href="/index.html">Home</a> › Chapter 08</div>
+    <h1>Chapter 08 — OOP: Inheritance &amp; Polymorphism</h1>
+    <p class="subtitle">Build class hierarchies, override behavior at run time, and program against abstract interfaces.</p>
+    <div class="chapter-tabs">
+      <a href="index.html" class="active">📖 Learning</a>
+      <a href="examples.html">💻 Examples</a>
+      <a href="exercises.html">✏️ Exercises</a>
+      <a href="solutions.html">✅ Solutions</a>
+      <a href="quiz.html">🧠 Quiz</a>
+    </div>
+  </div>
+
+  <div class="content">
+
+    <h2>8.1 Inheritance — the "is-a" Relationship</h2>
+    <p>
+      <strong>Inheritance</strong> lets you define a new class by building on an existing one. The existing class is
+      called the <strong>base class</strong> (also <em>parent</em> or <em>superclass</em>); the new class is the
+      <strong>derived class</strong> (<em>child</em> or <em>subclass</em>). The derived class automatically receives the
+      data members and member functions of the base class and may add new ones or change inherited behavior.
+    </p>
+    <p>
+      Use public inheritance only when the relationship can be read as <strong>"is-a"</strong>:
+      a <code>Dog</code> <em>is an</em> <code>Animal</code>; a <code>Circle</code> <em>is a</em> <code>Shape</code>.
+      If the natural reading is "has-a" (a <code>Car</code> <em>has an</em> <code>Engine</code>), use
+      <strong>composition</strong> — make the engine a data member instead.
+    </p>
+    <div class="callout tip">
+      <strong>Why inheritance?</strong>
+      It gives you <em>code reuse</em> (common code lives once in the base class) and <em>polymorphism</em>
+      (code written against the base class works with every derived class — covered from section 8.6 on).
+    </div>
+
+    <h2>8.2 Single Inheritance Syntax</h2>
+    <p>The base class is named after a colon, together with an <strong>access specifier</strong>:</p>
+<pre><code>class Animal {
+public:
+    string name;
+    void eat() const { cout &lt;&lt; name &lt;&lt; " is eating\n"; }
+};
+
+class Dog : public Animal {          // Dog is-a Animal
+public:
+    void bark() const { cout &lt;&lt; name &lt;&lt; " says Woof!\n"; }
+};
+
+int main() {
+    Dog d;
+    d.name = "Rex";    // inherited data member
+    d.eat();           // inherited member function
+    d.bark();          // Dog's own member function
+    return 0;
+}</code></pre>
+    <p>
+      <code>Dog</code> contains everything in <code>Animal</code> plus its own members. A derived object is stored as the
+      base-class part first, followed by the members added by the derived class.
+    </p>
+
+    <h3>Kinds of inheritance</h3>
+    <p>
+      The access specifier before the base class name caps how the inherited members appear in the derived class:
+    </p>
+    <table>
+      <thead><tr><th>Base member is…</th><th><code>public</code> inheritance</th><th><code>protected</code> inheritance</th><th><code>private</code> inheritance</th></tr></thead>
+      <tbody>
+        <tr><td><code>public</code></td><td>public</td><td>protected</td><td>private</td></tr>
+        <tr><td><code>protected</code></td><td>protected</td><td>protected</td><td>private</td></tr>
+        <tr><td><code>private</code></td><td colspan="3">never accessible in the derived class (it exists, but is hidden)</td></tr>
+      </tbody>
+    </table>
+    <div class="callout">
+      <strong>Rule of thumb</strong>
+      Almost always write <code>class Derived : public Base</code>. Private and protected inheritance model
+      "implemented-in-terms-of", <em>not</em> "is-a", and you cannot convert a <code>Derived*</code> to a
+      <code>Base*</code> outside the class. Also note: for <code>class</code> the default inheritance is
+      <code>private</code>; for <code>struct</code> it is <code>public</code>. Always state it explicitly.
+    </div>
+
+    <h2>8.3 Protected Members</h2>
+    <p>There are three access levels, and inheritance adds a new meaning to the middle one:</p>
+    <table>
+      <thead><tr><th>Specifier</th><th>Same class</th><th>Derived class</th><th>Outside code</th></tr></thead>
+      <tbody>
+        <tr><td><code>public</code></td><td>Yes</td><td>Yes</td><td>Yes</td></tr>
+        <tr><td><code>protected</code></td><td>Yes</td><td>Yes</td><td>No</td></tr>
+        <tr><td><code>private</code></td><td>Yes</td><td>No</td><td>No</td></tr>
+      </tbody>
+    </table>
+<pre><code>class Account {
+private:
+    int pin = 1234;          // only Account can touch this
+protected:
+    double balance = 0.0;    // Account and derived classes can touch this
+public:
+    void deposit(double amt) { balance += amt; }
+};
+
+class SavingsAccount : public Account {
+public:
+    void addInterest(double rate) {
+        balance += balance * rate;   // OK: protected, accessible in derived class
+        // pin = 0;                  // ERROR: private in Account
+    }
+};
+
+int main() {
+    SavingsAccount s;
+    s.deposit(100);
+    // s.balance = 5;                // ERROR: protected, not accessible outside
+    return 0;
+}</code></pre>
+    <div class="callout warn">
+      <strong>Protected data weakens encapsulation</strong>
+      Every derived class can now read and modify <code>balance</code>, so a change to the base class can break any of
+      them. Prefer <code>private</code> data plus <code>protected</code> accessor functions when you can.
+    </div>
+
+    <h2>8.4 Constructors and Destructors in a Hierarchy</h2>
+    <p>
+      A derived object contains a base-class sub-object, and that sub-object must be built first. Constructors are
+      <strong>not inherited</strong>, so the derived constructor must tell the compiler which base constructor to run.
+      Do that in the <strong>member-initializer list</strong>:
+    </p>
+<pre><code>class Person {
+protected:
+    string name;
+    int    age;
+public:
+    Person(const string&amp; n, int a) : name(n), age(a) {
+        cout &lt;&lt; "Person ctor\n";
+    }
+    ~Person() { cout &lt;&lt; "Person dtor\n"; }
+};
+
+class Student : public Person {
+    string school;
+public:
+    //          pass arguments up to the base constructor
+    Student(const string&amp; n, int a, const string&amp; s)
+        : Person(n, a), school(s) {            // Derived(args) : Base(args) { }
+        cout &lt;&lt; "Student ctor\n";
+    }
+    ~Student() { cout &lt;&lt; "Student dtor\n"; }
+};
+
+int main() {
+    Student s("Ana", 20, "MIT");
+    return 0;
+}</code></pre>
+<pre><code>Person ctor
+Student ctor
+Student dtor
+Person dtor</code></pre>
+    <table>
+      <thead><tr><th>Event</th><th>Order</th></tr></thead>
+      <tbody>
+        <tr><td>Construction</td><td>Base → members → Derived body (base first)</td></tr>
+        <tr><td>Destruction</td><td>Derived body → members → Base (exact reverse)</td></tr>
+      </tbody>
+    </table>
+    <div class="callout warn">
+      <strong>No default base constructor?</strong>
+      If the base class has no default constructor and you do not call one explicitly in the initializer list,
+      the program will not compile. If you omit the call and a default constructor exists, it is used silently.
+    </div>
+
+    <h2>8.5 Overriding vs Overloading — Different Concepts!</h2>
+    <p>
+      Beginners often mix these two up. They share the idea "same function name, different behavior",
+      but they work in completely different ways.
+    </p>
+    <table>
+      <thead><tr><th></th><th>Overloading</th><th>Overriding</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Where</strong></td><td>Same scope (usually one class)</td><td>Base class and derived class</td></tr>
+        <tr><td><strong>Signature</strong></td><td>Must <em>differ</em> (parameter types/count)</td><td>Must be <em>identical</em> (and const-ness)</td></tr>
+        <tr><td><strong>Resolved</strong></td><td>At compile time (static)</td><td>At run time, if the base function is <code>virtual</code></td></tr>
+        <tr><td><strong>Purpose</strong></td><td>Convenient variants of one operation</td><td>Specialize inherited behavior</td></tr>
+        <tr><td><strong><code>virtual</code> needed?</strong></td><td>No</td><td>Yes, for run-time dispatch</td></tr>
+      </tbody>
+    </table>
+<pre><code>class Printer {
+public:
+    // OVERLOADING: same name, different parameter lists, same class
+    void print(int x)           const { cout &lt;&lt; "int: "    &lt;&lt; x &lt;&lt; "\n"; }
+    void print(const string&amp; s) const { cout &lt;&lt; "string: " &lt;&lt; s &lt;&lt; "\n"; }
+
+    virtual void hello() const { cout &lt;&lt; "Hello from Printer\n"; }
+    virtual ~Printer() = default;
+};
+
+class FancyPrinter : public Printer {
+public:
+    // OVERRIDING: same signature as the base virtual function
+    void hello() const override { cout &lt;&lt; "Hello from FancyPrinter\n"; }
+};</code></pre>
+    <div class="callout warn">
+      <strong>Name hiding</strong>
+      If a derived class declares <em>any</em> function called <code>print</code>, it <strong>hides</strong> all base-class
+      overloads named <code>print</code> — even ones with different parameters. Bring them back with
+      <code>using Base::print;</code> inside the derived class.
+    </div>
+
+    <h2>8.6 The <code>virtual</code> Keyword — Runtime Polymorphism</h2>
+    <p>
+      <strong>Polymorphism</strong> means "many forms": the same call can run different code depending on the actual
+      type of the object. Without <code>virtual</code>, C++ chooses the function at <em>compile time</em> from the static
+      type of the expression (<strong>static binding</strong>). Marking a member function <code>virtual</code> makes the
+      choice at <em>run time</em> from the real type of the object (<strong>dynamic binding</strong>).
+    </p>
+<pre><code>class Animal {
+public:
+    void eat() const           { cout &lt;&lt; "Animal eats\n"; }      // NOT virtual
+    virtual void sound() const { cout &lt;&lt; "Some sound\n"; }       // virtual
+    virtual ~Animal() = default;
+};
+
+class Dog : public Animal {
+public:
+    void eat() const           { cout &lt;&lt; "Dog eats\n"; }        // hides, does not override
+    void sound() const override { cout &lt;&lt; "Woof\n"; }           // overrides
+};
+
+int main() {
+    Dog d;
+    Animal* p = &amp;d;      // base pointer to derived object
+
+    p-&gt;eat();            // "Animal eats"  — static binding, decided by pointer type
+    p-&gt;sound();          // "Woof"         — dynamic binding, decided by object type
+    return 0;
+}</code></pre>
+    <p>
+      Once a function is <code>virtual</code> in the base class, every function in derived classes with the same
+      signature is automatically virtual too (even without repeating the keyword).
+    </p>
+    <div class="callout">
+      <strong>How it works (briefly)</strong>
+      Compilers typically implement this with a <em>vtable</em>: each class with virtual functions has a hidden table of
+      function pointers, and each object carries a hidden pointer (the <em>vptr</em>) to its class's table. A virtual call
+      follows that pointer. The cost is one extra pointer per object and one indirection per call.
+    </div>
+
+    <h2>8.7 Polymorphism via Base Pointers and References</h2>
+    <p>
+      A pointer or reference to a base class may refer to any object derived from it. Dynamic binding applies only
+      when you call through a <strong>pointer or reference</strong> — that is where polymorphic code lives.
+    </p>
+<pre><code>void makeNoise(const Animal&amp; a) {   // accepts Animal, Dog, Cat, ...
+    a.sound();                       // dispatches to the real type at run time
+}
+
+int main() {
+    Dog d;
+    Cat c;
+
+    makeNoise(d);                    // Woof
+    makeNoise(c);                    // Meow
+
+    vector&lt;Animal*&gt; zoo = { &amp;d, &amp;c };
+    for (const Animal* a : zoo) a-&gt;sound();   // Woof, Meow
+    return 0;
+}</code></pre>
+    <p>
+      The function <code>makeNoise</code> was written once and works for animal types that do not even exist yet.
+      That is the main payoff: <strong>program against the base-class interface, not the concrete types</strong>.
+    </p>
+
+    <h2>8.8 Pure Virtual Functions</h2>
+    <p>
+      Sometimes a base-class function cannot have a sensible implementation — what is the area of a generic
+      "shape"? Declare it <strong>pure virtual</strong> with <code>= 0</code>:
+    </p>
+<pre><code>class Shape {
+public:
+    virtual void   draw() const = 0;   // pure virtual: no implementation required
+    virtual double area() const = 0;
+    virtual ~Shape() = default;
+};</code></pre>
+    <p>
+      A pure virtual function says: <em>"every concrete derived class must provide this."</em>
+      Any class with at least one pure virtual function becomes an <strong>abstract class</strong>.
+    </p>
+
+    <h2>8.9 Abstract Classes</h2>
+    <ul>
+      <li>An abstract class <strong>cannot be instantiated</strong>: <code>Shape s;</code> and <code>new Shape</code> are errors.</li>
+      <li>You <em>can</em> have pointers and references to it — that is how polymorphism is used.</li>
+      <li>A derived class that does not override <em>all</em> inherited pure virtuals is itself abstract.</li>
+      <li>It can still have data members, constructors, and ordinary member functions.</li>
+      <li>It defines an <strong>interface contract</strong>: callers depend on the contract, implementers fulfil it.</li>
+    </ul>
+<pre><code>class Circle : public Shape {
+    double r;
+public:
+    explicit Circle(double radius) : r(radius) {}
+    void   draw() const override { cout &lt;&lt; "Drawing circle\n"; }
+    double area() const override { return 3.14159265 * r * r; }
+};
+
+int main() {
+    // Shape s;                 // ERROR: Shape is abstract
+    Circle c(2.0);              // OK: Circle overrides every pure virtual
+    Shape&amp; ref = c;             // OK: reference to the abstract base
+    ref.draw();
+    return 0;
+}</code></pre>
+    <div class="callout tip">
+      <strong>Interfaces in C++</strong>
+      C++ has no <code>interface</code> keyword. By convention, an interface is an abstract class containing only pure
+      virtual functions and a virtual destructor.
+    </div>
+
+    <h2>8.10 The <code>override</code> Keyword (C++11)</h2>
+    <p>
+      Overriding fails <em>silently</em> if the signature differs by even a tiny detail — you accidentally create a brand-new
+      function instead. <code>override</code> makes the compiler check your intent:
+    </p>
+<pre><code>class Base {
+public:
+    virtual void show() const { cout &lt;&lt; "Base\n"; }
+    virtual void set(int x)   { }
+    virtual ~Base() = default;
+};
+
+class Derived : public Base {
+public:
+    void show()        { cout &lt;&lt; "Derived\n"; }        // forgot const: NOT an override! (silent bug)
+    void set(long x)   { }                             // int vs long:  NOT an override! (silent bug)
+};
+
+class DerivedFixed : public Base {
+public:
+    void show() const override { cout &lt;&lt; "Derived\n"; }  // OK
+    // void set(long x) override { }                     // ERROR: does not override anything
+    void set(int x)  override { }                        // OK
+};</code></pre>
+    <div class="callout tip">
+      <strong>Habit</strong>
+      Put <code>override</code> on <em>every</em> function that is meant to override. If someone later changes the base
+      signature, all affected derived classes immediately fail to compile instead of misbehaving.
+    </div>
+
+    <h2>8.11 The <code>final</code> Keyword</h2>
+    <p><code>final</code> (C++11) closes a door in two places:</p>
+<pre><code>// 1. final on a function: derived classes may not override it any further
+class Base {
+public:
+    virtual void run() { }
+    virtual ~Base() = default;
+};
+
+class Mid : public Base {
+public:
+    void run() override final { }      // last allowed override
+};
+
+class Leaf : public Mid {
+public:
+    // void run() override { }         // ERROR: Mid::run is final
+};
+
+// 2. final on a class: nobody may derive from it
+class Sealed final : public Base { };
+
+// class Bad : public Sealed { };      // ERROR: Sealed is final</code></pre>
+    <p>
+      Use <code>final</code> to document design intent and to let the compiler optimize (it can bind calls directly
+      when it knows no further override can exist).
+    </p>
+
+    <h2>8.12 Virtual Destructors</h2>
+    <p>
+      This is one of the most important rules in C++ OOP:
+      <strong>if a class is meant to be used polymorphically (has virtual functions), give it a virtual destructor.</strong>
+    </p>
+<pre><code>class Base {
+public:
+    ~Base() { cout &lt;&lt; "~Base\n"; }               // NOT virtual — dangerous!
+};
+
+class Derived : public Base {
+    int* data = new int[1000];
+public:
+    ~Derived() { delete[] data; cout &lt;&lt; "~Derived\n"; }
+};
+
+int main() {
+    Base* p = new Derived;
+    delete p;      // UNDEFINED BEHAVIOR: only ~Base runs, ~Derived is skipped
+                   // → data is never freed → memory leak
+    return 0;
+}</code></pre>
+    <p>The fix is a single keyword:</p>
+<pre><code>class Base {
+public:
+    virtual ~Base() { cout &lt;&lt; "~Base\n"; }       // now delete via Base* is safe
+};
+// delete p;   →   ~Derived   then   ~Base</code></pre>
+    <p>
+      With a virtual destructor, <code>delete p</code> looks up the real type of the object, runs
+      <code>~Derived()</code> first and then <code>~Base()</code>. If the base needs no cleanup, write
+      <code>virtual ~Base() = default;</code>.
+    </p>
+    <div class="callout error">
+      <strong>Deleting a derived object through a non-virtual-destructor base pointer is undefined behavior</strong>
+      Typical symptoms are leaked resources and partially destroyed objects. The compiler may warn
+      (<code>-Wnon-virtual-dtor</code>, <code>-Wdelete-non-virtual-dtor</code>) — enable those warnings.
+    </div>
+
+    <h2>8.13 Multiple Inheritance</h2>
+    <p>C++ allows a class to have more than one base class. Separate the bases with commas:</p>
+<pre><code>class Flyer {
+public:
+    void fly() const { cout &lt;&lt; "Flying\n"; }
+};
+
+class Swimmer {
+public:
+    void swim() const { cout &lt;&lt; "Swimming\n"; }
+};
+
+class Duck : public Flyer, public Swimmer {     // Duck has both abilities
+public:
+    void quack() const { cout &lt;&lt; "Quack\n"; }
+};
+
+int main() {
+    Duck d;
+    d.fly();
+    d.swim();
+    d.quack();
+    return 0;
+}</code></pre>
+    <p>
+      Base constructors run in the order the bases are <em>listed in the class declaration</em> (not the order in the
+      initializer list). Multiple inheritance is also commonly used to implement several interfaces
+      (abstract classes) at once, which is generally safe and idiomatic.
+    </p>
+
+    <h3>Ambiguity</h3>
+    <p>If both bases define a member with the same name, an unqualified use is ambiguous:</p>
+<pre><code>struct A { void hello() { cout &lt;&lt; "A\n"; } };
+struct B { void hello() { cout &lt;&lt; "B\n"; } };
+struct C : A, B { };
+
+int main() {
+    C c;
+    // c.hello();      // ERROR: ambiguous — A::hello or B::hello?
+    c.A::hello();      // OK: resolve with the scope operator
+    c.B::hello();
+    return 0;
+}</code></pre>
+
+    <h3>The Diamond Problem</h3>
+    <p>
+      Trouble starts when two bases share a common ancestor, forming a diamond:
+    </p>
+<pre><code>        Animal
+        /    \
+     Fish    Bird
+        \    /
+      FlyingFish</code></pre>
+<pre><code>class Animal { public: int age = 0; };
+class Fish : public Animal { };
+class Bird : public Animal { };
+class FlyingFish : public Fish, public Bird { };
+
+int main() {
+    FlyingFish f;
+    // f.age = 3;        // ERROR: ambiguous — Fish::Animal::age or Bird::Animal::age?
+    f.Fish::age = 3;     // there are TWO separate Animal sub-objects inside FlyingFish
+    f.Bird::age = 5;
+    return 0;
+}</code></pre>
+    <p>
+      <code>FlyingFish</code> contains <strong>two</strong> <code>Animal</code> sub-objects — one through each path —
+      which wastes memory and produces ambiguity.
+    </p>
+
+    <h3>Virtual Base Classes — the Fix</h3>
+    <p>
+      Declare the shared base as <code>virtual</code> in the <em>intermediate</em> classes. Now all paths share a
+      <strong>single</strong> <code>Animal</code> sub-object:
+    </p>
+<pre><code>class Animal { public: int age = 0; };
+class Fish : virtual public Animal { };
+class Bird : virtual public Animal { };
+class FlyingFish : public Fish, public Bird { };
+
+int main() {
+    FlyingFish f;
+    f.age = 3;           // OK: only one Animal::age exists
+    return 0;
+}</code></pre>
+    <div class="callout warn">
+      <strong>Who constructs a virtual base?</strong>
+      The <em>most derived</em> class (here <code>FlyingFish</code>) is responsible for initializing the virtual base
+      directly: <code>FlyingFish(...) : Animal(...), Fish(...), Bird(...) { }</code>. The <code>Animal</code> initializers
+      inside <code>Fish</code> and <code>Bird</code> are ignored in that case. Virtual inheritance adds some size and
+      access overhead, so use it only where a real diamond exists.
+    </div>
+
+    <h2>8.14 Runtime Type Information (RTTI) — a Brief Intro</h2>
+    <p>
+      Sometimes you hold a <code>Base*</code> and must find out what the object <em>really</em> is. RTTI offers two tools.
+      Both require the base class to be <strong>polymorphic</strong> (have at least one virtual function).
+    </p>
+    <h3><code>dynamic_cast</code></h3>
+    <p>
+      A checked downcast. For pointers it returns <code>nullptr</code> if the object is not of the requested type;
+      for references it throws <code>std::bad_cast</code>.
+    </p>
+<pre><code>#include &lt;iostream&gt;
+#include &lt;typeinfo&gt;
+using namespace std;
+
+class Animal { public: virtual ~Animal() = default; };
+class Dog : public Animal { public: void fetch() const { cout &lt;&lt; "Fetching!\n"; } };
+class Cat : public Animal { };
+
+void test(Animal* a) {
+    if (Dog* d = dynamic_cast&lt;Dog*&gt;(a)) {      // succeeds only if *a is really a Dog
+        d-&gt;fetch();
+    } else {
+        cout &lt;&lt; "Not a dog\n";
+    }
+}
+
+int main() {
+    Dog dog;  Cat cat;
+    test(&amp;dog);      // Fetching!
+    test(&amp;cat);      // Not a dog
+    return 0;
+}</code></pre>
+    <h3><code>typeid</code></h3>
+    <p>Returns a <code>std::type_info</code> object describing the type; compare with <code>==</code> or print <code>.name()</code>.</p>
+<pre><code>Animal* a = new Dog;
+
+cout &lt;&lt; typeid(*a).name() &lt;&lt; "\n";          // implementation-defined, e.g. "3Dog" or "class Dog"
+cout &lt;&lt; (typeid(*a) == typeid(Dog)) &lt;&lt; "\n"; // 1  — dynamic type is exactly Dog
+cout &lt;&lt; (typeid(*a) == typeid(Animal)) &lt;&lt; "\n"; // 0
+delete a;</code></pre>
+    <div class="callout">
+      <strong>Use RTTI sparingly</strong>
+      Frequent <code>dynamic_cast</code> usage is often a design smell: if you keep asking "what type is this?",
+      the question probably belongs in a virtual function. Also remember that <code>typeid(...).name()</code> is not
+      portable text.
+    </div>
+
+    <h2>8.15 Object Slicing</h2>
+    <p>
+      Polymorphism works through pointers and references. If you copy a derived object into a base object
+      <strong>by value</strong>, the derived part is cut off — <strong>object slicing</strong>.
+    </p>
+<pre><code>class Animal {
+public:
+    virtual void sound() const { cout &lt;&lt; "Some sound\n"; }
+    virtual ~Animal() = default;
+};
+
+class Dog : public Animal {
+    string breed = "Labrador";           // extra data only Dog has
+public:
+    void sound() const override { cout &lt;&lt; "Woof (" &lt;&lt; breed &lt;&lt; ")\n"; }
+};
+
+void byValue(Animal a)      { a.sound(); }    // copy → sliced!
+void byRef(const Animal&amp; a) { a.sound(); }    // no copy → polymorphic
+
+int main() {
+    Dog d;
+
+    Animal a = d;            // slicing: only the Animal part is copied
+    a.sound();               // "Some sound"  — it is a plain Animal now
+
+    byValue(d);              // "Some sound"
+    byRef(d);                // "Woof (Labrador)"
+
+    vector&lt;Animal&gt; bad;     // stores Animal objects: every Dog pushed in is sliced
+    bad.push_back(d);
+    bad[0].sound();          // "Some sound"
+    return 0;
+}</code></pre>
+    <div class="callout error">
+      <strong>The slicing trap</strong>
+      Slicing silently discards the derived data members <em>and</em> the derived behavior (the vptr is reset to the base
+      class's table). It compiles without errors. To avoid it: pass polymorphic objects by <strong>reference or pointer</strong>,
+      store <code>vector&lt;Base*&gt;</code> or <code>vector&lt;unique_ptr&lt;Base&gt;&gt;</code> in containers, and consider deleting
+      the base copy constructor in abstract bases.
+    </div>
+
+    <h2>8.16 Key Takeaways</h2>
+    <ul>
+      <li>Inheritance models an <strong>is-a</strong> relationship: <code>class Dog : public Animal</code>. For "has-a", use composition.</li>
+      <li><code>protected</code> members are visible to derived classes but not to outside code; <code>private</code> members are not visible to derived classes.</li>
+      <li>Derived constructors call the base constructor via the initializer list: <code>Derived(args) : Base(args) { }</code>. Construction goes base→derived; destruction goes derived→base.</li>
+      <li><strong>Overloading</strong> = same name, different parameters, compile-time. <strong>Overriding</strong> = same signature in a derived class, run-time (with <code>virtual</code>).</li>
+      <li><code>virtual</code> enables dynamic binding; it works only through pointers and references.</li>
+      <li><code>virtual void f() = 0;</code> makes a function pure virtual and the class <strong>abstract</strong> (cannot be instantiated; defines an interface).</li>
+      <li>Always write <code>override</code> on overriding functions; use <code>final</code> to stop further overriding or inheriting.</li>
+      <li>A base class with virtual functions needs a <strong>virtual destructor</strong>, or <code>delete</code> via a base pointer is undefined behavior.</li>
+      <li>Multiple inheritance can cause ambiguity and the <strong>diamond problem</strong>; solve it with <code>virtual</code> base classes.</li>
+      <li><code>dynamic_cast</code> and <code>typeid</code> (RTTI) work on polymorphic types; use them sparingly.</li>
+      <li><strong>Object slicing</strong> happens when a derived object is copied into a base object by value — use references, pointers, or smart pointers instead.</li>
+    </ul>
+
+    <div style="display:flex;justify-content:space-between;margin-top:2rem;gap:.75rem;">
+      <a href="/chapters/ch07-oop-basics/index.html" class="btn btn-outline" style="text-decoration:none;">← Chapter 07</a>
+      <a href="examples.html" class="btn" style="text-decoration:none;">Next: Examples →</a>
+    </div>
+
+  </div>
+</main>
+</div>
+<footer id="site-footer">
+  &copy; 2024 <a href="https://linkedin.com/in/adityabhuyan" target="_blank" rel="noopener">Aditya Pratap Bhuyan</a> &nbsp;|&nbsp;
+  <a href="https://github.com/aditya-bhuyan/cpp-learning-hub" target="_blank" rel="noopener">GitHub</a> &nbsp;|&nbsp;
+  GNU GPL v3 License
+</footer>
+<script src="/assets/js/nav.js"></script>
+</body>
+</html>

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ch 01 Solutions — Introduction to C++ | C++ Learning Hub</title>
+  <link rel="stylesheet" href="/assets/css/style.css" />
+</head>
+<body>
+<header id="site-header">
+  <button id="hamburger" aria-label="Toggle navigation">&#9776;</button>
+  <div id="site-logo">C++ Learning Hub <span class="badge">FREE</span></div>
+  <button id="theme-toggle">☾ Dark</button>
+</header>
+<div id="layout">
+<aside id="sidebar"><nav>
+  <div class="nav-section-title">C++ Learning Hub</div>
+  <div class="nav-chapter" data-chapter="home"><div class="nav-chapter-header"><span>🏠 Home</span></div><div class="nav-chapter-links"><a href="/index.html">Overview</a></div></div>
+  <div class="nav-section-title">Chapters</div>
+  <div class="nav-chapter" data-chapter="ch01"><div class="nav-chapter-header"><span><span class="ch-num">01</span>Introduction to C++</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="index.html"><span class="link-icon">📖</span>Learning</a><a href="examples.html"><span class="link-icon">💻</span>Examples</a><a href="exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="solutions.html" class="active"><span class="link-icon">✅</span>Solutions</a><a href="quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch02"><div class="nav-chapter-header"><span><span class="ch-num">02</span>Variables, Types &amp; Operators</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch02-variables-types-operators/index.html"><span class="link-icon">📖</span>Learning</a></div></div>
+  <div class="nav-chapter" data-chapter="ch03"><div class="nav-chapter-header"><span><span class="ch-num">03</span>Control Flow</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch03-control-flow/index.html"><span class="link-icon">📖</span>Learning</a></div></div>
+  <div class="nav-chapter" data-chapter="ch04"><div class="nav-chapter-header"><span><span class="ch-num">04</span>Functions</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch04-functions/index.html"><span class="link-icon">📖</span>Learning</a></div></div>
+  <div class="nav-chapter" data-chapter="ch05"><div class="nav-chapter-header"><span><span class="ch-num">05</span>Arrays &amp; Strings</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch05-arrays-strings/index.html"><span class="link-icon">📖</span>Learning</a></div></div>
+  <div class="nav-chapter" data-chapter="ch06"><div class="nav-chapter-header"><span><span class="ch-num">06</span>Pointers &amp; References</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch06-pointers-references/index.html"><span class="link-icon">📖</span>Learning</a></div></div>
+  <div class="nav-chapter" data-chapter="ch07"><div class="nav-chapter-header"><span><span class="ch-num">07</span>OOP — Basics</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch07-oop-basics/index.html"><span class="link-icon">📖</span>Learning</a></div></div>
+  <div class="nav-chapter" data-chapter="ch08"><div class="nav-chapter-header"><span><span class="ch-num">08</span>OOP — Inheritance &amp; Polymorphism</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch08-oop-inheritance/index.html"><span class="link-icon">📖</span>Learning</a></div></div>
+  <div class="nav-chapter" data-chapter="ch09"><div class="nav-chapter-header"><span><span class="ch-num">09</span>Templates</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch09-templates/index.html"><span class="link-icon">📖</span>Learning</a></div></div>
+  <div class="nav-chapter" data-chapter="ch10"><div class="nav-chapter-header"><span><span class="ch-num">10</span>STL — Containers</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch10-stl-containers/index.html"><span class="link-icon">📖</span>Learning</a></div></div>
+  <div class="nav-chapter" data-chapter="ch11"><div class="nav-chapter-header"><span><span class="ch-num">11</span>STL — Algorithms</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch11-stl-algorithms/index.html"><span class="link-icon">📖</span>Learning</a></div></div>
+  <div class="nav-chapter" data-chapter="ch12"><div class="nav-chapter-header"><span><span class="ch-num">12</span>Memory Management</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch12-memory-management/index.html"><span class="link-icon">📖</span>Learning</a></div></div>
+  <div class="nav-chapter" data-chapter="ch13"><div class="nav-chapter-header"><span><span class="ch-num">13</span>Exception Handling</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch13-exception-handling/index.html"><span class="link-icon">📖</span>Learning</a></div></div>
+  <div class="nav-chapter" data-chapter="ch14"><div class="nav-chapter-header"><span><span class="ch-num">14</span>File I/O</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch14-file-io/index.html"><span class="link-icon">📖</span>Learning</a></div></div>
+  <div class="nav-chapter" data-chapter="ch15"><div class="nav-chapter-header"><span><span class="ch-num">15</span>Modern C++</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch15-modern-cpp/index.html"><span class="link-icon">📖</span>Learning</a></div></div>
+  <div class="nav-section-title">Capstone</div>
+  <div class="nav-chapter" data-chapter="ch16"><div class="nav-chapter-header"><span><span class="ch-num">16</span>Capstone Project</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch16-capstone/index.html"><span class="link-icon">🎯</span>Brief</a></div></div>
+  <div class="nav-section-title">About</div>
+  <div style="padding:.4rem 1.1rem 1rem;font-size:.78rem;color:var(--muted);line-height:1.5;">Maintained by<br><a href="https://linkedin.com/in/adityabhuyan" target="_blank" rel="noopener">Aditya Pratap Bhuyan</a><br><span style="font-size:.72rem;">GNU GPL v3 License</span></div>
+</nav></aside>
+
+<main id="main">
+  <div class="page-header">
+    <div class="breadcrumb"><a href="/index.html">Home</a> › <a href="index.html">Chapter 01</a> › Solutions</div>
+    <h1>Chapter 01 — Solutions</h1>
+    <p class="subtitle">Reference solutions with explanations. Only read after attempting the exercises yourself.</p>
+    <div class="chapter-tabs">
+      <a href="index.html">📖 Learning</a>
+      <a href="examples.html">💻 Examples</a>
+      <a href="exercises.html">✏️ Exercises</a>
+      <a href="solutions.html" class="active">✅ Solutions</a>
+      <a href="quiz.html">🧠 Quiz</a>
+    </div>
+  </div>
+
+  <div class="content">
+
+    <div class="callout warn">
+      <strong>Spoiler Warning</strong>
+      These are reference solutions. There are often multiple valid approaches — if your output matches
+      but your code differs, that is perfectly fine.
+    </div>
+
+    <!-- Solution 1 -->
+    <div class="solution-card">
+      <div class="card-header">✅ Solution 1 — Personal Greeting Program</div>
+      <div class="card-body">
+        <p>
+          The key trick here is using <code>std::getline</code> to read a full name that may contain spaces.
+          After using <code>cin &gt;&gt;</code> previously, a leftover newline in the input buffer must be
+          consumed with <code>cin.ignore()</code> before calling <code>getline</code>.
+        </p>
+<pre><code>// solution_01_greeting.cpp
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+int main() {
+    string fullName;
+    string language;
+
+    cout &lt;&lt; "Enter your full name: ";
+    // getline reads the entire line including spaces
+    getline(cin, fullName);
+
+    cout &lt;&lt; "Enter your favourite language: ";
+    getline(cin, language);
+
+    cout &lt;&lt; "Hello, " &lt;&lt; fullName &lt;&lt; "! Great choice learning " &lt;&lt; language &lt;&lt; ".\n";
+
+    return 0;
+}</code></pre>
+        <p><strong>Key concepts used:</strong> <code>std::string</code>, <code>std::getline</code>, stream output chaining.</p>
+      </div>
+    </div>
+
+    <!-- Solution 2 -->
+    <div class="solution-card">
+      <div class="card-header">✅ Solution 2 — Circle Area Calculator</div>
+      <div class="card-body">
+        <p>
+          <code>&lt;iomanip&gt;</code> provides <code>std::fixed</code> and <code>std::setprecision</code>
+          which together format a floating-point number to a fixed number of decimal places.
+        </p>
+<pre><code>// solution_01_circle.cpp
+#include &lt;iostream&gt;
+#include &lt;iomanip&gt;   // std::fixed, std::setprecision
+using namespace std;
+
+int main() {
+    const double PI = 3.14159265358979;
+    double radius;
+
+    cout &lt;&lt; "Enter radius: ";
+    cin  &gt;&gt; radius;
+
+    double area          = PI * radius * radius;
+    double circumference = 2.0 * PI * radius;
+
+    // fixed + setprecision(4) = always show 4 decimal places
+    cout &lt;&lt; fixed &lt;&lt; setprecision(4);
+    cout &lt;&lt; "Area          = " &lt;&lt; area          &lt;&lt; " cm\u00B2\n";
+    cout &lt;&lt; "Circumference = " &lt;&lt; circumference &lt;&lt; " cm\n";
+
+    return 0;
+}</code></pre>
+        <p><strong>Key concepts used:</strong> <code>const</code>, arithmetic expressions, <code>&lt;iomanip&gt;</code> formatting.</p>
+      </div>
+    </div>
+
+    <!-- Solution 3 -->
+    <div class="solution-card">
+      <div class="card-header">✅ Solution 3 — Simple Interest Calculator</div>
+      <div class="card-body">
+<pre><code>// solution_01_interest.cpp
+#include &lt;iostream&gt;
+#include &lt;iomanip&gt;
+using namespace std;
+
+int main() {
+    double principal, rate;
+    int    time;
+
+    cout &lt;&lt; "Principal  : "; cin &gt;&gt; principal;
+    cout &lt;&lt; "Rate (%)   : "; cin &gt;&gt; rate;
+    cout &lt;&lt; "Time (yrs) : "; cin &gt;&gt; time;
+
+    double si    = (principal * rate * time) / 100.0;
+    double total = principal + si;
+
+    cout &lt;&lt; fixed &lt;&lt; setprecision(2);
+    cout &lt;&lt; "---\n";
+    cout &lt;&lt; "Simple Interest : " &lt;&lt; si    &lt;&lt; "\n";
+    cout &lt;&lt; "Total Amount    : " &lt;&lt; total &lt;&lt; "\n";
+
+    return 0;
+}</code></pre>
+        <p><strong>Key concepts used:</strong> mixed integer/double arithmetic, formatted output.</p>
+      </div>
+    </div>
+
+    <!-- Solution 4 -->
+    <div class="solution-card">
+      <div class="card-header">✅ Solution 4 — Unit Converter (Kilometres to Miles)</div>
+      <div class="card-body">
+<pre><code>// solution_01_converter.cpp
+#include &lt;iostream&gt;
+#include &lt;iomanip&gt;
+using namespace std;
+
+int main() {
+    const double KM_TO_MILES = 0.621371;
+    int choice;
+    double distance;
+
+    cout &lt;&lt; "Distance Converter\n";
+    cout &lt;&lt; "------------------\n";
+    cout &lt;&lt; "1. Kilometres to Miles\n";
+    cout &lt;&lt; "2. Miles to Kilometres\n";
+    cout &lt;&lt; "Choice: ";
+    cin  &gt;&gt; choice;
+
+    if (choice == 1) {
+        cout &lt;&lt; "Enter distance in km: ";
+        cin  &gt;&gt; distance;
+        cout &lt;&lt; fixed &lt;&lt; setprecision(3);
+        cout &lt;&lt; distance &lt;&lt; " km = " &lt;&lt; (distance * KM_TO_MILES) &lt;&lt; " miles\n";
+    } else {
+        cout &lt;&lt; "Enter distance in miles: ";
+        cin  &gt;&gt; distance;
+        cout &lt;&lt; fixed &lt;&lt; setprecision(3);
+        cout &lt;&lt; distance &lt;&lt; " miles = " &lt;&lt; (distance / KM_TO_MILES) &lt;&lt; " km\n";
+    }
+
+    return 0;
+}</code></pre>
+        <p><strong>Key concepts used:</strong> <code>if/else</code>, constants, arithmetic, input branching.</p>
+      </div>
+    </div>
+
+    <!-- Solution 5 -->
+    <div class="solution-card">
+      <div class="card-header">✅ Solution 5 — BMI Calculator</div>
+      <div class="card-body">
+<pre><code>// solution_01_bmi.cpp
+#include &lt;iostream&gt;
+#include &lt;iomanip&gt;
+#include &lt;string&gt;
+using namespace std;
+
+int main() {
+    double weight, height;
+
+    cout &lt;&lt; "Enter weight (kg): "; cin &gt;&gt; weight;
+    cout &lt;&lt; "Enter height (m) : "; cin &gt;&gt; height;
+
+    double bmi = weight / (height * height);
+
+    string category;
+    if      (bmi &lt;  18.5) category = "Underweight";
+    else if (bmi &lt;  25.0) category = "Normal weight";
+    else if (bmi &lt;  30.0) category = "Overweight";
+    else                  category = "Obese";
+
+    cout &lt;&lt; fixed &lt;&lt; setprecision(2);
+    cout &lt;&lt; "BMI = " &lt;&lt; bmi &lt;&lt; " \u2014 " &lt;&lt; category &lt;&lt; "\n";
+
+    return 0;
+}</code></pre>
+        <p><strong>Key concepts used:</strong> arithmetic, <code>if/else if/else</code> chain, <code>std::string</code> assignment.</p>
+      </div>
+    </div>
+
+    <div style="display:flex;justify-content:space-between;margin-top:2rem;">
+      <a href="exercises.html" class="btn btn-outline" style="text-decoration:none;">← Exercises</a>
+      <a href="quiz.html" class="btn" style="text-decoration:none;">Take the Quiz →</a>
+    </div>
+
+  </div>
+</main>
+</div>
+<footer id="site-footer">
+  &copy; 2024 <a href="https://linkedin.com/in/adityabhuyan" target="_blank" rel="noopener">Aditya Pratap Bhuyan</a> &nbsp;|&nbsp;
+  <a href="https://github.com/aditya-bhuyan/cpp-learning-hub" target="_blank" rel="noopener">GitHub</a> &nbsp;|&nbsp;
+  GNU GPL v3 License
+</footer>
+<script src="/assets/js/nav.js"></script>
+</body>
+</html>

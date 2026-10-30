@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ch 11 — STL Algorithms &amp; Iterators | C++ Learning Hub</title>
+  <link rel="stylesheet" href="/assets/css/style.css" />
+</head>
+<body>
+<header id="site-header">
+  <button id="hamburger" aria-label="Toggle navigation">&#9776;</button>
+  <div id="site-logo">C++ Learning Hub <span class="badge">FREE</span></div>
+  <button id="theme-toggle">☾ Dark</button>
+</header>
+<div id="layout">
+<aside id="sidebar"><nav>
+<aside id="sidebar"><nav>
+  <div class="nav-section-title">C++ Learning Hub</div>
+  <div class="nav-chapter" data-chapter="home"><div class="nav-chapter-header"><span>🏠 Home</span></div><div class="nav-chapter-links"><a href="/index.html">Overview</a></div></div>
+  <div class="nav-section-title">Chapters</div>
+  <div class="nav-chapter" data-chapter="ch01"><div class="nav-chapter-header"><span><span class="ch-num">01</span>Introduction to C++</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch01-introduction/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch01-introduction/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch01-introduction/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch01-introduction/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch01-introduction/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch02"><div class="nav-chapter-header"><span><span class="ch-num">02</span>Variables, Types &amp; Operators</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch02-variables-types-operators/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch02-variables-types-operators/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch02-variables-types-operators/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch02-variables-types-operators/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch02-variables-types-operators/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch03"><div class="nav-chapter-header"><span><span class="ch-num">03</span>Control Flow</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch03-control-flow/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch03-control-flow/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch03-control-flow/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch03-control-flow/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch03-control-flow/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch04"><div class="nav-chapter-header"><span><span class="ch-num">04</span>Functions</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch04-functions/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch04-functions/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch04-functions/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch04-functions/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch04-functions/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch05"><div class="nav-chapter-header"><span><span class="ch-num">05</span>Arrays &amp; Strings</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch05-arrays-strings/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch05-arrays-strings/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch05-arrays-strings/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch05-arrays-strings/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch05-arrays-strings/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch06"><div class="nav-chapter-header"><span><span class="ch-num">06</span>Pointers &amp; References</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch06-pointers-references/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch06-pointers-references/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch06-pointers-references/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch06-pointers-references/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch06-pointers-references/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch07"><div class="nav-chapter-header"><span><span class="ch-num">07</span>OOP — Basics</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch07-oop-basics/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch07-oop-basics/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch07-oop-basics/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch07-oop-basics/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch07-oop-basics/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch08"><div class="nav-chapter-header"><span><span class="ch-num">08</span>OOP — Inheritance &amp; Polymorphism</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch08-oop-inheritance/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch08-oop-inheritance/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch08-oop-inheritance/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch08-oop-inheritance/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch08-oop-inheritance/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch09"><div class="nav-chapter-header"><span><span class="ch-num">09</span>Templates</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch09-templates/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch09-templates/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch09-templates/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch09-templates/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch09-templates/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch10"><div class="nav-chapter-header"><span><span class="ch-num">10</span>STL — Containers</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch10-stl-containers/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch10-stl-containers/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch10-stl-containers/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch10-stl-containers/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch10-stl-containers/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter open" data-chapter="ch11"><div class="nav-chapter-header active"><span><span class="ch-num">11</span>STL — Algorithms &amp; Iterators</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch11-stl-algorithms/index.html" class="active"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch11-stl-algorithms/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch11-stl-algorithms/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch11-stl-algorithms/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch11-stl-algorithms/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch12"><div class="nav-chapter-header"><span><span class="ch-num">12</span>Memory Management</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch12-memory-management/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch12-memory-management/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch12-memory-management/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch12-memory-management/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch12-memory-management/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch13"><div class="nav-chapter-header"><span><span class="ch-num">13</span>Exception Handling</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch13-exception-handling/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch13-exception-handling/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch13-exception-handling/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch13-exception-handling/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch13-exception-handling/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch14"><div class="nav-chapter-header"><span><span class="ch-num">14</span>File I/O</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch14-file-io/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch14-file-io/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch14-file-io/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch14-file-io/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch14-file-io/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch15"><div class="nav-chapter-header"><span><span class="ch-num">15</span>Modern C++ (C++11–C++20)</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch15-modern-cpp/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch15-modern-cpp/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch15-modern-cpp/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch15-modern-cpp/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch15-modern-cpp/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-section-title">Capstone</div>
+  <div class="nav-chapter" data-chapter="ch16"><div class="nav-chapter-header"><span><span class="ch-num">16</span>Capstone Project</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch16-capstone/index.html"><span class="link-icon">🎯</span>Brief</a><a href="/chapters/ch16-capstone/walkthrough.html"><span class="link-icon">🗺</span>Walkthrough</a><a href="/chapters/ch16-capstone/solution.html"><span class="link-icon">✅</span>Solution</a></div></div>
+  <div class="nav-section-title">About</div>
+  <div style="padding:.4rem 1.1rem 1rem;font-size:.78rem;color:var(--muted);line-height:1.5;">Maintained by<br><a href="https://linkedin.com/in/adityabhuyan" target="_blank" rel="noopener">Aditya Pratap Bhuyan</a><br><span style="font-size:.72rem;">GNU GPL v3 License</span></div>
+</nav></aside>
+</nav></aside>
+
+<main id="main">
+  <div class="page-header">
+    <div class="breadcrumb"><a href="/index.html">Home</a> › Chapter 11</div>
+    <h1>Chapter 11 — STL: Algorithms &amp; Iterators</h1>
+    <p class="subtitle">Sort, search, transform and reshape data with the Standard Library's algorithms — all driven by iterators.</p>
+    <div class="chapter-tabs">
+      <a href="index.html" class="active">📖 Learning</a>
+      <a href="examples.html">💻 Examples</a>
+      <a href="exercises.html">✏️ Exercises</a>
+      <a href="solutions.html">✅ Solutions</a>
+      <a href="quiz.html">🧠 Quiz</a>
+    </div>
+  </div>
+
+  <div class="content">
+
+    <h2>11.1 The &lt;algorithm&gt; Header</h2>
+    <p>
+      Chapter 10 gave you containers. This chapter covers the other two STL components: <strong>algorithms</strong> —
+      ready-made, heavily tested functions for sorting, searching, copying, counting and rearranging — and the
+      <strong>iterators</strong> that connect those algorithms to containers. Almost every algorithm lives in one header.
+    </p>
+    <div class="callout">
+      <strong>Headers</strong>
+      <code>#include &lt;algorithm&gt;</code> for <code>sort</code>, <code>find</code>, <code>transform</code>, <code>copy</code>, …<br>
+      <code>#include &lt;numeric&gt;</code> for <code>accumulate</code> (and <code>iota</code>, <code>partial_sum</code>, …)<br>
+      <code>#include &lt;iterator&gt;</code> for <code>back_inserter</code>, <code>next</code>, <code>prev</code>, <code>distance</code><br>
+      <code>#include &lt;functional&gt;</code> for <code>greater</code>, <code>plus</code>, <code>multiplies</code>
+    </div>
+    <p>
+      An algorithm never receives a container. It receives a <strong>half-open range</strong> <code>[first, last)</code> described by two iterators:
+      <code>first</code> points at the first element, <code>last</code> points <em>one past</em> the final element and is never dereferenced.
+      Because of that design, one <code>std::sort</code> works for a <code>vector</code>, a <code>deque</code>, or a plain array.
+    </p>
+<pre><code>std::vector&lt;int&gt; v = {5, 2, 9};
+std::sort(v.begin(), v.end());      // the whole container
+std::sort(v.begin(), v.begin() + 2); // only the first two elements: [begin, begin+2)
+
+int arr[] = {5, 2, 9};
+std::sort(std::begin(arr), std::end(arr));  // even raw arrays work</code></pre>
+
+    <h2>11.2 Iterators</h2>
+    <p>
+      An <strong>iterator</strong> is any object that behaves like a pointer into a sequence: <code>*it</code> reads the element,
+      <code>++it</code> moves to the next one, and <code>it == other</code> compares positions. Different containers can offer
+      different amounts of power, so iterators are sorted into <strong>five categories</strong>, each adding abilities to the one before it.
+    </p>
+    <table>
+      <thead><tr><th>Category</th><th>Abilities</th><th>Typical sources</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Input</strong></td><td>Read each element once, moving forward (<code>*it</code>, <code>++it</code>, <code>==</code>). Single pass only.</td><td><code>std::istream_iterator</code></td></tr>
+        <tr><td><strong>Output</strong></td><td>Write each element once, moving forward (<code>*it = x</code>, <code>++it</code>). Single pass only.</td><td><code>std::back_inserter</code>, <code>std::ostream_iterator</code></td></tr>
+        <tr><td><strong>Forward</strong></td><td>Input abilities, plus multi-pass: you may re-read the same range again.</td><td><code>std::forward_list</code>, <code>unordered_set</code></td></tr>
+        <tr><td><strong>Bidirectional</strong></td><td>Forward abilities, plus <code>--it</code> to step backwards.</td><td><code>std::list</code>, <code>set</code>, <code>map</code></td></tr>
+        <tr><td><strong>Random-access</strong></td><td>Bidirectional abilities, plus jumps: <code>it + n</code>, <code>it - n</code>, <code>it[n]</code>, <code>it1 - it2</code>, <code>&lt;</code>, <code>&gt;</code>.</td><td><code>std::vector</code>, <code>deque</code>, <code>array</code>, raw pointers</td></tr>
+      </tbody>
+    </table>
+    <p>
+      Each algorithm states the weakest category it needs. <code>std::find</code> only needs <em>input</em> iterators, so it works everywhere.
+      <code>std::sort</code> needs <em>random-access</em> iterators, which is why you cannot call it on a <code>std::list</code> (use the member function
+      <code>list::sort()</code> instead).
+    </p>
+
+    <h3>begin(), end() and Friends</h3>
+    <table>
+      <thead><tr><th>Function</th><th>Returns</th></tr></thead>
+      <tbody>
+        <tr><td><code>begin()</code> / <code>end()</code></td><td>Mutable iterators to the first element / one past the last</td></tr>
+        <tr><td><code>cbegin()</code> / <code>cend()</code></td><td><strong>Const</strong> iterators — you can read through them but not modify the elements</td></tr>
+        <tr><td><code>rbegin()</code> / <code>rend()</code></td><td><strong>Reverse</strong> iterators — start at the last element and walk to the first; <code>++</code> moves toward the front</td></tr>
+        <tr><td><code>crbegin()</code> / <code>crend()</code></td><td>Const reverse iterators</td></tr>
+      </tbody>
+    </table>
+<pre><code>#include &lt;forward_list&gt;
+#include &lt;iostream&gt;
+#include &lt;iterator&gt;   // std::next, std::prev, std::distance
+#include &lt;list&gt;
+#include &lt;vector&gt;
+using namespace std;
+
+int main() {
+    vector&lt;int&gt; v = {10, 20, 30, 40};
+
+    // begin() / end(): mutable iterators. end() is ONE PAST the last element.
+    for (vector&lt;int&gt;::iterator it = v.begin(); it != v.end(); ++it)
+        *it += 1;                                   // v is now {11, 21, 31, 41}
+
+    // cbegin() / cend(): const iterators - you can read but not write
+    for (auto it = v.cbegin(); it != v.cend(); ++it)
+        cout &lt;&lt; *it &lt;&lt; ' ';                         // 11 21 31 41
+    cout &lt;&lt; '\n';
+    // *v.cbegin() = 0;                             // ERROR: cannot assign through const_iterator
+
+    // rbegin() / rend(): walk the container backwards (++ moves toward the front)
+    for (auto it = v.rbegin(); it != v.rend(); ++it)
+        cout &lt;&lt; *it &lt;&lt; ' ';                         // 41 31 21 11
+    cout &lt;&lt; '\n';
+
+    // Random-access iterators (vector) support arithmetic and comparison
+    cout &lt;&lt; *(v.begin() + 2) &lt;&lt; '\n';               // 31
+    cout &lt;&lt; (v.end() - v.begin()) &lt;&lt; '\n';          // 4
+
+    // Bidirectional iterators (list) support ++ and -- but NOT it + 2
+    list&lt;int&gt; lst = {1, 2, 3};
+    auto lit = lst.end();
+    --lit;                                          // step back from end() to the last element
+    cout &lt;&lt; *lit &lt;&lt; '\n';                           // 3
+
+    // Forward iterators (forward_list) support only ++
+    forward_list&lt;int&gt; fl = {1, 2, 3};
+    auto fit = fl.begin();
+    ++fit;
+    cout &lt;&lt; *fit &lt;&lt; '\n';                           // 2
+
+    // Helpers that work with EVERY category (using ++ repeatedly if necessary)
+    cout &lt;&lt; distance(lst.begin(), lst.end()) &lt;&lt; '\n';   // 3
+    cout &lt;&lt; *next(lst.begin(), 2) &lt;&lt; '\n';              // 3
+    cout &lt;&lt; *prev(lst.end()) &lt;&lt; '\n';                   // 3
+    return 0;
+}</code></pre>
+    <div class="callout warn">
+      <strong>Never dereference end()</strong>
+      <code>end()</code> is a sentinel, not an element. Dereferencing it is undefined behaviour. Also remember that
+      growing or erasing from a <code>vector</code> can invalidate iterators (Chapter 10).
+    </div>
+
+    <h2>11.3 Sorting — sort and stable_sort</h2>
+    <p>
+      <code>std::sort(first, last)</code> rearranges the range into ascending order using <code>operator&lt;</code>, in <strong>O(n log n)</strong> time.
+      It needs random-access iterators. To change the ordering, pass a <strong>comparator</strong> as a third argument: any callable
+      <code>comp(a, b)</code> that returns <code>true</code> when <code>a</code> must come <em>before</em> <code>b</code>.
+      It can be a function, a <strong>functor</strong> (an object with <code>operator()</code>), or a <strong>lambda</strong>.
+    </p>
+    <p>
+      <code>std::sort</code> is <em>not stable</em>: elements that compare equal may end up in any relative order.
+      <code>std::stable_sort</code> guarantees that equal elements keep their original relative order — essential when sorting by one key after another.
+    </p>
+<pre><code>#include &lt;algorithm&gt;
+#include &lt;functional&gt;   // std::greater
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+#include &lt;vector&gt;
+using namespace std;
+
+// A functor: a class with operator() - usable anywhere a comparator is expected
+struct Descending {
+    bool operator()(int a, int b) const { return a &gt; b; }
+};
+
+void print(const vector&lt;int&gt;&amp; v) {
+    for (int x : v) cout &lt;&lt; x &lt;&lt; ' ';
+    cout &lt;&lt; '\n';
+}
+
+int main() {
+    vector&lt;int&gt; v = {5, 2, 9, 1, 7};
+
+    sort(v.begin(), v.end());                       // default: operator&lt; -&gt; ascending
+    print(v);                                       // 1 2 5 7 9
+
+    sort(v.begin(), v.end(), Descending());         // functor comparator
+    print(v);                                       // 9 7 5 2 1
+
+    sort(v.begin(), v.end(), [](int a, int b) { return a &lt; b; });   // lambda comparator
+    print(v);                                       // 1 2 5 7 9
+
+    sort(v.begin(), v.end(), greater&lt;int&gt;());       // ready-made functor from &lt;functional&gt;
+    print(v);                                       // 9 7 5 2 1
+
+    // stable_sort keeps the original order of elements that compare equal
+    vector&lt;string&gt; words = {"pear", "fig", "apple", "kiwi", "plum", "date"};
+    stable_sort(words.begin(), words.end(),
+                [](const string&amp; a, const string&amp; b) { return a.size() &lt; b.size(); });
+    for (const string&amp; w : words) cout &lt;&lt; w &lt;&lt; ' ';
+    cout &lt;&lt; '\n';                                   // fig pear kiwi plum date apple
+    return 0;
+}</code></pre>
+    <div class="callout warn">
+      <strong>Comparators must be strict</strong>
+      Use <code>&lt;</code> or <code>&gt;</code>, never <code>&lt;=</code> or <code>&gt;=</code>. A comparator must return <code>false</code> for equal elements
+      (a "strict weak ordering"). Violating this can crash <code>std::sort</code>.
+    </div>
+
+    <h2>11.4 Searching and Counting — find, count, for_each</h2>
+    <p>
+      <code>std::find(first, last, value)</code> returns an <strong>iterator</strong> to the first matching element, or <code>last</code> (the <code>end()</code> of the range)
+      if nothing matches. <code>std::find_if</code> takes a <strong>predicate</strong> (a callable returning <code>bool</code>) instead of a value.
+      Always compare the result to <code>end()</code> before dereferencing it.
+    </p>
+    <p>
+      <code>std::count</code> / <code>std::count_if</code> return how many elements equal a value / satisfy a predicate.
+      <code>std::for_each</code> calls a function on every element; take the parameter by reference if you want to modify the element.
+    </p>
+<pre><code>#include &lt;algorithm&gt;
+#include &lt;iostream&gt;
+#include &lt;vector&gt;
+using namespace std;
+
+int main() {
+    vector&lt;int&gt; v = {4, 8, 15, 16, 23, 42, 8};
+
+    // find: returns an iterator to the first match, or end() if there is none
+    auto it = find(v.begin(), v.end(), 15);
+    if (it != v.end())                                      // ALWAYS check before dereferencing
+        cout &lt;&lt; "found " &lt;&lt; *it &lt;&lt; " at index " &lt;&lt; (it - v.begin()) &lt;&lt; '\n';
+    if (find(v.begin(), v.end(), 99) == v.end())
+        cout &lt;&lt; "99 not found\n";
+
+    // find_if: first element satisfying a predicate
+    auto big = find_if(v.begin(), v.end(), [](int x) { return x &gt; 20; });
+    if (big != v.end()) cout &lt;&lt; "first &gt; 20 is " &lt;&lt; *big &lt;&lt; '\n';
+
+    // count / count_if
+    cout &lt;&lt; "8 appears " &lt;&lt; count(v.begin(), v.end(), 8) &lt;&lt; " times\n";
+    cout &lt;&lt; "evens: " &lt;&lt; count_if(v.begin(), v.end(), [](int x) { return x % 2 == 0; }) &lt;&lt; '\n';
+
+    // for_each: run a function on every element (take by reference to modify)
+    for_each(v.begin(), v.end(), [](int&amp; x) { x *= 2; });
+    for_each(v.begin(), v.end(), [](int x) { cout &lt;&lt; x &lt;&lt; ' '; });
+    cout &lt;&lt; '\n';
+    return 0;
+}</code></pre>
+    <div class="callout tip">
+      <strong>Sorted containers?</strong>
+      Prefer the member functions <code>set::find</code> and <code>map::find</code> — they use the tree and are O(log n),
+      whereas <code>std::find</code> is a linear O(n) scan.
+    </div>
+
+    <h2>11.5 transform and accumulate</h2>
+    <p>
+      <code>std::transform</code> applies a function to each element and writes the results to an <strong>output range</strong>.
+      If the output iterator is <code>v.begin()</code> the transformation happens <strong>in place</strong>; if it is
+      <code>std::back_inserter(other)</code> the results are appended to a <strong>different container</strong>
+      (which may even hold a different type). A second overload combines two input ranges element by element.
+    </p>
+    <p>
+      <code>std::accumulate</code> (from <code>&lt;numeric&gt;</code>) <strong>folds</strong> a range into a single value, starting from an initial value.
+      The default operation is <code>+</code>; pass a binary function to get products, concatenations, or any custom reduction.
+    </p>
+<pre><code>#include &lt;algorithm&gt;
+#include &lt;functional&gt;   // std::plus, std::multiplies
+#include &lt;iostream&gt;
+#include &lt;iterator&gt;     // std::back_inserter
+#include &lt;numeric&gt;      // std::accumulate
+#include &lt;string&gt;
+#include &lt;vector&gt;
+using namespace std;
+
+void print(const vector&lt;int&gt;&amp; v) {
+    for (int x : v) cout &lt;&lt; x &lt;&lt; ' ';
+    cout &lt;&lt; '\n';
+}
+
+int main() {
+    vector&lt;int&gt; v = {1, 2, 3, 4, 5};
+
+    // In place: the output iterator is the same as the input's begin()
+    transform(v.begin(), v.end(), v.begin(), [](int x) { return x * x; });
+    print(v);                                           // 1 4 9 16 25
+
+    // To a different container: back_inserter calls push_back for each result
+    vector&lt;int&gt; out;
+    transform(v.begin(), v.end(), back_inserter(out), [](int x) { return x + 1; });
+    print(out);                                         // 2 5 10 17 26
+
+    // Two input ranges -&gt; one output (element-wise)
+    vector&lt;int&gt; a = {1, 2, 3}, b = {10, 20, 30}, sums(3);
+    transform(a.begin(), a.end(), b.begin(), sums.begin(), plus&lt;int&gt;());
+    print(sums);                                        // 11 22 33
+
+    // accumulate lives in &lt;numeric&gt;
+    vector&lt;int&gt; n = {1, 2, 3, 4, 5};
+    cout &lt;&lt; accumulate(n.begin(), n.end(), 0) &lt;&lt; '\n';                      // 15  (sum)
+    cout &lt;&lt; accumulate(n.begin(), n.end(), 1, multiplies&lt;int&gt;()) &lt;&lt; '\n';   // 120 (product)
+
+    vector&lt;string&gt; words = {"alpha", "beta", "gamma"};
+    string joined = accumulate(words.begin(), words.end(), string(),
+        [](const string&amp; acc, const string&amp; w) { return acc.empty() ? w : acc + ", " + w; });
+    cout &lt;&lt; joined &lt;&lt; '\n';                             // alpha, beta, gamma
+
+    // Pitfall: the init value's TYPE is the result type
+    vector&lt;double&gt; d = {0.5, 1.5, 2.5};
+    cout &lt;&lt; accumulate(d.begin(), d.end(), 0) &lt;&lt; '\n';      // 3   (int accumulator truncates!)
+    cout &lt;&lt; accumulate(d.begin(), d.end(), 0.0) &lt;&lt; '\n';    // 4.5
+    return 0;
+}</code></pre>
+    <div class="callout warn">
+      <strong>The type of init is the result type</strong>
+      <code>accumulate(d.begin(), d.end(), 0)</code> over a <code>vector&lt;double&gt;</code> uses an <code>int</code> accumulator and truncates every partial sum.
+      Write <code>0.0</code> for doubles. For a product, start from <code>1</code>, not <code>0</code>.
+    </div>
+
+    <h2>11.6 min_element, max_element, binary_search, lower_bound, upper_bound</h2>
+    <p>
+      <code>std::min_element</code> and <code>std::max_element</code> return <strong>iterators</strong> to the smallest/largest element (the first one if there are ties),
+      or <code>last</code> for an empty range — so check before dereferencing.
+    </p>
+    <p>
+      The <strong>binary-search family</strong> runs in O(log n) but has a strict precondition: <strong>the range must already be sorted</strong>
+      (with the same ordering used in the call). On unsorted data the results are meaningless.
+    </p>
+    <table>
+      <thead><tr><th>Function</th><th>Returns</th></tr></thead>
+      <tbody>
+        <tr><td><code>binary_search(f, l, x)</code></td><td><code>bool</code> — is <code>x</code> present?</td></tr>
+        <tr><td><code>lower_bound(f, l, x)</code></td><td>Iterator to the first element <strong>&ge; x</strong> (the insertion point that keeps the range sorted)</td></tr>
+        <tr><td><code>upper_bound(f, l, x)</code></td><td>Iterator to the first element <strong>&gt; x</strong></td></tr>
+      </tbody>
+    </table>
+    <p>The pair <code>[lower_bound, upper_bound)</code> spans every element equal to <code>x</code>, so their difference counts the duplicates.</p>
+<pre><code>#include &lt;algorithm&gt;
+#include &lt;iostream&gt;
+#include &lt;vector&gt;
+using namespace std;
+
+int main() {
+    vector&lt;int&gt; v = {7, 2, 9, 4, 4, 1};
+
+    // min_element / max_element return ITERATORS, not values
+    auto lo = min_element(v.begin(), v.end());
+    auto hi = max_element(v.begin(), v.end());
+    cout &lt;&lt; "min " &lt;&lt; *lo &lt;&lt; " at index " &lt;&lt; (lo - v.begin()) &lt;&lt; '\n';     // min 1 at index 5
+    cout &lt;&lt; "max " &lt;&lt; *hi &lt;&lt; " at index " &lt;&lt; (hi - v.begin()) &lt;&lt; '\n';     // max 9 at index 2
+
+    // The binary-search family REQUIRES a sorted range
+    sort(v.begin(), v.end());                               // 1 2 4 4 7 9
+    cout &lt;&lt; boolalpha;
+    cout &lt;&lt; binary_search(v.begin(), v.end(), 7) &lt;&lt; '\n';   // true
+    cout &lt;&lt; binary_search(v.begin(), v.end(), 5) &lt;&lt; '\n';   // false
+
+    auto lb = lower_bound(v.begin(), v.end(), 4);           // first element &gt;= 4
+    auto ub = upper_bound(v.begin(), v.end(), 4);           // first element &gt;  4
+    cout &lt;&lt; (lb - v.begin()) &lt;&lt; ' ' &lt;&lt; (ub - v.begin()) &lt;&lt; '\n';   // 2 4
+    cout &lt;&lt; "4 occurs " &lt;&lt; (ub - lb) &lt;&lt; " times\n";                // 2
+
+    // Where would 5 be inserted to keep the vector sorted?
+    auto pos = lower_bound(v.begin(), v.end(), 5);
+    v.insert(pos, 5);                                       // 1 2 4 4 5 7 9
+    for (int x : v) cout &lt;&lt; x &lt;&lt; ' ';
+    cout &lt;&lt; '\n';
+    return 0;
+}</code></pre>
+
+    <h2>11.7 copy, remove, and unique</h2>
+    <p>
+      <code>std::copy</code> copies a range to a destination iterator; <code>std::copy_if</code> copies only elements satisfying a predicate.
+      The destination must have room — either pre-size it or use <code>std::back_inserter</code>.
+    </p>
+    <h3>The erase-remove idiom</h3>
+    <p>
+      <code>std::remove</code> and <code>std::remove_if</code> <strong>do not actually remove anything</strong>. An algorithm only sees iterators,
+      not the container, so it cannot change the container's size. Instead, it shifts the elements you want to keep to the front
+      (preserving their order) and returns an iterator to the new logical end. The leftover tail contains unspecified values.
+      To really shrink the container, hand that iterator to <code>erase</code>:
+    </p>
+<pre><code>v.erase(std::remove(v.begin(), v.end(), 2), v.end());                       // remove by value
+v.erase(std::remove_if(v.begin(), v.end(), pred), v.end());                 // remove by condition</code></pre>
+    <p>This two-step combination is the <strong>erase-remove idiom</strong>. In C++20 you can write <code>std::erase(v, 2)</code> or <code>std::erase_if(v, pred)</code> instead.</p>
+    <h3>unique</h3>
+    <p>
+      <code>std::unique</code> collapses runs of <strong>adjacent</strong> equal elements, and like <code>remove</code> it returns the new end and needs an <code>erase</code>.
+      To deduplicate a whole container, <strong>sort first</strong> so that equal values become neighbours.
+      A related helper, <code>std::adjacent_find</code>, returns an iterator to the first pair of equal neighbours (or <code>end()</code>).
+    </p>
+<pre><code>#include &lt;algorithm&gt;
+#include &lt;iostream&gt;
+#include &lt;iterator&gt;
+#include &lt;vector&gt;
+using namespace std;
+
+void print(const vector&lt;int&gt;&amp; v) {
+    for (int x : v) cout &lt;&lt; x &lt;&lt; ' ';
+    cout &lt;&lt; '\n';
+}
+
+int main() {
+    vector&lt;int&gt; src = {1, 2, 3, 4, 5, 6};
+
+    // copy: destination must already have room (or use an inserter)
+    vector&lt;int&gt; dst(src.size());
+    copy(src.begin(), src.end(), dst.begin());
+    print(dst);                                             // 1 2 3 4 5 6
+
+    vector&lt;int&gt; evens;
+    copy_if(src.begin(), src.end(), back_inserter(evens),
+            [](int x) { return x % 2 == 0; });
+    print(evens);                                           // 2 4 6
+
+    // --- erase-remove idiom ---
+    vector&lt;int&gt; v = {1, 2, 3, 2, 4, 2, 5};
+    auto newEnd = remove(v.begin(), v.end(), 2);            // shifts keepers to the front
+    cout &lt;&lt; "size before erase: " &lt;&lt; v.size() &lt;&lt; '\n';      // still 7
+    v.erase(newEnd, v.end());                               // now actually shrink
+    print(v);                                               // 1 3 4 5
+
+    v.erase(remove_if(v.begin(), v.end(), [](int x) { return x % 2 != 0; }), v.end());
+    print(v);                                               // 4
+
+    // --- unique removes only ADJACENT duplicates ---
+    vector&lt;int&gt; d = {1, 1, 2, 2, 2, 3, 1, 1};
+    d.erase(unique(d.begin(), d.end()), d.end());
+    print(d);                                               // 1 2 3 1
+
+    vector&lt;int&gt; e = {3, 1, 3, 2, 1, 2};
+    sort(e.begin(), e.end());                               // sort first to make equals adjacent
+    e.erase(unique(e.begin(), e.end()), e.end());
+    print(e);                                               // 1 2 3
+
+    // --- adjacent_find: first position where two neighbours are equal ---
+    vector&lt;int&gt; s = {1, 2, 2, 3};
+    auto dup = adjacent_find(s.begin(), s.end());
+    if (dup != s.end()) cout &lt;&lt; "first duplicate: " &lt;&lt; *dup &lt;&lt; '\n';    // 2
+    return 0;
+}</code></pre>
+
+    <h2>11.8 partition, reverse, rotate, generate, fill</h2>
+    <table>
+      <thead><tr><th>Algorithm</th><th>What it does</th></tr></thead>
+      <tbody>
+        <tr><td><code>partition(f, l, pred)</code></td><td>Moves elements satisfying <code>pred</code> to the front; returns an iterator to the first element of the second group. Relative order is <strong>not</strong> preserved.</td></tr>
+        <tr><td><code>stable_partition(f, l, pred)</code></td><td>Same, but preserves the relative order inside each group (may use extra memory).</td></tr>
+        <tr><td><code>reverse(f, l)</code></td><td>Reverses the range in place.</td></tr>
+        <tr><td><code>rotate(f, mid, l)</code></td><td>Rotates left so that <code>mid</code> becomes the new first element.</td></tr>
+        <tr><td><code>fill(f, l, x)</code></td><td>Assigns <code>x</code> to every element.</td></tr>
+        <tr><td><code>generate(f, l, gen)</code></td><td>Assigns the result of calling <code>gen()</code> to each element.</td></tr>
+      </tbody>
+    </table>
+<pre><code>#include &lt;algorithm&gt;
+#include &lt;iostream&gt;
+#include &lt;numeric&gt;
+#include &lt;vector&gt;
+using namespace std;
+
+void print(const vector&lt;int&gt;&amp; v) {
+    for (int x : v) cout &lt;&lt; x &lt;&lt; ' ';
+    cout &lt;&lt; '\n';
+}
+
+int main() {
+    auto isEven = [](int x) { return x % 2 == 0; };
+
+    // partition: elements satisfying the predicate go first; returns the split point.
+    // Relative order inside each group is NOT guaranteed.
+    vector&lt;int&gt; a = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+    auto mid = partition(a.begin(), a.end(), isEven);
+    cout &lt;&lt; "evens in the first " &lt;&lt; (mid - a.begin()) &lt;&lt; " slots\n";   // 5
+
+    // stable_partition: same split, but relative order is preserved
+    vector&lt;int&gt; b = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+    stable_partition(b.begin(), b.end(), isEven);
+    print(b);                                               // 2 4 6 8 10 1 3 5 7 9
+
+    // reverse / rotate
+    vector&lt;int&gt; r = {1, 2, 3, 4, 5};
+    reverse(r.begin(), r.end());
+    print(r);                                               // 5 4 3 2 1
+
+    vector&lt;int&gt; t = {1, 2, 3, 4, 5};
+    rotate(t.begin(), t.begin() + 2, t.end());              // element at +2 becomes the new first
+    print(t);                                               // 3 4 5 1 2
+
+    // fill / generate
+    vector&lt;int&gt; z(5);
+    fill(z.begin(), z.end(), 7);
+    print(z);                                               // 7 7 7 7 7
+
+    generate(z.begin(), z.end(), [n = 1]() mutable { return n++ * 10; });
+    print(z);                                               // 10 20 30 40 50
+    return 0;
+}</code></pre>
+
+    <h2>11.9 Lambda Expressions — A Brief Introduction</h2>
+    <p>
+      Many algorithms take a small function: a comparator for <code>sort</code>, a predicate for <code>find_if</code>, an operation for <code>transform</code>.
+      Writing a separate named function or functor for each is tedious, so C++11 added <strong>lambda expressions</strong> — anonymous functions defined right where you use them:
+    </p>
+<pre><code>[capture](parameters) { body }</code></pre>
+    <ul>
+      <li><code>[]</code> — captures nothing; the lambda can only use its parameters.</li>
+      <li><code>[x]</code> — captures <code>x</code> <strong>by value</strong> (a private copy).</li>
+      <li><code>[&amp;x]</code> — captures <code>x</code> <strong>by reference</strong> (can modify the original).</li>
+      <li><code>[=]</code> / <code>[&amp;]</code> — capture everything used, by value / by reference.</li>
+    </ul>
+<pre><code>#include &lt;algorithm&gt;
+#include &lt;iostream&gt;
+#include &lt;vector&gt;
+using namespace std;
+
+int main() {
+    vector&lt;int&gt; v = {3, 8, 1, 9, 5, 12};
+
+    // [capture](parameters) { body }
+    auto isEven = [](int x) { return x % 2 == 0; };     // no capture
+    cout &lt;&lt; boolalpha &lt;&lt; isEven(4) &lt;&lt; '\n';             // true
+
+    // Capture by value: the lambda gets its own copy of 'threshold'
+    int threshold = 5;
+    int big = count_if(v.begin(), v.end(), [threshold](int x) { return x &gt; threshold; });
+    cout &lt;&lt; big &lt;&lt; '\n';                                // 3  (8, 9 and 12 are greater than 5)
+
+    // Capture by reference: the lambda can modify 'total'
+    int total = 0;
+    for_each(v.begin(), v.end(), [&amp;total](int x) { total += x; });
+    cout &lt;&lt; total &lt;&lt; '\n';                              // 38
+    return 0;
+}</code></pre>
+    <p>Lambdas have much more to offer (generic lambdas, <code>mutable</code>, init-captures, <code>constexpr</code>); they receive full coverage in <a href="/chapters/ch15-modern-cpp/index.html">Chapter 15</a>.</p>
+
+    <h2>11.10 Quick Reference</h2>
+    <table>
+      <thead><tr><th>Task</th><th>Algorithm</th><th>Needs sorted?</th><th>Complexity</th></tr></thead>
+      <tbody>
+        <tr><td>Sort</td><td><code>sort</code>, <code>stable_sort</code></td><td>—</td><td>O(n log n)</td></tr>
+        <tr><td>Find / count</td><td><code>find</code>, <code>find_if</code>, <code>count</code>, <code>count_if</code></td><td>No</td><td>O(n)</td></tr>
+        <tr><td>Min / max</td><td><code>min_element</code>, <code>max_element</code></td><td>No</td><td>O(n)</td></tr>
+        <tr><td>Fast search</td><td><code>binary_search</code>, <code>lower_bound</code>, <code>upper_bound</code></td><td><strong>Yes</strong></td><td>O(log n) on random-access</td></tr>
+        <tr><td>Apply / reduce</td><td><code>for_each</code>, <code>transform</code>, <code>accumulate</code></td><td>No</td><td>O(n)</td></tr>
+        <tr><td>Copy</td><td><code>copy</code>, <code>copy_if</code></td><td>No</td><td>O(n)</td></tr>
+        <tr><td>Delete</td><td><code>remove</code>, <code>remove_if</code> + <code>erase</code>, <code>unique</code> + <code>erase</code></td><td><code>unique</code>: usually sort first</td><td>O(n)</td></tr>
+        <tr><td>Rearrange</td><td><code>partition</code>, <code>stable_partition</code>, <code>reverse</code>, <code>rotate</code></td><td>No</td><td>O(n)</td></tr>
+        <tr><td>Fill</td><td><code>fill</code>, <code>generate</code></td><td>No</td><td>O(n)</td></tr>
+      </tbody>
+    </table>
+
+    <h2>11.11 Key Takeaways</h2>
+    <ul>
+      <li>Algorithms operate on <strong>iterator ranges</strong> <code>[first, last)</code>, not containers; <code>last</code> is one past the end and must never be dereferenced.</li>
+      <li>The five iterator categories are input, output, forward, bidirectional and random-access; each algorithm requires a minimum category.</li>
+      <li><code>std::find</code> returns an iterator — compare it with <code>end()</code> to see whether the element was found.</li>
+      <li><code>sort</code> is unstable; <code>stable_sort</code> keeps equal elements in their original order. Comparators must use strict <code>&lt;</code>/<code>&gt;</code>.</li>
+      <li><code>binary_search</code>, <code>lower_bound</code> and <code>upper_bound</code> require a <strong>sorted</strong> range.</li>
+      <li><code>remove</code>/<code>remove_if</code>/<code>unique</code> only rearrange; pair them with <code>erase</code> (the erase-remove idiom) to shrink the container.</li>
+      <li><code>transform</code> writes to an output range (in place or via <code>back_inserter</code>); <code>accumulate</code> lives in <code>&lt;numeric&gt;</code> and its init value sets the result type.</li>
+      <li>Lambdas make it easy to supply comparators and predicates inline.</li>
+    </ul>
+
+    <div style="display:flex;justify-content:space-between;margin-top:2rem;gap:.75rem;">
+      <a href="/chapters/ch10-stl-containers/index.html" class="btn btn-outline" style="text-decoration:none;">← Chapter 10</a>
+      <a href="examples.html" class="btn" style="text-decoration:none;">Next: Examples →</a>
+    </div>
+
+  </div>
+</main>
+</div>
+<footer id="site-footer">
+  &copy; 2024 <a href="https://linkedin.com/in/adityabhuyan" target="_blank" rel="noopener">Aditya Pratap Bhuyan</a> &nbsp;|&nbsp;
+  <a href="https://github.com/aditya-bhuyan/cpp-learning-hub" target="_blank" rel="noopener">GitHub</a> &nbsp;|&nbsp;
+  GNU GPL v3 License
+</footer>
+<script src="/assets/js/nav.js"></script>
+</body>
+</html>

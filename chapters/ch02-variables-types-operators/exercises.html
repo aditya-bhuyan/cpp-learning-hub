@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ch 02 Exercises — Variables, Types &amp; Operators | C++ Learning Hub</title>
+  <link rel="stylesheet" href="/assets/css/style.css" />
+</head>
+<body>
+<header id="site-header">
+  <button id="hamburger" aria-label="Toggle navigation">&#9776;</button>
+  <div id="site-logo">C++ Learning Hub <span class="badge">FREE</span></div>
+  <button id="theme-toggle">☾ Dark</button>
+</header>
+<div id="layout">
+<aside id="sidebar"><nav>
+  <div class="nav-section-title">C++ Learning Hub</div>
+  <div class="nav-chapter" data-chapter="home"><div class="nav-chapter-header"><span>🏠 Home</span></div><div class="nav-chapter-links"><a href="/index.html">Overview</a></div></div>
+  <div class="nav-section-title">Chapters</div>
+  <div class="nav-chapter" data-chapter="ch01"><div class="nav-chapter-header"><span><span class="ch-num">01</span>Introduction to C++</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch01-introduction/index.html"><span class="link-icon">📖</span>Learning</a></div></div>
+  <div class="nav-chapter" data-chapter="ch02"><div class="nav-chapter-header"><span><span class="ch-num">02</span>Variables, Types &amp; Operators</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="index.html"><span class="link-icon">📖</span>Learning</a><a href="examples.html"><span class="link-icon">💻</span>Examples</a><a href="exercises.html" class="active"><span class="link-icon">✏️</span>Exercises</a><a href="solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch03"><div class="nav-chapter-header"><span><span class="ch-num">03</span>Control Flow</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch03-control-flow/index.html"><span class="link-icon">📖</span>Learning</a></div></div>
+  <div class="nav-chapter" data-chapter="ch04"><div class="nav-chapter-header"><span><span class="ch-num">04</span>Functions</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch04-functions/index.html"><span class="link-icon">📖</span>Learning</a></div></div>
+  <div class="nav-chapter" data-chapter="ch05"><div class="nav-chapter-header"><span><span class="ch-num">05</span>Arrays &amp; Strings</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch05-arrays-strings/index.html"><span class="link-icon">📖</span>Learning</a></div></div>
+  <div class="nav-chapter" data-chapter="ch06"><div class="nav-chapter-header"><span><span class="ch-num">06</span>Pointers &amp; References</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch06-pointers-references/index.html"><span class="link-icon">📖</span>Learning</a></div></div>
+  <div class="nav-chapter" data-chapter="ch07"><div class="nav-chapter-header"><span><span class="ch-num">07</span>OOP — Basics</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch07-oop-basics/index.html"><span class="link-icon">📖</span>Learning</a></div></div>
+  <div class="nav-chapter" data-chapter="ch08"><div class="nav-chapter-header"><span><span class="ch-num">08</span>OOP — Inheritance &amp; Polymorphism</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch08-oop-inheritance/index.html"><span class="link-icon">📖</span>Learning</a></div></div>
+  <div class="nav-chapter" data-chapter="ch09"><div class="nav-chapter-header"><span><span class="ch-num">09</span>Templates</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch09-templates/index.html"><span class="link-icon">📖</span>Learning</a></div></div>
+  <div class="nav-chapter" data-chapter="ch10"><div class="nav-chapter-header"><span><span class="ch-num">10</span>STL — Containers</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch10-stl-containers/index.html"><span class="link-icon">📖</span>Learning</a></div></div>
+  <div class="nav-chapter" data-chapter="ch11"><div class="nav-chapter-header"><span><span class="ch-num">11</span>STL — Algorithms</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch11-stl-algorithms/index.html"><span class="link-icon">📖</span>Learning</a></div></div>
+  <div class="nav-chapter" data-chapter="ch12"><div class="nav-chapter-header"><span><span class="ch-num">12</span>Memory Management</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch12-memory-management/index.html"><span class="link-icon">📖</span>Learning</a></div></div>
+  <div class="nav-chapter" data-chapter="ch13"><div class="nav-chapter-header"><span><span class="ch-num">13</span>Exception Handling</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch13-exception-handling/index.html"><span class="link-icon">📖</span>Learning</a></div></div>
+  <div class="nav-chapter" data-chapter="ch14"><div class="nav-chapter-header"><span><span class="ch-num">14</span>File I/O</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch14-file-io/index.html"><span class="link-icon">📖</span>Learning</a></div></div>
+  <div class="nav-chapter" data-chapter="ch15"><div class="nav-chapter-header"><span><span class="ch-num">15</span>Modern C++</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch15-modern-cpp/index.html"><span class="link-icon">📖</span>Learning</a></div></div>
+  <div class="nav-section-title">Capstone</div>
+  <div class="nav-chapter" data-chapter="ch16"><div class="nav-chapter-header"><span><span class="ch-num">16</span>Capstone Project</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch16-capstone/index.html"><span class="link-icon">🎯</span>Brief</a></div></div>
+  <div class="nav-section-title">About</div>
+  <div style="padding:.4rem 1.1rem 1rem;font-size:.78rem;color:var(--muted);line-height:1.5;">Maintained by<br><a href="https://linkedin.com/in/adityabhuyan" target="_blank" rel="noopener">Aditya Pratap Bhuyan</a><br><span style="font-size:.72rem;">GNU GPL v3 License</span></div>
+</nav></aside>
+
+<main id="main">
+  <div class="page-header">
+    <div class="breadcrumb"><a href="/index.html">Home</a> › <a href="index.html">Chapter 02</a> › Exercises</div>
+    <h1>Chapter 02 — Exercises</h1>
+    <p class="subtitle">Apply what you've learned. Attempt each problem before viewing the solutions.</p>
+    <div class="chapter-tabs">
+      <a href="index.html">📖 Learning</a>
+      <a href="examples.html">💻 Examples</a>
+      <a href="exercises.html" class="active">✏️ Exercises</a>
+      <a href="solutions.html">✅ Solutions</a>
+      <a href="quiz.html">🧠 Quiz</a>
+    </div>
+  </div>
+
+  <div class="content">
+
+    <div class="callout">
+      <strong>Instructions</strong>
+      Work through each exercise in a text editor or IDE. Compile with <code>g++ -std=c++17 -Wall -Wextra</code> and fix every warning.
+      Only open <a href="solutions.html">Solutions</a> after you have made a genuine attempt.
+    </div>
+
+    <!-- Exercise 1 -->
+    <div class="exercise-card">
+      <div class="card-header">
+        Exercise 1 — Sizes of the Primitive Types
+        <span class="tag tag-easy">Easy</span>
+      </div>
+      <div class="card-body">
+        <p>Write a program that declares <strong>one initialized variable of each primitive type</strong>:
+        <code>bool</code>, <code>char</code>, <code>short</code>, <code>int</code>, <code>long</code>, <code>long long</code>,
+        <code>float</code>, <code>double</code>, <code>long double</code>, and <code>unsigned int</code>.
+        Print a table showing each type's name, its <code>sizeof</code> in bytes, and the stored value.</p>
+        <p><strong>Hint:</strong> <code>sizeof</code> accepts a variable name, so the size always matches the declared type. Use <code>std::setw</code> from <code>&lt;iomanip&gt;</code> to align the columns, and <code>std::boolalpha</code> to print <code>true</code> instead of <code>1</code>.</p>
+        <p><strong>Expected output (64-bit system):</strong></p>
+<pre><code>Type            Bytes     Value
+----------------------------------------
+bool            1         true
+char            1         C
+short           2         1000
+int             4         42
+...</code></pre>
+      </div>
+    </div>
+
+    <!-- Exercise 2 -->
+    <div class="exercise-card">
+      <div class="card-header">
+        Exercise 2 — Swap Two Numbers Using XOR
+        <span class="tag tag-easy">Easy</span>
+      </div>
+      <div class="card-body">
+        <p>Read two integers and swap them <strong>without a temporary variable</strong>, using only the XOR operator (<code>^</code>). Print both values before and after the swap.</p>
+        <p><strong>Hint:</strong> Three statements are enough: <code>a ^= b; b ^= a; a ^= b;</code>. Work through it on paper with <code>a = 5 (0101)</code> and <code>b = 3 (0011)</code> to see why it works. Think about what goes wrong if both names refer to the <em>same</em> variable.</p>
+        <p><strong>Expected output (sample):</strong></p>
+<pre><code>Enter two integers: 17 42
+Before: a = 17, b = 42
+After : a = 42, b = 17</code></pre>
+      </div>
+    </div>
+
+    <!-- Exercise 3 -->
+    <div class="exercise-card">
+      <div class="card-header">
+        Exercise 3 — Even or Odd with Bitwise AND
+        <span class="tag tag-easy">Easy</span>
+      </div>
+      <div class="card-body">
+        <p>Read an integer and report whether it is even or odd. Do <strong>not</strong> use <code>%</code> or <code>/</code>; use the bitwise AND operator on the lowest bit.</p>
+        <p><strong>Hint:</strong> The lowest bit of every odd number is 1. Beware of precedence — <code>==</code> binds tighter than <code>&amp;</code>, so write <code>(n &amp; 1) == 0</code>. Test with a negative number too.</p>
+        <p><strong>Expected output (sample):</strong></p>
+<pre><code>Enter an integer: 7
+7 is odd
+
+Enter an integer: 10
+10 is even</code></pre>
+      </div>
+    </div>
+
+    <!-- Exercise 4 -->
+    <div class="exercise-card">
+      <div class="card-header">
+        Exercise 4 — Binary Representation of an 8-Bit Number
+        <span class="tag tag-medium">Medium</span>
+      </div>
+      <div class="card-body">
+        <p>Read an integer from 0 to 255 and print its <strong>8-bit binary representation</strong> (most significant bit first), with a space between the two nibbles. Reject values outside the range with an error message.</p>
+        <p>Do it manually with shifts and masks — do not use <code>std::bitset</code> (you may use it afterwards to verify your result).</p>
+        <p><strong>Hint:</strong> Loop <code>bit</code> from 7 down to 0 and print <code>(value &gt;&gt; bit) &amp; 1</code>. Store the number in an <code>unsigned char</code> or <code>unsigned int</code> so shifts behave predictably.</p>
+        <p><strong>Expected output (sample):</strong></p>
+<pre><code>Enter a number (0-255): 165
+165 in binary: 1010 0101
+
+Enter a number (0-255): 5
+5 in binary: 0000 0101</code></pre>
+      </div>
+    </div>
+
+    <!-- Exercise 5 -->
+    <div class="exercise-card">
+      <div class="card-header">
+        Exercise 5 — Temperature Conversion Table
+        <span class="tag tag-medium">Medium</span>
+      </div>
+      <div class="card-body">
+        <p>Print a Celsius-to-Fahrenheit conversion table for every temperature from <strong>-40°C to 100°C in steps of 10</strong>. Format it as two aligned columns with one decimal place for Fahrenheit.</p>
+        <p>Formula: <code>F = C × 9 / 5 + 32</code></p>
+        <p><strong>Hint:</strong> Watch the integer-division trap — <code>9 / 5</code> is <code>1</code> in C++. Write <code>9.0 / 5.0</code> (or put the multiplication first with a floating-point operand). Use <code>std::fixed</code>, <code>std::setprecision(1)</code> and <code>std::setw</code>. Note that -40°C equals -40°F.</p>
+        <p><strong>Expected output (first and last rows):</strong></p>
+<pre><code> Celsius | Fahrenheit
+---------+-----------
+     -40 |     -40.0
+     -30 |     -22.0
+     ...
+     100 |     212.0</code></pre>
+      </div>
+    </div>
+
+    <div style="display:flex;justify-content:space-between;margin-top:2rem;">
+      <a href="examples.html" class="btn btn-outline" style="text-decoration:none;">← Examples</a>
+      <a href="solutions.html" class="btn" style="text-decoration:none;">View Solutions →</a>
+    </div>
+
+  </div>
+</main>
+</div>
+<footer id="site-footer">
+  &copy; 2024 <a href="https://linkedin.com/in/adityabhuyan" target="_blank" rel="noopener">Aditya Pratap Bhuyan</a> &nbsp;|&nbsp;
+  <a href="https://github.com/aditya-bhuyan/cpp-learning-hub" target="_blank" rel="noopener">GitHub</a> &nbsp;|&nbsp;
+  GNU GPL v3 License
+</footer>
+<script src="/assets/js/nav.js"></script>
+</body>
+</html>

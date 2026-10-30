@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ch 08 — Solutions | C++ Learning Hub</title>
+  <link rel="stylesheet" href="/assets/css/style.css" />
+</head>
+<body>
+<header id="site-header">
+  <button id="hamburger" aria-label="Toggle navigation">&#9776;</button>
+  <div id="site-logo">C++ Learning Hub <span class="badge">FREE</span></div>
+  <button id="theme-toggle">☾ Dark</button>
+</header>
+<div id="layout">
+<aside id="sidebar"><nav>
+  <div class="nav-section-title">C++ Learning Hub</div>
+  <div class="nav-chapter" data-chapter="home"><div class="nav-chapter-header"><span>🏠 Home</span></div><div class="nav-chapter-links"><a href="/index.html">Overview</a></div></div>
+  <div class="nav-section-title">Chapters</div>
+  <div class="nav-chapter" data-chapter="ch01"><div class="nav-chapter-header"><span><span class="ch-num">01</span>Introduction to C++</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch01-introduction/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch01-introduction/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch01-introduction/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch01-introduction/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch01-introduction/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch02"><div class="nav-chapter-header"><span><span class="ch-num">02</span>Variables, Types &amp; Operators</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch02-variables-types-operators/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch02-variables-types-operators/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch02-variables-types-operators/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch02-variables-types-operators/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch02-variables-types-operators/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch03"><div class="nav-chapter-header"><span><span class="ch-num">03</span>Control Flow</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch03-control-flow/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch03-control-flow/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch03-control-flow/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch03-control-flow/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch03-control-flow/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch04"><div class="nav-chapter-header"><span><span class="ch-num">04</span>Functions</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch04-functions/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch04-functions/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch04-functions/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch04-functions/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch04-functions/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch05"><div class="nav-chapter-header"><span><span class="ch-num">05</span>Arrays &amp; Strings</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch05-arrays-strings/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch05-arrays-strings/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch05-arrays-strings/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch05-arrays-strings/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch05-arrays-strings/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch06"><div class="nav-chapter-header"><span><span class="ch-num">06</span>Pointers &amp; References</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch06-pointers-references/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch06-pointers-references/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch06-pointers-references/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch06-pointers-references/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch06-pointers-references/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch07"><div class="nav-chapter-header"><span><span class="ch-num">07</span>OOP — Basics</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch07-oop-basics/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch07-oop-basics/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch07-oop-basics/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch07-oop-basics/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch07-oop-basics/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter open" data-chapter="ch08"><div class="nav-chapter-header"><span><span class="ch-num">08</span>OOP — Inheritance &amp; Polymorphism</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch08-oop-inheritance/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch08-oop-inheritance/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch08-oop-inheritance/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch08-oop-inheritance/solutions.html" class="active"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch08-oop-inheritance/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch09"><div class="nav-chapter-header"><span><span class="ch-num">09</span>Templates</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch09-templates/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch09-templates/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch09-templates/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch09-templates/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch09-templates/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch10"><div class="nav-chapter-header"><span><span class="ch-num">10</span>STL — Containers</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch10-stl-containers/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch10-stl-containers/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch10-stl-containers/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch10-stl-containers/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch10-stl-containers/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch11"><div class="nav-chapter-header"><span><span class="ch-num">11</span>STL — Algorithms &amp; Iterators</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch11-stl-algorithms/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch11-stl-algorithms/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch11-stl-algorithms/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch11-stl-algorithms/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch11-stl-algorithms/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch12"><div class="nav-chapter-header"><span><span class="ch-num">12</span>Memory Management</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch12-memory-management/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch12-memory-management/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch12-memory-management/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch12-memory-management/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch12-memory-management/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch13"><div class="nav-chapter-header"><span><span class="ch-num">13</span>Exception Handling</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch13-exception-handling/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch13-exception-handling/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch13-exception-handling/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch13-exception-handling/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch13-exception-handling/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch14"><div class="nav-chapter-header"><span><span class="ch-num">14</span>File I/O</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch14-file-io/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch14-file-io/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch14-file-io/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch14-file-io/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch14-file-io/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch15"><div class="nav-chapter-header"><span><span class="ch-num">15</span>Modern C++ (C++11–C++20)</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch15-modern-cpp/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch15-modern-cpp/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch15-modern-cpp/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch15-modern-cpp/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch15-modern-cpp/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-section-title">Capstone</div>
+  <div class="nav-chapter" data-chapter="ch16"><div class="nav-chapter-header"><span><span class="ch-num">16</span>Capstone Project</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch16-capstone/index.html"><span class="link-icon">🎯</span>Brief</a><a href="/chapters/ch16-capstone/walkthrough.html"><span class="link-icon">🗺</span>Walkthrough</a><a href="/chapters/ch16-capstone/solution.html"><span class="link-icon">✅</span>Solution</a></div></div>
+  <div class="nav-section-title">About</div>
+  <div style="padding:.4rem 1.1rem 1rem;font-size:.78rem;color:var(--muted);line-height:1.5;">Maintained by<br><a href="https://linkedin.com/in/adityabhuyan" target="_blank" rel="noopener">Aditya Pratap Bhuyan</a><br><span style="font-size:.72rem;">GNU GPL v3 License</span></div>
+</nav></aside>
+
+<main id="main">
+  <div class="page-header">
+    <div class="breadcrumb"><a href="/index.html">Home</a> › <a href="index.html">Chapter 08</a> › Solutions</div>
+    <h1>Chapter 08 — Solutions</h1>
+    <p class="subtitle">Reference solutions with explanations. Only read after attempting the exercises yourself.</p>
+    <div class="chapter-tabs">
+      <a href="index.html">📖 Learning</a>
+      <a href="examples.html">💻 Examples</a>
+      <a href="exercises.html">✏️ Exercises</a>
+      <a href="solutions.html" class="active">✅ Solutions</a>
+      <a href="quiz.html">🧠 Quiz</a>
+    </div>
+  </div>
+
+  <div class="content">
+
+    <div class="callout warn">
+      <strong>Spoiler Warning</strong>
+      These are reference solutions. There are often multiple valid approaches — if your output matches
+      but your code differs, that is perfectly fine.
+    </div>
+
+    <!-- Solution 1 -->
+    <div class="solution-card">
+      <div class="card-header">✅ Solution 1 — Vehicle, Car and Truck</div>
+      <div class="card-body">
+        <p>The base class owns the shared data and the shared printing logic. Each derived constructor forwards
+        <code>make</code>, <code>model</code> and <code>year</code> to <code>Vehicle</code> through the initializer list and then
+        initializes only its own member. The derived <code>display()</code> reuses the base version via
+        <code>Vehicle::display()</code> — the scope operator bypasses dynamic dispatch and calls exactly that function.</p>
+<pre><code>// solution_08_vehicle.cpp
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+class Vehicle {
+protected:
+    string make;
+    string model;
+    int    year;
+
+public:
+    Vehicle(const string&amp; mk, const string&amp; md, int y)
+        : make(mk), model(md), year(y) {}
+
+    virtual void display() const {
+        cout &lt;&lt; make &lt;&lt; " " &lt;&lt; model &lt;&lt; " (" &lt;&lt; year &lt;&lt; ")\n";
+    }
+
+    virtual ~Vehicle() = default;
+};
+
+class Car : public Vehicle {
+    int numDoors;
+
+public:
+    Car(const string&amp; mk, const string&amp; md, int y, int doors)
+        : Vehicle(mk, md, y), numDoors(doors) {}      // call base constructor first
+
+    void display() const override {
+        Vehicle::display();                            // reuse the base output
+        cout &lt;&lt; "  Doors: " &lt;&lt; numDoors &lt;&lt; "\n";
+    }
+};
+
+class Truck : public Vehicle {
+    double payloadTons;
+
+public:
+    Truck(const string&amp; mk, const string&amp; md, int y, double payload)
+        : Vehicle(mk, md, y), payloadTons(payload) {}
+
+    void display() const override {
+        Vehicle::display();
+        cout &lt;&lt; "  Payload: " &lt;&lt; payloadTons &lt;&lt; " tons\n";
+    }
+};
+
+int main() {
+    Car   car("Toyota", "Corolla", 2021, 4);
+    Truck truck("Volvo", "FH16", 2019, 18.5);
+
+    car.display();
+    truck.display();
+    return 0;
+}</code></pre>
+        <p><strong>Output:</strong></p>
+<pre><code>Toyota Corolla (2021)
+  Doors: 4
+Volvo FH16 (2019)
+  Payload: 18.5 tons</code></pre>
+        <p><strong>Key concepts used:</strong> single inheritance, protected members, base constructor in the initializer list, overriding, <code>Base::function()</code> call.</p>
+      </div>
+    </div>
+
+    <!-- Solution 2 -->
+    <div class="solution-card">
+      <div class="card-header">✅ Solution 2 — Abstract PaymentMethod</div>
+      <div class="card-body">
+        <p><code>PaymentMethod</code> contains a pure virtual function, so it is abstract — it only states <em>what</em> a payment
+        method can do. <code>CreditCard</code> and <code>Cash</code> decide <em>how</em>. The free function
+        <code>pay()</code> takes a <code>PaymentMethod&amp;</code> and neither knows nor cares which concrete type it received.</p>
+<pre><code>// solution_08_payment.cpp
+#include &lt;iostream&gt;
+#include &lt;iomanip&gt;
+using namespace std;
+
+class PaymentMethod {
+public:
+    // Pure virtual: makes the class abstract and defines the contract
+    virtual bool processPayment(double amount) = 0;
+    virtual ~PaymentMethod() = default;
+};
+
+class CreditCard : public PaymentMethod {
+    double creditLimit;
+    double balance = 0.0;                  // amount already charged
+
+public:
+    explicit CreditCard(double limit) : creditLimit(limit) {}
+
+    bool processPayment(double amount) override {
+        if (balance + amount &gt; creditLimit) {
+            cout &lt;&lt; "Credit card: DECLINED $" &lt;&lt; amount &lt;&lt; " (would exceed limit)\n";
+            return false;
+        }
+        balance += amount;
+        cout &lt;&lt; "Credit card: charged $" &lt;&lt; amount
+             &lt;&lt; " (balance $" &lt;&lt; balance &lt;&lt; " / limit $" &lt;&lt; creditLimit &lt;&lt; ")\n";
+        return true;
+    }
+};
+
+class Cash : public PaymentMethod {
+    double cashOnHand;
+
+public:
+    explicit Cash(double amount) : cashOnHand(amount) {}
+
+    bool processPayment(double amount) override {
+        if (amount &gt; cashOnHand) {
+            cout &lt;&lt; "Cash: DECLINED $" &lt;&lt; amount &lt;&lt; " (insufficient cash)\n";
+            return false;
+        }
+        cashOnHand -= amount;
+        cout &lt;&lt; "Cash: paid $" &lt;&lt; amount &lt;&lt; " (remaining $" &lt;&lt; cashOnHand &lt;&lt; ")\n";
+        return true;
+    }
+};
+
+// Works with ANY payment method - polymorphism through a base reference
+void pay(PaymentMethod&amp; method, double amount) {
+    method.processPayment(amount);
+}
+
+int main() {
+    // PaymentMethod p;                    // ERROR: abstract class
+
+    cout &lt;&lt; fixed &lt;&lt; setprecision(2);
+    CreditCard card(500.0);
+    Cash       cash(100.0);
+
+    pay(card, 250.0);
+    pay(card, 300.0);
+    pay(cash, 40.0);
+    pay(cash, 75.0);
+    return 0;
+}</code></pre>
+        <p><strong>Output:</strong></p>
+<pre><code>Credit card: charged $250.00 (balance $250.00 / limit $500.00)
+Credit card: DECLINED $300.00 (would exceed limit)
+Cash: paid $40.00 (remaining $60.00)
+Cash: DECLINED $75.00 (insufficient cash)</code></pre>
+        <p><strong>Key concepts used:</strong> pure virtual function, abstract class, interface contract, <code>override</code>, passing by base reference.</p>
+      </div>
+    </div>
+
+    <!-- Solution 3 -->
+    <div class="solution-card">
+      <div class="card-header">✅ Solution 3 — Person → Employee → Manager</div>
+      <div class="card-body">
+        <p>Each level overrides <code>toString()</code> and builds on its parent by calling the parent's version first,
+        then appending its own fields. Because <code>show()</code> takes a <code>const Person&amp;</code>, the correct override is
+        picked at run time. If <code>show</code> took a <code>Person</code> <em>by value</em>, the argument would be sliced and every
+        call would print only the <code>Person</code> text.</p>
+<pre><code>// solution_08_hierarchy.cpp
+#include &lt;iostream&gt;
+#include &lt;iomanip&gt;
+#include &lt;sstream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+class Person {
+protected:
+    string name;
+
+public:
+    explicit Person(const string&amp; n) : name(n) {}
+
+    virtual string toString() const {
+        return "Name: " + name;
+    }
+
+    virtual ~Person() = default;
+};
+
+class Employee : public Person {
+protected:
+    double salary;
+    string role;
+
+public:
+    Employee(const string&amp; n, double s, const string&amp; r)
+        : Person(n), salary(s), role(r) {}
+
+    string toString() const override {
+        ostringstream out;
+        out &lt;&lt; fixed &lt;&lt; setprecision(2) &lt;&lt; salary;
+        return Person::toString() + " | Role: " + role + " | Salary: " + out.str();
+    }
+};
+
+class Manager : public Employee {
+    int numReports;
+
+public:
+    Manager(const string&amp; n, double s, const string&amp; r, int reports)
+        : Employee(n, s, r), numReports(reports) {}
+
+    string toString() const override {
+        return Employee::toString() + " | Reports: " + to_string(numReports);
+    }
+};
+
+// Reference parameter => no slicing => dynamic dispatch
+void show(const Person&amp; p) {
+    cout &lt;&lt; p.toString() &lt;&lt; "\n";
+}
+
+int main() {
+    Person   alice("Alice");
+    Employee bob("Bob", 65000.0, "Developer");
+    Manager  carol("Carol", 95000.0, "Engineering Manager", 6);
+
+    show(alice);
+    show(bob);
+    show(carol);
+    return 0;
+}</code></pre>
+        <p><strong>Output:</strong></p>
+<pre><code>Name: Alice
+Name: Bob | Role: Developer | Salary: 65000.00
+Name: Carol | Role: Engineering Manager | Salary: 95000.00 | Reports: 6</code></pre>
+        <p><strong>Key concepts used:</strong> multilevel inheritance, constructor chaining, overriding at every level, calling the parent version with <code>Parent::method()</code>, avoiding object slicing.</p>
+      </div>
+    </div>
+
+    <!-- Solution 4 -->
+    <div class="solution-card">
+      <div class="card-header">✅ Solution 4 — Shapes in a Vector</div>
+      <div class="card-body">
+        <p>The vector stores <code>Shape*</code> so that one container can hold different shape types without slicing.
+        A single loop calls <code>area()</code>; each object answers with its own formula. Since the vector owns the
+        objects, we <code>delete</code> each element — and this is only correct because <code>~Shape()</code> is virtual.</p>
+<pre><code>// solution_08_shapes.cpp
+#include &lt;iostream&gt;
+#include &lt;iomanip&gt;
+#include &lt;string&gt;
+#include &lt;vector&gt;
+using namespace std;
+
+const double PI = 3.14159265358979323846;
+
+class Shape {
+public:
+    virtual double area() const = 0;
+    virtual string name() const = 0;
+    virtual ~Shape() = default;           // essential for delete via Shape*
+};
+
+class Triangle : public Shape {
+    double base, height;
+public:
+    Triangle(double b, double h) : base(b), height(h) {}
+    double area() const override { return 0.5 * base * height; }
+    string name() const override { return "Triangle"; }
+};
+
+class Rectangle : public Shape {
+    double width, height;
+public:
+    Rectangle(double w, double h) : width(w), height(h) {}
+    double area() const override { return width * height; }
+    string name() const override { return "Rectangle"; }
+};
+
+class Circle : public Shape {
+    double radius;
+public:
+    explicit Circle(double r) : radius(r) {}
+    double area() const override { return PI * radius * radius; }
+    string name() const override { return "Circle"; }
+};
+
+int main() {
+    vector&lt;Shape*&gt; shapes;
+    shapes.push_back(new Triangle(6.0, 4.0));
+    shapes.push_back(new Rectangle(7.0, 4.0));
+    shapes.push_back(new Circle(5.0));
+    shapes.push_back(new Circle(1.0));
+
+    cout &lt;&lt; fixed &lt;&lt; setprecision(2);
+    for (const Shape* s : shapes) {
+        cout &lt;&lt; left &lt;&lt; setw(9) &lt;&lt; s-&gt;name() &lt;&lt; " area = " &lt;&lt; s-&gt;area() &lt;&lt; "\n";
+    }
+
+    // Free the memory: the virtual destructor makes this safe
+    for (Shape* s : shapes) delete s;
+    shapes.clear();
+    return 0;
+}</code></pre>
+        <p><strong>Output:</strong></p>
+<pre><code>Triangle  area = 12.00
+Rectangle area = 28.00
+Circle    area = 78.54
+Circle    area = 3.14</code></pre>
+        <div class="callout tip">
+          <strong>Modern variant</strong>
+          Replace <code>vector&lt;Shape*&gt;</code> with <code>vector&lt;unique_ptr&lt;Shape&gt;&gt;</code> and
+          <code>push_back(make_unique&lt;Circle&gt;(5.0))</code>; the manual delete loop disappears and the code is exception-safe.
+        </div>
+        <p><strong>Key concepts used:</strong> abstract base class, polymorphic container, virtual destructor, <code>setw</code>/<code>setprecision</code> formatting.</p>
+      </div>
+    </div>
+
+    <!-- Solution 5 -->
+    <div class="solution-card">
+      <div class="card-header">✅ Solution 5 — A Simple Logger Plugin Interface</div>
+      <div class="card-body">
+        <p><code>Logger</code> is a pure interface: one pure virtual function plus a virtual destructor.
+        <code>Application</code> depends only on that abstraction (<em>dependency inversion</em>), so you can add a
+        <code>NetworkLogger</code> tomorrow without touching <code>Application</code> at all. The loggers live in a
+        <code>vector&lt;unique_ptr&lt;Logger&gt;&gt;</code>; when the vector is destroyed, each <code>unique_ptr</code> deletes its object
+        through a <code>Logger*</code>, which is why the virtual destructor matters — you can see
+        "Closing app.log" printed by <code>~FileLogger()</code>.</p>
+<pre><code>// solution_08_logger.cpp
+#include &lt;iostream&gt;
+#include &lt;memory&gt;
+#include &lt;string&gt;
+#include &lt;vector&gt;
+using namespace std;
+
+// ---- The plugin interface ----
+class Logger {
+public:
+    virtual void log(const string&amp; message) = 0;
+    virtual ~Logger() = default;
+};
+
+// ---- Plugin 1: console ----
+class ConsoleLogger : public Logger {
+public:
+    void log(const string&amp; message) override {
+        cout &lt;&lt; "[CONSOLE] " &lt;&lt; message &lt;&lt; "\n";
+    }
+};
+
+// ---- Plugin 2: file (simulated) ----
+class FileLogger : public Logger {
+    string filename;
+
+public:
+    explicit FileLogger(const string&amp; file) : filename(file) {
+        cout &lt;&lt; "Opening " &lt;&lt; filename &lt;&lt; "\n";       // pretend to open the file
+    }
+
+    void log(const string&amp; message) override {
+        cout &lt;&lt; "[FILE " &lt;&lt; filename &lt;&lt; "] " &lt;&lt; message &lt;&lt; "\n";   // pretend to write
+    }
+
+    ~FileLogger() override {
+        cout &lt;&lt; "Closing " &lt;&lt; filename &lt;&lt; "\n";       // pretend to close the file
+    }
+};
+
+// ---- Client code: knows ONLY about the Logger interface ----
+class Application {
+    Logger&amp; logger;
+
+public:
+    explicit Application(Logger&amp; l) : logger(l) {}
+
+    void run() {
+        logger.log("Application started");
+        // ... real work would go here ...
+        logger.log("Application finished");
+    }
+};
+
+int main() {
+    vector&lt;unique_ptr&lt;Logger&gt;&gt; loggers;
+    loggers.push_back(make_unique&lt;ConsoleLogger&gt;());
+    loggers.push_back(make_unique&lt;FileLogger&gt;("app.log"));
+
+    for (auto&amp; logger : loggers) {
+        Application app(*logger);        // inject the chosen plugin
+        app.run();
+    }
+    return 0;      // vector destroyed -> unique_ptrs delete via Logger* (virtual dtor!)
+}</code></pre>
+        <p><strong>Output:</strong></p>
+<pre><code>Opening app.log
+[CONSOLE] Application started
+[CONSOLE] Application finished
+[FILE app.log] Application started
+[FILE app.log] Application finished
+Closing app.log</code></pre>
+        <div class="callout warn">
+          <strong>What if <code>~Logger()</code> were not virtual?</strong>
+          Each <code>unique_ptr&lt;Logger&gt;</code> would delete a <code>FileLogger</code> through a <code>Logger*</code> — undefined
+          behavior. In practice "Closing app.log" would never print, and a real file handle would stay open.
+        </div>
+        <p><strong>Key concepts used:</strong> interface via abstract class, plugin architecture, dependency injection by reference, <code>unique_ptr</code>, virtual destructor.</p>
+      </div>
+    </div>
+
+    <div style="display:flex;justify-content:space-between;margin-top:2rem;">
+      <a href="exercises.html" class="btn btn-outline" style="text-decoration:none;">← Exercises</a>
+      <a href="quiz.html" class="btn" style="text-decoration:none;">Take the Quiz →</a>
+    </div>
+
+  </div>
+</main>
+</div>
+<footer id="site-footer">
+  &copy; 2024 <a href="https://linkedin.com/in/adityabhuyan" target="_blank" rel="noopener">Aditya Pratap Bhuyan</a> &nbsp;|&nbsp;
+  <a href="https://github.com/aditya-bhuyan/cpp-learning-hub" target="_blank" rel="noopener">GitHub</a> &nbsp;|&nbsp;
+  GNU GPL v3 License
+</footer>
+<script src="/assets/js/nav.js"></script>
+</body>
+</html>

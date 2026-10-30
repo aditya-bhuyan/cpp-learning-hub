@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ch 13 Examples — Exception Handling | C++ Learning Hub</title>
+  <link rel="stylesheet" href="/assets/css/style.css" />
+</head>
+<body>
+<header id="site-header">
+  <button id="hamburger" aria-label="Toggle navigation">&#9776;</button>
+  <div id="site-logo">C++ Learning Hub <span class="badge">FREE</span></div>
+  <button id="theme-toggle">☾ Dark</button>
+</header>
+<div id="layout">
+<aside id="sidebar"><nav>
+  <div class="nav-section-title">C++ Learning Hub</div>
+  <div class="nav-chapter" data-chapter="home"><div class="nav-chapter-header"><span>🏠 Home</span></div><div class="nav-chapter-links"><a href="/index.html">Overview</a></div></div>
+  <div class="nav-section-title">Chapters</div>
+  <div class="nav-chapter" data-chapter="ch01"><div class="nav-chapter-header"><span><span class="ch-num">01</span>Introduction to C++</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch01-introduction/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch01-introduction/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch01-introduction/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch01-introduction/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch01-introduction/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch02"><div class="nav-chapter-header"><span><span class="ch-num">02</span>Variables, Types &amp; Operators</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch02-variables-types-operators/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch02-variables-types-operators/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch02-variables-types-operators/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch02-variables-types-operators/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch02-variables-types-operators/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch03"><div class="nav-chapter-header"><span><span class="ch-num">03</span>Control Flow</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch03-control-flow/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch03-control-flow/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch03-control-flow/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch03-control-flow/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch03-control-flow/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch04"><div class="nav-chapter-header"><span><span class="ch-num">04</span>Functions</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch04-functions/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch04-functions/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch04-functions/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch04-functions/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch04-functions/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch05"><div class="nav-chapter-header"><span><span class="ch-num">05</span>Arrays &amp; Strings</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch05-arrays-strings/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch05-arrays-strings/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch05-arrays-strings/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch05-arrays-strings/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch05-arrays-strings/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch06"><div class="nav-chapter-header"><span><span class="ch-num">06</span>Pointers &amp; References</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch06-pointers-references/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch06-pointers-references/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch06-pointers-references/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch06-pointers-references/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch06-pointers-references/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch07"><div class="nav-chapter-header"><span><span class="ch-num">07</span>OOP — Basics</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch07-oop-basics/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch07-oop-basics/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch07-oop-basics/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch07-oop-basics/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch07-oop-basics/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch08"><div class="nav-chapter-header"><span><span class="ch-num">08</span>OOP — Inheritance &amp; Polymorphism</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch08-oop-inheritance/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch08-oop-inheritance/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch08-oop-inheritance/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch08-oop-inheritance/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch08-oop-inheritance/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch09"><div class="nav-chapter-header"><span><span class="ch-num">09</span>Templates</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch09-templates/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch09-templates/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch09-templates/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch09-templates/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch09-templates/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch10"><div class="nav-chapter-header"><span><span class="ch-num">10</span>STL — Containers</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch10-stl-containers/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch10-stl-containers/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch10-stl-containers/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch10-stl-containers/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch10-stl-containers/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch11"><div class="nav-chapter-header"><span><span class="ch-num">11</span>STL — Algorithms &amp; Iterators</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch11-stl-algorithms/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch11-stl-algorithms/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch11-stl-algorithms/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch11-stl-algorithms/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch11-stl-algorithms/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch12"><div class="nav-chapter-header"><span><span class="ch-num">12</span>Memory Management</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch12-memory-management/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch12-memory-management/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch12-memory-management/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch12-memory-management/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch12-memory-management/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch13"><div class="nav-chapter-header"><span><span class="ch-num">13</span>Exception Handling</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="index.html"><span class="link-icon">📖</span>Learning</a><a href="examples.html" class="active"><span class="link-icon">💻</span>Examples</a><a href="exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch14"><div class="nav-chapter-header"><span><span class="ch-num">14</span>File I/O</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch14-file-io/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch14-file-io/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch14-file-io/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch14-file-io/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch14-file-io/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch15"><div class="nav-chapter-header"><span><span class="ch-num">15</span>Modern C++ (C++11–C++20)</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch15-modern-cpp/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch15-modern-cpp/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch15-modern-cpp/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch15-modern-cpp/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch15-modern-cpp/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-section-title">Capstone</div>
+  <div class="nav-chapter" data-chapter="ch16"><div class="nav-chapter-header"><span><span class="ch-num">16</span>Capstone Project</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch16-capstone/index.html"><span class="link-icon">🎯</span>Brief</a><a href="/chapters/ch16-capstone/walkthrough.html"><span class="link-icon">🗺</span>Walkthrough</a><a href="/chapters/ch16-capstone/solution.html"><span class="link-icon">✅</span>Solution</a></div></div>
+  <div class="nav-section-title">About</div>
+  <div style="padding:.4rem 1.1rem 1rem;font-size:.78rem;color:var(--muted);line-height:1.5;">Maintained by<br><a href="https://linkedin.com/in/adityabhuyan" target="_blank" rel="noopener">Aditya Pratap Bhuyan</a><br><span style="font-size:.72rem;">GNU GPL v3 License</span></div>
+</nav></aside>
+
+<main id="main">
+  <div class="page-header">
+    <div class="breadcrumb"><a href="/index.html">Home</a> › <a href="index.html">Chapter 13</a> › Examples</div>
+    <h1>Chapter 13 — Coding Examples</h1>
+    <p class="subtitle">Four fully commented programs demonstrating exception handling from basics to advanced patterns.</p>
+    <div class="chapter-tabs">
+      <a href="index.html">📖 Learning</a>
+      <a href="examples.html" class="active">💻 Examples</a>
+      <a href="exercises.html">✏️ Exercises</a>
+      <a href="solutions.html">✅ Solutions</a>
+      <a href="quiz.html">🧠 Quiz</a>
+    </div>
+  </div>
+
+  <div class="content">
+
+    <!-- Example 1 -->
+    <h2>Example 1 — Basic try/catch with Arithmetic Exceptions</h2>
+    <p>
+      A safe division function demonstrates the core throw/catch cycle.
+      Integer division by zero is undefined behaviour in C++, so we guard it explicitly with a
+      custom <code>throw</code> before the division occurs.
+    </p>
+<pre><code>// ex13_1_basic_trycatch.cpp
+// Compile: g++ -std=c++17 -Wall -o ex13_1 ex13_1_basic_trycatch.cpp
+// Run:     ./ex13_1
+
+#include &lt;iostream&gt;
+#include &lt;stdexcept&gt;    // std::invalid_argument, std::overflow_error
+using namespace std;
+
+// Throws std::invalid_argument when the divisor is zero
+int safeDivide(int numerator, int denominator) {
+    if (denominator == 0)
+        throw invalid_argument("safeDivide: denominator must not be zero");
+    return numerator / denominator;
+}
+
+// Demonstrates catching multiple exception types from the same try block
+void runDemo() {
+    // --- Case 1: normal division ---
+    try {
+        int result = safeDivide(42, 6);
+        cout &lt;&lt; "42 / 6 = " &lt;&lt; result &lt;&lt; "\n";   // prints 7
+    }
+    catch (const invalid_argument&amp; e) {
+        // Will not be reached here — no exception thrown
+        cerr &lt;&lt; "Unexpected error: " &lt;&lt; e.what() &lt;&lt; "\n";
+    }
+
+    // --- Case 2: division by zero ---
+    try {
+        int result = safeDivide(10, 0);   // throws!
+        cout &lt;&lt; "Result: " &lt;&lt; result &lt;&lt; "\n";   // never reached
+    }
+    catch (const invalid_argument&amp; e) {
+        // Handler matched: invalid_argument derives from logic_error
+        cerr &lt;&lt; "Caught invalid_argument: " &lt;&lt; e.what() &lt;&lt; "\n";
+    }
+    catch (const exception&amp; e) {
+        // Fallback: catches any other std::exception
+        cerr &lt;&lt; "Caught std::exception: " &lt;&lt; e.what() &lt;&lt; "\n";
+    }
+    catch (...) {
+        // Last resort: catches truly unknown exceptions
+        cerr &lt;&lt; "Caught unknown exception\n";
+    }
+
+    // --- Case 3: catching by base class ---
+    try {
+        // std::out_of_range derives from logic_error derives from exception
+        throw out_of_range("index -1 is out of valid range [0, 100)");
+    }
+    catch (const logic_error&amp; e) {
+        // out_of_range IS-A logic_error — caught here
+        cerr &lt;&lt; "Caught logic_error (derived): " &lt;&lt; e.what() &lt;&lt; "\n";
+    }
+
+    cout &lt;&lt; "runDemo() completed normally\n";
+}
+
+int main() {
+    runDemo();
+    return 0;
+}
+</code></pre>
+    <p><strong>Expected output:</strong></p>
+<pre><code>42 / 6 = 7
+Caught invalid_argument: safeDivide: denominator must not be zero
+Caught logic_error (derived): index -1 is out of valid range [0, 100)
+runDemo() completed normally</code></pre>
+    <div class="callout tip">
+      <strong>Catch order matters</strong>
+      Handlers are tried from top to bottom. Always place more-derived exception types
+      <em>before</em> their base types, otherwise the base handler will shadow them.
+    </div>
+
+    <!-- Example 2 -->
+    <h2>Example 2 — Custom Exception Hierarchy</h2>
+    <p>
+      A banking domain demonstrates how to build a custom exception hierarchy.
+      <code>BankException</code> is the domain base; <code>InsufficientFundsException</code> and
+      <code>AccountNotFoundException</code> carry domain-specific data.
+    </p>
+<pre><code>// ex13_2_custom_hierarchy.cpp
+// Compile: g++ -std=c++17 -Wall -o ex13_2 ex13_2_custom_hierarchy.cpp
+
+#include &lt;iostream&gt;
+#include &lt;stdexcept&gt;
+#include &lt;string&gt;
+#include &lt;unordered_map&gt;
+using namespace std;
+
+// ── Base domain exception ─────────────────────────────────────────────────────
+class BankException : public runtime_error {
+public:
+    explicit BankException(const string&amp; msg) : runtime_error(msg) {}
+};
+
+// ── Derived: not enough money ─────────────────────────────────────────────────
+class InsufficientFundsException : public BankException {
+    double m_requested;
+    double m_available;
+public:
+    InsufficientFundsException(double requested, double available)
+        : BankException("Insufficient funds: requested "
+                        + to_string(requested) + ", available "
+                        + to_string(available))
+        , m_requested(requested)
+        , m_available(available)
+    {}
+
+    double requested() const noexcept { return m_requested; }
+    double available() const noexcept { return m_available; }
+};
+
+// ── Derived: account not found ────────────────────────────────────────────────
+class AccountNotFoundException : public BankException {
+    string m_id;
+public:
+    explicit AccountNotFoundException(const string&amp; id)
+        : BankException("Account not found: " + id), m_id(id) {}
+
+    const string&amp; accountId() const noexcept { return m_id; }
+};
+
+// ── Simple BankAccount ────────────────────────────────────────────────────────
+class BankAccount {
+    string m_id;
+    double m_balance;
+public:
+    BankAccount(string id, double initialBalance)
+        : m_id(move(id)), m_balance(initialBalance) {}
+
+    void withdraw(double amount) {
+        if (amount &gt; m_balance)
+            throw InsufficientFundsException(amount, m_balance);
+        m_balance -= amount;
+        cout &lt;&lt; "Withdrew " &lt;&lt; amount &lt;&lt; ". New balance: " &lt;&lt; m_balance &lt;&lt; "\n";
+    }
+
+    double balance() const noexcept { return m_balance; }
+    const string&amp; id() const noexcept { return m_id; }
+};
+
+// ── Simple Bank ───────────────────────────────────────────────────────────────
+class Bank {
+    unordered_map&lt;string, BankAccount&gt; m_accounts;
+public:
+    void addAccount(const string&amp; id, double balance) {
+        m_accounts.emplace(id, BankAccount{id, balance});
+    }
+
+    BankAccount&amp; getAccount(const string&amp; id) {
+        auto it = m_accounts.find(id);
+        if (it == m_accounts.end())
+            throw AccountNotFoundException(id);
+        return it-&gt;second;
+    }
+
+    void transfer(const string&amp; fromId, const string&amp; toId, double amount) {
+        // getAccount may throw AccountNotFoundException
+        BankAccount&amp; from = getAccount(fromId);
+        BankAccount&amp; to   = getAccount(toId);
+        // withdraw may throw InsufficientFundsException
+        from.withdraw(amount);
+        to.withdraw(-amount);   // negative withdraw = deposit trick
+    }
+};
+
+int main() {
+    Bank bank;
+    bank.addAccount("ACC001", 1000.00);
+    bank.addAccount("ACC002",  250.00);
+
+    // ── Test 1: Successful transfer ───────────────────────────────────────────
+    cout &lt;&lt; "=== Test 1: Normal transfer ===\n";
+    try {
+        bank.transfer("ACC001", "ACC002", 200.00);
+    }
+    catch (const BankException&amp; e) {
+        cerr &lt;&lt; "BankException: " &lt;&lt; e.what() &lt;&lt; "\n";
+    }
+
+    // ── Test 2: Insufficient funds ────────────────────────────────────────────
+    cout &lt;&lt; "\n=== Test 2: Insufficient funds ===\n";
+    try {
+        bank.transfer("ACC002", "ACC001", 5000.00);
+    }
+    catch (const InsufficientFundsException&amp; e) {
+        // Specific handler — can access extra data
+        cerr &lt;&lt; "Caught InsufficientFundsException:\n"
+             &lt;&lt; "  " &lt;&lt; e.what() &lt;&lt; "\n"
+             &lt;&lt; "  Shortfall: " &lt;&lt; (e.requested() - e.available()) &lt;&lt; "\n";
+    }
+    catch (const BankException&amp; e) {
+        cerr &lt;&lt; "BankException: " &lt;&lt; e.what() &lt;&lt; "\n";
+    }
+
+    // ── Test 3: Account not found ─────────────────────────────────────────────
+    cout &lt;&lt; "\n=== Test 3: Missing account ===\n";
+    try {
+        bank.transfer("ACC001", "GHOST", 100.00);
+    }
+    catch (const AccountNotFoundException&amp; e) {
+        cerr &lt;&lt; "Caught AccountNotFoundException: " &lt;&lt; e.what() &lt;&lt; "\n"
+             &lt;&lt; "  Bad account ID: " &lt;&lt; e.accountId() &lt;&lt; "\n";
+    }
+    catch (const BankException&amp; e) {
+        cerr &lt;&lt; "BankException: " &lt;&lt; e.what() &lt;&lt; "\n";
+    }
+
+    return 0;
+}
+</code></pre>
+    <p><strong>Expected output:</strong></p>
+<pre><code>=== Test 1: Normal transfer ===
+Withdrew 200. New balance: 800
+Withdrew -200. New balance: 450
+
+=== Test 2: Insufficient funds ===
+Caught InsufficientFundsException:
+  Insufficient funds: requested 5000.000000, available 450.000000
+  Shortfall: 4550
+
+=== Test 3: Missing account ===
+Caught AccountNotFoundException: Account not found: GHOST
+  Bad account ID: GHOST</code></pre>
+
+    <!-- Example 3 -->
+    <h2>Example 3 — Stack Unwinding and RAII Resource Cleanup</h2>
+    <p>
+      This example makes stack unwinding visible by tracing constructor and destructor calls.
+      A simulated <code>FileHandle</code> RAII wrapper ensures the handle is always released —
+      even when an exception propagates through multiple stack frames.
+    </p>
+<pre><code>// ex13_3_stack_unwinding.cpp
+// Compile: g++ -std=c++17 -Wall -o ex13_3 ex13_3_stack_unwinding.cpp
+
+#include &lt;iostream&gt;
+#include &lt;stdexcept&gt;
+#include &lt;string&gt;
+using namespace std;
+
+// ── RAII wrapper for a (simulated) file handle ────────────────────────────────
+class FileHandle {
+    string m_name;
+    bool   m_open;
+public:
+    explicit FileHandle(const string&amp; name)
+        : m_name(name), m_open(true)
+    {
+        cout &lt;&lt; "  [FileHandle] Opened:  " &lt;&lt; m_name &lt;&lt; "\n";
+    }
+
+    ~FileHandle() {
+        if (m_open) {
+            m_open = false;
+            cout &lt;&lt; "  [FileHandle] Closed:  " &lt;&lt; m_name &lt;&lt; "  &lt;-- destructor called\n";
+        }
+    }
+
+    void write(const string&amp; data) {
+        if (!m_open) throw runtime_error("Write on closed file");
+        cout &lt;&lt; "  [FileHandle] Written to " &lt;&lt; m_name &lt;&lt; ": " &lt;&lt; data &lt;&lt; "\n";
+    }
+
+    // Non-copyable; could be made movable if needed
+    FileHandle(const FileHandle&amp;)            = delete;
+    FileHandle&amp; operator=(const FileHandle&amp;) = delete;
+};
+
+// ── Frame C: deepest function — throws ───────────────────────────────────────
+void frameC() {
+    FileHandle log("frameC.log");     // RAII: destructor will run on unwind
+    log.write("Starting frame C");
+    cout &lt;&lt; "  [frameC] About to throw...\n";
+    throw runtime_error("Simulated I/O failure in frameC");
+    log.write("This line is never reached");   // unreachable
+}
+
+// ── Frame B: middle function — does NOT catch ─────────────────────────────────
+void frameB() {
+    FileHandle tmp("frameB.tmp");     // RAII
+    tmp.write("frame B doing work");
+    cout &lt;&lt; "  [frameB] Calling frameC...\n";
+    frameC();   // exception propagates through frameB; tmp destructor runs
+    cout &lt;&lt; "  [frameB] This line never runs\n";
+}
+
+// ── Frame A: catches the exception ────────────────────────────────────────────
+void frameA() {
+    FileHandle output("frameA_output.txt");   // RAII
+    output.write("frame A starting");
+    cout &lt;&lt; "  [frameA] Calling frameB...\n";
+    try {
+        frameB();
+    }
+    catch (const runtime_error&amp; e) {
+        // Exception caught here; output destructor runs after this block exits
+        cerr &lt;&lt; "  [frameA] Caught: " &lt;&lt; e.what() &lt;&lt; "\n";
+        cerr &lt;&lt; "  [frameA] Recovering gracefully...\n";
+    }
+    // output.~FileHandle() called here — after try/catch, not inside catch
+    cout &lt;&lt; "  [frameA] Continuing after recovery\n";
+}
+
+int main() {
+    cout &lt;&lt; "=== Stack Unwinding Demo ===\n\n";
+    frameA();
+    cout &lt;&lt; "\nmain() completed successfully — no leaks.\n";
+    return 0;
+}
+</code></pre>
+    <p><strong>Expected output:</strong></p>
+<pre><code>=== Stack Unwinding Demo ===
+
+  [FileHandle] Opened:  frameA_output.txt
+  [FileHandle] Written to frameA_output.txt: frame A starting
+  [frameA] Calling frameB...
+  [FileHandle] Opened:  frameB.tmp
+  [FileHandle] Written to frameB.tmp: frame B doing work
+  [frameB] Calling frameC...
+  [FileHandle] Opened:  frameC.log
+  [FileHandle] Written to frameC.log: Starting frame C
+  [frameC] About to throw...
+  [FileHandle] Closed:  frameC.log  &lt;-- destructor called
+  [FileHandle] Closed:  frameB.tmp  &lt;-- destructor called
+  [frameA] Caught: Simulated I/O failure in frameC
+  [frameA] Recovering gracefully...
+  [frameA] Continuing after recovery
+  [FileHandle] Closed:  frameA_output.txt  &lt;-- destructor called
+
+main() completed successfully — no leaks.</code></pre>
+    <div class="callout">
+      <strong>Key observation</strong>
+      Destructors fire in <em>reverse construction order</em> as the stack unwinds.
+      No explicit cleanup code was written in any <code>catch</code> block — RAII handles everything.
+    </div>
+
+    <!-- Example 4 -->
+    <h2>Example 4 — Rethrowing and Translating Exceptions</h2>
+    <p>
+      A three-layer architecture shows how a low-level exception can be caught at a boundary,
+      wrapped with context, and rethrown as a higher-level exception appropriate for the caller.
+      The bare <code>throw;</code> is also contrasted with <code>throw e;</code> to show why
+      the former is always preferred.
+    </p>
+<pre><code>// ex13_4_rethrow_translate.cpp
+// Compile: g++ -std=c++17 -Wall -o ex13_4 ex13_4_rethrow_translate.cpp
+
+#include &lt;iostream&gt;
+#include &lt;stdexcept&gt;
+#include &lt;string&gt;
+#include &lt;typeinfo&gt;
+using namespace std;
+
+// ── Domain exception ──────────────────────────────────────────────────────────
+class ServiceException : public runtime_error {
+public:
+    explicit ServiceException(const string&amp; msg) : runtime_error(msg) {}
+};
+
+// ── Layer 1: Data Access Layer — throws low-level I/O errors ──────────────────
+class DataAccessLayer {
+public:
+    string fetchRecord(int id) {
+        if (id &lt;= 0)
+            throw invalid_argument("DAL: record ID must be positive, got "
+                                   + to_string(id));
+        if (id &gt; 1000)
+            throw out_of_range("DAL: record " + to_string(id) + " does not exist");
+        return "Record_" + to_string(id);
+    }
+};
+
+// ── Layer 2: Service Layer — translates DAL errors into ServiceExceptions ─────
+class ServiceLayer {
+    DataAccessLayer m_dal;
+public:
+    string getRecord(int id) {
+        try {
+            return m_dal.fetchRecord(id);
+        }
+        catch (const invalid_argument&amp; e) {
+            // Translate: wrap with context; do NOT use "throw e;" (would slice)
+            throw ServiceException(
+                string("ServiceLayer: invalid request — ") + e.what());
+        }
+        catch (const out_of_range&amp; e) {
+            throw ServiceException(
+                string("ServiceLayer: resource not found — ") + e.what());
+        }
+        // Other exceptions (e.g. bad_alloc) propagate unchanged
+    }
+
+    // Demonstrates bare rethrow for logging without translation
+    string getRecordLogged(int id) {
+        try {
+            return m_dal.fetchRecord(id);
+        }
+        catch (const exception&amp; e) {
+            cerr &lt;&lt; "  [ServiceLayer] Logging exception before rethrow: "
+                 &lt;&lt; e.what() &lt;&lt; "\n";
+            cerr &lt;&lt; "  [ServiceLayer] Dynamic type: "
+                 &lt;&lt; typeid(e).name() &lt;&lt; "\n";
+            throw;   // bare throw: original type preserved (not sliced)
+        }
+    }
+};
+
+// ── Layer 3: Application — catches ServiceExceptions ─────────────────────────
+int main() {
+    ServiceLayer svc;
+
+    // ── Test 1: Valid request ─────────────────────────────────────────────────
+    cout &lt;&lt; "=== Test 1: Valid request ===\n";
+    try {
+        cout &lt;&lt; svc.getRecord(42) &lt;&lt; "\n";
+    }
+    catch (const ServiceException&amp; e) {
+        cerr &lt;&lt; "ServiceException: " &lt;&lt; e.what() &lt;&lt; "\n";
+    }
+
+    // ── Test 2: Invalid argument — translated ─────────────────────────────────
+    cout &lt;&lt; "\n=== Test 2: Translated invalid_argument ===\n";
+    try {
+        svc.getRecord(-5);
+    }
+    catch (const ServiceException&amp; e) {
+        // Caught as ServiceException; original invalid_argument is gone
+        cerr &lt;&lt; "ServiceException: " &lt;&lt; e.what() &lt;&lt; "\n";
+    }
+
+    // ── Test 3: Out of range — translated ────────────────────────────────────
+    cout &lt;&lt; "\n=== Test 3: Translated out_of_range ===\n";
+    try {
+        svc.getRecord(9999);
+    }
+    catch (const ServiceException&amp; e) {
+        cerr &lt;&lt; "ServiceException: " &lt;&lt; e.what() &lt;&lt; "\n";
+    }
+
+    // ── Test 4: Bare rethrow — type is preserved ──────────────────────────────
+    cout &lt;&lt; "\n=== Test 4: Bare rethrow (type preserved) ===\n";
+    try {
+        svc.getRecordLogged(0);
+    }
+    catch (const invalid_argument&amp; e) {
+        // We catch invalid_argument — not exception — because throw; preserved type
+        cerr &lt;&lt; "Caught as invalid_argument (type preserved!): "
+             &lt;&lt; e.what() &lt;&lt; "\n";
+    }
+    catch (const exception&amp; e) {
+        cerr &lt;&lt; "Caught as std::exception (type was sliced): "
+             &lt;&lt; e.what() &lt;&lt; "\n";
+    }
+
+    return 0;
+}
+</code></pre>
+    <p><strong>Expected output:</strong></p>
+<pre><code>=== Test 1: Valid request ===
+Record_42
+
+=== Test 2: Translated invalid_argument ===
+ServiceException: ServiceLayer: invalid request — DAL: record ID must be positive, got -5
+
+=== Test 3: Translated out_of_range ===
+ServiceException: ServiceLayer: resource not found — DAL: record 9999 does not exist
+
+=== Test 4: Bare rethrow (type preserved) ===
+  [ServiceLayer] Logging exception before rethrow: DAL: record ID must be positive, got 0
+  [ServiceLayer] Dynamic type: St16invalid_argument
+Caught as invalid_argument (type preserved!): DAL: record ID must be positive, got 0</code></pre>
+
+    <div style="display:flex;justify-content:space-between;margin-top:2rem;">
+      <a href="index.html" class="btn btn-outline" style="text-decoration:none;">← Learning</a>
+      <a href="exercises.html" class="btn" style="text-decoration:none;">Next: Exercises →</a>
+    </div>
+
+  </div>
+</main>
+</div>
+<footer id="site-footer">
+  &copy; 2024 <a href="https://linkedin.com/in/adityabhuyan" target="_blank" rel="noopener">Aditya Pratap Bhuyan</a> &nbsp;|&nbsp;
+  <a href="https://github.com/aditya-bhuyan/cpp-learning-hub" target="_blank" rel="noopener">GitHub</a> &nbsp;|&nbsp;
+  GNU GPL v3 License
+</footer>
+<script src="/assets/js/nav.js"></script>
+</body>
+</html>

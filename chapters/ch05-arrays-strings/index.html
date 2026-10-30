@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ch 05 — Arrays &amp; Strings | C++ Learning Hub</title>
+  <link rel="stylesheet" href="/assets/css/style.css" />
+</head>
+<body>
+<header id="site-header">
+  <button id="hamburger" aria-label="Toggle navigation">&#9776;</button>
+  <div id="site-logo">C++ Learning Hub <span class="badge">FREE</span></div>
+  <button id="theme-toggle">☾ Dark</button>
+</header>
+<div id="layout">
+<aside id="sidebar"><nav>
+  <div class="nav-section-title">C++ Learning Hub</div>
+  <div class="nav-chapter" data-chapter="home"><div class="nav-chapter-header"><span>🏠 Home</span></div><div class="nav-chapter-links"><a href="/index.html">Overview</a></div></div>
+  <div class="nav-section-title">Chapters</div>
+  <div class="nav-chapter" data-chapter="ch01"><div class="nav-chapter-header"><span><span class="ch-num">01</span>Introduction to C++</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch01-introduction/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch01-introduction/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch01-introduction/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch01-introduction/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch01-introduction/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch02"><div class="nav-chapter-header"><span><span class="ch-num">02</span>Variables, Types &amp; Operators</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch02-variables-types-operators/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch02-variables-types-operators/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch02-variables-types-operators/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch02-variables-types-operators/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch02-variables-types-operators/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch03"><div class="nav-chapter-header"><span><span class="ch-num">03</span>Control Flow</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch03-control-flow/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch03-control-flow/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch03-control-flow/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch03-control-flow/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch03-control-flow/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch04"><div class="nav-chapter-header"><span><span class="ch-num">04</span>Functions</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch04-functions/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch04-functions/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch04-functions/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch04-functions/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch04-functions/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter open" data-chapter="ch05"><div class="nav-chapter-header"><span><span class="ch-num">05</span>Arrays &amp; Strings</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch05-arrays-strings/index.html" class="active"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch05-arrays-strings/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch05-arrays-strings/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch05-arrays-strings/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch05-arrays-strings/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch06"><div class="nav-chapter-header"><span><span class="ch-num">06</span>Pointers &amp; References</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch06-pointers-references/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch06-pointers-references/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch06-pointers-references/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch06-pointers-references/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch06-pointers-references/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch07"><div class="nav-chapter-header"><span><span class="ch-num">07</span>OOP — Basics</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch07-oop-basics/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch07-oop-basics/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch07-oop-basics/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch07-oop-basics/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch07-oop-basics/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch08"><div class="nav-chapter-header"><span><span class="ch-num">08</span>OOP — Inheritance &amp; Polymorphism</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch08-oop-inheritance/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch08-oop-inheritance/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch08-oop-inheritance/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch08-oop-inheritance/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch08-oop-inheritance/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch09"><div class="nav-chapter-header"><span><span class="ch-num">09</span>Templates</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch09-templates/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch09-templates/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch09-templates/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch09-templates/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch09-templates/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch10"><div class="nav-chapter-header"><span><span class="ch-num">10</span>STL — Containers</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch10-stl-containers/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch10-stl-containers/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch10-stl-containers/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch10-stl-containers/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch10-stl-containers/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch11"><div class="nav-chapter-header"><span><span class="ch-num">11</span>STL — Algorithms &amp; Iterators</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch11-stl-algorithms/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch11-stl-algorithms/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch11-stl-algorithms/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch11-stl-algorithms/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch11-stl-algorithms/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch12"><div class="nav-chapter-header"><span><span class="ch-num">12</span>Memory Management</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch12-memory-management/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch12-memory-management/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch12-memory-management/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch12-memory-management/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch12-memory-management/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch13"><div class="nav-chapter-header"><span><span class="ch-num">13</span>Exception Handling</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch13-exception-handling/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch13-exception-handling/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch13-exception-handling/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch13-exception-handling/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch13-exception-handling/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch14"><div class="nav-chapter-header"><span><span class="ch-num">14</span>File I/O</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch14-file-io/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch14-file-io/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch14-file-io/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch14-file-io/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch14-file-io/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch15"><div class="nav-chapter-header"><span><span class="ch-num">15</span>Modern C++ (C++11–C++20)</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch15-modern-cpp/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch15-modern-cpp/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch15-modern-cpp/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch15-modern-cpp/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch15-modern-cpp/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-section-title">Capstone</div>
+  <div class="nav-chapter" data-chapter="ch16"><div class="nav-chapter-header"><span><span class="ch-num">16</span>Capstone Project</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch16-capstone/index.html"><span class="link-icon">🎯</span>Brief</a><a href="/chapters/ch16-capstone/walkthrough.html"><span class="link-icon">🗺</span>Walkthrough</a><a href="/chapters/ch16-capstone/solution.html"><span class="link-icon">✅</span>Solution</a></div></div>
+  <div class="nav-section-title">About</div>
+  <div style="padding:.4rem 1.1rem 1rem;font-size:.78rem;color:var(--muted);line-height:1.5;">Maintained by<br><a href="https://linkedin.com/in/adityabhuyan" target="_blank" rel="noopener">Aditya Pratap Bhuyan</a><br><span style="font-size:.72rem;">GNU GPL v3 License</span></div>
+</nav></aside>
+
+<main id="main">
+  <div class="page-header">
+    <div class="breadcrumb"><a href="/index.html">Home</a> › Chapter 05</div>
+    <h1>Chapter 05 — Arrays &amp; Strings</h1>
+    <p class="subtitle">Store collections of values, work with text, and learn when to prefer the safer modern alternatives.</p>
+    <div class="chapter-tabs">
+      <a href="index.html" class="active">📖 Learning</a>
+      <a href="examples.html">💻 Examples</a>
+      <a href="exercises.html">✏️ Exercises</a>
+      <a href="solutions.html">✅ Solutions</a>
+      <a href="quiz.html">🧠 Quiz</a>
+    </div>
+  </div>
+
+  <div class="content">
+
+    <h2>5.1 Arrays — Declaration and Initialization</h2>
+    <p>
+      An <strong>array</strong> is a fixed-size, contiguous block of memory holding elements of the <em>same type</em>.
+      The size must be a compile-time constant. Elements are stored one after another with no gaps, which makes
+      arrays extremely fast to traverse.
+    </p>
+<pre><code>#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int a[5];                          // declared, NOT initialized (garbage values!)
+    int b[5] = {10, 20, 30, 40, 50};   // size given, fully initialized
+    int c[]  = {1, 2, 3};              // size deduced by the compiler: 3
+    int d[5] = {1, 2};                 // remaining elements are zero: {1, 2, 0, 0, 0}
+    int e[5] = {};                     // all five elements are zero
+    int f[5]{};                        // C++11 brace init, also all zeros
+
+    cout &lt;&lt; b[0] &lt;&lt; " " &lt;&lt; c[2] &lt;&lt; " " &lt;&lt; d[4] &lt;&lt; "\n";   // 10 3 0
+    return 0;
+}</code></pre>
+
+    <div class="callout warn">
+      <strong>Uninitialized local arrays</strong>
+      A local array declared as <code>int a[5];</code> contains indeterminate ("garbage") values. Always
+      initialize it — <code>int a[5] = {};</code> is the shortest way to get all zeros.
+    </div>
+
+    <h3>Zero-indexing</h3>
+    <p>
+      The first element has index <code>0</code>. The index is the <em>offset</em> from the start of the array, so the
+      first element is zero elements away. For an array of size <code>n</code>, the valid indices are
+      <code>0</code> to <code>n - 1</code>.
+    </p>
+    <table>
+      <thead><tr><th>Index</th><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Value</strong> (<code>b</code>)</td><td>10</td><td>20</td><td>30</td><td>40</td><td>50</td></tr>
+      </tbody>
+    </table>
+
+    <h2>5.2 Accessing and Modifying Elements</h2>
+    <p>Use the subscript operator <code>[]</code> to read or write an element.</p>
+<pre><code>int scores[4] = {70, 85, 90, 60};
+
+cout &lt;&lt; scores[1] &lt;&lt; "\n";   // read  → 85
+scores[3] = 75;                 // write → {70, 85, 90, 75}
+scores[0] += 5;                 // compound assignment → 75
+scores[2]++;                    // increment → 91
+
+int last = scores[3];           // the last element of a 4-element array</code></pre>
+
+    <h2>5.3 Finding the Size — the <code>sizeof</code> Trick</h2>
+    <p>
+      A built-in array does not remember its own length. However, while the array is still a true array
+      (not yet decayed to a pointer), you can compute the element count:
+    </p>
+<pre><code>int arr[] = {4, 8, 15, 16, 23, 42};
+
+size_t totalBytes = sizeof(arr);                 // 6 × 4 = 24 bytes (assuming 4-byte int)
+size_t elemBytes  = sizeof(arr[0]);              // 4 bytes
+size_t count      = sizeof(arr) / sizeof(arr[0]); // 24 / 4 = 6 elements
+
+cout &lt;&lt; "Elements: " &lt;&lt; count &lt;&lt; "\n";      // Elements: 6</code></pre>
+    <div class="callout error">
+      <strong>The trick only works in the scope where the array was declared</strong>
+      Inside a function that receives the array as a parameter, <code>sizeof(arr)</code> gives the size of a
+      <em>pointer</em> (typically 8 bytes), not of the array. See section 5.7. In C++17 you can use
+      <code>std::size(arr)</code> from <code>&lt;iterator&gt;</code> for a safer equivalent.
+    </div>
+
+    <h2>5.4 Out-of-Bounds Access — Undefined Behavior</h2>
+    <p>
+      C++ does <strong>not</strong> check array indices at run time. Reading or writing outside
+      <code>[0, n-1]</code> is <strong>undefined behavior (UB)</strong>.
+    </p>
+<pre><code>int arr[5] = {1, 2, 3, 4, 5};
+
+cout &lt;&lt; arr[5];     // UB! valid indices are 0..4
+arr[-1] = 99;         // UB! writes before the array
+arr[100] = 7;         // UB! may corrupt other variables or crash</code></pre>
+    <div class="callout error">
+      <strong>Undefined behavior means anything can happen</strong>
+      The program might print garbage, crash with a segmentation fault, silently corrupt other variables, or
+      appear to work perfectly — until the day it does not. Out-of-bounds writes are a classic source of security
+      vulnerabilities (buffer overflows). Compile with <code>-fsanitize=address,undefined</code> during development
+      to catch these bugs.
+    </div>
+
+    <h2>5.5 Iterating Over Arrays</h2>
+    <h3>Classic index-based for loop</h3>
+<pre><code>int nums[] = {3, 6, 9, 12};
+size_t n = sizeof(nums) / sizeof(nums[0]);
+
+for (size_t i = 0; i &lt; n; ++i) {       // note: i &lt; n, never i &lt;= n
+    cout &lt;&lt; "nums[" &lt;&lt; i &lt;&lt; "] = " &lt;&lt; nums[i] &lt;&lt; "\n";
+}</code></pre>
+
+    <h3>Range-based for loop (C++11)</h3>
+<pre><code>for (int x : nums) {          // x is a COPY of each element
+    cout &lt;&lt; x &lt;&lt; " ";
+}
+
+for (int&amp; x : nums) {         // x is a REFERENCE — modifications change the array
+    x *= 2;                   // nums is now {6, 12, 18, 24}
+}
+
+for (const int&amp; x : nums) {   // read-only access without copying
+    cout &lt;&lt; x &lt;&lt; " ";
+}</code></pre>
+    <p>
+      The range-for loop cannot go out of bounds, so prefer it whenever you do not need the index itself.
+      It works with real arrays only — not with an array parameter that has decayed to a pointer.
+    </p>
+
+    <h2>5.6 Multi-Dimensional Arrays</h2>
+    <p>
+      A 2D array is an "array of arrays". Think of it as a table with rows and columns. It is declared as
+      <code>type name[ROWS][COLS]</code> and accessed as <code>name[row][col]</code>.
+    </p>
+<pre><code>int grid[2][3] = {
+    {1, 2, 3},     // row 0
+    {4, 5, 6}      // row 1
+};
+
+cout &lt;&lt; grid[0][2] &lt;&lt; "\n";   // row 0, column 2 → 3
+cout &lt;&lt; grid[1][0] &lt;&lt; "\n";   // row 1, column 0 → 4
+
+grid[1][1] = 50;                // modify a single cell
+
+// Nested loops: outer loop = rows, inner loop = columns
+for (int r = 0; r &lt; 2; ++r) {
+    for (int c = 0; c &lt; 3; ++c) {
+        cout &lt;&lt; grid[r][c] &lt;&lt; "\t";
+    }
+    cout &lt;&lt; "\n";
+}</code></pre>
+    <p>
+      In memory, a C++ 2D array is stored in <strong>row-major order</strong>: <code>grid[0][0], grid[0][1],
+      grid[0][2], grid[1][0], ...</code>. Iterating with the column index in the inner loop therefore walks memory
+      sequentially, which is cache-friendly.
+    </p>
+    <table>
+      <thead><tr><th></th><th>col 0</th><th>col 1</th><th>col 2</th></tr></thead>
+      <tbody>
+        <tr><td><strong>row 0</strong></td><td>grid[0][0]</td><td>grid[0][1]</td><td>grid[0][2]</td></tr>
+        <tr><td><strong>row 1</strong></td><td>grid[1][0]</td><td>grid[1][1]</td><td>grid[1][2]</td></tr>
+      </tbody>
+    </table>
+
+    <h2>5.7 Passing Arrays to Functions — Array-to-Pointer Decay</h2>
+    <p>
+      When you pass an array to a function, you do <strong>not</strong> pass a copy. The array
+      <strong>decays</strong> to a pointer to its first element. These three declarations are identical to the compiler:
+    </p>
+<pre><code>void print(int arr[], size_t n);      // looks like an array...
+void print(int arr[5], size_t n);     // ...the 5 is ignored
+void print(int* arr, size_t n);       // ...all three mean int*</code></pre>
+    <p>Because the length is lost, you must pass it as a separate parameter:</p>
+<pre><code>#include &lt;iostream&gt;
+using namespace std;
+
+void doubleAll(int arr[], size_t n) {
+    // sizeof(arr) here would be sizeof(int*), NOT the array size!
+    for (size_t i = 0; i &lt; n; ++i) {
+        arr[i] *= 2;              // modifies the caller's array — no copy was made
+    }
+}
+
+int main() {
+    int data[] = {1, 2, 3, 4};
+    size_t n = sizeof(data) / sizeof(data[0]);   // compute size HERE, where data is an array
+
+    doubleAll(data, n);
+
+    for (int x : data) cout &lt;&lt; x &lt;&lt; " ";       // 2 4 6 8
+    cout &lt;&lt; "\n";
+    return 0;
+}</code></pre>
+    <p>
+      For multi-dimensional arrays, every dimension except the first must be specified:
+      <code>void show(int m[][3], int rows)</code>.
+    </p>
+    <div class="callout">
+      <strong>Protect read-only data</strong>
+      If the function should not modify the array, declare the parameter <code>const int arr[]</code>
+      (equivalently <code>const int*</code>). Pointers are covered in depth in
+      <a href="/chapters/ch06-pointers-references/index.html">Chapter 06</a>.
+    </div>
+
+    <h2>5.8 C-Strings — Character Arrays</h2>
+    <p>
+      Before <code>std::string</code>, C represented text as an array of <code>char</code> terminated by the
+      <strong>null character</strong> <code>'\0'</code> (value 0). The terminator is how functions know where the
+      text ends.
+    </p>
+<pre><code>char s1[6]  = {'h', 'e', 'l', 'l', 'o', '\0'};   // explicit null terminator
+char s2[6]  = "hello";    // compiler adds '\0' automatically → needs 5 + 1 = 6 bytes
+char s3[]   = "hello";    // size deduced as 6
+char s4[20] = "hello";    // remaining 14 bytes are all '\0'
+const char* s5 = "hello"; // pointer to a read-only string literal</code></pre>
+    <table>
+      <thead><tr><th>Index</th><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th></tr></thead>
+      <tbody>
+        <tr><td><strong>s2</strong></td><td>'h'</td><td>'e'</td><td>'l'</td><td>'l'</td><td>'o'</td><td>'\0'</td></tr>
+      </tbody>
+    </table>
+
+    <h3>The &lt;cstring&gt; functions</h3>
+    <table>
+      <thead><tr><th>Function</th><th>Purpose</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td><code>strlen(s)</code></td><td>Number of characters before <code>'\0'</code></td><td>Does <em>not</em> count the terminator; <code>strlen("hello")</code> is 5</td></tr>
+        <tr><td><code>strcpy(dest, src)</code></td><td>Copy <code>src</code> into <code>dest</code></td><td><code>dest</code> must be large enough (including <code>'\0'</code>)</td></tr>
+        <tr><td><code>strcat(dest, src)</code></td><td>Append <code>src</code> to the end of <code>dest</code></td><td><code>dest</code> must have room for both strings plus <code>'\0'</code></td></tr>
+        <tr><td><code>strcmp(a, b)</code></td><td>Lexicographic comparison</td><td>Returns 0 if equal, &lt;0 if a &lt; b, &gt;0 if a &gt; b</td></tr>
+      </tbody>
+    </table>
+<pre><code>#include &lt;iostream&gt;
+#include &lt;cstring&gt;
+using namespace std;
+
+int main() {
+    char name[30];
+    strcpy(name, "Ada");            // name = "Ada"
+    strcat(name, " Lovelace");      // name = "Ada Lovelace"
+
+    cout &lt;&lt; name &lt;&lt; "\n";
+    cout &lt;&lt; "Length: " &lt;&lt; strlen(name) &lt;&lt; "\n";          // 12
+
+    if (strcmp("apple", "banana") &lt; 0) {
+        cout &lt;&lt; "apple comes before banana\n";
+    }
+    // NOTE: ("apple" == "apple") would compare ADDRESSES, not text. Always use strcmp.
+    return 0;
+}</code></pre>
+    <div class="callout error">
+      <strong>Buffer overflow danger</strong>
+      <code>strcpy</code> and <code>strcat</code> perform no bounds checking. Copying a 12-character string into a
+      <code>char[5]</code> overwrites adjacent memory — undefined behavior. In new code, prefer
+      <code>std::string</code>.
+    </div>
+
+    <h2>5.9 <code>std::string</code> — Declaration and Initialization</h2>
+    <p>
+      <code>std::string</code> (header <code>&lt;string&gt;</code>) manages its own memory, grows automatically,
+      and knows its own length. It is the right default for text in C++.
+    </p>
+<pre><code>#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+int main() {
+    string a;                    // empty string ""
+    string b = "Hello";          // from a string literal
+    string c("World");           // constructor syntax
+    string d(5, '*');            // "*****"  (5 copies of '*')
+    string e = b;                // copy → independent string
+
+    // Concatenation with +
+    string greeting = b + ", " + c + "!";   // "Hello, World!"
+    greeting += " Welcome.";                // append in place
+
+    cout &lt;&lt; greeting &lt;&lt; "\n";
+    return 0;
+}</code></pre>
+    <div class="callout tip">
+      <strong>Literal + literal does not compile</strong>
+      <code>"Hello" + " World"</code> tries to add two <code>const char*</code> pointers and fails. At least one
+      operand of <code>+</code> must be a <code>std::string</code>: <code>string("Hello") + " World"</code>.
+    </div>
+
+    <h2>5.10 Essential <code>std::string</code> Methods</h2>
+    <table>
+      <thead><tr><th>Method</th><th>Description</th></tr></thead>
+      <tbody>
+        <tr><td><code>length()</code> / <code>size()</code></td><td>Number of characters (the two are identical)</td></tr>
+        <tr><td><code>empty()</code></td><td><code>true</code> if the string has no characters</td></tr>
+        <tr><td><code>at(i)</code></td><td>Character at index <code>i</code> with bounds checking (throws <code>std::out_of_range</code>)</td></tr>
+        <tr><td><code>s[i]</code></td><td>Character at index <code>i</code> with <em>no</em> bounds checking</td></tr>
+        <tr><td><code>substr(pos, len)</code></td><td>New string of up to <code>len</code> characters starting at <code>pos</code></td></tr>
+        <tr><td><code>find(str)</code></td><td>Index of the first occurrence of <code>str</code>, or <code>string::npos</code> if absent</td></tr>
+        <tr><td><code>replace(pos, len, str)</code></td><td>Replace <code>len</code> characters starting at <code>pos</code> with <code>str</code></td></tr>
+        <tr><td><code>erase(pos, len)</code></td><td>Remove <code>len</code> characters starting at <code>pos</code></td></tr>
+      </tbody>
+    </table>
+<pre><code>#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+int main() {
+    string s = "The quick brown fox";
+
+    cout &lt;&lt; s.length() &lt;&lt; " " &lt;&lt; s.size() &lt;&lt; "\n";    // 19 19
+    cout &lt;&lt; boolalpha &lt;&lt; s.empty() &lt;&lt; "\n";           // false
+    cout &lt;&lt; s.at(4) &lt;&lt; "\n";                          // q
+
+    cout &lt;&lt; s.substr(4, 5) &lt;&lt; "\n";                   // quick
+    cout &lt;&lt; s.substr(10) &lt;&lt; "\n";                     // brown fox  (to the end)
+
+    size_t pos = s.find("brown");                        // 10
+    if (pos != string::npos) {
+        cout &lt;&lt; "Found at index " &lt;&lt; pos &lt;&lt; "\n";
+    }
+    if (s.find("cat") == string::npos) {
+        cout &lt;&lt; "'cat' not found\n";
+    }
+
+    s.replace(4, 5, "slow");      // "The slow brown fox"
+    s.erase(4, 5);                // removes "slow " → "The brown fox"
+    cout &lt;&lt; s &lt;&lt; "\n";
+    return 0;
+}</code></pre>
+    <div class="callout warn">
+      <strong>Always compare <code>find()</code> with <code>string::npos</code></strong>
+      <code>find</code> returns an unsigned value. When nothing is found it returns <code>string::npos</code>
+      (a very large number), <em>not</em> <code>-1</code> and not <code>0</code>. Store the result in a
+      <code>size_t</code>, not an <code>int</code>.
+    </div>
+
+    <h2>5.11 String Comparison</h2>
+    <p>
+      Unlike C-strings, <code>std::string</code> overloads the comparison operators. They compare
+      <strong>lexicographically</strong> (character by character using character codes), so uppercase letters
+      sort before lowercase ones in ASCII.
+    </p>
+<pre><code>string a = "apple", b = "banana", c = "apple";
+
+cout &lt;&lt; boolalpha;
+cout &lt;&lt; (a == c) &lt;&lt; "\n";     // true  — same contents
+cout &lt;&lt; (a != b) &lt;&lt; "\n";     // true
+cout &lt;&lt; (a &lt;  b) &lt;&lt; "\n";     // true  — 'a' (97) &lt; 'b' (98)
+cout &lt;&lt; (string("Zebra") &lt; string("apple")) &lt;&lt; "\n";   // true — 'Z' (90) &lt; 'a' (97)
+cout &lt;&lt; (string("app") &lt; string("apple")) &lt;&lt; "\n";     // true — a prefix sorts first</code></pre>
+
+    <h2>5.12 Reading Strings with Spaces — <code>getline()</code></h2>
+    <p>
+      <code>cin &gt;&gt; s</code> stops at the first whitespace, so it reads only one word.
+      <code>getline(cin, s)</code> reads the <em>entire line</em> up to (and discarding) the newline.
+    </p>
+<pre><code>#include &lt;iostream&gt;
+#include &lt;string&gt;
+#include &lt;limits&gt;
+using namespace std;
+
+int main() {
+    string word, line;
+
+    cout &lt;&lt; "Enter a word: ";
+    cin &gt;&gt; word;                               // reads "Hello" from "Hello World"
+
+    // cin &gt;&gt; leaves the '\n' in the buffer; discard the rest of the line
+    cin.ignore(numeric_limits&lt;streamsize&gt;::max(), '\n');
+
+    cout &lt;&lt; "Enter a sentence: ";
+    getline(cin, line);                          // reads the whole line, spaces included
+
+    cout &lt;&lt; "word = " &lt;&lt; word &lt;&lt; "\nline = " &lt;&lt; line &lt;&lt; "\n";
+    return 0;
+}</code></pre>
+    <div class="callout warn">
+      <strong>The classic <code>cin</code> / <code>getline</code> trap</strong>
+      If you call <code>getline</code> directly after <code>cin &gt;&gt; number</code>, the leftover
+      <code>'\n'</code> is consumed immediately and <code>getline</code> returns an empty string. Call
+      <code>cin.ignore(...)</code> in between, as shown above.
+    </div>
+
+    <h2>5.13 Converting Between Strings and Numbers</h2>
+    <table>
+      <thead><tr><th>Function</th><th>Direction</th><th>Example</th></tr></thead>
+      <tbody>
+        <tr><td><code>stoi(s)</code></td><td>string → int</td><td><code>stoi("42")</code> → <code>42</code></td></tr>
+        <tr><td><code>stod(s)</code></td><td>string → double</td><td><code>stod("3.14")</code> → <code>3.14</code></td></tr>
+        <tr><td><code>to_string(n)</code></td><td>number → string</td><td><code>to_string(99)</code> → <code>"99"</code></td></tr>
+      </tbody>
+    </table>
+<pre><code>#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+int main() {
+    int    n = stoi("42");            // 42
+    double d = stod("3.14159");       // 3.14159
+    string s = to_string(n + 8);      // "50"
+
+    cout &lt;&lt; n + 1 &lt;&lt; "\n";             // 43   (arithmetic on a real int)
+    cout &lt;&lt; s + "!" &lt;&lt; "\n";           // 50!  (string concatenation)
+
+    try {
+        int bad = stoi("hello");      // throws std::invalid_argument
+        cout &lt;&lt; bad;
+    } catch (const invalid_argument&amp;) {
+        cout &lt;&lt; "Not a valid integer\n";
+    } catch (const out_of_range&amp;) {
+        cout &lt;&lt; "Number too large\n";
+    }
+    return 0;
+}</code></pre>
+    <p>
+      <code>stoi</code> and <code>stod</code> skip leading whitespace and stop parsing at the first invalid character
+      (<code>stoi("12abc")</code> returns <code>12</code>). If no conversion is possible they throw
+      <code>std::invalid_argument</code>; if the value does not fit they throw <code>std::out_of_range</code>.
+      Exceptions are covered in Chapter 13.
+    </p>
+
+    <h2>5.14 <code>std::array&lt;T, N&gt;</code> — A Safer Fixed-Size Array (C++11)</h2>
+    <p>
+      <code>std::array</code> (header <code>&lt;array&gt;</code>) wraps a built-in array in a class. It has the same
+      performance and memory layout, but it <strong>knows its size</strong>, never decays to a pointer, can be copied
+      and compared, and offers a bounds-checked <code>at()</code>.
+    </p>
+<pre><code>#include &lt;iostream&gt;
+#include &lt;array&gt;
+using namespace std;
+
+void printAll(const array&lt;int, 5&gt;&amp; a) {      // size is part of the type — no decay
+    for (int x : a) cout &lt;&lt; x &lt;&lt; " ";
+    cout &lt;&lt; "(size " &lt;&lt; a.size() &lt;&lt; ")\n";    // size() works inside the function!
+}
+
+int main() {
+    array&lt;int, 5&gt; nums = {5, 3, 8, 1, 9};
+
+    cout &lt;&lt; nums[0] &lt;&lt; "\n";          // 5   — unchecked, like a C array
+    cout &lt;&lt; nums.at(4) &lt;&lt; "\n";       // 9   — bounds-checked
+    cout &lt;&lt; nums.front() &lt;&lt; " " &lt;&lt; nums.back() &lt;&lt; "\n";   // 5 9
+
+    array&lt;int, 5&gt; copy = nums;        // real copy (a C array cannot be assigned like this)
+    copy[0] = 100;                    // nums[0] is still 5
+
+    printAll(nums);
+
+    try {
+        nums.at(5) = 1;               // throws std::out_of_range instead of UB
+    } catch (const out_of_range&amp; e) {
+        cout &lt;&lt; "Caught: out of range\n";
+    }
+    return 0;
+}</code></pre>
+    <table>
+      <thead><tr><th>Feature</th><th><code>int arr[5]</code></th><th><code>std::array&lt;int,5&gt;</code></th></tr></thead>
+      <tbody>
+        <tr><td>Knows its size</td><td>No (needs <code>sizeof</code> trick)</td><td>Yes — <code>.size()</code></td></tr>
+        <tr><td>Decays to pointer when passed</td><td>Yes</td><td>No</td></tr>
+        <tr><td>Copy with <code>=</code></td><td>No</td><td>Yes</td></tr>
+        <tr><td>Bounds-checked access</td><td>No</td><td><code>.at(i)</code></td></tr>
+        <tr><td>Works with STL algorithms</td><td>Awkwardly</td><td>Yes — <code>.begin()</code>, <code>.end()</code></td></tr>
+        <tr><td>Runtime overhead</td><td>None</td><td>None</td></tr>
+      </tbody>
+    </table>
+    <p>
+      If the size is not known at compile time, use <code>std::vector</code> (Chapter 10).
+    </p>
+
+    <h2>5.15 Key Takeaways</h2>
+    <ul>
+      <li>Arrays are fixed-size, contiguous, zero-indexed; valid indices are <code>0</code> to <code>n-1</code>.</li>
+      <li><code>sizeof(arr)/sizeof(arr[0])</code> yields the element count — only where <code>arr</code> is still a real array.</li>
+      <li>Out-of-bounds access is <strong>undefined behavior</strong>; C++ will not warn you at run time.</li>
+      <li>Use range-for (<code>for (int x : arr)</code>) when you do not need the index.</li>
+      <li>2D arrays use <code>arr[row][col]</code> and are stored in row-major order.</li>
+      <li>Arrays passed to functions decay to a pointer to the first element, so pass the length separately.</li>
+      <li>C-strings are <code>char</code> arrays ended by <code>'\0'</code>; <code>strlen</code> does not count the terminator.</li>
+      <li>Prefer <code>std::string</code> over C-strings: automatic memory, <code>+</code>, <code>==</code>, <code>&lt;</code>, and rich methods.</li>
+      <li><code>find()</code> returns <code>string::npos</code> when nothing is found.</li>
+      <li>Use <code>getline(cin, s)</code> for lines with spaces; convert with <code>stoi</code>, <code>stod</code>, <code>to_string</code>.</li>
+      <li>Prefer <code>std::array&lt;T,N&gt;</code> over raw arrays when the size is fixed at compile time.</li>
+    </ul>
+
+    <div style="display:flex;justify-content:space-between;margin-top:2rem;gap:.75rem;">
+      <a href="/chapters/ch04-functions/index.html" class="btn btn-outline" style="text-decoration:none;">← Chapter 04</a>
+      <a href="examples.html" class="btn" style="text-decoration:none;">Next: Examples →</a>
+    </div>
+
+  </div>
+</main>
+</div>
+<footer id="site-footer">
+  &copy; 2024 <a href="https://linkedin.com/in/adityabhuyan" target="_blank" rel="noopener">Aditya Pratap Bhuyan</a> &nbsp;|&nbsp;
+  <a href="https://github.com/aditya-bhuyan/cpp-learning-hub" target="_blank" rel="noopener">GitHub</a> &nbsp;|&nbsp;
+  GNU GPL v3 License
+</footer>
+<script src="/assets/js/nav.js"></script>
+</body>
+</html>

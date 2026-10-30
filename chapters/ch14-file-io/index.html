@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ch 14 — File I/O | C++ Learning Hub</title>
+  <link rel="stylesheet" href="/assets/css/style.css" />
+</head>
+<body>
+<header id="site-header">
+  <button id="hamburger" aria-label="Toggle navigation">&#9776;</button>
+  <div id="site-logo">C++ Learning Hub <span class="badge">FREE</span></div>
+  <button id="theme-toggle">☾ Dark</button>
+</header>
+<div id="layout">
+<aside id="sidebar"><nav>
+  <div class="nav-section-title">C++ Learning Hub</div>
+  <div class="nav-chapter" data-chapter="home"><div class="nav-chapter-header"><span>🏠 Home</span></div><div class="nav-chapter-links"><a href="/index.html">Overview</a></div></div>
+  <div class="nav-section-title">Chapters</div>
+  <div class="nav-chapter" data-chapter="ch01"><div class="nav-chapter-header"><span><span class="ch-num">01</span>Introduction to C++</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch01-introduction/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch01-introduction/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch01-introduction/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch01-introduction/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch01-introduction/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch02"><div class="nav-chapter-header"><span><span class="ch-num">02</span>Variables, Types &amp; Operators</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch02-variables-types-operators/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch02-variables-types-operators/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch02-variables-types-operators/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch02-variables-types-operators/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch02-variables-types-operators/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch03"><div class="nav-chapter-header"><span><span class="ch-num">03</span>Control Flow</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch03-control-flow/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch03-control-flow/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch03-control-flow/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch03-control-flow/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch03-control-flow/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch04"><div class="nav-chapter-header"><span><span class="ch-num">04</span>Functions</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch04-functions/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch04-functions/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch04-functions/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch04-functions/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch04-functions/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch05"><div class="nav-chapter-header"><span><span class="ch-num">05</span>Arrays &amp; Strings</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch05-arrays-strings/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch05-arrays-strings/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch05-arrays-strings/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch05-arrays-strings/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch05-arrays-strings/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch06"><div class="nav-chapter-header"><span><span class="ch-num">06</span>Pointers &amp; References</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch06-pointers-references/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch06-pointers-references/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch06-pointers-references/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch06-pointers-references/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch06-pointers-references/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch07"><div class="nav-chapter-header"><span><span class="ch-num">07</span>OOP — Basics</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch07-oop-basics/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch07-oop-basics/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch07-oop-basics/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch07-oop-basics/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch07-oop-basics/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch08"><div class="nav-chapter-header"><span><span class="ch-num">08</span>OOP — Inheritance &amp; Polymorphism</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch08-oop-inheritance/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch08-oop-inheritance/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch08-oop-inheritance/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch08-oop-inheritance/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch08-oop-inheritance/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch09"><div class="nav-chapter-header"><span><span class="ch-num">09</span>Templates</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch09-templates/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch09-templates/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch09-templates/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch09-templates/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch09-templates/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch10"><div class="nav-chapter-header"><span><span class="ch-num">10</span>STL — Containers</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch10-stl-containers/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch10-stl-containers/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch10-stl-containers/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch10-stl-containers/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch10-stl-containers/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch11"><div class="nav-chapter-header"><span><span class="ch-num">11</span>STL — Algorithms &amp; Iterators</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch11-stl-algorithms/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch11-stl-algorithms/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch11-stl-algorithms/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch11-stl-algorithms/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch11-stl-algorithms/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch12"><div class="nav-chapter-header"><span><span class="ch-num">12</span>Memory Management</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch12-memory-management/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch12-memory-management/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch12-memory-management/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch12-memory-management/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch12-memory-management/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch13"><div class="nav-chapter-header"><span><span class="ch-num">13</span>Exception Handling</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch13-exception-handling/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch13-exception-handling/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch13-exception-handling/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch13-exception-handling/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch13-exception-handling/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter open" data-chapter="ch14"><div class="nav-chapter-header active"><span><span class="ch-num">14</span>File I/O</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch14-file-io/index.html" class="active"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch14-file-io/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch14-file-io/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch14-file-io/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch14-file-io/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch15"><div class="nav-chapter-header"><span><span class="ch-num">15</span>Modern C++ (C++11–C++20)</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch15-modern-cpp/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch15-modern-cpp/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch15-modern-cpp/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch15-modern-cpp/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch15-modern-cpp/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-section-title">Capstone</div>
+  <div class="nav-chapter" data-chapter="ch16"><div class="nav-chapter-header"><span><span class="ch-num">16</span>Capstone Project</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch16-capstone/index.html"><span class="link-icon">🎯</span>Brief</a><a href="/chapters/ch16-capstone/walkthrough.html"><span class="link-icon">🗺</span>Walkthrough</a><a href="/chapters/ch16-capstone/solution.html"><span class="link-icon">✅</span>Solution</a></div></div>
+  <div class="nav-section-title">About</div>
+  <div style="padding:.4rem 1.1rem 1rem;font-size:.78rem;color:var(--muted);line-height:1.5;">Maintained by<br><a href="https://linkedin.com/in/adityabhuyan" target="_blank" rel="noopener">Aditya Pratap Bhuyan</a><br><span style="font-size:.72rem;">GNU GPL v3 License</span></div>
+</nav></aside>
+
+<main id="main">
+  <div class="page-header">
+    <div class="breadcrumb"><a href="/index.html">Home</a> › Chapter 14</div>
+    <h1>Chapter 14 — File I/O</h1>
+    <p class="subtitle">Stream-based file handling in C++ — formatted I/O, binary serialization, stream positioning, state handling, and the C++17 filesystem library.</p>
+    <div class="chapter-tabs">
+      <a href="index.html" class="active">📖 Learning</a>
+      <a href="examples.html">💻 Examples</a>
+      <a href="exercises.html">✏️ Exercises</a>
+      <a href="solutions.html">✅ Solutions</a>
+      <a href="quiz.html">🧠 Quiz</a>
+    </div>
+  </div>
+
+  <div class="content">
+
+    <h2>14.1 The &lt;fstream&gt; Header &amp; Stream Hierarchy</h2>
+    <p>
+      In C++, file input and output are performed using <strong>file stream classes</strong> defined in the
+      <code>&lt;fstream&gt;</code> standard header. Just as <code>std::cin</code> and <code>std::cout</code> provide
+      stream interfaces for keyboard and console, file streams provide the same stream semantics for files on disk.
+    </p>
+    <div class="callout">
+      <strong>Header</strong>
+      <code>#include &lt;fstream&gt;</code>
+    </div>
+    <p>The three core stream classes provided by <code>&lt;fstream&gt;</code> are:</p>
+    <table>
+      <thead><tr><th>Class</th><th>Purpose</th><th>Default Direction</th><th>Inherits From</th></tr></thead>
+      <tbody>
+        <tr><td><code>std::ofstream</code></td><td>Output file stream (writing files)</td><td>Write only (<code>ios::out</code>)</td><td><code>std::ostream</code></td></tr>
+        <tr><td><code>std::ifstream</code></td><td>Input file stream (reading files)</td><td>Read only (<code>ios::in</code>)</td><td><code>std::istream</code></td></tr>
+        <tr><td><code>std::fstream</code></td><td>Bidirectional file stream (reading and writing)</td><td>Read &amp; Write (<code>ios::in | ios::out</code>)</td><td><code>std::iostream</code></td></tr>
+      </tbody>
+    </table>
+    <p>
+      Because <code>ifstream</code> inherits from <code>istream</code> and <code>ofstream</code> inherits from
+      <code>ostream</code>, any function written to take a <code>std::istream&amp;</code> or <code>std::ostream&amp;</code>
+      can seamlessly operate on file streams, console streams (<code>cin</code>/<code>cout</code>), or string streams (<code>stringstream</code>).
+    </p>
+
+    <h2>14.2 Opening Files &amp; Open Modes</h2>
+    <p>
+      A file stream can be opened in two ways:
+    </p>
+    <ol>
+      <li><strong>Via constructor</strong>: Pass the filename and optional open mode flags directly when instantiating the stream object.</li>
+      <li><strong>Via the <code>open()</code> member function</strong>: Instantiate first, then call <code>open(filename, mode)</code>.</li>
+    </ol>
+<pre><code>#include &lt;fstream&gt;
+#include &lt;string&gt;
+
+// Method 1: Constructor (preferred — ties lifetime to file access)
+std::ofstream outFile("log.txt", std::ios::app);
+
+// Method 2: Separate open()
+std::ifstream inFile;
+inFile.open("data.txt", std::ios::in);</code></pre>
+
+    <h3>Open Mode Flags (std::ios)</h3>
+    <p>
+      File streams take mode flags from the <code>std::ios</code> namespace that specify how the file is accessed.
+      Multiple flags can be combined using the bitwise OR operator (<code>|</code>):
+    </p>
+    <table>
+      <thead><tr><th>Mode Flag</th><th>Description</th></tr></thead>
+      <tbody>
+        <tr><td><code>std::ios::in</code></td><td>Open for input operations (reading). Default for <code>ifstream</code>.</td></tr>
+        <tr><td><code>std::ios::out</code></td><td>Open for output operations (writing). Default for <code>ofstream</code> (truncates existing file).</td></tr>
+        <tr><td><code>std::ios::app</code></td><td>Append mode — all write operations occur at the end of the file. Existing content is preserved.</td></tr>
+        <tr><td><code>std::ios::ate</code></td><td>"At end" — opens the file and immediately positions the stream pointer at the end of the file.</td></tr>
+        <tr><td><code>std::ios::trunc</code></td><td>Truncate mode — if the file exists, discard its previous contents (truncate to 0 bytes).</td></tr>
+        <tr><td><code>std::ios::binary</code></td><td>Binary mode — prevents OS-specific translation of newlines (e.g. <code>\r\n</code> to <code>\n</code> on Windows).</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Common Mode Combinations</h3>
+    <ul>
+      <li><code>ios::out | ios::trunc</code>: Overwrite file (default for <code>ofstream</code>).</li>
+      <li><code>ios::out | ios::app</code>: Append to existing file without overwriting.</li>
+      <li><code>ios::in | ios::out</code>: Read and write without truncating existing content.</li>
+      <li><code>ios::in | ios::out | ios::trunc</code>: Open for reading and writing, truncating existing content.</li>
+      <li><code>ios::in | ios::binary</code>: Read binary data.</li>
+      <li><code>ios::out | ios::binary</code>: Write binary data.</li>
+    </ul>
+
+    <h2>14.3 Checking if a File Opened Successfully</h2>
+    <p>
+      Attempting to read from or write to an unopened file will silently fail and set the stream's error state.
+      Always verify that the file opened successfully before attempting I/O operations.
+    </p>
+<pre><code>#include &lt;iostream&gt;
+#include &lt;fstream&gt;
+
+int main() {
+    std::ifstream file("config.ini");
+
+    // Method A: Using operator bool / if (!file)
+    if (!file) {
+        std::cerr &lt;&lt; "Error: Could not open file (operator bool check failed)!\n";
+        return 1;
+    }
+
+    // Method B: Using is_open()
+    if (!file.is_open()) {
+        std::cerr &lt;&lt; "Error: File is not open!\n";
+        return 1;
+    }
+
+    std::cout &lt;&lt; "File opened successfully.\n";
+    return 0;
+}</code></pre>
+    <div class="callout tip">
+      <strong>Difference between <code>!file</code> and <code>!file.is_open()</code></strong>
+      <code>file.is_open()</code> strictly tests whether the stream is associated with an open file on the filesystem.
+      <code>!file</code> (boolean conversion) checks whether any error bit (<code>failbit</code> or <code>badbit</code>) is set,
+      which includes open failures as well as subsequent read/write format failures.
+    </div>
+
+    <h2>14.4 Writing Text Files</h2>
+    <p>
+      Writing text to an <code>ofstream</code> uses the stream insertion operator (<code>&lt;&lt;</code>), exactly like <code>std::cout</code>.
+      You can format output with manipulators from <code>&lt;iomanip&gt;</code>.
+    </p>
+<pre><code>#include &lt;iostream&gt;
+#include &lt;fstream&gt;
+#include &lt;iomanip&gt;
+
+int main() {
+    std::ofstream out("scores.txt");
+    if (!out) {
+        std::cerr &lt;&lt; "Failed to create scores.txt\n";
+        return 1;
+    }
+
+    out &lt;&lt; "Player,Score,Accuracy\n";
+    out &lt;&lt; "Alice," &lt;&lt; 9500 &lt;&lt; "," &lt;&lt; std::fixed &lt;&lt; std::setprecision(2) &lt;&lt; 98.45 &lt;&lt; "\n";
+    out &lt;&lt; "Bob," &lt;&lt; 8200 &lt;&lt; "," &lt;&lt; std::fixed &lt;&lt; std::setprecision(2) &lt;&lt; 91.20 &lt;&lt; "\n";
+
+    // Destructor closes the file automatically (RAII)
+    return 0;
+}</code></pre>
+
+    <h2>14.5 Reading Text Files</h2>
+    <p>
+      There are three primary techniques for reading text data from an <code>ifstream</code>:
+    </p>
+
+    <h3>1. Reading Formatted Tokens with <code>operator&gt;&gt;</code></h3>
+    <p>
+      Reads whitespace-delimited tokens (words, numbers) and automatically parses them into the target variable type:
+    </p>
+<pre><code>std::ifstream in("numbers.txt");
+int num;
+while (in &gt;&gt; num) {
+    std::cout &lt;&lt; "Read integer: " &lt;&lt; num &lt;&lt; "\n";
+}</code></pre>
+
+    <h3>2. Reading Line-by-Line with <code>std::getline()</code></h3>
+    <p>
+      Reads an entire line up to the newline character <code>'\n'</code> into a <code>std::string</code>:
+    </p>
+<pre><code>std::ifstream in("document.txt");
+std::string line;
+int lineNum = 1;
+while (std::getline(in, line)) {
+    std::cout &lt;&lt; lineNum++ &lt;&lt; ": " &lt;&lt; line &lt;&lt; "\n";
+}</code></pre>
+
+    <h3>3. Reading Character-by-Character with <code>get()</code></h3>
+    <p>
+      Reads raw individual characters, preserving whitespace and newlines:
+    </p>
+<pre><code>std::ifstream in("source.txt");
+char ch;
+while (in.get(ch)) {
+    std::cout.put(ch);
+}</code></pre>
+
+    <h2>14.6 Stream State &amp; Error Handling</h2>
+    <p>
+      Every stream maintains an internal state consisting of four status flags:
+    </p>
+    <table>
+      <thead><tr><th>Method</th><th>Flag Checked</th><th>Meaning</th></tr></thead>
+      <tbody>
+        <tr><td><code>good()</code></td><td>None set (0)</td><td>Everything is fine; stream is ready for I/O operations.</td></tr>
+        <tr><td><code>eof()</code></td><td><code>eofbit</code></td><td>The stream reached the End-Of-File during a read operation.</td></tr>
+        <tr><td><code>fail()</code></td><td><code>failbit</code> / <code>badbit</code></td><td>A formatting error or logical I/O failure occurred (e.g. reading text into an <code>int</code>).</td></tr>
+        <tr><td><code>bad()</code></td><td><code>badbit</code></td><td>A severe, unrecoverable I/O error occurred (e.g. disk corruption, hardware fault).</td></tr>
+        <tr><td><code>clear()</code></td><td>Resets flags</td><td>Resets the error state flags to <code>goodbit</code> so further operations can be attempted.</td></tr>
+      </tbody>
+    </table>
+
+    <div class="callout warn">
+      <strong>The Classic <code>while (!file.eof())</code> Bug</strong>
+      <code>file.eof()</code> only becomes <code>true</code> <em>after</em> an input operation attempts to read past the end of the file and fails.
+      If you test <code>while (!file.eof())</code> before reading, the loop body will execute one extra time on EOF, processing garbage or duplicate data.<br><br>
+      <strong>Always write:</strong> <code>while (file &gt;&gt; x)</code> or <code>while (std::getline(file, line))</code> — this tests whether the read operation actually succeeded!
+    </div>
+
+    <h3>Enabling Stream Exceptions</h3>
+    <p>
+      By default, stream errors set error bits rather than throwing exceptions. You can instruct a stream to throw
+      <code>std::ios_base::failure</code> on errors using <code>exceptions()</code>:
+    </p>
+<pre><code>#include &lt;fstream&gt;
+#include &lt;iostream&gt;
+
+int main() {
+    std::ifstream file;
+    // Configure file to throw on failbit or badbit
+    file.exceptions(std::ifstream::failbit | std::ifstream::badbit);
+
+    try {
+        file.open("non_existent_file.txt");
+    } catch (const std::ios_base::failure&amp; e) {
+        std::cerr &lt;&lt; "I/O Exception caught: " &lt;&lt; e.what() &lt;&lt; "\n";
+    }
+    return 0;
+}</code></pre>
+
+    <h2>14.7 File Positioning &amp; Random Access</h2>
+    <p>
+      C++ streams track separate read (<em>get</em>) and write (<em>put</em>) file position pointers:
+    </p>
+    <ul>
+      <li><strong>Get pointer (input)</strong>:
+        <ul>
+          <li><code>tellg()</code>: Returns current read position as a <code>std::streampos</code>.</li>
+          <li><code>seekg(offset, origin)</code> or <code>seekg(pos)</code>: Moves the read pointer.</li>
+        </ul>
+      </li>
+      <li><strong>Put pointer (output)</strong>:
+        <ul>
+          <li><code>tellp()</code>: Returns current write position as a <code>std::streampos</code>.</li>
+          <li><code>seekp(offset, origin)</code> or <code>seekp(pos)</code>: Moves the write pointer.</li>
+        </ul>
+      </li>
+    </ul>
+
+    <h3>Seek Origins</h3>
+    <table>
+      <thead><tr><th>Origin Flag</th><th>Description</th></tr></thead>
+      <tbody>
+        <tr><td><code>std::ios::beg</code></td><td>Offset from the beginning of the stream (default).</td></tr>
+        <tr><td><code>std::ios::cur</code></td><td>Offset from the current position.</td></tr>
+        <tr><td><code>std::ios::end</code></td><td>Offset from the end of the stream (typically negative offset).</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Example: Determining File Size via <code>seekg</code></h3>
+<pre><code>#include &lt;iostream&gt;
+#include &lt;fstream&gt;
+
+std::streampos getFileSize(const std::string&amp; filename) {
+    std::ifstream file(filename, std::ios::binary | std::ios::ate);
+    if (!file) return -1;
+    return file.tellg(); // Opened at end -> tellg gives byte size
+}
+
+int main() {
+    std::cout &lt;&lt; "File size: " &lt;&lt; getFileSize("data.bin") &lt;&lt; " bytes\n";
+    return 0;
+}</code></pre>
+
+    <h2>14.8 Closing Files &amp; RAII</h2>
+    <p>
+      File stream destructors automatically flush buffers and close the open file handle when the stream object goes out of scope.
+      This adheres to the <strong>Resource Acquisition Is Initialization (RAII)</strong> idiom.
+    </p>
+    <p>
+      You only need to call <code>file.close()</code> explicitly if:
+    </p>
+    <ul>
+      <li>You want to reuse the stream object to open another file.</li>
+      <li>You want to release the file lock early before the containing scope terminates.</li>
+      <li>You want to immediately check if closing and flushing succeeded.</li>
+    </ul>
+
+    <h2>14.9 Binary File I/O</h2>
+    <p>
+      Text I/O converts in-memory binary values to ASCII/UTF-8 strings. In contrast, <strong>binary I/O</strong> reads and writes
+      raw bytes directly between memory and the file, preserving exact representation without conversion overhead or rounding.
+    </p>
+    <div class="callout">
+      <strong>Always use <code>std::ios::binary</code></strong>
+      Omitting binary mode on Windows causes byte value <code>0x0A</code> (<code>\n</code>) to be automatically expanded to <code>0x0D 0x0A</code> (<code>\r\n</code>), corrupting binary data.
+    </div>
+
+    <h3>Writing and Reading Raw Data with <code>write()</code> and <code>read()</code></h3>
+<pre><code>#include &lt;iostream&gt;
+#include &lt;fstream&gt;
+
+int main() {
+    int writeVal = 123456789;
+
+    // Writing binary
+    {
+        std::ofstream out("data.bin", std::ios::binary);
+        out.write(reinterpret_cast&lt;const char*&gt;(&amp;writeVal), sizeof(writeVal));
+    }
+
+    // Reading binary
+    int readVal = 0;
+    {
+        std::ifstream in("data.bin", std::ios::binary);
+        in.read(reinterpret_cast&lt;char*&gt;(&amp;readVal), sizeof(readVal));
+        std::cout &lt;&lt; "Bytes read: " &lt;&lt; in.gcount() &lt;&lt; "\n";
+        std::cout &lt;&lt; "Read value: " &lt;&lt; readVal &lt;&lt; "\n";
+    }
+
+    return 0;
+}</code></pre>
+    <p>
+      <code>in.gcount()</code> returns the number of unformatted characters (bytes) extracted by the last unformatted read operation.
+    </p>
+
+    <h2>14.10 Struct Serialization to Binary Files</h2>
+    <p>
+      You can serialize entire struct objects to binary files in a single <code>write()</code> call, provided the struct is
+      <strong>trivially copyable (POD — Plain Old Data)</strong>:
+    </p>
+    <ul>
+      <li>The struct must contain fixed-size members (e.g. <code>int</code>, <code>double</code>, fixed char arrays <code>char name[32]</code>).</li>
+      <li>It must <strong>NOT</strong> contain heap-managing objects (like <code>std::string</code> or <code>std::vector</code>) or pointers, because writing them only dumps internal pointer addresses to disk, leading to dangling pointers and crashes on reload.</li>
+    </ul>
+
+<pre><code>#include &lt;iostream&gt;
+#include &lt;fstream&gt;
+#include &lt;cstring&gt;
+
+struct Record {
+    int id;
+    char name[32];
+    double balance;
+};
+
+int main() {
+    Record rec1{101, "Alice Smith", 4500.75};
+
+    // Save struct to binary file
+    std::ofstream out("records.dat", std::ios::binary);
+    out.write(reinterpret_cast&lt;const char*&gt;(&amp;rec1), sizeof(Record));
+    out.close();
+
+    // Read struct back from binary file
+    Record rec2{};
+    std::ifstream in("records.dat", std::ios::binary);
+    in.read(reinterpret_cast&lt;char*&gt;(&amp;rec2), sizeof(Record));
+
+    std::cout &lt;&lt; "Loaded: #" &lt;&lt; rec2.id &lt;&lt; " - " &lt;&lt; rec2.name &lt;&lt; " ($" &lt;&lt; rec2.balance &lt;&lt; ")\n";
+    return 0;
+}</code></pre>
+
+    <h2>14.11 CSV File Reading &amp; Parsing</h2>
+    <p>
+      Comma-Separated Values (CSV) is the most widespread tabular text format. In C++, the canonical parsing technique
+      combines <code>std::getline(file, line)</code> to read each row, followed by <code>std::stringstream</code> and
+      <code>std::getline(ss, cell, ',')</code> to extract fields:
+    </p>
+<pre><code>#include &lt;iostream&gt;
+#include &lt;fstream&gt;
+#include &lt;sstream&gt;
+#include &lt;vector&gt;
+#include &lt;string&gt;
+
+struct User {
+    int id;
+    std::string name;
+    std::string email;
+};
+
+int main() {
+    std::ifstream file("users.csv");
+    if (!file) {
+        std::cerr &lt;&lt; "Cannot open users.csv\n";
+        return 1;
+    }
+
+    std::string line;
+    std::vector&lt;User&gt; users;
+
+    // Read header line if present
+    std::getline(file, line);
+
+    while (std::getline(file, line)) {
+        if (line.empty()) continue; // Skip empty rows
+
+        std::stringstream ss(line);
+        std::string idStr, name, email;
+
+        if (std::getline(ss, idStr, ',') &amp;&amp;
+            std::getline(ss, name, ',') &amp;&amp;
+            std::getline(ss, email, ',')) {
+            users.push_back({std::stoi(idStr), name, email});
+        }
+    }
+
+    std::cout &lt;&lt; "Loaded " &lt;&lt; users.size() &lt;&lt; " users.\n";
+    for (const auto&amp; u : users) {
+        std::cout &lt;&lt; u.id &lt;&lt; " | " &lt;&lt; u.name &lt;&lt; " | " &lt;&lt; u.email &lt;&lt; "\n";
+    }
+    return 0;
+}</code></pre>
+
+    <h2>14.12 Modern C++ File Operations: std::filesystem (C++17)</h2>
+    <p>
+      C++17 introduced the <code>&lt;filesystem&gt;</code> library, providing a standardized, portable interface for
+      querying file paths, directory trees, file sizes, permissions, and filesystem metadata without platform-specific APIs.
+    </p>
+    <div class="callout">
+      <strong>Header</strong>
+      <code>#include &lt;filesystem&gt;</code><br>
+      <code>namespace fs = std::filesystem;</code>
+    </div>
+
+    <h3>Essential Functions &amp; Types</h3>
+    <table>
+      <thead><tr><th>Component</th><th>Purpose</th><th>Example</th></tr></thead>
+      <tbody>
+        <tr><td><code>fs::path</code></td><td>Encapsulates a filesystem path (handles OS separator differences)</td><td><code>fs::path p = "data/logs/app.log";</code></td></tr>
+        <tr><td><code>fs::exists(p)</code></td><td>Checks if a path exists</td><td><code>if (fs::exists(p)) ...</code></td></tr>
+        <tr><td><code>fs::file_size(p)</code></td><td>Returns file size in bytes as <code>std::uintmax_t</code></td><td><code>auto bytes = fs::file_size(p);</code></td></tr>
+        <tr><td><code>fs::create_directory(p)</code></td><td>Creates a single directory</td><td><code>fs::create_directory("output");</code></td></tr>
+        <tr><td><code>fs::create_directories(p)</code></td><td>Creates full directory path recursively (like <code>mkdir -p</code>)</td><td><code>fs::create_directories("a/b/c");</code></td></tr>
+        <tr><td><code>fs::remove(p)</code></td><td>Deletes a file or empty directory</td><td><code>fs::remove("temp.txt");</code></td></tr>
+        <tr><td><code>fs::directory_iterator</code></td><td>Iterates non-recursively over files in a directory</td><td><code>for (auto&amp; e : fs::directory_iterator("."))</code></td></tr>
+        <tr><td><code>fs::recursive_directory_iterator</code></td><td>Iterates recursively through subdirectories</td><td><code>for (auto&amp; e : fs::recursive_directory_iterator("."))</code></td></tr>
+      </tbody>
+    </table>
+
+    <h3>Example: Directory Inspection with C++17 Filesystem</h3>
+<pre><code>#include &lt;iostream&gt;
+#include &lt;filesystem&gt;
+
+namespace fs = std::filesystem;
+
+int main() {
+    fs::path dir = "./logs";
+
+    if (!fs::exists(dir)) {
+        fs::create_directories(dir);
+        std::cout &lt;&lt; "Created directory: " &lt;&lt; dir &lt;&lt; "\n";
+    }
+
+    std::cout &lt;&lt; "Scanning current directory contents:\n";
+    for (const auto&amp; entry : fs::directory_iterator(".")) {
+        std::cout &lt;&lt; (entry.is_directory() ? "[DIR]  " : "[FILE] ")
+                  &lt;&lt; entry.path().filename().string();
+        if (entry.is_regular_file()) {
+            std::cout &lt;&lt; " (" &lt;&lt; entry.file_size() &lt;&lt; " bytes)";
+        }
+        std::cout &lt;&lt; "\n";
+    }
+    return 0;
+}</code></pre>
+
+    <h2>14.13 Key Takeaways</h2>
+    <ul>
+      <li>Use <code>std::ifstream</code> for reading, <code>std::ofstream</code> for writing, and <code>std::fstream</code> for both.</li>
+      <li>Always check whether a file opened successfully using <code>if (!file)</code> or <code>file.is_open()</code>.</li>
+      <li>Always loop over reads with <code>while (std::getline(file, line))</code> or <code>while (file &gt;&gt; token)</code> — never test <code>while (!file.eof())</code> before reading.</li>
+      <li>Use <code>ios::binary</code> when reading or writing raw byte buffers or structs to avoid OS newline conversions.</li>
+      <li>Binary structs must be <strong>trivially copyable</strong> — never write structs containing raw heap pointers or dynamic containers like <code>std::string</code> directly.</li>
+      <li>Stream pointers can be queried via <code>tellg()</code> / <code>tellp()</code> and repositioned with <code>seekg()</code> / <code>seekp()</code>.</li>
+      <li>RAII ensures files are safely closed and flushed when stream objects exit their scope.</li>
+      <li>C++17 <code>std::filesystem</code> provides safe, cross-platform path querying, directory creation, and folder iteration.</li>
+    </ul>
+
+    <div style="display:flex;justify-content:space-between;margin-top:2rem;gap:.75rem;">
+      <a href="/chapters/ch13-exception-handling/index.html" class="btn btn-outline" style="text-decoration:none;">← Chapter 13</a>
+      <a href="examples.html" class="btn" style="text-decoration:none;">Next: Examples →</a>
+    </div>
+
+  </div>
+</main>
+</div>
+<footer id="site-footer">
+  &copy; 2024 <a href="https://linkedin.com/in/adityabhuyan" target="_blank" rel="noopener">Aditya Pratap Bhuyan</a> &nbsp;|&nbsp;
+  <a href="https://github.com/aditya-bhuyan/cpp-learning-hub" target="_blank" rel="noopener">GitHub</a> &nbsp;|&nbsp;
+  GNU GPL v3 License
+</footer>
+<script src="/assets/js/nav.js"></script>
+</body>
+</html>

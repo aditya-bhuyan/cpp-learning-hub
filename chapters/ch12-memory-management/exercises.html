@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ch 12 Exercises — Memory Management | C++ Learning Hub</title>
+  <link rel="stylesheet" href="/assets/css/style.css" />
+</head>
+<body>
+<header id="site-header">
+  <button id="hamburger" aria-label="Toggle navigation">&#9776;</button>
+  <div id="site-logo">C++ Learning Hub <span class="badge">FREE</span></div>
+  <button id="theme-toggle">☾ Dark</button>
+</header>
+<div id="layout">
+<aside id="sidebar"><nav>
+  <div class="nav-section-title">C++ Learning Hub</div>
+  <div class="nav-chapter" data-chapter="home"><div class="nav-chapter-header"><span>🏠 Home</span></div><div class="nav-chapter-links"><a href="/index.html">Overview</a></div></div>
+  <div class="nav-section-title">Chapters</div>
+  <div class="nav-chapter" data-chapter="ch01"><div class="nav-chapter-header"><span><span class="ch-num">01</span>Introduction to C++</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch01-introduction/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch01-introduction/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch01-introduction/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch01-introduction/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch01-introduction/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch02"><div class="nav-chapter-header"><span><span class="ch-num">02</span>Variables, Types &amp; Operators</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch02-variables-types-operators/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch02-variables-types-operators/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch02-variables-types-operators/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch02-variables-types-operators/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch02-variables-types-operators/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch03"><div class="nav-chapter-header"><span><span class="ch-num">03</span>Control Flow</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch03-control-flow/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch03-control-flow/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch03-control-flow/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch03-control-flow/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch03-control-flow/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch04"><div class="nav-chapter-header"><span><span class="ch-num">04</span>Functions</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch04-functions/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch04-functions/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch04-functions/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch04-functions/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch04-functions/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch05"><div class="nav-chapter-header"><span><span class="ch-num">05</span>Arrays &amp; Strings</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch05-arrays-strings/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch05-arrays-strings/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch05-arrays-strings/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch05-arrays-strings/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch05-arrays-strings/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch06"><div class="nav-chapter-header"><span><span class="ch-num">06</span>Pointers &amp; References</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch06-pointers-references/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch06-pointers-references/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch06-pointers-references/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch06-pointers-references/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch06-pointers-references/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch07"><div class="nav-chapter-header"><span><span class="ch-num">07</span>OOP — Basics</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch07-oop-basics/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch07-oop-basics/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch07-oop-basics/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch07-oop-basics/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch07-oop-basics/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch08"><div class="nav-chapter-header"><span><span class="ch-num">08</span>OOP — Inheritance &amp; Polymorphism</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch08-oop-inheritance/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch08-oop-inheritance/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch08-oop-inheritance/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch08-oop-inheritance/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch08-oop-inheritance/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch09"><div class="nav-chapter-header"><span><span class="ch-num">09</span>Templates</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch09-templates/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch09-templates/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch09-templates/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch09-templates/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch09-templates/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch10"><div class="nav-chapter-header"><span><span class="ch-num">10</span>STL — Containers</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch10-stl-containers/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch10-stl-containers/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch10-stl-containers/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch10-stl-containers/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch10-stl-containers/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch11"><div class="nav-chapter-header"><span><span class="ch-num">11</span>STL — Algorithms &amp; Iterators</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch11-stl-algorithms/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch11-stl-algorithms/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch11-stl-algorithms/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch11-stl-algorithms/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch11-stl-algorithms/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter open" data-chapter="ch12"><div class="nav-chapter-header active"><span><span class="ch-num">12</span>Memory Management</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch12-memory-management/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch12-memory-management/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch12-memory-management/exercises.html" class="active"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch12-memory-management/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch12-memory-management/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch13"><div class="nav-chapter-header"><span><span class="ch-num">13</span>Exception Handling</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch13-exception-handling/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch13-exception-handling/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch13-exception-handling/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch13-exception-handling/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch13-exception-handling/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch14"><div class="nav-chapter-header"><span><span class="ch-num">14</span>File I/O</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch14-file-io/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch14-file-io/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch14-file-io/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch14-file-io/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch14-file-io/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch15"><div class="nav-chapter-header"><span><span class="ch-num">15</span>Modern C++ (C++11–C++20)</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch15-modern-cpp/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch15-modern-cpp/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch15-modern-cpp/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch15-modern-cpp/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch15-modern-cpp/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-section-title">Capstone</div>
+  <div class="nav-chapter" data-chapter="ch16"><div class="nav-chapter-header"><span><span class="ch-num">16</span>Capstone Project</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch16-capstone/index.html"><span class="link-icon">🎯</span>Brief</a><a href="/chapters/ch16-capstone/walkthrough.html"><span class="link-icon">🗺</span>Walkthrough</a><a href="/chapters/ch16-capstone/solution.html"><span class="link-icon">✅</span>Solution</a></div></div>
+  <div class="nav-section-title">About</div>
+  <div style="padding:.4rem 1.1rem 1rem;font-size:.78rem;color:var(--muted);line-height:1.5;">Maintained by<br><a href="https://linkedin.com/in/adityabhuyan" target="_blank" rel="noopener">Aditya Pratap Bhuyan</a><br><span style="font-size:.72rem;">GNU GPL v3 License</span></div>
+</nav></aside>
+
+<main id="main">
+  <div class="page-header">
+    <div class="breadcrumb"><a href="/index.html">Home</a> › <a href="index.html">Chapter 12</a> › Exercises</div>
+    <h1>Chapter 12 — Exercises</h1>
+    <p class="subtitle">Apply what you've learned. Attempt each problem before viewing the solutions.</p>
+    <div class="chapter-tabs">
+      <a href="index.html">📖 Learning</a>
+      <a href="examples.html">💻 Examples</a>
+      <a href="exercises.html" class="active">✏️ Exercises</a>
+      <a href="solutions.html">✅ Solutions</a>
+      <a href="quiz.html">🧠 Quiz</a>
+    </div>
+  </div>
+
+  <div class="content">
+
+    <div class="callout">
+      <strong>Instructions</strong>
+      Write each program in a text editor or IDE, compile with <code>g++ -std=c++17 -Wall -fsanitize=address</code>, and test it. Only open
+      <a href="solutions.html">Solutions</a> after you have made a genuine attempt.
+    </div>
+
+    <!-- Exercise 1 -->
+    <div class="exercise-card">
+      <div class="card-header">
+        Exercise 1 — Modernizing Raw Dynamic Arrays with <code>std::unique_ptr&lt;int[]&gt;</code>
+        <span class="tag tag-easy">Easy</span>
+      </div>
+      <div class="card-body">
+        <p>
+          Given the following legacy C++ code using raw <code>new[]</code> and <code>delete[]</code>:
+        </p>
+<pre><code>int size = 5;
+int* arr = new int[size];
+for (int i = 0; i &lt; size; ++i) arr[i] = (i + 1) * 10;
+// Print elements and sum...
+delete[] arr;</code></pre>
+        <p>
+          Rewrite the program to manage the dynamic array using <strong><code>std::unique_ptr&lt;int[]&gt;</code></strong> and <strong><code>std::make_unique</code></strong>.
+          Fill the array with multiples of 10, calculate the sum and average, and verify that no manual <code>delete[]</code> is required.
+        </p>
+        <p><strong>Hint:</strong> Use <code>std::make_unique&lt;int[]&gt;(size)</code> and access elements via the standard <code>operator[]</code>.</p>
+        <p><strong>Expected output:</strong></p>
+<pre><code>Array elements: 10 20 30 40 50
+Sum: 150
+Average: 30.0</code></pre>
+      </div>
+    </div>
+
+    <!-- Exercise 2 -->
+    <div class="exercise-card">
+      <div class="card-header">
+        Exercise 2 — Dynamic String Wrapper and Parameter Passing
+        <span class="tag tag-easy">Easy</span>
+      </div>
+      <div class="card-body">
+        <p>
+          Write a program that:
+        </p>
+        <ol>
+          <li>Creates a dynamically allocated <code>std::string</code> on the heap using <code>std::make_unique&lt;std::string&gt;("Hello, Modern C++!")</code>.</li>
+          <li>Passes the <code>unique_ptr</code> into a function <code>inspectString(const std::string&amp; str)</code> that borrows the string by const reference without taking ownership.</li>
+          <li>Passes the <code>unique_ptr</code> into a function <code>modifyString(std::string&amp; str)</code> that appends <code>" RAII is awesome."</code> to it.</li>
+          <li>Passes the <code>unique_ptr</code> by value using <code>std::move()</code> to a sink function <code>consumeString(std::unique_ptr&lt;std::string&gt; ptr)</code> that takes final ownership and prints its length.</li>
+        </ol>
+        <p>Verify in <code>main()</code> that after <code>consumeString</code>, the original pointer is <code>nullptr</code>.</p>
+        <p><strong>Expected output:</strong></p>
+<pre><code>Inspecting: Hello, Modern C++!
+Modified: Hello, Modern C++! RAII is awesome.
+Consumed string of length 32: Hello, Modern C++! RAII is awesome.
+Owner pointer is now null: true</code></pre>
+      </div>
+    </div>
+
+    <!-- Exercise 3 -->
+    <div class="exercise-card">
+      <div class="card-header">
+        Exercise 3 — Singly-Linked List with <code>std::unique_ptr&lt;Node&gt;</code>
+        <span class="tag tag-medium">Medium</span>
+      </div>
+      <div class="card-body">
+        <p>
+          Implement a singly-linked list <code>SmartList&lt;T&gt;</code> where each <code>Node</code> holds its next pointer as <code>std::unique_ptr&lt;Node&gt;</code>:
+        </p>
+<pre><code>struct Node {
+    T value;
+    std::unique_ptr&lt;Node&gt; next;
+    Node(T val) : value(move(val)), next(nullptr) {}
+};</code></pre>
+        <p>
+          Implement the following member methods on <code>SmartList&lt;T&gt;</code>:
+        </p>
+        <ul>
+          <li><code>push_front(T value)</code>: Inserts a new node at the head of the list.</li>
+          <li><code>pop_front()</code>: Removes the head node and returns <code>true</code> (or <code>false</code> if empty).</li>
+          <li><code>print() const</code>: Traverses and prints all node values.</li>
+          <li><code>clear()</code>: Iteratively pops all nodes to prevent deep recursive destructor stack overflow on very long lists.</li>
+        </ul>
+        <p><strong>Expected output:</strong></p>
+<pre><code>List after pushes: 30 -> 20 -> 10 -> nullptr
+Popped head.
+List now: 20 -> 10 -> nullptr
+Clearing remaining nodes...
+List after clear: (empty)</code></pre>
+      </div>
+    </div>
+
+    <!-- Exercise 4 -->
+    <div class="exercise-card">
+      <div class="card-header">
+        Exercise 4 — RAII File Handler Class (<code>FileHandle</code>)
+        <span class="tag tag-medium">Medium</span>
+      </div>
+      <div class="card-body">
+        <p>
+          Create a class <code>FileHandle</code> that wraps a standard C file stream (<code>FILE*</code>) using RAII principles:
+        </p>
+        <ul>
+          <li><strong>Constructor:</strong> <code>FileHandle(const char* filename, const char* mode)</code> opens the file with <code>fopen()</code>. If opening fails, throws <code>std::runtime_error</code>.</li>
+          <li><strong>Destructor:</strong> Closes the file with <code>fclose()</code> if valid, logging a message for debugging.</li>
+          <li><strong>Non-copyable, Movable:</strong> Delete copy constructor and copy assignment; implement move constructor and move assignment.</li>
+          <li><strong>Methods:</strong> <code>write(const std::string&amp; text)</code>, <code>readLine()</code> returning <code>std::string</code>, and <code>isOpen() const</code>.</li>
+        </ul>
+        <p>Test writing a line to a temporary file <code>"sample.txt"</code> and reading it back.</p>
+        <p><strong>Expected output:</strong></p>
+<pre><code>[FileHandle] Opened 'sample.txt' for writing
+[FileHandle] Wrote 25 bytes
+[FileHandle] Closed 'sample.txt'
+[FileHandle] Opened 'sample.txt' for reading
+Read line: Hello RAII File Management!
+[FileHandle] Closed 'sample.txt'</code></pre>
+      </div>
+    </div>
+
+    <!-- Exercise 5 -->
+    <div class="exercise-card">
+      <div class="card-header">
+        Exercise 5 — Building a Reference-Counted Smart Pointer (<code>MySharedPtr&lt;T&gt;</code>)
+        <span class="tag tag-hard">Hard</span>
+      </div>
+      <div class="card-body">
+        <p>
+          Write your own simplified version of <code>std::shared_ptr&lt;T&gt;</code> called <code>MySharedPtr&lt;T&gt;</code> from scratch.
+          Your class must manage:
+        </p>
+        <ol>
+          <li>A raw pointer <code>T* ptr_</code> to the heap resource.</li>
+          <li>A pointer to a dynamically allocated reference counter <code>size_t* ref_count_</code>.</li>
+        </ol>
+        <p>Implement:</p>
+        <ul>
+          <li><strong>Default constructor:</strong> Initializes <code>ptr_ = nullptr</code> and <code>ref_count_ = nullptr</code>.</li>
+          <li><strong>Parametric constructor:</strong> <code>explicit MySharedPtr(T* ptr)</code> allocates <code>new size_t(1)</code>.</li>
+          <li><strong>Copy constructor:</strong> Shares the resource, incrementing <code>*ref_count_</code>.</li>
+          <li><strong>Copy assignment operator:</strong> Decrements existing reference (deallocating if count hits 0) and shares rhs.</li>
+          <li><strong>Move constructor &amp; Move assignment operator:</strong> Transfers pointers without allocating or changing counts.</li>
+          <li><strong>Destructor:</strong> Decrements count; if count reaches 0, deletes <code>ptr_</code> and <code>ref_count_</code>.</li>
+          <li><strong>Operators &amp; helpers:</strong> <code>operator*</code>, <code>operator-&gt;</code>, <code>use_count() const</code>, <code>get() const</code>, and explicit <code>operator bool() const</code>.</li>
+        </ul>
+        <p><strong>Expected output:</strong></p>
+<pre><code>Creating sp1...
+sp1 use_count: 1, value: 42
+Copying sp1 to sp2...
+sp1 use_count: 2, sp2 use_count: 2
+Inside nested scope:
+sp3 created from sp2. use_count: 3
+Exited nested scope.
+sp1 use_count: 2
+Moving sp2 to sp4...
+sp2 is null: true, sp4 use_count: 2, value: 42
+sp1 and sp4 leaving scope -> Resource cleaned up properly!</code></pre>
+      </div>
+    </div>
+
+    <div style="display:flex;justify-content:space-between;margin-top:2rem;">
+      <a href="examples.html" class="btn btn-outline" style="text-decoration:none;">← Examples</a>
+      <a href="solutions.html" class="btn" style="text-decoration:none;">View Solutions →</a>
+    </div>
+
+  </div>
+</main>
+</div>
+<footer id="site-footer">
+  &copy; 2024 <a href="https://linkedin.com/in/adityabhuyan" target="_blank" rel="noopener">Aditya Pratap Bhuyan</a> &nbsp;|&nbsp;
+  <a href="https://github.com/aditya-bhuyan/cpp-learning-hub" target="_blank" rel="noopener">GitHub</a> &nbsp;|&nbsp;
+  GNU GPL v3 License
+</footer>
+<script src="/assets/js/nav.js"></script>
+</body>
+</html>

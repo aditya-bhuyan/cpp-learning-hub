@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ch 07 — OOP Basics | C++ Learning Hub</title>
+  <link rel="stylesheet" href="/assets/css/style.css" />
+</head>
+<body>
+<header id="site-header">
+  <button id="hamburger" aria-label="Toggle navigation">&#9776;</button>
+  <div id="site-logo">C++ Learning Hub <span class="badge">FREE</span></div>
+  <button id="theme-toggle">☾ Dark</button>
+</header>
+<div id="layout">
+<aside id="sidebar"><nav>
+  <div class="nav-section-title">C++ Learning Hub</div>
+  <div class="nav-chapter" data-chapter="home"><div class="nav-chapter-header"><span>🏠 Home</span></div><div class="nav-chapter-links"><a href="/index.html">Overview</a></div></div>
+  <div class="nav-section-title">Chapters</div>
+  <div class="nav-chapter" data-chapter="ch01"><div class="nav-chapter-header"><span><span class="ch-num">01</span>Introduction to C++</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch01-introduction/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch01-introduction/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch01-introduction/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch01-introduction/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch01-introduction/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch02"><div class="nav-chapter-header"><span><span class="ch-num">02</span>Variables, Types &amp; Operators</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch02-variables-types-operators/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch02-variables-types-operators/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch02-variables-types-operators/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch02-variables-types-operators/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch02-variables-types-operators/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch03"><div class="nav-chapter-header"><span><span class="ch-num">03</span>Control Flow</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch03-control-flow/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch03-control-flow/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch03-control-flow/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch03-control-flow/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch03-control-flow/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch04"><div class="nav-chapter-header"><span><span class="ch-num">04</span>Functions</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch04-functions/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch04-functions/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch04-functions/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch04-functions/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch04-functions/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch05"><div class="nav-chapter-header"><span><span class="ch-num">05</span>Arrays &amp; Strings</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch05-arrays-strings/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch05-arrays-strings/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch05-arrays-strings/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch05-arrays-strings/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch05-arrays-strings/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch06"><div class="nav-chapter-header"><span><span class="ch-num">06</span>Pointers &amp; References</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch06-pointers-references/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch06-pointers-references/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch06-pointers-references/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch06-pointers-references/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch06-pointers-references/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter open" data-chapter="ch07"><div class="nav-chapter-header"><span><span class="ch-num">07</span>OOP — Basics</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch07-oop-basics/index.html" class="active"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch07-oop-basics/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch07-oop-basics/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch07-oop-basics/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch07-oop-basics/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch08"><div class="nav-chapter-header"><span><span class="ch-num">08</span>OOP — Inheritance &amp; Polymorphism</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch08-oop-inheritance/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch08-oop-inheritance/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch08-oop-inheritance/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch08-oop-inheritance/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch08-oop-inheritance/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch09"><div class="nav-chapter-header"><span><span class="ch-num">09</span>Templates</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch09-templates/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch09-templates/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch09-templates/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch09-templates/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch09-templates/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch10"><div class="nav-chapter-header"><span><span class="ch-num">10</span>STL — Containers</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch10-stl-containers/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch10-stl-containers/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch10-stl-containers/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch10-stl-containers/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch10-stl-containers/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch11"><div class="nav-chapter-header"><span><span class="ch-num">11</span>STL — Algorithms &amp; Iterators</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch11-stl-algorithms/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch11-stl-algorithms/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch11-stl-algorithms/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch11-stl-algorithms/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch11-stl-algorithms/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch12"><div class="nav-chapter-header"><span><span class="ch-num">12</span>Memory Management</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch12-memory-management/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch12-memory-management/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch12-memory-management/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch12-memory-management/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch12-memory-management/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch13"><div class="nav-chapter-header"><span><span class="ch-num">13</span>Exception Handling</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch13-exception-handling/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch13-exception-handling/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch13-exception-handling/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch13-exception-handling/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch13-exception-handling/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch14"><div class="nav-chapter-header"><span><span class="ch-num">14</span>File I/O</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch14-file-io/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch14-file-io/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch14-file-io/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch14-file-io/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch14-file-io/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch15"><div class="nav-chapter-header"><span><span class="ch-num">15</span>Modern C++ (C++11–C++20)</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch15-modern-cpp/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch15-modern-cpp/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch15-modern-cpp/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch15-modern-cpp/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch15-modern-cpp/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-section-title">Capstone</div>
+  <div class="nav-chapter" data-chapter="ch16"><div class="nav-chapter-header"><span><span class="ch-num">16</span>Capstone Project</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch16-capstone/index.html"><span class="link-icon">🎯</span>Brief</a><a href="/chapters/ch16-capstone/walkthrough.html"><span class="link-icon">🗺</span>Walkthrough</a><a href="/chapters/ch16-capstone/solution.html"><span class="link-icon">✅</span>Solution</a></div></div>
+  <div class="nav-section-title">About</div>
+  <div style="padding:.4rem 1.1rem 1rem;font-size:.78rem;color:var(--muted);line-height:1.5;">Maintained by<br><a href="https://linkedin.com/in/adityabhuyan" target="_blank" rel="noopener">Aditya Pratap Bhuyan</a><br><span style="font-size:.72rem;">GNU GPL v3 License</span></div>
+</nav></aside>
+
+<main id="main">
+  <div class="page-header">
+    <div class="breadcrumb"><a href="/index.html">Home</a> › Chapter 07</div>
+    <h1>Chapter 07 — OOP — Basics</h1>
+    <p class="subtitle">Bundle data and behavior into classes: constructors, destructors, encapsulation, const and static members.</p>
+    <div class="chapter-tabs">
+      <a href="index.html" class="active">📖 Learning</a>
+      <a href="examples.html">💻 Examples</a>
+      <a href="exercises.html">✏️ Exercises</a>
+      <a href="solutions.html">✅ Solutions</a>
+      <a href="quiz.html">🧠 Quiz</a>
+    </div>
+  </div>
+
+  <div class="content">
+
+    <h2>7.1 What Is Object-Oriented Programming?</h2>
+    <p>
+      So far you have written <em>procedural</em> code: data lives in variables and arrays, and separate functions act on it.
+      <strong>Object-Oriented Programming (OOP)</strong> bundles the data and the functions that work on that data into a single unit
+      called a <strong>class</strong>. A variable of a class type is an <strong>object</strong> (also called an <em>instance</em>).
+      A class is the blueprint; objects are the things built from it.
+    </p>
+    <h3>The four pillars of OOP</h3>
+    <table>
+      <thead><tr><th>Pillar</th><th>Idea</th><th>C++ mechanism</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Encapsulation</strong></td><td>Hide internal data; expose a small, safe interface.</td><td><code>private</code> data + <code>public</code> member functions</td></tr>
+        <tr><td><strong>Abstraction</strong></td><td>Show <em>what</em> an object does, hide <em>how</em>.</td><td>Class interfaces, abstract classes</td></tr>
+        <tr><td><strong>Inheritance</strong></td><td>Build a new class from an existing one and reuse its code.</td><td><code>class Derived : public Base</code> (Chapter 08)</td></tr>
+        <tr><td><strong>Polymorphism</strong></td><td>Treat different types through a common interface.</td><td><code>virtual</code> functions, overloading (Chapter 08)</td></tr>
+      </tbody>
+    </table>
+    <p>
+      This chapter focuses on <strong>encapsulation</strong> and <strong>abstraction</strong> — the foundation for everything else.
+      Inheritance and polymorphism are covered in Chapter 08.
+    </p>
+
+    <h2>7.2 Your First Class</h2>
+
+<pre><code>#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+class Dog {
+public:                          // access specifier (explained in 7.4)
+    string name;                 // data member
+    int    age;                  // data member
+
+    void bark() const {          // member function
+        cout &lt;&lt; name &lt;&lt; " says Woof!\n";
+    }
+};                               // &lt;-- the semicolon after the closing brace is REQUIRED
+
+int main() {
+    Dog d;                       // create an object (instance) of class Dog
+    d.name = "Rex";              // access members with the dot operator
+    d.age  = 3;
+    d.bark();
+
+    Dog* p = &amp;d;                 // pointer to an object
+    cout &lt;&lt; p-&gt;name &lt;&lt; " is " &lt;&lt; p-&gt;age &lt;&lt; "\n";   // arrow operator for pointers
+    return 0;
+}</code></pre>
+    <p><strong>Output:</strong></p>
+<pre><code>Rex says Woof!
+Rex is 3</code></pre>
+    <div class="callout error">
+      <strong>Do not forget the semicolon</strong>
+      A class definition ends with <code>};</code>. Leaving out the semicolon produces confusing errors that often point at the
+      line <em>after</em> the class.
+    </div>
+
+    <h2>7.3 <code>class</code> vs <code>struct</code></h2>
+    <p>
+      In C++ the two keywords are almost identical. The <strong>only</strong> difference is the default access level:
+    </p>
+    <ul>
+      <li><code>class</code> — members are <strong><code>private</code></strong> by default.</li>
+      <li><code>struct</code> — members are <strong><code>public</code></strong> by default.</li>
+    </ul>
+
+<pre><code>class A { int x; };      // x is private by default
+struct B { int x; };     // x is public by default
+
+class C { public:   int x; };   // identical to B
+struct D { private: int x; };   // identical to A
+
+int main() {
+    A a; B b;
+    // a.x = 1;     // ERROR: 'x' is private
+    b.x = 1;        // OK
+    return 0;
+}</code></pre>
+    <p>
+      <strong>Convention:</strong> use <code>struct</code> for simple passive bundles of data (a point, a pair of values) and
+      <code>class</code> when the type has invariants to protect, private state and behavior. Both can have constructors, member
+      functions and inheritance.
+    </p>
+
+    <h2>7.4 Access Specifiers</h2>
+    <p>Access specifiers control <em>who</em> may use a member.</p>
+    <table>
+      <thead><tr><th>Specifier</th><th>Accessible from</th></tr></thead>
+      <tbody>
+        <tr><td><code>public</code></td><td>Anywhere — inside the class, derived classes and any outside code.</td></tr>
+        <tr><td><code>private</code></td><td>Only member functions (and friends) of the same class. Not even derived classes.</td></tr>
+        <tr><td><code>protected</code></td><td>Member functions (and friends) of the class <em>and of its derived classes</em>. Not outside code.</td></tr>
+      </tbody>
+    </table>
+
+<pre><code>class Account {
+public:
+    void show() const;       // part of the interface: anyone may call it
+protected:
+    double rate = 0.02;      // visible to classes derived from Account (Chapter 08)
+private:
+    double balance = 0.0;    // internal detail: only Account's own functions may touch it
+};
+
+int main() {
+    Account a;
+    a.show();                // OK
+    // a.rate    = 0.05;     // ERROR: protected
+    // a.balance = 100;      // ERROR: private
+    return 0;
+}
+void Account::show() const {}</code></pre>
+    <div class="callout tip">
+      <strong>Rule of thumb</strong>
+      Make data members <code>private</code> and expose only the operations that make sense. This is encapsulation: it lets you
+      change the internals later without breaking code that uses the class.
+    </div>
+
+    <h2>7.5 Data Members and Member Functions</h2>
+    <p>
+      <strong>Data members</strong> (fields, attributes) hold the state of each object.
+      <strong>Member functions</strong> (methods) define its behavior. Each object has its <em>own copy</em> of every non-static
+      data member, while all objects share one copy of each member function's code.
+      A member function can be defined inside the class (implicitly <code>inline</code>) or outside using the scope-resolution operator <code>::</code>.
+    </p>
+
+<pre><code>#include &lt;iostream&gt;
+using namespace std;
+
+class Point {
+private:
+    int x = 0;                    // default member initializers (C++11)
+    int y = 0;
+
+public:
+    void set(int newX, int newY);       // declaration only
+    int  getX() const { return x; }     // defined inside the class
+    int  getY() const { return y; }
+};
+
+// Defined outside the class: ClassName::functionName
+void Point::set(int newX, int newY) {
+    x = newX;                     // x and y refer to THIS object's members
+    y = newY;
+}
+
+int main() {
+    Point p1, p2;
+    p1.set(1, 2);
+    p2.set(10, 20);               // p2 has its own x and y
+    cout &lt;&lt; p1.getX() &lt;&lt; "," &lt;&lt; p1.getY() &lt;&lt; "  "
+         &lt;&lt; p2.getX() &lt;&lt; "," &lt;&lt; p2.getY() &lt;&lt; "\n";
+    return 0;
+}</code></pre>
+    <p><strong>Output:</strong></p>
+<pre><code>1,2  10,20</code></pre>
+
+    <h2>7.6 The <code>this</code> Pointer</h2>
+    <p>
+      Inside every non-static member function, C++ provides a hidden pointer named <code>this</code> that points to the
+      <strong>object the function was called on</strong>. When you write <code>x</code> inside a member function, the compiler
+      treats it as <code>this-&gt;x</code>. Its type is <code>ClassName*</code> (or <code>const ClassName*</code> inside a const member function).
+    </p>
+    <p>Common uses: disambiguating a parameter that has the same name as a member, and returning the object itself to allow <em>method chaining</em>.</p>
+
+<pre><code>#include &lt;iostream&gt;
+using namespace std;
+
+class Box {
+private:
+    int w = 0, h = 0;
+
+public:
+    // Parameter names equal member names: this-&gt; tells them apart.
+    Box&amp; setWidth(int w)  { this-&gt;w = w; return *this; }   // *this = the object itself
+    Box&amp; setHeight(int h) { this-&gt;h = h; return *this; }
+
+    void print() const {
+        cout &lt;&lt; "Box " &lt;&lt; w &lt;&lt; "x" &lt;&lt; h &lt;&lt; "\n";
+    }
+};
+
+int main() {
+    Box b;
+    b.setWidth(4).setHeight(7);      // chaining: each call returns the same object
+    cout &lt;&lt; "same object: " &lt;&lt; (&amp;b == &amp;b.setWidth(4)) &lt;&lt; "\n";   // setWidth returns *this
+    b.print();
+    return 0;
+}</code></pre>
+    <p><strong>Output:</strong></p>
+<pre><code>same object: 1
+Box 4x7</code></pre>
+
+    <h2>7.7 Constructors</h2>
+    <p>
+      A <strong>constructor</strong> is a special member function that runs automatically when an object is created. It has the
+      <em>same name as the class</em> and <strong>no return type</strong>. Its job is to put the new object into a valid state.
+    </p>
+    <h3>Default constructor</h3>
+    <p>
+      Takes no arguments. If you declare <em>no</em> constructors at all, the compiler generates one for you — but it leaves
+      built-in members (<code>int</code>, <code>double</code>…) <strong>uninitialized</strong>. As soon as you declare any other constructor,
+      the compiler no longer generates the default one (add it yourself, or write <code>Foo() = default;</code>).
+    </p>
+    <h3>Parameterized constructor</h3>
+    <p>Takes arguments so each object can be created with its own initial values. Constructors can be overloaded.</p>
+    <h3>Copy constructor</h3>
+    <p>
+      <code>ClassName(const ClassName&amp; other)</code> creates a new object as a copy of an existing one. It runs when you
+      initialize from another object (<code>Foo b = a;</code> or <code>Foo b(a);</code>), pass an object <em>by value</em> to a function,
+      or return one by value (unless the compiler elides the copy). If you do not write one, the compiler provides a
+      <em>memberwise</em> copy — fine for plain values, dangerous for classes that own raw pointers (see Chapter 12).
+    </p>
+
+<pre><code>#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+class Person {
+private:
+    string name;
+    int    age;
+
+public:
+    // 1. Default constructor
+    Person() : name("Unknown"), age(0) {
+        cout &lt;&lt; "default ctor\n";
+    }
+
+    // 2. Parameterized constructor
+    Person(const string&amp; n, int a) : name(n), age(a) {
+        cout &lt;&lt; "param ctor: " &lt;&lt; name &lt;&lt; "\n";
+    }
+
+    // 3. Copy constructor
+    Person(const Person&amp; other) : name(other.name), age(other.age) {
+        cout &lt;&lt; "copy ctor: " &lt;&lt; name &lt;&lt; "\n";
+    }
+
+    void print() const { cout &lt;&lt; name &lt;&lt; " (" &lt;&lt; age &lt;&lt; ")\n"; }
+};
+
+void byValue(Person p) { p.print(); }       // parameter is a COPY -&gt; copy ctor runs
+
+int main() {
+    Person a;                    // default ctor
+    Person b("Ada", 36);         // parameterized ctor
+    Person c = b;                // copy ctor
+    Person d(b);                 // copy ctor (direct-init syntax)
+    byValue(b);                  // copy ctor (pass by value)
+    a.print();
+    return 0;
+}</code></pre>
+    <p><strong>Output:</strong></p>
+<pre><code>default ctor
+param ctor: Ada
+copy ctor: Ada
+copy ctor: Ada
+copy ctor: Ada
+Ada (36)
+Unknown (0)</code></pre>
+    <div class="callout warn">
+      <strong>The "most vexing parse"</strong>
+      <code>Person x();</code> does <em>not</em> create an object — it declares a function named <code>x</code> returning <code>Person</code>.
+      To use the default constructor, write <code>Person x;</code> or <code>Person x{};</code>.
+    </div>
+
+    <h2>7.8 Initialization List vs Assignment in the Body</h2>
+    <p>
+      There are two ways to give members their starting values:
+    </p>
+
+<pre><code>class Demo {
+    int           a;
+    const int     b;     // const member
+    int&amp;          r;     // reference member
+    std::string   s;
+
+public:
+    // (1) INITIALIZATION LIST: members are constructed directly with these values
+    Demo(int x, int&amp; ref) : a(x), b(x * 2), r(ref), s("hi") {}
+
+    // (2) ASSIGNMENT IN THE BODY: members are first default-constructed, then assigned
+    // Demo(int x, int&amp; ref) {
+    //     a = x;          // OK, but redundant work for class types
+    //     b = x * 2;      // ERROR: cannot assign to a const member
+    //     r = ref;        // ERROR: a reference must be bound at initialization
+    //     s = "hi";       // s was default-constructed to "" and then reassigned
+    // }
+};</code></pre>
+    <table>
+      <thead><tr><th></th><th>Initialization list</th><th>Assignment in body</th></tr></thead>
+      <tbody>
+        <tr><td>When it happens</td><td>Before the constructor body runs</td><td>Inside the body, after members already exist</td></tr>
+        <tr><td><code>const</code> / reference members</td><td><strong>Required</strong> — the only option</td><td>Compile error</td></tr>
+        <tr><td>Members without a default constructor</td><td><strong>Required</strong></td><td>Compile error</td></tr>
+        <tr><td>Efficiency for class-type members</td><td>One step: construct with the value</td><td>Two steps: default-construct, then assign</td></tr>
+      </tbody>
+    </table>
+    <div class="callout warn">
+      <strong>Initialization order</strong>
+      Members are initialized in the order they are <em>declared in the class</em>, not the order written in the list.
+      Compile with <code>-Wall</code> to get a warning (<code>-Wreorder</code>) when the two differ.
+    </div>
+
+    <h2>7.9 Destructors</h2>
+    <p>
+      A <strong>destructor</strong> is the mirror image of a constructor: <code>~ClassName()</code>, no parameters, no return type, and
+      only one per class. It runs automatically when the object's lifetime ends:
+    </p>
+    <ul>
+      <li>a <strong>stack (automatic) object</strong> goes out of scope — destructors run in <em>reverse order</em> of construction;</li>
+      <li>a <strong>heap object</strong> is destroyed with <code>delete</code> (not when the pointer variable goes out of scope!);</li>
+      <li>a <strong>global/static object</strong> is destroyed when the program ends;</li>
+      <li>a <strong>temporary</strong> object is destroyed at the end of the full expression.</li>
+    </ul>
+    <p>
+      <strong>Responsibility:</strong> release anything the object acquired — memory from <code>new</code>, open files, locks, network
+      connections. If your class owns no such resources, you usually do not need to write a destructor at all.
+    </p>
+
+<pre><code>#include &lt;iostream&gt;
+using namespace std;
+
+class Tracer {
+    const char* label;
+public:
+    Tracer(const char* l) : label(l) { cout &lt;&lt; "  construct " &lt;&lt; label &lt;&lt; "\n"; }
+    ~Tracer()                        { cout &lt;&lt; "  destruct  " &lt;&lt; label &lt;&lt; "\n"; }
+};
+
+int main() {
+    cout &lt;&lt; "enter main\n";
+    Tracer a("a");
+    {
+        cout &lt;&lt; "enter inner block\n";
+        Tracer b("b");
+    }                                   // b destroyed here
+    cout &lt;&lt; "left inner block\n";
+
+    Tracer* p = new Tracer("heap");     // lives until delete
+    delete p;                           // destructor runs NOW
+
+    cout &lt;&lt; "leave main\n";
+    return 0;
+}                                       // a destroyed here</code></pre>
+    <p><strong>Output:</strong></p>
+<pre><code>enter main
+  construct a
+enter inner block
+  construct b
+  destruct  b
+left inner block
+  construct heap
+  destruct  heap
+leave main
+  destruct  a</code></pre>
+
+    <h2>7.10 <code>const</code> Member Functions</h2>
+    <p>
+      Putting <code>const</code> <em>after</em> a member function's parameter list promises that the function
+      <strong>will not modify the object's (non-mutable) data members</strong>. Inside it, <code>this</code> has type
+      <code>const ClassName*</code>, so any attempt to change a member is a compile error.
+    </p>
+    <p>
+      This matters because a <code>const</code> object (or a reference/pointer-to-<code>const</code>, such as <code>const Foo&amp;</code> parameters)
+      can <em>only</em> call <code>const</code> member functions.
+    </p>
+
+<pre><code>#include &lt;iostream&gt;
+using namespace std;
+
+class Counter {
+    int value = 0;
+    mutable int readCount = 0;     // 'mutable': may change even in const functions
+
+public:
+    void increment() { ++value; }                 // modifies state: NOT const
+
+    int get() const {                             // only reads state: const
+        ++readCount;                              // OK because it is mutable
+        // ++value;                               // ERROR: cannot modify in a const function
+        return value;
+    }
+    int reads() const { return readCount; }
+};
+
+void report(const Counter&amp; c) {      // c is const: only const members are callable
+    cout &lt;&lt; "value = " &lt;&lt; c.get() &lt;&lt; "\n";
+    // c.increment();                // ERROR: increment() is not const
+}
+
+int main() {
+    Counter c;
+    c.increment();
+    c.increment();
+    report(c);
+    cout &lt;&lt; "reads = " &lt;&lt; c.reads() &lt;&lt; "\n";
+    return 0;
+}</code></pre>
+    <p><strong>Output:</strong></p>
+<pre><code>value = 2
+reads = 1</code></pre>
+    <div class="callout tip">
+      <strong>Make everything const that can be</strong>
+      Getters, <code>display()</code>, <code>area()</code> and similar query functions should all be <code>const</code>.
+      It documents intent, lets the compiler catch accidental modification, and allows use with const objects.
+    </div>
+
+    <h2>7.11 Static Members</h2>
+    <p>
+      A <code>static</code> data member belongs to the <strong>class</strong>, not to any one object: there is exactly one copy,
+      shared by all instances. A <code>static</code> member function has no <code>this</code> pointer, so it can access only static members —
+      but it can be called without an object, as <code>ClassName::function()</code>.
+    </p>
+
+<pre><code>#include &lt;iostream&gt;
+using namespace std;
+
+class Widget {
+private:
+    static int count;            // declaration: one shared variable
+    int id;
+
+public:
+    Widget()  : id(++count) {}
+    ~Widget() { --count; }
+
+    int getId() const { return id; }
+    static int getCount() { return count; }     // static function: no 'this'
+};
+
+int Widget::count = 0;           // definition (required once, in ONE .cpp file)
+
+int main() {
+    cout &lt;&lt; "start: " &lt;&lt; Widget::getCount() &lt;&lt; "\n";    // call with no object
+    Widget a, b, c;
+    cout &lt;&lt; "after 3: " &lt;&lt; Widget::getCount() &lt;&lt; "\n";
+    cout &lt;&lt; "c.id = " &lt;&lt; c.getId() &lt;&lt; "\n";
+    return 0;
+}</code></pre>
+    <p><strong>Output:</strong></p>
+<pre><code>start: 0
+after 3: 3
+c.id = 3</code></pre>
+    <p>
+      Since C++17 you may write <code>inline static int count = 0;</code> inside the class and skip the separate definition.
+      A <code>static const int</code> (or <code>constexpr</code>) of integral type can be initialized right in the class.
+    </p>
+
+    <h2>7.12 Friend Functions and Friend Classes</h2>
+    <p>
+      A <code>friend</code> is a function or class that the class grants permission to access its <code>private</code> and
+      <code>protected</code> members. A friend is <strong>not</strong> a member: it has no <code>this</code> pointer and is not affected by access specifiers.
+      Friendship is granted (never taken), is <em>not</em> mutual, and is <em>not</em> inherited.
+    </p>
+
+<pre><code>#include &lt;iostream&gt;
+using namespace std;
+
+class Vault;                                  // forward declaration
+
+class Auditor {                               // will be a friend CLASS of Vault
+public:
+    void inspect(const Vault&amp; v) const;
+};
+
+class Vault {
+private:
+    int gold = 42;
+
+    friend void peek(const Vault&amp; v);         // friend FUNCTION
+    friend class Auditor;                     // friend CLASS: all its members get access
+};
+
+void peek(const Vault&amp; v) {                   // ordinary function, but a friend
+    cout &lt;&lt; "peek sees " &lt;&lt; v.gold &lt;&lt; "\n";
+}
+
+void Auditor::inspect(const Vault&amp; v) const {
+    cout &lt;&lt; "auditor counts " &lt;&lt; v.gold &lt;&lt; "\n";
+}
+
+int main() {
+    Vault v;
+    peek(v);
+    Auditor().inspect(v);
+    // cout &lt;&lt; v.gold;    // ERROR: main() is not a friend
+    return 0;
+}</code></pre>
+    <p><strong>Output:</strong></p>
+<pre><code>peek sees 42
+auditor counts 42</code></pre>
+    <div class="callout warn">
+      <strong>Use friends sparingly</strong>
+      Every friend weakens encapsulation. The classic legitimate use is an <code>operator&lt;&lt;</code> for printing objects with <code>cout</code>
+      (covered with operator overloading); otherwise prefer public member functions.
+    </div>
+
+    <h2>7.13 Getters and Setters — The Encapsulation Pattern</h2>
+    <p>
+      With <code>private</code> data, outside code reaches the data only through public <strong>getters</strong> (accessors, usually <code>const</code>)
+      and <strong>setters</strong> (mutators). The payoff is that setters can <em>validate</em> input, so the object can never be in an invalid state.
+    </p>
+
+<pre><code>#include &lt;iostream&gt;
+using namespace std;
+
+class Thermostat {
+private:
+    double target = 20.0;                 // invariant: always within [5, 30]
+
+public:
+    double getTarget() const { return target; }          // getter
+
+    bool setTarget(double t) {                           // setter with validation
+        if (t &lt; 5.0 || t &gt; 30.0) return false;           // reject invalid values
+        target = t;
+        return true;
+    }
+};
+
+int main() {
+    Thermostat t;
+    cout &lt;&lt; t.setTarget(22.5) &lt;&lt; " -&gt; " &lt;&lt; t.getTarget() &lt;&lt; "\n";
+    cout &lt;&lt; t.setTarget(99.0) &lt;&lt; " -&gt; " &lt;&lt; t.getTarget() &lt;&lt; "\n";   // rejected, unchanged
+    return 0;
+}</code></pre>
+    <p><strong>Output:</strong></p>
+<pre><code>1 -&gt; 22.5
+0 -&gt; 22.5</code></pre>
+    <div class="callout tip">
+      <strong>Do not add getters/setters blindly</strong>
+      A setter that does no validation and a getter for every field simply re-exposes the data. Provide accessors only for what
+      users of the class genuinely need, and prefer meaningful operations (<code>deposit()</code>, <code>withdraw()</code>) over raw <code>setBalance()</code>.
+    </div>
+
+    <h2>7.14 Creating Objects: Stack vs Heap</h2>
+    <table>
+      <thead><tr><th></th><th>Stack (automatic)</th><th>Heap (dynamic)</th></tr></thead>
+      <tbody>
+        <tr><td>Syntax</td><td><code>Dog d("Rex");</code></td><td><code>Dog* p = new Dog("Rex");</code></td></tr>
+        <tr><td>Member access</td><td><code>d.bark()</code></td><td><code>p-&gt;bark()</code> or <code>(*p).bark()</code></td></tr>
+        <tr><td>Lifetime</td><td>Until the end of the enclosing scope</td><td>Until you call <code>delete p;</code></td></tr>
+        <tr><td>Destructor runs</td><td>Automatically at scope exit</td><td>Only when <code>delete</code> is called</td></tr>
+        <tr><td>Speed / size</td><td>Very fast; limited stack space</td><td>Slower allocation; large and flexible</td></tr>
+        <tr><td>Risk</td><td>Low</td><td>Leaks, double delete, dangling pointers</td></tr>
+      </tbody>
+    </table>
+
+<pre><code>#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+class Dog {
+    string name;
+public:
+    Dog(const string&amp; n) : name(n) { cout &lt;&lt; name &lt;&lt; " created\n"; }
+    ~Dog()                         { cout &lt;&lt; name &lt;&lt; " destroyed\n"; }
+    void bark() const              { cout &lt;&lt; name &lt;&lt; ": Woof!\n"; }
+};
+
+int main() {
+    Dog onStack("Stacky");          // automatic: destroyed at the closing brace of main
+    onStack.bark();
+
+    Dog* onHeap = new Dog("Heapy"); // dynamic: YOU must delete it
+    onHeap-&gt;bark();                 // arrow operator through the pointer
+    delete onHeap;                  // runs ~Dog(), then frees memory
+    onHeap = nullptr;               // avoid a dangling pointer
+
+    Dog* arr = new Dog[2]{Dog("A"), Dog("B")};   // array of objects on the heap
+    delete[] arr;                   // arrays need delete[]  (NOT plain delete)
+    return 0;
+}</code></pre>
+    <p><strong>Output:</strong></p>
+<pre><code>Stacky created
+Stacky: Woof!
+Heapy created
+Heapy: Woof!
+Heapy destroyed
+A created
+B created
+B destroyed
+A destroyed
+Stacky destroyed</code></pre>
+    <div class="callout error">
+      <strong>Every <code>new</code> needs exactly one <code>delete</code></strong>
+      Forgetting it leaks memory; deleting twice is undefined behavior; using the pointer after <code>delete</code> is a dangling-pointer bug.
+      Prefer stack objects by default. When you truly need heap allocation, modern C++ offers <code>std::unique_ptr</code> and
+      <code>std::make_unique</code> (Chapter 12), which call <code>delete</code> for you.
+    </div>
+
+    <h2>7.15 Separating Declaration (<code>.h</code>) from Implementation (<code>.cpp</code>)</h2>
+    <p>
+      Real projects split a class into a <strong>header</strong> (the declaration — the interface other files need) and a
+      <strong>source file</strong> (the definitions of the member functions). Other files <code>#include</code> only the header.
+    </p>
+    <p><strong>Rectangle.h</strong> — declaration:</p>
+
+<pre><code>#ifndef RECTANGLE_H        // include guard: prevents double inclusion
+#define RECTANGLE_H
+
+class Rectangle {
+private:
+    double width;
+    double height;
+
+public:
+    Rectangle(double w, double h);     // declarations only
+    double area() const;
+    double perimeter() const;
+};
+
+#endif</code></pre>
+<p><strong>Rectangle.cpp</strong> — implementation:</p>
+<pre><code>#include "Rectangle.h"           // quotes: a header of your own project
+
+Rectangle::Rectangle(double w, double h) : width(w), height(h) {}   // note Rectangle::
+double Rectangle::area() const      { return width * height; }       // keep 'const'!
+double Rectangle::perimeter() const { return 2 * (width + height); }</code></pre>
+<p><strong>main.cpp</strong> — user of the class:</p>
+<pre><code>#include &lt;iostream&gt;
+#include "Rectangle.h"
+
+int main() {
+    Rectangle r(3, 4);
+    std::cout &lt;&lt; r.area() &lt;&lt; "\n";    // 12
+    return 0;
+}</code></pre>
+    <p>Build by compiling all the <code>.cpp</code> files together:</p>
+<pre><code>g++ -std=c++17 -Wall -o app main.cpp Rectangle.cpp
+./app</code></pre>
+    <ul>
+      <li>Use an <strong>include guard</strong> (<code>#ifndef/#define/#endif</code>, or <code>#pragma once</code>) in every header.</li>
+      <li>Avoid <code>using namespace std;</code> in headers — it forces that choice on every file that includes them.</li>
+      <li>The <code>const</code> in a member function's signature must appear in <em>both</em> the declaration and the definition.</li>
+      <li>Short functions may stay in the header, defined inside the class body (implicitly <code>inline</code>).</li>
+    </ul>
+
+    <h2>7.16 Key Takeaways</h2>
+    <ul>
+      <li>OOP bundles data and behavior into classes; its four pillars are encapsulation, abstraction, inheritance and polymorphism.</li>
+      <li><code>class</code> and <code>struct</code> differ <em>only</em> in default access: <code>private</code> vs <code>public</code>.</li>
+      <li><code>private</code> hides internals, <code>public</code> is the interface, <code>protected</code> also allows derived classes.</li>
+      <li><code>this</code> is a hidden pointer to the current object; <code>x</code> in a member function means <code>this-&gt;x</code>.</li>
+      <li>Constructors initialize objects: default, parameterized and copy. Declaring any constructor suppresses the implicit default one.</li>
+      <li>Use the <strong>initialization list</strong> — it is required for <code>const</code> and reference members and avoids needless assignment.</li>
+      <li>The destructor runs when a stack object leaves scope or when a heap object is <code>delete</code>d; it releases the object's resources.</li>
+      <li>Mark query functions <code>const</code>; <code>const</code> objects can call only <code>const</code> member functions.</li>
+      <li><code>static</code> members are shared by the whole class and are defined once outside it (before C++17).</li>
+      <li><code>friend</code> grants access to private members — use it rarely.</li>
+      <li>Getters/setters let you validate data and keep invariants; do not expose every field automatically.</li>
+      <li>Prefer stack objects; every <code>new</code> must be matched by <code>delete</code> (<code>delete[]</code> for arrays).</li>
+      <li>Put declarations in <code>.h</code> files (with include guards) and definitions in <code>.cpp</code> files.</li>
+    </ul>
+
+    <div style="display:flex;justify-content:space-between;margin-top:2rem;gap:.75rem;">
+      <a href="/chapters/ch06-pointers-references/index.html" class="btn btn-outline" style="text-decoration:none;">← Chapter 06</a>
+      <a href="examples.html" class="btn" style="text-decoration:none;">Next: Examples →</a>
+    </div>
+
+  </div>
+</main>
+</div>
+<footer id="site-footer">
+  &copy; 2024 <a href="https://linkedin.com/in/adityabhuyan" target="_blank" rel="noopener">Aditya Pratap Bhuyan</a> &nbsp;|&nbsp;
+  <a href="https://github.com/aditya-bhuyan/cpp-learning-hub" target="_blank" rel="noopener">GitHub</a> &nbsp;|&nbsp;
+  GNU GPL v3 License
+</footer>
+<script src="/assets/js/nav.js"></script>
+</body>
+</html>

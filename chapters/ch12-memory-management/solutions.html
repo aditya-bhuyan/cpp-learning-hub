@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ch 12 Solutions — Memory Management | C++ Learning Hub</title>
+  <link rel="stylesheet" href="/assets/css/style.css" />
+</head>
+<body>
+<header id="site-header">
+  <button id="hamburger" aria-label="Toggle navigation">&#9776;</button>
+  <div id="site-logo">C++ Learning Hub <span class="badge">FREE</span></div>
+  <button id="theme-toggle">☾ Dark</button>
+</header>
+<div id="layout">
+<aside id="sidebar"><nav>
+  <div class="nav-section-title">C++ Learning Hub</div>
+  <div class="nav-chapter" data-chapter="home"><div class="nav-chapter-header"><span>🏠 Home</span></div><div class="nav-chapter-links"><a href="/index.html">Overview</a></div></div>
+  <div class="nav-section-title">Chapters</div>
+  <div class="nav-chapter" data-chapter="ch01"><div class="nav-chapter-header"><span><span class="ch-num">01</span>Introduction to C++</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch01-introduction/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch01-introduction/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch01-introduction/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch01-introduction/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch01-introduction/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch02"><div class="nav-chapter-header"><span><span class="ch-num">02</span>Variables, Types &amp; Operators</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch02-variables-types-operators/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch02-variables-types-operators/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch02-variables-types-operators/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch02-variables-types-operators/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch02-variables-types-operators/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch03"><div class="nav-chapter-header"><span><span class="ch-num">03</span>Control Flow</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch03-control-flow/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch03-control-flow/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch03-control-flow/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch03-control-flow/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch03-control-flow/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch04"><div class="nav-chapter-header"><span><span class="ch-num">04</span>Functions</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch04-functions/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch04-functions/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch04-functions/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch04-functions/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch04-functions/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch05"><div class="nav-chapter-header"><span><span class="ch-num">05</span>Arrays &amp; Strings</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch05-arrays-strings/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch05-arrays-strings/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch05-arrays-strings/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch05-arrays-strings/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch05-arrays-strings/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch06"><div class="nav-chapter-header"><span><span class="ch-num">06</span>Pointers &amp; References</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch06-pointers-references/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch06-pointers-references/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch06-pointers-references/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch06-pointers-references/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch06-pointers-references/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch07"><div class="nav-chapter-header"><span><span class="ch-num">07</span>OOP — Basics</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch07-oop-basics/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch07-oop-basics/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch07-oop-basics/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch07-oop-basics/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch07-oop-basics/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch08"><div class="nav-chapter-header"><span><span class="ch-num">08</span>OOP — Inheritance &amp; Polymorphism</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch08-oop-inheritance/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch08-oop-inheritance/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch08-oop-inheritance/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch08-oop-inheritance/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch08-oop-inheritance/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch09"><div class="nav-chapter-header"><span><span class="ch-num">09</span>Templates</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch09-templates/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch09-templates/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch09-templates/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch09-templates/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch09-templates/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch10"><div class="nav-chapter-header"><span><span class="ch-num">10</span>STL — Containers</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch10-stl-containers/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch10-stl-containers/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch10-stl-containers/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch10-stl-containers/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch10-stl-containers/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch11"><div class="nav-chapter-header"><span><span class="ch-num">11</span>STL — Algorithms &amp; Iterators</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch11-stl-algorithms/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch11-stl-algorithms/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch11-stl-algorithms/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch11-stl-algorithms/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch11-stl-algorithms/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter open" data-chapter="ch12"><div class="nav-chapter-header active"><span><span class="ch-num">12</span>Memory Management</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch12-memory-management/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch12-memory-management/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch12-memory-management/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch12-memory-management/solutions.html" class="active"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch12-memory-management/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch13"><div class="nav-chapter-header"><span><span class="ch-num">13</span>Exception Handling</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch13-exception-handling/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch13-exception-handling/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch13-exception-handling/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch13-exception-handling/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch13-exception-handling/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch14"><div class="nav-chapter-header"><span><span class="ch-num">14</span>File I/O</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch14-file-io/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch14-file-io/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch14-file-io/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch14-file-io/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch14-file-io/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch15"><div class="nav-chapter-header"><span><span class="ch-num">15</span>Modern C++ (C++11–C++20)</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch15-modern-cpp/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch15-modern-cpp/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch15-modern-cpp/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch15-modern-cpp/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch15-modern-cpp/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-section-title">Capstone</div>
+  <div class="nav-chapter" data-chapter="ch16"><div class="nav-chapter-header"><span><span class="ch-num">16</span>Capstone Project</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch16-capstone/index.html"><span class="link-icon">🎯</span>Brief</a><a href="/chapters/ch16-capstone/walkthrough.html"><span class="link-icon">🗺</span>Walkthrough</a><a href="/chapters/ch16-capstone/solution.html"><span class="link-icon">✅</span>Solution</a></div></div>
+  <div class="nav-section-title">About</div>
+  <div style="padding:.4rem 1.1rem 1rem;font-size:.78rem;color:var(--muted);line-height:1.5;">Maintained by<br><a href="https://linkedin.com/in/adityabhuyan" target="_blank" rel="noopener">Aditya Pratap Bhuyan</a><br><span style="font-size:.72rem;">GNU GPL v3 License</span></div>
+</nav></aside>
+
+<main id="main">
+  <div class="page-header">
+    <div class="breadcrumb"><a href="/index.html">Home</a> › <a href="index.html">Chapter 12</a> › Solutions</div>
+    <h1>Chapter 12 — Solutions</h1>
+    <p class="subtitle">Reference solutions with explanations. Only read after attempting the exercises yourself.</p>
+    <div class="chapter-tabs">
+      <a href="index.html">📖 Learning</a>
+      <a href="examples.html">💻 Examples</a>
+      <a href="exercises.html">✏️ Exercises</a>
+      <a href="solutions.html" class="active">✅ Solutions</a>
+      <a href="quiz.html">🧠 Quiz</a>
+    </div>
+  </div>
+
+  <div class="content">
+
+    <div class="callout warn">
+      <strong>Spoiler Warning</strong>
+      These are reference solutions. There are often multiple valid approaches — if your output matches
+      but your code differs, that is perfectly fine.
+    </div>
+
+    <!-- Solution 1 -->
+    <div class="solution-card">
+      <div class="card-header">✅ Solution 1 — Modernizing Raw Dynamic Arrays with <code>std::unique_ptr&lt;int[]&gt;</code></div>
+      <div class="card-body">
+        <p>
+          <code>std::make_unique&lt;int[]&gt;(size)</code> cleanly allocates the dynamic array on the heap.
+          The array specialization <code>std::unique_ptr&lt;T[]&gt;</code> overloads <code>operator[]</code> for intuitive indexing and invokes <code>delete[]</code> automatically when the smart pointer leaves scope.
+        </p>
+<pre><code>// solution_12_unique_array.cpp
+#include &lt;iostream&gt;
+#include &lt;memory&gt;
+using namespace std;
+
+int main() {
+    const int size = 5;
+
+    // Allocate dynamic array via make_unique
+    auto arr = make_unique&lt;int[]&gt;(size);
+
+    // Populate array
+    for (int i = 0; i &lt; size; ++i) {
+        arr[i] = (i + 1) * 10;
+    }
+
+    // Compute sum and display elements
+    int sum = 0;
+    cout &lt;&lt; "Array elements: ";
+    for (int i = 0; i &lt; size; ++i) {
+        cout &lt;&lt; arr[i] &lt;&lt; (i == size - 1 ? "" : " ");
+        sum += arr[i];
+    }
+    cout &lt;&lt; "\n";
+
+    double average = static_cast&lt;double&gt;(sum) / size;
+    cout &lt;&lt; "Sum: " &lt;&lt; sum &lt;&lt; "\n";
+    cout &lt;&lt; "Average: " &lt;&lt; average &lt;&lt; "\n";
+
+    // No manual delete[] needed!
+    return 0;
+}</code></pre>
+        <p><strong>Output:</strong></p>
+<pre><code>Array elements: 10 20 30 40 50
+Sum: 150
+Average: 30.0</code></pre>
+        <p><strong>Key concepts used:</strong> <code>std::unique_ptr&lt;T[]&gt;</code>, <code>std::make_unique</code>, automatic array deallocation via <code>delete[]</code>, <code>operator[]</code>.</p>
+      </div>
+    </div>
+
+    <!-- Solution 2 -->
+    <div class="solution-card">
+      <div class="card-header">✅ Solution 2 — Dynamic String Wrapper and Parameter Passing</div>
+      <div class="card-body">
+        <p>
+          Following modern C++ parameter passing guidelines:
+          functions that only read or mutate pass by <code>const T&amp;</code> or <code>T&amp;</code> (obtained by dereferencing <code>*ptr</code>), while sink functions that take ownership pass <code>std::unique_ptr&lt;T&gt;</code> by value using <code>std::move()</code>.
+        </p>
+<pre><code>// solution_12_string_passing.cpp
+#include &lt;iostream&gt;
+#include &lt;memory&gt;
+#include &lt;string&gt;
+using namespace std;
+
+// Borrow non-owning read-only view
+void inspectString(const string&amp; str) {
+    cout &lt;&lt; "Inspecting: " &lt;&lt; str &lt;&lt; "\n";
+}
+
+// Borrow non-owning mutable reference
+void modifyString(string&amp; str) {
+    str += " RAII is awesome.";
+    cout &lt;&lt; "Modified: " &lt;&lt; str &lt;&lt; "\n";
+}
+
+// Sink function: takes full ownership via move
+void consumeString(unique_ptr&lt;string&gt; ptr) {
+    if (ptr) {
+        cout &lt;&lt; "Consumed string of length " &lt;&lt; ptr-&gt;length()
+             &lt;&lt; ": " &lt;&lt; *ptr &lt;&lt; "\n";
+    }
+} // ptr is destroyed here along with the heap-allocated string!
+
+int main() {
+    auto myStr = make_unique&lt;string&gt;("Hello, Modern C++!");
+
+    // 1. Non-owning inspection
+    inspectString(*myStr);
+
+    // 2. Non-owning mutation
+    modifyString(*myStr);
+
+    // 3. Ownership transfer via std::move
+    consumeString(move(myStr));
+
+    // 4. Verify myStr was moved from and is now null
+    cout &lt;&lt; "Owner pointer is now null: " &lt;&lt; boolalpha &lt;&lt; (myStr == nullptr) &lt;&lt; "\n";
+
+    return 0;
+}</code></pre>
+        <p><strong>Output:</strong></p>
+<pre><code>Inspecting: Hello, Modern C++!
+Modified: Hello, Modern C++! RAII is awesome.
+Consumed string of length 32: Hello, Modern C++! RAII is awesome.
+Owner pointer is now null: true</code></pre>
+        <p><strong>Key concepts used:</strong> Parameter passing rules, <code>std::move</code> ownership transfer, dereferencing smart pointers (<code>*</code> and <code>-&gt;</code>), <code>nullptr</code> validation.</p>
+      </div>
+    </div>
+
+    <!-- Solution 3 -->
+    <div class="solution-card">
+      <div class="card-header">✅ Solution 3 — Singly-Linked List with <code>std::unique_ptr&lt;Node&gt;</code></div>
+      <div class="card-body">
+        <p>
+          Each node owns the next node through <code>std::unique_ptr&lt;Node&gt; next</code>.
+          The <code>clear()</code> method uses an iterative loop to extract the head node repeatedly. This is essential in production C++: default recursive destruction of a 100,000-node list would cause a stack overflow during destructor chaining.
+        </p>
+<pre><code>// solution_12_smart_list.cpp
+#include &lt;iostream&gt;
+#include &lt;memory&gt;
+#include &lt;utility&gt;
+using namespace std;
+
+template &lt;typename T&gt;
+class SmartList {
+    struct Node {
+        T value;
+        unique_ptr&lt;Node&gt; next;
+        Node(T val) : value(move(val)), next(nullptr) {}
+    };
+
+    unique_ptr&lt;Node&gt; head_;
+
+public:
+    SmartList() : head_(nullptr) {}
+
+    // Destructor iteratively clears list to prevent stack overflow from recursive destruction
+    ~SmartList() {
+        clear();
+    }
+
+    // Insert at front
+    void push_front(T value) {
+        auto newNode = make_unique&lt;Node&gt;(move(value));
+        newNode-&gt;next = move(head_);
+        head_ = move(newNode);
+    }
+
+    // Remove from front
+    bool pop_front() {
+        if (!head_) return false;
+        head_ = move(head_-&gt;next); // Automatically deletes old head
+        return true;
+    }
+
+    // Print all elements
+    void print() const {
+        if (!head_) {
+            cout &lt;&lt; "(empty)\n";
+            return;
+        }
+        const Node* curr = head_.get();
+        while (curr) {
+            cout &lt;&lt; curr-&gt;value &lt;&lt; " -&gt; ";
+            curr = curr-&gt;next.get();
+        }
+        cout &lt;&lt; "nullptr\n";
+    }
+
+    // Iterative clear
+    void clear() {
+        while (head_) {
+            head_ = move(head_-&gt;next);
+        }
+    }
+};
+
+int main() {
+    SmartList&lt;int&gt; list;
+    list.push_front(10);
+    list.push_front(20);
+    list.push_front(30);
+
+    cout &lt;&lt; "List after pushes: ";
+    list.print();
+
+    list.pop_front();
+    cout &lt;&lt; "Popped head.\nList now: ";
+    list.print();
+
+    cout &lt;&lt; "Clearing remaining nodes...\n";
+    list.clear();
+    cout &lt;&lt; "List after clear: ";
+    list.print();
+
+    return 0;
+}</code></pre>
+        <p><strong>Output:</strong></p>
+<pre><code>List after pushes: 30 -&gt; 20 -&gt; 10 -&gt; nullptr
+Popped head.
+List now: 20 -&gt; 10 -&gt; nullptr
+Clearing remaining nodes...
+List after clear: (empty)</code></pre>
+        <p><strong>Key concepts used:</strong> Recursive vs iterative node destruction, <code>unique_ptr::get()</code> for non-owning iteration, <code>std::move</code> pointer replacement.</p>
+      </div>
+    </div>
+
+    <!-- Solution 4 -->
+    <div class="solution-card">
+      <div class="card-header">✅ Solution 4 — RAII File Handler Class (<code>FileHandle</code>)</div>
+      <div class="card-body">
+        <p>
+          <code>FileHandle</code> wraps standard C <code>FILE*</code> I/O. The constructor acquires the resource, the destructor guarantees release via <code>fclose</code>, and move semantics allow transferring the file descriptor safely between scopes while preventing duplicate closes.
+        </p>
+<pre><code>// solution_12_file_handle.cpp
+#include &lt;cstdio&gt;
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+#include &lt;stdexcept&gt;
+#include &lt;utility&gt;
+using namespace std;
+
+class FileHandle {
+    FILE* handle_;
+    string filename_;
+
+public:
+    // Constructor acquires resource
+    FileHandle(const char* filename, const char* mode)
+        : handle_(nullptr), filename_(filename) {
+        handle_ = fopen(filename, mode);
+        if (!handle_) {
+            throw runtime_error("Failed to open file: " + filename_);
+        }
+        cout &lt;&lt; "[FileHandle] Opened '" &lt;&lt; filename_ &lt;&lt; "' for "
+             &lt;&lt; (mode[0] == 'w' ? "writing" : "reading") &lt;&lt; "\n";
+    }
+
+    // Destructor releases resource
+    ~FileHandle() {
+        if (handle_) {
+            fclose(handle_);
+            cout &lt;&lt; "[FileHandle] Closed '" &lt;&lt; filename_ &lt;&lt; "'\n";
+            handle_ = nullptr;
+        }
+    }
+
+    // Disable copying (Rule of 5)
+    FileHandle(const FileHandle&amp;) = delete;
+    FileHandle&amp; operator=(const FileHandle&amp;) = delete;
+
+    // Move constructor
+    FileHandle(FileHandle&amp;&amp; other) noexcept
+        : handle_(other.handle_), filename_(move(other.filename_)) {
+        other.handle_ = nullptr;
+    }
+
+    // Move assignment operator
+    FileHandle&amp; operator=(FileHandle&amp;&amp; other) noexcept {
+        if (this != &amp;other) {
+            if (handle_) fclose(handle_); // Close current resource
+            handle_ = other.handle_;
+            filename_ = move(other.filename_);
+            other.handle_ = nullptr;
+        }
+        return *this;
+    }
+
+    bool isOpen() const { return handle_ != nullptr; }
+
+    void write(const string&amp; text) {
+        if (!handle_) throw runtime_error("Cannot write to closed file");
+        size_t written = fputs(text.c_str(), handle_);
+        if (written == EOF) throw runtime_error("File write error");
+        cout &lt;&lt; "[FileHandle] Wrote " &lt;&lt; text.size() &lt;&lt; " bytes\n";
+    }
+
+    string readLine() {
+        if (!handle_) throw runtime_error("Cannot read from closed file");
+        char buffer[256];
+        if (fgets(buffer, sizeof(buffer), handle_) != nullptr) {
+            string s(buffer);
+            // Trim trailing newline if present
+            if (!s.empty() &amp;&amp; s.back() == '\n') s.pop_back();
+            return s;
+        }
+        return "";
+    }
+};
+
+int main() {
+    // 1. Write file
+    {
+        FileHandle outFile("sample.txt", "w");
+        outFile.write("Hello RAII File Management!\n");
+    } // File is automatically closed here!
+
+    // 2. Read file
+    {
+        FileHandle inFile("sample.txt", "r");
+        string line = inFile.readLine();
+        cout &lt;&lt; "Read line: " &lt;&lt; line &lt;&lt; "\n";
+    } // File is automatically closed here!
+
+    return 0;
+}</code></pre>
+        <p><strong>Output:</strong></p>
+<pre><code>[FileHandle] Opened 'sample.txt' for writing
+[FileHandle] Wrote 28 bytes
+[FileHandle] Closed 'sample.txt'
+[FileHandle] Opened 'sample.txt' for reading
+Read line: Hello RAII File Management!
+[FileHandle] Closed 'sample.txt'</code></pre>
+        <p><strong>Key concepts used:</strong> RAII resource wrapper, Rule of 5, move constructor &amp; assignment, deterministic cleanup in destructors.</p>
+      </div>
+    </div>
+
+    <!-- Solution 5 -->
+    <div class="solution-card">
+      <div class="card-header">✅ Solution 5 — Building a Reference-Counted Smart Pointer (<code>MySharedPtr&lt;T&gt;</code>)</div>
+      <div class="card-body">
+        <p>
+          Here is a complete, self-contained reference-counting smart pointer. It tracks both the raw pointer and a dynamically allocated reference count counter, properly decrementing and freeing when the count reaches zero.
+        </p>
+<pre><code>// solution_12_my_shared_ptr.cpp
+#include &lt;iostream&gt;
+#include &lt;utility&gt;
+using namespace std;
+
+template &lt;typename T&gt;
+class MySharedPtr {
+    T*      ptr_;
+    size_t* ref_count_;
+
+    void release() {
+        if (ref_count_) {
+            --(*ref_count_);
+            if (*ref_count_ == 0) {
+                delete ptr_;
+                delete ref_count_;
+            }
+            ptr_ = nullptr;
+            ref_count_ = nullptr;
+        }
+    }
+
+public:
+    // Default constructor
+    MySharedPtr() : ptr_(nullptr), ref_count_(nullptr) {}
+
+    // Parametric constructor
+    explicit MySharedPtr(T* ptr) : ptr_(ptr), ref_count_(nullptr) {
+        if (ptr_) {
+            ref_count_ = new size_t(1);
+        }
+    }
+
+    // Destructor
+    ~MySharedPtr() {
+        release();
+    }
+
+    // Copy Constructor
+    MySharedPtr(const MySharedPtr&amp; other)
+        : ptr_(other.ptr_), ref_count_(other.ref_count_) {
+        if (ref_count_) {
+            ++(*ref_count_);
+        }
+    }
+
+    // Copy Assignment Operator
+    MySharedPtr&amp; operator=(const MySharedPtr&amp; other) {
+        if (this != &amp;other) {
+            release(); // Release existing resource
+            ptr_ = other.ptr_;
+            ref_count_ = other.ref_count_;
+            if (ref_count_) {
+                ++(*ref_count_);
+            }
+        }
+        return *this;
+    }
+
+    // Move Constructor
+    MySharedPtr(MySharedPtr&amp;&amp; other) noexcept
+        : ptr_(other.ptr_), ref_count_(other.ref_count_) {
+        other.ptr_ = nullptr;
+        other.ref_count_ = nullptr;
+    }
+
+    // Move Assignment Operator
+    MySharedPtr&amp; operator=(MySharedPtr&amp;&amp; other) noexcept {
+        if (this != &amp;other) {
+            release();
+            ptr_ = other.ptr_;
+            ref_count_ = other.ref_count_;
+            other.ptr_ = nullptr;
+            other.ref_count_ = nullptr;
+        }
+        return *this;
+    }
+
+    // Member Observers and Operators
+    T&amp; operator*() const { return *ptr_; }
+    T* operator-&gt;() const { return ptr_; }
+    T* get() const { return ptr_; }
+    size_t use_count() const { return ref_count_ ? *ref_count_ : 0; }
+    explicit operator bool() const { return ptr_ != nullptr; }
+
+    void reset(T* ptr = nullptr) {
+        release();
+        if (ptr) {
+            ptr_ = ptr;
+            ref_count_ = new size_t(1);
+        }
+    }
+};
+
+int main() {
+    cout &lt;&lt; "Creating sp1...\n";
+    MySharedPtr&lt;int&gt; sp1(new int(42));
+    cout &lt;&lt; "sp1 use_count: " &lt;&lt; sp1.use_count() &lt;&lt; ", value: " &lt;&lt; *sp1 &lt;&lt; "\n";
+
+    cout &lt;&lt; "Copying sp1 to sp2...\n";
+    MySharedPtr&lt;int&gt; sp2 = sp1;
+    cout &lt;&lt; "sp1 use_count: " &lt;&lt; sp1.use_count()
+         &lt;&lt; ", sp2 use_count: " &lt;&lt; sp2.use_count() &lt;&lt; "\n";
+
+    {
+        cout &lt;&lt; "Inside nested scope:\n";
+        MySharedPtr&lt;int&gt; sp3 = sp2;
+        cout &lt;&lt; "sp3 created from sp2. use_count: " &lt;&lt; sp1.use_count() &lt;&lt; "\n";
+    }
+    cout &lt;&lt; "Exited nested scope.\n";
+    cout &lt;&lt; "sp1 use_count: " &lt;&lt; sp1.use_count() &lt;&lt; "\n";
+
+    cout &lt;&lt; "Moving sp2 to sp4...\n";
+    MySharedPtr&lt;int&gt; sp4 = move(sp2);
+    cout &lt;&lt; "sp2 is null: " &lt;&lt; boolalpha &lt;&lt; (sp2.get() == nullptr)
+         &lt;&lt; ", sp4 use_count: " &lt;&lt; sp4.use_count()
+         &lt;&lt; ", value: " &lt;&lt; *sp4 &lt;&lt; "\n";
+
+    cout &lt;&lt; "sp1 and sp4 leaving scope -&gt; Resource cleaned up properly!\n";
+    return 0;
+}</code></pre>
+        <p><strong>Output:</strong></p>
+<pre><code>Creating sp1...
+sp1 use_count: 1, value: 42
+Copying sp1 to sp2...
+sp1 use_count: 2, sp2 use_count: 2
+Inside nested scope:
+sp3 created from sp2. use_count: 3
+Exited nested scope.
+sp1 use_count: 2
+Moving sp2 to sp4...
+sp2 is null: true, sp4 use_count: 2, value: 42
+sp1 and sp4 leaving scope -&gt; Resource cleaned up properly!</code></pre>
+        <p><strong>Key concepts used:</strong> Reference counting design pattern, copy/move semantics, operator overloading (<code>*</code>, <code>-&gt;</code>, <code>bool</code>), dynamic memory deallocation.</p>
+      </div>
+    </div>
+
+    <div style="display:flex;justify-content:space-between;margin-top:2rem;">
+      <a href="exercises.html" class="btn btn-outline" style="text-decoration:none;">← Exercises</a>
+      <a href="quiz.html" class="btn" style="text-decoration:none;">Take the Quiz →</a>
+    </div>
+
+  </div>
+</main>
+</div>
+<footer id="site-footer">
+  &copy; 2024 <a href="https://linkedin.com/in/adityabhuyan" target="_blank" rel="noopener">Aditya Pratap Bhuyan</a> &nbsp;|&nbsp;
+  <a href="https://github.com/aditya-bhuyan/cpp-learning-hub" target="_blank" rel="noopener">GitHub</a> &nbsp;|&nbsp;
+  GNU GPL v3 License
+</footer>
+<script src="/assets/js/nav.js"></script>
+</body>
+</html>

@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ch 15 — Modern C++ (C++11–C++20) | C++ Learning Hub</title>
+  <link rel="stylesheet" href="/assets/css/style.css" />
+</head>
+<body>
+<header id="site-header">
+  <button id="hamburger" aria-label="Toggle navigation">&#9776;</button>
+  <div id="site-logo">C++ Learning Hub <span class="badge">FREE</span></div>
+  <button id="theme-toggle">☾ Dark</button>
+</header>
+<div id="layout">
+<aside id="sidebar"><nav>
+  <div class="nav-section-title">C++ Learning Hub</div>
+  <div class="nav-chapter" data-chapter="home"><div class="nav-chapter-header"><span>🏠 Home</span></div><div class="nav-chapter-links"><a href="/index.html">Overview</a></div></div>
+  <div class="nav-section-title">Chapters</div>
+  <div class="nav-chapter" data-chapter="ch01"><div class="nav-chapter-header"><span><span class="ch-num">01</span>Introduction to C++</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch01-introduction/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch01-introduction/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch01-introduction/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch01-introduction/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch01-introduction/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch02"><div class="nav-chapter-header"><span><span class="ch-num">02</span>Variables, Types &amp; Operators</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch02-variables-types-operators/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch02-variables-types-operators/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch02-variables-types-operators/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch02-variables-types-operators/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch02-variables-types-operators/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch03"><div class="nav-chapter-header"><span><span class="ch-num">03</span>Control Flow</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch03-control-flow/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch03-control-flow/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch03-control-flow/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch03-control-flow/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch03-control-flow/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch04"><div class="nav-chapter-header"><span><span class="ch-num">04</span>Functions</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch04-functions/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch04-functions/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch04-functions/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch04-functions/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch04-functions/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch05"><div class="nav-chapter-header"><span><span class="ch-num">05</span>Arrays &amp; Strings</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch05-arrays-strings/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch05-arrays-strings/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch05-arrays-strings/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch05-arrays-strings/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch05-arrays-strings/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch06"><div class="nav-chapter-header"><span><span class="ch-num">06</span>Pointers &amp; References</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch06-pointers-references/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch06-pointers-references/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch06-pointers-references/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch06-pointers-references/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch06-pointers-references/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch07"><div class="nav-chapter-header"><span><span class="ch-num">07</span>OOP — Basics</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch07-oop-basics/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch07-oop-basics/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch07-oop-basics/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch07-oop-basics/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch07-oop-basics/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch08"><div class="nav-chapter-header"><span><span class="ch-num">08</span>OOP — Inheritance &amp; Polymorphism</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch08-oop-inheritance/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch08-oop-inheritance/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch08-oop-inheritance/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch08-oop-inheritance/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch08-oop-inheritance/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch09"><div class="nav-chapter-header"><span><span class="ch-num">09</span>Templates</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch09-templates/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch09-templates/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch09-templates/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch09-templates/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch09-templates/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch10"><div class="nav-chapter-header"><span><span class="ch-num">10</span>STL — Containers</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch10-stl-containers/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch10-stl-containers/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch10-stl-containers/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch10-stl-containers/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch10-stl-containers/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch11"><div class="nav-chapter-header"><span><span class="ch-num">11</span>STL — Algorithms &amp; Iterators</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch11-stl-algorithms/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch11-stl-algorithms/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch11-stl-algorithms/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch11-stl-algorithms/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch11-stl-algorithms/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch12"><div class="nav-chapter-header"><span><span class="ch-num">12</span>Memory Management</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch12-memory-management/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch12-memory-management/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch12-memory-management/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch12-memory-management/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch12-memory-management/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch13"><div class="nav-chapter-header"><span><span class="ch-num">13</span>Exception Handling</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch13-exception-handling/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch13-exception-handling/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch13-exception-handling/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch13-exception-handling/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch13-exception-handling/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch14"><div class="nav-chapter-header"><span><span class="ch-num">14</span>File I/O</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch14-file-io/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch14-file-io/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch14-file-io/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch14-file-io/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch14-file-io/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch15"><div class="nav-chapter-header"><span><span class="ch-num">15</span>Modern C++ (C++11–C++20)</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="index.html" class="active"><span class="link-icon">📖</span>Learning</a><a href="examples.html"><span class="link-icon">💻</span>Examples</a><a href="exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-section-title">Capstone</div>
+  <div class="nav-chapter" data-chapter="ch16"><div class="nav-chapter-header"><span><span class="ch-num">16</span>Capstone Project</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch16-capstone/index.html"><span class="link-icon">🎯</span>Brief</a><a href="/chapters/ch16-capstone/walkthrough.html"><span class="link-icon">🗺</span>Walkthrough</a><a href="/chapters/ch16-capstone/solution.html"><span class="link-icon">✅</span>Solution</a></div></div>
+  <div class="nav-section-title">About</div>
+  <div style="padding:.4rem 1.1rem 1rem;font-size:.78rem;color:var(--muted);line-height:1.5;">Maintained by<br><a href="https://linkedin.com/in/adityabhuyan" target="_blank" rel="noopener">Aditya Pratap Bhuyan</a><br><span style="font-size:.72rem;">GNU GPL v3 License</span></div>
+</nav></aside>
+
+<main id="main">
+  <div class="page-header">
+    <div class="breadcrumb"><a href="/index.html">Home</a> › Chapter 15</div>
+    <h1>Chapter 15 — Modern C++ (C++11–C++20)</h1>
+    <p class="subtitle">A comprehensive tour of the language features added across C++11, C++14, C++17, and C++20.</p>
+    <div class="chapter-tabs">
+      <a href="index.html" class="active">📖 Learning</a>
+      <a href="examples.html">💻 Examples</a>
+      <a href="exercises.html">✏️ Exercises</a>
+      <a href="solutions.html">✅ Solutions</a>
+      <a href="quiz.html">🧠 Quiz</a>
+    </div>
+  </div>
+
+  <div class="content">
+
+    <!-- ============================================================
+         C++11
+    ============================================================ -->
+    <h2>15.1 C++11 Features</h2>
+    <p>
+      C++11 was the most transformative revision of the language since its creation. It modernised
+      almost every aspect of C++ — from type inference and initialisation to concurrency and memory ownership.
+    </p>
+
+    <h3>15.1.1 <code>auto</code> Type Deduction</h3>
+    <p>
+      The <code>auto</code> keyword instructs the compiler to deduce the variable's type from its
+      initialiser expression. This eliminates verbose type declarations without sacrificing type safety.
+    </p>
+<pre><code>auto i    = 42;          // int
+auto d    = 3.14;        // double
+auto s    = std::string{"hello"};  // std::string
+auto it   = vec.begin(); // std::vector&lt;int&gt;::iterator
+
+// Use with complex types to avoid repetition:
+auto pair = std::make_pair(1, "one");  // std::pair&lt;int, const char*&gt;</code></pre>
+    <div class="callout tip">
+      <strong>Tip — <code>auto</code> always deduces a non-reference, non-const type.</strong>
+      Write <code>auto&amp;</code> to deduce a reference, and <code>const auto&amp;</code> for a const reference.
+    </div>
+
+    <h3>15.1.2 Range-Based <code>for</code> Loop</h3>
+    <p>
+      Iterates over any range — arrays, STL containers, or user-defined types that provide
+      <code>begin()</code> and <code>end()</code>.
+    </p>
+<pre><code>std::vector&lt;int&gt; nums = {1, 2, 3, 4, 5};
+
+// Copy each element (no modification to original)
+for (auto x : nums) { std::cout &lt;&lt; x &lt;&lt; " "; }
+
+// Bind by reference — can modify elements
+for (auto&amp; x : nums) { x *= 2; }
+
+// Const reference — efficient read-only access to large objects
+for (const auto&amp; x : nums) { std::cout &lt;&lt; x &lt;&lt; " "; }</code></pre>
+
+    <h3>15.1.3 Lambda Expressions</h3>
+    <p>
+      Lambdas are anonymous function objects defined inline. Their full syntax is:
+    </p>
+<pre><code>[capture](params) -&gt; return_type { body }</code></pre>
+    <table>
+      <thead><tr><th>Capture clause</th><th>Meaning</th></tr></thead>
+      <tbody>
+        <tr><td><code>[]</code></td><td>Capture nothing</td></tr>
+        <tr><td><code>[=]</code></td><td>Capture all local variables by <strong>value</strong></td></tr>
+        <tr><td><code>[&amp;]</code></td><td>Capture all local variables by <strong>reference</strong></td></tr>
+        <tr><td><code>[x]</code></td><td>Capture <code>x</code> by value only</td></tr>
+        <tr><td><code>[&amp;x]</code></td><td>Capture <code>x</code> by reference only</td></tr>
+        <tr><td><code>[this]</code></td><td>Capture the enclosing object pointer</td></tr>
+        <tr><td><code>[=, &amp;x]</code></td><td>Capture all by value, but <code>x</code> by reference</td></tr>
+      </tbody>
+    </table>
+<pre><code>int offset = 10;
+
+// Capture offset by value
+auto addOffset = [offset](int x) { return x + offset; };
+std::cout &lt;&lt; addOffset(5);  // 15
+
+// Capture offset by reference — sees future changes
+auto addOffsetRef = [&amp;offset](int x) { return x + offset; };
+offset = 100;
+std::cout &lt;&lt; addOffsetRef(5);  // 105
+
+// Lambda used with std::sort
+std::vector&lt;int&gt; v = {3,1,4,1,5,9};
+std::sort(v.begin(), v.end(), [](int a, int b){ return a &lt; b; });</code></pre>
+
+    <h3>15.1.4 Move Semantics</h3>
+    <p>
+      Move semantics allow resources to be <em>transferred</em> from a temporary (rvalue) rather than copied,
+      eliminating redundant heap allocations.
+    </p>
+    <ul>
+      <li><strong>Rvalue reference</strong> <code>T&amp;&amp;</code> — binds to temporaries or values that are about to expire.</li>
+      <li><strong><code>std::move</code></strong> — casts an lvalue to an rvalue reference, signalling that its resources may be stolen.</li>
+      <li><strong>Move constructor</strong> <code>T(T&amp;&amp; other)</code> — transfers ownership from <code>other</code> to <code>this</code>.</li>
+      <li><strong>Move assignment</strong> <code>T&amp; operator=(T&amp;&amp; other)</code> — same idea for assignment.</li>
+    </ul>
+<pre><code>std::string a = "Hello";
+std::string b = std::move(a);  // a is now empty; b owns the data
+// a == ""   b == "Hello"
+
+std::vector&lt;int&gt; src = {1, 2, 3};
+std::vector&lt;int&gt; dst = std::move(src);  // O(1) — pointer swap, no copy</code></pre>
+    <div class="callout">
+      <strong>Rule of Five</strong>
+      If you define any of destructor, copy constructor, copy assignment, move constructor, or move assignment,
+      you should define all five.
+    </div>
+
+    <h3>15.1.5 Smart Pointers (brief reference)</h3>
+    <p>
+      Introduced in C++11, smart pointers live in <code>&lt;memory&gt;</code> and manage heap lifetime automatically.
+      See <a href="/chapters/ch12-memory-management/index.html">Chapter 12</a> for full coverage.
+    </p>
+    <ul>
+      <li><code>std::unique_ptr&lt;T&gt;</code> — sole ownership, zero overhead.</li>
+      <li><code>std::shared_ptr&lt;T&gt;</code> — shared ownership via reference counting.</li>
+      <li><code>std::weak_ptr&lt;T&gt;</code> — non-owning observer of a <code>shared_ptr</code>.</li>
+    </ul>
+
+    <h3>15.1.6 <code>nullptr</code></h3>
+    <p>
+      The typed null pointer constant. Replaces the ambiguous integer literal <code>NULL</code> (or <code>0</code>)
+      and has type <code>std::nullptr_t</code>, which converts safely to any pointer type but not to <code>int</code>.
+    </p>
+<pre><code>int* p = nullptr;          // correct
+// int* p = NULL;          // old style — NULL is just 0 or (void*)0
+
+void f(int);
+void f(int*);
+f(nullptr);   // calls f(int*)  — unambiguous
+// f(NULL);   // ERROR: ambiguous between f(int) and f(int*)</code></pre>
+
+    <h3>15.1.7 <code>constexpr</code></h3>
+    <p>
+      <code>constexpr</code> variables and functions are evaluated at <strong>compile time</strong>,
+      enabling use in array sizes, template arguments, and <code>static_assert</code>.
+    </p>
+<pre><code>constexpr int SQUARE_SIZE = 8;          // compile-time constant
+constexpr int square(int x) { return x * x; }
+
+int arr[SQUARE_SIZE];                   // OK — size is a constant expression
+static_assert(square(4) == 16, "Math is broken");</code></pre>
+
+    <h3>15.1.8 Uniform Initialisation with <code>{}</code></h3>
+    <p>
+      Brace initialisation works uniformly across all types and prevents narrowing conversions.
+    </p>
+<pre><code>int    a{42};
+double d{3.14};
+// int  bad{3.14};   // ERROR: narrowing — 3.14 can't losslessly fit in int
+
+std::vector&lt;int&gt; v{1, 2, 3, 4};  // initialiser-list constructor
+struct Point { int x, y; };
+Point p{10, 20};                  // aggregate init</code></pre>
+
+    <h3>15.1.9 Delegating Constructors</h3>
+    <p>
+      A constructor may call another constructor of the same class in its initialiser list,
+      avoiding duplicated initialisation logic.
+    </p>
+<pre><code>class Widget {
+    int id;
+    std::string name;
+public:
+    Widget(int id, std::string name) : id{id}, name{std::move(name)} {}
+    Widget(int id) : Widget{id, "unnamed"} {}  // delegates to the first ctor
+    Widget()       : Widget{0}             {}  // delegates to the second ctor
+};</code></pre>
+
+    <h3>15.1.10 <code>override</code> and <code>final</code></h3>
+    <p>
+      <code>override</code> tells the compiler to verify that the function genuinely overrides a virtual function.
+      <code>final</code> prevents further overriding (or class derivation).
+    </p>
+<pre><code>struct Base {
+    virtual void draw() const {}
+    virtual void resize() {}
+};
+struct Derived : Base {
+    void draw() const override {}   // OK — confirmed override
+    // void drw() override {}       // ERROR: no virtual 'drw' in Base
+    void resize() override final {} // no further override allowed
+};
+struct LeafClass final : Derived {  // no further derivation allowed
+};</code></pre>
+
+    <h3>15.1.11 Explicit Conversion Operators</h3>
+    <p>
+      Marking a conversion operator <code>explicit</code> prevents silent implicit conversions,
+      requiring a cast at the call site.
+    </p>
+<pre><code>struct Safe {
+    int value;
+    explicit operator bool() const { return value != 0; }
+};
+Safe s{42};
+if (s) { /* OK — contextual bool conversion */ }
+// bool b = s;      // ERROR: explicit prevents implicit copy-init</code></pre>
+
+    <h3>15.1.12 <code>static_assert</code></h3>
+    <p>
+      Compile-time assertion. If the condition is false the build fails with the given message —
+      no runtime cost, no test framework needed.
+    </p>
+<pre><code>static_assert(sizeof(int) == 4, "This code requires 32-bit int");
+static_assert(std::is_trivially_copyable_v&lt;float&gt;, "float must be trivially copyable");</code></pre>
+
+    <h3>15.1.13 <code>std::thread</code> Basics</h3>
+    <p>
+      C++11 introduced a portable threading model. Threads are created from callables and joined
+      (or detached) to manage their lifetime.
+    </p>
+<pre><code>#include &lt;thread&gt;
+
+void worker(int id) {
+    std::cout &lt;&lt; "Thread " &lt;&lt; id &lt;&lt; " running\n";
+}
+
+int main() {
+    std::thread t1(worker, 1);
+    std::thread t2(worker, 2);
+    t1.join();   // wait for t1 to finish
+    t2.join();
+}</code></pre>
+
+    <!-- ============================================================
+         C++14
+    ============================================================ -->
+    <h2>15.2 C++14 Features</h2>
+    <p>C++14 refined and polished C++11 without adding major new paradigms.</p>
+
+    <h3>15.2.1 Generic Lambdas</h3>
+    <p>
+      Lambda parameters may use <code>auto</code>, making the lambda a templated call operator.
+    </p>
+<pre><code>auto square = [](auto x) { return x * x; };
+std::cout &lt;&lt; square(3);    // 9  (int)
+std::cout &lt;&lt; square(2.5);  // 6.25 (double)</code></pre>
+
+    <h3>15.2.2 <code>std::make_unique</code></h3>
+    <p>
+      C++11 introduced <code>unique_ptr</code> but forgot <code>make_unique</code>.
+      C++14 added it for exception-safe construction and parity with <code>make_shared</code>.
+    </p>
+<pre><code>#include &lt;memory&gt;
+auto p = std::make_unique&lt;int&gt;(42);
+auto arr = std::make_unique&lt;int[]&gt;(10);  // array form</code></pre>
+
+    <h3>15.2.3 Binary Literals</h3>
+    <p>
+      Integer literals may be written in binary using the <code>0b</code> prefix.
+      The digit separator <code>'</code> (apostrophe) may be used to improve readability.
+    </p>
+<pre><code>int flags   = 0b1010'1100;   // 172
+int mask    = 0b0000'1111;   // 15
+int million = 1'000'000;     // decimal — separator works here too</code></pre>
+
+    <h3>15.2.4 Return Type Deduction</h3>
+    <p>
+      Regular functions (not just lambdas) may use <code>auto</code> as their return type;
+      the compiler deduces it from the <code>return</code> statement.
+    </p>
+<pre><code>auto add(int a, int b) { return a + b; }  // deduced: int
+auto pi()              { return 3.14159; } // deduced: double</code></pre>
+
+    <!-- ============================================================
+         C++17
+    ============================================================ -->
+    <h2>15.3 C++17 Features</h2>
+    <p>
+      C++17 brought several ergonomic improvements and powerful new library types.
+    </p>
+
+    <h3>15.3.1 Structured Bindings</h3>
+    <p>
+      Decompose aggregates, pairs, tuples, and structs into named local variables with a single declaration.
+    </p>
+<pre><code>#include &lt;map&gt;
+std::map&lt;std::string, int&gt; scores = {{"Alice",95}, {"Bob",87}};
+
+for (const auto&amp; [name, score] : scores) {
+    std::cout &lt;&lt; name &lt;&lt; ": " &lt;&lt; score &lt;&lt; "\n";
+}
+
+auto [lo, hi] = std::minmax(3, 7);  // lo=3, hi=7</code></pre>
+
+    <h3>15.3.2 <code>if constexpr</code></h3>
+    <p>
+      Evaluates the condition at compile time. The branch that is <em>not taken</em> is completely
+      discarded — it never needs to be well-formed for the given type. Indispensable in templates.
+    </p>
+<pre><code>template&lt;typename T&gt;
+void print(T value) {
+    if constexpr (std::is_integral_v&lt;T&gt;)
+        std::cout &lt;&lt; "int: " &lt;&lt; value &lt;&lt; "\n";
+    else if constexpr (std::is_floating_point_v&lt;T&gt;)
+        std::cout &lt;&lt; "float: " &lt;&lt; value &lt;&lt; "\n";
+    else
+        std::cout &lt;&lt; "other\n";
+}</code></pre>
+
+    <h3>15.3.3 <code>std::optional&lt;T&gt;</code></h3>
+    <p>
+      Wraps a value that may or may not be present — a safer, expressive alternative to sentinel values or
+      output parameters. Access the value with <code>*opt</code> or <code>opt.value()</code>;
+      check presence with <code>opt.has_value()</code> or the contextual <code>bool</code> conversion.
+    </p>
+<pre><code>#include &lt;optional&gt;
+
+std::optional&lt;int&gt; safeDivide(int a, int b) {
+    if (b == 0) return std::nullopt;  // empty
+    return a / b;
+}
+
+if (auto result = safeDivide(10, 2); result)
+    std::cout &lt;&lt; *result;  // 5</code></pre>
+
+    <h3>15.3.4 <code>std::variant&lt;T, U, ...&gt;</code></h3>
+    <p>
+      A type-safe union that holds exactly one value from a closed set of types.
+      Use <code>std::get&lt;T&gt;</code> or <code>std::visit</code> to access the active alternative.
+    </p>
+<pre><code>#include &lt;variant&gt;
+
+std::variant&lt;int, double, std::string&gt; v = 42;
+v = 3.14;
+v = "hello";
+
+std::visit([](auto&amp;&amp; val) { std::cout &lt;&lt; val; }, v);  // hello</code></pre>
+
+    <h3>15.3.5 <code>std::string_view</code></h3>
+    <p>
+      A non-owning, read-only view into a character sequence — avoids heap allocations when you only
+      need to read string data. Prefer it to <code>const std::string&amp;</code> in function parameters
+      that don't need ownership.
+    </p>
+<pre><code>#include &lt;string_view&gt;
+
+void greet(std::string_view name) {
+    std::cout &lt;&lt; "Hello, " &lt;&lt; name &lt;&lt; "\n";
+}
+
+greet("World");              // no allocation — wraps string literal
+greet(std::string{"Alice"}); // wraps existing std::string</code></pre>
+
+    <h3>15.3.6 Parallel Algorithms</h3>
+    <p>
+      Standard algorithms gained overloads accepting an <strong>execution policy</strong> from
+      <code>&lt;execution&gt;</code>.
+    </p>
+<pre><code>#include &lt;algorithm&gt;
+#include &lt;execution&gt;
+
+std::sort(std::execution::par, v.begin(), v.end());       // parallel
+std::sort(std::execution::par_unseq, v.begin(), v.end()); // parallel + vectorised
+std::sort(std::execution::seq, v.begin(), v.end());       // sequential (default)</code></pre>
+
+    <h3>15.3.7 <code>if</code> / <code>switch</code> with Initialiser</h3>
+    <p>
+      An <code>if</code> or <code>switch</code> statement may contain an initialiser expression that
+      limits the scope of a variable to the body of that statement only.
+    </p>
+<pre><code>// The iterator is scoped to the if/else block only
+if (auto it = m.find("key"); it != m.end())
+    std::cout &lt;&lt; it-&gt;second;
+else
+    std::cout &lt;&lt; "not found";
+
+switch (int code = getStatusCode(); code) {
+    case 200: std::cout &lt;&lt; "OK"; break;
+    case 404: std::cout &lt;&lt; "Not Found"; break;
+}</code></pre>
+
+    <!-- ============================================================
+         C++20
+    ============================================================ -->
+    <h2>15.4 C++20 Features</h2>
+    <p>
+      C++20 is widely regarded as the second major evolution of modern C++, alongside C++11.
+      It introduced four large language pillars: <strong>Concepts</strong>, <strong>Ranges</strong>,
+      <strong>Coroutines</strong>, and <strong>Modules</strong>.
+    </p>
+
+    <h3>15.4.1 Concepts</h3>
+    <p>
+      A <strong>concept</strong> is a named, compile-time predicate that constrains template type parameters.
+      It replaces ad-hoc SFINAE tricks with readable, self-documenting constraints.
+    </p>
+<pre><code>#include &lt;concepts&gt;
+
+// Define a concept
+template&lt;typename T&gt;
+concept Numeric = std::is_integral_v&lt;T&gt; || std::is_floating_point_v&lt;T&gt;;
+
+// Constrain a function template with requires
+template&lt;Numeric T&gt;
+T add(T a, T b) { return a + b; }
+
+// Or inline with requires clause
+template&lt;typename T&gt;
+requires std::totally_ordered&lt;T&gt;
+T clamp(T val, T lo, T hi) {
+    return val &lt; lo ? lo : (val &gt; hi ? hi : val);
+}
+
+// Standard concepts: std::integral, std::floating_point, std::copy_constructible...</code></pre>
+
+    <h3>15.4.2 Ranges</h3>
+    <p>
+      The Ranges library provides composable, lazy views and algorithms that work on entire ranges
+      rather than iterator pairs. Views are chained with <code>|</code> (pipe operator).
+    </p>
+<pre><code>#include &lt;ranges&gt;
+#include &lt;vector&gt;
+
+std::vector&lt;int&gt; v = {1,2,3,4,5,6,7,8,9,10};
+
+// Filter even numbers, square them, take first 3
+auto result = v
+    | std::views::filter([](int x){ return x % 2 == 0; })
+    | std::views::transform([](int x){ return x * x; })
+    | std::views::take(3);
+
+for (int x : result) std::cout &lt;&lt; x &lt;&lt; " "; // 4 16 36
+
+// Ranges-based sort (no iterator pairs needed)
+std::ranges::sort(v);</code></pre>
+
+    <h3>15.4.3 Coroutines (brief)</h3>
+    <p>
+      Coroutines are functions that can be <em>suspended</em> and <em>resumed</em>. They are the
+      foundation for generators, async/await patterns, and infinite sequences. A function is a
+      coroutine if it uses <code>co_yield</code>, <code>co_return</code>, or <code>co_await</code>.
+      Coroutine support types (<code>generator</code>, <code>task</code>) are typically provided by
+      libraries such as cppcoro or the upcoming C++23 <code>std::generator</code>.
+    </p>
+<pre><code>// Conceptual example — requires a coroutine library's generator&lt;T&gt;
+generator&lt;int&gt; fibonacci() {
+    int a = 0, b = 1;
+    while (true) {
+        co_yield a;
+        auto tmp = a + b;
+        a = b;
+        b = tmp;
+    }
+}</code></pre>
+
+    <h3>15.4.4 <code>std::span</code></h3>
+    <p>
+      A lightweight, non-owning view over a contiguous sequence (array, vector, C array).
+      Safer than raw pointer + length, and avoids unnecessary copies.
+    </p>
+<pre><code>#include &lt;span&gt;
+
+void printAll(std::span&lt;const int&gt; data) {
+    for (int x : data) std::cout &lt;&lt; x &lt;&lt; " ";
+}
+
+int arr[] = {1,2,3,4,5};
+std::vector&lt;int&gt; vec = {6,7,8};
+
+printAll(arr);        // works with C array
+printAll(vec);        // works with vector
+printAll({arr, 3});   // subspan: first 3 elements</code></pre>
+
+    <h3>15.4.5 Three-Way Comparison Operator <code>&lt;=&gt;</code></h3>
+    <p>
+      The <em>spaceship operator</em> performs a three-way comparison and returns one of three
+      ordering categories. Defining it once lets the compiler synthesise <code>&lt;</code>,
+      <code>&lt;=</code>, <code>&gt;</code>, <code>&gt;=</code>, <code>==</code>, and <code>!=</code>
+      automatically.
+    </p>
+<pre><code>#include &lt;compare&gt;
+
+struct Point {
+    int x, y;
+    // Ask the compiler to generate all six comparison operators
+    auto operator&lt;=&gt;(const Point&amp;) const = default;
+};
+
+Point a{1, 2}, b{1, 3};
+auto cmp = (a &lt;=&gt; b);   // std::strong_ordering::less
+if (a &lt; b)  std::cout &lt;&lt; "a is less than b\n"; // synthesised automatically</code></pre>
+
+    <h2>15.5 Key Takeaways</h2>
+    <ul>
+      <li>C++11 introduced the most sweeping changes: <code>auto</code>, lambdas, move semantics, <code>nullptr</code>, <code>constexpr</code>, and smart pointers.</li>
+      <li>C++14 smoothed the rough edges: generic lambdas, <code>make_unique</code>, return-type deduction, and binary literals.</li>
+      <li>C++17 delivered practical ergonomics: structured bindings, <code>if constexpr</code>, <code>std::optional</code>, <code>std::variant</code>, and <code>std::string_view</code>.</li>
+      <li>C++20 raised the abstraction ceiling: concepts eliminate SFINAE; ranges replace iterator pairs; coroutines enable async; <code>std::span</code> replaces raw pointer/length idioms.</li>
+      <li>Always compile with <code>-std=c++20</code> (or <code>-std=c++17</code>) to unlock these features.</li>
+    </ul>
+
+    <div style="display:flex;justify-content:space-between;margin-top:2rem;">
+      <a href="/chapters/ch14-file-io/index.html" class="btn btn-outline" style="text-decoration:none;">← Chapter 14: File I/O</a>
+      <a href="examples.html" class="btn" style="text-decoration:none;">Next: Examples →</a>
+    </div>
+
+  </div>
+</main>
+</div>
+<footer id="site-footer">
+  &copy; 2024 <a href="https://linkedin.com/in/adityabhuyan" target="_blank" rel="noopener">Aditya Pratap Bhuyan</a> &nbsp;|&nbsp;
+  <a href="https://github.com/aditya-bhuyan/cpp-learning-hub" target="_blank" rel="noopener">GitHub</a> &nbsp;|&nbsp;
+  GNU GPL v3 License
+</footer>
+<script src="/assets/js/nav.js"></script>
+</body>
+</html>

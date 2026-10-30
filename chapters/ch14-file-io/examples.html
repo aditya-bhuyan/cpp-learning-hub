@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ch 14 Examples — File I/O | C++ Learning Hub</title>
+  <link rel="stylesheet" href="/assets/css/style.css" />
+</head>
+<body>
+<header id="site-header">
+  <button id="hamburger" aria-label="Toggle navigation">&#9776;</button>
+  <div id="site-logo">C++ Learning Hub <span class="badge">FREE</span></div>
+  <button id="theme-toggle">☾ Dark</button>
+</header>
+<div id="layout">
+<aside id="sidebar"><nav>
+  <div class="nav-section-title">C++ Learning Hub</div>
+  <div class="nav-chapter" data-chapter="home"><div class="nav-chapter-header"><span>🏠 Home</span></div><div class="nav-chapter-links"><a href="/index.html">Overview</a></div></div>
+  <div class="nav-section-title">Chapters</div>
+  <div class="nav-chapter" data-chapter="ch01"><div class="nav-chapter-header"><span><span class="ch-num">01</span>Introduction to C++</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch01-introduction/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch01-introduction/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch01-introduction/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch01-introduction/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch01-introduction/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch02"><div class="nav-chapter-header"><span><span class="ch-num">02</span>Variables, Types &amp; Operators</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch02-variables-types-operators/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch02-variables-types-operators/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch02-variables-types-operators/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch02-variables-types-operators/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch02-variables-types-operators/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch03"><div class="nav-chapter-header"><span><span class="ch-num">03</span>Control Flow</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch03-control-flow/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch03-control-flow/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch03-control-flow/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch03-control-flow/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch03-control-flow/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch04"><div class="nav-chapter-header"><span><span class="ch-num">04</span>Functions</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch04-functions/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch04-functions/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch04-functions/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch04-functions/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch04-functions/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch05"><div class="nav-chapter-header"><span><span class="ch-num">05</span>Arrays &amp; Strings</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch05-arrays-strings/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch05-arrays-strings/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch05-arrays-strings/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch05-arrays-strings/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch05-arrays-strings/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch06"><div class="nav-chapter-header"><span><span class="ch-num">06</span>Pointers &amp; References</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch06-pointers-references/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch06-pointers-references/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch06-pointers-references/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch06-pointers-references/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch06-pointers-references/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch07"><div class="nav-chapter-header"><span><span class="ch-num">07</span>OOP — Basics</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch07-oop-basics/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch07-oop-basics/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch07-oop-basics/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch07-oop-basics/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch07-oop-basics/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch08"><div class="nav-chapter-header"><span><span class="ch-num">08</span>OOP — Inheritance &amp; Polymorphism</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch08-oop-inheritance/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch08-oop-inheritance/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch08-oop-inheritance/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch08-oop-inheritance/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch08-oop-inheritance/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch09"><div class="nav-chapter-header"><span><span class="ch-num">09</span>Templates</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch09-templates/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch09-templates/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch09-templates/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch09-templates/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch09-templates/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch10"><div class="nav-chapter-header"><span><span class="ch-num">10</span>STL — Containers</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch10-stl-containers/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch10-stl-containers/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch10-stl-containers/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch10-stl-containers/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch10-stl-containers/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch11"><div class="nav-chapter-header"><span><span class="ch-num">11</span>STL — Algorithms &amp; Iterators</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch11-stl-algorithms/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch11-stl-algorithms/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch11-stl-algorithms/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch11-stl-algorithms/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch11-stl-algorithms/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch12"><div class="nav-chapter-header"><span><span class="ch-num">12</span>Memory Management</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch12-memory-management/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch12-memory-management/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch12-memory-management/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch12-memory-management/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch12-memory-management/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch13"><div class="nav-chapter-header"><span><span class="ch-num">13</span>Exception Handling</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch13-exception-handling/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch13-exception-handling/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch13-exception-handling/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch13-exception-handling/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch13-exception-handling/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter open" data-chapter="ch14"><div class="nav-chapter-header active"><span><span class="ch-num">14</span>File I/O</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch14-file-io/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch14-file-io/examples.html" class="active"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch14-file-io/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch14-file-io/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch14-file-io/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch15"><div class="nav-chapter-header"><span><span class="ch-num">15</span>Modern C++ (C++11–C++20)</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch15-modern-cpp/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch15-modern-cpp/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch15-modern-cpp/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch15-modern-cpp/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch15-modern-cpp/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-section-title">Capstone</div>
+  <div class="nav-chapter" data-chapter="ch16"><div class="nav-chapter-header"><span><span class="ch-num">16</span>Capstone Project</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch16-capstone/index.html"><span class="link-icon">🎯</span>Brief</a><a href="/chapters/ch16-capstone/walkthrough.html"><span class="link-icon">🗺</span>Walkthrough</a><a href="/chapters/ch16-capstone/solution.html"><span class="link-icon">✅</span>Solution</a></div></div>
+  <div class="nav-section-title">About</div>
+  <div style="padding:.4rem 1.1rem 1rem;font-size:.78rem;color:var(--muted);line-height:1.5;">Maintained by<br><a href="https://linkedin.com/in/adityabhuyan" target="_blank" rel="noopener">Aditya Pratap Bhuyan</a><br><span style="font-size:.72rem;">GNU GPL v3 License</span></div>
+</nav></aside>
+
+<main id="main">
+  <div class="page-header">
+    <div class="breadcrumb"><a href="/index.html">Home</a> › <a href="index.html">Chapter 14</a> › Examples</div>
+    <h1>Chapter 14 — Coding Examples</h1>
+    <p class="subtitle">Four complete, commented programs showcasing text CSV handling, binary serialization, append logging, and file analytics.</p>
+    <div class="chapter-tabs">
+      <a href="index.html">📖 Learning</a>
+      <a href="examples.html" class="active">💻 Examples</a>
+      <a href="exercises.html">✏️ Exercises</a>
+      <a href="solutions.html">✅ Solutions</a>
+      <a href="quiz.html">🧠 Quiz</a>
+    </div>
+  </div>
+
+  <div class="content">
+
+    <!-- Example 1 -->
+    <h2>Example 1 — CSV File Writer &amp; Reader (Student Records)</h2>
+    <p>
+      This example shows how to write structured objects to a CSV text file with header information,
+      and then read, parse, and display the records in a cleanly formatted table using <code>std::stringstream</code>
+      and <code>std::getline</code>.
+    </p>
+<pre><code>// example_14_csv.cpp
+// Compile: g++ -std=c++17 -Wall -o csv_demo example_14_csv.cpp
+
+#include &lt;iostream&gt;
+#include &lt;fstream&gt;
+#include &lt;sstream&gt;
+#include &lt;vector&gt;
+#include &lt;string&gt;
+#include &lt;iomanip&gt;
+
+struct Student {
+    int id;
+    std::string name;
+    std::string major;
+    double gpa;
+};
+
+// Write student records to a CSV file
+void writeStudentsCSV(const std::string&amp; filename, const std::vector&lt;Student&gt;&amp; students) {
+    std::ofstream file(filename);
+    if (!file) {
+        std::cerr &lt;&lt; "Error opening file for writing: " &lt;&lt; filename &lt;&lt; "\n";
+        return;
+    }
+
+    // Write CSV header
+    file &lt;&lt; "ID,Name,Major,GPA\n";
+
+    // Write rows
+    for (const auto&amp; s : students) {
+        file &lt;&lt; s.id &lt;&lt; ","
+             &lt;&lt; s.name &lt;&lt; ","
+             &lt;&lt; s.major &lt;&lt; ","
+             &lt;&lt; std::fixed &lt;&lt; std::setprecision(2) &lt;&lt; s.gpa &lt;&lt; "\n";
+    }
+    std::cout &lt;&lt; "Wrote " &lt;&lt; students.size() &lt;&lt; " student records to " &lt;&lt; filename &lt;&lt; "\n";
+}
+
+// Read and parse student records from a CSV file
+std::vector&lt;Student&gt; readStudentsCSV(const std::string&amp; filename) {
+    std::vector&lt;Student&gt; students;
+    std::ifstream file(filename);
+
+    if (!file.is_open()) {
+        std::cerr &lt;&lt; "Error opening file for reading: " &lt;&lt; filename &lt;&lt; "\n";
+        return students;
+    }
+
+    std::string line;
+    // Skip header row
+    if (!std::getline(file, line)) {
+        return students; // File is empty
+    }
+
+    // Parse each record row
+    while (std::getline(file, line)) {
+        if (line.empty()) continue; // Skip blank lines
+
+        std::stringstream ss(line);
+        std::string idStr, name, major, gpaStr;
+
+        if (std::getline(ss, idStr, ',') &amp;&amp;
+            std::getline(ss, name, ',') &amp;&amp;
+            std::getline(ss, major, ',') &amp;&amp;
+            std::getline(ss, gpaStr, ',')) {
+            Student s;
+            s.id = std::stoi(idStr);
+            s.name = name;
+            s.major = major;
+            s.gpa = std::stod(gpaStr);
+            students.push_back(s);
+        }
+    }
+    return students;
+}
+
+int main() {
+    const std::string filename = "students.csv";
+
+    std::vector&lt;Student&gt; initialList = {
+        {101, "Alice Chen", "Computer Science", 3.92},
+        {102, "Bob Miller", "Data Analytics", 3.65},
+        {103, "Charlie Davis", "Cybersecurity", 3.84},
+        {104, "Diana Patel", "Software Eng", 3.98}
+    };
+
+    // 1. Write data
+    writeStudentsCSV(filename, initialList);
+
+    // 2. Read data back
+    std::vector&lt;Student&gt; loadedList = readStudentsCSV(filename);
+
+    // 3. Display loaded data
+    std::cout &lt;&lt; "\n--- Loaded Student Roster ---\n";
+    std::cout &lt;&lt; std::left &lt;&lt; std::setw(6) &lt;&lt; "ID"
+              &lt;&lt; std::setw(18) &lt;&lt; "Name"
+              &lt;&lt; std::setw(20) &lt;&lt; "Major"
+              &lt;&lt; std::right &lt;&lt; std::setw(6) &lt;&lt; "GPA" &lt;&lt; "\n";
+    std::cout &lt;&lt; std::string(50, '-') &lt;&lt; "\n";
+
+    for (const auto&amp; s : loadedList) {
+        std::cout &lt;&lt; std::left &lt;&lt; std::setw(6) &lt;&lt; s.id
+                  &lt;&lt; std::setw(18) &lt;&lt; s.name
+                  &lt;&lt; std::setw(20) &lt;&lt; s.major
+                  &lt;&lt; std::right &lt;&lt; std::fixed &lt;&lt; std::setprecision(2)
+                  &lt;&lt; std::setw(6) &lt;&lt; s.gpa &lt;&lt; "\n";
+    }
+
+    return 0;
+}</code></pre>
+    <p><strong>Expected output:</strong></p>
+<pre><code>Wrote 4 student records to students.csv
+
+--- Loaded Student Roster ---
+ID    Name              Major                 GPA
+--------------------------------------------------
+101   Alice Chen        Computer Science     3.92
+102   Bob Miller        Data Analytics       3.65
+103   Charlie Davis     Cybersecurity        3.84
+104   Diana Patel       Software Eng         3.98</code></pre>
+
+    <!-- Example 2 -->
+    <h2>Example 2 — Binary File I/O (Employee Struct Records)</h2>
+    <p>
+      This example demonstrates reading and writing multiple struct instances in binary format.
+      Notice the use of a fixed-size char array (<code>char name[32]</code>) rather than <code>std::string</code>,
+      ensuring the struct is safely serializable via <code>reinterpret_cast&lt;char*&gt;</code>.
+    </p>
+<pre><code>// example_14_binary.cpp
+// Compile: g++ -std=c++17 -Wall -o binary_demo example_14_binary.cpp
+
+#include &lt;iostream&gt;
+#include &lt;fstream&gt;
+#include &lt;cstring&gt;
+#include &lt;vector&gt;
+#include &lt;iomanip&gt;
+
+// Trivially copyable struct suitable for binary dump
+struct Employee {
+    int id;
+    char name[32];
+    char department[20];
+    double salary;
+};
+
+// Helper constructor-like function
+Employee createEmployee(int id, const char* name, const char* dept, double salary) {
+    Employee emp{};
+    emp.id = id;
+    std::strncpy(emp.name, name, sizeof(emp.name) - 1);
+    std::strncpy(emp.department, dept, sizeof(emp.department) - 1);
+    emp.salary = salary;
+    return emp;
+}
+
+int main() {
+    const std::string filename = "employees.dat";
+
+    // 1. Prepare sample records
+    std::vector&lt;Employee&gt; staff = {
+        createEmployee(1001, "Ada Lovelace", "Research", 125000.0),
+        createEmployee(1002, "Alan Turing", "Cryptography", 130000.0),
+        createEmployee(1003, "Grace Hopper", "Systems", 120000.0)
+    };
+
+    // 2. Write structs to binary file
+    {
+        std::ofstream out(filename, std::ios::binary);
+        if (!out) {
+            std::cerr &lt;&lt; "Failed to open " &lt;&lt; filename &lt;&lt; " for writing.\n";
+            return 1;
+        }
+
+        for (const auto&amp; emp : staff) {
+            out.write(reinterpret_cast&lt;const char*&gt;(&amp;emp), sizeof(Employee));
+        }
+        std::cout &lt;&lt; "Wrote " &lt;&lt; staff.size() &lt;&lt; " binary records ("
+                  &lt;&lt; staff.size() * sizeof(Employee) &lt;&lt; " total bytes).\n";
+    }
+
+    // 3. Read structs back from binary file
+    std::vector&lt;Employee&gt; loaded;
+    {
+        std::ifstream in(filename, std::ios::binary);
+        if (!in) {
+            std::cerr &lt;&lt; "Failed to open " &lt;&lt; filename &lt;&lt; " for reading.\n";
+            return 1;
+        }
+
+        Employee temp{};
+        while (in.read(reinterpret_cast&lt;char*&gt;(&amp;temp), sizeof(Employee))) {
+            loaded.push_back(temp);
+        }
+        std::cout &lt;&lt; "Successfully read " &lt;&lt; loaded.size() &lt;&lt; " records back from disk.\n\n";
+    }
+
+    // 4. Print decoded employee list
+    std::cout &lt;&lt; std::left &lt;&lt; std::setw(8) &lt;&lt; "EmpID"
+              &lt;&lt; std::setw(18) &lt;&lt; "Name"
+              &lt;&lt; std::setw(16) &lt;&lt; "Department"
+              &lt;&lt; std::right &lt;&lt; std::setw(12) &lt;&lt; "Salary" &lt;&lt; "\n";
+    std::cout &lt;&lt; std::string(54, '=') &lt;&lt; "\n";
+
+    for (const auto&amp; emp : loaded) {
+        std::cout &lt;&lt; std::left &lt;&lt; std::setw(8) &lt;&lt; emp.id
+                  &lt;&lt; std::setw(18) &lt;&lt; emp.name
+                  &lt;&lt; std::setw(16) &lt;&lt; emp.department
+                  &lt;&lt; std::right &lt;&lt; std::fixed &lt;&lt; std::setprecision(2)
+                  &lt;&lt; "$" &lt;&lt; std::setw(11) &lt;&lt; emp.salary &lt;&lt; "\n";
+    }
+
+    return 0;
+}</code></pre>
+    <p><strong>Expected output:</strong></p>
+<pre><code>Wrote 3 binary records (192 total bytes).
+Successfully read 3 records back from disk.
+
+EmpID   Name              Department              Salary
+======================================================
+1001    Ada Lovelace      Research          $  125000.00
+1002    Alan Turing       Cryptography      $  130000.00
+1003    Grace Hopper      Systems           $  120000.00</code></pre>
+
+    <!-- Example 3 -->
+    <h2>Example 3 — Log File Appender (std::ios::app)</h2>
+    <p>
+      In production systems, logs are appended to existing log files without erasing prior activity.
+      This example shows how to open a stream in <code>ios::app</code> mode, format timestamped log entries,
+      and replay the full log back with line numbering.
+    </p>
+<pre><code>// example_14_logger.cpp
+// Compile: g++ -std=c++17 -Wall -o logger_demo example_14_logger.cpp
+
+#include &lt;iostream&gt;
+#include &lt;fstream&gt;
+#include &lt;string&gt;
+#include &lt;chrono&gt;
+#include &lt;ctime&gt;
+#include &lt;iomanip&gt;
+
+// Generate current timestamp as string [YYYY-MM-DD HH:MM:SS]
+std::string getTimestamp() {
+    auto now = std::chrono::system_clock::now();
+    std::time_t nowTime = std::chrono::system_clock::to_time_t(now);
+    std::tm ltime{};
+#if defined(_WIN32)
+    localtime_s(&amp;ltime, &amp;nowTime);
+#else
+    localtime_r(&amp;nowTime, &amp;ltime);
+#endif
+    std::ostringstream ss;
+    ss &lt;&lt; "[" &lt;&lt; std::put_time(&amp;ltime, "%Y-%m-%d %H:%M:%S") &lt;&lt; "]";
+    return ss.str();
+}
+
+// Append log entry to file
+void appendLog(const std::string&amp; filename, const std::string&amp; level, const std::string&amp; message) {
+    // Open in append mode (ios::app)
+    std::ofstream logFile(filename, std::ios::app);
+    if (!logFile) {
+        std::cerr &lt;&lt; "Error: Could not open log file for appending!\n";
+        return;
+    }
+
+    logFile &lt;&lt; getTimestamp() &lt;&lt; " [" &lt;&lt; level &lt;&lt; "] " &lt;&lt; message &lt;&lt; "\n";
+    // logFile closes automatically here, flushing output
+}
+
+// Display complete log file contents
+void displayLog(const std::string&amp; filename) {
+    std::ifstream logFile(filename);
+    if (!logFile) {
+        std::cerr &lt;&lt; "Error opening log file: " &lt;&lt; filename &lt;&lt; "\n";
+        return;
+    }
+
+    std::cout &lt;&lt; "\n=== Log Contents (" &lt;&lt; filename &lt;&lt; ") ===\n";
+    std::string line;
+    int lineNum = 1;
+    while (std::getline(logFile, line)) {
+        std::cout &lt;&lt; std::setw(3) &lt;&lt; lineNum++ &lt;&lt; " | " &lt;&lt; line &lt;&lt; "\n";
+    }
+}
+
+int main() {
+    const std::string logFilename = "app_activity.log";
+
+    // Append several log entries
+    appendLog(logFilename, "INFO",  "Application startup initialized.");
+    appendLog(logFilename, "INFO",  "Database connection established on port 5432.");
+    appendLog(logFilename, "WARN",  "High latency detected on endpoint /api/metrics.");
+    appendLog(logFilename, "ERROR", "Failed to reach telemetry heartbeat service.");
+    appendLog(logFilename, "INFO",  "Shutdown completed gracefully.");
+
+    // Print all log entries from the file
+    displayLog(logFilename);
+
+    return 0;
+}</code></pre>
+    <p><strong>Expected output (sample timestamp):</strong></p>
+<pre><code>=== Log Contents (app_activity.log) ===
+  1 | [2024-05-18 10:15:01] [INFO] Application startup initialized.
+  2 | [2024-05-18 10:15:02] [INFO] Database connection established on port 5432.
+  3 | [2024-05-18 10:15:04] [WARN] High latency detected on endpoint /api/metrics.
+  4 | [2024-05-18 10:15:05] [ERROR] Failed to reach telemetry heartbeat service.
+  5 | [2024-05-18 10:15:07] [INFO] Shutdown completed gracefully.</code></pre>
+
+    <!-- Example 4 -->
+    <h2>Example 4 — Word &amp; Line Counter Utility (wc in C++)</h2>
+    <p>
+      This example implements a standard file analytics tool similar to Unix <code>wc</code>.
+      It reads a text file line-by-line, uses <code>std::stringstream</code> to count words,
+      accumulates total character count including newlines, and reports summary statistics.
+    </p>
+<pre><code>// example_14_wordcount.cpp
+// Compile: g++ -std=c++17 -Wall -o wordcount_demo example_14_wordcount.cpp
+
+#include &lt;iostream&gt;
+#include &lt;fstream&gt;
+#include &lt;sstream&gt;
+#include &lt;string&gt;
+#include &lt;iomanip&gt;
+
+struct FileStats {
+    size_t lines = 0;
+    size_t words = 0;
+    size_t chars = 0;
+    size_t nonWhitespaceChars = 0;
+};
+
+FileStats analyzeFile(const std::string&amp; filename) {
+    FileStats stats;
+    std::ifstream file(filename);
+
+    if (!file) {
+        std::cerr &lt;&lt; "Error: Unable to open file " &lt;&lt; filename &lt;&lt; "\n";
+        return stats;
+    }
+
+    std::string line;
+    while (std::getline(file, line)) {
+        stats.lines++;
+        stats.chars += line.length() + 1; // +1 for the newline character
+
+        for (char c : line) {
+            if (!std::isspace(static_cast&lt;unsigned char&gt;(c))) {
+                stats.nonWhitespaceChars++;
+            }
+        }
+
+        // Count words in this line via stringstream
+        std::stringstream ss(line);
+        std::string word;
+        while (ss &gt;&gt; word) {
+            stats.words++;
+        }
+    }
+
+    return stats;
+}
+
+int main() {
+    const std::string sampleFile = "sample_text.txt";
+
+    // Create a temporary sample file
+    {
+        std::ofstream out(sampleFile);
+        out &lt;&lt; "The C++ programming language provides powerful\n";
+        out &lt;&lt; "stream abstractions for handling file input and output.\n";
+        out &lt;&lt; "RAII guarantees that open files are safely closed\n";
+        out &lt;&lt; "even when unexpected runtime exceptions occur.\n";
+    }
+
+    // Run analyzer
+    FileStats s = analyzeFile(sampleFile);
+
+    // Print analysis report
+    std::cout &lt;&lt; "========================================\n";
+    std::cout &lt;&lt; "   FILE ANALYSIS REPORT: " &lt;&lt; sampleFile &lt;&lt; "\n";
+    std::cout &lt;&lt; "========================================\n";
+    std::cout &lt;&lt; std::left &lt;&lt; std::setw(28) &lt;&lt; "Total Lines:" &lt;&lt; s.lines &lt;&lt; "\n";
+    std::cout &lt;&lt; std::left &lt;&lt; std::setw(28) &lt;&lt; "Total Words:" &lt;&lt; s.words &lt;&lt; "\n";
+    std::cout &lt;&lt; std::left &lt;&lt; std::setw(28) &lt;&lt; "Total Characters (w/ \\n):" &lt;&lt; s.chars &lt;&lt; "\n";
+    std::cout &lt;&lt; std::left &lt;&lt; std::setw(28) &lt;&lt; "Non-whitespace Characters:" &lt;&lt; s.nonWhitespaceChars &lt;&lt; "\n";
+    std::cout &lt;&lt; "----------------------------------------\n";
+
+    if (s.lines &gt; 0) {
+        double avgWordsPerLine = static_cast&lt;double&gt;(s.words) / s.lines;
+        std::cout &lt;&lt; std::left &lt;&lt; std::setw(28) &lt;&lt; "Avg Words Per Line:"
+                  &lt;&lt; std::fixed &lt;&lt; std::setprecision(2) &lt;&lt; avgWordsPerLine &lt;&lt; "\n";
+    }
+
+    return 0;
+}</code></pre>
+    <p><strong>Expected output:</strong></p>
+<pre><code>========================================
+   FILE ANALYSIS REPORT: sample_text.txt
+========================================
+Total Lines:                4
+Total Words:                27
+Total Characters (w/ \n):   210
+Non-whitespace Characters:  180
+----------------------------------------
+Avg Words Per Line:         6.75</code></pre>
+
+    <div style="display:flex;justify-content:space-between;margin-top:2rem;">
+      <a href="index.html" class="btn btn-outline" style="text-decoration:none;">← Learning</a>
+      <a href="exercises.html" class="btn" style="text-decoration:none;">Next: Exercises →</a>
+    </div>
+
+  </div>
+</main>
+</div>
+<footer id="site-footer">
+  &copy; 2024 <a href="https://linkedin.com/in/adityabhuyan" target="_blank" rel="noopener">Aditya Pratap Bhuyan</a> &nbsp;|&nbsp;
+  <a href="https://github.com/aditya-bhuyan/cpp-learning-hub" target="_blank" rel="noopener">GitHub</a> &nbsp;|&nbsp;
+  GNU GPL v3 License
+</footer>
+<script src="/assets/js/nav.js"></script>
+</body>
+</html>

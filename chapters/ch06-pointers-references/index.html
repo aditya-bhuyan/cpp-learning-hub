@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ch 06 — Pointers &amp; References | C++ Learning Hub</title>
+  <link rel="stylesheet" href="/assets/css/style.css" />
+</head>
+<body>
+<header id="site-header">
+  <button id="hamburger" aria-label="Toggle navigation">&#9776;</button>
+  <div id="site-logo">C++ Learning Hub <span class="badge">FREE</span></div>
+  <button id="theme-toggle">☾ Dark</button>
+</header>
+<div id="layout">
+<aside id="sidebar"><nav>
+  <div class="nav-section-title">C++ Learning Hub</div>
+  <div class="nav-chapter" data-chapter="home"><div class="nav-chapter-header"><span>🏠 Home</span></div><div class="nav-chapter-links"><a href="/index.html">Overview</a></div></div>
+  <div class="nav-section-title">Chapters</div>
+  <div class="nav-chapter" data-chapter="ch01"><div class="nav-chapter-header"><span><span class="ch-num">01</span>Introduction to C++</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch01-introduction/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch01-introduction/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch01-introduction/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch01-introduction/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch01-introduction/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch02"><div class="nav-chapter-header"><span><span class="ch-num">02</span>Variables, Types &amp; Operators</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch02-variables-types-operators/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch02-variables-types-operators/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch02-variables-types-operators/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch02-variables-types-operators/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch02-variables-types-operators/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch03"><div class="nav-chapter-header"><span><span class="ch-num">03</span>Control Flow</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch03-control-flow/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch03-control-flow/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch03-control-flow/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch03-control-flow/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch03-control-flow/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch04"><div class="nav-chapter-header"><span><span class="ch-num">04</span>Functions</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch04-functions/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch04-functions/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch04-functions/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch04-functions/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch04-functions/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch05"><div class="nav-chapter-header"><span><span class="ch-num">05</span>Arrays &amp; Strings</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch05-arrays-strings/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch05-arrays-strings/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch05-arrays-strings/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch05-arrays-strings/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch05-arrays-strings/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter open" data-chapter="ch06"><div class="nav-chapter-header"><span><span class="ch-num">06</span>Pointers &amp; References</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch06-pointers-references/index.html" class="active"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch06-pointers-references/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch06-pointers-references/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch06-pointers-references/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch06-pointers-references/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch07"><div class="nav-chapter-header"><span><span class="ch-num">07</span>OOP — Basics</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch07-oop-basics/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch07-oop-basics/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch07-oop-basics/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch07-oop-basics/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch07-oop-basics/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch08"><div class="nav-chapter-header"><span><span class="ch-num">08</span>OOP — Inheritance &amp; Polymorphism</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch08-oop-inheritance/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch08-oop-inheritance/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch08-oop-inheritance/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch08-oop-inheritance/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch08-oop-inheritance/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch09"><div class="nav-chapter-header"><span><span class="ch-num">09</span>Templates</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch09-templates/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch09-templates/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch09-templates/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch09-templates/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch09-templates/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch10"><div class="nav-chapter-header"><span><span class="ch-num">10</span>STL — Containers</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch10-stl-containers/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch10-stl-containers/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch10-stl-containers/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch10-stl-containers/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch10-stl-containers/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch11"><div class="nav-chapter-header"><span><span class="ch-num">11</span>STL — Algorithms &amp; Iterators</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch11-stl-algorithms/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch11-stl-algorithms/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch11-stl-algorithms/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch11-stl-algorithms/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch11-stl-algorithms/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch12"><div class="nav-chapter-header"><span><span class="ch-num">12</span>Memory Management</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch12-memory-management/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch12-memory-management/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch12-memory-management/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch12-memory-management/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch12-memory-management/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch13"><div class="nav-chapter-header"><span><span class="ch-num">13</span>Exception Handling</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch13-exception-handling/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch13-exception-handling/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch13-exception-handling/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch13-exception-handling/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch13-exception-handling/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch14"><div class="nav-chapter-header"><span><span class="ch-num">14</span>File I/O</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch14-file-io/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch14-file-io/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch14-file-io/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch14-file-io/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch14-file-io/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch15"><div class="nav-chapter-header"><span><span class="ch-num">15</span>Modern C++ (C++11–C++20)</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch15-modern-cpp/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch15-modern-cpp/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch15-modern-cpp/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch15-modern-cpp/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch15-modern-cpp/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-section-title">Capstone</div>
+  <div class="nav-chapter" data-chapter="ch16"><div class="nav-chapter-header"><span><span class="ch-num">16</span>Capstone Project</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch16-capstone/index.html"><span class="link-icon">🎯</span>Brief</a><a href="/chapters/ch16-capstone/walkthrough.html"><span class="link-icon">🗺</span>Walkthrough</a><a href="/chapters/ch16-capstone/solution.html"><span class="link-icon">✅</span>Solution</a></div></div>
+  <div class="nav-section-title">About</div>
+  <div style="padding:.4rem 1.1rem 1rem;font-size:.78rem;color:var(--muted);line-height:1.5;">Maintained by<br><a href="https://linkedin.com/in/adityabhuyan" target="_blank" rel="noopener">Aditya Pratap Bhuyan</a><br><span style="font-size:.72rem;">GNU GPL v3 License</span></div>
+</nav></aside>
+
+<main id="main">
+  <div class="page-header">
+    <div class="breadcrumb"><a href="/index.html">Home</a> › Chapter 06</div>
+    <h1>Chapter 06 — Pointers &amp; References</h1>
+    <p class="subtitle">Master memory addresses, pointer arithmetic, references, and the common pitfalls every C++ programmer must know.</p>
+    <div class="chapter-tabs">
+      <a href="index.html" class="active">📖 Learning</a>
+      <a href="examples.html">💻 Examples</a>
+      <a href="exercises.html">✏️ Exercises</a>
+      <a href="solutions.html">✅ Solutions</a>
+      <a href="quiz.html">🧠 Quiz</a>
+    </div>
+  </div>
+
+  <div class="content">
+
+    <h2>6.1 What is a Pointer?</h2>
+    <p>
+      Every variable lives at a specific location in memory. A <strong>pointer</strong> is a variable whose
+      value is a <em>memory address</em> — it literally <em>points to</em> where another value is stored.
+      Pointers are the foundation of dynamic memory, data structures, and low-level system programming in C++.
+    </p>
+    <p>
+      Two fundamental operators work hand-in-hand with pointers:
+    </p>
+    <ul>
+      <li><strong>Address-of operator <code>&amp;</code></strong> — placed before a variable name, it yields the address of that variable.</li>
+      <li><strong>Dereference operator <code>*</code></strong> — placed before a pointer variable, it yields the value at the address stored in the pointer.</li>
+    </ul>
+<pre><code>#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int x = 42;
+    int* p = &amp;x;        // p holds the address of x
+
+    cout &lt;&lt; "Value of x:       " &lt;&lt; x  &lt;&lt; "\n";   // 42
+    cout &lt;&lt; "Address of x (&amp;x):" &lt;&lt; &amp;x &lt;&lt; "\n";   // e.g. 0x7ffee4b2c8ac
+    cout &lt;&lt; "Value stored in p:" &lt;&lt; p  &lt;&lt; "\n";   // same address
+    cout &lt;&lt; "Value pointed to: " &lt;&lt; *p &lt;&lt; "\n";   // 42  (dereference)
+
+    *p = 100;   // write through the pointer
+    cout &lt;&lt; "x is now: " &lt;&lt; x &lt;&lt; "\n";            // 100
+    return 0;
+}</code></pre>
+
+    <h2>6.2 Pointer Declaration Syntax</h2>
+    <p>
+      The asterisk <code>*</code> in a declaration belongs to the <em>variable name</em>, not to the type —
+      even though the popular style <code>int* p</code> visually suggests it belongs to the type.
+      Both <code>int* p</code> and <code>int *p</code> are legal; the community is split, but many modern
+      style guides (Google, LLVM) place <code>*</code> next to the type when declaring one pointer per line.
+    </p>
+<pre><code>int* p;          // recommended when one pointer per declaration
+int *q;          // also valid — traditional C style
+int* a, b;       // GOTCHA: only 'a' is a pointer; 'b' is a plain int!
+int *c, *d;      // both c and d are pointers — unambiguous</code></pre>
+    <div class="callout tip">
+      <strong>Convention</strong>
+      To avoid the <code>int* a, b</code> trap, declare one variable per line, or always write
+      <code>int *a, *b;</code> when declaring multiple pointers together.
+    </div>
+
+    <h2>6.3 <code>nullptr</code> — The Safe Null Pointer</h2>
+    <p>
+      A pointer that does not point to any valid object should be set to <strong><code>nullptr</code></strong>
+      (introduced in C++11). It is type-safe and unambiguous, unlike the older <code>NULL</code> macro
+      (which is just <code>0</code> or <code>(void*)0</code>) or the literal <code>0</code>.
+    </p>
+<pre><code>int* p = nullptr;   // safe null pointer (C++11+)
+
+if (p != nullptr) {
+    cout &lt;&lt; *p;     // only dereference when non-null
+}
+
+// Why not NULL or 0?
+// NULL is a macro — it expands to 0 (an integer), causing ambiguity in overloads.
+// nullptr has type std::nullptr_t, so overload resolution is unambiguous.</code></pre>
+    <div class="callout">
+      <strong>Rule</strong>
+      Always initialise pointers. If you have no valid address yet, use <code>nullptr</code>.
+      Dereferencing a null pointer is undefined behaviour and will crash at runtime.
+    </div>
+
+    <h2>6.4 Pointer Arithmetic</h2>
+    <p>
+      Arithmetic on pointers moves the address by multiples of the pointed-to type's size.
+      Adding <code>1</code> to an <code>int*</code> advances the address by <code>sizeof(int)</code> bytes
+      (typically 4), not by 1 byte.
+    </p>
+<pre><code>int arr[] = {10, 20, 30, 40, 50};
+int* p = arr;           // points to arr[0]
+
+cout &lt;&lt; *p     &lt;&lt; "\n";  // 10
+cout &lt;&lt; *(p+1) &lt;&lt; "\n";  // 20
+cout &lt;&lt; *(p+4) &lt;&lt; "\n";  // 50
+
+p++;                    // now points to arr[1]
+cout &lt;&lt; *p     &lt;&lt; "\n";  // 20
+
+// Subscript equivalence: arr[i]  ==  *(arr + i)
+cout &lt;&lt; arr[3] &lt;&lt; " == " &lt;&lt; *(arr + 3) &lt;&lt; "\n";  // 40 == 40</code></pre>
+    <p>
+      Pointer subtraction gives the number of elements between two pointers of the same type.
+      Comparing pointers with <code>&lt;</code>, <code>&gt;</code>, <code>==</code> is valid only when both
+      pointers refer into the same array (or one past its end).
+    </p>
+
+    <h2>6.5 Pointers and Arrays</h2>
+    <p>
+      In C++, the name of an array <strong>decays</strong> to a pointer to its first element in most expressions.
+      Therefore <code>arr</code> and <code>&amp;arr[0]</code> yield the same address.
+    </p>
+<pre><code>int arr[5] = {1, 2, 3, 4, 5};
+
+// arr and &amp;arr[0] are the same address
+cout &lt;&lt; (arr == &amp;arr[0]) &lt;&lt; "\n";   // 1 (true)
+
+// Pointer-based traversal
+for (int* p = arr; p != arr + 5; ++p) {
+    cout &lt;&lt; *p &lt;&lt; " ";   // 1 2 3 4 5
+}
+cout &lt;&lt; "\n";</code></pre>
+    <div class="callout tip">
+      <strong>Note:</strong> <code>&amp;arr</code> (address of the whole array) has type <code>int (*)[5]</code> —
+      different from <code>arr</code> (type <code>int*</code>). They hold the same numeric address but
+      arithmetic on them behaves differently.
+    </div>
+
+    <h2>6.6 Pointers to Pointers</h2>
+    <p>
+      A pointer can itself be pointed to. <code>int**</code> is a pointer to a pointer to <code>int</code>.
+      This is commonly used to implement functions that modify a pointer, build 2-D dynamic arrays, or
+      pass arrays of strings (like <code>char** argv</code>).
+    </p>
+<pre><code>int  x  = 7;
+int* p  = &amp;x;    // p  points to x
+int** pp = &amp;p;   // pp points to p
+
+cout &lt;&lt; **pp &lt;&lt; "\n";   // 7  (double dereference)
+
+**pp = 99;               // modifies x via pp
+cout &lt;&lt; x &lt;&lt; "\n";      // 99</code></pre>
+
+    <h2>6.7 <code>const</code> Pointers</h2>
+    <p>
+      The keyword <code>const</code> can appear in two positions relative to the <code>*</code>,
+      producing four distinct combinations:
+    </p>
+    <table>
+      <thead><tr><th>Declaration</th><th>Pointer is const?</th><th>Pointed-to value is const?</th></tr></thead>
+      <tbody>
+        <tr><td><code>int* p</code></td><td>No</td><td>No</td></tr>
+        <tr><td><code>const int* p</code></td><td>No</td><td>Yes — cannot modify <code>*p</code></td></tr>
+        <tr><td><code>int* const p</code></td><td>Yes — cannot reseat <code>p</code></td><td>No</td></tr>
+        <tr><td><code>const int* const p</code></td><td>Yes</td><td>Yes — fully immutable</td></tr>
+      </tbody>
+    </table>
+<pre><code>int a = 10, b = 20;
+
+const int* pc = &amp;a;   // pointer-to-const: cannot change *pc
+// *pc = 5;           // ERROR
+pc = &amp;b;              // OK — the pointer itself can change
+
+int* const cp = &amp;a;   // const-pointer: pointer address is fixed
+*cp = 5;              // OK — can change the pointed-to value
+// cp = &amp;b;           // ERROR
+
+const int* const ccp = &amp;a;  // both fixed
+// *ccp = 5;          // ERROR
+// ccp = &amp;b;          // ERROR</code></pre>
+    <div class="callout tip">
+      <strong>Reading trick:</strong> read the declaration right-to-left.
+      <code>int* const p</code> → "p is a const pointer to int".
+      <code>const int* p</code> → "p is a pointer to const int".
+    </div>
+
+    <h2>6.8 References</h2>
+    <p>
+      A <strong>reference</strong> is an alias — an alternative name for an existing variable.
+      It is declared with <code>&amp;</code> after the type and <em>must be initialised</em> at the point of
+      declaration. Unlike a pointer, a reference cannot be <em>reseated</em>: once bound, it always refers
+      to the same object.
+    </p>
+<pre><code>int x = 10;
+int&amp; ref = x;    // ref is an alias for x
+
+ref = 20;        // same as x = 20
+cout &lt;&lt; x &lt;&lt; "\n";  // 20
+
+// A reference to const allows binding temporaries and rvalues
+const int&amp; cref = 42;   // extends the lifetime of the temporary
+cout &lt;&lt; cref &lt;&lt; "\n";   // 42</code></pre>
+    <p>
+      References are particularly useful as function parameters — they avoid copying large objects and
+      allow functions to modify the caller's variables without the syntactic noise of pointers.
+    </p>
+
+    <h2>6.9 Pass by Pointer vs Pass by Reference</h2>
+    <table>
+      <thead><tr><th>Aspect</th><th>Pass by Pointer</th><th>Pass by Reference</th></tr></thead>
+      <tbody>
+        <tr><td>Syntax at call site</td><td><code>f(&amp;x)</code></td><td><code>f(x)</code></td></tr>
+        <tr><td>Can be null?</td><td>Yes — caller may pass <code>nullptr</code></td><td>No — must bind to a valid object</td></tr>
+        <tr><td>Reseating inside function</td><td>Yes — pointer can be pointed elsewhere</td><td>No — always the same object</td></tr>
+        <tr><td>Preferred use</td><td>Optional parameters, dynamic memory, C-style APIs</td><td>In/out parameters, avoiding copies</td></tr>
+      </tbody>
+    </table>
+<pre><code>void doubleByPtr(int* p) { *p *= 2; }
+void doubleByRef(int&amp; r) {  r *= 2; }
+
+int n = 5;
+doubleByPtr(&amp;n);   // n = 10
+doubleByRef(n);    // n = 20</code></pre>
+
+    <h2>6.10 Returning Pointers and References</h2>
+    <p>
+      <strong>Never return a pointer or reference to a local variable</strong> — the variable is destroyed
+      when the function returns, leaving a dangling pointer/reference. This is undefined behaviour.
+    </p>
+<pre><code>// DANGER — dangling pointer
+int* bad() {
+    int local = 5;
+    return &amp;local;   // local is destroyed on return!
+}
+
+// SAFE — return pointer to static or heap-allocated data
+int* good() {
+    static int val = 42;
+    return &amp;val;     // static storage lasts the lifetime of the program
+}
+
+// SAFE — return reference to a parameter that outlives the call
+int&amp; maxRef(int&amp; a, int&amp; b) {
+    return (a &gt;= b) ? a : b;
+}</code></pre>
+
+    <h2>6.11 Void Pointers</h2>
+    <p>
+      A <code>void*</code> is a <em>generic pointer</em> that can hold the address of any type.
+      It cannot be dereferenced directly — you must cast it to the correct pointer type first.
+      <code>void*</code> is used in low-level APIs (e.g., <code>memcpy</code>, <code>malloc</code>) but
+      should be avoided in modern C++ in favour of templates or <code>std::any</code>.
+    </p>
+<pre><code>int  x = 42;
+void* vp = &amp;x;         // store address of int in void*
+
+// *vp;                // ERROR — cannot dereference void*
+int* ip = static_cast&lt;int*&gt;(vp);
+cout &lt;&lt; *ip &lt;&lt; "\n";   // 42</code></pre>
+
+    <h2>6.12 Dynamic Memory with <code>new</code> / <code>delete</code></h2>
+    <p>
+      The <code>new</code> operator allocates memory on the <em>heap</em> at runtime and returns a pointer to it.
+      The memory persists until explicitly freed with <code>delete</code>. A full treatment including smart
+      pointers (<code>unique_ptr</code>, <code>shared_ptr</code>) is covered in
+      <strong>Chapter 12 — Memory Management</strong>.
+    </p>
+<pre><code>#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int* p = new int(7);       // allocate one int on the heap
+    cout &lt;&lt; *p &lt;&lt; "\n";        // 7
+    delete p;                  // free the memory
+    p = nullptr;               // avoid dangling pointer
+
+    int* arr = new int[5]{1,2,3,4,5};   // heap array
+    cout &lt;&lt; arr[2] &lt;&lt; "\n";    // 3
+    delete[] arr;              // must use delete[] for arrays
+    arr = nullptr;
+    return 0;
+}</code></pre>
+    <div class="callout tip">
+      <strong>Modern C++:</strong> Prefer <code>std::unique_ptr</code> and <code>std::shared_ptr</code>
+      over raw <code>new</code>/<code>delete</code>. They automatically release memory when they go out of
+      scope, eliminating entire classes of bugs.
+    </div>
+
+    <h2>6.13 Common Pointer Bugs</h2>
+    <table>
+      <thead><tr><th>Bug</th><th>Description</th><th>How to Avoid</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Dangling pointer</strong></td><td>Pointer to freed or out-of-scope memory</td><td>Set pointer to <code>nullptr</code> after deletion; use smart pointers</td></tr>
+        <tr><td><strong>Memory leak</strong></td><td>Heap memory allocated but never freed</td><td>Match every <code>new</code> with <code>delete</code>; prefer RAII / smart pointers</td></tr>
+        <tr><td><strong>Double delete</strong></td><td>Calling <code>delete</code> twice on the same pointer</td><td>Set to <code>nullptr</code> after delete; use <code>unique_ptr</code></td></tr>
+        <tr><td><strong>Wild (uninitialised) pointer</strong></td><td>Pointer declared but never assigned an address</td><td>Always initialise pointers to <code>nullptr</code> or a valid address</td></tr>
+        <tr><td><strong>Buffer overrun</strong></td><td>Pointer arithmetic goes past array bounds</td><td>Track size explicitly; use <code>std::array</code> / <code>std::vector</code></td></tr>
+      </tbody>
+    </table>
+<pre><code>// Wild pointer — UNDEFINED BEHAVIOUR
+int* wild;          // uninitialised; holds garbage address
+// *wild = 5;       // crash or silent corruption
+
+// Dangling pointer — UNDEFINED BEHAVIOUR
+int* dp = new int(10);
+delete dp;
+// cout &lt;&lt; *dp;     // dp now dangles — do NOT use
+dp = nullptr;       // safe
+
+// Double delete — UNDEFINED BEHAVIOUR
+int* x = new int(3);
+delete x;
+// delete x;        // ERROR: already freed
+x = nullptr;</code></pre>
+
+    <h2>6.14 Key Takeaways</h2>
+    <ul>
+      <li><code>&amp;var</code> gives the address of <code>var</code>; <code>*ptr</code> gives the value at the address in <code>ptr</code>.</li>
+      <li>Always initialise pointers — use <code>nullptr</code> when no valid address is available.</li>
+      <li>Pointer arithmetic moves by multiples of the element size; <code>arr[i]</code> is exactly <code>*(arr + i)</code>.</li>
+      <li><code>const int* p</code> = pointer to const (value immutable); <code>int* const p</code> = const pointer (address immutable).</li>
+      <li>References must be initialised and cannot be reseated — prefer them over pointers for in/out parameters.</li>
+      <li>Never return a pointer or reference to a local variable.</li>
+      <li>For heap memory in modern C++, prefer smart pointers over raw <code>new</code>/<code>delete</code>.</li>
+    </ul>
+
+    <div style="display:flex;justify-content:space-between;margin-top:2rem;">
+      <a href="/chapters/ch05-arrays-strings/quiz.html" class="btn btn-outline" style="text-decoration:none;">← Chapter 05</a>
+      <a href="examples.html" class="btn" style="text-decoration:none;">Next: Examples →</a>
+    </div>
+
+  </div>
+</main>
+</div>
+<footer id="site-footer">
+  &copy; 2024 <a href="https://linkedin.com/in/adityabhuyan" target="_blank" rel="noopener">Aditya Pratap Bhuyan</a> &nbsp;|&nbsp;
+  <a href="https://github.com/aditya-bhuyan/cpp-learning-hub" target="_blank" rel="noopener">GitHub</a> &nbsp;|&nbsp;
+  GNU GPL v3 License
+</footer>
+<script src="/assets/js/nav.js"></script>
+</body>
+</html>

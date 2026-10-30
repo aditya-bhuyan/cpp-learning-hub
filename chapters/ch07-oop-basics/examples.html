@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ch 07 Examples — OOP Basics | C++ Learning Hub</title>
+  <link rel="stylesheet" href="/assets/css/style.css" />
+</head>
+<body>
+<header id="site-header">
+  <button id="hamburger" aria-label="Toggle navigation">&#9776;</button>
+  <div id="site-logo">C++ Learning Hub <span class="badge">FREE</span></div>
+  <button id="theme-toggle">☾ Dark</button>
+</header>
+<div id="layout">
+<aside id="sidebar"><nav>
+  <div class="nav-section-title">C++ Learning Hub</div>
+  <div class="nav-chapter" data-chapter="home"><div class="nav-chapter-header"><span>🏠 Home</span></div><div class="nav-chapter-links"><a href="/index.html">Overview</a></div></div>
+  <div class="nav-section-title">Chapters</div>
+  <div class="nav-chapter" data-chapter="ch01"><div class="nav-chapter-header"><span><span class="ch-num">01</span>Introduction to C++</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch01-introduction/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch01-introduction/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch01-introduction/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch01-introduction/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch01-introduction/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch02"><div class="nav-chapter-header"><span><span class="ch-num">02</span>Variables, Types &amp; Operators</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch02-variables-types-operators/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch02-variables-types-operators/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch02-variables-types-operators/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch02-variables-types-operators/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch02-variables-types-operators/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch03"><div class="nav-chapter-header"><span><span class="ch-num">03</span>Control Flow</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch03-control-flow/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch03-control-flow/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch03-control-flow/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch03-control-flow/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch03-control-flow/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch04"><div class="nav-chapter-header"><span><span class="ch-num">04</span>Functions</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch04-functions/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch04-functions/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch04-functions/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch04-functions/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch04-functions/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch05"><div class="nav-chapter-header"><span><span class="ch-num">05</span>Arrays &amp; Strings</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch05-arrays-strings/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch05-arrays-strings/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch05-arrays-strings/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch05-arrays-strings/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch05-arrays-strings/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch06"><div class="nav-chapter-header"><span><span class="ch-num">06</span>Pointers &amp; References</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch06-pointers-references/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch06-pointers-references/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch06-pointers-references/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch06-pointers-references/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch06-pointers-references/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter open" data-chapter="ch07"><div class="nav-chapter-header"><span><span class="ch-num">07</span>OOP — Basics</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch07-oop-basics/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch07-oop-basics/examples.html" class="active"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch07-oop-basics/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch07-oop-basics/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch07-oop-basics/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch08"><div class="nav-chapter-header"><span><span class="ch-num">08</span>OOP — Inheritance &amp; Polymorphism</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch08-oop-inheritance/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch08-oop-inheritance/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch08-oop-inheritance/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch08-oop-inheritance/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch08-oop-inheritance/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch09"><div class="nav-chapter-header"><span><span class="ch-num">09</span>Templates</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch09-templates/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch09-templates/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch09-templates/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch09-templates/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch09-templates/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch10"><div class="nav-chapter-header"><span><span class="ch-num">10</span>STL — Containers</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch10-stl-containers/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch10-stl-containers/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch10-stl-containers/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch10-stl-containers/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch10-stl-containers/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch11"><div class="nav-chapter-header"><span><span class="ch-num">11</span>STL — Algorithms &amp; Iterators</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch11-stl-algorithms/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch11-stl-algorithms/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch11-stl-algorithms/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch11-stl-algorithms/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch11-stl-algorithms/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch12"><div class="nav-chapter-header"><span><span class="ch-num">12</span>Memory Management</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch12-memory-management/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch12-memory-management/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch12-memory-management/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch12-memory-management/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch12-memory-management/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch13"><div class="nav-chapter-header"><span><span class="ch-num">13</span>Exception Handling</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch13-exception-handling/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch13-exception-handling/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch13-exception-handling/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch13-exception-handling/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch13-exception-handling/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch14"><div class="nav-chapter-header"><span><span class="ch-num">14</span>File I/O</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch14-file-io/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch14-file-io/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch14-file-io/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch14-file-io/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch14-file-io/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch15"><div class="nav-chapter-header"><span><span class="ch-num">15</span>Modern C++ (C++11–C++20)</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch15-modern-cpp/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch15-modern-cpp/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch15-modern-cpp/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch15-modern-cpp/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch15-modern-cpp/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-section-title">Capstone</div>
+  <div class="nav-chapter" data-chapter="ch16"><div class="nav-chapter-header"><span><span class="ch-num">16</span>Capstone Project</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch16-capstone/index.html"><span class="link-icon">🎯</span>Brief</a><a href="/chapters/ch16-capstone/walkthrough.html"><span class="link-icon">🗺</span>Walkthrough</a><a href="/chapters/ch16-capstone/solution.html"><span class="link-icon">✅</span>Solution</a></div></div>
+  <div class="nav-section-title">About</div>
+  <div style="padding:.4rem 1.1rem 1rem;font-size:.78rem;color:var(--muted);line-height:1.5;">Maintained by<br><a href="https://linkedin.com/in/adityabhuyan" target="_blank" rel="noopener">Aditya Pratap Bhuyan</a><br><span style="font-size:.72rem;">GNU GPL v3 License</span></div>
+</nav></aside>
+
+<main id="main">
+  <div class="page-header">
+    <div class="breadcrumb"><a href="/index.html">Home</a> › <a href="index.html">Chapter 07</a> › Examples</div>
+    <h1>Chapter 07 — Coding Examples</h1>
+    <p class="subtitle">Four fully commented, compilable programs: BankAccount, Rectangle, Student and a static Counter.</p>
+    <div class="chapter-tabs">
+      <a href="index.html">📖 Learning</a>
+      <a href="examples.html" class="active">💻 Examples</a>
+      <a href="exercises.html">✏️ Exercises</a>
+      <a href="solutions.html">✅ Solutions</a>
+      <a href="quiz.html">🧠 Quiz</a>
+    </div>
+  </div>
+
+  <div class="content">
+
+    <!-- Example 1 -->
+    <h2>Example 1 — BankAccount: Encapsulation in Action</h2>
+    <p>
+      The balance is <code>private</code>, so the only way to change it is through <code>deposit()</code> and
+      <code>withdraw()</code>. Both validate their input, which guarantees the balance can never go negative.
+      <code>getBalance()</code> is <code>const</code> because reading must not modify the account.
+    </p>
+<pre><code>// bank_account.cpp
+// Compile: g++ -std=c++17 -Wall -o bank_account bank_account.cpp
+// Run:     ./bank_account
+
+#include &lt;iostream&gt;
+#include &lt;iomanip&gt;
+#include &lt;string&gt;
+using namespace std;
+
+class BankAccount {
+private:
+    // Private data: code outside the class cannot touch these directly.
+    // The ONLY way to change the balance is through deposit() / withdraw(),
+    // so the class can guarantee the balance never becomes negative.
+    string owner;
+    double balance;
+
+public:
+    // Constructor: runs automatically when a BankAccount object is created.
+    // The initialization list sets the members before the body executes.
+    BankAccount(const string&amp; ownerName, double initialBalance = 0.0)
+        : owner(ownerName), balance(initialBalance &gt;= 0.0 ? initialBalance : 0.0) {}
+
+    // Add money. Returns false (and changes nothing) for invalid amounts.
+    bool deposit(double amount) {
+        if (amount &lt;= 0.0) {
+            cout &lt;&lt; "  [!] Deposit must be positive.\n";
+            return false;
+        }
+        balance += amount;          // "balance" is this-&gt;balance
+        return true;
+    }
+
+    // Remove money. Refuses to overdraw the account.
+    bool withdraw(double amount) {
+        if (amount &lt;= 0.0) {
+            cout &lt;&lt; "  [!] Withdrawal must be positive.\n";
+            return false;
+        }
+        if (amount &gt; balance) {
+            cout &lt;&lt; "  [!] Insufficient funds (balance " &lt;&lt; balance &lt;&lt; ").\n";
+            return false;
+        }
+        balance -= amount;
+        return true;
+    }
+
+    // Getter: const because reading the balance must not modify the account.
+    double getBalance() const { return balance; }
+    const string&amp; getOwner() const { return owner; }
+};
+
+int main() {
+    cout &lt;&lt; fixed &lt;&lt; setprecision(2);
+
+    BankAccount acct("Alice", 100.0);        // object on the stack
+    cout &lt;&lt; acct.getOwner() &lt;&lt; " opens an account with $" &lt;&lt; acct.getBalance() &lt;&lt; "\n";
+
+    cout &lt;&lt; "Deposit 50:\n";
+    acct.deposit(50.0);
+    cout &lt;&lt; "  Balance: $" &lt;&lt; acct.getBalance() &lt;&lt; "\n";
+
+    cout &lt;&lt; "Withdraw 30:\n";
+    acct.withdraw(30.0);
+    cout &lt;&lt; "  Balance: $" &lt;&lt; acct.getBalance() &lt;&lt; "\n";
+
+    cout &lt;&lt; "Withdraw 500 (too much):\n";
+    acct.withdraw(500.0);
+    cout &lt;&lt; "  Balance: $" &lt;&lt; acct.getBalance() &lt;&lt; "\n";
+
+    cout &lt;&lt; "Deposit -20 (invalid):\n";
+    acct.deposit(-20.0);
+
+    // acct.balance = 1000000;   // ERROR: 'balance' is private
+    return 0;
+}</code></pre>
+    <p><strong>Output:</strong></p>
+<pre><code>Alice opens an account with $100.00
+Deposit 50:
+  Balance: $150.00
+Withdraw 30:
+  Balance: $120.00
+Withdraw 500 (too much):
+  [!] Insufficient funds (balance 120.00).
+  Balance: $120.00
+Deposit -20 (invalid):
+  [!] Deposit must be positive.</code></pre>
+    <div class="callout tip">
+      <strong>Why private data?</strong>
+      If <code>balance</code> were public, any code could write <code>acct.balance = -1000000;</code>. Encapsulation moves the rule
+      "never overdraw" into one place — the class — instead of trusting every caller.
+    </div>
+
+    <!-- Example 2 -->
+    <h2>Example 2 — Rectangle: Constructors and const Methods</h2>
+    <p>
+      Shows a default constructor, a parameterized constructor, and three <code>const</code> member functions.
+      Because <code>area()</code>, <code>perimeter()</code> and <code>display()</code> are const, they work on a
+      <code>const Rectangle</code> object, and <code>display()</code> may call the other const functions.
+    </p>
+<pre><code>// rectangle.cpp
+// Compile: g++ -std=c++17 -Wall -o rectangle rectangle.cpp
+// Run:     ./rectangle
+
+#include &lt;iostream&gt;
+using namespace std;
+
+class Rectangle {
+private:
+    double width;
+    double height;
+
+public:
+    // Default constructor: a 1 x 1 rectangle.
+    Rectangle() : width(1.0), height(1.0) {}
+
+    // Parameterized constructor.
+    Rectangle(double w, double h) : width(w), height(h) {}
+
+    // Every member function below is const: none of them changes the rectangle,
+    // so they can be called on const Rectangle objects too.
+    double area() const      { return width * height; }
+    double perimeter() const { return 2.0 * (width + height); }
+
+    void display() const {
+        cout &lt;&lt; "Rectangle " &lt;&lt; width &lt;&lt; " x " &lt;&lt; height
+             &lt;&lt; "  area = " &lt;&lt; area()               // calling another const method is fine
+             &lt;&lt; "  perimeter = " &lt;&lt; perimeter() &lt;&lt; "\n";
+    }
+
+    // Setters can modify state, so they are NOT const.
+    void setSize(double w, double h) { width = w; height = h; }
+};
+
+int main() {
+    Rectangle r1;                    // default constructor  -&gt; 1 x 1
+    Rectangle r2(4.0, 2.5);          // parameterized        -&gt; 4 x 2.5
+    const Rectangle fixed(3.0, 3.0); // const object: only const methods allowed
+
+    r1.display();
+    r2.display();
+    fixed.display();                 // OK: display() is const
+    // fixed.setSize(5, 5);          // ERROR: setSize() is not const
+
+    r1.setSize(10.0, 2.0);
+    cout &lt;&lt; "After resizing r1:\n  ";
+    r1.display();
+    return 0;
+}</code></pre>
+    <p><strong>Output:</strong></p>
+<pre><code>Rectangle 1 x 1  area = 1  perimeter = 4
+Rectangle 4 x 2.5  area = 10  perimeter = 13
+Rectangle 3 x 3  area = 9  perimeter = 12
+After resizing r1:
+  Rectangle 10 x 2  area = 20  perimeter = 24</code></pre>
+    <div class="callout warn">
+      <strong>Const-correctness</strong>
+      Try deleting the <code>const</code> after <code>display()</code> — the call <code>fixed.display()</code> no longer compiles,
+      because a non-const member function might modify the const object.
+    </div>
+
+    <!-- Example 3 -->
+    <h2>Example 3 — Student: Array Member and Initialization List</h2>
+    <p>
+      A class can contain an array. The constructor uses an <strong>initialization list</strong> for <code>id</code> (a
+      <code>const</code> member that cannot be assigned in the body) and <code>name</code>; the grade array is filled in the body.
+      <code>average()</code> and <code>highest()</code> only read data, so they are <code>const</code>, and both guard against an empty grade list.
+    </p>
+<pre><code>// student.cpp
+// Compile: g++ -std=c++17 -Wall -o student student.cpp
+// Run:     ./student
+
+#include &lt;iostream&gt;
+#include &lt;iomanip&gt;
+#include &lt;string&gt;
+using namespace std;
+
+class Student {
+private:
+    static const int MAX_GRADES = 5;   // fixed capacity of the grade array
+    const int id;                      // const member: MUST use the initialization list
+    string name;
+    double grades[MAX_GRADES];         // grade array
+    int    gradeCount;                 // how many slots are actually used
+
+public:
+    // Initialization list: id (const) and name are initialized here.
+    // Members are initialized in the order they are DECLARED in the class
+    // (id, name, grades, gradeCount), not the order written in the list.
+    Student(int studentId, const string&amp; studentName)
+        : id(studentId), name(studentName), gradeCount(0) {
+        for (int i = 0; i &lt; MAX_GRADES; ++i) grades[i] = 0.0;   // body: array setup
+    }
+
+    // Add a grade; returns false if the array is full.
+    bool addGrade(double g) {
+        if (gradeCount &gt;= MAX_GRADES) return false;
+        grades[gradeCount++] = g;
+        return true;
+    }
+
+    double average() const {
+        if (gradeCount == 0) return 0.0;       // avoid division by zero
+        double sum = 0.0;
+        for (int i = 0; i &lt; gradeCount; ++i) sum += grades[i];
+        return sum / gradeCount;
+    }
+
+    double highest() const {
+        if (gradeCount == 0) return 0.0;
+        double best = grades[0];               // seed with the first element
+        for (int i = 1; i &lt; gradeCount; ++i)
+            if (grades[i] &gt; best) best = grades[i];
+        return best;
+    }
+
+    void display() const {
+        cout &lt;&lt; "Student #" &lt;&lt; id &lt;&lt; " " &lt;&lt; name &lt;&lt; "\n  grades:";
+        for (int i = 0; i &lt; gradeCount; ++i) cout &lt;&lt; " " &lt;&lt; grades[i];
+        cout &lt;&lt; "\n  average = " &lt;&lt; average() &lt;&lt; ", highest = " &lt;&lt; highest() &lt;&lt; "\n";
+    }
+};
+
+int main() {
+    cout &lt;&lt; fixed &lt;&lt; setprecision(1);
+
+    Student s(1001, "Maria");
+    s.addGrade(88.5);
+    s.addGrade(92.0);
+    s.addGrade(79.5);
+    s.addGrade(95.0);
+    s.display();
+
+    Student empty(1002, "Newcomer");     // no grades yet
+    empty.display();
+    return 0;
+}</code></pre>
+    <p><strong>Output:</strong></p>
+<pre><code>Student #1001 Maria
+  grades: 88.5 92.0 79.5 95.0
+  average = 88.8, highest = 95.0
+Student #1002 Newcomer
+  grades:
+  average = 0.0, highest = 0.0</code></pre>
+    <div class="callout">
+      <strong>Note</strong>
+      <code>sum / gradeCount</code> is a <code>double</code> divided by an <code>int</code>, so the int is converted and the division is
+      done in floating point — no truncation.
+    </div>
+
+    <!-- Example 4 -->
+    <h2>Example 4 — Counter: A Static Member Shared by All Objects</h2>
+    <p>
+      <code>instanceCount</code> is <code>static</code>: there is a single copy for the whole class. Constructors (including the copy
+      constructor) increment it and the destructor decrements it, so it always equals the number of live objects.
+      <code>getCount()</code> is a static function and can be called as <code>Counter::getCount()</code> with no object.
+    </p>
+<pre><code>// counter.cpp
+// Compile: g++ -std=c++17 -Wall -o counter counter.cpp
+// Run:     ./counter
+
+#include &lt;iostream&gt;
+using namespace std;
+
+class Counter {
+private:
+    static int instanceCount;     // ONE variable shared by every Counter object
+    int id;                       // each object has its own id
+
+public:
+    Counter() : id(++instanceCount) {                 // new object: bump the shared count
+        cout &lt;&lt; "  Counter #" &lt;&lt; id &lt;&lt; " created\n";
+    }
+
+    // Copy constructor: a copy is a new object too, so it must be counted.
+    Counter(const Counter&amp; other) : id(++instanceCount) {
+        cout &lt;&lt; "  Counter #" &lt;&lt; id &lt;&lt; " copied from #" &lt;&lt; other.id &lt;&lt; "\n";
+    }
+
+    ~Counter() {                                      // object dies: decrement
+        --instanceCount;
+        cout &lt;&lt; "  Counter #" &lt;&lt; id &lt;&lt; " destroyed\n";
+    }
+
+    // static member function: no 'this', can only touch static members.
+    static int getCount() { return instanceCount; }
+};
+
+// Definition (storage) of the static member — required once, outside the class.
+// (In C++17 you could write 'inline static int instanceCount = 0;' inside the class.)
+int Counter::instanceCount = 0;
+
+int main() {
+    // Static members can be used without any object: ClassName::member
+    cout &lt;&lt; "Start:         " &lt;&lt; Counter::getCount() &lt;&lt; " instances\n";
+
+    Counter a;
+    Counter b;
+    cout &lt;&lt; "After a and b: " &lt;&lt; Counter::getCount() &lt;&lt; " instances\n";
+
+    {   // inner scope
+        Counter c;
+        Counter d = c;                                // copy constructor
+        cout &lt;&lt; "Inside block:  " &lt;&lt; Counter::getCount() &lt;&lt; " instances\n";
+    }   // c and d are destroyed here
+
+    cout &lt;&lt; "After block:   " &lt;&lt; Counter::getCount() &lt;&lt; " instances\n";
+
+    Counter* p = new Counter;                         // heap object
+    cout &lt;&lt; "After new:     " &lt;&lt; a.getCount() &lt;&lt; " instances\n";   // can call via an object too
+    delete p;                                         // destructor runs now
+    cout &lt;&lt; "After delete:  " &lt;&lt; Counter::getCount() &lt;&lt; " instances\n";
+
+    cout &lt;&lt; "End of main - a and b are destroyed automatically:\n";
+    return 0;
+}</code></pre>
+    <p><strong>Output:</strong></p>
+<pre><code>Start:         0 instances
+  Counter #1 created
+  Counter #2 created
+After a and b: 2 instances
+  Counter #3 created
+  Counter #4 copied from #3
+Inside block:  4 instances
+  Counter #4 destroyed
+  Counter #3 destroyed
+After block:   2 instances
+  Counter #3 created
+After new:     3 instances
+  Counter #3 destroyed
+After delete:  2 instances
+End of main - a and b are destroyed automatically:
+  Counter #2 destroyed
+  Counter #1 destroyed</code></pre>
+    <div class="callout error">
+      <strong>Do not forget the definition</strong>
+      <code>static int instanceCount;</code> inside the class is only a declaration. Without the line
+      <code>int Counter::instanceCount = 0;</code> in exactly one source file you get a linker error ("undefined reference").
+    </div>
+
+    <div style="display:flex;justify-content:space-between;margin-top:2rem;">
+      <a href="index.html" class="btn btn-outline" style="text-decoration:none;">← Learning</a>
+      <a href="exercises.html" class="btn" style="text-decoration:none;">Next: Exercises →</a>
+    </div>
+
+  </div>
+</main>
+</div>
+<footer id="site-footer">
+  &copy; 2024 <a href="https://linkedin.com/in/adityabhuyan" target="_blank" rel="noopener">Aditya Pratap Bhuyan</a> &nbsp;|&nbsp;
+  <a href="https://github.com/aditya-bhuyan/cpp-learning-hub" target="_blank" rel="noopener">GitHub</a> &nbsp;|&nbsp;
+  GNU GPL v3 License
+</footer>
+<script src="/assets/js/nav.js"></script>
+</body>
+</html>

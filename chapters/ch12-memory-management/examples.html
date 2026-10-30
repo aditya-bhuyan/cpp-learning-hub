@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ch 12 Examples — Memory Management | C++ Learning Hub</title>
+  <link rel="stylesheet" href="/assets/css/style.css" />
+</head>
+<body>
+<header id="site-header">
+  <button id="hamburger" aria-label="Toggle navigation">&#9776;</button>
+  <div id="site-logo">C++ Learning Hub <span class="badge">FREE</span></div>
+  <button id="theme-toggle">☾ Dark</button>
+</header>
+<div id="layout">
+<aside id="sidebar"><nav>
+  <div class="nav-section-title">C++ Learning Hub</div>
+  <div class="nav-chapter" data-chapter="home"><div class="nav-chapter-header"><span>🏠 Home</span></div><div class="nav-chapter-links"><a href="/index.html">Overview</a></div></div>
+  <div class="nav-section-title">Chapters</div>
+  <div class="nav-chapter" data-chapter="ch01"><div class="nav-chapter-header"><span><span class="ch-num">01</span>Introduction to C++</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch01-introduction/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch01-introduction/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch01-introduction/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch01-introduction/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch01-introduction/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch02"><div class="nav-chapter-header"><span><span class="ch-num">02</span>Variables, Types &amp; Operators</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch02-variables-types-operators/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch02-variables-types-operators/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch02-variables-types-operators/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch02-variables-types-operators/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch02-variables-types-operators/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch03"><div class="nav-chapter-header"><span><span class="ch-num">03</span>Control Flow</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch03-control-flow/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch03-control-flow/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch03-control-flow/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch03-control-flow/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch03-control-flow/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch04"><div class="nav-chapter-header"><span><span class="ch-num">04</span>Functions</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch04-functions/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch04-functions/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch04-functions/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch04-functions/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch04-functions/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch05"><div class="nav-chapter-header"><span><span class="ch-num">05</span>Arrays &amp; Strings</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch05-arrays-strings/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch05-arrays-strings/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch05-arrays-strings/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch05-arrays-strings/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch05-arrays-strings/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch06"><div class="nav-chapter-header"><span><span class="ch-num">06</span>Pointers &amp; References</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch06-pointers-references/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch06-pointers-references/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch06-pointers-references/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch06-pointers-references/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch06-pointers-references/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch07"><div class="nav-chapter-header"><span><span class="ch-num">07</span>OOP — Basics</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch07-oop-basics/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch07-oop-basics/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch07-oop-basics/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch07-oop-basics/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch07-oop-basics/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch08"><div class="nav-chapter-header"><span><span class="ch-num">08</span>OOP — Inheritance &amp; Polymorphism</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch08-oop-inheritance/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch08-oop-inheritance/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch08-oop-inheritance/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch08-oop-inheritance/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch08-oop-inheritance/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch09"><div class="nav-chapter-header"><span><span class="ch-num">09</span>Templates</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch09-templates/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch09-templates/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch09-templates/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch09-templates/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch09-templates/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch10"><div class="nav-chapter-header"><span><span class="ch-num">10</span>STL — Containers</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch10-stl-containers/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch10-stl-containers/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch10-stl-containers/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch10-stl-containers/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch10-stl-containers/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch11"><div class="nav-chapter-header"><span><span class="ch-num">11</span>STL — Algorithms &amp; Iterators</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch11-stl-algorithms/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch11-stl-algorithms/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch11-stl-algorithms/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch11-stl-algorithms/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch11-stl-algorithms/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter open" data-chapter="ch12"><div class="nav-chapter-header active"><span><span class="ch-num">12</span>Memory Management</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch12-memory-management/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch12-memory-management/examples.html" class="active"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch12-memory-management/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch12-memory-management/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch12-memory-management/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch13"><div class="nav-chapter-header"><span><span class="ch-num">13</span>Exception Handling</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch13-exception-handling/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch13-exception-handling/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch13-exception-handling/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch13-exception-handling/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch13-exception-handling/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch14"><div class="nav-chapter-header"><span><span class="ch-num">14</span>File I/O</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch14-file-io/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch14-file-io/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch14-file-io/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch14-file-io/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch14-file-io/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch15"><div class="nav-chapter-header"><span><span class="ch-num">15</span>Modern C++ (C++11–C++20)</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch15-modern-cpp/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch15-modern-cpp/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch15-modern-cpp/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch15-modern-cpp/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch15-modern-cpp/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-section-title">Capstone</div>
+  <div class="nav-chapter" data-chapter="ch16"><div class="nav-chapter-header"><span><span class="ch-num">16</span>Capstone Project</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch16-capstone/index.html"><span class="link-icon">🎯</span>Brief</a><a href="/chapters/ch16-capstone/walkthrough.html"><span class="link-icon">🗺</span>Walkthrough</a><a href="/chapters/ch16-capstone/solution.html"><span class="link-icon">✅</span>Solution</a></div></div>
+  <div class="nav-section-title">About</div>
+  <div style="padding:.4rem 1.1rem 1rem;font-size:.78rem;color:var(--muted);line-height:1.5;">Maintained by<br><a href="https://linkedin.com/in/adityabhuyan" target="_blank" rel="noopener">Aditya Pratap Bhuyan</a><br><span style="font-size:.72rem;">GNU GPL v3 License</span></div>
+</nav></aside>
+
+<main id="main">
+  <div class="page-header">
+    <div class="breadcrumb"><a href="/index.html">Home</a> › <a href="index.html">Chapter 12</a> › Examples</div>
+    <h1>Chapter 12 — Coding Examples</h1>
+    <p class="subtitle">Four fully commented programs illustrating manual memory management, RAII, factories, and smart pointers.</p>
+    <div class="chapter-tabs">
+      <a href="index.html">📖 Learning</a>
+      <a href="examples.html" class="active">💻 Examples</a>
+      <a href="exercises.html">✏️ Exercises</a>
+      <a href="solutions.html">✅ Solutions</a>
+      <a href="quiz.html">🧠 Quiz</a>
+    </div>
+  </div>
+
+  <div class="content">
+
+    <!-- Example 1 -->
+    <h2>Example 1 — Manual new/delete vs RAII Memory Management</h2>
+    <p>
+      This example contrasts raw manual allocation (prone to leaks on early return or exception) with modern RAII encapsulation.
+      With RAII, resources are automatically and deterministically cleaned up when the enclosing scope terminates.
+    </p>
+<pre><code>// raii_comparison.cpp
+// Compile: g++ -std=c++17 -Wall -fsanitize=address -o raii_demo raii_comparison.cpp
+// Run:     ./raii_demo
+
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+#include &lt;stdexcept&gt;
+using namespace std;
+
+// A simple resource class that logs its lifecycle
+class DatabaseConnection {
+    string connectionId_;
+public:
+    explicit DatabaseConnection(const string&amp; id) : connectionId_(id) {
+        cout &lt;&lt; "[CONNECT] " &lt;&lt; connectionId_ &lt;&lt; " established\n";
+    }
+    ~DatabaseConnection() {
+        cout &lt;&lt; "[DISCONNECT] " &lt;&lt; connectionId_ &lt;&lt; " closed gracefully\n";
+    }
+    void query(const string&amp; sql) const {
+        cout &lt;&lt; "  Executing on " &lt;&lt; connectionId_ &lt;&lt; ": " &lt;&lt; sql &lt;&lt; "\n";
+    }
+};
+
+// -------------------------------------------------------------
+// BAD APPROACH: Manual pointer management
+// Prone to memory leaks when exceptions or early returns occur!
+// -------------------------------------------------------------
+void badManualApproach(bool triggerError) {
+    cout &lt;&lt; "\n--- Testing Bad Manual Approach ---\n";
+    DatabaseConnection* conn = new DatabaseConnection("Conn-Manual-1");
+
+    conn-&gt;query("SELECT * FROM users");
+
+    if (triggerError) {
+        cout &lt;&lt; "  Early return triggered! (conn will be LEAKED)\n";
+        return; // BUG: delete conn is skipped! Memory and resource leak!
+    }
+
+    delete conn; // Only reached if no early return or exception
+}
+
+// -------------------------------------------------------------
+// GOOD APPROACH: RAII Wrapper (Resource Acquisition Is Initialization)
+// Guarantees cleanup via destructor under all execution paths!
+// -------------------------------------------------------------
+class ConnectionGuard {
+    DatabaseConnection* conn_;
+public:
+    explicit ConnectionGuard(const string&amp; id)
+        : conn_(new DatabaseConnection(id)) {}
+
+    ~ConnectionGuard() {
+        delete conn_; // Automatically frees the resource on scope exit
+    }
+
+    // Rule of 5: Prevent accidental shallow copying
+    ConnectionGuard(const ConnectionGuard&amp;) = delete;
+    ConnectionGuard&amp; operator=(const ConnectionGuard&amp;) = delete;
+
+    DatabaseConnection* get() const { return conn_; }
+    DatabaseConnection* operator-&gt;() const { return conn_; }
+};
+
+void goodRAIIApproach(bool triggerError) {
+    cout &lt;&lt; "\n--- Testing Good RAII Approach ---\n";
+    ConnectionGuard guard("Conn-RAII-1");
+
+    guard-&gt;query("SELECT * FROM products");
+
+    if (triggerError) {
+        cout &lt;&lt; "  Early return triggered! (guard destructor still runs)\n";
+        return; // SAFE: ConnectionGuard destructor cleans up automatically!
+    }
+}
+
+int main() {
+    // 1. Manual approach with leak
+    badManualApproach(true);
+
+    // 2. RAII approach (100% leak-free)
+    goodRAIIApproach(true);
+
+    return 0;
+}</code></pre>
+    <p><strong>Expected output:</strong></p>
+<pre><code>--- Testing Bad Manual Approach ---
+[CONNECT] Conn-Manual-1 established
+  Executing on Conn-Manual-1: SELECT * FROM users
+  Early return triggered! (conn will be LEAKED)
+
+--- Testing Good RAII Approach ---
+[CONNECT] Conn-RAII-1 established
+  Executing on Conn-RAII-1: SELECT * FROM products
+  Early return triggered! (guard destructor still runs)
+[DISCONNECT] Conn-RAII-1 closed gracefully</code></pre>
+    <div class="callout tip">
+      <strong>Sanitizer Verification</strong>
+      Compile this example with AddressSanitizer (<code>-fsanitize=address</code>) to see the exact byte leak reported for <code>badManualApproach</code>, while <code>goodRAIIApproach</code> cleans up completely with zero memory leaks.
+    </div>
+
+    <!-- Example 2 -->
+    <h2>Example 2 — Polymorphic Factory with <code>std::unique_ptr</code></h2>
+    <p>
+      Factory functions in modern C++ return <code>std::unique_ptr&lt;Base&gt;</code>. This transfers exclusive ownership of a heap-allocated polymorphic object to the caller without risk of object slicing or memory leaks.
+    </p>
+<pre><code>// unique_ptr_factory.cpp
+// Compile: g++ -std=c++17 -Wall -o factory unique_ptr_factory.cpp
+// Run:     ./factory
+
+#include &lt;iostream&gt;
+#include &lt;memory&gt;
+#include &lt;string&gt;
+#include &lt;vector&gt;
+using namespace std;
+
+// Abstract Base Class
+class Character {
+protected:
+    string name_;
+    int health_;
+public:
+    Character(string name, int health) : name_(move(name)), health_(health) {}
+    virtual ~Character() = default; // Crucial: polymorphic base MUST have virtual destructor!
+
+    virtual void attack() const = 0; // Pure virtual function
+    virtual void info() const {
+        cout &lt;&lt; "[" &lt;&lt; name_ &lt;&lt; "] Health: " &lt;&lt; health_ &lt;&lt; " | ";
+    }
+};
+
+// Derived Class: Warrior
+class Warrior : public Character {
+    int armor_;
+public:
+    Warrior(string name, int health, int armor)
+        : Character(move(name), health), armor_(armor) {}
+
+    void attack() const override {
+        info();
+        cout &lt;&lt; "Swings heavy broadsword with armor " &lt;&lt; armor_ &lt;&lt; "!\n";
+    }
+};
+
+// Derived Class: Mage
+class Mage : public Character {
+    int mana_;
+public:
+    Mage(string name, int health, int mana)
+        : Character(move(name), health), mana_(mana) {}
+
+    void attack() const override {
+        info();
+        cout &lt;&lt; "Casts fireball using " &lt;&lt; mana_ &lt;&lt; " mana!\n";
+    }
+};
+
+// Derived Class: Archer
+class Archer : public Character {
+    int arrows_;
+public:
+    Archer(string name, int health, int arrows)
+        : Character(move(name), health), arrows_(arrows) {}
+
+    void attack() const override {
+        info();
+        cout &lt;&lt; "Shoots piercing arrow! (" &lt;&lt; arrows_ &lt;&lt; " arrows left)\n";
+    }
+};
+
+enum class HeroClass { Warrior, Mage, Archer };
+
+// Factory Function: returns unique_ptr to base class
+unique_ptr&lt;Character&gt; heroFactory(HeroClass heroClass, const string&amp; name) {
+    switch (heroClass) {
+        case HeroClass::Warrior:
+            return make_unique&lt;Warrior&gt;(name, 150, 50);
+        case HeroClass::Mage:
+            return make_unique&lt;Mage&gt;(name, 80, 120);
+        case HeroClass::Archer:
+            return make_unique&lt;Archer&gt;(name, 100, 30);
+    }
+    return nullptr;
+}
+
+int main() {
+    // Vector of smart pointers managing polymorphic party
+    vector&lt;unique_ptr&lt;Character&gt;&gt; party;
+
+    // Add heroes to party using factory
+    party.push_back(heroFactory(HeroClass::Warrior, "Thorin"));
+    party.push_back(heroFactory(HeroClass::Mage, "Gandalf"));
+    party.push_back(heroFactory(HeroClass::Archer, "Legolas"));
+
+    cout &lt;&lt; "Party members attacking in battle:\n";
+    for (const auto&amp; hero : party) {
+        hero-&gt;attack(); // Dynamic dispatch via unique_ptr
+    }
+
+    // Moving a hero to a solo quest (ownership transfer)
+    cout &lt;&lt; "\nTransferring Legolas to a solo scout mission...\n";
+    unique_ptr&lt;Character&gt; scout = move(party.back());
+    party.pop_back();
+
+    cout &lt;&lt; "Scout on mission: ";
+    scout-&gt;attack();
+
+    cout &lt;&lt; "Remaining party count: " &lt;&lt; party.size() &lt;&lt; "\n";
+    return 0;
+} // party and scout destroyed here: all Character objects safely deallocated!</code></pre>
+    <p><strong>Expected output:</strong></p>
+<pre><code>Party members attacking in battle:
+[Thorin] Health: 150 | Swings heavy broadsword with armor 50!
+[Gandalf] Health: 80 | Casts fireball using 120 mana!
+[Legolas] Health: 100 | Shoots piercing arrow! (30 arrows left)
+
+Transferring Legolas to a solo scout mission...
+Scout on mission: [Legolas] Health: 100 | Shoots piercing arrow! (30 arrows left)
+Remaining party count: 2</code></pre>
+    <div class="callout tip">
+      <strong>Ownership In Vectors</strong>
+      Storing <code>vector&lt;unique_ptr&lt;Base&gt;&gt;</code> solves the object slicing problem while preserving clean automatic memory cleanup when elements are popped or when the vector itself is cleared.
+    </div>
+
+    <!-- Example 3 -->
+    <h2>Example 3 — Reference Counting with <code>std::shared_ptr</code></h2>
+    <p>
+      <code>std::shared_ptr</code> tracks shared ownership using reference counting. This example traces the reference count (<code>use_count()</code>) through copying, passing across scopes, and resetting.
+    </p>
+<pre><code>// shared_ptr_demo.cpp
+// Compile: g++ -std=c++17 -Wall -o shared_demo shared_ptr_demo.cpp
+// Run:     ./shared_demo
+
+#include &lt;iostream&gt;
+#include &lt;memory&gt;
+#include &lt;string&gt;
+using namespace std;
+
+class Texture {
+    string filename_;
+public:
+    explicit Texture(string filename) : filename_(move(filename)) {
+        cout &lt;&lt; "  [GPU] Loaded texture '" &lt;&lt; filename_ &lt;&lt; "' into VRAM\n";
+    }
+    ~Texture() {
+        cout &lt;&lt; "  [GPU] Unloaded texture '" &lt;&lt; filename_ &lt;&lt; "' from VRAM\n";
+    }
+    void render() const {
+        cout &lt;&lt; "Rendering texture: " &lt;&lt; filename_ &lt;&lt; "\n";
+    }
+};
+
+// Function accepting shared_ptr by value: shares ownership, increments ref count
+void processShared(shared_ptr&lt;Texture&gt; tex) {
+    cout &lt;&lt; "  Inside processShared() -> use_count: " &lt;&lt; tex.use_count() &lt;&lt; "\n";
+    tex-&gt;render();
+}
+
+int main() {
+    cout &lt;&lt; "1. Creating shared texture 'hero.png':\n";
+    shared_ptr&lt;Texture&gt; heroTex = make_shared&lt;Texture&gt;("hero.png");
+    cout &lt;&lt; "heroTex use_count: " &lt;&lt; heroTex.use_count() &lt;&lt; "\n"; // 1
+
+    cout &lt;&lt; "\n2. Creating Sprite 1 sharing the texture:\n";
+    shared_ptr&lt;Texture&gt; sprite1 = heroTex; // Copy: count becomes 2
+    cout &lt;&lt; "heroTex use_count: " &lt;&lt; heroTex.use_count() &lt;&lt; "\n"; // 2
+    cout &lt;&lt; "sprite1 use_count: " &lt;&lt; sprite1.use_count() &lt;&lt; "\n"; // 2
+
+    {
+        cout &lt;&lt; "\n3. Entering nested scope (creating Sprite 2 &amp; 3):\n";
+        shared_ptr&lt;Texture&gt; sprite2 = heroTex;
+        shared_ptr&lt;Texture&gt; sprite3 = sprite1;
+        cout &lt;&lt; "use_count inside nested block: " &lt;&lt; heroTex.use_count() &lt;&lt; "\n"; // 4
+
+        cout &lt;&lt; "\n4. Passing by value to function:\n";
+        processShared(heroTex); // Temporary copy inside function: count reaches 5
+        cout &lt;&lt; "use_count after function call: " &lt;&lt; heroTex.use_count() &lt;&lt; "\n"; // 4
+
+        cout &lt;&lt; "\n5. Exiting nested scope:\n";
+    } // sprite2 and sprite3 destroyed; count drops back to 2
+
+    cout &lt;&lt; "use_count after nested scope exit: " &lt;&lt; heroTex.use_count() &lt;&lt; "\n"; // 2
+
+    cout &lt;&lt; "\n6. Resetting sprite1:\n";
+    sprite1.reset();
+    cout &lt;&lt; "heroTex use_count after sprite1.reset(): " &lt;&lt; heroTex.use_count() &lt;&lt; "\n"; // 1
+
+    cout &lt;&lt; "\n7. Resetting last owner (heroTex):\n";
+    heroTex.reset(); // Count hits 0 -> Texture destructor called!
+
+    cout &lt;&lt; "\nMain function finished.\n";
+    return 0;
+}</code></pre>
+    <p><strong>Expected output:</strong></p>
+<pre><code>1. Creating shared texture 'hero.png':
+  [GPU] Loaded texture 'hero.png' into VRAM
+heroTex use_count: 1
+
+2. Creating Sprite 1 sharing the texture:
+heroTex use_count: 2
+sprite1 use_count: 2
+
+3. Entering nested scope (creating Sprite 2 &amp; 3):
+use_count inside nested block: 4
+
+4. Passing by value to function:
+  Inside processShared() -&gt; use_count: 5
+Rendering texture: hero.png
+use_count after function call: 4
+
+5. Exiting nested scope:
+use_count after nested scope exit: 2
+
+6. Resetting sprite1:
+heroTex use_count after sprite1.reset(): 1
+
+7. Resetting last owner (heroTex):
+  [GPU] Unloaded texture 'hero.png' from VRAM
+
+Main function finished.</code></pre>
+    <div class="callout tip">
+      <strong>Passing <code>const shared_ptr&lt;T&gt;&amp;</code> vs <code>shared_ptr&lt;T&gt;</code></strong>
+      Pass by <code>const shared_ptr&lt;T&gt;&amp;</code> if a function only inspects the managed object without retaining ownership. This avoids the atomic increment/decrement of the reference count.
+    </div>
+
+    <!-- Example 4 -->
+    <h2>Example 4 — Circular References &amp; The <code>std::weak_ptr</code> Solution</h2>
+    <p>
+      This example showcases how mutual <code>std::shared_ptr</code> ownership creates an unfreeable cycle, and how replacing one direction with <code>std::weak_ptr</code> enables complete, leak-free destruction.
+    </p>
+<pre><code>// circular_reference_fix.cpp
+// Compile: g++ -std=c++17 -Wall -o circular circular_reference_fix.cpp
+// Run:     ./circular
+
+#include &lt;iostream&gt;
+#include &lt;memory&gt;
+#include &lt;string&gt;
+using namespace std;
+
+// -------------------------------------------------------------
+// Case A: Broken Circular Reference (Memory Leak)
+// -------------------------------------------------------------
+namespace LeakyVersion {
+    struct PartnerB; // Forward declaration
+
+    struct PartnerA {
+        string name;
+        shared_ptr&lt;PartnerB&gt; partner;
+        PartnerA(string n) : name(move(n)) { cout &lt;&lt; "  PartnerA " &lt;&lt; name &lt;&lt; " created\n"; }
+        ~PartnerA() { cout &lt;&lt; "  PartnerA " &lt;&lt; name &lt;&lt; " DESTROYED\n"; }
+    };
+
+    struct PartnerB {
+        string name;
+        shared_ptr&lt;PartnerA&gt; partner; // Circular strong reference!
+        PartnerB(string n) : name(move(n)) { cout &lt;&lt; "  PartnerB " &lt;&lt; name &lt;&lt; " created\n"; }
+        ~PartnerB() { cout &lt;&lt; "  PartnerB " &lt;&lt; name &lt;&lt; " DESTROYED\n"; }
+    };
+
+    void runLeakDemo() {
+        cout &lt;&lt; "--- Running Leaky Circular Demo ---\n";
+        auto a = make_shared&lt;PartnerA&gt;("Alice");
+        auto b = make_shared&lt;PartnerB&gt;("Bob");
+        a-&gt;partner = b;
+        b-&gt;partner = a; // Cycle formed!
+
+        cout &lt;&lt; "  Alice use_count: " &lt;&lt; a.use_count() &lt;&lt; " (1 local + 1 in Bob)\n";
+        cout &lt;&lt; "  Bob   use_count: " &lt;&lt; b.use_count() &lt;&lt; " (1 local + 1 in Alice)\n";
+        cout &lt;&lt; "Exiting runLeakDemo()...\n";
+    } // Local variables 'a' and 'b' go out of scope, but use_count stays 1 for both!
+      // Destructors NEVER fire!
+}
+
+// -------------------------------------------------------------
+// Case B: Fixed with std::weak_ptr
+// -------------------------------------------------------------
+namespace FixedVersion {
+    struct PartnerB;
+
+    struct PartnerA {
+        string name;
+        shared_ptr&lt;PartnerB&gt; partner; // Strong owner
+        PartnerA(string n) : name(move(n)) { cout &lt;&lt; "  Fixed PartnerA " &lt;&lt; name &lt;&lt; " created\n"; }
+        ~PartnerA() { cout &lt;&lt; "  Fixed PartnerA " &lt;&lt; name &lt;&lt; " DESTROYED\n"; }
+    };
+
+    struct PartnerB {
+        string name;
+        weak_ptr&lt;PartnerA&gt; partner; // Weak reference breaks the cycle!
+        PartnerB(string n) : name(move(n)) { cout &lt;&lt; "  Fixed PartnerB " &lt;&lt; name &lt;&lt; " created\n"; }
+        ~PartnerB() { cout &lt;&lt; "  Fixed PartnerB " &lt;&lt; name &lt;&lt; " DESTROYED\n"; }
+
+        void talkToPartner() const {
+            // Must lock weak_ptr to safely acquire temporary shared_ptr
+            if (auto strongA = partner.lock()) {
+                cout &lt;&lt; "  " &lt;&lt; name &lt;&lt; " is talking to " &lt;&lt; strongA-&gt;name &lt;&lt; "\n";
+            } else {
+                cout &lt;&lt; "  " &lt;&lt; name &lt;&lt; "'s partner has already been destroyed.\n";
+            }
+        }
+    };
+
+    void runFixedDemo() {
+        cout &lt;&lt; "\n--- Running Fixed Demo with weak_ptr ---\n";
+        auto a = make_shared&lt;PartnerA&gt;("Alice");
+        auto b = make_shared&lt;PartnerB&gt;("Bob");
+        a-&gt;partner = b;
+        b-&gt;partner = a; // Weak link does NOT increment Alice's use_count!
+
+        cout &lt;&lt; "  Alice use_count: " &lt;&lt; a.use_count() &lt;&lt; " (only 1!)\n";
+        cout &lt;&lt; "  Bob   use_count: " &lt;&lt; b.use_count() &lt;&lt; " (2: local + in Alice)\n";
+
+        b-&gt;talkToPartner();
+
+        cout &lt;&lt; "Exiting runFixedDemo()...\n";
+    } // 'a' exits scope -> count 0 -> ~PartnerA runs -> partner released -> ~PartnerB runs!
+}
+
+int main() {
+    LeakyVersion::runLeakDemo();
+    cout &lt;&lt; "Notice that neither Alice nor Bob was destroyed above!\n";
+
+    FixedVersion::runFixedDemo();
+    cout &lt;&lt; "All fixed objects cleanly destroyed!\n";
+    return 0;
+}</code></pre>
+    <p><strong>Expected output:</strong></p>
+<pre><code>--- Running Leaky Circular Demo ---
+  PartnerA Alice created
+  PartnerB Bob created
+  Alice use_count: 2 (1 local + 1 in Bob)
+  Bob   use_count: 2 (1 local + 1 in Alice)
+Exiting runLeakDemo()...
+Notice that neither Alice nor Bob was destroyed above!
+
+--- Running Fixed Demo with weak_ptr ---
+  Fixed PartnerA Alice created
+  Fixed PartnerB Bob created
+  Alice use_count: 1 (only 1!)
+  Bob   use_count: 2 (2: local + in Alice)
+  Bob is talking to Alice
+Exiting runFixedDemo()...
+  Fixed PartnerA Alice DESTROYED
+  Fixed PartnerB Bob DESTROYED
+All fixed objects cleanly destroyed!</code></pre>
+    <div class="callout tip">
+      <strong>Rule for Cyclic Structures</strong>
+      In hierarchical structures (trees, parent-child relations, graphs), parent pointers to children should be <code>std::shared_ptr</code> or <code>std::unique_ptr</code>, while child back-pointers to parents should always be <code>std::weak_ptr</code> or raw references.
+    </div>
+
+    <div style="display:flex;justify-content:space-between;margin-top:2rem;">
+      <a href="index.html" class="btn btn-outline" style="text-decoration:none;">← Learning</a>
+      <a href="exercises.html" class="btn" style="text-decoration:none;">Next: Exercises →</a>
+    </div>
+
+  </div>
+</main>
+</div>
+<footer id="site-footer">
+  &copy; 2024 <a href="https://linkedin.com/in/adityabhuyan" target="_blank" rel="noopener">Aditya Pratap Bhuyan</a> &nbsp;|&nbsp;
+  <a href="https://github.com/aditya-bhuyan/cpp-learning-hub" target="_blank" rel="noopener">GitHub</a> &nbsp;|&nbsp;
+  GNU GPL v3 License
+</footer>
+<script src="/assets/js/nav.js"></script>
+</body>
+</html>

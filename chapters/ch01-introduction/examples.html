@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ch 01 Examples — Introduction to C++ | C++ Learning Hub</title>
+  <link rel="stylesheet" href="/assets/css/style.css" />
+</head>
+<body>
+<header id="site-header">
+  <button id="hamburger" aria-label="Toggle navigation">&#9776;</button>
+  <div id="site-logo">C++ Learning Hub <span class="badge">FREE</span></div>
+  <button id="theme-toggle">☾ Dark</button>
+</header>
+<div id="layout">
+<aside id="sidebar"><nav>
+  <div class="nav-section-title">C++ Learning Hub</div>
+  <div class="nav-chapter" data-chapter="home"><div class="nav-chapter-header"><span>🏠 Home</span></div><div class="nav-chapter-links"><a href="/index.html">Overview</a></div></div>
+  <div class="nav-section-title">Chapters</div>
+  <div class="nav-chapter" data-chapter="ch01"><div class="nav-chapter-header"><span><span class="ch-num">01</span>Introduction to C++</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="index.html"><span class="link-icon">📖</span>Learning</a><a href="examples.html" class="active"><span class="link-icon">💻</span>Examples</a><a href="exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch02"><div class="nav-chapter-header"><span><span class="ch-num">02</span>Variables, Types &amp; Operators</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch02-variables-types-operators/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch02-variables-types-operators/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch02-variables-types-operators/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch02-variables-types-operators/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch02-variables-types-operators/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch03"><div class="nav-chapter-header"><span><span class="ch-num">03</span>Control Flow</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch03-control-flow/index.html"><span class="link-icon">📖</span>Learning</a></div></div>
+  <div class="nav-chapter" data-chapter="ch04"><div class="nav-chapter-header"><span><span class="ch-num">04</span>Functions</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch04-functions/index.html"><span class="link-icon">📖</span>Learning</a></div></div>
+  <div class="nav-chapter" data-chapter="ch05"><div class="nav-chapter-header"><span><span class="ch-num">05</span>Arrays &amp; Strings</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch05-arrays-strings/index.html"><span class="link-icon">📖</span>Learning</a></div></div>
+  <div class="nav-chapter" data-chapter="ch06"><div class="nav-chapter-header"><span><span class="ch-num">06</span>Pointers &amp; References</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch06-pointers-references/index.html"><span class="link-icon">📖</span>Learning</a></div></div>
+  <div class="nav-chapter" data-chapter="ch07"><div class="nav-chapter-header"><span><span class="ch-num">07</span>OOP — Basics</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch07-oop-basics/index.html"><span class="link-icon">📖</span>Learning</a></div></div>
+  <div class="nav-chapter" data-chapter="ch08"><div class="nav-chapter-header"><span><span class="ch-num">08</span>OOP — Inheritance &amp; Polymorphism</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch08-oop-inheritance/index.html"><span class="link-icon">📖</span>Learning</a></div></div>
+  <div class="nav-chapter" data-chapter="ch09"><div class="nav-chapter-header"><span><span class="ch-num">09</span>Templates</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch09-templates/index.html"><span class="link-icon">📖</span>Learning</a></div></div>
+  <div class="nav-chapter" data-chapter="ch10"><div class="nav-chapter-header"><span><span class="ch-num">10</span>STL — Containers</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch10-stl-containers/index.html"><span class="link-icon">📖</span>Learning</a></div></div>
+  <div class="nav-chapter" data-chapter="ch11"><div class="nav-chapter-header"><span><span class="ch-num">11</span>STL — Algorithms</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch11-stl-algorithms/index.html"><span class="link-icon">📖</span>Learning</a></div></div>
+  <div class="nav-chapter" data-chapter="ch12"><div class="nav-chapter-header"><span><span class="ch-num">12</span>Memory Management</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch12-memory-management/index.html"><span class="link-icon">📖</span>Learning</a></div></div>
+  <div class="nav-chapter" data-chapter="ch13"><div class="nav-chapter-header"><span><span class="ch-num">13</span>Exception Handling</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch13-exception-handling/index.html"><span class="link-icon">📖</span>Learning</a></div></div>
+  <div class="nav-chapter" data-chapter="ch14"><div class="nav-chapter-header"><span><span class="ch-num">14</span>File I/O</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch14-file-io/index.html"><span class="link-icon">📖</span>Learning</a></div></div>
+  <div class="nav-chapter" data-chapter="ch15"><div class="nav-chapter-header"><span><span class="ch-num">15</span>Modern C++</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch15-modern-cpp/index.html"><span class="link-icon">📖</span>Learning</a></div></div>
+  <div class="nav-section-title">Capstone</div>
+  <div class="nav-chapter" data-chapter="ch16"><div class="nav-chapter-header"><span><span class="ch-num">16</span>Capstone Project</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch16-capstone/index.html"><span class="link-icon">🎯</span>Brief</a></div></div>
+  <div class="nav-section-title">About</div>
+  <div style="padding:.4rem 1.1rem 1rem;font-size:.78rem;color:var(--muted);line-height:1.5;">Maintained by<br><a href="https://linkedin.com/in/adityabhuyan" target="_blank" rel="noopener">Aditya Pratap Bhuyan</a><br><span style="font-size:.72rem;">GNU GPL v3 License</span></div>
+</nav></aside>
+
+<main id="main">
+  <div class="page-header">
+    <div class="breadcrumb"><a href="/index.html">Home</a> › <a href="index.html">Chapter 01</a> › Examples</div>
+    <h1>Chapter 01 — Coding Examples</h1>
+    <p class="subtitle">Four fully explained programs covering the fundamentals of C++ I/O and structure.</p>
+    <div class="chapter-tabs">
+      <a href="index.html">📖 Learning</a>
+      <a href="examples.html" class="active">💻 Examples</a>
+      <a href="exercises.html">✏️ Exercises</a>
+      <a href="solutions.html">✅ Solutions</a>
+      <a href="quiz.html">🧠 Quiz</a>
+    </div>
+  </div>
+
+  <div class="content">
+
+    <!-- Example 1 -->
+    <h2>Example 1 — Hello, World!</h2>
+    <p>
+      The classic first program. Every C++ programmer writes it. It confirms your toolchain is working
+      and demonstrates the minimum structure of a valid C++ program.
+    </p>
+<pre><code>// hello.cpp
+// Compile: g++ -std=c++17 -o hello hello.cpp
+// Run:     ./hello
+
+#include &lt;iostream&gt;   // provides std::cout, std::endl
+
+int main() {
+    // std::cout is the standard output stream
+    // &lt;&lt; is the stream-insertion operator — it "inserts" data into the stream
+    std::cout &lt;&lt; "Hello, World!" &lt;&lt; std::endl;
+
+    // Returning 0 tells the operating system the program ran successfully
+    return 0;
+}</code></pre>
+    <p><strong>Expected output:</strong></p>
+<pre><code>Hello, World!</code></pre>
+    <div class="callout tip">
+      <strong>Why <code>std::</code>?</strong>
+      <code>cout</code> and <code>endl</code> live inside the <code>std</code> namespace.
+      You can avoid typing <code>std::</code> everywhere by adding <code>using namespace std;</code>
+      after your includes — but be aware this can cause name collisions in larger projects.
+    </div>
+
+    <!-- Example 2 -->
+    <h2>Example 2 — Reading User Input</h2>
+    <p>
+      This example demonstrates reading a name and an integer age from the keyboard using <code>std::cin</code>,
+      then printing a personalised greeting.
+    </p>
+<pre><code>// greeting.cpp
+#include &lt;iostream&gt;
+#include &lt;string&gt;    // std::string
+using namespace std;
+
+int main() {
+    string name;
+    int    age;
+
+    cout &lt;&lt; "Enter your first name: ";
+    cin  &gt;&gt; name;     // reads one whitespace-delimited token
+
+    cout &lt;&lt; "Enter your age: ";
+    cin  &gt;&gt; age;
+
+    cout &lt;&lt; "\nNice to meet you, " &lt;&lt; name &lt;&lt; "!\n";
+    cout &lt;&lt; "In 10 years you will be " &lt;&lt; (age + 10) &lt;&lt; " years old.\n";
+
+    return 0;
+}</code></pre>
+    <p><strong>Sample session:</strong></p>
+<pre><code>Enter your first name: Alice
+Enter your age: 28
+
+Nice to meet you, Alice!
+In 10 years you will be 38 years old.</code></pre>
+
+    <!-- Example 3 -->
+    <h2>Example 3 — Area and Perimeter Calculator</h2>
+    <p>
+      A practical first program: reads the width and height of a rectangle, then computes both
+      its area and perimeter. Introduces arithmetic expressions and <code>double</code> type.
+    </p>
+<pre><code>// rectangle.cpp
+#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    double width, height;
+
+    cout &lt;&lt; "Rectangle Calculator\n";
+    cout &lt;&lt; "--------------------\n";
+    cout &lt;&lt; "Enter width  (metres): ";
+    cin  &gt;&gt; width;
+    cout &lt;&lt; "Enter height (metres): ";
+    cin  &gt;&gt; height;
+
+    double area      = width * height;
+    double perimeter = 2.0 * (width + height);
+
+    cout &lt;&lt; "\nResults:\n";
+    cout &lt;&lt; "  Area      = " &lt;&lt; area      &lt;&lt; " m²\n";
+    cout &lt;&lt; "  Perimeter = " &lt;&lt; perimeter &lt;&lt; " m\n";
+
+    return 0;
+}</code></pre>
+    <p><strong>Sample session:</strong></p>
+<pre><code>Rectangle Calculator
+--------------------
+Enter width  (metres): 5.5
+Enter height (metres): 3.2
+
+Results:
+  Area      = 17.6 m²
+  Perimeter = 17.4 m</code></pre>
+
+    <!-- Example 4 -->
+    <h2>Example 4 — Temperature Converter</h2>
+    <p>
+      Converts a Celsius temperature to Fahrenheit and Kelvin. Demonstrates the use of
+      named constants with <code>const</code> and formatted arithmetic output.
+    </p>
+<pre><code>// temperature.cpp
+#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    // Named constants make the formula self-documenting
+    const double ABSOLUTE_ZERO_OFFSET = 273.15;
+    const double FAHRENHEIT_SCALE     = 9.0 / 5.0;
+    const double FAHRENHEIT_OFFSET    = 32.0;
+
+    double celsius;
+    cout &lt;&lt; "Enter temperature in Celsius: ";
+    cin  &gt;&gt; celsius;
+
+    double fahrenheit = celsius * FAHRENHEIT_SCALE + FAHRENHEIT_OFFSET;
+    double kelvin     = celsius + ABSOLUTE_ZERO_OFFSET;
+
+    cout &lt;&lt; "\n" &lt;&lt; celsius &lt;&lt; " °C  =  "
+         &lt;&lt; fahrenheit &lt;&lt; " °F  =  "
+         &lt;&lt; kelvin     &lt;&lt; " K\n";
+
+    return 0;
+}</code></pre>
+    <p><strong>Sample session:</strong></p>
+<pre><code>Enter temperature in Celsius: 100
+
+100 °C  =  212 °F  =  373.15 K</code></pre>
+
+    <div style="display:flex;justify-content:space-between;margin-top:2rem;">
+      <a href="index.html" class="btn btn-outline" style="text-decoration:none;">← Learning</a>
+      <a href="exercises.html" class="btn" style="text-decoration:none;">Next: Exercises →</a>
+    </div>
+
+  </div>
+</main>
+</div>
+<footer id="site-footer">
+  &copy; 2024 <a href="https://linkedin.com/in/adityabhuyan" target="_blank" rel="noopener">Aditya Pratap Bhuyan</a> &nbsp;|&nbsp;
+  <a href="https://github.com/aditya-bhuyan/cpp-learning-hub" target="_blank" rel="noopener">GitHub</a> &nbsp;|&nbsp;
+  GNU GPL v3 License
+</footer>
+<script src="/assets/js/nav.js"></script>
+</body>
+</html>

@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ch 16 Walkthrough — Bank Account Management System | C++ Learning Hub</title>
+  <link rel="stylesheet" href="/assets/css/style.css" />
+</head>
+<body>
+<header id="site-header">
+  <button id="hamburger" aria-label="Toggle navigation">&#9776;</button>
+  <div id="site-logo">C++ Learning Hub <span class="badge">FREE</span></div>
+  <button id="theme-toggle">☾ Dark</button>
+</header>
+<div id="layout">
+<aside id="sidebar"><nav>
+  <div class="nav-section-title">C++ Learning Hub</div>
+  <div class="nav-chapter" data-chapter="home"><div class="nav-chapter-header"><span>🏠 Home</span></div><div class="nav-chapter-links"><a href="/index.html">Overview</a></div></div>
+  <div class="nav-section-title">Chapters</div>
+  <div class="nav-chapter" data-chapter="ch01"><div class="nav-chapter-header"><span><span class="ch-num">01</span>Introduction to C++</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch01-introduction/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch01-introduction/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch01-introduction/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch01-introduction/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch01-introduction/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch02"><div class="nav-chapter-header"><span><span class="ch-num">02</span>Variables, Types &amp; Operators</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch02-variables-types-operators/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch02-variables-types-operators/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch02-variables-types-operators/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch02-variables-types-operators/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch02-variables-types-operators/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch03"><div class="nav-chapter-header"><span><span class="ch-num">03</span>Control Flow</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch03-control-flow/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch03-control-flow/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch03-control-flow/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch03-control-flow/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch03-control-flow/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch04"><div class="nav-chapter-header"><span><span class="ch-num">04</span>Functions</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch04-functions/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch04-functions/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch04-functions/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch04-functions/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch04-functions/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch05"><div class="nav-chapter-header"><span><span class="ch-num">05</span>Arrays &amp; Strings</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch05-arrays-strings/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch05-arrays-strings/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch05-arrays-strings/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch05-arrays-strings/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch05-arrays-strings/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch06"><div class="nav-chapter-header"><span><span class="ch-num">06</span>Pointers &amp; References</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch06-pointers-references/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch06-pointers-references/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch06-pointers-references/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch06-pointers-references/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch06-pointers-references/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch07"><div class="nav-chapter-header"><span><span class="ch-num">07</span>OOP — Basics</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch07-oop-basics/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch07-oop-basics/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch07-oop-basics/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch07-oop-basics/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch07-oop-basics/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch08"><div class="nav-chapter-header"><span><span class="ch-num">08</span>OOP — Inheritance &amp; Polymorphism</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch08-oop-inheritance/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch08-oop-inheritance/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch08-oop-inheritance/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch08-oop-inheritance/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch08-oop-inheritance/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch09"><div class="nav-chapter-header"><span><span class="ch-num">09</span>Templates</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch09-templates/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch09-templates/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch09-templates/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch09-templates/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch09-templates/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch10"><div class="nav-chapter-header"><span><span class="ch-num">10</span>STL — Containers</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch10-stl-containers/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch10-stl-containers/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch10-stl-containers/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch10-stl-containers/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch10-stl-containers/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch11"><div class="nav-chapter-header"><span><span class="ch-num">11</span>STL — Algorithms &amp; Iterators</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch11-stl-algorithms/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch11-stl-algorithms/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch11-stl-algorithms/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch11-stl-algorithms/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch11-stl-algorithms/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch12"><div class="nav-chapter-header"><span><span class="ch-num">12</span>Memory Management</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch12-memory-management/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch12-memory-management/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch12-memory-management/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch12-memory-management/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch12-memory-management/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch13"><div class="nav-chapter-header"><span><span class="ch-num">13</span>Exception Handling</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch13-exception-handling/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch13-exception-handling/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch13-exception-handling/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch13-exception-handling/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch13-exception-handling/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch14"><div class="nav-chapter-header"><span><span class="ch-num">14</span>File I/O</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch14-file-io/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch14-file-io/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch14-file-io/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch14-file-io/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch14-file-io/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch15"><div class="nav-chapter-header"><span><span class="ch-num">15</span>Modern C++ (C++11–C++20)</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch15-modern-cpp/index.html"><span class="link-icon">📖</span>Learning</a><a href="/chapters/ch15-modern-cpp/examples.html"><span class="link-icon">💻</span>Examples</a><a href="/chapters/ch15-modern-cpp/exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="/chapters/ch15-modern-cpp/solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="/chapters/ch15-modern-cpp/quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-section-title">Capstone</div>
+  <div class="nav-chapter open" data-chapter="ch16"><div class="nav-chapter-header active"><span><span class="ch-num">16</span>Capstone Project</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch16-capstone/index.html"><span class="link-icon">🎯</span>Brief</a><a href="/chapters/ch16-capstone/walkthrough.html" class="active"><span class="link-icon">🗺</span>Walkthrough</a><a href="/chapters/ch16-capstone/solution.html"><span class="link-icon">✅</span>Solution</a></div></div>
+  <div class="nav-section-title">About</div>
+  <div style="padding:.4rem 1.1rem 1rem;font-size:.78rem;color:var(--muted);line-height:1.5;">Maintained by<br><a href="https://linkedin.com/in/adityabhuyan" target="_blank" rel="noopener">Aditya Pratap Bhuyan</a><br><span style="font-size:.72rem;">GNU GPL v3 License</span></div>
+</nav></aside>
+
+<main id="main">
+  <div class="page-header">
+    <div class="breadcrumb"><a href="/index.html">Home</a> › <a href="index.html">Chapter 16</a> › Walkthrough</div>
+    <h1>Chapter 16 — Walkthrough</h1>
+    <p class="subtitle">A ten-step guide to building the Bank Account Management System, with the code for each step.</p>
+    <div class="chapter-tabs">
+      <a href="index.html">🎯 Brief</a>
+      <a href="walkthrough.html" class="active">🗺 Walkthrough</a>
+      <a href="solution.html">✅ Solution</a>
+    </div>
+  </div>
+
+  <div class="content">
+
+    <p>
+      This guide builds the Bank Account Management System in ten small steps. Each step shows the code you should have
+      written by the end of it. <strong>Try each step yourself first</strong>, then compare. Snippets are taken from the final program, so they fit together
+      into the <a href="solution.html">complete solution</a>.
+    </p>
+
+    <div class="callout">
+      <strong>Order in the final file</strong>
+      Because C++ requires declaration before use, the final file orders things as: includes → utilities (<code>money</code>, <code>split</code>, <code>printAll</code>) →
+      exceptions (Step 7) → transaction (Step 2) → accounts (Steps 3–4) → customer (Step 5) → bank (Steps 6, 8) → UI (Step 9).
+    </div>
+
+    <table>
+      <thead><tr><th>Step</th><th>Topic</th><th>Chapters used</th></tr></thead>
+      <tbody>
+        <tr><td><a href="#step1">1</a></td><td>Project structure</td><td>1, 4</td></tr>
+        <tr><td><a href="#step2">2</a></td><td>Transaction struct and enum</td><td>2, 7</td></tr>
+        <tr><td><a href="#step3">3</a></td><td>Account base class</td><td>7, 8</td></tr>
+        <tr><td><a href="#step4">4</a></td><td>Savings and Checking accounts</td><td>8</td></tr>
+        <tr><td><a href="#step5">5</a></td><td>Customer</td><td>7, 10</td></tr>
+        <tr><td><a href="#step6">6</a></td><td>Bank manager</td><td>10, 11, 12</td></tr>
+        <tr><td><a href="#step7">7</a></td><td>Exception classes</td><td>13</td></tr>
+        <tr><td><a href="#step8">8</a></td><td>File persistence</td><td>14</td></tr>
+        <tr><td><a href="#step9">9</a></td><td>Console UI</td><td>3, 5, 13</td></tr>
+        <tr><td><a href="#step10">10</a></td><td>Modern C++ polish</td><td>9, 11, 15</td></tr>
+      </tbody>
+    </table>
+
+    <h2 id="step1">Step 1 — Set Up the Project Structure</h2>
+    <p>
+      Start by deciding where code will live. The reference solution is a single file (<code>bank.cpp</code>) so that it is
+      easy to compile and share, but production projects split declarations into headers and definitions into source files.
+      Either approach is fine for the capstone — choose one and stay consistent.
+    </p>
+    <p><strong>Recommended multi-file layout:</strong></p>
+<pre><code>bank/
+├── include/
+│   ├── Exceptions.h      // BankException hierarchy
+│   ├── Transaction.h     // TransactionType + Transaction
+│   ├── Account.h         // Account, SavingsAccount, CheckingAccount
+│   ├── Customer.h
+│   └── Bank.h
+├── src/
+│   ├── Account.cpp
+│   ├── Customer.cpp
+│   ├── Bank.cpp
+│   └── main.cpp          // menu-driven UI
+└── Makefile
+
+// Every header starts with an include guard (or #pragma once):
+#pragma once
+#include &lt;string&gt;
+#include &lt;vector&gt;
+// ... declarations ...
+
+// Compile a multi-file build:
+//   g++ -std=c++20 -Wall -Iinclude -o bank src/*.cpp
+//
+// Or a single-file build (what the Solution page uses):
+//   g++ -std=c++20 -Wall -o bank bank.cpp</code></pre>
+    <div class="callout tip">
+      <strong>Tip — start single-file</strong>
+      Begin with one <code>bank.cpp</code> and the includes below. Splitting into headers is a mechanical step you can do at the end.
+    </div>
+<pre><code>#include &lt;algorithm&gt;
+#include &lt;cctype&gt;
+#include &lt;fstream&gt;
+#include &lt;iomanip&gt;
+#include &lt;iostream&gt;
+#include &lt;map&gt;
+#include &lt;memory&gt;
+#include &lt;optional&gt;
+#include &lt;ranges&gt;
+#include &lt;sstream&gt;
+#include &lt;stdexcept&gt;
+#include &lt;string&gt;
+#include &lt;vector&gt;
+
+using namespace std;   // acceptable in a small program; avoid it in headers</code></pre>
+    <h2 id="step2">Step 2 — Design the Transaction Struct</h2>
+    <p>
+      A <code>Transaction</code> is a simple data record, so a <code>struct</code> is the natural choice. Use a scoped
+      <code>enum class</code> for the type so values cannot be confused with plain integers, and add conversion helpers
+      for printing and file I/O.
+    </p>
+<pre><code>enum class TransactionType { DEPOSIT, WITHDRAWAL, TRANSFER };
+
+string toString(TransactionType t) {
+    switch (t) {
+        case TransactionType::DEPOSIT:    return "DEPOSIT";
+        case TransactionType::WITHDRAWAL: return "WITHDRAWAL";
+        case TransactionType::TRANSFER:   return "TRANSFER";
+    }
+    return "UNKNOWN";
+}
+
+struct Transaction {
+    int id;                 // sequence number inside one account
+    TransactionType type;
+    double amount;          // signed: + money in, - money out
+    double balanceAfter;
+    string note;
+};</code></pre>
+    <p>
+      <strong>Why signed amounts?</strong> Storing deposits as positive and withdrawals as negative lets a statement show
+      direction without extra fields, and the sum of all amounts always equals the balance change.
+    </p>
+    <h2 id="step3">Step 3 — Design the Account Base Class</h2>
+    <p>
+      <code>Account</code> holds the state common to every account and implements <code>deposit()</code> /
+      <code>withdraw()</code> once. Behaviour that differs between account types is expressed as <strong>virtual functions</strong>.
+      The key design trick: <code>withdraw()</code> asks the virtual <code>availableFunds()</code> how much may be taken, so the
+      overdraft rule lives in the derived class and the base class never needs to know the concrete type.
+    </p>
+    <p>
+      Exceptions are thrown from here, so jump ahead to <a href="#step7">Step 7</a> if you want to define them first
+      (they must appear <em>above</em> <code>Account</code> in the file). To keep this step compilable on its own, the version below
+      already uses them.
+    </p>
+<pre><code>class Account {
+public:
+    Account(string id, int ownerId, double balance = 0.0)
+        : id_(std::move(id)), ownerId_(ownerId), balance_(balance) {}
+    virtual ~Account() = default;          // virtual: deleted via base pointer
+
+    // Behaviour that differs per account type:
+    virtual string typeName() const = 0;
+    virtual char   typeCode() const = 0;   // 'S' or 'C' (used in the data file)
+    virtual double extraValue() const = 0; // interest rate % or overdraft limit
+    virtual string extraInfo() const = 0;  // human-readable version
+    virtual double availableFunds() const { return balance_; }
+
+    void deposit(double amount, TransactionType type = TransactionType::DEPOSIT,
+                 const string&amp; note = "Deposit") {
+        requirePositive(amount);
+        balance_ += amount;
+        record(type, amount, note);
+    }
+
+    void withdraw(double amount, TransactionType type = TransactionType::WITHDRAWAL,
+                  const string&amp; note = "Withdrawal") {
+        requirePositive(amount);
+        if (amount &gt; availableFunds())     // virtual call: overdraft-aware
+            throw InsufficientFundsException(amount, availableFunds());
+        balance_ -= amount;
+        record(type, -amount, note);
+    }
+
+    // Used only when loading from file (does not touch the balance).
+    void restoreTransaction(const Transaction&amp; t) { history_.push_back(t); }
+
+    const string&amp; id() const { return id_; }
+    int ownerId() const { return ownerId_; }
+    double balance() const { return balance_; }
+    const vector&lt;Transaction&gt;&amp; history() const { return history_; }
+
+private:
+    static void requirePositive(double a) {
+        if (!(a &gt; 0.0)) throw InvalidAmountException(a);
+    }
+    void record(TransactionType type, double signedAmount, const string&amp; note) {
+        history_.push_back({static_cast&lt;int&gt;(history_.size()) + 1, type,
+                            signedAmount, balance_, note});
+    }
+
+    string id_;
+    int ownerId_;
+    double balance_;
+    vector&lt;Transaction&gt; history_;          // STL: transactions in a vector
+};</code></pre>
+    <div class="callout warn">
+      <strong>Common mistake — forgetting the virtual destructor</strong>
+      Deleting a <code>SavingsAccount</code> through an <code>Account*</code> without a virtual destructor is undefined behaviour. With
+      <code>shared_ptr</code> created by <code>make_shared&lt;Derived&gt;</code> it would happen to work, but make the destructor virtual anyway.
+    </div>
+    <h2 id="step4">Step 4 — Derive SavingsAccount and CheckingAccount</h2>
+    <p>
+      Each derived class adds one extra field and overrides the pure virtual functions. Only
+      <code>CheckingAccount</code> overrides <code>availableFunds()</code>, which is exactly what implements overdraft protection.
+    </p>
+<pre><code>class SavingsAccount : public Account {
+public:
+    SavingsAccount(string id, int ownerId, double balance, double ratePercent)
+        : Account(std::move(id), ownerId, balance), ratePercent_(ratePercent) {}
+
+    string typeName() const override { return "Savings"; }
+    char   typeCode() const override { return 'S'; }
+    double extraValue() const override { return ratePercent_; }
+    string extraInfo() const override {
+        return "Interest rate " + money(ratePercent_) + "% (projected monthly interest " +
+               money(balance() * ratePercent_ / 100.0 / 12.0) + ")";
+    }
+
+private:
+    double ratePercent_;
+};
+
+class CheckingAccount : public Account {
+public:
+    CheckingAccount(string id, int ownerId, double balance, double overdraftLimit)
+        : Account(std::move(id), ownerId, balance), overdraftLimit_(overdraftLimit) {}
+
+    string typeName() const override { return "Checking"; }
+    char   typeCode() const override { return 'C'; }
+    double extraValue() const override { return overdraftLimit_; }
+    string extraInfo() const override {
+        return "Overdraft limit " + money(overdraftLimit_);
+    }
+    // Overdraft protection: you may spend up to balance + limit, no more.
+    double availableFunds() const override { return balance() + overdraftLimit_; }
+
+private:
+    double overdraftLimit_;
+};
+
+// The tiny helper used above (put it near the top of the file):
+string money(double v) {
+    ostringstream os;
+    os &lt;&lt; fixed &lt;&lt; setprecision(2) &lt;&lt; v;
+    return os.str();
+}</code></pre>
+    <p><strong>Quick test</strong> — polymorphism in action:</p>
+<pre><code>shared_ptr&lt;Account&gt; a = make_shared&lt;CheckingAccount&gt;("T1", 1, 100.0, 50.0);
+a-&gt;withdraw(120.0);                 // OK: 100 + 50 available -&gt; balance -20
+// a-&gt;withdraw(40.0);               // would throw: only 30 left
+cout &lt;&lt; a-&gt;balance() &lt;&lt; '\n';       // -20</code></pre>
+    <h2 id="step5">Step 5 — Implement the Customer Class</h2>
+    <p>
+      A <code>Customer</code> holds a <code>std::map</code> from account ID to account. The accounts are
+      <code>shared_ptr</code>s because both the customer and the bank's master index refer to the same object. The map
+      also gives alphabetical iteration by ID for free, and structured bindings make the loop readable.
+    </p>
+<pre><code>class Customer {
+public:
+    Customer(int id, string name) : id_(id), name_(std::move(name)) {}
+
+    void addAccount(shared_ptr&lt;Account&gt; acc) {
+        string key = acc-&gt;id();
+        accounts_[key] = std::move(acc);
+    }
+    double totalBalance() const {
+        double total = 0.0;
+        for (const auto&amp; [id, acc] : accounts_) total += acc-&gt;balance();
+        return total;
+    }
+
+    int id() const { return id_; }
+    const string&amp; name() const { return name_; }
+    const map&lt;string, shared_ptr&lt;Account&gt;&gt;&amp; accounts() const { return accounts_; }
+
+private:
+    int id_;
+    string name_;
+    map&lt;string, shared_ptr&lt;Account&gt;&gt; accounts_;   // account id -&gt; account
+};</code></pre>
+
+    <h2 id="step6">Step 6 — Implement the Bank Class</h2>
+    <p>
+      <code>Bank</code> is the facade the UI talks to. It owns the customers, keeps the master account index, hands out IDs, and
+      implements the high-level operations. Notice how <code>transfer()</code> looks up both accounts <em>before</em> moving
+      any money, so a bad ID can never leave half a transfer behind.
+    </p>
+    <p>Core of the class (persistence and reports are added in later steps):</p>
+<pre><code>class Bank {
+public:
+    // Open an account ('S' savings / 'C' checking) for a customer name.
+    // Existing customers are reused; new names create a new Customer.
+    shared_ptr&lt;Account&gt; openAccount(const string&amp; owner, char type, double param,
+                                    double openingDeposit) {
+        if (owner.empty() || owner.find('|') != string::npos)
+            throw BankException("Customer name must be non-empty and must not contain '|'");
+        if (type != 'S' &amp;&amp; type != 'C')
+            throw BankException("Unknown account type (use S or C)");
+        if (param &lt; 0.0) throw BankException("Rate / overdraft limit cannot be negative");
+        if (openingDeposit &lt; 0.0) throw InvalidAmountException(openingDeposit);
+
+        // optional&lt;int&gt;: has a value only if the customer already exists
+        int ownerId;
+        if (auto existing = findCustomer(owner)) ownerId = *existing;
+        else                                     ownerId = addCustomer(owner);
+
+        string id = "ACC" + to_string(nextAccountNo_++);
+        shared_ptr&lt;Account&gt; acc;
+        if (type == 'S') acc = make_shared&lt;SavingsAccount&gt;(id, ownerId, 0.0, param);
+        else             acc = make_shared&lt;CheckingAccount&gt;(id, ownerId, 0.0, param);
+
+        if (openingDeposit &gt; 0.0)
+            acc-&gt;deposit(openingDeposit, TransactionType::DEPOSIT, "Opening deposit");
+
+        accounts_[id] = acc;
+        customers_.at(ownerId).addAccount(acc);
+        return acc;
+    }
+
+    shared_ptr&lt;Account&gt; getAccount(const string&amp; id) const {
+        auto it = accounts_.find(id);
+        if (it == accounts_.end()) throw AccountNotFoundException(id);
+        return it-&gt;second;
+    }
+
+    void transfer(const string&amp; fromId, const string&amp; toId, double amount) {
+        if (fromId == toId) throw BankException("Cannot transfer to the same account");
+        auto from = getAccount(fromId);    // both lookups happen before any
+        auto to   = getAccount(toId);      // money moves, so failures are clean
+        from-&gt;withdraw(amount, TransactionType::TRANSFER, "Transfer to " + toId);
+        to-&gt;deposit(amount, TransactionType::TRANSFER, "Transfer from " + fromId);
+    }
+
+private:
+    optional&lt;int&gt; findCustomer(const string&amp; name) const {
+        auto it = ranges::find_if(customers_, [&amp;](const auto&amp; kv) {
+            return kv.second.name() == name;
+        });
+        if (it == customers_.end()) return nullopt;
+        return it-&gt;first;
+    }
+
+    int addCustomer(const string&amp; name) {
+        int id = nextCustomerId_++;
+        customers_.emplace(id, Customer(id, name));
+        return id;
+    }
+
+    map&lt;int, Customer&gt; customers_;                    // customer id -&gt; customer
+    map&lt;string, shared_ptr&lt;Account&gt;&gt; accounts_;       // account id  -&gt; account
+    int nextCustomerId_ = 1;
+    int nextAccountNo_ = 1001;
+};</code></pre>
+    <div class="callout">
+      <strong>Why <code>shared_ptr</code> here?</strong>
+      The same <code>Account</code> object is referenced from <code>Bank::accounts_</code> and from its owner's
+      <code>Customer::accounts_</code>. Shared ownership expresses that precisely and frees the object automatically when
+      the last reference disappears. (A <code>unique_ptr</code> design is also valid: let <code>Bank</code> own every
+      account and give <code>Customer</code> only account IDs.)
+    </div>
+    <h2 id="step7">Step 7 — Add Custom Exception Classes</h2>
+    <p>
+      Derive a base <code>BankException</code> from <code>std::runtime_error</code>, then add one subclass per kind of failure.
+      Callers can catch the specific type they can handle (e.g. insufficient funds) or the base class to handle
+      everything. <strong>Place these definitions before <code>Account</code></strong> because <code>Account::withdraw</code> throws them.
+    </p>
+<pre><code>class BankException : public runtime_error {
+public:
+    explicit BankException(const string&amp; msg) : runtime_error(msg) {}
+};
+
+class InsufficientFundsException : public BankException {
+public:
+    InsufficientFundsException(double requested, double available)
+        : BankException("Insufficient funds: requested " + money(requested) +
+                        ", available " + money(available)) {}
+};
+
+class InvalidAmountException : public BankException {
+public:
+    explicit InvalidAmountException(double amount)
+        : BankException("Invalid amount: " + money(amount) + " (must be positive)") {}
+};
+
+class AccountNotFoundException : public BankException {
+public:
+    explicit AccountNotFoundException(const string&amp; id)
+        : BankException("Account not found: " + id) {}
+};
+
+class FileException : public BankException {
+public:
+    explicit FileException(const string&amp; msg) : BankException("File error: " + msg) {}
+};
+
+// Usage: catch the most specific type first, the base class last.
+try {
+    bank.transfer("ACC1001", "ACC1002", 5000.0);
+} catch (const InsufficientFundsException&amp; e) {
+    cout &lt;&lt; "Declined: " &lt;&lt; e.what() &lt;&lt; '\n';
+} catch (const BankException&amp; e) {
+    cout &lt;&lt; "Error: " &lt;&lt; e.what() &lt;&lt; '\n';
+}</code></pre>
+    <div class="callout tip">
+      <strong>Tip — always catch by <code>const&amp;</code></strong>
+      Catching by value would slice the exception object and lose the derived type's message and behaviour.
+    </div>
+    <h2 id="step8">Step 8 — Add File Persistence (Save / Load)</h2>
+    <p>
+      Use a simple line-based, pipe-delimited format. Each line starts with a record tag, which makes the parser a single
+      <code>if / else if</code> chain and keeps the file human-readable:
+    </p>
+<pre><code>BANK|2|1003
+CUSTOMER|1|Alice
+ACCOUNT|S|ACC1001|1|400.00|2.50
+TXN|ACC1001|1|DEPOSIT|500.00|500.00|Opening deposit
+TXN|ACC1001|2|TRANSFER|-100.00|400.00|Transfer to ACC1002</code></pre>
+    <p>Add these members to <code>Bank</code> (plus a <code>split()</code> helper and <code>transactionTypeFromString()</code>):</p>
+<pre><code>vector&lt;string&gt; split(const string&amp; line, char delim) {
+    vector&lt;string&gt; parts;
+    string token;
+    istringstream in(line);
+    while (getline(in, token, delim)) parts.push_back(token);
+    return parts;
+}
+
+TransactionType transactionTypeFromString(const string&amp; s) {
+    if (s == "DEPOSIT")    return TransactionType::DEPOSIT;
+    if (s == "WITHDRAWAL") return TransactionType::WITHDRAWAL;
+    if (s == "TRANSFER")   return TransactionType::TRANSFER;
+    throw FileException("unknown transaction type '" + s + "'");
+}
+
+// ---- inside class Bank (public) ----
+void save(const string&amp; path) const {
+    ofstream out(path);
+    if (!out) throw FileException("cannot open '" + path + "' for writing");
+    out &lt;&lt; fixed &lt;&lt; setprecision(2);
+    out &lt;&lt; "BANK|" &lt;&lt; nextCustomerId_ &lt;&lt; '|' &lt;&lt; nextAccountNo_ &lt;&lt; '\n';
+    for (const auto&amp; [id, c] : customers_)
+        out &lt;&lt; "CUSTOMER|" &lt;&lt; id &lt;&lt; '|' &lt;&lt; c.name() &lt;&lt; '\n';
+    for (const auto&amp; [id, a] : accounts_) {
+        out &lt;&lt; "ACCOUNT|" &lt;&lt; a-&gt;typeCode() &lt;&lt; '|' &lt;&lt; id &lt;&lt; '|' &lt;&lt; a-&gt;ownerId() &lt;&lt; '|'
+            &lt;&lt; a-&gt;balance() &lt;&lt; '|' &lt;&lt; a-&gt;extraValue() &lt;&lt; '\n';
+        for (const auto&amp; t : a-&gt;history())
+            out &lt;&lt; "TXN|" &lt;&lt; id &lt;&lt; '|' &lt;&lt; t.id &lt;&lt; '|' &lt;&lt; toString(t.type) &lt;&lt; '|'
+                &lt;&lt; t.amount &lt;&lt; '|' &lt;&lt; t.balanceAfter &lt;&lt; '|' &lt;&lt; t.note &lt;&lt; '\n';
+    }
+    if (!out) throw FileException("write to '" + path + "' failed");
+}
+
+void load(const string&amp; path) {
+    ifstream in(path);
+    if (!in) throw FileException("cannot open '" + path + "' for reading");
+
+    Bank loaded;                       // build into a temp: all-or-nothing load
+    string line;
+    int lineNo = 0;
+    while (getline(in, line)) {
+        ++lineNo;
+        if (line.empty()) continue;
+        try {
+            loaded.parseLine(split(line, '|'));
+        } catch (const exception&amp; e) { // out_of_range, invalid_argument, BankException...
+            throw FileException("line " + to_string(lineNo) + ": " + e.what());
+        }
+    }
+    *this = std::move(loaded);         // commit
+}
+
+// ---- inside class Bank (private) ----
+void parseLine(const vector&lt;string&gt;&amp; f) {
+    const string&amp; tag = f.at(0);
+    if (tag == "BANK") {
+        nextCustomerId_ = stoi(f.at(1));
+        nextAccountNo_  = stoi(f.at(2));
+    } else if (tag == "CUSTOMER") {
+        int id = stoi(f.at(1));
+        customers_.emplace(id, Customer(id, f.at(2)));
+    } else if (tag == "ACCOUNT") {
+        int owner = stoi(f.at(3));
+        double bal = stod(f.at(4)), extra = stod(f.at(5));
+        shared_ptr&lt;Account&gt; acc;
+        if (f.at(1) == "S")      acc = make_shared&lt;SavingsAccount&gt;(f.at(2), owner, bal, extra);
+        else if (f.at(1) == "C") acc = make_shared&lt;CheckingAccount&gt;(f.at(2), owner, bal, extra);
+        else throw FileException("unknown account type '" + f.at(1) + "'");
+        accounts_[f.at(2)] = acc;
+        customers_.at(owner).addAccount(acc);
+    } else if (tag == "TXN") {
+        Transaction t{stoi(f.at(2)), transactionTypeFromString(f.at(3)),
+                      stod(f.at(4)), stod(f.at(5)), f.at(6)};
+        getAccount(f.at(1))-&gt;restoreTransaction(t);
+    } else {
+        throw FileException("unknown record '" + tag + "'");
+    }
+}</code></pre>
+    <div class="callout">
+      <strong>Design note — all-or-nothing loading</strong>
+      <code>load()</code> parses into a temporary <code>Bank</code> and only assigns it to <code>*this</code> after every line
+      parsed successfully. A corrupt file therefore cannot leave the program with half-loaded data.
+      Any error from the standard library (<code>stoi</code>, <code>at</code>) is converted to a <code>FileException</code> that names the line.
+    </div>
+    <h2 id="step9">Step 9 — Add a Menu-Driven Console UI</h2>
+    <p>
+      The UI is a loop that prints a menu, reads a choice, and dispatches to <code>Bank</code>. Two small helpers read
+      input safely: <code>ask()</code> reads a whole line (so spaces in names work), and <code>askNumber()</code> converts it
+      with <code>stod</code>, turning bad input into a <code>BankException</code>. All bank errors are caught in one place inside the loop, so the program
+      reports the problem and returns to the menu.
+    </p>
+<pre><code>struct InputClosed {};                     // thrown when stdin reaches EOF
+
+string ask(const string&amp; label) {
+    cout &lt;&lt; label;
+    string s;
+    if (!getline(cin, s)) throw InputClosed{};
+    return s;
+}
+
+double askNumber(const string&amp; label) {
+    string s = ask(label);
+    try {
+        size_t used = 0;
+        double v = stod(s, &amp;used);
+        if (used != s.size()) throw invalid_argument("trailing characters");
+        return v;
+    } catch (const exception&amp;) {
+        throw BankException("'" + s + "' is not a valid number");
+    }
+}
+
+void printMenu() {
+    cout &lt;&lt; "\n--- Bank Menu ---\n"
+         &lt;&lt; " 1. Create Account\n 2. Deposit\n 3. Withdraw\n 4. Transfer\n"
+         &lt;&lt; " 5. View Statement\n 6. Save\n 7. Load\n 8. Exit\n";
+}
+
+int main() {
+    const string dataFile = "bank_data.txt";
+    Bank bank;
+
+    if (ifstream(dataFile).good()) {       // auto-load on startup
+        try { bank.load(dataFile); cout &lt;&lt; "Loaded existing data.\n"; }
+        catch (const BankException&amp; e) { cout &lt;&lt; e.what() &lt;&lt; " (starting empty)\n"; }
+    }
+
+    try {
+        bool running = true;
+        while (running) {
+            printMenu();
+            string choice = ask("Choose an option: ");
+            try {
+                if (choice == "2") {
+                    string id = ask("Account id: ");
+                    double amt = askNumber("Amount to deposit: ");
+                    auto acc = bank.getAccount(id);
+                    acc-&gt;deposit(amt);
+                    cout &lt;&lt; "New balance: " &lt;&lt; money(acc-&gt;balance()) &lt;&lt; '\n';
+                }
+                // ... options 1, 3-7 follow the same pattern ...
+                else if (choice == "8") running = false;
+                else cout &lt;&lt; "Please enter a number from 1 to 8.\n";
+            } catch (const InsufficientFundsException&amp; e) {
+                cout &lt;&lt; "Declined: " &lt;&lt; e.what() &lt;&lt; '\n';
+            } catch (const BankException&amp; e) {
+                cout &lt;&lt; "Error: " &lt;&lt; e.what() &lt;&lt; '\n';
+            }
+        }
+    } catch (const InputClosed&amp;) {
+        cout &lt;&lt; "\nInput closed.\n";
+    }
+    cout &lt;&lt; "Goodbye!\n";
+}</code></pre>
+    <p>The complete set of menu branches is on the <a href="solution.html">Solution</a> page.</p>
+    <div class="callout warn">
+      <strong>Pitfall — mixing <code>cin &gt;&gt;</code> and <code>getline</code></strong>
+      After <code>cin &gt;&gt; x</code> a newline remains in the buffer, and the next <code>getline</code> returns an empty string.
+      Using <code>getline</code> for <em>every</em> prompt (as <code>ask()</code> does) avoids the problem entirely.
+    </div>
+    <h2 id="step10">Step 10 — Add Modern C++ Polish</h2>
+    <p>
+      With the program working, refine it using the tools from Chapters 9, 11, and 15. The reference solution already uses
+      most of these; here they are in isolation so you can see what each one buys you.
+    </p>
+    <h3>10a. A function template with a concept and a lambda formatter (Ch 9, 15)</h3>
+    <p>
+      One generic printer replaces separate "print accounts" and "print transactions" loops. The caller supplies a lambda that
+      turns an element into text, and <code>ranges::input_range</code> restricts the template to real containers.
+    </p>
+<pre><code>template &lt;ranges::input_range R, typename Formatter&gt;
+void printAll(const string&amp; title, const R&amp; items, Formatter fmt) {
+    cout &lt;&lt; "\n=== " &lt;&lt; title &lt;&lt; " ===\n";
+    if (ranges::empty(items)) {
+        cout &lt;&lt; "  (none)\n";
+        return;
+    }
+    for (const auto&amp; item : items) cout &lt;&lt; "  " &lt;&lt; fmt(item) &lt;&lt; '\n';
+}
+
+// Inside Bank — works with a map (pairs) ...
+void listAccounts() const {
+    printAll("Accounts", accounts_, [this](const auto&amp; kv) {
+        const Account&amp; a = *kv.second;
+        return a.id() + "  " + a.typeName() + "  owner=" +
+               customers_.at(a.ownerId()).name() + "  balance=" + money(a.balance());
+    });
+}
+
+// ... and with a vector&lt;Transaction&gt; (inside printStatement)
+printAll("Transactions", acc-&gt;history(), [](const Transaction&amp; t) {
+    ostringstream os;
+    os &lt;&lt; '#' &lt;&lt; setw(3) &lt;&lt; left &lt;&lt; t.id &lt;&lt; setw(11) &lt;&lt; toString(t.type)
+       &lt;&lt; right &lt;&lt; setw(10) &lt;&lt; money(t.amount) &lt;&lt; "  balance " &lt;&lt; setw(10)
+       &lt;&lt; money(t.balanceAfter) &lt;&lt; "  " &lt;&lt; t.note;
+    return os.str();
+});</code></pre>
+    <h3>10b. <code>std::optional</code>, <code>auto</code>, and <code>ranges::find_if</code> (Ch 15)</h3>
+    <p>
+      <code>findCustomer()</code> (Step 6) returns <code>optional&lt;int&gt;</code> — "an ID, or nothing" — instead of a magic
+      value such as <code>-1</code>. The <code>if (auto existing = …)</code> form declares and tests it in one line. Remember that
+      <code>optional</code> also offers <code>value_or()</code> and <code>has_value()</code>.
+    </p>
+    <h3>10c. Sorting with a lambda (Ch 11, 15)</h3>
+    <p>As a bonus, a "richest accounts first" report (add as a <code>Bank</code> method):</p>
+<pre><code>void printRichest() const {
+    vector&lt;shared_ptr&lt;Account&gt;&gt; sorted;
+    for (const auto&amp; [id, acc] : accounts_) sorted.push_back(acc);   // structured bindings
+
+    ranges::sort(sorted, [](const auto&amp; a, const auto&amp; b) {
+        return a-&gt;balance() &gt; b-&gt;balance();                          // descending
+    });
+
+    printAll("Accounts by balance", sorted, [](const auto&amp; a) {
+        return a-&gt;id() + "  " + money(a-&gt;balance());
+    });
+}</code></pre>
+    <h3>Final checklist</h3>
+    <ul>
+      <li>Compiles cleanly: <code>g++ -std=c++20 -Wall -Wextra -o bank bank.cpp</code></li>
+      <li>No raw <code>new</code> / <code>delete</code> anywhere.</li>
+      <li>Every error path throws a <code>BankException</code> subclass; <code>main()</code> never terminates on bad input.</li>
+      <li>Save, restart, and view a statement — the history matches what you had before.</li>
+      <li>Large objects are passed by <code>const&amp;</code>; getters are <code>const</code>.</li>
+    </ul>
+
+
+    <div style="display:flex;justify-content:space-between;margin-top:2rem;gap:.75rem;">
+      <a href="index.html" class="btn btn-outline" style="text-decoration:none;">← Brief</a>
+      <a href="solution.html" class="btn" style="text-decoration:none;">Next: Solution →</a>
+    </div>
+
+  </div>
+</main>
+</div>
+<footer id="site-footer">
+  &copy; 2024 <a href="https://linkedin.com/in/adityabhuyan" target="_blank" rel="noopener">Aditya Pratap Bhuyan</a> &nbsp;|&nbsp;
+  <a href="https://github.com/aditya-bhuyan/cpp-learning-hub" target="_blank" rel="noopener">GitHub</a> &nbsp;|&nbsp;
+  GNU GPL v3 License
+</footer>
+<script src="/assets/js/nav.js"></script>
+</body>

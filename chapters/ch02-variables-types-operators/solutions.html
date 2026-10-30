@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ch 02 Solutions — Variables, Types &amp; Operators | C++ Learning Hub</title>
+  <link rel="stylesheet" href="/assets/css/style.css" />
+</head>
+<body>
+<header id="site-header">
+  <button id="hamburger" aria-label="Toggle navigation">&#9776;</button>
+  <div id="site-logo">C++ Learning Hub <span class="badge">FREE</span></div>
+  <button id="theme-toggle">☾ Dark</button>
+</header>
+<div id="layout">
+<aside id="sidebar"><nav>
+  <div class="nav-section-title">C++ Learning Hub</div>
+  <div class="nav-chapter" data-chapter="home"><div class="nav-chapter-header"><span>🏠 Home</span></div><div class="nav-chapter-links"><a href="/index.html">Overview</a></div></div>
+  <div class="nav-section-title">Chapters</div>
+  <div class="nav-chapter" data-chapter="ch01"><div class="nav-chapter-header"><span><span class="ch-num">01</span>Introduction to C++</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch01-introduction/index.html"><span class="link-icon">📖</span>Learning</a></div></div>
+  <div class="nav-chapter" data-chapter="ch02"><div class="nav-chapter-header"><span><span class="ch-num">02</span>Variables, Types &amp; Operators</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="index.html"><span class="link-icon">📖</span>Learning</a><a href="examples.html"><span class="link-icon">💻</span>Examples</a><a href="exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="solutions.html" class="active"><span class="link-icon">✅</span>Solutions</a><a href="quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch03"><div class="nav-chapter-header"><span><span class="ch-num">03</span>Control Flow</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch03-control-flow/index.html"><span class="link-icon">📖</span>Learning</a></div></div>
+  <div class="nav-chapter" data-chapter="ch04"><div class="nav-chapter-header"><span><span class="ch-num">04</span>Functions</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch04-functions/index.html"><span class="link-icon">📖</span>Learning</a></div></div>
+  <div class="nav-chapter" data-chapter="ch05"><div class="nav-chapter-header"><span><span class="ch-num">05</span>Arrays &amp; Strings</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch05-arrays-strings/index.html"><span class="link-icon">📖</span>Learning</a></div></div>
+  <div class="nav-chapter" data-chapter="ch06"><div class="nav-chapter-header"><span><span class="ch-num">06</span>Pointers &amp; References</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch06-pointers-references/index.html"><span class="link-icon">📖</span>Learning</a></div></div>
+  <div class="nav-chapter" data-chapter="ch07"><div class="nav-chapter-header"><span><span class="ch-num">07</span>OOP — Basics</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch07-oop-basics/index.html"><span class="link-icon">📖</span>Learning</a></div></div>
+  <div class="nav-chapter" data-chapter="ch08"><div class="nav-chapter-header"><span><span class="ch-num">08</span>OOP — Inheritance &amp; Polymorphism</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch08-oop-inheritance/index.html"><span class="link-icon">📖</span>Learning</a></div></div>
+  <div class="nav-chapter" data-chapter="ch09"><div class="nav-chapter-header"><span><span class="ch-num">09</span>Templates</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch09-templates/index.html"><span class="link-icon">📖</span>Learning</a></div></div>
+  <div class="nav-chapter" data-chapter="ch10"><div class="nav-chapter-header"><span><span class="ch-num">10</span>STL — Containers</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch10-stl-containers/index.html"><span class="link-icon">📖</span>Learning</a></div></div>
+  <div class="nav-chapter" data-chapter="ch11"><div class="nav-chapter-header"><span><span class="ch-num">11</span>STL — Algorithms</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch11-stl-algorithms/index.html"><span class="link-icon">📖</span>Learning</a></div></div>
+  <div class="nav-chapter" data-chapter="ch12"><div class="nav-chapter-header"><span><span class="ch-num">12</span>Memory Management</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch12-memory-management/index.html"><span class="link-icon">📖</span>Learning</a></div></div>
+  <div class="nav-chapter" data-chapter="ch13"><div class="nav-chapter-header"><span><span class="ch-num">13</span>Exception Handling</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch13-exception-handling/index.html"><span class="link-icon">📖</span>Learning</a></div></div>
+  <div class="nav-chapter" data-chapter="ch14"><div class="nav-chapter-header"><span><span class="ch-num">14</span>File I/O</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch14-file-io/index.html"><span class="link-icon">📖</span>Learning</a></div></div>
+  <div class="nav-chapter" data-chapter="ch15"><div class="nav-chapter-header"><span><span class="ch-num">15</span>Modern C++</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch15-modern-cpp/index.html"><span class="link-icon">📖</span>Learning</a></div></div>
+  <div class="nav-section-title">Capstone</div>
+  <div class="nav-chapter" data-chapter="ch16"><div class="nav-chapter-header"><span><span class="ch-num">16</span>Capstone Project</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch16-capstone/index.html"><span class="link-icon">🎯</span>Brief</a></div></div>
+  <div class="nav-section-title">About</div>
+  <div style="padding:.4rem 1.1rem 1rem;font-size:.78rem;color:var(--muted);line-height:1.5;">Maintained by<br><a href="https://linkedin.com/in/adityabhuyan" target="_blank" rel="noopener">Aditya Pratap Bhuyan</a><br><span style="font-size:.72rem;">GNU GPL v3 License</span></div>
+</nav></aside>
+
+<main id="main">
+  <div class="page-header">
+    <div class="breadcrumb"><a href="/index.html">Home</a> › <a href="index.html">Chapter 02</a> › Solutions</div>
+    <h1>Chapter 02 — Solutions</h1>
+    <p class="subtitle">Reference solutions with explanations. Only read after attempting the exercises yourself.</p>
+    <div class="chapter-tabs">
+      <a href="index.html">📖 Learning</a>
+      <a href="examples.html">💻 Examples</a>
+      <a href="exercises.html">✏️ Exercises</a>
+      <a href="solutions.html" class="active">✅ Solutions</a>
+      <a href="quiz.html">🧠 Quiz</a>
+    </div>
+  </div>
+
+  <div class="content">
+
+    <div class="callout warn">
+      <strong>Spoiler Warning</strong>
+      These are reference solutions. There are often multiple valid approaches — if your output matches
+      but your code differs, that is perfectly fine.
+    </div>
+
+    <!-- Solution 1 -->
+    <div class="solution-card">
+      <div class="card-header">✅ Solution 1 — Sizes of the Primitive Types</div>
+      <div class="card-body">
+        <p>Passing the <em>variable</em> to <code>sizeof</code> (rather than the type name) keeps the reported size in sync if you later change the declared type. <code>std::setw</code> pads each column to a fixed width and <code>std::left</code> left-aligns it. Sizes shown are for a typical 64-bit Linux/macOS system; on 64-bit Windows <code>long</code> is 4 bytes.</p>
+<pre><code>// solution_02_sizeof.cpp
+#include &lt;iostream&gt;
+#include &lt;iomanip&gt;
+#include &lt;string&gt;    // std::string(40, '-')
+using namespace std;
+
+int main() {
+    // One variable of each primitive type, all initialized
+    bool        flag   = true;
+    char        letter = 'C';
+    short       s      = 1000;
+    int         i      = 42;
+    long        l      = 100000L;
+    long long   ll     = 10000000000LL;
+    float       f      = 3.14f;
+    double      d      = 2.718281828;
+    long double ld     = 1.41421356237L;
+    unsigned int u     = 4000000000u;
+
+    cout &lt;&lt; left &lt;&lt; setw(16) &lt;&lt; "Type"  &lt;&lt; setw(10) &lt;&lt; "Bytes" &lt;&lt; "Value\n";
+    cout &lt;&lt; string(40, '-') &lt;&lt; '\n';
+
+    // sizeof can take the variable itself, so the size always matches its declared type
+    cout &lt;&lt; setw(16) &lt;&lt; "bool"         &lt;&lt; setw(10) &lt;&lt; sizeof(flag)   &lt;&lt; boolalpha &lt;&lt; flag &lt;&lt; '\n';
+    cout &lt;&lt; setw(16) &lt;&lt; "char"         &lt;&lt; setw(10) &lt;&lt; sizeof(letter) &lt;&lt; letter &lt;&lt; '\n';
+    cout &lt;&lt; setw(16) &lt;&lt; "short"        &lt;&lt; setw(10) &lt;&lt; sizeof(s)      &lt;&lt; s &lt;&lt; '\n';
+    cout &lt;&lt; setw(16) &lt;&lt; "int"          &lt;&lt; setw(10) &lt;&lt; sizeof(i)      &lt;&lt; i &lt;&lt; '\n';
+    cout &lt;&lt; setw(16) &lt;&lt; "long"         &lt;&lt; setw(10) &lt;&lt; sizeof(l)      &lt;&lt; l &lt;&lt; '\n';
+    cout &lt;&lt; setw(16) &lt;&lt; "long long"    &lt;&lt; setw(10) &lt;&lt; sizeof(ll)     &lt;&lt; ll &lt;&lt; '\n';
+    cout &lt;&lt; setw(16) &lt;&lt; "float"        &lt;&lt; setw(10) &lt;&lt; sizeof(f)      &lt;&lt; f &lt;&lt; '\n';
+    cout &lt;&lt; setw(16) &lt;&lt; "double"       &lt;&lt; setw(10) &lt;&lt; sizeof(d)      &lt;&lt; d &lt;&lt; '\n';
+    cout &lt;&lt; setw(16) &lt;&lt; "long double"  &lt;&lt; setw(10) &lt;&lt; sizeof(ld)     &lt;&lt; ld &lt;&lt; '\n';
+    cout &lt;&lt; setw(16) &lt;&lt; "unsigned int" &lt;&lt; setw(10) &lt;&lt; sizeof(u)      &lt;&lt; u &lt;&lt; '\n';
+
+    return 0;
+}</code></pre>
+        <p><strong>Sample output:</strong></p>
+<pre><code>Type            Bytes     Value
+----------------------------------------
+bool            1         true
+char            1         C
+short           2         1000
+int             4         42
+long            8         100000
+long long       8         10000000000
+float           4         3.14
+double          8         2.71828
+long double     8         1.41421
+unsigned int    4         4000000000</code></pre>
+        
+        <p><strong>Key concepts used:</strong> <code>sizeof</code>, <code>&lt;iomanip&gt;</code> formatting, <code>boolalpha</code>, variable initialization.</p>
+      </div>
+    </div>
+
+    <!-- Solution 2 -->
+    <div class="solution-card">
+      <div class="card-header">✅ Solution 2 — Swap Two Numbers Using XOR</div>
+      <div class="card-body">
+        <p>XOR has two useful properties: <code>x ^ x = 0</code> and <code>x ^ 0 = x</code>. Let the originals be A and B:</p>
+<pre><code>// solution_02_xor_swap.cpp
+#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int a, b;
+    cout &lt;&lt; "Enter two integers: ";
+    cin &gt;&gt; a &gt;&gt; b;
+    cout &lt;&lt; "Before: a = " &lt;&lt; a &lt;&lt; ", b = " &lt;&lt; b &lt;&lt; '\n';
+
+    // Three XORs swap the values with no temporary variable.
+    // This is safe even if the VALUES are equal; it only fails if a and b are the SAME variable.
+    a ^= b;   // a now holds a XOR b
+    b ^= a;   // b = b XOR (a XOR b) = original a
+    a ^= b;   // a = (a XOR b) XOR original a = original b
+
+    cout &lt;&lt; "After : a = " &lt;&lt; a &lt;&lt; ", b = " &lt;&lt; b &lt;&lt; '\n';
+    return 0;
+}</code></pre>
+        <p><strong>Sample output:</strong></p>
+<pre><code>Enter two integers: Before: a = 17, b = 42
+After : a = 42, b = 17</code></pre>
+        <table>
+          <thead><tr><th>Statement</th><th>a</th><th>b</th></tr></thead>
+          <tbody>
+            <tr><td>start</td><td>A</td><td>B</td></tr>
+            <tr><td><code>a ^= b;</code></td><td>A ^ B</td><td>B</td></tr>
+            <tr><td><code>b ^= a;</code></td><td>A ^ B</td><td>B ^ (A ^ B) = A</td></tr>
+            <tr><td><code>a ^= b;</code></td><td>(A ^ B) ^ A = B</td><td>A</td></tr>
+          </tbody>
+        </table>
+        <div class="callout warn">
+          <strong>Do not use this trick in production</strong>
+          <code>std::swap(a, b)</code> is clearer and just as fast on modern compilers. The XOR swap also fails when both operands are the <em>same</em> object (e.g. <code>swapXor(arr[i], arr[i])</code> through references), because <code>a ^= a</code> sets it to 0.
+        </div>
+        <p><strong>Key concepts used:</strong> <code>^</code> and <code>^=</code>, <code>cin</code> chaining.</p>
+      </div>
+    </div>
+
+    <!-- Solution 3 -->
+    <div class="solution-card">
+      <div class="card-header">✅ Solution 3 — Even or Odd with Bitwise AND</div>
+      <div class="card-body">
+        <p>In binary, an integer's lowest bit carries the value 2<sup>0</sup> = 1; every other bit is a multiple of 2. So the number is odd exactly when that bit is set, and <code>n &amp; 1</code> isolates it. This also works for negative numbers on two's-complement machines (e.g. <code>-3</code> is <code>...11111101</code>, whose lowest bit is 1).</p>
+<pre><code>// solution_02_even_odd.cpp
+#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int n;
+    cout &lt;&lt; "Enter an integer: ";
+    cin &gt;&gt; n;
+
+    // The lowest bit of an odd number is 1; of an even number it is 0.
+    // Parentheses are REQUIRED: == binds tighter than &amp;.
+    if ((n &amp; 1) == 0) {
+        cout &lt;&lt; n &lt;&lt; " is even\n";
+    } else {
+        cout &lt;&lt; n &lt;&lt; " is odd\n";
+    }
+    return 0;
+}</code></pre>
+        <p><strong>Sample output:</strong></p>
+<pre><code>Enter an integer: 7 is odd
+Enter an integer: 10 is even</code></pre>
+        <div class="callout tip">
+          <strong>Why the parentheses matter</strong>
+          Without them, <code>n &amp; 1 == 0</code> parses as <code>n &amp; (1 == 0)</code>, i.e. <code>n &amp; 0</code>, which is always 0 — so every number would be reported as even.
+        </div>
+        <p><strong>Key concepts used:</strong> bitwise <code>&amp;</code>, operator precedence (parentheses around <code>n &amp; 1</code>), <code>if/else</code>.</p>
+      </div>
+    </div>
+
+    <!-- Solution 4 -->
+    <div class="solution-card">
+      <div class="card-header">✅ Solution 4 — Binary Representation of an 8-Bit Number</div>
+      <div class="card-body">
+        <p>To read bit <em>k</em> of a number, shift it right by <em>k</em> so that the wanted bit lands in position 0, then mask with <code>&amp; 1</code>. Looping <em>k</em> from 7 down to 0 prints the most significant bit first. Because <code>cout</code> would print an <code>unsigned char</code> as a character, <code>value + 0</code> promotes it to <code>int</code> for the numeric label.</p>
+<pre><code>// solution_02_binary.cpp
+#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int input;
+    cout &lt;&lt; "Enter a number (0-255): ";
+    cin &gt;&gt; input;
+
+    if (input &lt; 0 || input &gt; 255) {
+        cout &lt;&lt; "Number out of range for 8 bits.\n";
+        return 1;
+    }
+
+    unsigned char value = static_cast&lt;unsigned char&gt;(input);
+
+    cout &lt;&lt; value + 0 &lt;&lt; " in binary: ";   // value + 0 promotes to int so it prints as a number
+    // Visit bits from the most significant (7) down to the least significant (0)
+    for (int bit = 7; bit &gt;= 0; --bit) {
+        cout &lt;&lt; ((value &gt;&gt; bit) &amp; 1);      // shift the wanted bit to position 0, mask the rest
+        if (bit == 4) cout &lt;&lt; ' ';         // nibble separator for readability
+    }
+    cout &lt;&lt; '\n';
+    return 0;
+}</code></pre>
+        <p><strong>Sample output:</strong></p>
+<pre><code>Enter a number (0-255): 165 in binary: 1010 0101
+Enter a number (0-255): 5 in binary: 0000 0101</code></pre>
+        <p>Trace for 165 (<code>10100101</code>):</p>
+        <table>
+          <thead><tr><th>bit</th><th>7</th><th>6</th><th>5</th><th>4</th><th>3</th><th>2</th><th>1</th><th>0</th></tr></thead>
+          <tbody><tr><td><code>(165 &gt;&gt; bit) &amp; 1</code></td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td></tr></tbody>
+        </table>
+        <p><strong>Check:</strong> <code>std::cout &lt;&lt; std::bitset&lt;8&gt;(165);</code> prints the same digits <code>10100101</code>.</p>
+        <p><strong>Key concepts used:</strong> <code>&gt;&gt;</code> and <code>&amp;</code>, <code>static_cast</code>, <code>for</code> loop counting down, input validation.</p>
+      </div>
+    </div>
+
+    <!-- Solution 5 -->
+    <div class="solution-card">
+      <div class="card-header">✅ Solution 5 — Temperature Conversion Table</div>
+      <div class="card-body">
+        <p>The loop variable is an <code>int</code> that steps from -40 to 100 by 10. The formula is evaluated as <code>c * 9.0 / 5.0 + 32.0</code>: because <code>9.0</code> is a <code>double</code>, the whole expression is floating-point. Writing <code>c * (9 / 5)</code> would compute <code>9 / 5 = 1</code> first and produce wrong results. <code>std::fixed</code> with <code>std::setprecision(1)</code> forces exactly one decimal digit.</p>
+<pre><code>// solution_02_temperature.cpp
+#include &lt;iostream&gt;
+#include &lt;iomanip&gt;
+using namespace std;
+
+int main() {
+    cout &lt;&lt; " Celsius | Fahrenheit\n";
+    cout &lt;&lt; "---------+-----------\n";
+    cout &lt;&lt; fixed &lt;&lt; setprecision(1);
+
+    for (int c = -40; c &lt;= 100; c += 10) {
+        // 9.0 / 5 is floating point; plain 9 / 5 would be integer division = 1
+        double f = c * 9.0 / 5.0 + 32.0;
+        cout &lt;&lt; setw(8) &lt;&lt; c &lt;&lt; " | " &lt;&lt; setw(9) &lt;&lt; f &lt;&lt; '\n';
+    }
+    return 0;
+}</code></pre>
+        <p><strong>Sample output:</strong></p>
+<pre><code> Celsius | Fahrenheit
+---------+-----------
+     -40 |     -40.0
+     -30 |     -22.0
+     -20 |      -4.0
+     -10 |      14.0
+       0 |      32.0
+      10 |      50.0
+      20 |      68.0
+      30 |      86.0
+      40 |     104.0
+      50 |     122.0
+      60 |     140.0
+      70 |     158.0
+      80 |     176.0
+      90 |     194.0
+     100 |     212.0</code></pre>
+        <p>Sanity checks: -40 maps to -40 (the temperatures where both scales agree), 0°C is 32°F and 100°C is 212°F.</p>
+        <p><strong>Key concepts used:</strong> <code>for</code> loop with <code>+=</code>, floating-point arithmetic, integer-division avoidance, <code>setw</code>/<code>fixed</code>/<code>setprecision</code>.</p>
+      </div>
+    </div>
+
+    <div style="display:flex;justify-content:space-between;margin-top:2rem;">
+      <a href="exercises.html" class="btn btn-outline" style="text-decoration:none;">← Exercises</a>
+      <a href="quiz.html" class="btn" style="text-decoration:none;">Take the Quiz →</a>
+    </div>
+
+  </div>
+</main>
+</div>
+<footer id="site-footer">
+  &copy; 2024 <a href="https://linkedin.com/in/adityabhuyan" target="_blank" rel="noopener">Aditya Pratap Bhuyan</a> &nbsp;|&nbsp;
+  <a href="https://github.com/aditya-bhuyan/cpp-learning-hub" target="_blank" rel="noopener">GitHub</a> &nbsp;|&nbsp;
+  GNU GPL v3 License
+</footer>
+<script src="/assets/js/nav.js"></script>
+</body>
+</html>

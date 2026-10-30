@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ch 02 — Variables, Types &amp; Operators | C++ Learning Hub</title>
+  <link rel="stylesheet" href="/assets/css/style.css" />
+</head>
+<body>
+<header id="site-header">
+  <button id="hamburger" aria-label="Toggle navigation">&#9776;</button>
+  <div id="site-logo">C++ Learning Hub <span class="badge">FREE</span></div>
+  <button id="theme-toggle">☾ Dark</button>
+</header>
+<div id="layout">
+<aside id="sidebar"><nav>
+  <div class="nav-section-title">C++ Learning Hub</div>
+  <div class="nav-chapter" data-chapter="home"><div class="nav-chapter-header"><span>🏠 Home</span></div><div class="nav-chapter-links"><a href="/index.html">Overview</a></div></div>
+  <div class="nav-section-title">Chapters</div>
+  <div class="nav-chapter" data-chapter="ch01"><div class="nav-chapter-header"><span><span class="ch-num">01</span>Introduction to C++</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch01-introduction/index.html"><span class="link-icon">📖</span>Learning</a></div></div>
+  <div class="nav-chapter" data-chapter="ch02"><div class="nav-chapter-header"><span><span class="ch-num">02</span>Variables, Types &amp; Operators</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="index.html" class="active"><span class="link-icon">📖</span>Learning</a><a href="examples.html"><span class="link-icon">💻</span>Examples</a><a href="exercises.html"><span class="link-icon">✏️</span>Exercises</a><a href="solutions.html"><span class="link-icon">✅</span>Solutions</a><a href="quiz.html"><span class="link-icon">🧠</span>Quiz</a></div></div>
+  <div class="nav-chapter" data-chapter="ch03"><div class="nav-chapter-header"><span><span class="ch-num">03</span>Control Flow</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch03-control-flow/index.html"><span class="link-icon">📖</span>Learning</a></div></div>
+  <div class="nav-chapter" data-chapter="ch04"><div class="nav-chapter-header"><span><span class="ch-num">04</span>Functions</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch04-functions/index.html"><span class="link-icon">📖</span>Learning</a></div></div>
+  <div class="nav-chapter" data-chapter="ch05"><div class="nav-chapter-header"><span><span class="ch-num">05</span>Arrays &amp; Strings</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch05-arrays-strings/index.html"><span class="link-icon">📖</span>Learning</a></div></div>
+  <div class="nav-chapter" data-chapter="ch06"><div class="nav-chapter-header"><span><span class="ch-num">06</span>Pointers &amp; References</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch06-pointers-references/index.html"><span class="link-icon">📖</span>Learning</a></div></div>
+  <div class="nav-chapter" data-chapter="ch07"><div class="nav-chapter-header"><span><span class="ch-num">07</span>OOP — Basics</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch07-oop-basics/index.html"><span class="link-icon">📖</span>Learning</a></div></div>
+  <div class="nav-chapter" data-chapter="ch08"><div class="nav-chapter-header"><span><span class="ch-num">08</span>OOP — Inheritance &amp; Polymorphism</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch08-oop-inheritance/index.html"><span class="link-icon">📖</span>Learning</a></div></div>
+  <div class="nav-chapter" data-chapter="ch09"><div class="nav-chapter-header"><span><span class="ch-num">09</span>Templates</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch09-templates/index.html"><span class="link-icon">📖</span>Learning</a></div></div>
+  <div class="nav-chapter" data-chapter="ch10"><div class="nav-chapter-header"><span><span class="ch-num">10</span>STL — Containers</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch10-stl-containers/index.html"><span class="link-icon">📖</span>Learning</a></div></div>
+  <div class="nav-chapter" data-chapter="ch11"><div class="nav-chapter-header"><span><span class="ch-num">11</span>STL — Algorithms</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch11-stl-algorithms/index.html"><span class="link-icon">📖</span>Learning</a></div></div>
+  <div class="nav-chapter" data-chapter="ch12"><div class="nav-chapter-header"><span><span class="ch-num">12</span>Memory Management</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch12-memory-management/index.html"><span class="link-icon">📖</span>Learning</a></div></div>
+  <div class="nav-chapter" data-chapter="ch13"><div class="nav-chapter-header"><span><span class="ch-num">13</span>Exception Handling</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch13-exception-handling/index.html"><span class="link-icon">📖</span>Learning</a></div></div>
+  <div class="nav-chapter" data-chapter="ch14"><div class="nav-chapter-header"><span><span class="ch-num">14</span>File I/O</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch14-file-io/index.html"><span class="link-icon">📖</span>Learning</a></div></div>
+  <div class="nav-chapter" data-chapter="ch15"><div class="nav-chapter-header"><span><span class="ch-num">15</span>Modern C++</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch15-modern-cpp/index.html"><span class="link-icon">📖</span>Learning</a></div></div>
+  <div class="nav-section-title">Capstone</div>
+  <div class="nav-chapter" data-chapter="ch16"><div class="nav-chapter-header"><span><span class="ch-num">16</span>Capstone Project</span><span class="caret">▶</span></div><div class="nav-chapter-links"><a href="/chapters/ch16-capstone/index.html"><span class="link-icon">🎯</span>Brief</a></div></div>
+  <div class="nav-section-title">About</div>
+  <div style="padding:.4rem 1.1rem 1rem;font-size:.78rem;color:var(--muted);line-height:1.5;">Maintained by<br><a href="https://linkedin.com/in/adityabhuyan" target="_blank" rel="noopener">Aditya Pratap Bhuyan</a><br><span style="font-size:.72rem;">GNU GPL v3 License</span></div>
+</nav></aside>
+
+<main id="main">
+  <div class="page-header">
+    <div class="breadcrumb"><a href="/index.html">Home</a> › Chapter 02</div>
+    <h1>Chapter 02 — Variables, Types &amp; Operators</h1>
+    <p class="subtitle">How C++ stores data, converts between types, and combines values with operators.</p>
+    <div class="chapter-tabs">
+      <a href="index.html" class="active">📖 Learning</a>
+      <a href="examples.html">💻 Examples</a>
+      <a href="exercises.html">✏️ Exercises</a>
+      <a href="solutions.html">✅ Solutions</a>
+      <a href="quiz.html">🧠 Quiz</a>
+    </div>
+  </div>
+
+  <div class="content">
+
+    <h2>2.1 Fundamental Data Types</h2>
+    <p>
+      C++ is <strong>statically typed</strong>: every variable has a type that is fixed at compile time. The type
+      determines how much memory the variable occupies, which values it can hold, and which operations are legal.
+      The language provides a small set of built-in <em>fundamental</em> types:
+    </p>
+    <table>
+      <thead><tr><th>Type</th><th>Purpose</th><th>Typical size</th><th>Typical range</th></tr></thead>
+      <tbody>
+        <tr><td><code>bool</code></td><td>Truth value (<code>true</code> / <code>false</code>)</td><td>1 byte</td><td><code>false</code> or <code>true</code></td></tr>
+        <tr><td><code>char</code></td><td>A single character / small integer</td><td>1 byte</td><td>-128 to 127 (or 0 to 255)</td></tr>
+        <tr><td><code>short</code></td><td>Small integer</td><td>2 bytes</td><td>-32,768 to 32,767</td></tr>
+        <tr><td><code>int</code></td><td>Default integer type</td><td>4 bytes</td><td>-2,147,483,648 to 2,147,483,647</td></tr>
+        <tr><td><code>long</code></td><td>Larger integer</td><td>4 bytes (Windows) / 8 bytes (Linux, macOS)</td><td>at least 32 bits</td></tr>
+        <tr><td><code>long long</code></td><td>64-bit integer (C++11)</td><td>8 bytes</td><td>about ±9.22 × 10<sup>18</sup></td></tr>
+        <tr><td><code>float</code></td><td>Single-precision floating point</td><td>4 bytes</td><td>about 6–7 significant digits</td></tr>
+        <tr><td><code>double</code></td><td>Double-precision floating point</td><td>8 bytes</td><td>about 15–16 significant digits</td></tr>
+        <tr><td><code>long double</code></td><td>Extended precision</td><td>8, 12 or 16 bytes</td><td>platform dependent</td></tr>
+        <tr><td><code>void</code></td><td>"No type" — no value</td><td>cannot be instantiated</td><td>—</td></tr>
+      </tbody>
+    </table>
+
+    <div class="callout warn">
+      <strong>Sizes are not fixed by the standard</strong>
+      The C++ standard only guarantees minimums and the ordering
+      <code>sizeof(char) ≤ sizeof(short) ≤ sizeof(int) ≤ sizeof(long) ≤ sizeof(long long)</code>.
+      The numbers in this chapter describe typical 64-bit desktop systems. When you need an exact width,
+      use the fixed-width types from <code>&lt;cstdint&gt;</code> such as <code>int32_t</code> and <code>uint64_t</code>.
+    </div>
+
+    <h3>Integer types</h3>
+<pre><code>int      age     = 30;            // everyday whole numbers
+short    year    = 2024;          // small range, saves memory in big arrays
+long     pop     = 8000000000L;   // suffix L marks a long literal
+long long huge   = 9000000000000LL;
+
+char     grade   = 'A';           // single quotes: one character
+std::cout &lt;&lt; grade &lt;&lt; " has code " &lt;&lt; static_cast&lt;int&gt;(grade);   // A has code 65</code></pre>
+
+    <h3>Floating-point types</h3>
+<pre><code>float  f = 3.14159f;     // suffix f: float literal (without it the literal is a double)
+double d = 3.141592653589793;
+double sci = 6.022e23;   // scientific notation: 6.022 × 10^23
+
+std::cout &lt;&lt; (0.1 + 0.2 == 0.3);   // prints 0 (false!) - binary floating point is approximate</code></pre>
+
+    <div class="callout tip">
+      <strong>Tip — never compare floating-point numbers with ==</strong>
+      Values such as 0.1 cannot be represented exactly in binary. Compare with a tolerance instead:
+      <code>std::abs(a - b) &lt; 1e-9</code>. Prefer <code>double</code> over <code>float</code> unless memory or
+      GPU data layout forces your hand.
+    </div>
+
+    <h3>bool and void</h3>
+<pre><code>bool isReady = true;
+bool hasError = false;
+std::cout &lt;&lt; isReady;                      // prints 1
+std::cout &lt;&lt; std::boolalpha &lt;&lt; isReady;    // prints true
+
+int  x = 5;
+bool nonZero = x;      // any non-zero value converts to true; 0 converts to false
+
+void log(const std::string&amp; msg);   // void as a return type: the function returns nothing
+// void v;             // ERROR: you cannot declare a variable of type void</code></pre>
+    <p>
+      <code>void</code> appears in two main roles: as a function return type meaning "returns nothing", and in
+      <code>void*</code>, a generic pointer type you will meet in Chapter 06.
+    </p>
+
+    <h2>2.2 The <code>sizeof</code> Operator</h2>
+    <p>
+      <code>sizeof</code> yields the size in <strong>bytes</strong> of a type or of an expression's type, as a value of
+      type <code>std::size_t</code> (an unsigned integer). It is evaluated at compile time and never evaluates its operand.
+    </p>
+<pre><code>#include &lt;iostream&gt;
+int main() {
+    std::cout &lt;&lt; sizeof(int)         &lt;&lt; '\n';   // 4
+    std::cout &lt;&lt; sizeof(double)      &lt;&lt; '\n';   // 8
+    std::cout &lt;&lt; sizeof(char)        &lt;&lt; '\n';   // 1 (always, by definition)
+
+    int n = 10;
+    std::cout &lt;&lt; sizeof n            &lt;&lt; '\n';   // 4 - parentheses optional for expressions
+    int arr[10];
+    std::cout &lt;&lt; sizeof(arr)         &lt;&lt; '\n';   // 40 = 10 elements × 4 bytes
+    std::cout &lt;&lt; sizeof(arr) / sizeof(arr[0]) &lt;&lt; '\n';   // 10 = element count
+}</code></pre>
+    <table>
+      <thead><tr><th>Memory unit</th><th>Value</th></tr></thead>
+      <tbody>
+        <tr><td>1 byte</td><td>8 bits (<code>CHAR_BIT</code> from <code>&lt;climits&gt;</code>)</td></tr>
+        <tr><td>n bits</td><td>can represent 2<sup>n</sup> distinct values</td></tr>
+        <tr><td>32-bit unsigned</td><td>0 … 2<sup>32</sup> − 1 = 4,294,967,295</td></tr>
+        <tr><td>32-bit signed (two's complement)</td><td>−2<sup>31</sup> … 2<sup>31</sup> − 1</td></tr>
+      </tbody>
+    </table>
+    <p>
+      To query exact limits use <code>&lt;limits&gt;</code>:
+      <code>std::numeric_limits&lt;int&gt;::max()</code>, or the C-style macros <code>INT_MAX</code>, <code>UINT_MAX</code>
+      from <code>&lt;climits&gt;</code>.
+    </p>
+
+    <h2>2.3 Declaring and Initializing Variables</h2>
+    <p>A <strong>declaration</strong> introduces a name and a type. A <strong>definition</strong> also reserves storage. An <strong>initialization</strong> gives the variable its first value.</p>
+<pre><code>int a;            // declared, but UNINITIALIZED - holds garbage (undefined behaviour to read)
+int b = 5;        // copy initialization
+int c(5);         // direct initialization
+int d{5};         // brace (uniform) initialization - C++11, preferred
+int e{};          // empty braces: value-initialized to 0
+auto f = 5;       // type deduced from the initializer: int
+auto g = 2.5;     // double
+
+int x = 1, y = 2, z = 3;   // several variables in one declaration</code></pre>
+
+    <div class="callout tip">
+      <strong>Tip — prefer brace initialization</strong>
+      Braces refuse <em>narrowing</em> conversions at compile time:
+      <code>int n{3.7};</code> is an error, whereas <code>int n = 3.7;</code> silently truncates to 3.
+      Always initialize local variables — reading an uninitialized local is undefined behaviour.
+    </div>
+
+    <h3>Literals and suffixes</h3>
+<pre><code>int      dec  = 42;          // decimal
+int      hex  = 0x2A;        // hexadecimal (42)
+int      oct  = 052;         // octal (42) - a leading 0 means octal!
+int      bin  = 0b101010;    // binary literal (C++14) (42)
+int      big  = 1'000'000;   // digit separator (C++14)
+unsigned u    = 42u;         // u  = unsigned
+long long ll  = 42LL;        // LL = long long
+float    f    = 1.5f;        // f  = float
+char     ch   = '\n';        // escape sequences: \n \t \\ \' \" \0</code></pre>
+
+    <h3>Naming rules</h3>
+    <ul>
+      <li>Names may contain letters, digits, and underscores, and <strong>must not start with a digit</strong>.</li>
+      <li>Names are <strong>case-sensitive</strong>: <code>count</code>, <code>Count</code> and <code>COUNT</code> are three different identifiers.</li>
+      <li>Keywords (<code>int</code>, <code>class</code>, <code>return</code>, …) cannot be used as names.</li>
+      <li>Avoid names that begin with an underscore followed by a capital letter, or that contain a double underscore — they are reserved for the implementation.</li>
+      <li>Choose meaningful names (<code>studentCount</code>, not <code>sc</code>) and stick to one convention such as <code>camelCase</code> or <code>snake_case</code>.</li>
+    </ul>
+<pre><code>int  total_score;     // valid
+int  _internal;       // valid (but avoid leading underscores)
+int  2fast;           // ERROR: starts with a digit
+int  my-var;          // ERROR: '-' is the subtraction operator
+int  class;           // ERROR: keyword</code></pre>
+
+    <h2>2.4 Type Modifiers: signed, unsigned, short, long</h2>
+    <p>
+      Modifiers adjust the size or sign of a base integer type. An <strong>unsigned</strong> type spends the sign bit on
+      magnitude, doubling the largest positive value but giving up negative numbers.
+    </p>
+    <table>
+      <thead><tr><th>Declaration</th><th>Equivalent to</th><th>Typical size</th><th>Range</th></tr></thead>
+      <tbody>
+        <tr><td><code>unsigned char</code></td><td>—</td><td>1 byte</td><td>0 to 255</td></tr>
+        <tr><td><code>short</code></td><td><code>signed short int</code></td><td>2 bytes</td><td>-32,768 to 32,767</td></tr>
+        <tr><td><code>unsigned short</code></td><td><code>unsigned short int</code></td><td>2 bytes</td><td>0 to 65,535</td></tr>
+        <tr><td><code>int</code></td><td><code>signed int</code></td><td>4 bytes</td><td>-2,147,483,648 to 2,147,483,647</td></tr>
+        <tr><td><code>unsigned</code></td><td><code>unsigned int</code></td><td>4 bytes</td><td>0 to 4,294,967,295</td></tr>
+        <tr><td><code>long</code></td><td><code>signed long int</code></td><td>4 or 8 bytes</td><td>platform dependent</td></tr>
+        <tr><td><code>unsigned long</code></td><td>—</td><td>4 or 8 bytes</td><td>platform dependent</td></tr>
+        <tr><td><code>long long</code></td><td><code>signed long long int</code></td><td>8 bytes</td><td>±9.22 × 10<sup>18</sup></td></tr>
+        <tr><td><code>unsigned long long</code></td><td>—</td><td>8 bytes</td><td>0 to 1.84 × 10<sup>19</sup></td></tr>
+      </tbody>
+    </table>
+<pre><code>unsigned int  items = 0;
+items = items - 1;            // WRAPS AROUND to 4294967295, no error is reported!
+
+signed char   sc = -5;
+unsigned char uc = 250;
+uc = uc + 10;                 // 260 does not fit: wraps to 4</code></pre>
+    <div class="callout warn">
+      <strong>Overflow rules differ</strong>
+      <strong>Unsigned</strong> overflow is well defined: the value wraps modulo 2<sup>n</sup>.
+      <strong>Signed</strong> overflow (e.g. <code>INT_MAX + 1</code>) is <em>undefined behaviour</em> — the compiler may assume it
+      never happens and produce surprising code. Use a wider type, or check before you add.
+    </div>
+
+    <h2>2.5 Type Conversion (Casting)</h2>
+    <h3>Implicit conversion</h3>
+    <p>The compiler converts automatically when types are mixed in an expression or assignment.</p>
+    <ul>
+      <li><strong>Widening (promotion)</strong> goes to a type that can hold every value of the source: <code>int → long</code>, <code>int → double</code>, <code>char → int</code>. This is safe.</li>
+      <li><strong>Narrowing</strong> goes to a type that may be unable to hold the value: <code>double → int</code> (fraction discarded), <code>int → short</code> (high bits lost), <code>int → char</code>. This may lose information.</li>
+    </ul>
+<pre><code>int    i = 42;
+double d = i;          // widening: 42 -> 42.0, safe
+
+double pi = 3.99;
+int    t = pi;         // narrowing: fractional part is TRUNCATED -> 3 (not 4)
+
+int    big = 70000;
+short  s   = big;      // narrowing: 70000 does not fit in 16 bits -> 4464
+
+char   c = 'A';
+int    code = c + 1;   // char is promoted to int before the addition: 66</code></pre>
+    <p>
+      When a binary operator receives operands of different types, the "usual arithmetic conversions" bring both to a
+      common type: roughly <code>int → unsigned → long → unsigned long → long long → float → double → long double</code>.
+      Anything smaller than <code>int</code> is first promoted to <code>int</code>.
+    </p>
+
+    <div class="callout warn">
+      <strong>Signed/unsigned mix-ups</strong>
+      In <code>-1 &lt; 1u</code> the <code>-1</code> is converted to <code>unsigned</code> (4,294,967,295), so the comparison is
+      <em>false</em>. Compile with <code>-Wall -Wextra</code> to receive <code>-Wsign-compare</code> warnings.
+    </div>
+
+    <h3>Explicit conversion</h3>
+    <p>Use an explicit cast to document that a conversion is intentional.</p>
+<pre><code>double pi = 3.99;
+
+int a = static_cast&lt;int&gt;(pi);        // C++ style: preferred, searchable, checked by the compiler
+int b = (int)pi;                     // C-style cast: works but can silently do dangerous things
+int c = int(pi);                     // functional cast: same as above
+
+int sum = 17, count = 4;
+double bad  = sum / count;                       // 4.0   - integer division happened first!
+double good = static_cast&lt;double&gt;(sum) / count;  // 4.25 - one operand is double, so the division is floating</code></pre>
+    <table>
+      <thead><tr><th>Cast</th><th>Use for</th></tr></thead>
+      <tbody>
+        <tr><td><code>static_cast&lt;T&gt;(x)</code></td><td>Well-defined conversions between related types (numeric, enum, base/derived pointers)</td></tr>
+        <tr><td><code>const_cast&lt;T&gt;(x)</code></td><td>Adding or removing <code>const</code> (rarely justified)</td></tr>
+        <tr><td><code>reinterpret_cast&lt;T&gt;(x)</code></td><td>Reinterpreting raw bit patterns (low-level, dangerous)</td></tr>
+        <tr><td><code>dynamic_cast&lt;T&gt;(x)</code></td><td>Safe polymorphic down-casts (Chapter 08)</td></tr>
+        <tr><td><code>(T)x</code></td><td>C-style: tries all of the above in order — avoid in C++</td></tr>
+      </tbody>
+    </table>
+    <div class="callout tip">
+      <strong>Tip — why prefer static_cast?</strong>
+      The C-style cast <code>(T)x</code> will happily act as a <code>reinterpret_cast</code> or strip <code>const</code> if that
+      is what it takes to compile. <code>static_cast</code> only performs conversions that make sense, and its verbose
+      syntax is easy to grep for during code review.
+    </div>
+
+    <h2>2.6 Constants</h2>
+    <p>Values that must never change should be declared constant so that the compiler enforces it.</p>
+<pre><code>const double PI = 3.14159265358979;   // runtime-or-compile-time constant
+constexpr int MAX_USERS = 100;        // guaranteed compile-time constant
+#define LEGACY_MAX 100                // preprocessor macro (C heritage)
+
+// PI = 3.0;          // ERROR: assignment of read-only variable
+
+constexpr int square(int n) { return n * n; }
+constexpr int AREA = square(12);      // computed by the compiler: 144
+int table[MAX_USERS];                 // OK: array sizes need compile-time constants</code></pre>
+    <table>
+      <thead><tr><th>Feature</th><th><code>const</code></th><th><code>constexpr</code></th><th><code>#define</code></th></tr></thead>
+      <tbody>
+        <tr><td>Has a type</td><td>Yes</td><td>Yes</td><td>No — plain text substitution</td></tr>
+        <tr><td>Obeys scope rules</td><td>Yes</td><td>Yes</td><td>No — global from the point of definition</td></tr>
+        <tr><td>Value known at compile time</td><td>Only if initialized with a constant</td><td>Always (enforced)</td><td>Yes (it is text)</td></tr>
+        <tr><td>Visible in the debugger</td><td>Yes</td><td>Yes</td><td>No — replaced before compilation</td></tr>
+        <tr><td>Can be a function</td><td>No</td><td>Yes</td><td>Macro only (error-prone)</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Why const / constexpr beat #define</h3>
+<pre><code>#define SQUARE(x) x * x
+int r = SQUARE(2 + 3);     // expands to 2 + 3 * 2 + 3 = 11, NOT 25!
+
+constexpr int square(int x) { return x * x; }
+int s = square(2 + 3);     // 25: the argument is evaluated first</code></pre>
+    <div class="callout">
+      <strong>Rule of thumb</strong>
+      Use <code>constexpr</code> for values known at compile time, <code>const</code> for values that are set once at runtime
+      (e.g. <code>const int n = readFromUser();</code>), and reserve <code>#define</code> for include guards and conditional
+      compilation. Constants have types, scope and debugger visibility; macros have none of these.
+    </div>
+
+    <h2>2.7 Arithmetic Operators</h2>
+    <table>
+      <thead><tr><th>Operator</th><th>Meaning</th><th>Example</th><th>Result</th></tr></thead>
+      <tbody>
+        <tr><td><code>+</code></td><td>Addition</td><td><code>7 + 2</code></td><td>9</td></tr>
+        <tr><td><code>-</code></td><td>Subtraction</td><td><code>7 - 2</code></td><td>5</td></tr>
+        <tr><td><code>*</code></td><td>Multiplication</td><td><code>7 * 2</code></td><td>14</td></tr>
+        <tr><td><code>/</code></td><td>Division</td><td><code>7 / 2</code> and <code>7.0 / 2</code></td><td>3 and 3.5</td></tr>
+        <tr><td><code>%</code></td><td>Remainder (modulo) — integers only</td><td><code>7 % 2</code></td><td>1</td></tr>
+      </tbody>
+    </table>
+
+    <div class="callout warn">
+      <strong>The integer division gotcha</strong>
+      When <em>both</em> operands are integers, <code>/</code> performs integer division and <strong>discards the fraction</strong>:
+      <code>7 / 2</code> is <code>3</code>, not 3.5. Assigning the result to a <code>double</code> does not help, because the
+      division has already happened. Make at least one operand floating-point: <code>7.0 / 2</code> or
+      <code>static_cast&lt;double&gt;(7) / 2</code>.
+    </div>
+<pre><code>int    a = 7, b = 2;
+double wrong = a / b;                      // 3.0
+double right = static_cast&lt;double&gt;(a) / b; // 3.5
+
+std::cout &lt;&lt;  7 % 3 &lt;&lt; '\n';   //  1
+std::cout &lt;&lt; -7 / 2 &lt;&lt; '\n';   // -3  (truncates toward zero since C++11)
+std::cout &lt;&lt; -7 % 2 &lt;&lt; '\n';   // -1  (sign of the result follows the dividend)
+
+// int z = 5 / 0;    // undefined behaviour for integers
+// 5.0 / 0.0         // floating point gives inf (IEEE 754)
+// For a floating-point remainder use std::fmod(7.5, 2.0) from &lt;cmath&gt; -> 1.5</code></pre>
+    <p>Common use of <code>%</code>: wrapping an index (<code>i % size</code>), testing divisibility (<code>n % 3 == 0</code>), and extracting digits (<code>n % 10</code> is the last digit).</p>
+
+    <h2>2.8 Comparison (Relational) Operators</h2>
+    <p>Comparison operators yield a <code>bool</code>.</p>
+    <table>
+      <thead><tr><th>Operator</th><th>Meaning</th><th>Example (a=5, b=8)</th><th>Result</th></tr></thead>
+      <tbody>
+        <tr><td><code>==</code></td><td>Equal to</td><td><code>a == b</code></td><td>false</td></tr>
+        <tr><td><code>!=</code></td><td>Not equal to</td><td><code>a != b</code></td><td>true</td></tr>
+        <tr><td><code>&lt;</code></td><td>Less than</td><td><code>a &lt; b</code></td><td>true</td></tr>
+        <tr><td><code>&gt;</code></td><td>Greater than</td><td><code>a &gt; b</code></td><td>false</td></tr>
+        <tr><td><code>&lt;=</code></td><td>Less than or equal</td><td><code>a &lt;= 5</code></td><td>true</td></tr>
+        <tr><td><code>&gt;=</code></td><td>Greater than or equal</td><td><code>a &gt;= b</code></td><td>false</td></tr>
+      </tbody>
+    </table>
+    <div class="callout warn">
+      <strong>= is not ==</strong>
+      <code>if (x = 5)</code> assigns 5 to <code>x</code> and is always true. The compiler warns with <code>-Wall</code>.
+      Likewise <code>1 &lt; x &lt; 10</code> does not mean "x between 1 and 10" — write <code>1 &lt; x &amp;&amp; x &lt; 10</code>.
+    </div>
+
+    <h2>2.9 Logical Operators</h2>
+    <table>
+      <thead><tr><th>A</th><th>B</th><th><code>A &amp;&amp; B</code></th><th><code>A || B</code></th><th><code>!A</code></th></tr></thead>
+      <tbody>
+        <tr><td>true</td><td>true</td><td>true</td><td>true</td><td>false</td></tr>
+        <tr><td>true</td><td>false</td><td>false</td><td>true</td><td>false</td></tr>
+        <tr><td>false</td><td>true</td><td>false</td><td>true</td><td>true</td></tr>
+        <tr><td>false</td><td>false</td><td>false</td><td>false</td><td>true</td></tr>
+      </tbody>
+    </table>
+<pre><code>int age = 25;
+bool hasTicket = true;
+
+bool canEnter = (age &gt;= 18) &amp;&amp; hasTicket;          // both must hold
+bool needsHelp = (age &lt; 12) || (age &gt; 65);           // either is enough
+bool isMinor = !(age &gt;= 18);                          // negation
+
+// Short-circuit evaluation: the right operand is skipped when the result is already known
+int d = 0;
+bool safe = (d != 0) &amp;&amp; (10 / d &gt; 1);   // 10 / d is never evaluated - no division by zero</code></pre>
+    <div class="callout tip">
+      <strong>Tip — short-circuiting</strong>
+      Put the cheap or guarding condition first. <code>ptr != nullptr &amp;&amp; ptr-&gt;value &gt; 0</code> is safe precisely
+      because <code>&amp;&amp;</code> stops as soon as the left side is false.
+    </div>
+
+    <h2>2.10 Bitwise Operators</h2>
+    <p>
+      Bitwise operators work on the individual bits of integer operands. They are essential in embedded systems,
+      graphics, networking, flags/permissions, and performance-sensitive code.
+    </p>
+    <table>
+      <thead><tr><th>Operator</th><th>Name</th><th>Rule</th><th>Example (a = 12 = <code>1100</code>, b = 10 = <code>1010</code>)</th></tr></thead>
+      <tbody>
+        <tr><td><code>&amp;</code></td><td>AND</td><td>1 only if both bits are 1</td><td><code>a &amp; b</code> = <code>1000</code> = 8</td></tr>
+        <tr><td><code>|</code></td><td>OR</td><td>1 if either bit is 1</td><td><code>a | b</code> = <code>1110</code> = 14</td></tr>
+        <tr><td><code>^</code></td><td>XOR</td><td>1 if the bits differ</td><td><code>a ^ b</code> = <code>0110</code> = 6</td></tr>
+        <tr><td><code>~</code></td><td>NOT (complement)</td><td>flips every bit</td><td><code>~a</code> (low 8 bits) = <code>11110011</code></td></tr>
+        <tr><td><code>&lt;&lt;</code></td><td>Left shift</td><td>shift left, fill with 0 (× 2<sup>n</sup>)</td><td><code>a &lt;&lt; 2</code> = <code>110000</code> = 48</td></tr>
+        <tr><td><code>&gt;&gt;</code></td><td>Right shift</td><td>shift right (÷ 2<sup>n</sup>)</td><td><code>a &gt;&gt; 2</code> = <code>0011</code> = 3</td></tr>
+      </tbody>
+    </table>
+<pre><code>#include &lt;bitset&gt;
+unsigned int a = 12, b = 10;
+
+std::cout &lt;&lt; std::bitset&lt;8&gt;(a &amp; b) &lt;&lt; '\n';   // 00001000
+std::cout &lt;&lt; std::bitset&lt;8&gt;(a | b) &lt;&lt; '\n';   // 00001110
+std::cout &lt;&lt; std::bitset&lt;8&gt;(a ^ b) &lt;&lt; '\n';   // 00000110
+std::cout &lt;&lt; std::bitset&lt;8&gt;(~a)    &lt;&lt; '\n';   // 11110011
+std::cout &lt;&lt; (a &lt;&lt; 2) &lt;&lt; ' ' &lt;&lt; (a &gt;&gt; 2) &lt;&lt; '\n';   // 48 3</code></pre>
+
+    <h3>Practical bit tricks</h3>
+<pre><code>// Is n odd?  The lowest bit of an odd number is always 1.
+bool odd = (n &amp; 1) != 0;
+
+// Bit manipulation with a mask (bit positions count from 0 at the right)
+n |=  (1u &lt;&lt; k);     // SET    bit k
+n &amp;= ~(1u &lt;&lt; k);     // CLEAR  bit k
+n ^=  (1u &lt;&lt; k);     // TOGGLE bit k
+bool on = (n &gt;&gt; k) &amp; 1u;   // TEST   bit k
+
+// XOR swap (no temporary):  a ^= b;  b ^= a;  a ^= b;</code></pre>
+    <div class="callout warn">
+      <strong>Do not confuse &amp; with &amp;&amp;, or | with ||</strong>
+      <code>5 &amp; 2</code> is the bitwise value <code>0</code>, while <code>5 &amp;&amp; 2</code> is the logical value <code>true</code>.
+      Also, right-shifting a <em>negative</em> signed number is implementation-defined (usually arithmetic shift), so
+      use <code>unsigned</code> operands for bit manipulation.
+    </div>
+
+    <h2>2.11 Assignment Operators</h2>
+    <table>
+      <thead><tr><th>Operator</th><th>Equivalent to</th><th>Example (x starts at 10)</th><th>x afterwards</th></tr></thead>
+      <tbody>
+        <tr><td><code>=</code></td><td>assign</td><td><code>x = 4</code></td><td>4</td></tr>
+        <tr><td><code>+=</code></td><td><code>x = x + n</code></td><td><code>x += 3</code></td><td>13</td></tr>
+        <tr><td><code>-=</code></td><td><code>x = x - n</code></td><td><code>x -= 3</code></td><td>7</td></tr>
+        <tr><td><code>*=</code></td><td><code>x = x * n</code></td><td><code>x *= 3</code></td><td>30</td></tr>
+        <tr><td><code>/=</code></td><td><code>x = x / n</code></td><td><code>x /= 3</code></td><td>3 (integer division)</td></tr>
+        <tr><td><code>%=</code></td><td><code>x = x % n</code></td><td><code>x %= 3</code></td><td>1</td></tr>
+      </tbody>
+    </table>
+    <p>The bitwise forms <code>&amp;=</code>, <code>|=</code>, <code>^=</code>, <code>&lt;&lt;=</code>, <code>&gt;&gt;=</code> exist too. Assignment is right-associative and yields the assigned value, so it can be chained:</p>
+<pre><code>int a, b, c;
+a = b = c = 0;       // c = 0, then b = c, then a = b
+
+int x = 10;
+x *= 2 + 3;          // x = x * (2 + 3) = 50, NOT (x * 2) + 3</code></pre>
+
+    <h2>2.12 Increment and Decrement</h2>
+    <p>
+      <code>++</code> adds 1 and <code>--</code> subtracts 1. Each has a <strong>prefix</strong> and a <strong>postfix</strong> form that
+      differ in the value the expression produces:
+    </p>
+    <ul>
+      <li><strong>Pre-increment <code>++x</code></strong>: increment first, the expression yields the <em>new</em> value.</li>
+      <li><strong>Post-increment <code>x++</code></strong>: the expression yields the <em>old</em> value, then x is incremented.</li>
+    </ul>
+<pre><code>int x = 5;
+int a = ++x;    // x becomes 6 first, a = 6
+int b = x++;    // b gets the old value 6, then x becomes 7
+std::cout &lt;&lt; a &lt;&lt; ' ' &lt;&lt; b &lt;&lt; ' ' &lt;&lt; x;   // 6 6 7
+
+int y = 5;
+std::cout &lt;&lt; y-- &lt;&lt; ' ';   // prints 5, y is now 4
+std::cout &lt;&lt; --y;          // y becomes 3, prints 3</code></pre>
+    <div class="callout tip">
+      <strong>Tip — default to prefix</strong>
+      When you only need the side effect (as in <code>for (...; ...; ++i)</code>), prefer <code>++i</code>. For built-in types
+      the cost is identical, but for iterators and class types post-increment must create and return a temporary copy.
+      Never modify the same variable twice in one expression (<code>i = i++ + ++i</code> is undefined behaviour).
+    </div>
+
+    <h2>2.13 Operator Precedence and Associativity</h2>
+    <p>
+      Precedence decides which operator binds tighter; associativity breaks ties between operators of the same level.
+      The table lists operators from <strong>highest</strong> to <strong>lowest</strong> precedence.
+    </p>
+    <table>
+      <thead><tr><th>Level</th><th>Operators</th><th>Associativity</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td><code>::</code></td><td>left → right</td></tr>
+        <tr><td>2</td><td><code>x++</code> <code>x--</code> <code>()</code> <code>[]</code> <code>.</code> <code>-&gt;</code></td><td>left → right</td></tr>
+        <tr><td>3</td><td><code>++x</code> <code>--x</code> unary <code>+</code> <code>-</code> <code>!</code> <code>~</code> <code>(type)</code> <code>sizeof</code></td><td>right → left</td></tr>
+        <tr><td>4</td><td><code>*</code> <code>/</code> <code>%</code></td><td>left → right</td></tr>
+        <tr><td>5</td><td><code>+</code> <code>-</code></td><td>left → right</td></tr>
+        <tr><td>6</td><td><code>&lt;&lt;</code> <code>&gt;&gt;</code></td><td>left → right</td></tr>
+        <tr><td>7</td><td><code>&lt;</code> <code>&lt;=</code> <code>&gt;</code> <code>&gt;=</code></td><td>left → right</td></tr>
+        <tr><td>8</td><td><code>==</code> <code>!=</code></td><td>left → right</td></tr>
+        <tr><td>9</td><td><code>&amp;</code></td><td>left → right</td></tr>
+        <tr><td>10</td><td><code>^</code></td><td>left → right</td></tr>
+        <tr><td>11</td><td><code>|</code></td><td>left → right</td></tr>
+        <tr><td>12</td><td><code>&amp;&amp;</code></td><td>left → right</td></tr>
+        <tr><td>13</td><td><code>||</code></td><td>left → right</td></tr>
+        <tr><td>14</td><td><code>?:</code> <code>=</code> <code>+=</code> <code>-=</code> <code>*=</code> <code>/=</code> <code>%=</code> <code>&lt;&lt;=</code> <code>&gt;&gt;=</code> <code>&amp;=</code> <code>^=</code> <code>|=</code></td><td>right → left</td></tr>
+        <tr><td>15</td><td><code>,</code> (comma)</td><td>left → right</td></tr>
+      </tbody>
+    </table>
+<pre><code>int r1 = 2 + 3 * 4;          // 14: * binds tighter than +
+int r2 = (2 + 3) * 4;        // 20: parentheses override precedence
+int r3 = 10 - 4 - 3;         // 3:  left-to-right ((10 - 4) - 3)
+int r4 = 1 + 2 &lt;&lt; 3;          // 24: + is higher than &lt;&lt;, so (1 + 2) &lt;&lt; 3
+
+int n = 6;
+bool bad  = n &amp; 1 == 0;      // parsed as n &amp; (1 == 0) -> n &amp; 0 -> 0   (WRONG)
+bool good = (n &amp; 1) == 0;    // true: n is even</code></pre>
+    <div class="callout">
+      <strong>When in doubt, add parentheses</strong>
+      The bitwise operators rank <em>below</em> comparison operators, which is a classic source of bugs. Parentheses cost
+      nothing at runtime and make your intent obvious to readers.
+    </div>
+
+    <h2>2.14 Key Takeaways</h2>
+    <ul>
+      <li>Pick the type that fits the data: <code>int</code> for counts, <code>double</code> for measurements, <code>bool</code> for flags, <code>char</code> for characters.</li>
+      <li><code>sizeof</code> reports sizes in bytes at compile time; sizes vary between platforms.</li>
+      <li>Always initialize variables; prefer brace initialization to catch narrowing.</li>
+      <li>Unsigned overflow wraps; signed overflow is undefined behaviour.</li>
+      <li>Integer division truncates — convert an operand with <code>static_cast&lt;double&gt;</code> for a real quotient.</li>
+      <li>Prefer <code>constexpr</code>/<code>const</code> over <code>#define</code>; prefer <code>static_cast</code> over C-style casts.</li>
+      <li><code>&amp;</code>, <code>|</code>, <code>^</code>, <code>~</code>, <code>&lt;&lt;</code>, <code>&gt;&gt;</code> operate on bits; <code>&amp;&amp;</code>, <code>||</code>, <code>!</code> operate on truth values and short-circuit.</li>
+      <li><code>++x</code> yields the new value, <code>x++</code> yields the old value.</li>
+      <li>Parenthesize when precedence is not obvious.</li>
+    </ul>
+
+    <div style="display:flex;justify-content:space-between;margin-top:2rem;gap:.75rem;">
+      <a href="/chapters/ch01-introduction/quiz.html" class="btn btn-outline" style="text-decoration:none;">← Chapter 01 Quiz</a>
+      <a href="examples.html" class="btn" style="text-decoration:none;">Next: Examples →</a>
+    </div>
+
+  </div>
+</main>
+</div>
+<footer id="site-footer">
+  &copy; 2024 <a href="https://linkedin.com/in/adityabhuyan" target="_blank" rel="noopener">Aditya Pratap Bhuyan</a> &nbsp;|&nbsp;
+  <a href="https://github.com/aditya-bhuyan/cpp-learning-hub" target="_blank" rel="noopener">GitHub</a> &nbsp;|&nbsp;
+  GNU GPL v3 License
+</footer>
+<script src="/assets/js/nav.js"></script>
+</body>
+</html>
